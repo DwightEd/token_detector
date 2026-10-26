@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "r4-token-detector"
+version = "0.1.0"
+description = "R4 token-level hallucination detection with separate dataset evaluation tools"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy==2.4.6",
+    "torch==2.8.0",
+    "transformers==4.57.1",
+    "huggingface-hub==0.36.2",
+]
+
+[project.optional-dependencies]
+experiments = ["scikit-learn==1.9.0"]
+dev = ["pytest==9.1.1"]
+
+[project.scripts]
+r4-detect = "myproject.run:main"
+r4-experiment = "myproject_experiment.run:main"
+
+[project.urls]
+Repository = "https://github.com/DwightEd/token_detector"
+
+[tool.setuptools.packages.find]
+include = ["myproject", "myproject_experiment"]
+
+[tool.setuptools.package-data]
+myproject = ["references/*.npz"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,188 @@
+{
+  "status": "assembled_static_checks_passed",
+  "source_root": "/share/home/tm902089733300000/a903202310/lys/research",
+  "files": [
+    {
+      "path": "myproject/AGENTS.md",
+      "bytes": 1019,
+      "sha256": "3989723ac3ae46962f50f78fabf75c2ad68d180d998fc719d1e522947f1483aa"
+    },
+    {
+      "path": "myproject/README.md",
+      "bytes": 5229,
+      "sha256": "8e8919606e9630e2ac23e84f147bee33ef1b5f03c6462a02433d63ab5a9d3e6f"
+    },
+    {
+      "path": "myproject/__init__.py",
+      "bytes": 131,
+      "sha256": "bac5fdbe4b5b28d3ed8ac89b4162fb8e1df9376b1c3ff1937113abf4d9813d64"
+    },
+    {
+      "path": "myproject/__main__.py",
+      "bytes": 30,
+      "sha256": "e6a5b8a9b0f5bc30f863a0f88db0d1acf6a56ac41415d9dfd346748a63a015be"
+    },
+    {
+      "path": "myproject/api.py",
+      "bytes": 5028,
+      "sha256": "d9c4075ee6ab4eda1dbd2387c906c96db74af492a14fbd453e624e82d20b214b"
+    },
+    {
+      "path": "myproject/detector.py",
+      "bytes": 6025,
+      "sha256": "0013c9356e9c3f3f2093555830d7b821d945f6254caa2e234ce650c71540229a"
+    },
+    {
+      "path": "myproject/graph.py",
+      "bytes": 1777,
+      "sha256": "4081fd8be3a8d662b5d6e02225ece2be3ad9f7ed4f2c9e8510aad1d418d6942d"
+    },
+    {
+      "path": "myproject/inputs.py",
+      "bytes": 2844,
+      "sha256": "d8ebb65e4b429f12dd16f8aba4c92c09cab3a84166c774f2e4618af7b94deec6"
+    },
+    {
+      "path": "myproject/measure.py",
+      "bytes": 2305,
+      "sha256": "95e7a8086bb86c11afd99c709b0e868c8d7a2bb672226735830d4bf56e88e0c6"
+    },
+    {
+      "path": "myproject/model.py",
+      "bytes": 2332,
+      "sha256": "34eaf45d5a9c0180682d7d676d13385174742ab4421ace9d14f20d97d67d5b29"
+    },
+    {
+      "path": "myproject/observer.py",
+      "bytes": 1195,
+      "sha256": "0ee39bcc624c267cd91711acbeb51563224656840ef51809c9ef4a40afcba91e"
+    },
+    {
+      "path": "myproject/references/Data2txt.npz",
+      "bytes": 219441,
+      "sha256": "06befb43ace17f05820e6f8676272975c6b3486e26919abad047b550bb97e396"
+    },
+    {
+      "path": "myproject/references/QA.npz",
+      "bytes": 220217,
+      "sha256": "f083f04173edcbdba82be91a0ac57dcc856c63fceadc1dbe8b302a2656894472"
+    },
+    {
+      "path": "myproject/references/Summary.npz",
+      "bytes": 218577,
+      "sha256": "bf7473e7855bdd62bf71176000e137f5d865f09828e73b988b2f20eeaa0263a9"
+    },
+    {
+      "path": "myproject/requirements.txt",
+      "bytes": 47,
+      "sha256": "5a792e311de71ae1803b124150a88df21c0dae91ee014131b8602e31b29407f3"
+    },
+    {
+      "path": "myproject/routing.py",
+      "bytes": 2770,
+      "sha256": "dd12983cfaa1a5c888c29158e582dc1bdb4206868ceec5e694565e132b6f5fee"
+    },
+    {
+      "path": "myproject/run.py",
+      "bytes": 1781,
+      "sha256": "be6bddd3fbb1c8ef0e6fc5047ebe56d7690247fe014619ef6c941cd4527b8246"
+    },
+    {
+      "path": "myproject/source.py",
+      "bytes": 2230,
+      "sha256": "d9e9e4d25fd60dbf7f5777ca39835e8b8c5db82845dcc2f71572af1191198fdb"
+    },
+    {
+      "path": "myproject_experiment/AGENTS.md",
+      "bytes": 432,
+      "sha256": "6d7e45dfd7c9ee879385e947bbdfab51bc91a07f9ba0c7636d36d0e4a1a161dd"
+    },
+    {
+      "path": "myproject_experiment/README.md",
+      "bytes": 7556,
+      "sha256": "68cef6d5a97bd2946e8b60e38de7c8f788c18283305f79a087b4b3559594f5a5"
+    },
+    {
+      "path": "myproject_experiment/__init__.py",
+      "bytes": 74,
+      "sha256": "d4274bbed0971192535bf0bbfdee498b4e54b5d257e89726614a0abba2026a97"
+    },
+    {
+      "path": "myproject_experiment/data.py",
+      "bytes": 3415,
+      "sha256": "fe72089f14323250205988aa1102efd3f23595307a2f514cbf7cbda9bcd906df"
+    },
+    {
+      "path": "myproject_experiment/datasets.py",
+      "bytes": 16003,
+      "sha256": "883c5e0ab90f4a62d0a29c0efcbe201aead3a133cc97e3c98092e30219fcd1a2"
+    },
+    {
+      "path": "myproject_experiment/evaluate.py",
+      "bytes": 15589,
+      "sha256": "53114abded0d8c13946681d37e35478ceb9dc69d52210fad3efdb190f6bd4d6f"
+    },
+    {
+      "path": "myproject_experiment/inputs.py",
+      "bytes": 2896,
+      "sha256": "b85a61c2d483bc4247e15d65d901368012b8059db352f8f7e92a6537b3f51c72"
+    },
+    {
+      "path": "myproject_experiment/measure.py",
+      "bytes": 2620,
+      "sha256": "ec60b104313bc57611e015f6256be373522a4fb5d201311ad155abffdd173b02"
+    },
+    {
+      "path": "myproject_experiment/pipeline.py",
+      "bytes": 9142,
+      "sha256": "abc54b6a54fef418d79b0ec712c0feb92b8d207aab1f86860091dc92f7179dee"
+    },
+    {
+      "path": "myproject_experiment/requirements.txt",
+      "bytes": 67,
+      "sha256": "ed2b8f407fb1f92c3ea421bdfbe4911ae5a127019414806b4687088f40249b73"
+    },
+    {
+      "path": "myproject_experiment/run.py",
+      "bytes": 5913,
+      "sha256": "d72edcf4a425a909c6f56f6f94d0d4f65f160cea2227d44e30277b6fedc400c9"
+    }
+  ],
+  "missing_internal_modules": [],
+  "local_imports_outside_export": [],
+  "third_party_import_names": [
+    "huggingface_hub",
+    "numpy",
+    "sklearn",
+    "torch",
+    "transformers"
+  ],
+  "stdlib_import_names": [
+    "argparse",
+    "collections",
+    "contextlib",
+    "dataclasses",
+    "hashlib",
+    "json",
+    "math",
+    "os",
+    "pathlib",
+    "re",
+    "warnings"
+  ],
+  "skipped_source_paths": [
+    "myproject/__pycache__"
+  ],
+  "checks_not_run": [
+    "project imports",
+    "model execution",
+    "prediction replay",
+    "evaluation"
+  ],
+  "limitations": [
+    "Import closure includes imports inside functions, but cannot resolve computed dynamic imports.",
+    "Only known references and package metadata are copied; dynamic resource paths need review.",
+    "Third-party import names are not automatically inferred pip package names or version checks.",
+    "Original requirements are preserved; local paths or nested requirement files may need adjustment."
+  ]
+}

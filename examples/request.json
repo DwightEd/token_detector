@@ -1,0 +1,5 @@
+{
+  "prompt": "Answer using the passage.\nPassage: The museum opened in 1998.\nWhen did the museum open?",
+  "source": "The museum opened in 1998.",
+  "response": "The museum opened in 1997."
+}
