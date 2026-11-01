@@ -6,7 +6,7 @@ import numpy as np
 
 from myproject.detector import Detector, target_window_mean
 from myproject.graph import chain_log_odds, smooth_scores
-from myproject_experiment.data import select_rows
+from experiments.data import select_rows
 
 
 def test_chain_matches_complete_binary_enumeration():

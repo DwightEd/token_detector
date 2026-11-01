@@ -5,7 +5,7 @@ import unittest
 import numpy as np
 from sklearn.metrics import average_precision_score, roc_auc_score
 
-from myproject_experiment.evaluate import _cluster_intervals
+from experiments.evaluate import _cluster_intervals
 
 
 class BootstrapTests(unittest.TestCase):

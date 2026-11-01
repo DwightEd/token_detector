@@ -1,0 +1,374 @@
+"""Shared token detection: prepare → measure → score → evaluate; explicit legacy R4 tools."""
+
+import argparse
+from pathlib import Path
+
+from . import data, measure, pipeline
+from myproject.shared import METHODS
+
+
+def parser() -> argparse.ArgumentParser:
+    command = argparse.ArgumentParser(__doc__)
+    stages = command.add_subparsers(dest="stage", required=True)
+    verify = stages.add_parser("verify", help="compare explicitly supplied frozen artifacts on CPU")
+    verify.add_argument("--packs", type=Path, required=True)
+    verify.add_argument("--baseline", type=Path, required=True)
+    verify.add_argument("--output", type=Path, required=True)
+    export = stages.add_parser("export-hallurag", help="export official pickles as text/label JSONL")
+    export.add_argument("--files", nargs="+", type=Path, required=True)
+    export.add_argument("--output", type=Path, required=True)
+    prepare = stages.add_parser("prepare", help="index frozen inputs or tokenize official text")
+    source = prepare.add_mutually_exclusive_group(required=True)
+    source.add_argument("--cache", type=Path)
+    source.add_argument("--dataset", type=Path)
+    prepare.add_argument("--model", type=Path)
+    prepare.add_argument("--output", type=Path, required=True)
+
+    observe = stages.add_parser("measure", help="read frozen observations; --native replays the model")
+    observe.add_argument("--input", type=Path, required=True)
+    observe.add_argument("--task", choices=data.TASKS, required=True)
+    observe.add_argument("--split", choices=("train", "test"), required=True)
+    observe.add_argument("--native", action="store_true")
+    observe.add_argument("--device", default="cuda:0")
+    observe.add_argument("--output", type=Path, required=True)
+
+    fit = stages.add_parser("fit", help="legacy R4: fit unlabeled reference distributions")
+    fit.add_argument("--data", type=Path, required=True)
+    fit.add_argument("--task", choices=data.TASKS, required=True)
+    fit.add_argument("--output", type=Path, required=True)
+
+    score = stages.add_parser("score", help="legacy R4: score a frozen pack using reference distributions")
+    score.add_argument("--data", type=Path, required=True)
+    score.add_argument("--task", choices=data.TASKS, required=True)
+    score.add_argument("--partition", choices=("fit", "dev", "test"), required=True)
+    score.add_argument("--model", type=Path, required=True)
+    score.add_argument("--output", type=Path, required=True)
+
+    evaluate = stages.add_parser("evaluate", help="join official Gold to sealed scores")
+    evaluate.add_argument("--scores", type=Path, required=True)
+
+    dataset = stages.add_parser("prepare-dataset", help="normalize native inputs and annotations")
+    dataset.add_argument("--name", choices=("ragtruth", "hallurag", "claimdb", "fred"), required=True)
+    dataset.add_argument("--data", type=Path, required=True)
+    dataset.add_argument("--split", default="test")
+    dataset.add_argument("--task")
+    selection = dataset.add_mutually_exclusive_group()
+    selection.add_argument("--limit", type=int)
+    selection.add_argument("--ids", type=Path, help="JSON array of IDs or an object with an ids array")
+    dataset.add_argument("--output", type=Path, required=True)
+
+    predict = stages.add_parser("predict-dataset", help="score text inputs with the default shared readout")
+    predict.add_argument("--input", type=Path, required=True)
+    predict.add_argument("--model", type=Path, required=True)
+    predict.add_argument("--task", choices=data.TASKS, required=True)
+    predict.add_argument("--references", type=Path)
+    predict.add_argument("--method", choices=METHODS,
+                         help='shared by default; explicit R4 references select legacy r4')
+    predict.add_argument("--device", default="cuda:0")
+    predict.add_argument("--output", type=Path, required=True)
+
+    native = stages.add_parser("evaluate-dataset", help="evaluate native or projected token labels")
+    native.add_argument("--scores", type=Path, required=True)
+    native.add_argument("--annotations", type=Path)
+    native.add_argument("--bootstrap", type=int, default=2000)
+    native.add_argument("--seed", type=int, default=17)
+    native.add_argument("--claim-positive-labels", nargs="+")
+    native.add_argument("--label-granularity", choices=("native", "token"), default="native")
+    native.add_argument("--output", type=Path, required=True)
+
+    transfer = stages.add_parser("transfer", help="cache native observations, FIT/score, then evaluate")
+    transfers = transfer.add_subparsers(dest="transfer_stage", required=True)
+    collect = transfers.add_parser("collect", help="measure prepared FIT/test inputs without reading labels")
+    collect.add_argument("--fit", nargs="+", type=Path, default=[])
+    collect.add_argument("--test", nargs="+", type=Path, required=True)
+    collect.add_argument("--model", type=Path, required=True)
+    collect.add_argument("--task", choices=data.TASKS, required=True)
+    collect.add_argument("--protocol", type=Path, required=True)
+    collect.add_argument("--output", type=Path, required=True)
+    collect.add_argument("--method", choices=METHODS, default='shared')
+    cached = transfers.add_parser('collect-cached', help='verify primitive cached probabilities against complete prepared test inputs')
+    cached.add_argument('--prepared', type=Path, required=True)
+    cached.add_argument('--cache', type=Path, required=True)
+    cached.add_argument('--task', choices=data.TASKS, required=True)
+    cached.add_argument('--protocol', type=Path, required=True)
+    cached.add_argument('--output', type=Path, required=True)
+    repairs = transfers.add_parser('probe-repairs', help='replay source-derived temporal response interventions')
+    repairs.add_argument('--native', type=Path, required=True)
+    repairs.add_argument('--protocol', type=Path, required=True)
+    repairs.add_argument('--ids', nargs='+', required=True)
+    repairs.add_argument('--output', type=Path, required=True)
+    calibrate = transfers.add_parser("score", help="seal shared scores; --method r4 runs the historical FIT comparison")
+    calibrate.add_argument("--native", type=Path, required=True)
+    calibrate.add_argument("--output", type=Path, required=True)
+    calibrate.add_argument("--method", choices=METHODS, default='shared')
+    calibrate.add_argument('--compare-r4', action='store_true', help='also score bundled frozen R4 without fitting')
+    calibrate.add_argument('--protocol', type=Path, help='required separate preregistration for persistent replay')
+    calibrate.add_argument('--ablate-witness', action='store_true', help='three fixed no-copy/clipping/order controls')
+    compare = transfers.add_parser("evaluate", help="join released labels after all predictions are sealed")
+    compare.add_argument("--native", type=Path, required=True)
+    compare.add_argument("--scores", type=Path, required=True)
+    compare.add_argument("--output", type=Path, required=True)
+    qualify = transfers.add_parser('qualify-proofs', help='source-only proof compiler coverage before label join')
+    qualify.add_argument('--native', type=Path, required=True)
+    qualify.add_argument('--protocol', type=Path, required=True)
+    qualify.add_argument('--output', type=Path, required=True)
+    assertions = transfers.add_parser('qualify-assertions', help='measure frozen dependency assertion structure without labels')
+    assertion_inputs = assertions.add_mutually_exclusive_group(required=True)
+    assertion_inputs.add_argument('--native', type=Path)
+    assertion_inputs.add_argument('--prepared', type=Path)
+    assertions.add_argument('--tokenizer', type=Path, help='original observer tokenizer for prepared inputs; no LM weights loaded')
+    assertions.add_argument('--control-reference', type=Path, help='reuse a sealed panel for the identical parser/role adapter')
+    assertions.add_argument('--parser-model', type=Path, required=True)
+    assertions.add_argument('--protocol', type=Path, required=True)
+    assertions.add_argument('--output', type=Path, required=True)
+    diagnose = transfers.add_parser("diagnose", help="inspect sealed errors and source table-binding conflicts")
+    diagnose.add_argument("--native", type=Path, required=True)
+    diagnose.add_argument("--scores", type=Path, required=True)
+    diagnose.add_argument("--protocol", type=Path, required=True)
+    diagnose.add_argument("--constraint-chain", action="store_true",
+                          help="condition frozen chain potentials on explicit source-binding conflicts")
+    diagnose.add_argument("--output", type=Path, required=True)
+    pooling = transfers.add_parser("compare-pooling", help="compare fixed-prior token-preserving pooling on sealed observations")
+    pooling.add_argument("--native", type=Path, required=True)
+    pooling.add_argument("--scores", type=Path, required=True)
+    pooling.add_argument("--protocol", type=Path, required=True)
+    pooling.add_argument("--output", type=Path, required=True)
+    exploration = transfers.add_parser("explore-shared", help="test a fixed lexical hierarchy against the primary shared baseline")
+    exploration.add_argument("--native", type=Path, required=True)
+    exploration.add_argument("--scores", type=Path, required=True)
+    exploration.add_argument("--protocol", type=Path, required=True)
+    exploration.add_argument("--output", type=Path, required=True)
+    prior = transfers.add_parser("fit-shared-prior", help="fit the shared model prior on declared unlabeled training sources")
+    prior.add_argument("--native", type=Path, required=True)
+    prior.add_argument("--scores", type=Path, required=True)
+    prior.add_argument("--protocol", type=Path, required=True)
+    prior.add_argument("--output", type=Path, required=True)
+    relational = transfers.add_parser("collect-relational", help="measure matched source/empty/relational likelihoods")
+    relational.add_argument("--native", type=Path, required=True)
+    relational.add_argument("--protocol", type=Path, required=True)
+    relational.add_argument("--output", type=Path, required=True)
+    relational.add_argument("--ids", nargs="+")
+    worlds = transfers.add_parser("compare-relational", help="evaluate the shared relational null-expert model")
+    worlds.add_argument("--native", type=Path, required=True)
+    worlds.add_argument("--scores", type=Path, required=True)
+    worlds.add_argument("--worlds", type=Path, required=True)
+    worlds.add_argument("--protocol", type=Path, required=True)
+    worlds.add_argument("--output", type=Path, required=True)
+    constraint = transfers.add_parser("constraint-pilot", help="test source-certified arithmetic interaction states on declared cases")
+    constraint.add_argument("--native", type=Path, required=True)
+    constraint.add_argument("--protocol", type=Path, required=True)
+    constraint.add_argument("--output", type=Path, required=True)
+    constraint.add_argument("--factorial", action="store_true", help="separate source validity and consistency with a previous result")
+    constraint.add_argument("--binding", action="store_true", help="use source-certified field/value/year relations instead of arithmetic identities")
+    dependency = transfers.add_parser("binding-dependency", help="qualify numeric antecedent routing against source constraints")
+    dependency_input = dependency.add_mutually_exclusive_group(required=True)
+    dependency_input.add_argument("--native", type=Path)
+    dependency_input.add_argument("--observations", type=Path, help="rescore sealed cached attention without model execution")
+    dependency.add_argument("--protocol", type=Path, required=True)
+    dependency.add_argument("--output", type=Path, required=True)
+    dependency.add_argument("--reference", type=Path, help="stage1 pilot to contrast with a coherent source-column reassignment")
+    binding_full = transfers.add_parser('binding-full', help='evaluate relation-conditioned shared inference on all original test tokens')
+    binding_full.add_argument('--native', type=Path, required=True)
+    binding_full.add_argument('--scores', type=Path, required=True)
+    binding_full.add_argument('--protocol', type=Path, required=True)
+    binding_full.add_argument('--output', type=Path, required=True)
+    prevalence = transfers.add_parser('probe-prevalence', help='label-free shared-prior influence diagnostics')
+    prevalence.add_argument('--native', type=Path, required=True)
+    prevalence.add_argument('--protocol', type=Path, required=True)
+    prevalence.add_argument('--output', type=Path, required=True)
+    full = transfers.add_parser('collect-fullgap', help='collect complete prepared two-world observations')
+    full.add_argument('--prepared', type=Path, required=True)
+    full.add_argument('--model', type=Path, required=True)
+    full.add_argument('--protocol', type=Path, required=True)
+    full.add_argument('--device', default='cuda:0')
+    full.add_argument('--output', type=Path, required=True)
+    for name in ['score-fullgap', 'evaluate-fullgap']:
+        stage = transfers.add_parser(name, help='sealed full-gap readout or sentence-derived token evaluation')
+        stage.add_argument('--native', type=Path, required=True)
+        stage.add_argument('--output', type=Path, required=True)
+        if name == 'score-fullgap':
+            stage.add_argument('--protocol', type=Path, required=True)
+            from .fullgap_dataset import ALLOWED_FULL_GAP_METHODS
+
+            stage.add_argument('--methods', nargs='+', choices=ALLOWED_FULL_GAP_METHODS,
+                               help='explicit post-review comparison; existing default remains unchanged')
+        else:
+            stage.add_argument('--scores', type=Path, required=True)
+    for name in ['probe-native', 'local-uncertainty']:
+        stage = transfers.add_parser(name, help='native-evidence response or source-paired mixed-span uncertainty')
+        stage.add_argument('--native', type=Path, required=True)
+        stage.add_argument('--scores', type=Path, required=True)
+        stage.add_argument('--protocol', type=Path, required=True)
+        stage.add_argument('--output', type=Path, required=True)
+    lumina = transfers.add_parser('collect-lumina', help='dense LUMINA with real actual/random/absent sources and matched S/A packet')
+    for name in ('prepared', 'model', 'reference-native', 'protocol', 'output'):
+        lumina.add_argument(f'--{name}', type=Path, required=True)
+    lumina.add_argument('--device', default='cuda:0')
+    lumina_eval = transfers.add_parser('evaluate-lumina', help='compare sealed LUMINA with aligned full7 reference')
+    for name in ('collection', 'reference-scores', 'reference-evaluation', 'output'):
+        lumina_eval.add_argument(f'--{name}', type=Path, required=True)
+    resolution = transfers.add_parser('collect-span-resolution', help='seal label-free span mean/centering deletion controls')
+    for name in ('native', 'reference-scores', 'external-collection', 'protocol', 'output'):
+        resolution.add_argument(f'--{name}', type=Path, required=True)
+    resolution_eval = transfers.add_parser('evaluate-span-resolution', help='evaluate sealed span deletions against existing dense seven/external ten methods')
+    for name in ('collection', 'reference-evaluation', 'external-evaluation', 'output'):
+        resolution_eval.add_argument(f'--{name}', type=Path, required=True)
+    return command
+
+
+def main() -> None:
+    command = parser()
+    args = command.parse_args()
+    if args.stage == "transfer":
+        from . import native_dataset
+
+        if args.transfer_stage == 'collect-span-resolution':
+            from .span_resolution import collect
+
+            collect(args.native, args.reference_scores, args.external_collection, args.protocol, args.output)
+        elif args.transfer_stage == 'evaluate-span-resolution':
+            from .span_resolution import evaluate
+
+            evaluate(args.collection, args.reference_evaluation, args.external_evaluation, args.output)
+        elif args.transfer_stage == 'probe-prevalence':
+            from .prevalence_probe import probe
+
+            probe(args.native, args.output, args.protocol)
+        elif args.transfer_stage == 'collect-lumina':
+            from .lumina_dataset import collect
+
+            collect(args.prepared, args.model, args.reference_native, args.protocol, args.output, args.device)
+        elif args.transfer_stage == 'evaluate-lumina':
+            from .lumina_dataset import evaluate
+
+            evaluate(args.collection, args.reference_scores, args.reference_evaluation, args.output)
+        elif args.transfer_stage == 'collect-fullgap':
+            from .fullgap_dataset import collect
+
+            collect(args.prepared, args.model, args.protocol, args.output, args.device)
+        elif args.transfer_stage == 'score-fullgap':
+            from .fullgap_dataset import score
+
+            options = {'methods': tuple(args.methods)} if args.methods else {}
+            score(args.native, args.protocol, args.output, **options)
+        elif args.transfer_stage == 'evaluate-fullgap':
+            from .fullgap_dataset import evaluate
+
+            evaluate(args.native, args.scores, args.output)
+        elif args.transfer_stage in {'probe-native', 'local-uncertainty'}:
+            from .native_response import local_uncertainty, probe_native
+
+            stage = probe_native if args.transfer_stage == 'probe-native' else local_uncertainty
+            stage(args.native, args.scores, args.protocol, args.output)
+        elif args.transfer_stage == "collect":
+            native_dataset.collect(args.output, args.fit, args.test, args.model, args.task, args.protocol, args.method)
+        elif args.transfer_stage == 'probe-repairs':
+            from .counterfactual_repairs import run
+
+            run(args.native, args.output, args.protocol, args.ids)
+        elif args.transfer_stage == 'collect-cached':
+            native_dataset.collect_cached(args.output, args.prepared, args.cache, args.task, args.protocol)
+        elif args.transfer_stage == "score":
+            native_dataset.score(args.native, args.output, args.method, args.compare_r4, args.protocol, args.ablate_witness)
+        elif args.transfer_stage == "evaluate":
+            native_dataset.evaluate(args.native, args.scores, args.output)
+        elif args.transfer_stage == 'qualify-proofs':
+            native_dataset.qualify_proofs(args.native, args.output, args.protocol)
+        elif args.transfer_stage == 'qualify-assertions':
+            from .assertion_pilot import run
+
+            run(args.native, args.parser_model, args.protocol, args.output,
+                prepared=args.prepared, tokenizer_path=args.tokenizer,
+                control_reference=args.control_reference)
+        elif args.transfer_stage == 'binding-full':
+            from .binding_transfer import run
+
+            run(args.native, args.scores, args.output, args.protocol)
+        elif args.transfer_stage == "binding-dependency":
+            from .binding_dependency_pilot import replay, run
+
+            if args.observations:
+                if args.reference:
+                    command.error('A cached replay inherits its source-world reference')
+                replay(args.observations, args.output, args.protocol)
+            else:
+                run(args.native, args.output, args.protocol, args.reference)
+        elif args.transfer_stage == "constraint-pilot":
+            from .constraint_pilot import run
+
+            run(args.native, args.output, args.protocol, args.factorial, args.binding)
+        elif args.transfer_stage == "collect-relational":
+            from .relational_transfer import collect
+
+            collect(args.native, args.output, args.protocol, args.ids)
+        else:
+            from .transfer_diagnostics import diagnose
+
+            if args.transfer_stage == "compare-relational":
+                diagnose(args.native, args.scores, args.output, args.protocol,
+                         method='relational', worlds=args.worlds)
+            elif args.transfer_stage == "fit-shared-prior":
+                diagnose(args.native, args.scores, args.output, args.protocol, method='prior_fit')
+            elif args.transfer_stage == "explore-shared":
+                diagnose(args.native, args.scores, args.output, args.protocol, method='hierarchy')
+            elif args.transfer_stage == "compare-pooling":
+                diagnose(args.native, args.scores, args.output, args.protocol, method='pooling')
+            else:
+                diagnose(args.native, args.scores, args.output, args.protocol, args.constraint_chain)
+    elif args.stage == "verify":
+        from .verify import verify
+
+        verify(args.packs, args.baseline, args.output)
+    elif args.stage == "export-hallurag":
+        from .export_hallurag import export_hallurag
+
+        report = export_hallurag(args.files, args.output)
+        print(f"exported {report['responses']} HalluRAG responses")
+    elif args.stage == "prepare-dataset":
+        from .datasets import prepare_dataset
+
+        ids = None
+        if args.ids is not None:
+            value = data.read_json(args.ids)
+            ids = value.get("ids") if isinstance(value, dict) else value
+            if not isinstance(ids, list):
+                command.error("--ids JSON must be an array or an object with an ids array")
+        result = prepare_dataset(args.name, args.data, args.output,
+                                 args.split, args.task, args.limit, ids)
+        print(f"prepared {result['samples']} {result['dataset']} samples")
+    elif args.stage == "predict-dataset":
+        pipeline.predict_dataset(args.input, args.model, args.task, args.output,
+                                 args.references, args.device, args.method)
+    elif args.stage == "evaluate-dataset":
+        from .evaluate import evaluate_dataset
+
+        if args.bootstrap < 1:
+            command.error("--bootstrap must be positive")
+        report = evaluate_dataset(args.scores, args.annotations, args.output,
+                                  args.bootstrap, args.seed, args.claim_positive_labels,
+                                  args.label_granularity)
+        print(f"{report['granularity']} AUROC={report['metrics']['auroc']} AP={report['metrics']['ap']}")
+    elif args.stage == "prepare":
+        if args.cache:
+            data.prepare(args.cache, args.output)
+        else:
+            if args.model is None:
+                command.error("prepare --dataset requires --model")
+            from .inputs import prepare_official
+
+            prepare_official(args.dataset, args.model, args.output)
+    elif args.stage == "measure":
+        measure.measure(args.input, args.output, args.task, args.split, args.native, args.device)
+    elif args.stage == "fit":
+        pipeline.fit(args.data, args.task, args.output)
+    elif args.stage == "score":
+        pipeline.score(args.data, args.task, args.partition, args.model, args.output)
+    else:
+        from .evaluate import evaluate
+
+        report = evaluate(args.scores)
+        print(f"AUROC={report['auroc']} AP={report['ap']}")
+
+
+if __name__ == "__main__":
+    main()

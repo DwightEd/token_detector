@@ -5,8 +5,8 @@ from pathlib import Path
 
 import pytest
 
-from myproject_experiment import data, datasets, run
-from myproject_experiment.evaluate import evaluate_dataset
+from experiments import data, datasets, run
+from experiments.evaluate import evaluate_dataset
 
 from .test_dataset_pipeline import (
     FakeDetector,
@@ -160,7 +160,7 @@ def test_sealed_token_evaluation_preserves_scores_exports_all_labels_and_keeps_n
     assert (tmp_path / "native-before/units.jsonl").read_bytes() == (tmp_path / "native-after/units.jsonl").read_bytes()
     assert {path: data.file_hash(path) for path in immutable} == immutable
     monkeypatch.setattr("sys.argv", [
-        "myproject_experiment.run", "evaluate-dataset", "--scores", str(output),
+        "experiments.run", "evaluate-dataset", "--scores", str(output),
         "--label-granularity", "token", "--bootstrap", "16", "--output", str(tmp_path / "cli-token"),
     ])
     run.main()

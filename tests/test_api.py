@@ -41,7 +41,7 @@ def text_detector():
         max_position_embeddings=128, attention_dropout=0.,
     )).eval().requires_grad_(False)
     model.set_attn_implementation("sdpa")
-    return HallucinationDetector(model, CharacterTokenizer())
+    return HallucinationDetector(model, CharacterTokenizer(), method="r4")
 
 
 def test_fit_predict_is_silent_keeps_original_offsets_and_writes_only_on_save(
@@ -72,7 +72,7 @@ def test_from_pretrained_uses_bundled_task_references(task):
     model, tokenizer = object(), CharacterTokenizer()
     with patch("transformers.AutoTokenizer.from_pretrained", return_value=tokenizer), \
             patch("myproject.model.load_model", return_value=model) as load_model:
-        detector = HallucinationDetector.from_pretrained("local-model", task=task, device="cpu")
+        detector = HallucinationDetector.from_pretrained("local-model", task=task, device="cpu", method="r4")
     load_model.assert_called_once_with("local-model", "cpu")
     assert detector.model is model and detector.tokenizer is tokenizer
     assert detector.readout.task == task
@@ -136,7 +136,7 @@ def test_model_loading_is_quiet_and_restores_caller_logging_settings(
 
 
 def test_unfitted_empty_and_invalid_source_inputs_fail_before_measurement():
-    detector = HallucinationDetector(object(), CharacterTokenizer())
+    detector = HallucinationDetector(object(), CharacterTokenizer(), method="r4")
     with pytest.raises(ValueError, match="Fit reference"):
         detector.predict("Facts: B.", "A.", "B.")
     with pytest.raises(ValueError, match="at least one example"):
@@ -150,3 +150,20 @@ def test_unfitted_empty_and_invalid_source_inputs_fail_before_measurement():
         with pytest.raises(ValueError, match="occurring once"):
             detector.predict(prompt, "A.", source)
     assert detector._observer is None
+
+
+def test_default_shared_predicts_without_fit_and_preserves_text_offsets(
+        text_detector, tmp_path, monkeypatch, capsys):
+    monkeypatch.chdir(tmp_path)
+    detector = HallucinationDetector(text_detector.model, CharacterTokenizer())
+    assert detector.readout.method == "shared"
+    result = detector.predict("Facts: B. Answer:", "A\x00B.", "B.")
+    assert [(row["token_id"], row["start"], row["end"]) for row in result] == [
+        (65, 0, 1), (66, 2, 3), (46, 3, 4),
+    ]
+    assert all(np.isfinite(row["score"]) for row in result)
+    assert list(tmp_path.iterdir()) == []
+    captured = capsys.readouterr()
+    assert captured.out == captured.err == ""
+    with pytest.raises(ValueError, match="needs no FIT"):
+        detector.fit([])

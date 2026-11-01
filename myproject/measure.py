@@ -2,6 +2,18 @@
 
 import numpy as np
 
+from .distribution import DISTRIBUTION_FIELDS
+
+
+def token_scores(pack: dict, response: dict, scores: np.ndarray) -> list[dict]:
+    """Render scores on the existing original token/character axis, without I/O."""
+    result = []
+    for target, token_id, score in zip(pack['target'], pack['token_id'], scores, strict=True):
+        start, end = map(int, response['offsets'][target])
+        result.append({'token_id': int(token_id), 'text': response['text'][start:end],
+                       'start': start, 'end': end, 'score': float(score)})
+    return result
+
 
 def window_mean(values: np.ndarray, window: int = 16) -> np.ndarray:
     """Historical offline route window: seven past and eight future positions."""
@@ -29,12 +41,12 @@ def canonical_delta(values: np.ndarray, units: list[dict]) -> np.ndarray:
     return result
 
 
-def answer_rows(observed: dict, response: dict, answer_index: int) -> dict:
-    """Align measurements, excluding only empty offsets and special tokens."""
+def answer_axis(response: dict, answer_index: int = 0) -> dict:
+    """Original valid-token/unit axes, independent of which signals were measured."""
     token_id = np.asarray(response["answer_ids"])
-    if not np.array_equal(observed["token_id"], token_id):
-        raise ValueError("Measurement and prepared response token IDs differ")
-    offsets = np.asarray(response["offsets"])
+    offsets = np.asarray(response["offsets"]).reshape(-1, 2)
+    if offsets.shape != (len(token_id), 2):
+        raise ValueError('Response offsets and tokens differ')
     valid = ((offsets[:, 1] > offsets[:, 0])
              & ~np.isin(token_id, response["special_ids"]))
     unit_index = np.empty(len(token_id), dtype=np.int32)
@@ -42,9 +54,18 @@ def answer_rows(observed: dict, response: dict, answer_index: int) -> dict:
         unit_index[unit["start"]:unit["stop"]] = index
     count = int(valid.sum())
     return {
-        "delta": canonical_delta(observed["delta"], response["units"])[valid],
-        "route": window_mean(observed["route"])[valid],
         "target": np.flatnonzero(valid), "token_id": token_id[valid],
         "answer_index": np.full(count, answer_index, dtype=np.int32),
         "unit_index": unit_index[valid],
     }
+
+
+def answer_rows(observed: dict, response: dict, answer_index: int) -> dict:
+    """Align measurements, excluding only empty offsets and special tokens."""
+    if not np.array_equal(observed["token_id"], response['answer_ids']):
+        raise ValueError("Measurement and prepared response token IDs differ")
+    axis = answer_axis(response, answer_index)
+    target = axis['target']
+    return {"delta": canonical_delta(observed["delta"], response["units"])[target],
+            "route": window_mean(observed["route"])[target], **axis,
+            **{key: observed[key][target] for key in DISTRIBUTION_FIELDS if key in observed}}

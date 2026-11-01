@@ -48,7 +48,7 @@ def prefill(model, tokens):
     return cache
 
 
-def score_continuation(model, cache, last_prompt_token, answer):
+def score_continuation(model, cache, last_prompt_token, answer, on_logits=None):
     """Query P+t-1 predicts y_t; local callers reset the prefix before a unit."""
     queries = [last_prompt_token, *answer[:-1]]
     likelihoods = []
@@ -58,7 +58,10 @@ def score_continuation(model, cache, last_prompt_token, answer):
                 input_ids=input_ids(model, queries[start:start + QUERY_CHUNK]),
                 past_key_values=cache, use_cache=True, return_dict=True,
             ).last_hidden_state[0]
-            logits = model.lm_head(hidden).float()
+            native = model.lm_head(hidden)
+            if on_logits is not None:
+                on_logits(start, native)
+            logits = native.float()
             targets = input_ids(model, answer[start:start + QUERY_CHUNK])[0]
             actual = logits.gather(1, targets[:, None])[:, 0]
             likelihoods.append((actual - logits.logsumexp(-1)).cpu().numpy())

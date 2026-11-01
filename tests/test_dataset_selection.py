@@ -4,8 +4,8 @@ import json
 
 import pytest
 
-from myproject_experiment import run
-from myproject_experiment.datasets import prepare_dataset, read_jsonl
+from experiments import run
+from experiments.datasets import prepare_dataset, read_jsonl
 from .test_datasets import hallurag_row, rag_response, ragtruth_files, write_rows
 
 

@@ -6,12 +6,15 @@ from pathlib import Path
 
 from .api import HallucinationDetector
 from .detector import RECIPES
+from .shared import METHODS
 
 
 def main() -> None:
     command = argparse.ArgumentParser(__doc__)
     command.add_argument("--model", type=Path, required=True)
     command.add_argument("--references", type=Path)
+    command.add_argument("--method", choices=METHODS,
+                         help='shared default; persistent V2, witness V3, responsibility diagnostic, or legacy r4')
     command.add_argument("--task", choices=tuple(RECIPES), default="QA")
     command.add_argument("--device", default="cuda:0")
     command.add_argument("--input", type=Path, help="JSON with prompt, source and response")
@@ -30,7 +33,7 @@ def main() -> None:
             command.error("provide --input or all of --prompt/--source/--response")
         example = {"prompt": args.prompt, "source": args.source, "response": args.response}
     detector = HallucinationDetector.from_pretrained(
-        args.model, task=args.task, references=args.references, device=args.device,
+        args.model, task=args.task, references=args.references, device=args.device, method=args.method,
     )
     result = detector.predict(example["prompt"], example["response"], example["source"])
     output = json.dumps(result, ensure_ascii=False) + "\n"

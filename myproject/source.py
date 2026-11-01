@@ -12,7 +12,7 @@ from .model import (
 from .routing import observe_route
 
 
-def source_full(model, cache, prompt, answer, source_mask, grams):
+def source_full(model, cache, prompt, answer, source_mask, grams, on_logits=None):
     queries = [prompt[-1], *answer[:-1]]
     likelihoods = []
     routes = []
@@ -24,7 +24,10 @@ def source_full(model, cache, prompt, answer, source_mask, grams):
                     input_ids=input_ids(model, queries[start:start + QUERY_CHUNK]),
                     past_key_values=cache, use_cache=True, return_dict=True,
                 ).last_hidden_state[0]
-            logits = model.lm_head(hidden).float().log_softmax(-1)
+            native = model.lm_head(hidden)
+            if on_logits is not None:
+                on_logits(start, native)
+            logits = native.float().log_softmax(-1)
             targets = input_ids(model, answer[start:start + QUERY_CHUNK])[0]
             likelihoods.append(logits.gather(1, targets[:, None])[:, 0].cpu().numpy())
             source = np.stack([layers[index]["norm_source"] for index in layers], axis=1)
@@ -35,14 +38,14 @@ def source_full(model, cache, prompt, answer, source_mask, grams):
     return np.concatenate(likelihoods), np.concatenate(routes)
 
 
-def source_condition(model, prompt, answer, units, source_mask=None, grams=None):
+def source_condition(model, prompt, answer, units, source_mask=None, grams=None, on_logits=None):
     """Full history and independent unit-local histories share one prompt prefill."""
     cache = prefill(model, prompt[:-1])
     if source_mask is None:
-        full = score_continuation(model, cache, prompt[-1], answer)
+        full = score_continuation(model, cache, prompt[-1], answer, on_logits)
         route = None
     else:
-        full, route = source_full(model, cache, prompt, answer, source_mask, grams)
+        full, route = source_full(model, cache, prompt, answer, source_mask, grams, on_logits)
     local = np.empty_like(full)
     for unit in units:
         cache.crop(len(prompt) - 1)

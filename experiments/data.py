@@ -12,7 +12,7 @@ FIELDS = ("delta", "route", "target", "token_id", "answer_index", "unit_index", 
 
 
 def read_json(path: Path) -> dict:
-    return json.loads(Path(path).read_text())
+    return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
 def write_json(path: Path, value: dict) -> None:
@@ -36,6 +36,36 @@ def file_hash(path: Path) -> str:
         for block in iter(lambda: stream.read(1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def verify_seal(root: Path, *, expected=None, required=()) -> dict:
+    """Validate every member and its containment before hashing any member."""
+    root = Path(root).resolve()
+    seal_path = root / 'seal.json'
+    if not seal_path.resolve().is_relative_to(root):
+        raise ValueError('Seal file escapes its artifact root')
+    seal = read_json(seal_path)
+    if (not isinstance(seal, dict) or not seal or not set(required).issubset(seal)
+            or (expected is not None and set(seal) != set(expected))):
+        raise ValueError("Sealed artifact member set changed")
+    paths = []
+    for name, digest in seal.items():
+        if (not isinstance(name, str) or not name or not Path(name).parts or not isinstance(digest, str)
+                or Path(name).is_absolute() or str(Path(name)) != name
+                or any(part in {'.', '..'} for part in Path(name).parts)):
+            raise ValueError("Unsafe sealed artifact member path")
+        try:
+            path = (root / name).resolve()
+        except (OSError, RuntimeError) as error:
+            raise ValueError("Unsafe sealed artifact member path") from error
+        if not path.is_relative_to(root):
+            raise ValueError("Sealed artifact member escapes its root")
+        paths.append((path, digest))
+    for path, digest in paths:
+        if not path.is_file() or file_hash(path) != digest:
+            raise ValueError("Sealed artifact changed")
+
+    return seal
 
 
 def load_pack(path: Path) -> dict:

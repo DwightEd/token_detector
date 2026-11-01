@@ -1,6 +1,7 @@
 """Dataset adapters with separate inference inputs and native annotations."""
 
 import json
+import csv
 from collections import Counter
 from collections.abc import Iterator
 from dataclasses import asdict, dataclass
@@ -163,6 +164,32 @@ def _claimdb(path: Path, split: str, task: str | None):
                                   coverage="complete" if native_label is not None else "hidden")
 
 
+def _fred(path: Path, split: str, task: str | None):
+    from .span_markup import decode_edits, fred_text
+
+    if split not in {'train', 'test'} or task not in {None, 'QA', 'finqa', 'tatqa'}:
+        raise ValueError('FRED split must be train/test and task finqa/tatqa/QA')
+    components = [task] if task in {'finqa', 'tatqa'} else ['finqa', 'tatqa']
+    for component in components:
+        suffix = ('_3k' if component == 'finqa' else '_5k') if split == 'train' else ''
+        with (path / f'{split}_{component}{suffix}.csv').open(newline='', encoding='utf-8-sig') as stream:
+            for index, row in enumerate(csv.DictReader(stream)):
+                source, response = fred_text(row['prompt'])
+                prompt = f'Reference material:\n{source}\n\nResponse:\n'
+                sample = Sample(f'fred:{component}:{split}:{index}', data.text_hash(source),
+                                split, 'QA', prompt, source, response, 'not_released')
+                try:
+                    reconstructed, spans = decode_edits(row['completion'])
+                    if reconstructed != response:
+                        raise ValueError('Edit markup does not reconstruct original text')
+                    fields = {'spans': spans, 'coverage': 'complete'}
+                except ValueError as error:
+                    fields = {'spans': [], 'coverage': 'unalignable', 'alignment_error': str(error)}
+                yield sample, _annotation(sample, 'token', **fields,
+                    label_provenance='released synthetic/silver edit spans; not human natural errors',
+                    native_component=component, native_row=index)
+
+
 def _hallurag_source(prompt: dict) -> tuple[str, str]:
     """Extract retrieved chunks from released messages, never the oracle passage."""
     messages = prompt["rag_prompt"]
@@ -285,6 +312,18 @@ def prepare_dataset(name: str, path: Path, output: Path, split: str = "test",
         source_grouping = "db_name"
         bootstrap_type = "database"
         receipt = path / "ACQUISITION_RECEIPT.json"
+        if receipt.exists():
+            provenance_files.append(receipt)
+    elif name == 'fred':
+        examples = _fred(path, split, task)
+        components = [task] if task in {'finqa', 'tatqa'} else ['finqa', 'tatqa']
+        raw_files = [path / f'{split}_{c}{("_3k" if c == "finqa" else "_5k") if split == "train" else ""}.csv'
+                     for c in components]
+        modality, version = 'text', 'pegasi-ai/fine-grained-editting@afdab2c54075ade8c890331da099cc9b25d1f6a5'
+        prompt_policy = 'fixed source-only completion prompt; original generation question/prompt unavailable; no input Text or edit tags in prompt'
+        source_grouping = 'SHA256 of exact released reference text; company/filing identity unavailable'
+        bootstrap_type = 'reference_text'
+        receipt = path / 'ACQUISITION_RECEIPT.json'
         if receipt.exists():
             provenance_files.append(receipt)
     else:

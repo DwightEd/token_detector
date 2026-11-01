@@ -22,8 +22,13 @@ venv/
 /checkpoints/
 /experiment_results/
 /artifacts/
+/.aris/traces/
+/.aris/compute/
 *.safetensors
 *.pt
 *.pth
 *.tar.gz
 *.zip
+/paper/main*.pdf
+/paper/figures/versions/
+/paper/.aris/

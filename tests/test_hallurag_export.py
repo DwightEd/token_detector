@@ -4,9 +4,9 @@ import pickle
 
 import pytest
 
-from myproject_experiment.datasets import prepare_dataset, read_jsonl, read_samples
-from myproject_experiment.export_hallurag import export_hallurag
-from myproject_experiment.data import file_hash
+from experiments.datasets import prepare_dataset, read_jsonl, read_samples
+from experiments.export_hallurag import export_hallurag
+from experiments.data import file_hash
 
 from .test_datasets import hallurag_row
 

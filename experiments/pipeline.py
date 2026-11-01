@@ -6,6 +6,7 @@ import numpy as np
 
 from . import data
 from myproject.detector import Detector
+from myproject.shared import METHODS, SHARED_METHODS
 
 
 def fit(root: Path, task: str, output: Path) -> None:
@@ -36,17 +37,23 @@ def score(root: Path, task: str, partition: str, model: Path, output: Path) -> N
 
 
 def predict_dataset(prepared: Path, model: Path, task: str, output: Path,
-                    references: Path | None = None, device: str = "cuda:0") -> None:
+                    references: Path | None = None, device: str = "cuda:0",
+                    method: str | None = None) -> None:
     """Score prepared text inputs, checkpoint each response, then seal predictions.
 
-    The bundled R4 references are reused unless explicitly supplied. Annotation
-    files are never opened here. Resuming requires identical inputs and code.
+    Shared is the main baseline and needs no references. Explicit legacy R4
+    can load references. Resuming requires identical method, inputs and code.
     """
     import json
 
     from myproject.api import HallucinationDetector
     from .datasets import read_samples
 
+    method = method or ('r4' if references is not None else 'shared')
+    if method not in METHODS:
+        raise ValueError(f'method must be one of {METHODS}')
+    if method in SHARED_METHODS and references is not None:
+        raise ValueError('Shared detection does not use R4 reference distributions')
     prepared, output = Path(prepared).resolve(), Path(output).resolve()
     samples = list(read_samples(prepared / "inputs.jsonl"))
     if not samples:
@@ -55,8 +62,10 @@ def predict_dataset(prepared: Path, model: Path, task: str, output: Path,
         _ = sample.inputs  # Validate text-evidence support before loading a model.
         if sample.task != task:
             raise ValueError("Select one recipe/task per prediction run")
-    reference = (Path(references).resolve() if references else
-                 Path(__file__).parents[1] / "myproject/references" / f"{task}.npz")
+    reference = None
+    if method == 'r4':
+        reference = (Path(references).resolve() if references else
+                     Path(__file__).parents[1] / "myproject/references" / f"{task}.npz")
     manifest = data.read_json(prepared / "manifest.json")
     if (data.file_hash(prepared / "inputs.jsonl") != manifest["inputs_sha256"]
             or len(samples) != manifest["samples"]):
@@ -71,9 +80,10 @@ def predict_dataset(prepared: Path, model: Path, task: str, output: Path,
         "input": str(prepared / "inputs.jsonl"),
         "input_sha256": data.file_hash(prepared / "inputs.jsonl"),
         "manifest_sha256": data.file_hash(prepared / "manifest.json"),
-        "model": str(Path(model).resolve()), "task": task, "device": device,
+        "model": str(Path(model).resolve()), "task": task, "device": device, "method": method,
         "model_files": {str(path.resolve()): data.file_hash(path) for path in model_files},
-        "references": str(reference), "reference_sha256": data.file_hash(reference),
+        "references": str(reference) if reference is not None else None,
+        "reference_sha256": data.file_hash(reference) if reference is not None else None,
         "code": {str(path.resolve()): data.file_hash(path) for path in sorted(code)},
     }
     output.mkdir(parents=True, exist_ok=True)
@@ -108,7 +118,7 @@ def predict_dataset(prepared: Path, model: Path, task: str, output: Path,
             continue
         if detector is None:
             detector = HallucinationDetector.from_pretrained(
-                model, task=task, references=reference, device=device,
+                model, task=task, references=reference, device=device, method=method,
             )
         tokens = detector.predict(**sample.inputs)
         prediction = {**identity, "tokens": tokens}
@@ -128,8 +138,9 @@ def predict_dataset(prepared: Path, model: Path, task: str, output: Path,
         raise ValueError("Run metadata changed during inference")
     bindings = {**config["code"], **config["model_files"],
                 config["input"]: config["input_sha256"],
-                str(prepared / "manifest.json"): config["manifest_sha256"],
-                config["references"]: config["reference_sha256"]}
+                str(prepared / "manifest.json"): config["manifest_sha256"]}
+    if reference is not None:
+        bindings[config['references']] = config['reference_sha256']
     for path, expected_hash in bindings.items():
         if data.file_hash(Path(path)) != expected_hash:
             raise ValueError("Inference inputs, references or code changed during the run")
@@ -176,9 +187,9 @@ def _validate_prediction(prediction: dict, sample) -> list[dict]:
 
 def _verify_predictions(directory: Path) -> None:
     """Verify the exact completed prediction file set before any evaluation."""
-    sealed = data.read_json(directory / "seal.json")
+    try:
+        sealed = data.verify_seal(directory)
+    except ValueError as error:
+        raise ValueError(f"Sealed prediction validation failed: {error}") from error
     if {path.name for path in directory.iterdir()} != {*sealed, "seal.json"}:
         raise ValueError("The sealed prediction file set differs")
-    for name, expected in sealed.items():
-        if data.file_hash(directory / name) != expected:
-            raise ValueError(f"Sealed prediction changed: {name}")

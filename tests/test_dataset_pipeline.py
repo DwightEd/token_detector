@@ -9,9 +9,9 @@ import numpy as np
 import pytest
 
 from myproject.api import HallucinationDetector
-from myproject_experiment import data, pipeline, run
-from myproject_experiment.datasets import Sample, read_jsonl
-from myproject_experiment.evaluate import evaluate_dataset
+from experiments import data, pipeline, run
+from experiments.datasets import Sample, read_jsonl
+from experiments.evaluate import evaluate_dataset
 
 
 def write_rows(path, rows):
@@ -260,7 +260,7 @@ def test_cli_prepares_predicts_and_evaluates_without_gpu(tmp_path, model_files, 
         ["evaluate-dataset", "--scores", str(scores), "--bootstrap", "16", "--output", str(evaluation)],
     ]
     for arguments in commands:
-        monkeypatch.setattr("sys.argv", ["myproject_experiment.run", *arguments])
+        monkeypatch.setattr("sys.argv", ["experiments.run", *arguments])
         run.main()
     report = data.read_json(evaluation / "evaluation.json")
     assert report["granularity"] == "token" and report["metrics"]["units"] == 2

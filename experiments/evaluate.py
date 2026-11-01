@@ -56,6 +56,49 @@ def ranking(labels: np.ndarray, score: np.ndarray) -> dict:
     }
 
 
+def localization_diagnostics(labels, scores, answer_index, unit_index):
+    """Post-seal label diagnostics, never detector inputs or tuning targets.
+
+    Onset means the first token of each contiguous positive run on the original
+    valid-token axis, resetting at answer boundaries. Each positive stratum is
+    ranked against all original clean tokens; other positives are excluded.
+    """
+    from myproject.detector import unit_ranges
+
+    labels, scores = np.asarray(labels, bool), np.asarray(scores)
+    answer_index, unit_index = np.asarray(answer_index), np.asarray(unit_index)
+    if any(x.shape != labels.shape for x in [scores, answer_index, unit_index]):
+        raise ValueError('Localization axes must match original labels')
+    same_previous = np.r_[False, answer_index[1:] == answer_index[:-1]]
+    previous = np.r_[False, labels[:-1]] & same_previous
+    following = np.r_[labels[1:], False] & np.r_[same_previous[1:], False]
+    strata = {'onset': labels & ~previous, 'continuation': labels & previous,
+              'isolated': labels & ~previous & ~following}
+    result = {}
+    for key, positive in strata.items():
+        selected = positive | ~labels
+        result[key] = ranking(positive[selected], scores[selected])
+    for key, units in [('within_span', unit_index), ('within_answer', np.zeros(len(labels), int))]:
+        starts, stops = unit_ranges(answer_index, units)
+        total, concordance, mixed = 0, 0., 0
+        for a, b in zip(starts, stops, strict=True):
+            y = labels[a:b]
+            pairs = int(y.sum())*int((~y).sum())
+            if pairs:
+                mixed += 1
+                total += pairs
+                concordance += pairs*float(roc_auc_score(y, scores[a:b]))
+        result[key] = {'mixed_groups': mixed, 'groups': len(starts), 'positive_negative_pairs': total,
+                       'pair_weighted_auroc': concordance/total if total else None}
+    starts, stops = unit_ranges(answer_index, unit_index)
+    lengths = np.repeat(stops-starts, stops-starts)
+    result['span_lengths'] = {key: ranking(labels[mask], scores[mask]) for key, mask in [
+        ('1_8', lengths <= 8), ('9_32', (lengths > 8) & (lengths <= 32)), ('33_plus', lengths > 32)]}
+    boundary = np.zeros(len(labels), bool); boundary[starts] = True
+    result['span_boundary_positive_tokens'] = int((boundary & labels).sum())
+    return result
+
+
 def evaluate(output: Path) -> dict:
     """Verify sealed files, then read Gold and produce one compact report."""
     seal = data.read_json(output / "seal.json")
@@ -79,30 +122,40 @@ def _span_score(tokens: list[dict], start: int, end: int) -> float:
     return float(np.average([row["score"] for row in tokens], weights=weights))
 
 
+def _ranked_rows(labels, scores, index):
+    order = np.argsort(scores, kind="stable")[::-1]
+    first = np.r_[0, np.flatnonzero(scores[order][1:] != scores[order][:-1]) + 1]
+    return labels[order], index[order], first
+
+
+def _weighted_ranks(prepared, counts):
+    """Tie-aware AUROC/AP from group multiplicities; never sort within a draw."""
+    labels, index, first = prepared
+    weights = counts[index]
+    positive = np.add.reduceat(weights*labels, first)
+    total = np.add.reduceat(weights, first)
+    negative = total-positive
+    npos, nneg = positive.sum(), negative.sum()
+    auroc = (float(np.sum(positive*(nneg-np.cumsum(negative)+.5*negative))/(npos*nneg))
+             if npos and nneg else None)
+    cumulative = np.cumsum(total)
+    precision = np.divide(np.cumsum(positive), cumulative,
+                          out=np.zeros(len(total), float), where=cumulative > 0)
+    ap = float(positive @ precision/npos) if npos else None
+    return {'auroc': auroc, 'ap': ap}
+
+
 def _cluster_intervals(labels, scores, groups, repetitions, seed):
     """Bootstrap whole groups, reusing score order and ties across all draws."""
     _, index = np.unique(groups, return_inverse=True)
-    count = int(index.max()) + 1
-    order = np.argsort(scores, kind="stable")[::-1]
-    labels, index = labels[order], index[order]
-    first = np.r_[0, np.flatnonzero(scores[order][1:] != scores[order][:-1]) + 1]
+    count = int(index.max())+1
+    prepared = _ranked_rows(labels, scores, index)
     values = {"auroc": [], "ap": []}
     draws = np.random.default_rng(seed).integers(0, count, (repetitions, count))
     for draw in draws:
-        weights = np.bincount(draw, minlength=count)[index]
-        positive = np.add.reduceat(weights * labels, first)
-        total = np.add.reduceat(weights, first)
-        negative = total - positive
-        npos, nneg = positive.sum(), negative.sum()
-        if npos and nneg:
-            # Each positive beats negatives below its tie and half within it.
-            concordance = np.sum(positive * (nneg - np.cumsum(negative) + .5 * negative))
-            values["auroc"].append(float(concordance / (npos * nneg)))
-        if npos:
-            cumulative = np.cumsum(total)
-            precision = np.divide(np.cumsum(positive), cumulative,
-                                  out=np.zeros(len(total), float), where=cumulative > 0)
-            values["ap"].append(float(positive @ precision / npos))
+        for key, value in _weighted_ranks(prepared, np.bincount(draw, minlength=count)).items():
+            if value is not None:
+                values[key].append(value)
     return {name: {"defined": len(samples), "degenerate": repetitions - len(samples),
                    "interval95": np.quantile(samples, [.025, .975]).tolist() if samples else None}
             for name, samples in values.items()}
@@ -171,7 +224,8 @@ def evaluate_dataset(output: Path, annotations: Path | None, destination: Path,
                 or prediction["id"] != key or prediction["source_id"] != sample.source_id):
             raise ValueError("Prediction/annotation response identity differs")
         tokens = _validate_prediction(prediction, sample)
-        common = {"id": key, "source_id": sample.source_id, "generator": sample.generator}
+        common = {"id": key, "source_id": sample.source_id, "generator": sample.generator,
+                  "response_sha256": response_hash}
         if project_sentences:
             _check_spans(sample.response, annotation["spans"])
             projected = sentence_token_labels(annotation, tokens)
@@ -180,7 +234,7 @@ def evaluate_dataset(output: Path, annotations: Path | None, destination: Path,
             for index, (token, target) in enumerate(zip(tokens, projected, strict=True)):
                 identity = {"token_index": index, **{name: token[name] for name in
                             ("token_id", "text", "start", "end")}}
-                label_row = {**common, "response_sha256": response_hash, **identity,
+                label_row = {**common, **identity,
                              "label": target["label"],
                              "native_sentence_indices": target["sentence_indices"],
                              "exclusion": target["exclusion"]}
@@ -194,11 +248,15 @@ def evaluate_dataset(output: Path, annotations: Path | None, destination: Path,
         elif granularity == "token":
             if annotation["coverage"] != "complete":
                 raise ValueError("Token labels require complete native annotation coverage")
-            for row in tokens:
+            _check_spans(sample.response, annotation["spans"])
+            for index, row in enumerate(tokens):
                 label = any(row["start"] < span["end"] and row["end"] > span["start"]
                             for span in annotation["spans"] if span["label"] == 1)
-                units.append({**common, "start": row["start"], "end": row["end"],
-                              "label": label, "score": row["score"]})
+                identity = {"token_index": index, **{name: row[name] for name in
+                            ("token_id", "text", "start", "end")}}
+                token_dataset.append({**common, **identity, "label": label,
+                                      "native_sentence_indices": [], "exclusion": None})
+                units.append({**common, **identity, "label": label, "score": row["score"]})
         elif granularity == "sentence":
             if annotation["coverage"] == "unalignable":
                 unalignable += 1
@@ -237,7 +295,8 @@ def evaluate_dataset(output: Path, annotations: Path | None, destination: Path,
         by_generator[generator] = value
     report = {
         "dataset": manifest["dataset"], "split": manifest["split"],
-        "granularity": granularity, "recipe": run["task"], "samples_scored": len(samples),
+        "granularity": granularity, "native_granularity": native_granularity,
+        "recipe": run["task"], "samples_scored": len(samples),
         "samples_evaluated": len({row["id"] for row in units}),
         "groups_evaluated": len(set(groups)), "group_type": manifest["bootstrap_type"],
         "coverage": dict(Counter(row["coverage"] for row in gold.values())),
@@ -267,13 +326,22 @@ def evaluate_dataset(output: Path, annotations: Path | None, destination: Path,
             tokens_excluded=dict(exclusions), tokens_crossing_sentence_boundaries=boundary_tokens,
             unknown_units_excluded=exclusions["undefined"], native_unknown_sentences=unknown,
         )
+    elif granularity == "token":
+        provenance = {row.get("label_provenance") for row in gold.values()}
+        report.update(
+            label_provenance=("human character-span-derived token labels"
+                              if manifest["dataset"] == "ragtruth" else
+                              next(iter(provenance)) if len(provenance) == 1 else None),
+            tokens_scored=len(token_dataset), tokens_evaluated=len(units),
+            tokens_excluded={},
+        )
     destination = Path(destination)
     destination.mkdir(parents=True, exist_ok=False)
     data.write_json(destination / "evaluation.json", report)
     with (destination / "units.jsonl").open("x", encoding="utf-8") as stream:
         for row in units:
             stream.write(json.dumps(row, ensure_ascii=False, allow_nan=False) + "\n")
-    if project_sentences:
+    if granularity == "token":
         with (destination / "token_labels.jsonl").open("x", encoding="utf-8") as stream:
             for row in token_dataset:
                 stream.write(json.dumps(row, ensure_ascii=False, allow_nan=False) + "\n")
@@ -281,3 +349,23 @@ def evaluate_dataset(output: Path, annotations: Path | None, destination: Path,
         path.name: data.file_hash(path) for path in sorted(destination.iterdir())
     })
     return report
+
+
+def paired_source_differences(labels, baseline, candidate, groups, repetitions=1000, seed=17):
+    """Whole-source paired resampling; count undefined metric replicates explicitly."""
+    labels = np.asarray(labels, bool)
+    _, index = np.unique(groups, return_inverse=True)
+    n = int(index.max())+1
+    prepared = [_ranked_rows(labels, np.asarray(score), index) for score in [baseline, candidate]]
+    values = {'auroc': [], 'ap': []}
+    rng = np.random.default_rng(seed)
+    for _ in range(repetitions):
+        counts = np.bincount(rng.integers(0, n, n), minlength=n)
+        before, after = [_weighted_ranks(part, counts) for part in prepared]
+        for name in values:
+            if before[name] is not None:
+                values[name].append(after[name]-before[name])
+    return {'seed':seed,'repetitions':repetitions,'unit':'source_id',
+            **{name:{'defined':len(v),'degenerate':repetitions-len(v),
+                     'interval95':np.quantile(v,[.025,.975]).tolist() if v else None}
+               for name,v in values.items()}}

@@ -5,8 +5,8 @@ from dataclasses import asdict
 
 import pytest
 
-from myproject_experiment.datasets import Sample, prepare_dataset, read_jsonl, read_samples
-from myproject_experiment.data import file_hash
+from experiments.datasets import Sample, prepare_dataset, read_jsonl, read_samples
+from experiments.data import file_hash
 
 
 def write_rows(path, rows):
@@ -203,7 +203,7 @@ def test_inference_inputs_validate_strings_and_unique_source(prompt, source, res
 
 
 def test_hallurag_cli_accepts_native_val_and_validation_alias(tmp_path, monkeypatch):
-    from myproject_experiment.run import main
+    from experiments.run import main
 
     raw = tmp_path / "raw"
     row = hallurag_row("template_langchain_hub")
@@ -213,7 +213,7 @@ def test_hallurag_cli_accepts_native_val_and_validation_alias(tmp_path, monkeypa
     for split in ("val", "validation"):
         output = tmp_path / split
         monkeypatch.setattr("sys.argv", [
-            "myproject_experiment.run", "prepare-dataset", "--name", "hallurag",
+            "experiments.run", "prepare-dataset", "--name", "hallurag",
             "--data", str(raw), "--split", split, "--output", str(output),
         ])
         main()

@@ -37,11 +37,17 @@ def encode_source(tokenizer, prompt: str, source: str) -> dict:
     """Mark the unique source passage inside the complete user prompt."""
     if not source or prompt.count(source) != 1:
         raise ValueError("source must be a nonempty substring occurring once in prompt")
-    start = prompt.index(source)
-    stop = start + len(source)
     chat = tokenizer.apply_chat_template(
         [dict(role="user", content=prompt)], tokenize=False, add_generation_prompt=True,
     )
+    if prompt not in chat:
+        # Llama templates trim message edges. Align to the content actually sent
+        # to the model, while requiring the complete evidence to remain intact.
+        prompt = prompt.strip()
+        if prompt.count(source) != 1:
+            raise ValueError('Chat template altered the source passage')
+    start = prompt.index(source)
+    stop = start + len(source)
     shift = chat.index(prompt)
     encoded = tokenizer(chat, add_special_tokens=False, return_offsets_mapping=True)
     offsets = np.asarray(encoded["offset_mapping"])
