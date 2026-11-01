@@ -1,0 +1,28 @@
+# 实际验证与未覆盖范围
+
+基线提交：`1210120748b3a05bd271bc79debcbed4fdc0c964`。本轮新改动仅为评价诊断、其测试和学习/研究材料；没有把新候选切为默认检测器。恢复时的724/147历史测试不计入本轮。
+
+## 已实际执行
+
+- 使用仓库 `.venv/Scripts/python.exe`，Python3.13.9；NumPy2.4.6、SciPy1.17.1、torch2.8.0+cpu、Transformers4.57.1、pytest9.1.1。未使用默认缺torch的Anaconda解释器。
+- 新的27项参数化CPU检查通过：交换共享保序/ties、协方差导数、own slope=1、排列不变、c=0退化、跨片段次序变化；copying=True的独立copy/refresh枚举检查raw/witness的odds、evidence、E[c]；AUC完整对子枚举、整数精度、纯类/空集/不连续身份；实际评价JSON/seal写出和unknown排除边界。
+- 最终完整套件 **149 passed、1 skipped、9 subtests passed**（25.87秒）。唯一skip需要未提供的外部冻结HalluRAG TEST artifacts。
+- 独立reviewer在同一venv另行复现过修订时的26 passed。第一次用默认Anaconda的reviewer检查缺torch而失败，该失败不作为断言失败，也不冒充已独立复现。
+- 逐行渲染器检查所选文件源码SHA、每条非空行的明确解释覆盖、区间重叠及越界。主库21文件2421行128函数，零未解释非空行。这个检查只能发现覆盖/版本问题，不能证明解释质量或未读文件已被讲解。
+- 额外三个CPU fixture通过：有限JSON年份/单位语法能为不兼容金额声明生成组件；任意散文来源保持unknown；bounded_event_probability达到指定Bernoulli KL预算且混合事件质量一致。fixture按字符当token，只验证受限接口，不代表真实tokenizer/自然文本准确率。
+
+本轮日志/完整独立审查保存在本地 `outputs/source-reading-20261102/` 与 `.aris/traces/research-refine/`；桌面研究资料也保留副本。历史已封存结果没有被改写。
+
+## 测试假设和不能推出的结论
+
+序列积分oracle只有4个位置，枚举真实生产函数的有限状态模型；不是LM前向实验。AUC oracle显式枚举所有正负对，与生产的负类排序法独立。序列化测试调用真实fullgap.evaluate和真实JSON/seal写出，但score验证、数据投影与evaluate_dataset是fixture；它只证明最终报告字段不会丢失，不证明真实数据封存校验正确。
+
+真实 `evaluate_dataset` 当前会拒绝零可评价标签的群体。测试中的全unknown分支是报告边界的防御性检查，不能据此声称发现了一个实际可达的历史回归。
+
+## 未执行或未完成
+
+未运行GPU、LM权重加载、新生成、真实来源删除、完整词表模型观测或新的自然数据实验。无新人工支持性标注，无检测准确率提升结果，无事实概率校准。CPU torch与远端GPU BF16数值存在部署差异，本轮不声称逐位同值。
+
+默认库的eager来源路径、SDPA来源缺失路径及其hooks/CUDA内存行为未在真实模型上重新执行；fullgap collector已有匹配SDPA路径，不能混称。依赖分段、proof_revision完整联合事件推断与全部异常清理分支没有被本轮逐路径覆盖。proof编译仅检查了上述小fixture。现有主套件有相关历史API/测量检查，但不代表所有新解释路径均被实测。
+
+21个主库文件已完成逐行讲解；原始98文件清单还有主库之外的77文件（508个函数/嵌套定义）待逐行讲解。新增两测试文件和渲染工具另记在inventory.current_additions；未用泛化模板填充并声称完成。现有inventory是版本化进度索引，不是“全项目讲解完毕”的证据。

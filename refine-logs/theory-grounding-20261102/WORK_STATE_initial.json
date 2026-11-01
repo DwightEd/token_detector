@@ -1,0 +1,30 @@
+{
+  "user_objective": "Organize source; explain method steps and code line by line; iteratively strengthen theory, novelty and empirical support toward top-conference quality.",
+  "base_revision": "1210120748b3a05bd271bc79debcbed4fdc0c964",
+  "status": "in_progress",
+  "source_explanation": {
+    "inventory": "docs/source-reading/SOURCE_INVENTORY.json",
+    "files_total": 98,
+    "functions_total": 636,
+    "completed_files": 0
+  },
+  "method_refinement": {
+    "phase": "anchor",
+    "round": 0,
+    "max_rounds": 5,
+    "venue_readiness": "unestablished",
+    "reviewer_status": "not_requested_yet",
+    "natural_data_validation": "not_run"
+  },
+  "constraints": [
+    "Preserve original artifacts and frozen R4 comparison",
+    "No claim that polished exposition or a numerical model guarantees factuality",
+    "No new GPU/model dataset execution yet",
+    "Primary-source citations and traceable review required"
+  ],
+  "previous_task": {
+    "desktop_folder": "D:/Desktop/myproject_????_20261102",
+    "github_main": "1210120748b3a05bd271bc79debcbed4fdc0c964",
+    "status": "complete"
+  }
+}

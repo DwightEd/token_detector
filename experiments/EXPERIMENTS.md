@@ -7,6 +7,16 @@ V3金融点值已超过.8，但置信区间跨.8；RAGTruth QA/Data2txt仍低于
 **尚无跨数据集完整验证或顶会就绪的方法结论。** 以下历史章节保留各自运行当时的状态。
 本目录统一维护数据、评价、候选算法及后续实验代码；不再维护两个旧包名。
 
+## 2026-11-02 本地理论与评价审计（CPU；没有新检测实验）
+
+补充默认Beta共享模型的固定片段保序证明，以及pooled AUC按同片段/跨片段正负对的精确分解。`local_evaluation.auc_pair_decomposition`在既有封存评价路径调用；普通fullgap最终JSON保留原metrics并附加分解，不改检测器分数。跨片段项是全部跨片段对的补集，不能单独作机制归因。
+
+新增27项参数化CPU检查，包括生产DP与独立copy/refresh枚举、AUC显式对子oracle、最终JSON/seal输出。最终完整套件149 passed、1 skipped、9 subtests passed；独立次级审查复现27 passed并通过窄范围代码检查。另有三个受限语法/KL fixture通过，导入的是与checkout字节一致的已安装模块。未执行LM/GPU、新标注或真实数据集实验。
+
+默认Observer有eager/SDPA后端差异，但fullgap collector已通过measure_responses采用matched_sdpa；两种路径分开说明，不能推断所有历史结果都有后端混淆。每次历史运行仍需封存plan/artifacts确认。
+
+[完整方法、逐行讲解与理论边界](../docs/source-reading/README.md)；[文献与独立审查后的方案](../refine-logs/theory-grounding-20261102/round-2-refinement.md)。检测器改进、事实校准、新颖性及顶会就绪仍未成立。
+
 ## 2026-10-29 主线工程统一与责任读出检验（完成、审计闭合）
 
 myproject/shared.py统一shared/persistent/witness/responsibility；myproject/sequence.py唯一V2/V3内核。

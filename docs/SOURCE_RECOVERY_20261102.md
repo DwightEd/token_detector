@@ -2,6 +2,8 @@
 
 This update integrates the remote v7 installable source snapshot into the maintained Git history. It was built on 2026-10-31 and recovered through the owner's authenticated storage portal. The original backup remains at commit `6b8a6d4e98c2b27aed8f63b749450d99d88d4790` on `backup/remote-20261031-core`.
 
+This page describes integration baseline `1210120`. The subsequent [theory/source audit](source-reading/README.md) adds post-seal evaluation diagnostics in `experiments/local_evaluation.py` and `experiments/fullgap_dataset.py`; their current hashes are explicitly recorded in `SOURCE_RECOVERY_MANIFEST.json.integration_changes`. Original recovered hashes remain unchanged as provenance.
+
 ## Source identity
 
 The wheel SHA256 is `d31e3c27d8d6b7a0f3d3e5d40679da79daa198750214d8d8ab264f20391cdb74`, matching the remote release receipt. All wheel RECORD entries and 88 receipt-bound source/resource files were checked before integration. Three R4 reference NPZs retain their original bytes.

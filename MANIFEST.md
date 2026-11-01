@@ -1,0 +1,66 @@
+# Research Output Manifest
+
+> Generated outputs and their scope; raw run traces remain local.
+
+| Timestamp | Skill | File | Stage | Description |
+|---|---|---|---|---|
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject___init__.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject___main__.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject_api.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject_attention.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject_counterfactual.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject_detector.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject_distribution.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject_graph.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject_inputs.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject_measure.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject_model.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject_observer.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject_pooling.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject_proofs.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject_revision.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject_routing.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject_run.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject_segmentation.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject_sequence.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject_shared.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/files/myproject_source.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/line-notes-optional.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/line-notes-pipeline.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/line-notes-proofs.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/line-notes-readouts.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/line-notes-revision.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/line-notes.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/METHOD.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/READING.html | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/README.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/SOURCE_INVENTORY.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/SOURCE_INVENTORY_20261102_012135.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/SOURCE_INVENTORY_20261102_012552.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/SOURCE_INVENTORY_initial.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/THEORY.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | docs/source-reading/VALIDATION.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | findings.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | refine-logs/REFINE_STATE.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | refine-logs/REFINE_STATE_20261102_012135.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | refine-logs/REFINE_STATE_20261102_012552.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | refine-logs/theory-grounding-20261102/FINAL_PROPOSAL.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | refine-logs/theory-grounding-20261102/FINAL_PROPOSAL_20261102_012751.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-lit | refine-logs/theory-grounding-20261102/LITERATURE.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | refine-logs/theory-grounding-20261102/PROBLEM_ANCHOR.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | refine-logs/theory-grounding-20261102/REFINE_STATE.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | refine-logs/theory-grounding-20261102/REFINE_STATE_20261102_012135.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | refine-logs/theory-grounding-20261102/REFINE_STATE_20261102_012552.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | refine-logs/theory-grounding-20261102/REFINEMENT_REPORT.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | refine-logs/theory-grounding-20261102/REVIEW_SUMMARY.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | refine-logs/theory-grounding-20261102/round-0-initial-proposal.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | refine-logs/theory-grounding-20261102/round-1-refinement.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | refine-logs/theory-grounding-20261102/round-2-refinement.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | refine-logs/theory-grounding-20261102/score-history.md | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | refine-logs/theory-grounding-20261102/WORK_STATE.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | refine-logs/theory-grounding-20261102/WORK_STATE_20261102_012135.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | refine-logs/theory-grounding-20261102/WORK_STATE_20261102_012552.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | refine-logs/theory-grounding-20261102/WORK_STATE_initial.json | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | tests/test_auc_decomposition.py | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /research-refine | tests/test_pooling_theory.py | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_012751 | /source-to-interview | tools/render_source_reading.py | implementation | Versioned explanation, refinement or computational check; see file for limits |

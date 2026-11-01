@@ -4,6 +4,8 @@
 
 本版本接回 2026-10-31 已核验的远端 v7 源码：`myproject/` 为主库，`experiments/` 为统一实验入口，`experiments/research/` 保存研究候选。[恢复与验证记录](docs/SOURCE_RECOVERY_20261102.md)区分历史运行和本次检查。
 
+代码学习从[完整方法与调用路径](docs/source-reading/METHOD.md)开始，再打开[源码逐行阅读器](docs/source-reading/READING.html)或[Markdown文件目录](docs/source-reading/README.md)。[数学推导与边界](docs/source-reading/THEORY.md)解释默认共享读出的保序性质；[本轮研究方案](refine-logs/theory-grounding-20261102/round-1-refinement.md)记录独立审查后的修订和待验证事项。
+
 **默认方法已从旧 R4 改为 `shared`。** 复现原行为时必须显式传入 `method="r4"` 或 `--method r4`。默认改变沿用远端接口状态，不代表共享方法已全面优于 R4；三任务 R4 参考数组保留原始字节。
 
 ## 安装与检测

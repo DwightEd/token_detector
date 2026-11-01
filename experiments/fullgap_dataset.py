@@ -680,7 +680,7 @@ def _evaluation_rows(directory, native_identities):
 
 def _paired_views(keys, labels, method_units, metadata, native_units=None, *, contrasts=None):
     from experiments.evaluate import paired_source_differences, ranking
-    from experiments.local_evaluation import paired_span_differences
+    from experiments.local_evaluation import auc_pair_decomposition, paired_span_differences
 
     by_id = {row["id"]: row for row in metadata}
     definitions = ({**CONTRASTS, **FIXED_CONTRAST, **FIXED_PERSISTENCE_CONTRAST,
@@ -697,6 +697,12 @@ def _paired_views(keys, labels, method_units, metadata, native_units=None, *, co
                   for method, units in method_units.items()}
         metrics = {method: ranking(y, values) if known else None
                    for method, values in arrays.items()}
+        if native_units is not None and known:
+            answers = np.asarray([native_units[key][0] for key in known], dtype=np.int64)
+            spans = np.asarray([native_units[key][1] for key in known], dtype=np.int64)
+            for method, values in arrays.items():
+                metrics[method]['auc_pair_decomposition'] = auc_pair_decomposition(
+                    y, values, answers, spans)
         differences = {}
         for name, (baseline, candidate) in available.items():
             point = {metric: (metrics[candidate][metric]-metrics[baseline][metric]
@@ -817,7 +823,11 @@ def evaluate(native: Path, scores: Path, output: Path) -> dict:
         _verify_method_evaluation(output / method, scores / method,
                                   native_plan["input_sha256"], manifest["annotations_sha256"])
     summary = {
-        "methods": {method: report["metrics"] for method, report in reports.items()},
+        "methods": {method: {**report["metrics"],
+                             "auc_pair_decomposition": (
+                                 pooled["methods"][method]["auc_pair_decomposition"]
+                                 if pooled["methods"][method] is not None else None)}
+                    for method, report in reports.items()},
         "score_seal_sha256": data.file_hash(scores / "seal.json"),
         "samples_scored": len(samples), "dataset": manifest["dataset"], "task": samples[0].task,
         "native_granularity": contract["native_granularity"],

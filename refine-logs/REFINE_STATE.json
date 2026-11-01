@@ -1,0 +1,13 @@
+{
+  "phase": "evidence_pending",
+  "round": 3,
+  "agent_id": "/root/theory_reviewer",
+  "last_score": null,
+  "last_verdict": "science_not_established",
+  "status": "in_progress",
+  "timestamp": "2026-11-02T01:25:53.070981+08:00",
+  "run_directory": "refine-logs/theory-grounding-20261102",
+  "max_rounds": 5,
+  "review_independence": "same-family",
+  "acceptance_status": "provisional"
+}

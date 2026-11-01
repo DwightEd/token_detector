@@ -96,6 +96,14 @@
     "experiments/data.py": {
       "sha256": "cc8bd3c878c267a5c372a3871824c3402e364c106b0c29c42b5cac2bfe976796",
       "reason": "Read JSON metadata explicitly as UTF-8 to match its writer and support Windows GBK locales."
+    },
+    "experiments/local_evaluation.py": {
+      "sha256": "75150108aaa541b0dbb4825f7af3023de36e0686852e2d4fd7e9825ff65f3e88",
+      "reason": "Add a post-score, tie-exact within/cross-span pooled-AUC decomposition; preserve original scoring and source-bootstrap function."
+    },
+    "experiments/fullgap_dataset.py": {
+      "sha256": "b3ba6cf32116219bb012bc2a4f0ce0e1e81fbdc0464b23ddc274d2804753fff8",
+      "reason": "Report the post-seal AUC decomposition through existing paired views and final evaluate JSON without altering detector scores."
     }
   }
 }

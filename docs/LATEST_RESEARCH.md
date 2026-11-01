@@ -1,5 +1,7 @@
 # Research status through 2026-10-31
 
+2026-11-02 local follow-up: [theory and source walkthrough](source-reading/README.md) now documents all 21 detector-library Python files. The new post-seal AUC pair decomposition and finite-state checks validate computation, not new detector performance. [The refinement record](../refine-logs/theory-grounding-20261102/REVIEW_SUMMARY.md) retains unresolved natural-data and novelty gates. The remote research results below remain historical.
+
 The latest remote manuscript is **Contextual Borrowing in Token-Level Hallucination Detection: Regional Ranking and Local Resolution**: eight main-text pages and 33 pages including references and appendices. It is an unsubmitted working manuscript.
 
 Its reported finding concerns pooled token ranking versus local error resolution. Averaging within fixed spans improved V3 AP in five of six populations while reducing within-span mixed-label AUROC to 0.5. This is a controlled diagnostic, not a detector breakthrough. A finite counterexample also shows that stronger evidence at one token can lower another token's posterior under shared inference.
