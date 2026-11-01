@@ -1,0 +1,385 @@
+{
+  "snapshot": "remote-v7-20261031",
+  "acquired_date_beijing": "2026-11-01",
+  "source_snapshot_time_beijing": "2026-10-31 04:55:37",
+  "wheel_sha256": "d31e3c27d8d6b7a0f3d3e5d40679da79daa198750214d8d8ab264f20391cdb74",
+  "source_file_count": 88,
+  "python_file_count": 85,
+  "checks": [
+    "wheel hash equals remote validation receipt",
+    "wheel RECORD hashes verified",
+    "all 88 receipt-bound sources/resources verified",
+    "85 Python files parsed successfully"
+  ],
+  "files": [
+    {
+      "path": "myproject/__init__.py",
+      "sha256": "cde213e7a2883957788ba353947e57bcfbbe272a010d3cfd235191ffc4ec6f83"
+    },
+    {
+      "path": "myproject/__main__.py",
+      "sha256": "e6a5b8a9b0f5bc30f863a0f88db0d1acf6a56ac41415d9dfd346748a63a015be"
+    },
+    {
+      "path": "myproject/api.py",
+      "sha256": "35a052e8f28c461a0eb7978dbd6c38ed798c0144d8d14d8c3731d3182f1616fb"
+    },
+    {
+      "path": "myproject/attention.py",
+      "sha256": "4ec72d0ec9de72f6883fd9463df078b2e4c0c6cdf6cc9d531ceb1551d0e0c4b8"
+    },
+    {
+      "path": "myproject/counterfactual.py",
+      "sha256": "2c1e0cc6f800a1308fd42689b3739dc03592902413f713fd36fc9ef8aa6430da"
+    },
+    {
+      "path": "myproject/detector.py",
+      "sha256": "776fa683830223f1f9393291fa5aa446e6194cb7ab36d5e42f48365e6172ce88"
+    },
+    {
+      "path": "myproject/distribution.py",
+      "sha256": "891b83c1f5c48dbf9926ac211aaca1c5d5a57942a6b392b86de5ac95104d7bb2"
+    },
+    {
+      "path": "myproject/graph.py",
+      "sha256": "4081fd8be3a8d662b5d6e02225ece2be3ad9f7ed4f2c9e8510aad1d418d6942d"
+    },
+    {
+      "path": "myproject/inputs.py",
+      "sha256": "e0d7c60577905214ade564fa17faf9c724cbbb01ad90e89837e727886f4e68a5"
+    },
+    {
+      "path": "myproject/measure.py",
+      "sha256": "0778b233b07a42c1d1a5e6739027394ab5c0644b25cca3082e8b53998eedbbd3"
+    },
+    {
+      "path": "myproject/model.py",
+      "sha256": "1e7393ab159f4e9e9feab91c5fe073499a90f31cddb07f2aee8eec18385d2264"
+    },
+    {
+      "path": "myproject/observer.py",
+      "sha256": "054d7baee1089872b5cbd081d03e6b146fe40309807854dca33dabc7f71da747"
+    },
+    {
+      "path": "myproject/pooling.py",
+      "sha256": "80e852b64e301cf6007893df3b61d058ef39a97c81c561416f2b2917c63bef49"
+    },
+    {
+      "path": "myproject/proofs.py",
+      "sha256": "191727f0f2e073b3ab53ffea7ba4d2e946514a771f6afd4d9d026c70d63de7b9"
+    },
+    {
+      "path": "myproject/references/Data2txt.npz",
+      "sha256": "06befb43ace17f05820e6f8676272975c6b3486e26919abad047b550bb97e396"
+    },
+    {
+      "path": "myproject/references/QA.npz",
+      "sha256": "f083f04173edcbdba82be91a0ac57dcc856c63fceadc1dbe8b302a2656894472"
+    },
+    {
+      "path": "myproject/references/Summary.npz",
+      "sha256": "bf7473e7855bdd62bf71176000e137f5d865f09828e73b988b2f20eeaa0263a9"
+    },
+    {
+      "path": "myproject/revision.py",
+      "sha256": "07b146366085dbb06dd27ce8406918f78035a666b6a0742ca4b84a26cc50890e"
+    },
+    {
+      "path": "myproject/routing.py",
+      "sha256": "dd12983cfaa1a5c888c29158e582dc1bdb4206868ceec5e694565e132b6f5fee"
+    },
+    {
+      "path": "myproject/run.py",
+      "sha256": "f7dd726881b201e0a1e02a962f38ee7b5e87066b38ececf9f4ef384fa799a578"
+    },
+    {
+      "path": "myproject/segmentation.py",
+      "sha256": "300032e312aefefbc9f1a3c9006c5c78024f9f14517f52ad17f047bec69fd62c"
+    },
+    {
+      "path": "myproject/sequence.py",
+      "sha256": "57c839c77eb93081bbde6d4f127497f62bc6586b41ac4b80fea8160d02953114"
+    },
+    {
+      "path": "myproject/shared.py",
+      "sha256": "180a4b1d02b94ea560aa12c9b661ed1439ae0f9416e0613c1d3b3573b82889f5"
+    },
+    {
+      "path": "myproject/source.py",
+      "sha256": "838476d6af7889d22efc09925693245218663f04faf0f79bb9474ef923e1ecbc"
+    },
+    {
+      "path": "experiments/__init__.py",
+      "sha256": "d4274bbed0971192535bf0bbfdee498b4e54b5d257e89726614a0abba2026a97"
+    },
+    {
+      "path": "experiments/__main__.py",
+      "sha256": "e6a5b8a9b0f5bc30f863a0f88db0d1acf6a56ac41415d9dfd346748a63a015be"
+    },
+    {
+      "path": "experiments/assertion_pilot.py",
+      "sha256": "811ea8b1858eada3a517d5475abcbadb2a5b0aae0c5baee4fc1869e4649666a2"
+    },
+    {
+      "path": "experiments/binding_dependency_pilot.py",
+      "sha256": "3909242aa0e0f973ea17afcde6c81fc9e52ab52ab979dea87bc42070e76bef01"
+    },
+    {
+      "path": "experiments/binding_transfer.py",
+      "sha256": "5f449c97ada34355aa54c3647e9d40a5a3a03beeda25a50c027517dbb795b4ae"
+    },
+    {
+      "path": "experiments/case_audit.py",
+      "sha256": "3733a82b7f0d2983717d42935ed2894e0cbc04df34f8ce58e3a9d063079d0608"
+    },
+    {
+      "path": "experiments/conditional_dependencies.py",
+      "sha256": "da499ce39780c658d3723a5b893834b740c7f1e0a28e71613174724780ac8ca8"
+    },
+    {
+      "path": "experiments/constraint_pilot.py",
+      "sha256": "ab88eab3179b856e8385d30182564dce09848384ff3627f51594d514bf35b667"
+    },
+    {
+      "path": "experiments/contextual_probe.py",
+      "sha256": "e4a03af1a486968e9565ffd7452bd1061a1d02a4eac901ea8bf0133815eb49bf"
+    },
+    {
+      "path": "experiments/counterfactual_repairs.py",
+      "sha256": "fb272fc9ff05a28e26f01349cb2c304c5379e2b6409af4ac44070c24f4c57275"
+    },
+    {
+      "path": "experiments/data.py",
+      "sha256": "97adc1145a971f7a42679aec0d43049398189c1300dcf5cae1d73bacbbc82b01"
+    },
+    {
+      "path": "experiments/datasets.py",
+      "sha256": "f54fae13437e031461b159d43c3db5f68d71280147d30572646e09379bc4f644"
+    },
+    {
+      "path": "experiments/delta_local_integrity_20261028.py",
+      "sha256": "4af860dd4d164906c99a12d8d4e7a3519f7c591609625d60d44d1d1fc645d7dc"
+    },
+    {
+      "path": "experiments/delta_local_run.py",
+      "sha256": "7b11865f393e72440945101dd782e859779e437853e24fe37a28f762134c7bd1"
+    },
+    {
+      "path": "experiments/delta_observe.py",
+      "sha256": "37b191d0b16cc644e3da736ba446ea20871e559c9a744286ccbf6fdd71a65b06"
+    },
+    {
+      "path": "experiments/dependency_probe.py",
+      "sha256": "30340b3fef8ebc3dbcae355ea162145bad67aa74489f5be6cf04f3525ef105a2"
+    },
+    {
+      "path": "experiments/evaluate.py",
+      "sha256": "285a9225533249386d1a547b5f3f5901cb174bd69e015a37476827c1e5f6fdf6"
+    },
+    {
+      "path": "experiments/export_hallurag.py",
+      "sha256": "03751993c63ef530fda4d34dcde9b50fee22b07d8c8a08e1dad2504464908949"
+    },
+    {
+      "path": "experiments/fit_ablation.py",
+      "sha256": "521051a496758eafa221e72b86ed1737b8f9831ff8b33e7c962dd33185f95911"
+    },
+    {
+      "path": "experiments/fullgap_dataset.py",
+      "sha256": "0e89cbc9025503c69690dac0c909ae4c1dcb3527b4d3a939b69f96b79eef9e30"
+    },
+    {
+      "path": "experiments/hidden.py",
+      "sha256": "dc23cc5c1dac858ea6d27f063aaf2965f9cf32aa3933da17fb2c9cab88b7d150"
+    },
+    {
+      "path": "experiments/inputs.py",
+      "sha256": "7bafa7900acc70fb0051a95d8857cfdbab90e10b28c52e4c3c87f3407b54539d"
+    },
+    {
+      "path": "experiments/local_evaluation.py",
+      "sha256": "1aea91af94cd39a2a971625d458909d5e82e97eb813352ff3a09da09cbfdd549"
+    },
+    {
+      "path": "experiments/loo_pooling.py",
+      "sha256": "f94a7390906e3c9c2947f358792c5596b20a7e7def7611acbbc0193fdd2f86c7"
+    },
+    {
+      "path": "experiments/lumina_dataset.py",
+      "sha256": "b247152c6e473c403434cb796f21dc20a4d0a48cbac6e6be529ecff374e2c469"
+    },
+    {
+      "path": "experiments/measure.py",
+      "sha256": "ec60b104313bc57611e015f6256be373522a4fb5d201311ad155abffdd173b02"
+    },
+    {
+      "path": "experiments/native_dataset.py",
+      "sha256": "c23c040fa77c5709876bcebc3fe0beb60238e2b568758274437f857b255d8bcb"
+    },
+    {
+      "path": "experiments/native_response.py",
+      "sha256": "23f29f8f9b6e0bad2c64c28e59100e85beb5819a4faf6f1dc2230cf00562dba0"
+    },
+    {
+      "path": "experiments/pipeline.py",
+      "sha256": "25a0192563ef4be00a385c7b6f7d3e7060eb53cb005d37c09cc31df38a2ad445"
+    },
+    {
+      "path": "experiments/pooling_run.py",
+      "sha256": "ebc045f2d95a666901e8b6f2f9861b1bb64945768e028239e0460b778c07adc6"
+    },
+    {
+      "path": "experiments/prevalence_probe.py",
+      "sha256": "438cc709939be397fb42c9350bcda9355a069efc62a973e6e44d04bf3bc929e7"
+    },
+    {
+      "path": "experiments/provenance.py",
+      "sha256": "196e7d1f5c8e218b6b6217a793df6eef7512029fc887f9edef83d1f648470515"
+    },
+    {
+      "path": "experiments/relational_transfer.py",
+      "sha256": "360c5e339b1021dca9e8a2a195bf16f85ef31a55ca98f4c57eab4b9c7c9ea004"
+    },
+    {
+      "path": "experiments/run.py",
+      "sha256": "e504d9d54adbe1cd436bfdc954fa616d5b3f1338e90b4ac919358c220f4e8b5c"
+    },
+    {
+      "path": "experiments/source_write_integrity_20261028.py",
+      "sha256": "4e7bac8ea1a33849ee133d4bb578564db451b4807fe96bd2a9c39b485eb2c04f"
+    },
+    {
+      "path": "experiments/source_write_observe.py",
+      "sha256": "45cc825e8cef8cfd26ca8e092d756924c1f2c4ae3b6541772351de1da274766c"
+    },
+    {
+      "path": "experiments/source_write_run.py",
+      "sha256": "f2a2ba6910b98581c28e544b4f9afd92ea5f108777e8739fda1eda38901fb4b1"
+    },
+    {
+      "path": "experiments/span_markup.py",
+      "sha256": "62b10a48f9cb9915498152083f219362ab7d83b2aab5cbc38ff6aab640ccb791"
+    },
+    {
+      "path": "experiments/span_pilot.py",
+      "sha256": "223f2a9a876593f78c9dae35469cd2505d73ed8f33e116a0d440042409f65333"
+    },
+    {
+      "path": "experiments/span_resolution.py",
+      "sha256": "e1d289e1dc8e72131dcea9c48e8cf6cd3a1067ab11c5866f1809f48f63464762"
+    },
+    {
+      "path": "experiments/transfer_diagnostics.py",
+      "sha256": "bdb8f79fc83b79fe283f367ae1843ffb83d2c1cdf4293f451f7cca3ef8d3779a"
+    },
+    {
+      "path": "experiments/verify.py",
+      "sha256": "71a9234d7a26f3cccae2ac7a6d0cf22887fa03748292cb97bc99862ed0982c9e"
+    },
+    {
+      "path": "experiments/write_competition_integrity_20261028.py",
+      "sha256": "c4499593e9c716f6e7241aeb65ee05b398a6941c3134b873d018e2aa4e768831"
+    },
+    {
+      "path": "experiments/research/__init__.py",
+      "sha256": "dc38805b2a984c6e89889af8e6242a59748a3c82987813a4d18c76e77ba44af7"
+    },
+    {
+      "path": "experiments/research/__main__.py",
+      "sha256": "e6a5b8a9b0f5bc30f863a0f88db0d1acf6a56ac41415d9dfd346748a63a015be"
+    },
+    {
+      "path": "experiments/research/assertions.py",
+      "sha256": "6d12088bc68ac7acc03b4da2c621ebd24d65211139f3494f664ec95251e8d864"
+    },
+    {
+      "path": "experiments/research/binding_dependency.py",
+      "sha256": "a01ec2b788ca4206f0d0e78796be2d5f2af235df5b700411450c715b06bc6355"
+    },
+    {
+      "path": "experiments/research/binding_witnesses.py",
+      "sha256": "613ba58843e481e33b6177be45eaa2db13cc68621857f6d838e033c797baf9c6"
+    },
+    {
+      "path": "experiments/research/constraint_interaction.py",
+      "sha256": "be069ffbd941ada04c4f3ea3410d385794cdd348b08428bc24a3547f3bf66939"
+    },
+    {
+      "path": "experiments/research/constraints.py",
+      "sha256": "7e78582c1092fa0852222533a69e8aa52d2acecbc53ef1df7faa1bfdea562fbc"
+    },
+    {
+      "path": "experiments/research/contextual_alignment.py",
+      "sha256": "45766d0c657eed37dc66aa6652e4d85340fa96057cf3e31ace4a6701ad043697"
+    },
+    {
+      "path": "experiments/research/delta_local.py",
+      "sha256": "b8cdcf1fccf17ed1f9f9d042370b08d0f05893591122c16d16e8fe0dba830182"
+    },
+    {
+      "path": "experiments/research/dependence.py",
+      "sha256": "cb7827f26b83514ec393ca2b90c843c15c960544ab6e21d7365a3b835864873a"
+    },
+    {
+      "path": "experiments/research/fingerprints.py",
+      "sha256": "c5596645cf91ac857a8dc58b1b369044fe845952f46cdb646cd3696b23b59258"
+    },
+    {
+      "path": "experiments/research/hierarchy.py",
+      "sha256": "da67ea7e36e51e044634967db66c489d58bf656eab6f09056e185ca9d5d9df53"
+    },
+    {
+      "path": "experiments/research/lumina.py",
+      "sha256": "fa9c4714589a940f804085b7a39c0118126dc1c0ece11d0658b7631aa262341f"
+    },
+    {
+      "path": "experiments/research/relational.py",
+      "sha256": "41b3e183b5e6c6ecfc47af079e91946643aa6a340c8322652fa42241a7b4a8c7"
+    },
+    {
+      "path": "experiments/research/relational_shared.py",
+      "sha256": "ae916729222fafdc654c2acfff2ac7e324230d11c7536846b039117a243d64a6"
+    },
+    {
+      "path": "experiments/research/run.py",
+      "sha256": "76300ae5b620b18f30457fc5378422e6610cd6de793555e7fe2769d48bc90134"
+    },
+    {
+      "path": "experiments/research/sequence_controls.py",
+      "sha256": "d480959c71e4073651d4cbd447b06e256d08b53bd146eb1fbef94a09fa07c6a0"
+    },
+    {
+      "path": "experiments/research/spans.py",
+      "sha256": "a830a414b0a86ff69d38ddb679a641c4872c4b65688bd26d46a81022c7c4811c"
+    },
+    {
+      "path": "experiments/research/state.py",
+      "sha256": "e2d4451d04b088154684706ce777a40a51afdee4bc8b670912e40928e4a54dc8"
+    },
+    {
+      "path": "experiments/research/state_partition.py",
+      "sha256": "75ceddf65b434657087f7bb6a3b96aa0f74519c82f8fe0f724e5e70d2fa0889e"
+    },
+    {
+      "path": "experiments/research/table_bindings.py",
+      "sha256": "b59ba6fea81393849976c14b8b9f35edbb41fedd3d1ec4163d7932054ee0b481"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "d9294d118da253c784c86b7e74972e8ff9a3376ae2f4a9802003f7c695680d17"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "76daa769e31f478faf61573830dc851b5a5cce672779f16c3670ea7e24e9f2fc"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "4a60f6edd9d61d5c5b495f04fc09fdb63affad7d1313546c279bd0dad51a20a5"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "c6dd61126ea2932fd3f2f4cfcece46a7455950a49fdd042d6a17e8a31093ef5b"
+    }
+  ],
+  "scope": "Installable core source snapshot; remote tests, raw results and private session logs excluded."
+}
