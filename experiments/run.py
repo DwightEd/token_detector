@@ -131,6 +131,16 @@ def parser() -> argparse.ArgumentParser:
     focused_eval.add_argument('--controls-panel', type=Path, required=True)
     focused_eval.add_argument('--protocol', type=Path, required=True)
     focused_eval.add_argument('--output', type=Path, required=True)
+    nli = transfers.add_parser('qualify-nli', help='seal frozen external NLI diagnostic on all original response units')
+    nli.add_argument('--inputs', type=Path, required=True)
+    nli.add_argument('--protocol', type=Path, required=True)
+    nli.add_argument('--model', type=Path, required=True)
+    nli.add_argument('--model-identity', type=Path, required=True)
+    nli.add_argument('--admit-resources', action='store_true')
+    nli.add_argument('--output', type=Path, required=True)
+    nli_eval = transfers.add_parser('evaluate-nli', help='validate frozen NLI pairs on CPU before exploratory native-unit evaluation')
+    for option in ['inputs', 'observations', 'natural-panel', 'controls-panel', 'model', 'protocol', 'output']:
+        nli_eval.add_argument('--' + option, type=Path, required=True)
     fusion_cache = transfers.add_parser('prepare-fusion', help='export verified historical R4/V3 caches without labels')
     fusion_cache.add_argument('--scores', type=Path, required=True)
     fusion_cache.add_argument('--native', type=Path, required=True)
@@ -347,6 +357,19 @@ def main() -> None:
 
             evaluate(args.inputs, args.observations, args.natural_panel,
                      args.controls_panel, args.output, args.protocol)
+        elif args.transfer_stage == 'qualify-nli':
+            if not args.admit_resources:
+                command.error('qualify-nli requires explicit --admit-resources before HF loading')
+            from .nli_qualification import HFEntailment, qualify
+
+            identity = data.read_json(args.model_identity)
+            qualify(args.inputs, args.protocol, args.output,
+                    HFEntailment(args.model, identity, admit_resources=True), identity)
+        elif args.transfer_stage == 'evaluate-nli':
+            from .nli_evaluation import evaluate
+
+            evaluate(args.inputs, args.observations, args.natural_panel,
+                     args.controls_panel, args.model, args.output, args.protocol)
         elif args.transfer_stage == 'prepare-fusion':
             from .fusion_cache import export
 
