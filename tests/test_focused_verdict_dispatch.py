@@ -23,3 +23,17 @@ def test_focused_cli_resource_gate_precedes_model_metadata(monkeypatch):
     monkeypatch.setattr(sys,'argv',args())
     with pytest.raises(SystemExit) as e:run.main()
     assert e.value.code==2
+
+def test_focused_cpu_review_never_constructs_model(monkeypatch):
+    from experiments import focused_verdict_evaluation
+    calls=[]
+    def forbidden(*a,**k):raise AssertionError('CPU review may not load model or instrument identity')
+    monkeypatch.setattr(semantic_qualification,'HFGenerator',forbidden)
+    monkeypatch.setattr(run.data,'read_json',forbidden)
+    monkeypatch.setattr(focused_verdict_evaluation,'evaluate',lambda *a:calls.append(a))
+    monkeypatch.setattr(sys,'argv',['r4-experiment','transfer','evaluate-focused-verdict',
+      '--inputs','inputs.jsonl','--observations','observations','--natural-panel','natural',
+      '--controls-panel','controls','--protocol','protocol.json','--output','outputs/review'])
+    run.main()
+    assert calls==[(Path('inputs.jsonl'),Path('observations'),Path('natural'),Path('controls'),
+                   Path('outputs/review'),Path('protocol.json'))]

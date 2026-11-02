@@ -124,6 +124,13 @@ def parser() -> argparse.ArgumentParser:
     focused.add_argument('--model-identity', type=Path, required=True)
     focused.add_argument('--admit-resources', action='store_true')
     focused.add_argument('--output', type=Path, required=True)
+    focused_eval = transfers.add_parser('evaluate-focused-verdict', help='evaluate sealed focus pilot on explicit character/native-sentence axes')
+    focused_eval.add_argument('--inputs', type=Path, required=True)
+    focused_eval.add_argument('--observations', type=Path, required=True)
+    focused_eval.add_argument('--natural-panel', type=Path, required=True)
+    focused_eval.add_argument('--controls-panel', type=Path, required=True)
+    focused_eval.add_argument('--protocol', type=Path, required=True)
+    focused_eval.add_argument('--output', type=Path, required=True)
     fusion_cache = transfers.add_parser('prepare-fusion', help='export verified historical R4/V3 caches without labels')
     fusion_cache.add_argument('--scores', type=Path, required=True)
     fusion_cache.add_argument('--native', type=Path, required=True)
@@ -335,6 +342,11 @@ def main() -> None:
             identity = data.read_json(args.model_identity)
             qualify(args.inputs, args.protocol, args.output,
                     HFGenerator(args.model, identity, admit_resources=True), identity)
+        elif args.transfer_stage == 'evaluate-focused-verdict':
+            from .focused_verdict_evaluation import evaluate
+
+            evaluate(args.inputs, args.observations, args.natural_panel,
+                     args.controls_panel, args.output, args.protocol)
         elif args.transfer_stage == 'prepare-fusion':
             from .fusion_cache import export
 
