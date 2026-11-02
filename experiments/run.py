@@ -78,6 +78,13 @@ def parser() -> argparse.ArgumentParser:
 
     transfer = stages.add_parser("transfer", help="cache native observations, FIT/score, then evaluate")
     transfers = transfer.add_subparsers(dest="transfer_stage", required=True)
+    semantic = transfers.add_parser('semantic-qualify', help='seal label-free source observations without scalar scores')
+    semantic.add_argument('--inputs', type=Path, required=True)
+    semantic.add_argument('--protocol', type=Path, required=True)
+    semantic.add_argument('--model', type=Path, required=True)
+    semantic.add_argument('--model-identity', type=Path, required=True, help='frozen model ID and model_files_sha256 JSON')
+    semantic.add_argument('--admit-resources', action='store_true', help='explicit permission for gated local HF loading')
+    semantic.add_argument('--output', type=Path, required=True)
     fusion_cache = transfers.add_parser('prepare-fusion', help='export verified historical R4/V3 caches without labels')
     fusion_cache.add_argument('--scores', type=Path, required=True)
     fusion_cache.add_argument('--native', type=Path, required=True)
@@ -241,7 +248,15 @@ def main() -> None:
     if args.stage == "transfer":
         from . import native_dataset
 
-        if args.transfer_stage == 'prepare-fusion':
+        if args.transfer_stage == 'semantic-qualify':
+            from .semantic_qualification import HFGenerator, qualify
+
+            if not args.admit_resources:
+                command.error('semantic-qualify requires explicit --admit-resources before HF loading')
+            identity = data.read_json(args.model_identity)
+            qualify(args.inputs, args.protocol, args.output,
+                    HFGenerator(args.model, identity, admit_resources=True), identity)
+        elif args.transfer_stage == 'prepare-fusion':
             from .fusion_cache import export
 
             export(args.scores, args.native, args.prepared, args.group, args.output, args.task)

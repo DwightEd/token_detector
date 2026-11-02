@@ -5,6 +5,7 @@
 docs/source-reading/assets/mathjax-3.2.2/LICENSE -text
 *.md text eol=lf
 *.json text eol=lf
+*.jsonl text eol=lf
 *.toml text eol=lf
 *.yml text eol=lf
 *.txt text eol=lf

@@ -1,5 +1,26 @@
 # Code organization
 
+## Active persistent research goal
+
+- At the start of every research continuation, read RESEARCH_BRIEF.md and
+  research-state/RESUME.md, then run `python tools/research_memory.py context`.
+  Load only the relevant fact/prior-experiment records for the next question.
+- The current question, facts and prior experiments live in research-state/;
+  older refinement snapshots are history, not automatically active instructions.
+- Do not rerun a known phenomenon, a rejected readout, prefix reset or repair
+  interaction under a new name. Require a new discriminating intervention with
+  different predictions under competing explanations before scientific admission.
+- Exact run fingerprints prevent duplicate execution; they do not establish
+  scientific novelty. A parameter/seed/code change alone does not reopen a closed
+  hypothesis. Reserve jobs before launch; reuse verified results and retain failures.
+- Keep scoring and evaluation as separate run stages. Changes only to bootstrap
+  analysis must not trigger another model-observation/scoring run.
+- At each conclusion, completed run or pivot, persist evidence, certainty scope,
+  the decision and the next discriminating question before continuing.
+- New model observations are authorized by the user's active research goal.
+  Use isolated environments and explicit resource admission; preserve the current
+  CPU environment and other user processes. No background watchdog is installed.
+
 ## Confirmed research constraint (2026-11-02)
 
 - The user requires unsupervised detection. Ground-truth support/error labels

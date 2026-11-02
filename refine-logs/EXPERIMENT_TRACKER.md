@@ -1,20 +1,20 @@
-# 性能优先任务表
+# 机制研究执行表
 
-日期2026-11-02。允许多模块，目标各主任务AUROC≥0.8；真实标签仅冻结后的最终评价使用。
+2026-11-02。goal active。状态反映实际执行；合同测试通过不等于真实数据有效。
 
-| ID | 任务 | 状态 | 运行条件／已有证据 |
+| ID | 目的/当前动作 | 状态 | 证据与门禁 |
 |---|---|---|---|
-| S001 | R4/V3六主任务与Hallu三组统计 | RECOVERED_NOT_RERUN | R4完整Hallu TEST已恢复；旧DEV132单列 |
-| S002 | 真实FN/FP来源与机制审计 | POSTHOC_SOURCE_GROUNDED_AUDIT_COMPLETED | 五任务整体计数、原始信号与模块阶段、逐例事实已完成交叉核对；HalluRAG V3单列审计 |
-| P001 | 恢复成对token分数／观测 | RESTORED_FIVE_TASKS | 2992答／448202原token；score/native全部记录hash及轴匹配；Hallu旧R4分数仍缺 |
-| P002 | 固定等权秩融合CPU验证 | COMPLETED_REJECTED | 五任务固定0.5＋0.5；金融AUROC/AP相对V3区间均负，未晋升 |
-| P003 | 冻结基础模型语义核验器合同／采集 | PROPOSED_NOT_RUN | 未采集、未评分、未评价；先完成真实FN/FP机制审计 |
-| P004 | 完整评分封存、最终效果与消融 | FIVE_TASK_EVAL_COMPLETED | R4／V3／固定融合均已封存评价；Hallu及核验器／模块消融仍未执行 |
-| U001–U003 | 四条件操作／预测诊断 | OPTIONAL_SUPPORTING | 可辅助模块设计，不作为唯一允许路线 |
-| R001–R008 | 旧关系组合 | DEFERRED_RELATION_ASSUMPTION_UNRESOLVED | 仅闭合语义合同下可选 |
+| K001 | R4/V3、固定等权与真实 FN/FP 审计 | COMPLETED_REUSE | docs/results 与 prior_experiments 复用，不重跑 |
+| G001 | 数据/观察合同与先前覆盖审查 | COMPLETED | research-state/dataset_contracts.json；31 条先前实验索引 |
+| G002 | 持久目标、上下文恢复与精确运行去重 | IMPLEMENTED_TESTED | tools/research_memory.py；22 项合同检查已过；不冒充外部 watchdog |
+| G003 | 固定完整自然面板、评价隔离 | PREPARED_NOT_SCORED | 18 答，case_panel_v1.json 中输入/评价材料分别绑定 |
+| G004 | H002 自动提议与 direct/blind/leaky | IMPLEMENTED_UNDER_REVIEW | 未产生真实模型观察；精确文字对齐修订后重测 |
+| G005 | 独立 CUDA 环境及新观察模型 | PREPARING | 模型文件已下载并验官方快照，CUDA 环境安装中；不称历史8B重放 |
+| H002-Q1 | 18 答自动语义资格 | NOT_RUN | 等新鲜审查、安装包身份、资源准入；先封存后打开评价材料 |
+| H002-Q2 | 同词袋归属/证据缺失/合法推导控制 | PLANNED_AFTER_Q1 | 构造控制单列，不伪装自然样本效果 |
+| H001-Q0 | 前导 ASCII 空格的同回答配对控制 | CONTRACT_ONLY_NOT_RUN | 映射测试不等于观测机制已识别；旧生成器混杂仍未解除 |
+| H002-D1 | 比较器、全token投影、unknown与评分冻结 | NOT_DEFINED_PENDING_QUALIFICATION | 不临时加权，不拿观察输出直接称最终检测器 |
+| H002-E1 | 完整六任务与模块消融 | NOT_RUN | 原人口/原标签；每项 AUROC/AP/区间与成本 |
+| H002-E2 | 未接触确认与新颖性审查 | NOT_RUN | 资格案例与历史已看人群不可改名为确认集 |
 
-六主任务历史点值：R4为2/6、V3为3/6，最好点值包络4/6并非新方法。已完成固定CPU基线在五个已评任务中仅1项点值达到0.8，Hallu待配对缓存；全部达标尚未实现，未采用该基线。
-
-执行证据：[归档负结果](../docs/source-reading/CPU_FUSION_REVIEW.md)、[公开汇总JSON](../docs/results/cpu_fusion_evidence.json)。本地缓存：`D:/projects/research/outputs/fusion-cache-20261102/`；实际运行：`outputs/rank-fusion-cpu-20261102/`。用户最新优先事项是讲清真实FN/FP成因，不把加权包装成新方法。
-
-当前成果：[全体机制统计](../docs/source-reading/FNFP_MECHANISM.md)、[逐例事实](../docs/source-reading/FNFP_CASES.md)、[HalluRAG审计](../docs/source-reading/HALLURAG_FNFP.md)。新模块设计、消融验证与全部0.8目标仍未完成。
+恢复入口：[RESUME](../research-state/RESUME.md)。下一问题：自动、无人工错误位置的值盲来源重建是否有足够覆盖，能否与同预算直接核验形成可解释差异？

@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "objective": "Mechanism-driven unsupervised hallucination detection improvement toward AUROC >= 0.8 on each of six primary tasks",
+  "canonical_project": "D:/projects/research/token_detector",
+  "goal_status": "active",
+  "phase": "H002_frozen_awaiting_cuda_runtime_qualification",
+  "active_hypothesis": "H002_VALUE_BLIND_RECONSTRUCTION",
+  "next_question": "On the fixed18-case exploratory panel, can an automatic, value-blind source-query contract recover relation ownership while preserving correct derivation? First qualify interface invariance and available frozen-model resources.",
+  "known_fact_ids": [
+    "F001",
+    "F002",
+    "F003",
+    "F004",
+    "F005",
+    "F006",
+    "F007",
+    "F008",
+    "F009"
+  ],
+  "do_not_repeat": [
+    "Describing known FN/FP counts again without a new discriminating intervention",
+    "Equal rank or arbitrary score-weight search",
+    "Renaming local prefix reset or retrospective repair as a new observation",
+    "Token-state/adaptive/persistence variants without a substantively changed hypothesis",
+    "Treating zero-coverage finite certificates as a successful or failed natural-data detector"
+  ],
+  "unresolved_assumptions": [
+    "Original RAGTruth weight shards and original GPU backend lack complete provenance",
+    "Whether target-slot-blind source reconstruction adds useful information beyond direct verification",
+    "Whether natural claim/role proposal has enough reliable coverage without gold spans",
+    "How to preserve legitimate arithmetic/units and handle missing original financial questions",
+    "Availability of a resource-compatible frozen model for genuinely new observations"
+  ],
+  "constraints": {
+    "learning": "unsupervised",
+    "gold": "after_score_freeze_for_evaluation_and_posthoc_diagnosis",
+    "weight_or_threshold_search_on_gold": false,
+    "primary_task_population_changes": false,
+    "case_panel_is_final_confirmation": false,
+    "single_model_architecture_required": false,
+    "one_primary_module_at_a_time": true
+  },
+  "checkpoint_policy": "Update at every conclusion, completed run or structural pivot; record the next discriminating question before continuation",
+  "pipeline_helpers": "External ARIS run_state/watchdog helpers were not found; no background watchdog is claimed. Repository state and exact-run reservation are implemented locally.",
+  "case_panel": "research-state/case_panel_v1.json",
+  "resource_status": "All9 model files verified, exact94-module wheel and78 installed checks passed. Official CUDA torch wheel downloaded and installing; pinned dependencies and actual CUDA/bnb probe pending. User authorized idle auto-run.",
+  "user_resource_choice": "local_idle_automatic_run",
+  "experiment_plan": "refine-logs/EXPERIMENT_PLAN.md",
+  "frozen_observation_run_id": "399c2453ffac6456171187c9eac846bcc32eaf562180b5ee5792e917b69b0bd5",
+  "run_reservation_status": "checked_new_not_claimed_before_resource_admission"
+}

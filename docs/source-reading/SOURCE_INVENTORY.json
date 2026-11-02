@@ -5297,6 +5297,22 @@
       "validation": "Separate test/build receipts do not count as line explanation"
     },
     {
+      "path": "experiments/research/semantic_probe.py",
+      "sha256": "a72396e2ef40fadecdc9313c0f4f2b3586ecc2a0612c7c21fd65807b42f9c162",
+      "line_count": 638,
+      "functions": 28,
+      "status": "pending_line_explanation",
+      "validation": "Separate test/build receipts do not count as line explanation"
+    },
+    {
+      "path": "experiments/semantic_qualification.py",
+      "sha256": "9768eb39e48eba1ffba0dc212ec5f39f3931f2ae6f1deb36974233b5ea027b84",
+      "line_count": 463,
+      "functions": 17,
+      "status": "pending_line_explanation",
+      "validation": "Separate test/build receipts do not count as line explanation"
+    },
+    {
       "path": "tests/test_auc_decomposition.py",
       "sha256": "eaaa15cb28dd09cdc2fb764215cffba0959b4aad3aed916b333c93e22d7195ed",
       "line_count": 144,
@@ -5333,6 +5349,30 @@
       "sha256": "2aa102b0656401b6da5da11ddde9996a639030d298f9a00e5df140e0e0504df0",
       "line_count": 183,
       "functions": 15,
+      "status": "pending_line_explanation",
+      "validation": "Separate test/build receipts do not count as line explanation"
+    },
+    {
+      "path": "tests/test_research_memory.py",
+      "sha256": "17d6ebe39f33bceacd644e61e51939d6d2d50704db0526f9f77c92037cb8aeaa",
+      "line_count": 134,
+      "functions": 11,
+      "status": "pending_line_explanation",
+      "validation": "Separate test/build receipts do not count as line explanation"
+    },
+    {
+      "path": "tests/test_semantic_probe.py",
+      "sha256": "9430f101f5f40f33bff288aa29f576a3e5cb8d942d3d91c79b1e299bce8d522b",
+      "line_count": 424,
+      "functions": 34,
+      "status": "pending_line_explanation",
+      "validation": "Separate test/build receipts do not count as line explanation"
+    },
+    {
+      "path": "tests/test_semantic_qualification.py",
+      "sha256": "d7c1a91bb959bc679713f74c8cbda442429b48a9de399c3b8af052514afd927f",
+      "line_count": 342,
+      "functions": 34,
       "status": "pending_line_explanation",
       "validation": "Separate test/build receipts do not count as line explanation"
     },
@@ -5383,6 +5423,14 @@
       "functions": 0,
       "status": "pending_line_explanation",
       "validation": "Separate test/build receipts do not count as line explanation"
+    },
+    {
+      "path": "tools/research_memory.py",
+      "sha256": "f363a189a261a05fe383cc243f5b785af2d02797126147702f0ff8e0f9687629",
+      "line_count": 228,
+      "functions": 13,
+      "status": "pending_line_explanation",
+      "validation": "Separate test/build receipts do not count as line explanation"
     }
   ],
   "current_modifications": [
@@ -5392,6 +5440,7 @@
       "line_count": 859,
       "functions": 24,
       "status": "pending_line_explanation",
+      "validation": "Separate test/build receipts do not count as line explanation",
       "baseline_sha256": "0e89cbc9025503c69690dac0c909ae4c1dcb3527b4d3a939b69f96b79eef9e30",
       "role": "Post-baseline modification; original inventory retained"
     },
@@ -5401,21 +5450,23 @@
       "line_count": 108,
       "functions": 4,
       "status": "pending_line_explanation",
+      "validation": "Separate test/build receipts do not count as line explanation",
       "baseline_sha256": "1aea91af94cd39a2a971625d458909d5e82e97eb813352ff3a09da09cbfdd549",
       "role": "Post-baseline modification; original inventory retained"
     },
     {
       "path": "experiments/run.py",
-      "sha256": "771fbb38f29eed691fb8a27074cb2cc6c3d8d3ee54e44512218d0bde1c5ec87c",
-      "line_count": 405,
+      "sha256": "61183187fd3ad4dccc37849ceab6d443f8dd92686221ce9fb2b8e16262a0f9ad",
+      "line_count": 420,
       "functions": 2,
       "status": "pending_line_explanation",
+      "validation": "Separate test/build receipts do not count as line explanation",
       "baseline_sha256": "e504d9d54adbe1cd436bfdc954fa616d5b3f1338e90b4ac919358c220f4e8b5c",
       "role": "Post-baseline modification; original inventory retained"
     }
   ],
   "latest_update_date_beijing": "2026-11-02",
-  "current_addition_count": 15,
-  "current_file_count": 113,
+  "current_addition_count": 21,
+  "current_file_count": 119,
   "coverage_note": "The baseline 21-file/2421-line/128-definition explanation remains unchanged. Current additions and modifications listed here require line explanation; hashes or passing tests do not complete it. Post-recovery files are outside the original 88-file receipt."
 }

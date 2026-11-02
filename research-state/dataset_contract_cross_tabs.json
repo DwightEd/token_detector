@@ -1,0 +1,87 @@
+{
+  "Hallu_primary_template_by_chunk_count": {
+    "langchain_hub__1chunks": 99,
+    "langchain_hub__3chunks": 99,
+    "langchain_hub__5chunks": 99,
+    "template_1__1chunks": 99,
+    "template_1__3chunks": 99,
+    "template_1__5chunks": 99,
+    "template_2__1chunks": 99,
+    "template_2__3chunks": 99,
+    "template_2__5chunks": 99
+  },
+  "Hallu_primary_generator_leading_whitespace": {
+    "meta-llama/Llama-2-13b-chat-hf (float8)": {
+      "responses": 81,
+      "leading_whitespace": 81
+    },
+    "meta-llama/Llama-2-13b-chat-hf (int4)": {
+      "responses": 81,
+      "leading_whitespace": 81
+    },
+    "meta-llama/Llama-2-13b-chat-hf (int8)": {
+      "responses": 81,
+      "leading_whitespace": 81
+    },
+    "meta-llama/Llama-2-7b-chat-hf (float8)": {
+      "responses": 81,
+      "leading_whitespace": 81
+    },
+    "meta-llama/Llama-2-7b-chat-hf (int4)": {
+      "responses": 81,
+      "leading_whitespace": 81
+    },
+    "meta-llama/Llama-2-7b-chat-hf (int8)": {
+      "responses": 81,
+      "leading_whitespace": 81
+    },
+    "meta-llama/Llama-2-7b-chat-hf": {
+      "responses": 81,
+      "leading_whitespace": 81
+    },
+    "mistralai/Mistral-7B-Instruct-v0.1 (float8)": {
+      "responses": 81,
+      "leading_whitespace": 0
+    },
+    "mistralai/Mistral-7B-Instruct-v0.1 (int4)": {
+      "responses": 81,
+      "leading_whitespace": 0
+    },
+    "mistralai/Mistral-7B-Instruct-v0.1 (int8)": {
+      "responses": 81,
+      "leading_whitespace": 0
+    },
+    "mistralai/Mistral-7B-Instruct-v0.1": {
+      "responses": 81,
+      "leading_whitespace": 0
+    }
+  },
+  "Hallu_sources_with_multiple_templates": 0,
+  "Hallu_sources": 81,
+  "numeric_token_counts": {
+    "RAGTruth_QA": {
+      "number_bearing_tokens": 3563,
+      "valid_tokens": 124817
+    },
+    "RAGTruth_Summary": {
+      "number_bearing_tokens": 2296,
+      "valid_tokens": 121248
+    },
+    "RAGTruth_Data2txt": {
+      "number_bearing_tokens": 3894,
+      "valid_tokens": 178343
+    },
+    "FRED_FinQA": {
+      "number_bearing_tokens": 3160,
+      "valid_tokens": 16047
+    },
+    "FRED_TATQA": {
+      "number_bearing_tokens": 1538,
+      "valid_tokens": 7747
+    },
+    "HalluRAG_answerable": {
+      "number_bearing_tokens": 1460,
+      "valid_tokens": 29838
+    }
+  }
+}

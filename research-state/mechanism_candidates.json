@@ -1,0 +1,329 @@
+{
+  "schema": "mechanism-candidates-v1",
+  "created_utc": "2026-11-02T10:28:14.592366+00:00",
+  "status": "H002_SELECTED_QUALIFICATION_ONLY_PURE_CONTRACT_TESTED_NO_INFERENCE",
+  "implementation_performed": true,
+  "new_model_calls": 0,
+  "new_evaluation_gold_loaded": false,
+  "weight_or_threshold_fit": false,
+  "skill": "experiment-plan",
+  "language": "Chinese narrative / English machine-readable contracts",
+  "primary_claims": [
+    "Only a qualification hypothesis: deterministic masking may expose source-binding observations beyond original-path gaps; no added information or performance is established.",
+    "For fixed source, masked frame and role, blind request bytes are identical when only a masked slot value changes. This does not establish upstream proposal independence or semantic nonleakage."
+  ],
+  "not_claimed": [
+    "Neither module nor standard QAG/PAL is claimed novel.",
+    "No guarantee of all-task AUROC>=0.8, no new detector result, no semantic relation oracle.",
+    "No ordinary prefix-reset, repair-mixture or grammar sweep is proposed as a new observation."
+  ],
+  "references": [
+    {
+      "id": "P1",
+      "title": "How Language Model Hallucinations Can Snowball",
+      "url": "https://arxiv.org/abs/2305.13534",
+      "short_quote": "an LM over-commits to early mistakes",
+      "relevance": "Early false commitments can bias later justifications; this is a hypothesis to test within the new observer, not proof about original generators."
+    },
+    {
+      "id": "P2",
+      "title": "Chain-of-Verification Reduces Hallucination in Large Language Models",
+      "url": "https://arxiv.org/abs/2309.11495",
+      "short_quote": "answers those questions independently",
+      "relevance": "Independent verification is established prior art; source-only blind verification must be compared against direct verification."
+    },
+    {
+      "id": "P3",
+      "title": "Asking and Answering Questions to Evaluate the Factual Consistency of Summaries (QAGS)",
+      "url": "https://aclanthology.org/2020.acl-main.450/",
+      "short_quote": "similar answers if the summary is factually consistent",
+      "relevance": "Source/summary question answering is already an established factuality baseline; no QAG novelty claim is justified."
+    },
+    {
+      "id": "P4",
+      "title": "QAFactEval: Improved QA-Based Factual Consistency Evaluation for Summarization",
+      "url": "https://aclanthology.org/2022.naacl-main.187/",
+      "short_quote": "question generation and answerability classification",
+      "relevance": "Question generation and answerability are failure points, requiring automatic-proposal and abstention controls."
+    },
+    {
+      "id": "P5",
+      "title": "FinQA: A Dataset of Numerical Reasoning over Financial Data",
+      "url": "https://aclanthology.org/2021.emnlp-main.300v1.pdf",
+      "short_quote": "execution accuracy tends to overestimate the performance",
+      "relevance": "A correct numeric answer/program cannot certify the semantic account, source field or role; retain provenance and program structure."
+    },
+    {
+      "id": "P6",
+      "title": "PAL: Program-aided Language Models",
+      "url": "https://arxiv.org/abs/2211.10435",
+      "short_quote": "offloads the solution step to a runtime",
+      "relevance": "An LM can propose a program while a deterministic interpreter performs arithmetic; parsing/program correctness remains an assumption."
+    },
+    {
+      "id": "P7",
+      "title": "Knowledge-Centric Hallucination Detection (RefChecker)",
+      "url": "https://aclanthology.org/2024.emnlp-main.395/",
+      "short_quote": "an extractor generates claim-triplets from a response",
+      "relevance": "Fine claim extraction and source checking are existing prior art; preserve time, units, negation and scope beyond a plain triplet."
+    },
+    {
+      "id": "P8",
+      "title": "ReDeEP: Detecting Hallucination in Retrieval-Augmented Generation via Mechanistic Interpretability",
+      "url": "https://arxiv.org/abs/2410.11414",
+      "short_quote": "decoupling LLM's utilization of external context and parametric knowledge",
+      "relevance": "Internal source use and factual support differ; original regression-based detection is not an unsupervised mainline replacement."
+    },
+    {
+      "id": "P9",
+      "title": "Lookback Lens: Detecting and Mitigating Contextual Hallucinations in Large Language Models Using Only Attention Maps",
+      "url": "https://arxiv.org/abs/2407.07071",
+      "short_quote": "ratio of attention weights",
+      "relevance": "Attention context/history features and trained classifiers are prior art, not a new observation or semantic oracle."
+    },
+    {
+      "id": "P10",
+      "title": "Can You Trust Your Model's Uncertainty? Evaluating Predictive Uncertainty Under Dataset Shift",
+      "url": "https://arxiv.org/abs/1906.02530",
+      "short_quote": "traditional post-hoc calibration does indeed fall short",
+      "relevance": "Uncertainty/calibration performance under shift is not guaranteed; preserve cohort, observer and input-contract controls without target-label calibration."
+    },
+    {
+      "id": "P11",
+      "title": "Large Language Models Cannot Self-Correct Reasoning Yet",
+      "url": "https://arxiv.org/abs/2310.01798",
+      "short_quote": "without the crutch of external feedback",
+      "relevance": "Prompting a model to reflect is not enough; actual source evidence, program checks and strong direct-verifier comparisons are necessary."
+    }
+  ],
+  "prior_overlap": [
+    {
+      "code": "myproject/source.py:source_condition",
+      "already_exists": "Independent unit-local histories crop KV to the original prompt before each unit; ordinary prefix reset is not new."
+    },
+    {
+      "code": "myproject/counterfactual.py:repair_support",
+      "already_exists": "Source-by-candidate-future interactions with a uniform sequence-level candidate mixture; retrospective_repair_20261029 failed mechanism gates (3/6 correct year guards violated)."
+    },
+    {
+      "code": "myproject/sequence.py:token_state_scores/adaptive_token_scores",
+      "already_exists": "Bounding context or mixing shared/individual latent structure adds no source semantics; both fixed five-task studies were rejected."
+    },
+    {
+      "code": "myproject/proofs.py:compile_proofs; myproject/revision.py:revise_scores",
+      "already_exists": "Explicit JSON year-table/answer grammar and proof-conditioned revision already exist. V2 qualification: 2992 answers, 0 supported, 0 incompatible, 2996 unknown diagnostics; front-end route closed."
+    },
+    {
+      "code": "experiments/research/assertions.py; experiments/EXPERIMENTS.md:719-760",
+      "already_exists": "Frozen UD assertion parsing yielded 33 candidate answers/39 complete proposals in finance, but role-link joint gates failed. Broader syntax/regex is not a semantic contribution."
+    },
+    {
+      "code": "myproject/distribution.py:conditional_observations",
+      "already_exists": "Full-vocabulary conditional ranks, TV, source NLL/entropy and calibration are implemented; do not rename them new factuality information."
+    },
+    {
+      "code": "experiments/research/table_bindings.py; constraint_interaction.py",
+      "already_exists": "Literal value/year conflicts, numeric atom absence, source-derived arithmetic witnesses, bidirectional/independent/causal representations already exist."
+    },
+    {
+      "code": "restored Data2txt source representation",
+      "already_exists": "Python-style dictionary literals (single quotes, None/False) are not strict JSON. Zero coverage of JSON-row-table proof code is partly a representation-contract limitation, not proof that all typed checks are useless."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "A",
+      "name": "Source-cited executable checks, partial scope",
+      "status": "EXISTING_CONDITIONAL_EXECUTOR_CONTROL_NOT_SELECTED_AS_NEW_PILOT",
+      "new_information": "Explicit source-cell provenance, typed displayed-value arithmetic and Boolean constraints beyond cached token gaps. Automatic natural-language proposal requires a new frozen-LM observation; the CPU-only part is conditional execution.",
+      "input_contract": [
+        "Full unhighlighted source and original response; original question only if actually preserved.",
+        "Automatically propose all eligible obligations, source character/cell references, entity/measure/time/unit keys and a restricted AST; never pass gold spans or manually selected wrong values.",
+        "Mask claimed output/direction before asking for the source-derived program/result; retain the original value only in a separately sealed comparison object.",
+        "Missing original question, comparison roles, unit, source key, unique interpretation or precise rounding semantics -> unknown."
+      ],
+      "output": [
+        "execution_validity",
+        "source_provenance_validity",
+        "claim_binding_verified_or_unknown",
+        "typed_result_and_unit",
+        "support_conflict_unknown_per_obligation",
+        "original_response_character_spans",
+        "proof_tree_or_abstention_reason"
+      ],
+      "conditional_theory": "If source leaves are correctly bound, claim roles are correct, operations are sound and units/precision compatible, induction over the restricted expression DAG proves the displayed-value relation. Execution alone does not prove the natural-language parse or account binding.",
+      "cheap_cpu_pilot": "Not selected: manually authored fixed-case programs test only an existing conditional executor, not an automatic method or a new pilot.",
+      "decisive_new_intervention": "For automatic proposal, withhold the claimed result from the program-producing LM; compare source-cited role-correct programs against equal-valued wrong-account/wrong-year programs. Same numeric answer must not be accepted when lineage/role binding differs.",
+      "not_novel": "Program execution is FinQA/PAL prior art; the previous proof/revision kernel is also prior project work. Any new contribution needs evidence that automatic provenance/role proposal now works and adds information.",
+      "feasibility": "CPU control feasible from restored inference sources and cached identities; no model is needed for conditional executor tests. Natural coverage is unknown until new LM proposal is admitted and measured."
+    },
+    {
+      "id": "B",
+      "name": "Deterministic target-masked source reconstruction",
+      "status": "SELECTED_H002_QUALIFICATION_ONLY_NOT_A_MAINLINE_METHOD",
+      "new_information": "Hypothesis only: new source-grounded observations of a masked role, compared with direct and deliberately leaky controls; no information gain is yet demonstrated.",
+      "input_contract": [
+        "The sole proposer case input is the complete unhighlighted response; no source, gold, selected error positions or wrong values. It proposes all claim frames and typed slots only; generated questions are rejected.",
+        "Default exact claim text is aligned only when unique within the whole response; slot text only when unique within its validated claim. Optional offsets must be paired and strictly exact, with no fallback. Repeated offset-free text is invalid; alignment origin is retained.",
+        "Blind payload contains only source, deterministic masked_claim and role. The selected literal slot, repeated literals and declared aliases are masked; no generated question, original full answer, value, aliases or offsets are sent. Source is never censored.",
+        "Direct sees the same whole claim plus role and automatic focus span. Leaky uses the identical blind payload and adds claimed_value intentionally.",
+        "Output and source quote validation establish literal occurrence only. Unknown is retained for missing premises, alias ambiguity, unbound comparison roles and arithmetic requiring an executor."
+      ],
+      "output": [
+        "all_proposed_frames_slots_and_alignment_origins",
+        "invalid_raw_items_and_envelope_errors",
+        "masked_requests_and_literal_leak_limits",
+        "source_observations_and_literal_quotes",
+        "explicit_unknown_and_unobserved_frames",
+        "input_output_token_counts_output_limits_and_cache_provenance"
+      ],
+      "theory_assumptions": [
+        "Source answerability and the semantic frame are recoverable by the frozen model.",
+        "Removing the asserted target can reduce observer false-premise anchoring; this is an empirical hypothesis, not a theorem or proof about original generator snowballing.",
+        "The blind observation Z must contain conditional information beyond cached G; deterministic postprocessing f(G) alone cannot add information (data-processing inequality). Neither information gain nor a conditional proof guarantees AUROC improvement."
+      ],
+      "decisive_new_intervention": "Compare target-blind versus value-leaky/source-conditioned questions using the same model and source, plus same-wordbag actor/year/predicate swaps. The predicted bound role must change when source binding changes while vocabulary stays fixed. This is not local unit reset and not a repair-support candidate-future mixture.",
+      "strong_baseline": "Common frozen model and automatic frames, direct source-plus-whole-claim verification. Identical 256 output caps do not guarantee equal total compute; report actual prefill/decode/calls/time. No new-method claim if blind adds no reliable information.",
+      "not_novel": "QAGS/QAFactEval/CoVe/RefChecker already establish related QA/claim verification. A new name, prompt or slot format alone is not a contribution.",
+      "feasibility": "New model inference is required; current cache lacks source-only semantic answers and programs. Resource admission must precede model calls; do not mutate the CPU .venv or terminate other apps.",
+      "conditional_input_isolation": {
+        "statement": "For fixed source S, masked claim C and role R, deterministic B(S,C,R) is identical byte-for-byte under a slot-value replacement that yields the same C,R.",
+        "tested_control": "annual versus monthly coverage, unchanged annually billing frequency; blind identical, direct/leaky different",
+        "does_not_prove": [
+          "proposal F(Y) independent of value",
+          "absence of semantic or undeclared-alias leakage",
+          "source answerability",
+          "correctness of returned value or quote entailment",
+          "improved detector performance"
+        ]
+      }
+    }
+  ],
+  "case_expectations": [
+    {
+      "case": "Accrued expenses vs Deferred tax assets",
+      "A_expected": "Unknown for the categorical account claim unless an automatic source/claim binding is independently validated; no arithmetic-only clean certificate.",
+      "B_expected": "Recover Deferred tax assets and Deferred tax liabilities; conflict localized to first account, not the correct second account.",
+      "negative_controls": "Correct first account; same-wordbag row/actor ownership swap; unrelated table section -> unknown."
+    },
+    {
+      "case": "monthly coverage, invoicing remains annually",
+      "A_expected": "Unknown: numeric execution does not establish the coverage-period relation.",
+      "B_expected": "Recover billing frequency=annually and coverage period=annual separately; flag monthly only.",
+      "negative_controls": "Correct annual coverage; independently change billing frequency; absent coverage statement -> unknown."
+    },
+    {
+      "case": "revenue recognition in FinQA59",
+      "A_expected": "17290 arithmetic may be valid, but whole account claim cannot be certified by the result; preserve account-binding unknown.",
+      "B_expected": "Recover unrecognized tax benefits/gross liability as the account; detect both words of the wrong account phrase if slot extraction succeeds.",
+      "negative_controls": "Same numbers, correct account; same result with a wrong row/program lineage must not pass."
+    },
+    {
+      "case": "FinQA53 decrease of 8 with 5829-5735",
+      "A_expected": "Under unique explicit source binding, displayed difference is +94; numerical result 8 conflicts. Missing comparison role -> unknown, never invent a year pair.",
+      "B_expected": "Recover the net-revenue comparison if the full response identifies it; distinguish amount from direction; do not assume unmarked decrease is semantically clean.",
+      "negative_controls": "Increase of94; reverse-year comparison with an explicit reversed question; missing question/ambiguous pair -> unknown."
+    },
+    {
+      "case": "TATQA3 46-(-34.8)=80.8 USD million",
+      "A_expected": "Support displayed-value arithmetic and USDm equivalence when source keys/units bind; never infer that every surrounding clause is clean.",
+      "B_expected": "Preserve the supported derivation, or call A; absence of literal80.8 in the table is not contradiction.",
+      "negative_controls": "Wrong signed subtraction; incompatible unit; correct result attached to wrong measure remains unknown/conflict, not support."
+    },
+    {
+      "case": "first/second robot route ownership",
+      "A_expected": "Unknown without an automatically verified relational binding.",
+      "B_expected": "Bind two-thirds completion to first robot and all11points to second; conflict on the wrongly assigned completion.",
+      "negative_controls": "Correct ownership; same-wordbag actor swap must change the bound answer; unresolved pronoun -> unknown."
+    },
+    {
+      "case": "over300years BC vs around300years ago",
+      "A_expected": "Unknown if reference time/era conversion is underidentified.",
+      "B_expected": "Recover the source BCE/BC time reference; do not silently convert relative years ago without a known reference date.",
+      "negative_controls": "Exact source BC wording; missing relative-time anchor -> unknown; unrelated date distractor must not determine the answer."
+    },
+    {
+      "case": "RestaurantsReservations=False vs takes reservations",
+      "A_expected": "Conflict only if automatic proposal binds the explicit Boolean property under the declared schema; None/missing is unknown.",
+      "B_expected": "Source-only answer should preserve False and property scope rather than infer from restaurant style.",
+      "negative_controls": "True/False field-value swap holding wordbag fixed; None/missing; conflicting review/time scope -> unknown."
+    },
+    {
+      "case": "Hallu normal I opening / false absence claim",
+      "A_expected": "Unknown for boilerplate; no automatic error from source-word absence.",
+      "B_expected": "Do not invent a factual obligation for courtesy; separately check whether the source contains police actions/second single when the answer denies available information.",
+      "negative_controls": "Source-supported title/location inside an erroneous sentence is not independently false; underanswerable/unknown sources remain explicit."
+    }
+  ],
+  "gates": [
+    "Q0 frozen tokenizer/backend and leading/interior format qualification before semantic mechanism interpretation",
+    "Automatic proposal coverage, decoder validity and output-budget limitations, without hand-selected gold slots",
+    "Every valid automatically proposed frame/slot gets direct/blind/leaky observation with all invalid/unknown retained",
+    "Same-wordbag binding, missing-premise and negative controls, actual cost versus direct baseline",
+    "Only after selection freeze complete original-token projection, scoring and unknown policy; evaluate all tasks after score seals"
+  ],
+  "resources": {
+    "reported_by_parent": "16GBRAM; about3.7GB GPU memory free; other user applications must be preserved",
+    "current_cpu_environment": "Do not mutate .venv; any LM stack needs its own admitted environment",
+    "model_selection": "No checkpoint selected or downloaded by this subtask; theoretical fit is not a memory/latency guarantee",
+    "budget": "Pilot counts/cost depend on automatic frame count. Match total calls/output budgets to direct verifier and report actual prefill/decode tokens and wall time; no timing is fabricated."
+  },
+  "provenance": {
+    "myproject/observer.py": "054d7baee1089872b5cbd081d03e6b146fe40309807854dca33dabc7f71da747",
+    "myproject/source.py": "838476d6af7889d22efc09925693245218663f04faf0f79bb9474ef923e1ecbc",
+    "myproject/measure.py": "0778b233b07a42c1d1a5e6739027394ab5c0644b25cca3082e8b53998eedbbd3",
+    "myproject/sequence.py": "57c839c77eb93081bbde6d4f127497f62bc6586b41ac4b80fea8160d02953114",
+    "myproject/counterfactual.py": "2c1e0cc6f800a1308fd42689b3739dc03592902413f713fd36fc9ef8aa6430da",
+    "myproject/proofs.py": "191727f0f2e073b3ab53ffea7ba4d2e946514a771f6afd4d9d026c70d63de7b9",
+    "myproject/revision.py": "07b146366085dbb06dd27ce8406918f78035a666b6a0742ca4b84a26cc50890e",
+    "myproject/distribution.py": "891b83c1f5c48dbf9926ac211aaca1c5d5a57942a6b392b86de5ac95104d7bb2",
+    "experiments/research/assertions.py": "6d12088bc68ac7acc03b4da2c621ebd24d65211139f3494f664ec95251e8d864",
+    "experiments/research/table_bindings.py": "b59ba6fea81393849976c14b8b9f35edbb41fedd3d1ec4163d7932054ee0b481",
+    "experiments/EXPERIMENTS.md": "cc2b564fb043903c963a4ca1873fb8bf1aabafb22a8c261c31632051c9b4d4c7"
+  },
+  "updated_utc": "2026-11-02T11:07:50.744868+00:00",
+  "observability_qualification": {
+    "id": "Q0",
+    "status": "REQUIRED_BEFORE_H002_ACTUAL_INFERENCE_NOT_EXECUTED",
+    "primary_population_only": {
+      "responses": 891,
+      "llama2_with_leading_whitespace": 567,
+      "mistral_without_leading_whitespace": 324
+    },
+    "arms": [
+      "original",
+      "add_leading_ascii_space",
+      "remove_one_leading_ascii_space",
+      "add_interior_ascii_space",
+      "remove_one_interior_ascii_space"
+    ],
+    "intervention": "Add exactly one leading ASCII space; remove exactly one only when original begins ASCII space. Character-count +/-1 interior controls use eligible existing ASCII gaps; no Unicode lstrip. All unavailable controls remain identity arms with reasons and explicit empty removals.",
+    "token_count_matched": null,
+    "unit_format_matched": null,
+    "semantic_equivalence_verified": false,
+    "limitation": "Character order identity does not prove semantic equivalence in code/tables/quotations or any model/interface causal effect. Actual fixed-tokenizer/runtime observation is still required.",
+    "source_artifact": "outputs/research-goal-20261102/dataset_contract_audit.json",
+    "source_field": "cross_tabs.Hallu_primary_generator_leading_whitespace",
+    "no_population_drop": true,
+    "no_prefix_token_drop": true,
+    "new_model_calls": 0
+  },
+  "implementation": {
+    "module": "experiments/research/semantic_probe.py",
+    "tests": "tests/test_semantic_probe.py",
+    "synthetic_tests_passed": 54,
+    "test_command": "python -m pytest tests/test_semantic_probe.py -q",
+    "contract_version": "semantic-probe-v1",
+    "schema_changes_before_first_inference": [
+      "text_only_unique_literal_default",
+      "paired_optional_strict_offsets",
+      "structured_decoder_limits",
+      "single_ASCII_Q0_arms_and_boundary_mapping_validation"
+    ],
+    "proposer_output_cap": 1536,
+    "observer_output_cap": 256,
+    "budget_frozen_before_first_inference": true,
+    "engineering_failure_is_semantic_refutation": false
+  },
+  "implementation_scope": "pure reusable contract and synthetic tests only; no LM/scoring"
+}

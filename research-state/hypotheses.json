@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "hypotheses": [
+    {
+      "id": "H001_FORMAT_INTERFACE",
+      "status": "proposed_qualification",
+      "not_a_new_method": true,
+      "question": "Does a within-response leading-whitespace intervention change source contrast or verification while factual content is unchanged?",
+      "new_condition": "Paired intervention in the same response/observer/backend; old opening-FP counts were not causal tests.",
+      "competing_explanations": [
+        "Generation-observer interface contributes nuisance",
+        "Source-conditioned style/prefix effects persist after whitespace control"
+      ],
+      "prior_overlap": "No repeat of position counts or ordinary local prefix reset",
+      "evidence_index": "dataset_contracts.json",
+      "admission": "No token dropping; retain exact content maps and whole population. New observer findings do not authenticate old RAG weights."
+    },
+    {
+      "id": "H002_VALUE_BLIND_RECONSTRUCTION",
+      "status": "contract_frozen_pending_natural_qualification",
+      "question": "Does value-blind source reconstruction recover actor/time/account ownership more reliably than equal-budget direct verification?",
+      "new_condition": "Deterministic masked-claim query never receives selected value; compare same-wordbag bindings and a deliberately value-visible condition.",
+      "prior_overlap": "QAGS/QAFactEval/CoVe are existing work; novelty remains unestablished. Existing local/repair readouts are not this new semantic query.",
+      "expected_failure_modes": [
+        "Automatic frame/slot proposal lacks coverage",
+        "Masked remainder still contains false premises",
+        "Missing original question makes comparison roles underidentified",
+        "Frozen model cannot reconstruct or validate a relation"
+      ],
+      "admission": "Automatic full response proposal only; no gold spans or manually supplied wrong slots; unknown/coverage reported; no scalar ensemble defined yet."
+    }
+  ]
+}

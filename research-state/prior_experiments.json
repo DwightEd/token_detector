@@ -1,0 +1,3288 @@
+{
+  "schema": "prior-experiments-v1",
+  "created_utc": "2026-11-02T10:19:58.619476+00:00",
+  "audit_scope": "Read-only repository/cache/document audit; no experiments, score recomputation, model calls or label-based parameter search. Historical metrics copied at reported precision.",
+  "goal_context": {
+    "objective": "Sustained unsupervised mechanism-driven improvement to AUROC>=.8 on every declared six primary tasks",
+    "primary_tasks": [
+      "QA",
+      "Summary",
+      "Data2txt",
+      "FinQA",
+      "TATQA",
+      "HalluRAG_answerable"
+    ],
+    "forbidden_drift": [
+      "parameter adjustment as the research direction",
+      "blind score weighting",
+      "renaming earlier failed readouts",
+      "repeating established facts as new mechanism tests",
+      "changing method after final truth and calling same data confirmation"
+    ],
+    "truth": "Final evaluation only after freezing methods/parameters/threshold rules/populations/scores; exposed old populations remain exploratory",
+    "state_owner": "Parent maintains persistent RESEARCH_STATE; registry is a seed, not a goal-completion receipt"
+  },
+  "source_artifacts": {
+    "ledger": {
+      "path": "experiments/EXPERIMENTS.md",
+      "exists": true,
+      "sha256": "cc2b564fb043903c963a4ca1873fb8bf1aabafb22a8c261c31632051c9b4d4c7",
+      "role": "reported historical outcomes; some original run directories are not recovered",
+      "git_artifact": {
+        "revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+        "path": "experiments/EXPERIMENTS.md",
+        "sha256": "adc1d32568c65cc50b87e56241c5b0fbabf9f488e55888438624eb332323cc73"
+      }
+    },
+    "comparison": {
+      "path": "docs/results/comparison.json",
+      "exists": true,
+      "sha256": "7c72aab0be3f4fec42d969cad6a5ee6261a9eadefefcc2efcee73294eef2601d",
+      "role": "sanitized historical metric rows; printed precision retained",
+      "git_artifact": {
+        "revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+        "path": "docs/results/comparison.json",
+        "sha256": "23291f4d8180692988e4a242ff6c3ba467d37ac4fd4e3c1a29d21672189be37b"
+      }
+    },
+    "numeric_extracts": {
+      "path": "docs/results/evidence.json",
+      "exists": true,
+      "sha256": "757d0e26a6cd13f800323b325f65ba98ff014bc29d2106c51ab951c729cecbd1",
+      "role": "sanitized paper and numerical history extracts",
+      "git_artifact": {
+        "revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+        "path": "docs/results/evidence.json",
+        "sha256": "3b2b05b893dda4043c47c44e4505928b9f589b5a8b8654075e204d7d955621c1"
+      }
+    },
+    "paper_text": {
+      "path": "outputs/method-comparison-20261102/paper-pages.json",
+      "exists": true,
+      "sha256": "6fc1929e5a925b4902192f7f171d4a29d00e023a55797ec2f75647bb81e141a0",
+      "role": "cached manuscript pages, not new evaluation"
+    },
+    "mechanism": {
+      "path": "docs/results/fnfp_mechanism_summary.json",
+      "exists": true,
+      "sha256": "bc73e89cecbd43bffd314fd6e331258781867a5db23a0a23e265437ffcdfa723",
+      "role": "already completed five-task FN/FP/stage audit; not recomputed here",
+      "git_artifact": {
+        "revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+        "path": "docs/results/fnfp_mechanism_summary.json",
+        "sha256": "9a43651afa30931c797bf61fc5c4ccba49225b93980a46278ab74c5a352b427f"
+      }
+    },
+    "qualitative": {
+      "path": "docs/results/fnfp_qualitative_evidence.json",
+      "exists": true,
+      "sha256": "91c0f0e465a6b6691b0357e8cbfcd8ee80f7ae4359c7365739d9922ebbe8149b",
+      "role": "already completed source-grounded financial cases",
+      "git_artifact": {
+        "revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+        "path": "docs/results/fnfp_qualitative_evidence.json",
+        "sha256": "7b480a9f29357101923cfd19fedf0f3f0d8cf73b763b7249bad129a55cfa3591"
+      }
+    },
+    "hallurag": {
+      "path": "docs/results/hallurag_fnfp_evidence.json",
+      "exists": true,
+      "sha256": "b56be588b0a7a6b6cacb196f11413d6eafa50c53d096ea84fd0ae8e1741bfa82",
+      "role": "already completed V3 HalluRAG audit",
+      "git_artifact": {
+        "revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+        "path": "docs/results/hallurag_fnfp_evidence.json",
+        "sha256": "34d09331b9bb2ad82a885122479e6d93601ed130e091047adbebbb26baf54ce6"
+      }
+    },
+    "hallurag_strata": {
+      "path": "docs/results/hallurag_strata_evidence.json",
+      "exists": true,
+      "sha256": "bea982bb268aa603080ac52c43eb166b1bc2e916e26cfa92d11555f3db9e4b4d",
+      "role": "recovered R4 complete-TEST aggregate report and V3 strata",
+      "git_artifact": {
+        "revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+        "path": "docs/results/hallurag_strata_evidence.json",
+        "sha256": "5b643e3cb7b8a31b842985eedd9be618dc3854c0443df3cd3c8cab5f32c85506"
+      }
+    },
+    "fusion": {
+      "path": "docs/results/cpu_fusion_evidence.json",
+      "exists": true,
+      "sha256": "6853a22d9a2b1acf96700aa08a2788c64652c7a569a729134922fe3b70154308",
+      "role": "completed rejected equal-rank control",
+      "git_artifact": {
+        "revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+        "path": "docs/results/cpu_fusion_evidence.json",
+        "sha256": "e7cfebf3f18adb84eda67b109a88088176e97654ff5d39187ad4ae9daa582051"
+      }
+    },
+    "literature": {
+      "path": "refine-logs/theory-grounding-20261102/LITERATURE.md",
+      "exists": true,
+      "sha256": "dccf94ce461ca298fbf411d4e795d79377bceef58e32489edbfe6b115fbd50e5",
+      "role": "previous literature review; not newly searched or independently reverified in this audit",
+      "git_artifact": {
+        "revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+        "path": "refine-logs/theory-grounding-20261102/LITERATURE.md",
+        "sha256": "dccf94ce461ca298fbf411d4e795d79377bceef58e32489edbfe6b115fbd50e5"
+      }
+    },
+    "counterfactual": {
+      "path": "myproject/counterfactual.py",
+      "exists": true,
+      "sha256": "2c1e0cc6f800a1308fd42689b3739dc03592902413f713fd36fc9ef8aa6430da",
+      "role": "current definition, not an assertion that current bytes are the original run snapshot",
+      "git_artifact": {
+        "revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+        "path": "myproject/counterfactual.py",
+        "sha256": "2c1e0cc6f800a1308fd42689b3739dc03592902413f713fd36fc9ef8aa6430da"
+      }
+    },
+    "repairs_runner": {
+      "path": "experiments/counterfactual_repairs.py",
+      "exists": true,
+      "sha256": "fb272fc9ff05a28e26f01349cb2c304c5379e2b6409af4ac44070c24f4c57275",
+      "role": "current intervention implementation for scope/alias identification",
+      "git_artifact": {
+        "revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+        "path": "experiments/counterfactual_repairs.py",
+        "sha256": "fb272fc9ff05a28e26f01349cb2c304c5379e2b6409af4ac44070c24f4c57275"
+      }
+    },
+    "sequence": {
+      "path": "myproject/sequence.py",
+      "exists": true,
+      "sha256": "57c839c77eb93081bbde6d4f127497f62bc6586b41ac4b80fea8160d02953114",
+      "role": "current unique sequence/readout implementation",
+      "git_artifact": {
+        "revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+        "path": "myproject/sequence.py",
+        "sha256": "57c839c77eb93081bbde6d4f127497f62bc6586b41ac4b80fea8160d02953114"
+      }
+    },
+    "proofs": {
+      "path": "myproject/proofs.py",
+      "exists": true,
+      "sha256": "191727f0f2e073b3ab53ffea7ba4d2e946514a771f6afd4d9d026c70d63de7b9",
+      "role": "current narrow proof compiler",
+      "git_artifact": {
+        "revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+        "path": "myproject/proofs.py",
+        "sha256": "191727f0f2e073b3ab53ffea7ba4d2e946514a771f6afd4d9d026c70d63de7b9"
+      }
+    },
+    "assertions": {
+      "path": "experiments/research/assertions.py",
+      "exists": true,
+      "sha256": "6d12088bc68ac7acc03b4da2c621ebd24d65211139f3494f664ec95251e8d864",
+      "role": "current assertion instrument",
+      "git_artifact": {
+        "revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+        "path": "experiments/research/assertions.py",
+        "sha256": "6d12088bc68ac7acc03b4da2c621ebd24d65211139f3494f664ec95251e8d864"
+      }
+    },
+    "relational": {
+      "path": "experiments/research/relational.py",
+      "exists": true,
+      "sha256": "41b3e183b5e6c6ecfc47af079e91946643aa6a340c8322652fa42241a7b4a8c7",
+      "role": "current relation-null implementation",
+      "git_artifact": {
+        "revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+        "path": "experiments/research/relational.py",
+        "sha256": "41b3e183b5e6c6ecfc47af079e91946643aa6a340c8322652fa42241a7b4a8c7"
+      }
+    },
+    "constraints": {
+      "path": "experiments/research/constraint_interaction.py",
+      "exists": true,
+      "sha256": "be069ffbd941ada04c4f3ea3410d385794cdd348b08428bc24a3547f3bf66939",
+      "role": "current constrained-state implementation",
+      "git_artifact": {
+        "revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+        "path": "experiments/research/constraint_interaction.py",
+        "sha256": "be069ffbd941ada04c4f3ea3410d385794cdd348b08428bc24a3547f3bf66939"
+      }
+    }
+  },
+  "known_facts_do_not_retest": [
+    {
+      "id": "K01_EXISTING_PRIMARY_PERFORMANCE",
+      "fact": "Six-primary-task R4pointpasses2/6,V3three/6,descriptiveenvelopefour/6;envelopeisnotadetector. Halluprimaryanswerable891;all/unavailable retained.",
+      "evidence_sources": [
+        "comparison",
+        "hallurag_strata"
+      ],
+      "do_not_retest": "Do not rerun these known metric/partition facts as a mechanism experiment."
+    },
+    {
+      "id": "K02_COMMON_MISSES",
+      "fact": "Previously established roughly12k commonFN acrossfive tasks; exact per-task counts copied without recomputation.",
+      "counts": {
+        "QA": 3363,
+        "Summary": 2376,
+        "Data2txt": 4779,
+        "FinQA": 986,
+        "TATQA": 535
+      },
+      "both_raw_nonpositive": {
+        "QA": 1793,
+        "Summary": 1582,
+        "Data2txt": 2823,
+        "FinQA": 463,
+        "TATQA": 264
+      },
+      "evidence_sources": [
+        "mechanism"
+      ],
+      "do_not_retest": "These are label/span diagnostics, not proof every included word is individually false."
+    },
+    {
+      "id": "K03_ACTIVE_VIEW_NOT_CAUSAL_SUPPRESSION",
+      "fact": "Summary R4 ignores local; Data8937 rawfullrank7962 is within8918, but actualpairpoint12232 alreadyoutside beforeprior.",
+      "evidence_sources": [
+        "mechanism"
+      ],
+      "do_not_retest": "Do not rediscover local/full mismatch or misattribute pre-point loss to final smoothing."
+    },
+    {
+      "id": "K04_ROUTE_TRANSFER",
+      "fact": "CachedR4source→baseTP:QA2202→2528,FinQA291→160,TATQA249→103; fixedQArouteweight.25, no new fit.",
+      "evidence_sources": [
+        "mechanism"
+      ],
+      "do_not_retest": "Do not use this exposed evidence to scan route weights or elevate a stage posthoc."
+    },
+    {
+      "id": "K05_TRUTH_IDENTIFICATION",
+      "fact": "Sourcepredictability,physicalinfluence,latentexpertstate,templateLOOandcorrectarithmetic alone do not establish complete source-supported relational correctness.",
+      "evidence_sources": [
+        "ledger",
+        "qualitative",
+        "literature"
+      ],
+      "do_not_retest": "No repeat source deletion/reordering/same counterexample demonstration without a new distinction."
+    },
+    {
+      "id": "K06_HALLURAG_CACHE_STATUS",
+      "fact": "V3completeHallu1782cache restored;R4completeTESTaggregate all/available/unavailable recovered, originalR4arrays deleted; DEV132score is a separate VAL population.",
+      "evidence_sources": [
+        "hallurag",
+        "hallurag_strata"
+      ],
+      "do_not_retest": "Do not substituteDEV132 or a differentobserver for missingR4arrays."
+    }
+  ],
+  "experiments": [
+    {
+      "id": "P001_RT_GEOMETRIC_NORMALIZATION",
+      "hypothesis": "Normalize source/absent experts and share regions to improve factual detection.",
+      "changed_information_vs_readout": "Same source/absent probability worlds; geometric midpoint and mixture/readout normalization, then the old chain.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "Historical DEV276 +80 controlled cases; RAG human spans and HalluRAG automatic sentence broadcasts are separate.",
+        "controls": [
+          "frozen R4 same population",
+          "simple NLL HalluRAG control"
+        ],
+        "reported_run_roots": []
+      },
+      "reported_metrics": [],
+      "actual_outcome": {
+        "QA": "R4 .894336/.516843 versus Rt .749585/.256138",
+        "Summary": "R4 .774180/.103156 versus Rt .661829/.056552",
+        "Data2txt": "R4 .742037/.208888 versus Rt .718826/.152798",
+        "HalluRAG_DEV": "R4 .472617/.287484; Rt .526021/.323978; NLL .595040"
+      },
+      "failure_or_unknown_interpretation": "Three RAG tasks worse; Hallu gains did not beat NLL. Probability normalization did not establish relation-support identification. Original deleted experiment_results are not replayable.",
+      "would_merely_repeat": [
+        "geometric bridge renamed as calibrated truth",
+        "another normalized midpoint from the same experts"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A genuinely new source-compatibility observation or independently qualified semantic front end, with a preregistered distinction from lexical predictability, matched controls and fresh final labels; no reweighting of these same scalars.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 历史科学实验",
+          "line_start": 140,
+          "line_end": 154,
+          "section_sha256": "a83f0ab3cb6d1afedba6f9518a94283f2825485d462c6cee0456c702325f80d5"
+        }
+      ]
+    },
+    {
+      "id": "P002_CONTEXTUAL_ANCHOR_RESIDUAL",
+      "hypothesis": "Aligned lexical-anchor hidden-state displacement distinguishes semantic compatibility.",
+      "changed_information_vs_readout": "New internal-state measurements, but lexical anchor alignment and residual/cosine readout.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "104 mechanism/coverage examples:8 semantic families ×4 source/answer crosses ×3 meaning-preserving orders=96, plus8 stress/coverage cases; frozen8B.",
+        "controls": [
+          "meaning-preserving source reorder",
+          "matched raw gap",
+          "normal refusals and missing anchors"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/contextual_probe_20261027",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [],
+      "actual_outcome": {
+        "all_family_gates": "0/8 for residual, cosine and matched gap; residual/cosine original direction wrong8/8 and flips with reordering8/8",
+        "natural_AUROC": null
+      },
+      "failure_or_unknown_interpretation": "Order/prefix dependence and missing anchors; not a natural detector benchmark.",
+      "would_merely_repeat": [
+        "flip residual sign",
+        "center/sweep layers",
+        "another anchor-distance formula"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A genuinely new source-compatibility observation or independently qualified semantic front end, with a preregistered distinction from lexical predictability, matched controls and fresh final labels; no reweighting of these same scalars.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-27 上下文观测资格测试（完成）",
+          "line_start": 190,
+          "line_end": 209,
+          "section_sha256": "0f7edd2c9e3fc07f8bac387d6213ce1a54d26ca31549c677d4014176305adaf1"
+        }
+      ]
+    },
+    {
+      "id": "P003_DELETION_DEPENDENCY_FINGERPRINTS",
+      "hypothesis": "Identity-aligned signed token-deletion effects identify correct relational binding.",
+      "changed_information_vs_readout": "New physical deletion matrices; Hellinger/MSE compared identity-aligned source and answer dependencies.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "38 segments,492 deletion worlds;4 controlled fact families,64 crossed/order controls; frozen8B.",
+        "controls": [
+          "independent source/answer order",
+          "identity permutation preserving signed edge strengths",
+          "missing/refusal coverage"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/dependency_probe_20261027",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [],
+      "actual_outcome": {
+        "family_gates": "0/4; Hellinger direction9/16; all8 target cross-order margins negative",
+        "natural_AUROC": null
+      },
+      "failure_or_unknown_interpretation": "Source influence and true lexical alignment did not establish stable semantic compatibility.",
+      "would_merely_repeat": [
+        "different divergence on the same deletion matrix",
+        "relabel dependency strength as truth"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A genuinely new source-compatibility observation or independently qualified semantic front end, with a preregistered distinction from lexical predictability, matched controls and fresh final labels; no reweighting of these same scalars.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-27 有向依赖指纹（完成，未通过）",
+          "line_start": 210,
+          "line_end": 242,
+          "section_sha256": "f4afa46181feb01f0e355fd13e43a4079debc1458edd527c08d0b8b580ae1b8a"
+        }
+      ]
+    },
+    {
+      "id": "P004_DIRECTED_AND_LOO_SEGMENTATION",
+      "hypothesis": "Better attention-based shared-state boundaries solve localization.",
+      "changed_information_vs_readout": "Attention/segmentation proxy and span-dependent local observation changed; no new source semantic judgment.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "First48 answers/24sources split FIT/DEV, then additional144 answers/72 disjoint sources; exposed RAG3 only; Summary firstDEV has0positive.",
+        "controls": [
+          "punctuation",
+          "walk1",
+          "zero boundary cost",
+          "fixed versus unlabeled FIT",
+          "leave-one-out dual-view partition"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/directed_spans_20261027",
+            "present_locally": false
+          },
+          {
+            "path": "outputs/loo_new144_20261027",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [],
+      "actual_outcome": {
+        "first_QA": "punct .782950/.152578;direct .761668/.211786",
+        "first_Data2txt": "punct .626191/.062614;direct .628116/.098251",
+        "new144_loo_AUROC": "fixed .728413/.790754/.720360;FIT .734028/.791160/.725048",
+        "Summary_first_DEV": "undefined"
+      },
+      "failure_or_unknown_interpretation": "AP/local changes did not yield stable complete detection superiority; no third segmentation proxy warranted by these facts.",
+      "would_merely_repeat": [
+        "more graph walks",
+        "different DP boundary proxy with the same causal interpretation",
+        "remove window/CDF and claim new semantic evidence"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A new boundary target tied to independently specified factual relations and a condition distinguishing it from punctuation/LOO; same attention proxy tuning is insufficient.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-27 确定性有向状态分段（完整评分完成，独立复核中）",
+          "line_start": 243,
+          "line_end": 286,
+          "section_sha256": "bde32969ee0f0e297f79086b9095bccc2654a70ba421454aebb18c1b214da075"
+        },
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-27 主线集成与FIT消融（完成并审计）",
+          "line_start": 287,
+          "line_end": 331,
+          "section_sha256": "c40bad06a7ee0988888c66ece14c86b14c7f1a336dd001440696672f92c885d6"
+        },
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-27 两轮联合共享估计与分段迭代（评分/评价完成）",
+          "line_start": 336,
+          "line_end": 350,
+          "section_sha256": "6bc6e38cb92c968e618b5fafcac22c38e38c1d4fb467476eba95a7b0dada4b9b"
+        }
+      ]
+    },
+    {
+      "id": "P005_POST_TOKEN_DIRECTION",
+      "hypothesis": "Source-induced post-token state direction reveals wrong relation use.",
+      "changed_information_vs_readout": "New source/absent post-state responses; directional dependency/whitening readouts.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "196 answers across two exposed RAG populations,16systems; frozen8B.",
+        "controls": [
+          "same-run R4",
+          "amplitude and single-point controls",
+          "whitening"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/delta_local_20261028",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [],
+      "actual_outcome": {
+        "primary_QA_Summary_Data2txt_AUROC": [
+          0.425886,
+          0.410701,
+          0.521046
+        ],
+        "same_run_R4_AUROC": [
+          0.809571,
+          0.874404,
+          0.781121
+        ]
+      },
+      "failure_or_unknown_interpretation": "Primary direction fails globally; selected does/Elvis changes did not fix prizes or overall detection.",
+      "would_merely_repeat": [
+        "flip source response direction",
+        "whiten the same vectors",
+        "rescore selected cases as a mechanism success"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A genuinely new source-compatibility observation or independently qualified semantic front end, with a preregistered distinction from lexical predictability, matched controls and fresh final labels; no reweighting of these same scalars.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-28 配对post-token观测（完成，主假设失败）",
+          "line_start": 395,
+          "line_end": 402,
+          "section_sha256": "9542a726d42e7caee21dd03a3e9e9321106afd91680c2b2ed1473e3bbc913ed7"
+        }
+      ]
+    },
+    {
+      "id": "P006_DIRECT_SOURCE_WRITE",
+      "hypothesis": "Physical source attention×V writes distinguish source support from history inheritance.",
+      "changed_information_vs_readout": "New activation-ablation/source-write measurements with BF16 versus FP32 rounding recorded.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "Same196 exposed RAG answers;16systems; frozen8B.",
+        "controls": [
+          "same full-gap pooler",
+          "R4",
+          "history/other partitions",
+          "no layer/sign search"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/source_write_20261028",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [],
+      "actual_outcome": {
+        "primary_AUROC": [
+          0.683424,
+          0.702844,
+          0.627756
+        ],
+        "primary_AP": [
+          0.234434,
+          0.086837,
+          0.063284
+        ]
+      },
+      "failure_or_unknown_interpretation": "Did not beat matched full pooling/R4; a signed source contribution alone still is not relational compatibility.",
+      "would_merely_repeat": [
+        "signed write alone renamed as entailment",
+        "selected-layer weighted source write"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A genuinely new source-compatibility observation or independently qualified semantic front end, with a preregistered distinction from lexical predictability, matched controls and fresh final labels; no reweighting of these same scalars.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-28 direct source write（完成，未改进）",
+          "line_start": 410,
+          "line_end": 417,
+          "section_sha256": "2708a607c11b4c9e77d541fbb9bf9172c81a4491fa4f44b219a9fe80b692e05c"
+        }
+      ]
+    },
+    {
+      "id": "P007_SOURCE_HISTORY_COMPETITION",
+      "hypothesis": "Subtract inherited-history contribution from source write to isolate factual evidence.",
+      "changed_information_vs_readout": "No new observation: normalized expert log-ratio is direct_gap minus history_gap.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "Same196 answers,19systems/six historical task views; posthoc development.",
+        "controls": [
+          "16unchanged earlier systems",
+          "same fixed Beta pooler",
+          "same axes"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/write_competition_20261028",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [],
+      "actual_outcome": {
+        "primary_AUROC": [
+          0.659389,
+          0.628987,
+          0.523033
+        ],
+        "primary_AP": [
+          0.157403,
+          0.035537,
+          0.047905
+        ]
+      },
+      "failure_or_unknown_interpretation": "No improvement; algebraic source/history separation did not add needed relation information.",
+      "would_merely_repeat": [
+        "another source-history difference",
+        "probability-expert renaming of the same subtraction"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A genuinely new source-compatibility observation or independently qualified semantic front end, with a preregistered distinction from lexical predictability, matched controls and fresh final labels; no reweighting of these same scalars.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-28 source/history相对写入（完成，未改进）",
+          "line_start": 418,
+          "line_end": 426,
+          "section_sha256": "dfbc207d9461a9c65d5e4f5d1a855ef7fa46542ca208503215e5890bf0f85ba5"
+        }
+      ]
+    },
+    {
+      "id": "P008_R4_REFERENCE_TRANSFER_AND_BINDING_CHAIN",
+      "hypothesis": "Unlabeled finance references or finite numeric conflict constraints fix R4 transfer.",
+      "changed_information_vs_readout": "Reference/FIT/readout changes; finite parser adds source-derived numeric conflict clauses, no general semantic observer.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "Llama-3.1-8B; full FRED FinQA162 +TATQA130 /23794 tokens; released synthetic edit spans; source-only completion prompts, original generation questions unavailable.",
+        "controls": [
+          "frozen QA R4",
+          "finance-FIT R4",
+          "no-chain/unary control",
+          "prior-to-final diagnostics"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/finance_binding_diag_20261028",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [],
+      "actual_outcome": {
+        "binding_chain_FinQA": ".662354/.145350",
+        "R4_FinQA": ".661671/.145231",
+        "binding_chain_TATQA": ".711975/.221236",
+        "R4_TATQA": ".711049/.220941",
+        "top5_TP": "unchanged133/101"
+      },
+      "failure_or_unknown_interpretation": "Finance FIT was inconsistent; tiny constraint effect on8answers. No-chain gains equal existing unary, so not evidence of new constraint efficacy.",
+      "would_merely_repeat": [
+        "finance CDF/FIT reselection",
+        "tune route weight after labels",
+        "at-least-one-endpoint-risk constraint renamed"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "New relation evidence with measured coverage/validity beyond these finite constraints; reference/route audits may inspect existing results but do not authorize another parameter search.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-28 金融迁移与统一入口（完成）",
+          "line_start": 437,
+          "line_end": 455,
+          "section_sha256": "f352db763139c880975f3b873fe604779e7c494a68a77b35f4726d74ca32bcf4"
+        },
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-28 金融错例→表格绑定→源约束联合推断（完成，小变化、未解决）",
+          "line_start": 456,
+          "line_end": 470,
+          "section_sha256": "a7af4884d7d201386eb2f8ef91112f5670cef4c0203b461485b6ac1b0c587211"
+        }
+      ]
+    },
+    {
+      "id": "P009_V1_SHARED_BASELINE",
+      "hypothesis": "Share expert preference within original spans while retaining token likelihood evidence.",
+      "changed_information_vs_readout": "Readout of the same full gap, no new semantic observation.",
+      "actual_test": {
+        "status": "completed_baseline_not_rejected_as_a_software_interface",
+        "population_and_observer": "Llama-3.1-8B observer; same 2992 original answers /448202 tokens: RAGTruth QA/Summary/Data2txt900 each plus FRED FinQA162/TATQA130. Exposed exploratory populations. Historical RAG primitive producer identity incomplete.",
+        "controls": [
+          "raw full gap",
+          "frozen R4",
+          "same original axes"
+        ],
+        "reported_run_roots": []
+      },
+      "reported_metrics": [
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V1 shared",
+          "task": "QA",
+          "auroc": "0.8450",
+          "ap": "0.2175",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V1 shared",
+          "task": "Summary",
+          "auroc": "0.7255",
+          "ap": "0.0895",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V1 shared",
+          "task": "Data2txt",
+          "auroc": "0.6996",
+          "ap": "0.1126",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V1 shared",
+          "task": "FinQA",
+          "auroc": "0.7283",
+          "ap": "0.2572",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V1 shared",
+          "task": "TATQA",
+          "auroc": "0.7688",
+          "ap": "0.3559",
+          "source": "paper_table_2"
+        }
+      ],
+      "actual_outcome": "Established baseline/default interface, not a factuality posterior or all-task winner.",
+      "failure_or_unknown_interpretation": "Lower than R4 on all3 historical RAG tasks; finance .728275/.257152 and .768769/.355865 below.8.",
+      "would_merely_repeat": [
+        "reintroduce Beta sharing as a new mechanism"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A genuinely new source-compatibility observation or independently qualified semantic front end, with a preregistered distinction from lexical predictability, matched controls and fresh final labels; no reweighting of these same scalars.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-29 RAGTruth完整TEST当前共享主线（评分评价完成，迭代中）",
+          "line_start": 59,
+          "line_end": 74,
+          "section_sha256": "fdf50e21c51f5eed928066e0f3d9c025ac49b12ce6cb8160c2f298ce143f1592"
+        }
+      ]
+    },
+    {
+      "id": "P010_V2_PERSISTENT",
+      "hypothesis": "Within-span state persistence improves shared readout.",
+      "changed_information_vs_readout": "Readout only: integrate pi,c with unchanged raw gap and spans.",
+      "actual_test": {
+        "status": "completed_predecessor",
+        "population_and_observer": "Llama-3.1-8B observer; same 2992 original answers /448202 tokens: RAGTruth QA/Summary/Data2txt900 each plus FRED FinQA162/TATQA130. Exposed exploratory populations. Historical RAG primitive producer identity incomplete.",
+        "controls": [
+          "V1",
+          "c=0 identity",
+          "original R4 and axes"
+        ],
+        "reported_run_roots": []
+      },
+      "reported_metrics": [
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V2 persistent",
+          "task": "QA",
+          "auroc": "0.8481",
+          "ap": "0.2292",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V2 persistent",
+          "task": "Summary",
+          "auroc": "0.7351",
+          "ap": "0.1025",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V2 persistent",
+          "task": "Data2txt",
+          "auroc": "0.7139",
+          "ap": "0.1247",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V2 persistent",
+          "task": "FinQA",
+          "auroc": "0.7356",
+          "ap": "0.2790",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V2 persistent",
+          "task": "TATQA",
+          "auroc": "0.7898",
+          "ap": "0.3838",
+          "source": "paper_table_2"
+        }
+      ],
+      "actual_outcome": "All five point pairs improve onV1; finance stillbelow.8. Mechanistic bridge from state to truth remains unestablished.",
+      "failure_or_unknown_interpretation": "QA AUROC paired interval crosses0; no new semantic observations.",
+      "would_merely_repeat": [
+        "another persistence prior as new factual information"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A genuinely new source-compatibility observation or independently qualified semantic front end, with a preregistered distinction from lexical predictability, matched controls and fresh final labels; no reweighting of these same scalars.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-29 联合持久状态候选V2（完整重放完成）",
+          "line_start": 75,
+          "line_end": 91,
+          "section_sha256": "10cd9f3090de0368996716de28c77af757b54c6b78979cb9789d2fbea17a20ba"
+        }
+      ]
+    },
+    {
+      "id": "P011_V3_WITNESS",
+      "hypothesis": "Risk-state half-source/half-absent emissions improve persistent readout.",
+      "changed_information_vs_readout": "Readout/emission definition only: e=softplus(d)-log2, no new LM information.",
+      "actual_test": {
+        "status": "completed_retained_historical_candidate",
+        "population_and_observer": "Llama-3.1-8B observer; same 2992 original answers /448202 tokens: RAGTruth QA/Summary/Data2txt900 each plus FRED FinQA162/TATQA130. Exposed exploratory populations. Historical RAG primitive producer identity incomplete. Later fresh HalluRAG1782 /11generator configurations and Qwen dense/cached executions are separate.",
+        "controls": [
+          "V1",
+          "V2",
+          "frozen R4",
+          "c0/clipping/permutation",
+          "fresh matched-SDPA Hallu",
+          "Qwen dense and cached kept separate"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/persistent_witness_v3_20261029",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V3 witness",
+          "task": "QA",
+          "auroc": "0.8470",
+          "ap": "0.2148",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V3 witness",
+          "task": "Summary",
+          "auroc": "0.7623",
+          "ap": "0.1046",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V3 witness",
+          "task": "Data2txt",
+          "auroc": "0.7557",
+          "ap": "0.1452",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V3 witness",
+          "task": "FinQA",
+          "auroc": "0.8027",
+          "ap": "0.3250",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V3 witness",
+          "task": "TATQA",
+          "auroc": "0.8430",
+          "ap": "0.4657",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "V3 witness",
+          "task": "QA",
+          "auroc": "0.812",
+          "ap": "0.154",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "V3 witness",
+          "task": "Summary",
+          "auroc": "0.740",
+          "ap": "0.095",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "V3 witness",
+          "task": "Data2txt",
+          "auroc": "0.685",
+          "ap": "0.087",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "V3 witness",
+          "task": "FinQA",
+          "auroc": "0.775",
+          "ap": "0.287",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "V3 witness",
+          "task": "TATQA",
+          "auroc": "0.815",
+          "ap": "0.411",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "V3 witness",
+          "task": "HalluRAG",
+          "auroc": "0.544",
+          "ap": "0.221",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "llama_hallurag",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V3 witness",
+          "task": "HalluRAG",
+          "auroc": "0.6378",
+          "ap": "0.3219",
+          "source": "paper_table_35"
+        },
+        {
+          "group": "llama_hallurag",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V3 witness",
+          "task": "HalluRAG_available",
+          "auroc": "0.7669",
+          "ap": "0.4561",
+          "source": "paper_table_35"
+        },
+        {
+          "group": "llama_hallurag",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V3 witness",
+          "task": "HalluRAG_unavailable",
+          "auroc": "0.5374",
+          "ap": "0.2574",
+          "source": "paper_table_35"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "V3 witness",
+          "task": "HalluRAG_available",
+          "auroc": "0.7134",
+          "ap": "0.3773",
+          "source": "paper_table_28"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "V3 witness",
+          "task": "HalluRAG_unavailable",
+          "auroc": "0.4072",
+          "ap": "0.1531",
+          "source": "paper_table_28"
+        }
+      ],
+      "actual_outcome": "Retained historical finance candidate; FinQA .802656/.325033 and TATQA .842992/.465722; Summary/Data2txt below.8 and QA/Data2txt belowR4. Hallu answerableV3 .7669/.4561.",
+      "failure_or_unknown_interpretation": "State/expert preference is not identified as true source support; absolute finance confidence bounds cross.8.",
+      "would_merely_repeat": [
+        "claim witness state is a factual label",
+        "rerun known all-task result or basic influence theorem"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A genuinely new source-compatibility observation or independently qualified semantic front end, with a preregistered distinction from lexical predictability, matched controls and fresh final labels; no reweighting of these same scalars.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-29 潜在专家混合观测V3（完整重放及数值审计完成）",
+          "line_start": 92,
+          "line_end": 112,
+          "section_sha256": "859d8ed8d3f79aae6a676424c7a1ed4eb20cdb186582e6148d03b9a1106e4950"
+        }
+      ]
+    },
+    {
+      "id": "P012_WITNESS_DELETIONS",
+      "hypothesis": "Check whether persistence, emissions or ordering explain V3 gains.",
+      "changed_information_vs_readout": "Frozen score deletions/control readouts; no new source evidence.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "Llama-3.1-8B observer; same 2992 original answers /448202 tokens: RAGTruth QA/Summary/Data2txt900 each plus FRED FinQA162/TATQA130. Exposed exploratory populations. Historical RAG primitive producer identity incomplete.",
+        "controls": [
+          "c=0",
+          "fixed clipping lower bound",
+          "fixed within-span permutation"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/witness_controls_20261029",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V3 c=0",
+          "task": "QA",
+          "auroc": "0.8475",
+          "ap": "0.2089",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V3 c=0",
+          "task": "Summary",
+          "auroc": "0.7601",
+          "ap": "0.0953",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V3 c=0",
+          "task": "Data2txt",
+          "auroc": "0.7449",
+          "ap": "0.1301",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V3 c=0",
+          "task": "FinQA",
+          "auroc": "0.7898",
+          "ap": "0.2948",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V3 c=0",
+          "task": "TATQA",
+          "auroc": "0.8187",
+          "ap": "0.4085",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Fixed clipping",
+          "task": "QA",
+          "auroc": "0.8426",
+          "ap": "0.2090",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Fixed clipping",
+          "task": "Summary",
+          "auroc": "0.7552",
+          "ap": "0.0982",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Fixed clipping",
+          "task": "Data2txt",
+          "auroc": "0.7445",
+          "ap": "0.1358",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Fixed clipping",
+          "task": "FinQA",
+          "auroc": "0.7967",
+          "ap": "0.3227",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Fixed clipping",
+          "task": "TATQA",
+          "auroc": "0.8377",
+          "ap": "0.4599",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V3 span permutation",
+          "task": "QA",
+          "auroc": "0.844615",
+          "ap": "0.213015",
+          "source": "experiments/EXPERIMENTS.md"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V3 span permutation",
+          "task": "Summary",
+          "auroc": "0.755925",
+          "ap": "0.100447",
+          "source": "experiments/EXPERIMENTS.md"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V3 span permutation",
+          "task": "Data2txt",
+          "auroc": "0.746135",
+          "ap": "0.135095",
+          "source": "experiments/EXPERIMENTS.md"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V3 span permutation",
+          "task": "FinQA",
+          "auroc": "0.791376",
+          "ap": "0.315781",
+          "source": "experiments/EXPERIMENTS.md"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "V3 span permutation",
+          "task": "TATQA",
+          "auroc": "0.822525",
+          "ap": "0.444746",
+          "source": "experiments/EXPERIMENTS.md"
+        }
+      ],
+      "actual_outcome": "Clipping finance deltas versusV3 have intervals crossing0; persistence/permutation support some statistical contributions, not semantic identification.",
+      "failure_or_unknown_interpretation": "A robustification/prior explanation can rival selected gains; no independent new detector.",
+      "would_merely_repeat": [
+        "try another clip floor",
+        "scan permutation seeds",
+        "retest same necessity claim"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A genuinely new source-compatibility observation or independently qualified semantic front end, with a preregistered distinction from lexical predictability, matched controls and fresh final labels; no reweighting of these same scalars.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-29 V3必要性反证消融（全量评价与补充审计完成）",
+          "line_start": 113,
+          "line_end": 139,
+          "section_sha256": "87c7a7bc5fba42bdf7241bdbfea2eb24d45a9677a2399476c2b4afb3bb652518"
+        }
+      ]
+    },
+    {
+      "id": "P013_RESPONSIBILITY",
+      "hypothesis": "Interpret posterior absent-expert responsibility instead of state odds.",
+      "changed_information_vs_readout": "Algebraic readout of existingV3 and gap; no new observation/FIT.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "Llama-3.1-8B observer; same 2992 original answers /448202 tokens: RAGTruth QA/Summary/Data2txt900 each plus FRED FinQA162/TATQA130. Exposed exploratory populations. Historical RAG primitive producer identity incomplete.",
+        "controls": [
+          "originalV3",
+          "independent three-state identity",
+          "same top5 budgets"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/unified_mainline_20261029",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Responsibility",
+          "task": "QA",
+          "auroc": "0.820332",
+          "ap": "0.171270",
+          "source": "experiments/EXPERIMENTS.md"
+        },
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Responsibility",
+          "task": "Summary",
+          "auroc": "0.722511",
+          "ap": "0.079181",
+          "source": "experiments/EXPERIMENTS.md"
+        },
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Responsibility",
+          "task": "Data2txt",
+          "auroc": "0.707506",
+          "ap": "0.115250",
+          "source": "experiments/EXPERIMENTS.md"
+        },
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Responsibility",
+          "task": "FinQA",
+          "auroc": "0.743079",
+          "ap": "0.269941",
+          "source": "experiments/EXPERIMENTS.md"
+        },
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Responsibility",
+          "task": "TATQA",
+          "auroc": "0.785727",
+          "ap": "0.381096",
+          "source": "experiments/EXPERIMENTS.md"
+        }
+      ],
+      "actual_outcome": "All five AUROC/AP point pairs and paired intervals worse; TAT3FP14→6/monthly repair do not establish global gain.",
+      "failure_or_unknown_interpretation": "Individual gating helps selected cases while losing population discrimination.",
+      "would_merely_repeat": [
+        "multiply/logit-gate V3 by own gap again",
+        "tune responsibility mixture back intoV3"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A genuinely new source-compatibility observation or independently qualified semantic front end, with a preregistered distinction from lexical predictability, matched controls and fresh final labels; no reweighting of these same scalars.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-29 主线工程统一与责任读出检验（完成、审计闭合）",
+          "line_start": 20,
+          "line_end": 45,
+          "section_sha256": "7ac8240b23356ae62ee7de1ae65bdea25e0b77ae4204aef0423b0a163f5f4ee1"
+        }
+      ]
+    },
+    {
+      "id": "P014_CONDITIONAL_FULL_VOCAB",
+      "hypothesis": "Conditional full-vocabulary reference with TV stabilization fixes expert mismatch.",
+      "changed_information_vs_readout": "New full-vocabulary observer quantities; fixed calibrator/stabilization plus existing sequence kernel.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "Llama-3.1-8B; full FRED FinQA162 +TATQA130 /23794 tokens; released synthetic edit spans; source-only completion prompts, original generation questions unavailable.",
+        "controls": [
+          "V3",
+          "rank-only deletion",
+          "same original axes and frozen baselines"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/conditional_source_20261029_v2",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Conditional",
+          "task": "FinQA",
+          "auroc": "0.718312",
+          "ap": "0.218039",
+          "source": "experiments/EXPERIMENTS.md"
+        },
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Conditional",
+          "task": "TATQA",
+          "auroc": "0.770173",
+          "ap": "0.357203",
+          "source": "experiments/EXPERIMENTS.md"
+        }
+      ],
+      "actual_outcome": "Corrected run FinQA .718312/.218039;TATQA .770173/.357203; four paired intervals versusV3 negative; RAG acquisition never launched.",
+      "failure_or_unknown_interpretation": "New distribution-level observation did not supply the required semantic discrimination; first numerical failure is separate from corrected negative result.",
+      "would_merely_repeat": [
+        "another TV/calibrator constant",
+        "call stabilized rank a new support observation"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A genuinely new source-compatibility observation or independently qualified semantic front end, with a preregistered distinction from lexical predictability, matched controls and fresh final labels; no reweighting of these same scalars.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "### 2026-10-29 条件预测参照：完整检验失败",
+          "line_start": 641,
+          "line_end": 645,
+          "section_sha256": "9d23e6020c6a4309b908e65ba10855b6abc19433c17e3de92bf6a6e9ac441eda"
+        }
+      ]
+    },
+    {
+      "id": "P015_ONSET_CONTINUATION",
+      "hypothesis": "Use absent entry and mixture continuation emissions to preserve isolated onset evidence.",
+      "changed_information_vs_readout": "Same raw gap and spans, different latent emission/readout structure only.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "Llama-3.1-8B observer; same 2992 original answers /448202 tokens: RAGTruth QA/Summary/Data2txt900 each plus FRED FinQA162/TATQA130. Exposed exploratory populations. Historical RAG primitive producer identity incomplete.",
+        "controls": [
+          "V3",
+          "same pi,c",
+          "old23936arrays parity"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/onset_continuation_20261029",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Onset",
+          "task": "FinQA",
+          "auroc": "0.769276",
+          "ap": "0.286886",
+          "source": "history_line_136391"
+        },
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Onset",
+          "task": "TATQA",
+          "auroc": "0.821409",
+          "ap": "0.416008",
+          "source": "history_line_136391"
+        },
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Onset",
+          "task": "QA",
+          "auroc": "0.851473",
+          "ap": "0.212407",
+          "source": "history_line_136391"
+        },
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Onset",
+          "task": "Summary",
+          "auroc": "0.756600",
+          "ap": "0.099360",
+          "source": "history_line_136391"
+        },
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Onset",
+          "task": "Data2txt",
+          "auroc": "0.748047",
+          "ap": "0.133949",
+          "source": "history_line_136391"
+        }
+      ],
+      "actual_outcome": "Finance .769276/.286886 and .821409/.416008 belowV3; Summary/Data2txt guard failures; QA AUROC up but AP down.",
+      "failure_or_unknown_interpretation": "Boundary/event semantics of a latent entering state did not create source compatibility.",
+      "would_merely_repeat": [
+        "left-boundary emission rescue",
+        "another onset persistence prior"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A genuinely new source-compatibility observation or independently qualified semantic front end, with a preregistered distinction from lexical predictability, matched controls and fresh final labels; no reweighting of these same scalars.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "### 2026-10-29 进入/持续：完整五任务失败，审计闭合",
+          "line_start": 651,
+          "line_end": 655,
+          "section_sha256": "ef756308753c58ade479568e16d052d87c624da6b2f1ea3bf328246988d574cb"
+        }
+      ]
+    },
+    {
+      "id": "P016_TOKEN_STATE",
+      "hypothesis": "Fixed individual deviation channel bounds contextual influence while retaining own emission.",
+      "changed_information_vs_readout": "Readout only:1/4deviation channel, context boundlog3; no new source evidence.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "Llama-3.1-8B observer; same 2992 original answers /448202 tokens: RAGTruth QA/Summary/Data2txt900 each plus FRED FinQA162/TATQA130. Exposed exploratory populations. Historical RAG primitive producer identity incomplete.",
+        "controls": [
+          "V3",
+          "isolated-positive diagnostics",
+          "TAT54/TAT3 fixed cases"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/token_state_20261030",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Token state",
+          "task": "QA",
+          "auroc": "0.825825",
+          "ap": "0.166537",
+          "source": "history_line_138110"
+        },
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Token state",
+          "task": "Summary",
+          "auroc": "0.737745",
+          "ap": "0.075764",
+          "source": "history_line_138110"
+        },
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Token state",
+          "task": "Data2txt",
+          "auroc": "0.717082",
+          "ap": "0.110421",
+          "source": "history_line_138110"
+        },
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Token state",
+          "task": "FinQA",
+          "auroc": "0.761636",
+          "ap": "0.266000",
+          "source": "history_line_138110"
+        },
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Token state",
+          "task": "TATQA",
+          "auroc": "0.804987",
+          "ap": "0.372500",
+          "source": "history_line_138110"
+        }
+      ],
+      "actual_outcome": "All five point pairs decline; finance paired intervals negative. Isolated AUROC and selected FN/FP improve but not complete-task utility.",
+      "failure_or_unknown_interpretation": "Bounding shared influence does not solve missing/incorrect semantic observation.",
+      "would_merely_repeat": [
+        "change deviation probability",
+        "another bounded-context floor"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A genuinely new source-compatibility observation or independently qualified semantic front end, with a preregistered distinction from lexical predictability, matched controls and fresh final labels; no reweighting of these same scalars.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "### 2026-10-30 — individual token state under a shared regime",
+          "line_start": 660,
+          "line_end": 671,
+          "section_sha256": "d9d7c301ecba961f95f68cb466e2dc501ccef76e9c0f168c39afb4de9f321884"
+        },
+        {
+          "artifact": "ledger",
+          "heading": "### 2026-10-30 — fixed channel rejected; structural uncertainty follow-up",
+          "line_start": 672,
+          "line_end": 692,
+          "section_sha256": "e6106febb587f1abbbc12f99cfbb498a23e2813d0d405ea7e8adf27d7676f518"
+        }
+      ]
+    },
+    {
+      "id": "P017_ADAPTIVE_TOKEN",
+      "hypothesis": "Marginalize structural uncertainty between shared and token-deviation models.",
+      "changed_information_vs_readout": "Readout only: equal-prior joints/evidence-weighted model posterior; no new observations.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "Llama-3.1-8B observer; same 2992 original answers /448202 tokens: RAGTruth QA/Summary/Data2txt900 each plus FRED FinQA162/TATQA130. Exposed exploratory populations. Historical RAG primitive producer identity incomplete.",
+        "controls": [
+          "V3",
+          "fixed token_state",
+          "equal-posterior deletion",
+          "47872 old arrays parity"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/adaptive_token_20261030",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Adaptive token",
+          "task": "QA",
+          "auroc": "0.844776",
+          "ap": "0.201986",
+          "source": "history_line_138110"
+        },
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Adaptive token",
+          "task": "Summary",
+          "auroc": "0.759535",
+          "ap": "0.093727",
+          "source": "history_line_138110"
+        },
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Adaptive token",
+          "task": "Data2txt",
+          "auroc": "0.747991",
+          "ap": "0.132130",
+          "source": "history_line_138110"
+        },
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Adaptive token",
+          "task": "FinQA",
+          "auroc": "0.793303",
+          "ap": "0.304330",
+          "source": "history_line_138110"
+        },
+        {
+          "group": "llama_later_candidates",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Adaptive token",
+          "task": "TATQA",
+          "auroc": "0.836417",
+          "ap": "0.437438",
+          "source": "history_line_138110"
+        }
+      ],
+      "actual_outcome": "All five point pairs decline; FinQA .793303/.304330,TATQA .836417/.437438; finance paired CIs negative.",
+      "failure_or_unknown_interpretation": "Evidence-weighting structure does not establish that model preference tracks semantic truth.",
+      "would_merely_repeat": [
+        "adaptive gating over the same two readouts",
+        "change structure priors"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A genuinely new source-compatibility observation or independently qualified semantic front end, with a preregistered distinction from lexical predictability, matched controls and fresh final labels; no reweighting of these same scalars.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "### 2026-10-30 — fixed channel rejected; structural uncertainty follow-up",
+          "line_start": 672,
+          "line_end": 692,
+          "section_sha256": "e6106febb587f1abbbc12f99cfbb498a23e2813d0d405ea7e8adf27d7676f518"
+        }
+      ]
+    },
+    {
+      "id": "P018_MATCHED_SYMMETRIC_PRIORS",
+      "hypothesis": "Remove shared propensity uncertainty while controlling adjacent persistence moments.",
+      "changed_information_vs_readout": "Prior/readout only on the same gap/spans; no new semantic observation.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "Llama-3.1-8B observer; same 2992 original answers /448202 tokens: RAGTruth QA/Summary/Data2txt900 each plus FRED FinQA162/TATQA130. Exposed exploratory populations. Historical RAG primitive producer identity incomplete. Plus fresh Llama HalluRAG1782 and Qwen dense6populations; cached Qwen archive remains a separate execution, not a third observer.",
+        "controls": [
+          "V3",
+          "moment-matched local prior",
+          "symmetric local prior",
+          "within-span versus pooled metrics",
+          "source-paired intervals"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/matched_local_20261031",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Matched local",
+          "task": "QA",
+          "auroc": "0.8255",
+          "ap": "0.1806",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Matched local",
+          "task": "Summary",
+          "auroc": "0.7485",
+          "ap": "0.0900",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Matched local",
+          "task": "Data2txt",
+          "auroc": "0.7426",
+          "ap": "0.1372",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Matched local",
+          "task": "FinQA",
+          "auroc": "0.7894",
+          "ap": "0.3184",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Matched local",
+          "task": "TATQA",
+          "auroc": "0.8421",
+          "ap": "0.4700",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Symmetric local",
+          "task": "QA",
+          "auroc": "0.8173",
+          "ap": "0.1672",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Symmetric local",
+          "task": "Summary",
+          "auroc": "0.7420",
+          "ap": "0.0816",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Symmetric local",
+          "task": "Data2txt",
+          "auroc": "0.7319",
+          "ap": "0.1251",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Symmetric local",
+          "task": "FinQA",
+          "auroc": "0.7763",
+          "ap": "0.2963",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Symmetric local",
+          "task": "TATQA",
+          "auroc": "0.8331",
+          "ap": "0.4394",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Matched local",
+          "task": "QA",
+          "auroc": "0.791",
+          "ap": "0.133",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Matched local",
+          "task": "Summary",
+          "auroc": "0.728",
+          "ap": "0.082",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Matched local",
+          "task": "Data2txt",
+          "auroc": "0.671",
+          "ap": "0.083",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Matched local",
+          "task": "FinQA",
+          "auroc": "0.783",
+          "ap": "0.296",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Matched local",
+          "task": "TATQA",
+          "auroc": "0.820",
+          "ap": "0.419",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Matched local",
+          "task": "HalluRAG",
+          "auroc": "0.541",
+          "ap": "0.221",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Symmetric local",
+          "task": "QA",
+          "auroc": "0.785",
+          "ap": "0.127",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Symmetric local",
+          "task": "Summary",
+          "auroc": "0.722",
+          "ap": "0.075",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Symmetric local",
+          "task": "Data2txt",
+          "auroc": "0.663",
+          "ap": "0.079",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Symmetric local",
+          "task": "FinQA",
+          "auroc": "0.772",
+          "ap": "0.280",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Symmetric local",
+          "task": "TATQA",
+          "auroc": "0.809",
+          "ap": "0.393",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Symmetric local",
+          "task": "HalluRAG",
+          "auroc": "0.537",
+          "ap": "0.220",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "llama_hallurag",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Matched local",
+          "task": "HalluRAG",
+          "auroc": "0.6215",
+          "ap": "0.3039",
+          "source": "paper_table_35"
+        },
+        {
+          "group": "llama_hallurag",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Matched local",
+          "task": "HalluRAG_available",
+          "auroc": "0.7499",
+          "ap": "0.4129",
+          "source": "paper_table_35"
+        },
+        {
+          "group": "llama_hallurag",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Matched local",
+          "task": "HalluRAG_unavailable",
+          "auroc": "0.5249",
+          "ap": "0.2538",
+          "source": "paper_table_35"
+        },
+        {
+          "group": "llama_hallurag",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Symmetric local",
+          "task": "HalluRAG",
+          "auroc": "0.6132",
+          "ap": "0.2959",
+          "source": "paper_table_35"
+        },
+        {
+          "group": "llama_hallurag",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Symmetric local",
+          "task": "HalluRAG_available",
+          "auroc": "0.7417",
+          "ap": "0.4012",
+          "source": "paper_table_35"
+        },
+        {
+          "group": "llama_hallurag",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Symmetric local",
+          "task": "HalluRAG_unavailable",
+          "auroc": "0.5176",
+          "ap": "0.2480",
+          "source": "paper_table_35"
+        }
+      ],
+      "actual_outcome": "Llama matched AUROC lower on all5; local RAG discrimination can improve while pooled/top5TP decline. Qwen finance has small matched point gains with paired uncertainty crossing0; no universal improvement claim.",
+      "failure_or_unknown_interpretation": "Matching one dependence moment does not isolate all higher-order structure; local rank benefit is not complete detector superiority.",
+      "would_merely_repeat": [
+        "remove propensity under another name",
+        "tune shared prior based on local cases"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A genuinely new source-compatibility observation or independently qualified semantic front end, with a preregistered distinction from lexical predictability, matched controls and fresh final labels; no reweighting of these same scalars.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-31 — contextual borrowing and complete manuscript",
+          "line_start": 787,
+          "line_end": 812,
+          "section_sha256": "cb143576a5d46f2f909283e1863ce4696feb7a9b3aeeb439e3bff7481c2e7b18"
+        }
+      ]
+    },
+    {
+      "id": "P019_FIXED_PERSISTENCE_AND_HMM",
+      "hypothesis": "Fix persistence while keeping propensity uncertainty, or use fixedHMM.",
+      "changed_information_vs_readout": "Readout/prior only; unchanged source observations.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "Llama-3.1-8B observer; same 2992 original answers /448202 tokens: RAGTruth QA/Summary/Data2txt900 each plus FRED FinQA162/TATQA130. Exposed exploratory populations. Historical RAG primitive producer identity incomplete. Later complete fresh Llama HalluRAG1782; Qwen dense6.",
+        "controls": [
+          "V3",
+          "fixedHMM",
+          "partial marginalization",
+          "old38896NPZ and5346Hallu predictionJSON parity"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/fixed_persistence_20261031",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Fixed HMM",
+          "task": "QA",
+          "auroc": "0.7900",
+          "ap": "0.1451",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Fixed HMM",
+          "task": "Summary",
+          "auroc": "0.7204",
+          "ap": "0.0763",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Fixed HMM",
+          "task": "Data2txt",
+          "auroc": "0.7165",
+          "ap": "0.1241",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Fixed HMM",
+          "task": "FinQA",
+          "auroc": "0.7588",
+          "ap": "0.2859",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Fixed HMM",
+          "task": "TATQA",
+          "auroc": "0.8197",
+          "ap": "0.4243",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Partial",
+          "task": "QA",
+          "auroc": "0.8440",
+          "ap": "0.2054",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Partial",
+          "task": "Summary",
+          "auroc": "0.7600",
+          "ap": "0.0997",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Partial",
+          "task": "Data2txt",
+          "auroc": "0.7526",
+          "ap": "0.1418",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Partial",
+          "task": "FinQA",
+          "auroc": "0.7979",
+          "ap": "0.3122",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "llama_historical",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Partial",
+          "task": "TATQA",
+          "auroc": "0.8378",
+          "ap": "0.4497",
+          "source": "paper_table_2"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Fixed HMM",
+          "task": "QA",
+          "auroc": "0.760",
+          "ap": "0.113",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Fixed HMM",
+          "task": "Summary",
+          "auroc": "0.703",
+          "ap": "0.069",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Fixed HMM",
+          "task": "Data2txt",
+          "auroc": "0.652",
+          "ap": "0.078",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Fixed HMM",
+          "task": "FinQA",
+          "auroc": "0.761",
+          "ap": "0.277",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Fixed HMM",
+          "task": "TATQA",
+          "auroc": "0.796",
+          "ap": "0.380",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Fixed HMM",
+          "task": "HalluRAG",
+          "auroc": "0.530",
+          "ap": "0.217",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Partial",
+          "task": "QA",
+          "auroc": "0.809",
+          "ap": "0.150",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Partial",
+          "task": "Summary",
+          "auroc": "0.738",
+          "ap": "0.090",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Partial",
+          "task": "Data2txt",
+          "auroc": "0.683",
+          "ap": "0.086",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Partial",
+          "task": "FinQA",
+          "auroc": "0.770",
+          "ap": "0.278",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Partial",
+          "task": "TATQA",
+          "auroc": "0.806",
+          "ap": "0.393",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Partial",
+          "task": "HalluRAG",
+          "auroc": "0.540",
+          "ap": "0.220",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "llama_hallurag",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Fixed HMM",
+          "task": "HalluRAG",
+          "auroc": "0.5978",
+          "ap": "0.2804",
+          "source": "paper_table_35"
+        },
+        {
+          "group": "llama_hallurag",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Fixed HMM",
+          "task": "HalluRAG_available",
+          "auroc": "0.7161",
+          "ap": "0.3743",
+          "source": "paper_table_35"
+        },
+        {
+          "group": "llama_hallurag",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Fixed HMM",
+          "task": "HalluRAG_unavailable",
+          "auroc": "0.5035",
+          "ap": "0.2332",
+          "source": "paper_table_35"
+        },
+        {
+          "group": "llama_hallurag",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Partial",
+          "task": "HalluRAG",
+          "auroc": "0.6335",
+          "ap": "0.3141",
+          "source": "paper_table_35"
+        },
+        {
+          "group": "llama_hallurag",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Partial",
+          "task": "HalluRAG_available",
+          "auroc": "0.7631",
+          "ap": "0.4503",
+          "source": "paper_table_35"
+        },
+        {
+          "group": "llama_hallurag",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Partial",
+          "task": "HalluRAG_unavailable",
+          "auroc": "0.5290",
+          "ap": "0.2471",
+          "source": "paper_table_35"
+        }
+      ],
+      "actual_outcome": "Partial candidate loses both pooled metrics on all historical tasks andHallu; Hallu .633501/.314116 versusV3 .637840/.321886; nominal historical candidate-minusV3 intervals negative.",
+      "failure_or_unknown_interpretation": "Analytic simplicity/neutral bounds did not improve detection; sparse Hallu local gain not strong evidence.",
+      "would_merely_repeat": [
+        "another fixedc/prior setting",
+        "claim finite-bound certificate is factuality gain"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A genuinely new source-compatibility observation or independently qualified semantic front end, with a preregistered distinction from lexical predictability, matched controls and fresh final labels; no reweighting of these same scalars.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-31 — fixed-persistence candidate and HalluRAG all-seven controls completed",
+          "line_start": 813,
+          "line_end": 819,
+          "section_sha256": "31ed6331e2caa6f65051f22bbfedd5a4d2151eb1d66b0b2cefa2be48840de5ab"
+        }
+      ]
+    },
+    {
+      "id": "P020_SPAN_RESOLUTION_DELETIONS",
+      "hypothesis": "Separate regional offsets from within-span resolution.",
+      "changed_information_vs_readout": "Fixed transformations of existing scores; no new LM information.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "Dense Qwen six original populations; earlier Llama five-task deletion retained independently.",
+        "controls": [
+          "original",
+          "span mean",
+          "span centered",
+          "within-span pair weighting",
+          "unknown-inclusive transformations"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/span_resolution_20261031",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [],
+      "actual_outcome": "V3 meanAP rises5/6;LUMINA meanAUROC/AP rises6/6; means erase local ordering. Centering preserves local order but loses both pooled points everywhere.",
+      "failure_or_unknown_interpretation": "These are explanatory deletions, not promoted detectors; averaging may improve pooled rankings by sacrificing localization.",
+      "would_merely_repeat": [
+        "regional score broadcast as a novel detector",
+        "repeat global/local metric separation"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A new source-semantic observation and a predeclared localization target that addresses this already established tradeoff.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-31 — completed ICML evidence expansion",
+          "line_start": 820,
+          "line_end": 827,
+          "section_sha256": "dcb0eaf5be8bc7b6d70c2f79b887cc6a39cf6b88bb08a528afeb7122103576c9"
+        }
+      ]
+    },
+    {
+      "id": "P021_RELATIONAL_NULL_SOURCE_WORLDS",
+      "hypothesis": "Numeric source row/column shuffles expose incorrect source binding.",
+      "changed_information_vs_readout": "New source-perturbation LM measurements; integrate latent source worlds with shared token states.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "Llama-3.1-8B; full FRED FinQA162 +TATQA130 /23794 tokens; released synthetic edit spans; source-only completion prompts, original generation questions unavailable.",
+        "controls": [
+          "same-run matched SDPA shared control",
+          "empty source",
+          "historicalshared separate",
+          "header-preserving revisions"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/relational_experts_20261028/full_v4",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [
+        {
+          "group": "llama_relational_archive",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Relational world_shared",
+          "task": "FinQA",
+          "auroc": "0.693095",
+          "ap": "0.248915",
+          "source": "experiments/EXPERIMENTS.md"
+        },
+        {
+          "group": "llama_relational_archive",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Relational world_shared",
+          "task": "TATQA",
+          "auroc": "0.674423",
+          "ap": "0.305032",
+          "source": "experiments/EXPERIMENTS.md"
+        },
+        {
+          "group": "llama_relational_archive",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Same-run SDPA shared control",
+          "task": "FinQA",
+          "auroc": "0.729517",
+          "ap": "0.260282",
+          "source": "experiments/EXPERIMENTS.md"
+        },
+        {
+          "group": "llama_relational_archive",
+          "observer": "Llama-3.1-8B-Instruct",
+          "method": "Same-run SDPA shared control",
+          "task": "TATQA",
+          "auroc": "0.768258",
+          "ap": "0.355036",
+          "source": "experiments/EXPERIMENTS.md"
+        }
+      ],
+      "actual_outcome": "Finalv4 world_shared .693095/.248915,.674423/.305032; matchedcontrol .729517/.260282,.768258/.355036. Top5TP324→315/199→181. V3attempt partial unsealed; never report as final performance.",
+      "failure_or_unknown_interpretation": "Many nulls barely change observations for both clean/error tokens; counterfactual semantic validity is not implied by token/number-bag preservation. Some header/coverage limitations persist.",
+      "would_merely_repeat": [
+        "shuffle numeric cells again",
+        "rename null-world mixture as relation verifier"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A new perturbation with independently frozen semantic compatibility contract, broader relation coverage and no-op controls; mere lexical preservation is insufficient.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-28 关系null专家最终v4（完成，拒绝主候选）",
+          "line_start": 503,
+          "line_end": 510,
+          "section_sha256": "f64f83a2613bd6950a67fb08bbf6803a2659a909195b60743a44400d0644c311"
+        }
+      ]
+    },
+    {
+      "id": "P022_CONSTRAINT_STATES_V1_V2",
+      "hypothesis": "Separate arithmetic factual validity from continuation coherence using source-generated certificates.",
+      "changed_information_vs_readout": "New masked internal states and source-certificate pseudo-supervision/local moment estimation; not zero-learning pure readout.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "V1 six sources/12variants/688tokens;V2 72proofs/288worlds/16variants/1112tokens; frozen8B diagnostic, not full finance.",
+        "controls": [
+          "bidirectional/independent/causal masks",
+          "fact×coherence crossed worlds",
+          "binary deletion",
+          "valid derived calculation and wrong prior histories"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/constraint_interaction_20261028",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [],
+      "actual_outcome": "V1 main summary-unit comparisons fail despite perfect templateLOO; posthoc raw-causal success not promoted. V2 worst-case margin−23.441869, binary−24.219459, despite templateLOO .90625/.875.",
+      "failure_or_unknown_interpretation": "Template facts/hidden-state geometry fail transfer to natural summaries and coherent wrong history; no new full-task AUROC.",
+      "would_merely_repeat": [
+        "another four-state Gaussian",
+        "another mask subtraction",
+        "templateLOO success as natural proof"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A different semantic observation that passes natural-expression/role/coherence guards without reusing the same certificate-domain assumption.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-28 约束交互状态V1（完成，主门槛未过）",
+          "line_start": 517,
+          "line_end": 522,
+          "section_sha256": "3ef11ca9b0382fea80b744d30efcadedee06136f636ebf15e586cb6f51e80311"
+        },
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-28 四状态B/C模型V2（完成，拒绝）",
+          "line_start": 527,
+          "line_end": 532,
+          "section_sha256": "34e633cceb0c32800ad9e56ef1ff96aee707ae53c1ff116a58526b41cb369ea0"
+        }
+      ]
+    },
+    {
+      "id": "P023_FIELD_VALUE_YEAR_CERTIFICATE",
+      "hypothesis": "Use field/value/year compatibility certificates instead of arithmetic prototypes.",
+      "changed_information_vs_readout": "New source-relative certificate meaning but the same four-state Gaussian observation family.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "3covered of6sources;32pairs/128worlds/11variants/655tokens; frozen8B.",
+        "controls": [
+          "explicit unavailable sources",
+          "year swaps",
+          "wording/order/history controls"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/source_binding_match_20261028",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [],
+      "actual_outcome": "TAT50 sourceLOO .75;3/4primary margins fail; no full detector AUROC/AP.",
+      "failure_or_unknown_interpretation": "Natural phrasing and role/condition scope remain inadequate; positive raw scores are not a recovered detector.",
+      "would_merely_repeat": [
+        "more certificate templates inside the same truth-Gaussian readout"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "New qualified role/condition extraction and broader applicability, with a condition separating it from this already failed template transfer.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-28 来源字段—值—年份证书（完成，拒绝主候选）",
+          "line_start": 533,
+          "line_end": 546,
+          "section_sha256": "c16d3e1ffecd03115be79b70c6a28cbd352a10b07391599ab9861fd30d7d761d"
+        }
+      ]
+    },
+    {
+      "id": "P024_BINDING_DEPENDENCY_LOCAL_CONTROLS",
+      "hypothesis": "Attention identifies the referenced value, while explicit source certificates decide compatibility.",
+      "changed_information_vs_readout": "New pre-year attention dependency plus explicit source facts, later bidirectional syntax fallback.",
+      "actual_test": {
+        "status": "completed_local_gate_pass_natural_limits",
+        "population_and_observer": "27queries over3available/3uncovered sources; controlled successes chiefly one TAT50source; later two coherent source versions.",
+        "controls": [
+          "near/far distractors",
+          "uniform/nearest/reversed-edge",
+          "old/newattention×old/newcertificate2×2",
+          "natural source/cache replay"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/binding_natural_parse_20261028",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [],
+      "actual_outcome": "Controlled32routing/8margin gates pass in each world; changing certificates alone also flips32/32, so not proof attention knows truth. Natural parser fix repairs TAT3 falseedge but2020/monthly remain unknown.",
+      "failure_or_unknown_interpretation": "Local controlled success has narrow coverage and relies on external certificate semantics; syntax repair is not neural factuality innovation.",
+      "would_merely_repeat": [
+        "repeat successful32controls",
+        "claim attention itself verifies source facts"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A new natural relation/role extraction capability beyond numeric pre-year candidates, with exact coverage and false-edge accountability.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-28 来源约束的pre-year依赖路由阶段一（完成，局部门槛通过）",
+          "line_start": 547,
+          "line_end": 563,
+          "section_sha256": "8be695c2beb8a0779907befe6b2f716e3733e2628e800911b8ac842b5922eff7"
+        },
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-28 固定query、相干来源整列交换阶段二（完成，局部门槛通过）",
+          "line_start": 564,
+          "line_end": 582,
+          "section_sha256": "a0ae9226cbbafbe23dc2c75453cf0cf2b019494e9ffe81a24305dd3df6966e12"
+        },
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-28 自然原文关系方向修正（完成，0新增模型调用）",
+          "line_start": 583,
+          "line_end": 598,
+          "section_sha256": "a491892fbe03e5bf2827c4fd7c7cd153c3e8d604b27bdacda89afadaa003e811"
+        }
+      ]
+    },
+    {
+      "id": "P025_FULL_BINDING_SHARED",
+      "hypothesis": "Insert qualified relation conflicts as factors into the existing shared model.",
+      "changed_information_vs_readout": "Source-derived relation clauses plus existing gap; no new general semantics/factual judge.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "Llama-3.1-8B; full FRED FinQA162 +TATQA130 /23794 tokens; released synthetic edit spans; source-only completion prompts, original generation questions unavailable.",
+        "controls": [
+          "sharedbaseline",
+          "same axes/spans",
+          "original six financial cases",
+          "source-paired intervals"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/full_binding_20261029/run",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [],
+      "actual_outcome": "FinQA .728346/.256860 vsshared .728275/.257152;TATQA .768206/.356156 vs .768769/.355865; allpaired intervals cross0;top5counts unchanged. Factors trigger only8/162and12/130answers, original6cases0factors.",
+      "failure_or_unknown_interpretation": "Coverage and false dependencies dominate;13of20changed answers have no positive edited endpoint; wrong relations can alter non-endpoints through shared prior.",
+      "would_merely_repeat": [
+        "same relation constraints with a new energy name",
+        "token retention claimed to guarantee correct blame"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "Independently qualified complete claim/role semantics and correct endpoint attribution, beyond these narrow parser candidates; no parameter adjustment.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-29 关系约束接入共享模型：完整金融评测（评测完成，审计中）",
+          "line_start": 599,
+          "line_end": 635,
+          "section_sha256": "e2da9ce8b47fae850cf3fb4d615b3ffbfb5ac3ae62b9f608e9afc581e206d8dd"
+        }
+      ]
+    },
+    {
+      "id": "P026_RETROSPECTIVE_REPAIR_AND_PREFIX_RESET",
+      "hypothesis": "Source-by-response repair interaction on unchanged future tokens reveals temporal incompatibility.",
+      "changed_information_vs_readout": "New teacher-forced response variants in matched source-present/absent worlds; sequence-level mixture over repairs; original unit-defined future. Existing local observation already resets earlier-unit history.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "11answers/33positions/72replacements,83responses,1446calls; frozen8B diagnostic, no full detector.",
+        "controls": [
+          "wrong-year versus correct-year guards",
+          "same future sequence/token axes",
+          "source-only literal year candidates",
+          "matched SDPA",
+          "full/local reset paths already implemented"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/retrospective_repair_20261029",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [],
+      "actual_outcome": "Only3/5wrong-binding compound gates pass;3/6correct-year guards fail;advance=false; no AUROC/AP. Fin155/TAT97 strongsource-positive contributions do not separate normal/error.",
+      "failure_or_unknown_interpretation": "History/source sensitivity is not source-semantic correctness. Prefix reset and future compatibility are not untested new ideas here.",
+      "would_merely_repeat": [
+        "simply reset to current unit",
+        "rescore the sentence without prior answer history",
+        "same source×repair future sequence interaction",
+        "rename repair_support as prefix contamination fix"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A new answer-blind source-semantic fact representation or valid role-sensitive repair set, with an explicit condition distinguishing it from local reset/year replacement and all prior normal-year guards retained.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "### 2026-10-29 回溯条件交互：冻结机制门槛失败；三轮正式复审闭合",
+          "line_start": 656,
+          "line_end": 659,
+          "section_sha256": "97fe57471fb0a7464fed66cacdf3c0ba3478256a2913f4472c3b3c0383add966"
+        }
+      ],
+      "definition_sources": [
+        "counterfactual",
+        "repairs_runner"
+      ],
+      "no_retest_named_function": "myproject.counterfactual.repair_support"
+    },
+    {
+      "id": "P027_PROOF_REVISION_QUALIFICATION",
+      "hypothesis": "Compile source facts and condition/revise existing beliefs within a KL information budget.",
+      "changed_information_vs_readout": "Finite source grammar and exact proof constraints; no broad semantic observation or new LM calls.",
+      "actual_test": {
+        "status": "qualification_failed_detector_not_run",
+        "population_and_observer": "Two source-only qualifications overall2992answers; fourgroups; annotation-independent coverage check.",
+        "controls": [
+          "original score seals",
+          "source grammar qualification before scoring",
+          "V1/V2 preserved"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/robust_source_revision_20261030",
+            "present_locally": false
+          },
+          {
+            "path": "outputs/robust_source_revision_v2_20261030",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [],
+      "actual_outcome": "Both runs0incompatible;V2also0supported and2996unknown diagnostics;>=5incompatible gate fails; B3 detector scoring NOTLAUNCHED, no AUROC/AP.",
+      "failure_or_unknown_interpretation": "Front-end cannot recognize broad source/answer relations:2700nonfinance no table scopes;109finance with somefacts but101lack supported answer grammar.",
+      "would_merely_repeat": [
+        "rerun exact KL revision kernel",
+        "expand a few finite templates and claim semantic coverage",
+        "tune information budget"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "New independently qualified semantic front end with genuinely broader coverage, explicit soundness/abstention and repair responsibility before any revised score is evaluated.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "### 2026-10-30 — source-repair compiler and information-budgeted revision",
+          "line_start": 693,
+          "line_end": 718,
+          "section_sha256": "78fdec76e41184d20deb505a948b738a76dfe0b73263689c418a95b0987eb23e"
+        }
+      ],
+      "definition_sources": [
+        "proofs"
+      ]
+    },
+    {
+      "id": "P028_ASSERTION_FRAME_INSTRUMENT",
+      "hypothesis": "A fixed dependency parser yields natural source subject/year/value assertions without task labels.",
+      "changed_information_vs_readout": "New explicit syntax roles from externally supervised UD parser; no general factual judge, new8Bcalls or target-label fitting.",
+      "actual_test": {
+        "status": "qualification_failed_detector_not_run",
+        "population_and_observer": "Finance292 then all6773texts: RAG2700,FRED292,Hallu1782,ClaimDB1999. No ClaimDB text sources; HaluEval/RAGognize staged but not integrated.",
+        "controls": [
+          "44fixed source-derived frame/role/safety controls",
+          "V1agreement-confound correction with unchanged parser",
+          "natural292records identical",
+          "coverage versus instrument validity separated"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/assertion_all_datasets_20261031",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [],
+      "actual_outcome": "Finance33answers/39complete candidates. All-data50completeproposals in44texts:QA0/Summary3/Data0/FinQA18/TATQA15/Hallu0/ClaimDB4+4. Corrected simple15/20links with4wrong; harder5/24links with3wrong; jointG1fails. No detector scores/AUROC.",
+      "failure_or_unknown_interpretation": "Broad execution without parse errors is not factual relation coverage. Field-boundary/qualifier loss remains; finite numeric frame population misses nonnumeric entity/frequency errors.",
+      "would_merely_repeat": [
+        "rerun same parser on already inventoried datasets",
+        "count parser candidates as semantic accuracy",
+        "small template/name changes without a new validity condition"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A different, qualified complete-claim semantic extraction method with an explicit soundness/coverage contract; existing supervised syntax alone is insufficient.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "### 2026-10-30 — frozen dependency assertion instrument: full finance completed",
+          "line_start": 719,
+          "line_end": 743,
+          "section_sha256": "145ec23c6da4e14a19846e8a4e9c6b60cfd9db4d4648cbf795d08aa0bdfa77a6"
+        },
+        {
+          "artifact": "ledger",
+          "heading": "### 2026-10-30 — evaluation correction with unchanged assertion algorithm",
+          "line_start": 744,
+          "line_end": 762,
+          "section_sha256": "96ea98d7f3469d261d2a2d66b4ea539b455ed09fefeb86b8f2ee24449d4b50e7"
+        },
+        {
+          "artifact": "ledger",
+          "heading": "### 2026-10-31 — same frozen front end across all integrated evaluation datasets",
+          "line_start": 763,
+          "line_end": 786,
+          "section_sha256": "1811e4a58a1e1a1f1793c431e34ec59d3a48d44769d1303cce8767d53e68477a"
+        }
+      ],
+      "definition_sources": [
+        "assertions"
+      ]
+    },
+    {
+      "id": "P029_LUMINA_EXTERNAL_OBSERVER_CONTROL",
+      "hypothesis": "Test released internal-knowledge/random-source signals as an external comparison.",
+      "changed_information_vs_readout": "Genuinely different observations: random-source next-token distributions and internal layer signals; official released readout with documented input adapter.",
+      "actual_test": {
+        "status": "completed_external_comparison",
+        "population_and_observer": "Pinned Qwen2.5-3B dense all6 original populations4774answers/14322backboneforwards; historical Llama quantities never substituted.",
+        "controls": [
+          "same denseSforward shared exactly",
+          "denseS/R/A",
+          "IPR-only",
+          "negativeMMD-only",
+          "cached equivalence failure retained separate"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/lumina_observer_20261031",
+            "present_locally": false
+          }
+        ]
+      },
+      "reported_metrics": [
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Source NLL",
+          "task": "QA",
+          "auroc": "0.618",
+          "ap": "0.075",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Source NLL",
+          "task": "Summary",
+          "auroc": "0.592",
+          "ap": "0.041",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Source NLL",
+          "task": "Data2txt",
+          "auroc": "0.556",
+          "ap": "0.056",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Source NLL",
+          "task": "FinQA",
+          "auroc": "0.658",
+          "ap": "0.174",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Source NLL",
+          "task": "TATQA",
+          "auroc": "0.617",
+          "ap": "0.204",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "Source NLL",
+          "task": "HalluRAG",
+          "auroc": "0.588",
+          "ap": "0.228",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "LUMINA",
+          "task": "QA",
+          "auroc": "0.633",
+          "ap": "0.082",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "LUMINA",
+          "task": "Summary",
+          "auroc": "0.534",
+          "ap": "0.032",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "LUMINA",
+          "task": "Data2txt",
+          "auroc": "0.495",
+          "ap": "0.042",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "LUMINA",
+          "task": "FinQA",
+          "auroc": "0.526",
+          "ap": "0.112",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "LUMINA",
+          "task": "TATQA",
+          "auroc": "0.530",
+          "ap": "0.141",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "LUMINA",
+          "task": "HalluRAG",
+          "auroc": "0.548",
+          "ap": "0.244",
+          "source": "paper_table_3"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "IPR only",
+          "task": "QA",
+          "auroc": "0.577",
+          "ap": "0.073",
+          "source": "paper_table_26"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "IPR only",
+          "task": "Summary",
+          "auroc": "0.512",
+          "ap": "0.031",
+          "source": "paper_table_26"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "IPR only",
+          "task": "Data2txt",
+          "auroc": "0.474",
+          "ap": "0.041",
+          "source": "paper_table_26"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "IPR only",
+          "task": "FinQA",
+          "auroc": "0.535",
+          "ap": "0.112",
+          "source": "paper_table_26"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "IPR only",
+          "task": "TATQA",
+          "auroc": "0.504",
+          "ap": "0.135",
+          "source": "paper_table_26"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "IPR only",
+          "task": "HalluRAG",
+          "auroc": "0.577",
+          "ap": "0.252",
+          "source": "paper_table_26"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "-MMD only",
+          "task": "QA",
+          "auroc": "0.620",
+          "ap": "0.068",
+          "source": "paper_table_26"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "-MMD only",
+          "task": "Summary",
+          "auroc": "0.553",
+          "ap": "0.032",
+          "source": "paper_table_26"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "-MMD only",
+          "task": "Data2txt",
+          "auroc": "0.540",
+          "ap": "0.046",
+          "source": "paper_table_26"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "-MMD only",
+          "task": "FinQA",
+          "auroc": "0.432",
+          "ap": "0.075",
+          "source": "paper_table_26"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "-MMD only",
+          "task": "TATQA",
+          "auroc": "0.514",
+          "ap": "0.120",
+          "source": "paper_table_26"
+        },
+        {
+          "group": "qwen_dense",
+          "observer": "Qwen2.5-3B-Instruct",
+          "method": "-MMD only",
+          "task": "HalluRAG",
+          "auroc": "0.441",
+          "ap": "0.171",
+          "source": "paper_table_26"
+        }
+      ],
+      "actual_outcome": "Complete released-core comparison exists; LUMINA does not establish all6target; its Hallu and sourceNLL behavior differ fromV3. Failed cached equivalence witness is not repaired by relabeling cached scores.",
+      "failure_or_unknown_interpretation": "Different cost/observation contract and observer/tokenizer; no claim to reproduce original paper checkpoint scores.",
+      "would_merely_repeat": [
+        "combine same IPR/MMD signals with fitted weights as new mechanism",
+        "repeat cached-equivalence witness"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A distinct semantic observation or a genuinely new controlled producer condition, with observation cost and exact dense identity retained.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-10-31 — completed ICML evidence expansion",
+          "line_start": 820,
+          "line_end": 827,
+          "section_sha256": "dcb0eaf5be8bc7b6d70c2f79b887cc6a39cf6b88bb08a528afeb7122103576c9"
+        }
+      ]
+    },
+    {
+      "id": "P030_EQUAL_RANK_CONTROL",
+      "hypothesis": "Existing R4/V3 scores contain automatically usable complementary rankings.",
+      "changed_information_vs_readout": "No new information: fixed equal midrank combination of two existing scores.",
+      "actual_test": {
+        "status": "completed_rejected",
+        "population_and_observer": "Llama-3.1-8B observer; same 2992 original answers /448202 tokens: RAGTruth QA/Summary/Data2txt900 each plus FRED FinQA162/TATQA130. Exposed exploratory populations. Historical RAG primitive producer identity incomplete.",
+        "controls": [
+          "R4",
+          "V3",
+          "independent original-token population",
+          "all5scores frozen before labels",
+          "1000source bootstraps"
+        ],
+        "reported_run_roots": [
+          {
+            "path": "outputs/rank-fusion-cpu-20261102",
+            "present_locally": true
+          }
+        ]
+      },
+      "reported_metrics": [],
+      "actual_outcome": {
+        "status": "COMPLETED_REJECTED_FIXED_BASELINE",
+        "fusion_AUROC": {
+          "QA": 0.8881328186314315,
+          "Summary": 0.7693804280272036,
+          "Data2txt": 0.7946187298877747,
+          "FinQA": 0.751483317076177,
+          "TATQA": 0.7928889712777181
+        },
+        "point_passes_five_tasks": {
+          "r4": 1,
+          "witness": 3,
+          "fusion": 1
+        }
+      },
+      "failure_or_unknown_interpretation": "Financial regression; one of5fusion points reaches.8, versusV3three. User explicitly rejects blind weighting as design direction.",
+      "would_merely_repeat": [
+        "try other empirical weights",
+        "task-wise pick current winner",
+        "new rank/CDF blend"
+      ],
+      "no_retest": {
+        "default": true,
+        "unless_new_discriminating_condition": "A new identified source-semantic measurement and an independently frozen mechanistic decision rule; score reweighting alone cannot reopen this branch.",
+        "not_sufficient": [
+          "renaming",
+          "another prior/weight/temperature",
+          "more of the same exposed examples",
+          "rerunning a known failed control"
+        ]
+      },
+      "evidence": [
+        {
+          "artifact": "ledger",
+          "heading": "## 2026-11-02: recovered caches and source-grounded error diagnosis",
+          "line_start": 838,
+          "line_end": 846,
+          "section_sha256": "4cf8dd2d4f4f0cfadf47b293b625b7a6bf621ae0d65d055b74c2a928fd599a2f"
+        }
+      ],
+      "evidence_sources": [
+        "fusion"
+      ]
+    },
+    {
+      "id": "P031_BROAD_FROZEN_SEMANTIC_VERIFIER",
+      "hypothesis": "A frozen foundation model can verify whole claims and explicit source-role/citation bindings beyond token predictability.",
+      "changed_information_vs_readout": "Would add a model-generated semantic observation from complete source/claim text; pretraining/instruction tuning and pseudo-label provenance must be disclosed.",
+      "actual_test": {
+        "status": "proposed_not_run",
+        "population_and_observer": null,
+        "controls": [],
+        "reported_run_roots": []
+      },
+      "reported_metrics": [],
+      "actual_outcome": "No full-source broad LLM factual verifier was executed in the inspected ledger/code. Finite table certificates, masked-state templates and UD assertion parser are separate prior tests.",
+      "failure_or_unknown_interpretation": "Unestablished ability, cost, coverage and novelty; citations/offsets are format checks, not entailment proof.",
+      "would_merely_repeat": [
+        "call the old finite parser or Gaussian prototype a broad semantic verifier"
+      ],
+      "no_retest": {
+        "default": false,
+        "reason": "This broad module remains unrun; only a preregistered new observation contract is eligible, with labels final-only and standalone-verifier control."
+      },
+      "evidence_sources": [
+        "mechanism",
+        "literature"
+      ],
+      "evidence_scope": "Proposal status only; absence is limited to the inspected ledger/current source."
+    }
+  ],
+  "discriminating_interventions": [
+    {
+      "id": "I01_WHOLE_CLAIM_ROLE_AND_CITATION_VERIFICATION",
+      "status": "unrun_discriminating_proposal_not_global_novelty_claim",
+      "generation_mechanism": "An autoregressive observer can predict each copied word while binding it to the wrong entity, event, date or citation.",
+      "new_information": "Frozen model judgment over the complete proposition and explicit source-role mapping, with source quote/argument IDs and target character span; not another scalar-gap transform.",
+      "discriminating_condition": "Same lexical/numeric content with exactlyone source/claim role or citation assignment changed, plus paraphrase/order-preserving/no-op controls, across prose QA/Summary and typed attributes/finance. The verifier must react to the relation change while preserving supported derivations.",
+      "distinction_from_prior": [
+        "P028 produced numeric syntactic candidates, not full semantic judgments",
+        "P027 had no eligible proofs",
+        "P022/P023 used narrow template states and Gaussian pseudo-supervision"
+      ],
+      "critical_assumptions": [
+        "Frozen model can resolve relation and scope without answer anchoring",
+        "All sentence/claim units are covered with explicit unknowns",
+        "Quote validity does not establish entailment; model opinions are not gold"
+      ],
+      "required_controls": [
+        "standalone verifier",
+        "existingR4/V3 unchanged",
+        "complete-unit coverage",
+        "frozen model/prompt/segmentation before final labels",
+        "fresh confirmation source population for any revised method"
+      ]
+    },
+    {
+      "id": "I02_ANSWER_BLIND_EVIDENCE_FIRST_EXTRACTION",
+      "status": "unrun_discriminating_proposal_not_global_novelty_claim",
+      "generation_mechanism": "The original answer or its history may anchor a verifier to a coherent but wrong relation; independent source-first evidence could expose that commitment.",
+      "new_information": "Before seeing the answer, a frozen model emits source-grounded fact/role/citation records with exact evidence spans; a later fixed reconciliation checks original claims against those records.",
+      "discriminating_condition": "Compare source-first/answer-blind extraction to claim-first verification at matched total model-call/token budget. Freeze extraction before exposing the original response; preserve missing/false/unknown and text/table/review provenance distinctions.",
+      "distinction_from_prior": [
+        "P026 already resets units and replays source×year-repair future likelihoods; this is a new source-semantic representation, not prefix-reset rescore",
+        "P027/P028 finite numeric extraction lacks broad relation/citation scope"
+      ],
+      "critical_assumptions": [
+        "Source-first model does not invent facts or omit decisive conditions",
+        "Evidence records retain contradictory sources/time/units rather than flattening them",
+        "Semantic reconciliation adds valid information instead of increasing unsupported certainty"
+      ],
+      "required_controls": [
+        "claim-first verifier with equal cost",
+        "identity/paraphrase/no-op guards",
+        "explicit extraction coverage and abstention",
+        "valid derived numerical answers",
+        "no empirical detector weight mixing"
+      ]
+    },
+    {
+      "id": "I03_OBSERVER_GENERATOR_AND_SOURCE_STRUCTURE_FACTORIAL",
+      "status": "qualification_study_not_a_detector_implementation",
+      "generation_mechanism": "Teacher-forced risk is measured by an observer that may not be the answer generator; source format, absent answerability and error-label construction also differ by dataset.",
+      "new_information": "A preregistered controlled crossing of generator/observer identity and source structure, retaining exact source/claim relation and equal budgets, to locate which gap failures arise from observer mismatch versus semantic source handling.",
+      "discriminating_condition": "This must go beyond the completedQwen second-observer aggregate comparison: distinguish matched generator/observer from mismatched pairs while holding factual relation and formatting controls fixed; include true/false/missing/conflicting evidence, not a new order-only test.",
+      "distinction_from_prior": [
+        "P029 supplied two observers on the same original responses, not a controlled generator-observer semantic factorial",
+        "K03 established existinglocal/full differences; resettingagain is insufficient"
+      ],
+      "critical_assumptions": [
+        "Exactgeneratorcheckpoint/quantization/prompt provenance is recoverable or newlycontrolled",
+        "Final annotations apply to newlygenerated text; old token labels cannot be transferred",
+        "Source structure and labeling differences cannot be mistaken for generation causes"
+      ],
+      "required_controls": [
+        "crossed source/claim relation fixtures with final-only truth",
+        "matched execution backend",
+        "per-dataset/per-generator coverage",
+        "no promotion of extra generation itself as detector progress"
+      ]
+    }
+  ],
+  "novelty_boundary": {
+    "already_covered_locally": [
+      "source/absent contrast",
+      "signedsourcewrites/historycompetition",
+      "localprefixreset",
+      "source×repairfutureinteraction",
+      "shared/persistent/mixedexpertreadouts",
+      "bounded/adaptivecontext",
+      "numericrelationnulls/certificates",
+      "finiteproof/UDassertionfrontends",
+      "sequence/numericenergyconstraints",
+      "blindrankfusion"
+    ],
+    "literature_review_source": "literature",
+    "new_literature_search_performed": false,
+    "warning": "Not previously executed in this repository does not mean novel in the literature. Whole-claim verification/evidence-first extraction are research conditions, not asserted new inventions."
+  },
+  "integrity": {
+    "runtime_sources_modified": false,
+    "metrics_recomputed": false,
+    "model_calls": 0,
+    "original_run_receipts_missing_locally": "Most earlier candidate-specific run folders/protocol/review files are not restored; the ledger/paper/sanitized numerical extracts support reported outcome claims, not local native rerun certification.",
+    "registry_script_sha256": "be91c65f14bff090f93716ce9f24c770f909447543c68dfdd438d60448c3a124"
+  },
+  "initial_registry_sha256": "c756c7b692b8fb603da47fb9d85e349a3c7eab8ccc89708fac34e9f3921ba12d",
+  "base_revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b"
+}

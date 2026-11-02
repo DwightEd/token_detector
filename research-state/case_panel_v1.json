@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "panel_id": "case_panel_v1",
+  "status": "prepared_sealed_not_scored",
+  "scope": "Exploratory mechanism qualification only; prescribed previously exposed examples, not fresh confirmation.",
+  "panel_directory": "outputs/research-goal-20261102/case_panel_v1",
+  "counts": {
+    "total_inputs": 18,
+    "prescribed_cases": 15,
+    "additional_outcome_unknown_controls": 3,
+    "cohorts": {
+      "QA": 2,
+      "Summary": 2,
+      "Data2txt": 3,
+      "FinQA": 2,
+      "TATQA": 4,
+      "HalluRAG": 5
+    },
+    "distinct_dataset_source_pairs": 18
+  },
+  "inputs_sha256": "1bf9a26ad06ac350988302999776e7288f9da570d35316fd6b27ca21e36e8baf",
+  "manifest_sha256": "fe0242d0e3773caccb8de515d4e7327f5cff5c4bb51f3eeb3906c1a21486b932",
+  "evaluation_only_sha256": "8fd43c2fdbf14fd90f1149c33a50f1a9f0330f6428ea682f1a7dc2c09aaaf9c4",
+  "seal_sha256": "0aac4a1b9ccbe65d9f0ffda72f1ff05790b57c919d035fa6f6fdaca1522a969f",
+  "next_module_input": "Read only inputs.jsonl through experiments.datasets.read_samples; pass each sample.inputs under a separately frozen method contract. IDs/task/generator are original metadata; no gold/diagnosis fields exist in the input rows.",
+  "stage_fingerprints": "Bind inputs.jsonl and only metadata actually consumed for observation/scoring; bind evaluation_only.jsonl separately at final evaluation. Changed expectation prose alone is not a new model-input condition.",
+  "gold_gate": "Never read evaluation_only.jsonl or original annotations in model generation/scoring. First seal complete outputs and the new module protocol, model and input identities.",
+  "no_counterfactual_mutations": true,
+  "model_calls": 0,
+  "new_scores": 0,
+  "control_outcomes": "Three extra controls are input-hash-selected and outcome-unknown, not assertednegative.",
+  "publication_rule": "This small pointer may be copied to the persistent research index; full source/prompt/response and evaluation text stay in ignored outputs."
+}

@@ -1,0 +1,2047 @@
+{
+  "schema": 1,
+  "created_utc": "2026-11-02T10:31:49.069274+00:00",
+  "scope": "new cached input/cohort/unit/provenance audit; no detector scores, FN/FP counts or AUROCs recomputed",
+  "no_model_calls": true,
+  "no_detector_score_recomputation": true,
+  "no_label_based_tuning": true,
+  "measurement_definitions": {
+    "character_lengths": "original Unicode characters",
+    "numeric_lexeme": "[0-9]+(?:[.,][0-9]+)*",
+    "number_bearing_token": "any ASCII digit in unchanged token character span; not a semantic quantity/error classifier",
+    "scoring_unit_length": "valid token count per recorded unit_index; separate from gold error spans/native sentences",
+    "quantiles": "NumPy default linear quantiles"
+  },
+  "tasks": {
+    "RAGTruth_QA": {
+      "responses": 900,
+      "sources": 150,
+      "all_prepared_responses": 900,
+      "source_grouping": "official source_id",
+      "bootstrap_type": "source",
+      "prompt_policy": "unchanged official prompt",
+      "generation_kind": "released generator response",
+      "generators": {
+        "gpt-3.5-turbo-0613": 150,
+        "gpt-4-0613": 150,
+        "llama-2-13b-chat": 150,
+        "llama-2-70b-chat": 150,
+        "llama-2-7b-chat": 150,
+        "mistral-7B-instruct": 150
+      },
+      "responses_per_source": {
+        "6": 150
+      },
+      "generator_counts_per_source_signatures": {
+        "{\"gpt-3.5-turbo-0613\": 1, \"gpt-4-0613\": 1, \"llama-2-13b-chat\": 1, \"llama-2-70b-chat\": 1, \"llama-2-7b-chat\": 1, \"mistral-7B-instruct\": 1}": 150
+      },
+      "distinct_prompt_source_groups": 150,
+      "distinct_prompts_per_source": {
+        "1": 150
+      },
+      "distinct_source_texts_per_source_id": {
+        "1": 150
+      },
+      "question_parse": {
+        "parsed_responses": 900,
+        "distinct_questions": 150,
+        "availability_scope": "actual task question retained"
+      },
+      "prompt_classes": {
+        "RAGTruth_QA": 900
+      },
+      "unique_outside_source_prompts": 150,
+      "outside_source_prompt_examples": [
+        "Briefly answer the following question:\nhow do automotive technicians get paid\nBear in mind that your response should be strictly based on the following three passages:\n<SOURCE>\nIn case the passages do not contain the necessary information to answer the question, please reply with: \"Unable to answer based on given passages.\"\noutput:",
+        "Briefly answer the following question:\nwhat is the difference between tartate and succinate\nBear in mind that your response should be strictly based on the following three passages:\n<SOURCE>\nIn case the passages do not contain the necessary information to answer the question, please reply with: \"Unable to answer based on given passages.\"\noutput:"
+      ],
+      "source_occurs_exactly_once": true,
+      "source_parse_types": {
+        "unparsed_text": 900
+      },
+      "source_contains_nested_array_text": 0,
+      "source_contains_pipe_character": 12,
+      "source_chunk_heading_counts": {
+        "0": 900
+      },
+      "source_characters": {
+        "n": 900,
+        "min": 738.0,
+        "p10": 863.3000000000001,
+        "median": 1254.5,
+        "p90": 1924.1000000000004,
+        "max": 2404.0,
+        "mean": 1363.3866666666668
+      },
+      "response_characters": {
+        "n": 900,
+        "min": 41.0,
+        "p10": 266.70000000000005,
+        "median": 606.0,
+        "p90": 1091.1,
+        "max": 1920.0,
+        "mean": 649.6433333333333
+      },
+      "response_whitespace_words": {
+        "n": 900,
+        "min": 7.0,
+        "p10": 43.0,
+        "median": 101.0,
+        "p90": 188.0,
+        "max": 346.0,
+        "mean": 111.19777777777777
+      },
+      "prompt_characters": {
+        "n": 900,
+        "min": 1045.0,
+        "p10": 1199.1000000000001,
+        "median": 1573.0,
+        "p90": 2250.5,
+        "max": 2717.0,
+        "mean": 1688.5533333333333
+      },
+      "source_fraction_of_prompt_characters": {
+        "n": 900,
+        "min": 0.6702222222222223,
+        "p10": 0.7255010097871679,
+        "median": 0.8002857142857143,
+        "p90": 0.8567732982243889,
+        "max": 0.8847994111152006,
+        "mean": 0.7950922181744087
+      },
+      "source_start_character_offset_in_prompt": {
+        "n": 900,
+        "min": 140.0,
+        "p10": 151.9,
+        "median": 166.5,
+        "p90": 190.0,
+        "max": 229.0,
+        "mean": 168.16666666666666
+      },
+      "declared_summary_word_limit": null,
+      "source_numeric_text": {
+        "characters": 1227048,
+        "ascii_digit_characters": 13830,
+        "ascii_digit_fraction_of_nonspace_characters": 0.013675304950401063,
+        "numeric_lexeme_count_per_text": {
+          "n": 900,
+          "min": 3.0,
+          "p10": 3.0,
+          "median": 8.0,
+          "p90": 20.100000000000023,
+          "max": 40.0,
+          "mean": 10.4
+        },
+        "currency_symbol_texts": 48,
+        "percent_symbol_texts": 36
+      },
+      "response_numeric_text": {
+        "characters": 584679,
+        "ascii_digit_characters": 4772,
+        "ascii_digit_fraction_of_nonspace_characters": 0.00985355942282755,
+        "numeric_lexeme_count_per_text": {
+          "n": 900,
+          "min": 0.0,
+          "p10": 0.0,
+          "median": 2.0,
+          "p90": 10.0,
+          "max": 28.0,
+          "mean": 3.792222222222222
+        },
+        "currency_symbol_texts": 28,
+        "percent_symbol_texts": 23
+      },
+      "valid_response_tokens": 124817,
+      "valid_tokens_per_response": {
+        "n": 900,
+        "min": 8.0,
+        "p10": 54.900000000000006,
+        "median": 126.5,
+        "p90": 232.10000000000002,
+        "max": 436.0,
+        "mean": 138.68555555555557
+      },
+      "number_bearing_valid_tokens": 3563,
+      "number_bearing_valid_token_fraction": 0.02854579103807975,
+      "scoring_units": {
+        "status": "exact cached scorer unit_index on valid original token axis",
+        "records_hash_verified": 900,
+        "scoring_units": 5797,
+        "valid_tokens_per_unit": {
+          "n": 5797,
+          "min": 2.0,
+          "p10": 9.0,
+          "median": 20.0,
+          "p90": 36.0,
+          "max": 64.0,
+          "mean": 21.531309297912713
+        },
+        "units_per_response": {
+          "n": 900,
+          "min": 1.0,
+          "p10": 2.0,
+          "median": 5.0,
+          "p90": 12.0,
+          "max": 29.0,
+          "mean": 6.441111111111111
+        },
+        "single_token_units": 0,
+        "units_at_64_valid_tokens": 15,
+        "max_valid_tokens_at_most_64": true,
+        "noninitial_unit_starts": 4897
+      },
+      "leading_whitespace_responses": 0,
+      "first_valid_token_text_counts": {
+        "Based": 482,
+        "To": 134,
+        "The": 59,
+        "Sure": 52,
+        "Unable": 33,
+        "A": 10,
+        "Pass": 10,
+        "You": 7,
+        "Here": 5,
+        "H": 5,
+        "Children": 4,
+        "Le": 3
+      },
+      "first_valid_token_starts_at_character_zero": 900,
+      "duplicate_character_span_extra_tokens": 0,
+      "label_contract": {
+        "granularities": {
+          "token": 900
+        },
+        "coverage": {
+          "complete": 900
+        },
+        "label_provenance": {
+          "released dataset annotation": 900
+        },
+        "span_count": 235,
+        "span_characters": {
+          "n": 235,
+          "min": 7.0,
+          "p10": 31.400000000000002,
+          "median": 98.0,
+          "p90": 227.19999999999996,
+          "max": 1389.0,
+          "mean": 134.56170212765957
+        },
+        "edit_error_type_counts": {},
+        "native_sentence_token_overlap_lengths": null,
+        "tokens_crossing_multiple_native_sentences": null
+      },
+      "prepared_evidence": {
+        "manifest_sha256": "b32c4c8d3383ff031c117f5f80feff09d4abddb064484284b51bcd6030f6eecd",
+        "inputs_sha256": "99f37fd701645e9db14ac123dbdd4ff19e674f535feccd920f9464f2e322ecdd",
+        "annotations_sha256": "022ab8de9509fd0a48a4b89528a5555b69f57fa469317d5c8cfafa749c1c1fc1"
+      }
+    },
+    "RAGTruth_Summary": {
+      "responses": 900,
+      "sources": 150,
+      "all_prepared_responses": 900,
+      "source_grouping": "official source_id",
+      "bootstrap_type": "source",
+      "prompt_policy": "unchanged official prompt",
+      "generation_kind": "released generator response",
+      "generators": {
+        "gpt-3.5-turbo-0613": 150,
+        "gpt-4-0613": 150,
+        "llama-2-13b-chat": 150,
+        "llama-2-70b-chat": 150,
+        "llama-2-7b-chat": 150,
+        "mistral-7B-instruct": 150
+      },
+      "responses_per_source": {
+        "6": 150
+      },
+      "generator_counts_per_source_signatures": {
+        "{\"gpt-3.5-turbo-0613\": 1, \"gpt-4-0613\": 1, \"llama-2-13b-chat\": 1, \"llama-2-70b-chat\": 1, \"llama-2-7b-chat\": 1, \"mistral-7B-instruct\": 1}": 150
+      },
+      "distinct_prompt_source_groups": 150,
+      "distinct_prompts_per_source": {
+        "1": 150
+      },
+      "distinct_source_texts_per_source_id": {
+        "1": 150
+      },
+      "question_parse": {
+        "parsed_responses": 0,
+        "distinct_questions": 0,
+        "availability_scope": "generation instruction retained; task has no QA question requirement"
+      },
+      "prompt_classes": {
+        "RAGTruth_Summary_word_limit": 900
+      },
+      "unique_outside_source_prompts": 71,
+      "outside_source_prompt_examples": [
+        "Summarize the following news within 86 words:\n<SOURCE>\noutput:",
+        "Summarize the following news within 161 words:\n<SOURCE>\noutput:"
+      ],
+      "source_occurs_exactly_once": true,
+      "source_parse_types": {
+        "unparsed_text": 900
+      },
+      "source_contains_nested_array_text": 0,
+      "source_contains_pipe_character": 12,
+      "source_chunk_heading_counts": {
+        "0": 900
+      },
+      "source_characters": {
+        "n": 900,
+        "min": 860.0,
+        "p10": 1525.1000000000006,
+        "median": 2520.5,
+        "p90": 5940.700000000002,
+        "max": 9918.0,
+        "mean": 3256.3
+      },
+      "response_characters": {
+        "n": 900,
+        "min": 80.0,
+        "p10": 369.8,
+        "median": 626.5,
+        "p90": 1106.0,
+        "max": 2506.0,
+        "mean": 683.7244444444444
+      },
+      "response_whitespace_words": {
+        "n": 900,
+        "min": 11.0,
+        "p10": 60.0,
+        "median": 99.5,
+        "p90": 175.10000000000002,
+        "max": 359.0,
+        "mean": 110.11111111111111
+      },
+      "prompt_characters": {
+        "n": 900,
+        "min": 914.0,
+        "p10": 1579.1000000000006,
+        "median": 2575.0,
+        "p90": 5995.700000000002,
+        "max": 9973.0,
+        "mean": 3310.82
+      },
+      "source_fraction_of_prompt_characters": {
+        "n": 900,
+        "min": 0.9409190371991247,
+        "p10": 0.9657930643938949,
+        "median": 0.9788103768878407,
+        "p90": 0.990826587339191,
+        "max": 0.9944851097964504,
+        "mean": 0.9783152002342259
+      },
+      "source_start_character_offset_in_prompt": {
+        "n": 900,
+        "min": 46.0,
+        "p10": 46.0,
+        "median": 47.0,
+        "p90": 47.0,
+        "max": 47.0,
+        "mean": 46.52
+      },
+      "declared_summary_word_limit": {
+        "n": 900,
+        "min": 33.0,
+        "p10": 63.900000000000006,
+        "median": 102.0,
+        "p90": 200.0,
+        "max": 200.0,
+        "mean": 120.54666666666667
+      },
+      "source_numeric_text": {
+        "characters": 2930670,
+        "ascii_digit_characters": 20076,
+        "ascii_digit_fraction_of_nonspace_characters": 0.008218585892328174,
+        "numeric_lexeme_count_per_text": {
+          "n": 900,
+          "min": 0.0,
+          "p10": 1.0,
+          "median": 7.0,
+          "p90": 17.0,
+          "max": 51.0,
+          "mean": 8.38
+        },
+        "currency_symbol_texts": 204,
+        "percent_symbol_texts": 114
+      },
+      "response_numeric_text": {
+        "characters": 615352,
+        "ascii_digit_characters": 4672,
+        "ascii_digit_fraction_of_nonspace_characters": 0.009038131552016652,
+        "numeric_lexeme_count_per_text": {
+          "n": 900,
+          "min": 0.0,
+          "p10": 0.0,
+          "median": 1.0,
+          "p90": 4.0,
+          "max": 19.0,
+          "mean": 1.9633333333333334
+        },
+        "currency_symbol_texts": 103,
+        "percent_symbol_texts": 51
+      },
+      "valid_response_tokens": 121248,
+      "valid_tokens_per_response": {
+        "n": 900,
+        "min": 15.0,
+        "p10": 74.0,
+        "median": 124.0,
+        "p90": 215.0,
+        "max": 411.0,
+        "mean": 134.72
+      },
+      "number_bearing_valid_tokens": 2296,
+      "number_bearing_valid_token_fraction": 0.018936394827131168,
+      "scoring_units": {
+        "status": "exact cached scorer unit_index on valid original token axis",
+        "records_hash_verified": 900,
+        "scoring_units": 5124,
+        "valid_tokens_per_unit": {
+          "n": 5124,
+          "min": 2.0,
+          "p10": 12.0,
+          "median": 23.0,
+          "p90": 36.0,
+          "max": 64.0,
+          "mean": 23.662763466042154
+        },
+        "units_per_response": {
+          "n": 900,
+          "min": 1.0,
+          "p10": 3.0,
+          "median": 5.0,
+          "p90": 8.0,
+          "max": 18.0,
+          "mean": 5.693333333333333
+        },
+        "single_token_units": 0,
+        "units_at_64_valid_tokens": 4,
+        "max_valid_tokens_at_most_64": true,
+        "noninitial_unit_starts": 4224
+      },
+      "leading_whitespace_responses": 0,
+      "first_valid_token_text_counts": {
+        "The": 142,
+        "Here": 102,
+        "A": 85,
+        "Sure": 83,
+        "On": 27,
+        "In": 24,
+        "An": 16,
+        "Texas": 13,
+        "S": 12,
+        "C": 11,
+        "J": 8,
+        "W": 8
+      },
+      "first_valid_token_starts_at_character_zero": 900,
+      "duplicate_character_span_extra_tokens": 1,
+      "label_contract": {
+        "granularities": {
+          "token": 900
+        },
+        "coverage": {
+          "complete": 900
+        },
+        "label_provenance": {
+          "released dataset annotation": 900
+        },
+        "span_count": 244,
+        "span_characters": {
+          "n": 244,
+          "min": 4.0,
+          "p10": 17.3,
+          "median": 48.5,
+          "p90": 128.70000000000002,
+          "max": 876.0,
+          "mean": 73.73360655737704
+        },
+        "edit_error_type_counts": {},
+        "native_sentence_token_overlap_lengths": null,
+        "tokens_crossing_multiple_native_sentences": null
+      },
+      "prepared_evidence": {
+        "manifest_sha256": "e75b8ec563015001939d7870650b26d50046199f41bc1aae01a5663759a663ec",
+        "inputs_sha256": "50d7ad8ee0c18cc24b83c430bc58bfd23897db6a5485336a30d975f1a576b4fd",
+        "annotations_sha256": "86b3df9c5adb47e8f55eb42f8d6342baab05ebb4779c2218f998d8f6cea4315c"
+      }
+    },
+    "RAGTruth_Data2txt": {
+      "responses": 900,
+      "sources": 150,
+      "all_prepared_responses": 900,
+      "source_grouping": "official source_id",
+      "bootstrap_type": "source",
+      "prompt_policy": "unchanged official prompt",
+      "generation_kind": "released generator response",
+      "generators": {
+        "gpt-3.5-turbo-0613": 150,
+        "gpt-4-0613": 150,
+        "llama-2-13b-chat": 150,
+        "llama-2-70b-chat": 150,
+        "llama-2-7b-chat": 150,
+        "mistral-7B-instruct": 150
+      },
+      "responses_per_source": {
+        "6": 150
+      },
+      "generator_counts_per_source_signatures": {
+        "{\"gpt-3.5-turbo-0613\": 1, \"gpt-4-0613\": 1, \"llama-2-13b-chat\": 1, \"llama-2-70b-chat\": 1, \"llama-2-7b-chat\": 1, \"mistral-7B-instruct\": 1}": 150
+      },
+      "distinct_prompt_source_groups": 150,
+      "distinct_prompts_per_source": {
+        "1": 150
+      },
+      "distinct_source_texts_per_source_id": {
+        "1": 150
+      },
+      "question_parse": {
+        "parsed_responses": 0,
+        "distinct_questions": 0,
+        "availability_scope": "generation instruction retained; task has no QA question requirement"
+      },
+      "prompt_classes": {
+        "RAGTruth_Data2txt_JSON_instruction": 900
+      },
+      "unique_outside_source_prompts": 1,
+      "outside_source_prompt_examples": [
+        "Instruction:\nWrite an objective overview about the following local business based only on the provided structured data in the JSON format. You should include details and cover the information mentioned in the customers' review. The overview should be 100 - 200 words. Don't make up information. Structured data:\n<SOURCE>\nOverview:"
+      ],
+      "source_occurs_exactly_once": true,
+      "source_parse_types": {
+        "Python_literal_dict": 900
+      },
+      "source_contains_nested_array_text": 0,
+      "source_contains_pipe_character": 0,
+      "source_chunk_heading_counts": {
+        "0": 900
+      },
+      "source_characters": {
+        "n": 900,
+        "min": 1353.0,
+        "p10": 1682.3,
+        "median": 2299.5,
+        "p90": 3597.6000000000017,
+        "max": 5571.0,
+        "mean": 2484.9933333333333
+      },
+      "response_characters": {
+        "n": 900,
+        "min": 386.0,
+        "p10": 694.0,
+        "median": 899.0,
+        "p90": 1438.1,
+        "max": 2024.0,
+        "mean": 994.3111111111111
+      },
+      "response_whitespace_words": {
+        "n": 900,
+        "min": 55.0,
+        "p10": 110.0,
+        "median": 142.0,
+        "p90": 227.0,
+        "max": 321.0,
+        "mean": 157.86555555555555
+      },
+      "prompt_characters": {
+        "n": 900,
+        "min": 1675.0,
+        "p10": 2004.3,
+        "median": 2621.5,
+        "p90": 3919.6000000000017,
+        "max": 5893.0,
+        "mean": 2806.9933333333333
+      },
+      "source_fraction_of_prompt_characters": {
+        "n": 900,
+        "min": 0.8077611940298507,
+        "p10": 0.8393452305173004,
+        "median": 0.8771658014229229,
+        "p90": 0.917846022730769,
+        "max": 0.9453589003902936,
+        "mean": 0.8771713437315048
+      },
+      "source_start_character_offset_in_prompt": {
+        "n": 900,
+        "min": 312.0,
+        "p10": 312.0,
+        "median": 312.0,
+        "p90": 312.0,
+        "max": 312.0,
+        "mean": 312.0
+      },
+      "declared_summary_word_limit": null,
+      "source_numeric_text": {
+        "characters": 2236494,
+        "ascii_digit_characters": 81270,
+        "ascii_digit_fraction_of_nonspace_characters": 0.04260304779278783,
+        "numeric_lexeme_count_per_text": {
+          "n": 900,
+          "min": 23.0,
+          "p10": 25.900000000000006,
+          "median": 51.0,
+          "p90": 56.10000000000002,
+          "max": 67.0,
+          "mean": 47.973333333333336
+        },
+        "currency_symbol_texts": 228,
+        "percent_symbol_texts": 30
+      },
+      "response_numeric_text": {
+        "characters": 894880,
+        "ascii_digit_characters": 6000,
+        "ascii_digit_fraction_of_nonspace_characters": 0.007973633850733575,
+        "numeric_lexeme_count_per_text": {
+          "n": 900,
+          "min": 0.0,
+          "p10": 0.0,
+          "median": 2.0,
+          "p90": 8.0,
+          "max": 24.0,
+          "mean": 3.4444444444444446
+        },
+        "currency_symbol_texts": 30,
+        "percent_symbol_texts": 8
+      },
+      "valid_response_tokens": 178343,
+      "valid_tokens_per_response": {
+        "n": 900,
+        "min": 68.0,
+        "p10": 137.0,
+        "median": 180.0,
+        "p90": 285.1,
+        "max": 405.0,
+        "mean": 198.1588888888889
+      },
+      "number_bearing_valid_tokens": 3894,
+      "number_bearing_valid_token_fraction": 0.021834330475544315,
+      "scoring_units": {
+        "status": "exact cached scorer unit_index on valid original token axis",
+        "records_hash_verified": 900,
+        "scoring_units": 8247,
+        "valid_tokens_per_unit": {
+          "n": 8247,
+          "min": 1.0,
+          "p10": 12.0,
+          "median": 21.0,
+          "p90": 32.0,
+          "max": 64.0,
+          "mean": 21.62519704134837
+        },
+        "units_per_response": {
+          "n": 900,
+          "min": 3.0,
+          "p10": 6.0,
+          "median": 9.0,
+          "p90": 13.0,
+          "max": 25.0,
+          "mean": 9.163333333333334
+        },
+        "single_token_units": 2,
+        "units_at_64_valid_tokens": 10,
+        "max_valid_tokens_at_most_64": true,
+        "noninitial_unit_starts": 7347
+      },
+      "leading_whitespace_responses": 0,
+      "first_valid_token_text_counts": {
+        "Sure": 130,
+        "Based": 95,
+        "The": 35,
+        "P": 26,
+        "Here": 22,
+        "La": 20,
+        "El": 20,
+        "S": 18,
+        "M": 17,
+        "C": 16,
+        "D": 14,
+        "K": 13
+      },
+      "first_valid_token_starts_at_character_zero": 900,
+      "duplicate_character_span_extra_tokens": 0,
+      "label_contract": {
+        "granularities": {
+          "token": 900
+        },
+        "coverage": {
+          "complete": 900
+        },
+        "label_provenance": {
+          "released dataset annotation": 900
+        },
+        "span_count": 1054,
+        "span_characters": {
+          "n": 1054,
+          "min": 1.0,
+          "p10": 7.0,
+          "median": 26.0,
+          "p90": 72.0,
+          "max": 180.0,
+          "mean": 34.40607210626186
+        },
+        "edit_error_type_counts": {},
+        "native_sentence_token_overlap_lengths": null,
+        "tokens_crossing_multiple_native_sentences": null
+      },
+      "prepared_evidence": {
+        "manifest_sha256": "d1f0ba0658222556e2542e145da84538d14a9fa5b230dd9bb8fa34b830944b80",
+        "inputs_sha256": "050c79f2711aa292845f27ed4f3ae8b68f0d263bc9d29678486f7e8fb6477521",
+        "annotations_sha256": "d6b2f44d12d68b520e5a28dd4d642b03a94854a2ec5b208a3ceee3f73be2b9d2"
+      }
+    },
+    "FRED_FinQA": {
+      "responses": 162,
+      "sources": 142,
+      "all_prepared_responses": 162,
+      "source_grouping": "SHA256 of exact released reference text; company/filing identity unavailable",
+      "bootstrap_type": "reference_text",
+      "prompt_policy": "fixed source-only completion prompt; original generation question/prompt unavailable; no input Text or edit tags in prompt",
+      "generation_kind": "released synthetic/silver edited input text",
+      "generators": {
+        "not_released": 162
+      },
+      "responses_per_source": {
+        "1": 123,
+        "2": 18,
+        "3": 1
+      },
+      "generator_counts_per_source_signatures": {
+        "{\"not_released\": 1}": 123,
+        "{\"not_released\": 2}": 18,
+        "{\"not_released\": 3}": 1
+      },
+      "distinct_prompt_source_groups": 142,
+      "distinct_prompts_per_source": {
+        "1": 142
+      },
+      "distinct_source_texts_per_source_id": {
+        "1": 142
+      },
+      "question_parse": {
+        "parsed_responses": 0,
+        "distinct_questions": 0,
+        "availability_scope": "original question unavailable; constructed source-only completion"
+      },
+      "prompt_classes": {
+        "FRED_fixed_reference_response": 162
+      },
+      "unique_outside_source_prompts": 1,
+      "outside_source_prompt_examples": [
+        "Reference material:\n<SOURCE>\n\nResponse:\n"
+      ],
+      "source_occurs_exactly_once": true,
+      "source_parse_types": {
+        "unparsed_text": 162
+      },
+      "source_contains_nested_array_text": 162,
+      "source_contains_pipe_character": 3,
+      "source_chunk_heading_counts": {
+        "0": 162
+      },
+      "source_characters": {
+        "n": 162,
+        "min": 483.0,
+        "p10": 2460.7000000000003,
+        "median": 4053.5,
+        "p90": 5790.1,
+        "max": 8989.0,
+        "mean": 4112.66049382716
+      },
+      "response_characters": {
+        "n": 162,
+        "min": 53.0,
+        "p10": 108.30000000000001,
+        "median": 337.5,
+        "p90": 681.9,
+        "max": 976.0,
+        "mean": 375.9691358024691
+      },
+      "response_whitespace_words": {
+        "n": 162,
+        "min": 9.0,
+        "p10": 18.1,
+        "median": 55.0,
+        "p90": 116.60000000000002,
+        "max": 178.0,
+        "mean": 63.2962962962963
+      },
+      "prompt_characters": {
+        "n": 162,
+        "min": 515.0,
+        "p10": 2492.7000000000003,
+        "median": 4085.5,
+        "p90": 5822.1,
+        "max": 9021.0,
+        "mean": 4144.66049382716
+      },
+      "source_fraction_of_prompt_characters": {
+        "n": 162,
+        "min": 0.9378640776699029,
+        "p10": 0.987160817590624,
+        "median": 0.9921673790172318,
+        "p90": 0.9945036093357468,
+        "max": 0.9964527214277796,
+        "mean": 0.9904694590526276
+      },
+      "source_start_character_offset_in_prompt": {
+        "n": 162,
+        "min": 20.0,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0,
+        "max": 20.0,
+        "mean": 20.0
+      },
+      "declared_summary_word_limit": null,
+      "source_numeric_text": {
+        "characters": 666251,
+        "ascii_digit_characters": 34922,
+        "ascii_digit_fraction_of_nonspace_characters": 0.0630200616810523,
+        "numeric_lexeme_count_per_text": {
+          "n": 162,
+          "min": 18.0,
+          "p10": 34.0,
+          "median": 62.0,
+          "p90": 104.0,
+          "max": 179.0,
+          "mean": 66.37037037037037
+        },
+        "currency_symbol_texts": 154,
+        "percent_symbol_texts": 73
+      },
+      "response_numeric_text": {
+        "characters": 60907,
+        "ascii_digit_characters": 6525,
+        "ascii_digit_fraction_of_nonspace_characters": 0.12878458927091146,
+        "numeric_lexeme_count_per_text": {
+          "n": 162,
+          "min": 1.0,
+          "p10": 3.0,
+          "median": 9.5,
+          "p90": 21.0,
+          "max": 42.0,
+          "mean": 11.166666666666666
+        },
+        "currency_symbol_texts": 132,
+        "percent_symbol_texts": 82
+      },
+      "valid_response_tokens": 16047,
+      "valid_tokens_per_response": {
+        "n": 162,
+        "min": 12.0,
+        "p10": 31.1,
+        "median": 85.5,
+        "p90": 177.9,
+        "max": 293.0,
+        "mean": 99.05555555555556
+      },
+      "number_bearing_valid_tokens": 3160,
+      "number_bearing_valid_token_fraction": 0.19692154296753286,
+      "scoring_units": {
+        "status": "exact cached scorer unit_index on valid original token axis",
+        "records_hash_verified": 162,
+        "scoring_units": 610,
+        "valid_tokens_per_unit": {
+          "n": 610,
+          "min": 1.0,
+          "p10": 10.0,
+          "median": 22.0,
+          "p90": 54.0,
+          "max": 64.0,
+          "mean": 26.30655737704918
+        },
+        "units_per_response": {
+          "n": 162,
+          "min": 1.0,
+          "p10": 1.0,
+          "median": 3.0,
+          "p90": 7.0,
+          "max": 15.0,
+          "mean": 3.765432098765432
+        },
+        "single_token_units": 2,
+        "units_at_64_valid_tokens": 46,
+        "max_valid_tokens_at_most_64": true,
+        "noninitial_unit_starts": 448
+      },
+      "leading_whitespace_responses": 0,
+      "first_valid_token_text_counts": {
+        "The": 81,
+        "To": 43,
+        "In": 12,
+        "Based": 4,
+        "For": 2,
+        "Total": 2,
+        "During": 2,
+        "No": 2,
+        "There": 2,
+        "$": 1,
+        "Without": 1,
+        "Consumer": 1
+      },
+      "first_valid_token_starts_at_character_zero": 162,
+      "duplicate_character_span_extra_tokens": 2,
+      "label_contract": {
+        "granularities": {
+          "token": 162
+        },
+        "coverage": {
+          "complete": 162
+        },
+        "label_provenance": {
+          "released synthetic/silver edit spans; not human natural errors": 162
+        },
+        "span_count": 229,
+        "span_characters": {
+          "n": 229,
+          "min": 1.0,
+          "p10": 4.0,
+          "median": 5.0,
+          "p90": 84.40000000000003,
+          "max": 133.0,
+          "mean": 25.41484716157205
+        },
+        "edit_error_type_counts": {
+          "contradictory": 27,
+          "entity": 27,
+          "numerical": 47,
+          "relation": 19,
+          "temporal": 78,
+          "unverifiable": 31
+        },
+        "native_sentence_token_overlap_lengths": null,
+        "tokens_crossing_multiple_native_sentences": null
+      },
+      "prepared_evidence": {
+        "manifest_sha256": "0a08e37bb76251780ae959147bd518c6d16488664080661b0231b9838e497238",
+        "inputs_sha256": "12b7437d19eb1b138e1d66e499a64defd4e914c774e7542e860c298181833e5c",
+        "annotations_sha256": "b611d6e36999dad3f8a977e25a79a43ca3d79e85bd71b7df0ae58ba4c7bef9fd"
+      }
+    },
+    "FRED_TATQA": {
+      "responses": 130,
+      "sources": 110,
+      "all_prepared_responses": 130,
+      "source_grouping": "SHA256 of exact released reference text; company/filing identity unavailable",
+      "bootstrap_type": "reference_text",
+      "prompt_policy": "fixed source-only completion prompt; original generation question/prompt unavailable; no input Text or edit tags in prompt",
+      "generation_kind": "released synthetic/silver edited input text",
+      "generators": {
+        "not_released": 130
+      },
+      "responses_per_source": {
+        "1": 92,
+        "2": 16,
+        "3": 2
+      },
+      "generator_counts_per_source_signatures": {
+        "{\"not_released\": 1}": 92,
+        "{\"not_released\": 2}": 16,
+        "{\"not_released\": 3}": 2
+      },
+      "distinct_prompt_source_groups": 110,
+      "distinct_prompts_per_source": {
+        "1": 110
+      },
+      "distinct_source_texts_per_source_id": {
+        "1": 110
+      },
+      "question_parse": {
+        "parsed_responses": 0,
+        "distinct_questions": 0,
+        "availability_scope": "original question unavailable; constructed source-only completion"
+      },
+      "prompt_classes": {
+        "FRED_fixed_reference_response": 130
+      },
+      "unique_outside_source_prompts": 1,
+      "outside_source_prompt_examples": [
+        "Reference material:\n<SOURCE>\n\nResponse:\n"
+      ],
+      "source_occurs_exactly_once": true,
+      "source_parse_types": {
+        "unparsed_text": 130
+      },
+      "source_contains_nested_array_text": 130,
+      "source_contains_pipe_character": 0,
+      "source_chunk_heading_counts": {
+        "0": 130
+      },
+      "source_characters": {
+        "n": 130,
+        "min": 250.0,
+        "p10": 720.7,
+        "median": 1390.0,
+        "p90": 3324.0,
+        "max": 6831.0,
+        "mean": 1750.4076923076923
+      },
+      "response_characters": {
+        "n": 130,
+        "min": 44.0,
+        "p10": 80.0,
+        "median": 168.0,
+        "p90": 457.6,
+        "max": 815.0,
+        "mean": 229.8
+      },
+      "response_whitespace_words": {
+        "n": 130,
+        "min": 7.0,
+        "p10": 14.0,
+        "median": 27.0,
+        "p90": 80.0,
+        "max": 147.0,
+        "mean": 38.02307692307692
+      },
+      "prompt_characters": {
+        "n": 130,
+        "min": 282.0,
+        "p10": 752.7,
+        "median": 1422.0,
+        "p90": 3356.0,
+        "max": 6863.0,
+        "mean": 1782.4076923076923
+      },
+      "source_fraction_of_prompt_characters": {
+        "n": 130,
+        "min": 0.8865248226950354,
+        "p10": 0.9574576348189542,
+        "median": 0.9774964838255977,
+        "p90": 0.9904648390941597,
+        "max": 0.9953373160425469,
+        "mean": 0.9743707775243001
+      },
+      "source_start_character_offset_in_prompt": {
+        "n": 130,
+        "min": 20.0,
+        "p10": 20.0,
+        "median": 20.0,
+        "p90": 20.0,
+        "max": 20.0,
+        "mean": 20.0
+      },
+      "declared_summary_word_limit": null,
+      "source_numeric_text": {
+        "characters": 227553,
+        "ascii_digit_characters": 17152,
+        "ascii_digit_fraction_of_nonspace_characters": 0.08793732824740577,
+        "numeric_lexeme_count_per_text": {
+          "n": 130,
+          "min": 9.0,
+          "p10": 15.0,
+          "median": 32.0,
+          "p90": 77.10000000000001,
+          "max": 178.0,
+          "mean": 38.6
+        },
+        "currency_symbol_texts": 115,
+        "percent_symbol_texts": 50
+      },
+      "response_numeric_text": {
+        "characters": 29874,
+        "ascii_digit_characters": 3173,
+        "ascii_digit_fraction_of_nonspace_characters": 0.126798273657289,
+        "numeric_lexeme_count_per_text": {
+          "n": 130,
+          "min": 0.0,
+          "p10": 0.0,
+          "median": 4.0,
+          "p90": 18.0,
+          "max": 29.0,
+          "mean": 6.484615384615385
+        },
+        "currency_symbol_texts": 80,
+        "percent_symbol_texts": 26
+      },
+      "valid_response_tokens": 7747,
+      "valid_tokens_per_response": {
+        "n": 130,
+        "min": 13.0,
+        "p10": 19.9,
+        "median": 40.0,
+        "p90": 136.3,
+        "max": 235.0,
+        "mean": 59.59230769230769
+      },
+      "number_bearing_valid_tokens": 1538,
+      "number_bearing_valid_token_fraction": 0.19852846263069576,
+      "scoring_units": {
+        "status": "exact cached scorer unit_index on valid original token axis",
+        "records_hash_verified": 130,
+        "scoring_units": 277,
+        "valid_tokens_per_unit": {
+          "n": 277,
+          "min": 2.0,
+          "p10": 14.0,
+          "median": 24.0,
+          "p90": 51.0,
+          "max": 64.0,
+          "mean": 27.967509025270758
+        },
+        "units_per_response": {
+          "n": 130,
+          "min": 1.0,
+          "p10": 1.0,
+          "median": 2.0,
+          "p90": 4.0,
+          "max": 9.0,
+          "mean": 2.1307692307692307
+        },
+        "single_token_units": 0,
+        "units_at_64_valid_tokens": 22,
+        "max_valid_tokens_at_most_64": true,
+        "noninitial_unit_starts": 147
+      },
+      "leading_whitespace_responses": 0,
+      "first_valid_token_text_counts": {
+        "The": 87,
+        "In": 13,
+        "To": 13,
+        "Cost": 1,
+        "F": 1,
+        "Richard": 1,
+        "There": 1,
+        "Multi": 1,
+        "On": 1,
+        "Property": 1,
+        "Non": 1,
+        "No": 1
+      },
+      "first_valid_token_starts_at_character_zero": 130,
+      "duplicate_character_span_extra_tokens": 0,
+      "label_contract": {
+        "granularities": {
+          "token": 130
+        },
+        "coverage": {
+          "complete": 130
+        },
+        "label_provenance": {
+          "released synthetic/silver edit spans; not human natural errors": 130
+        },
+        "span_count": 156,
+        "span_characters": {
+          "n": 156,
+          "min": 2.0,
+          "p10": 4.0,
+          "median": 6.0,
+          "p90": 73.0,
+          "max": 107.0,
+          "mean": 20.243589743589745
+        },
+        "edit_error_type_counts": {
+          "contradictory": 15,
+          "entity": 18,
+          "numerical": 27,
+          "relation": 14,
+          "temporal": 66,
+          "unverifiable": 16
+        },
+        "native_sentence_token_overlap_lengths": null,
+        "tokens_crossing_multiple_native_sentences": null
+      },
+      "prepared_evidence": {
+        "manifest_sha256": "6b78c61485eae13e40e66acb259cb2de187fd6e6c4e732f8cf66fa31bb1a5761",
+        "inputs_sha256": "17e9ffd2caaf8033ae374a7c293039883cdd4ff541372e94a34eaf557b1c4831",
+        "annotations_sha256": "8c315a5788d9e65f27c5c5ed64cd6d36d891e72d7dbae5935ed3f5c1774f4ebc"
+      }
+    },
+    "HalluRAG_answerable": {
+      "responses": 891,
+      "sources": 81,
+      "all_prepared_responses": 1782,
+      "source_grouping": "useful_art_i; all questions and generators of an article stay together",
+      "bootstrap_type": "article",
+      "prompt_policy": "original message contents joined by two newlines for the text observer",
+      "generation_kind": "released generator response",
+      "generators": {
+        "meta-llama/Llama-2-13b-chat-hf (float8)": 81,
+        "meta-llama/Llama-2-13b-chat-hf (int4)": 81,
+        "meta-llama/Llama-2-13b-chat-hf (int8)": 81,
+        "meta-llama/Llama-2-7b-chat-hf": 81,
+        "meta-llama/Llama-2-7b-chat-hf (float8)": 81,
+        "meta-llama/Llama-2-7b-chat-hf (int4)": 81,
+        "meta-llama/Llama-2-7b-chat-hf (int8)": 81,
+        "mistralai/Mistral-7B-Instruct-v0.1": 81,
+        "mistralai/Mistral-7B-Instruct-v0.1 (float8)": 81,
+        "mistralai/Mistral-7B-Instruct-v0.1 (int4)": 81,
+        "mistralai/Mistral-7B-Instruct-v0.1 (int8)": 81
+      },
+      "responses_per_source": {
+        "11": 81
+      },
+      "generator_counts_per_source_signatures": {
+        "{\"meta-llama/Llama-2-13b-chat-hf (float8)\": 1, \"meta-llama/Llama-2-13b-chat-hf (int4)\": 1, \"meta-llama/Llama-2-13b-chat-hf (int8)\": 1, \"meta-llama/Llama-2-7b-chat-hf\": 1, \"meta-llama/Llama-2-7b-chat-hf (float8)\": 1, \"meta-llama/Llama-2-7b-chat-hf (int4)\": 1, \"meta-llama/Llama-2-7b-chat-hf (int8)\": 1, \"mistralai/Mistral-7B-Instruct-v0.1\": 1, \"mistralai/Mistral-7B-Instruct-v0.1 (float8)\": 1, \"mistralai/Mistral-7B-Instruct-v0.1 (int4)\": 1, \"mistralai/Mistral-7B-Instruct-v0.1 (int8)\": 1}": 81
+      },
+      "distinct_prompt_source_groups": 81,
+      "distinct_prompts_per_source": {
+        "1": 81
+      },
+      "distinct_source_texts_per_source_id": {
+        "1": 81
+      },
+      "question_parse": {
+        "parsed_responses": 891,
+        "distinct_questions": 81,
+        "availability_scope": "actual task question retained"
+      },
+      "prompt_classes": {
+        "HalluRAG_template_1": 297,
+        "HalluRAG_template_2": 297,
+        "HalluRAG_template_langchain_hub": 297
+      },
+      "unique_outside_source_prompts": 81,
+      "outside_source_prompt_examples": [
+        "You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say that you don't know. Use as few sentences as possible and keep the answer concise.\nQuestion: Which other A24 documentaries were mentioned as having received releases with little fanfare? \nContext: <SOURCE> \nAnswer:",
+        "You are a helpful, respectful, and honest assistant for a question-answering task. You are provided pieces of context that MIGHT contain the answer to the question. Your concise answer should solely be based on these pieces. Always answer as helpfully as possible, while being safe. Your answer should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. If a question does not make any sense, or is not factually coherent, explain why instead of answering something not correct. If you don't know the answer to a question, state that so you don't share false information. Do not refer to chunks literally. Do not use the word 'chunk', just use their information for your answer. Do NOT start with 'Based on...'\n\nYour knowledge is limited to only this information:\n<SOURCE>\nQUESTION: What type of techniques did Nicolelis' team develop to help patients with spinal cord injuries?\nBRIEF ANSWER:"
+      ],
+      "source_occurs_exactly_once": true,
+      "source_parse_types": {
+        "unparsed_text": 891
+      },
+      "source_contains_nested_array_text": 0,
+      "source_contains_pipe_character": 0,
+      "source_chunk_heading_counts": {
+        "1": 297,
+        "3": 297,
+        "5": 297
+      },
+      "source_characters": {
+        "n": 891,
+        "min": 192.0,
+        "p10": 385.0,
+        "median": 1419.0,
+        "p90": 2856.0,
+        "max": 3853.0,
+        "mean": 1528.3827160493827
+      },
+      "response_characters": {
+        "n": 891,
+        "min": 6.0,
+        "p10": 69.0,
+        "median": 126.0,
+        "p90": 284.0,
+        "max": 990.0,
+        "mean": 154.74186307519642
+      },
+      "response_whitespace_words": {
+        "n": 891,
+        "min": 1.0,
+        "p10": 11.0,
+        "median": 22.0,
+        "p90": 45.0,
+        "max": 159.0,
+        "mean": 25.657687991021323
+      },
+      "prompt_characters": {
+        "n": 891,
+        "min": 715.0,
+        "p10": 1065.0,
+        "median": 2149.0,
+        "p90": 3794.0,
+        "max": 4821.0,
+        "mean": 2306.135802469136
+      },
+      "source_fraction_of_prompt_characters": {
+        "n": 891,
+        "min": 0.18028169014084508,
+        "p10": 0.3488087965791081,
+        "median": 0.6354285714285715,
+        "p90": 0.8429295255642562,
+        "max": 0.91786497684621,
+        "mean": 0.6181373025334509
+      },
+      "source_start_character_offset_in_prompt": {
+        "n": 891,
+        "min": 310.0,
+        "p10": 326.0,
+        "median": 685.0,
+        "p90": 802.0,
+        "max": 802.0,
+        "mean": 608.3456790123457
+      },
+      "declared_summary_word_limit": null,
+      "source_numeric_text": {
+        "characters": 1361789,
+        "ascii_digit_characters": 34837,
+        "ascii_digit_fraction_of_nonspace_characters": 0.03082988561693843,
+        "numeric_lexeme_count_per_text": {
+          "n": 891,
+          "min": 1.0,
+          "p10": 3.0,
+          "median": 14.0,
+          "p90": 31.0,
+          "max": 44.0,
+          "mean": 15.580246913580247
+        },
+        "currency_symbol_texts": 33,
+        "percent_symbol_texts": 11
+      },
+      "response_numeric_text": {
+        "characters": 137875,
+        "ascii_digit_characters": 2585,
+        "ascii_digit_fraction_of_nonspace_characters": 0.022423275099321665,
+        "numeric_lexeme_count_per_text": {
+          "n": 891,
+          "min": 0.0,
+          "p10": 0.0,
+          "median": 1.0,
+          "p90": 3.0,
+          "max": 7.0,
+          "mean": 1.1907968574635241
+        },
+        "currency_symbol_texts": 1,
+        "percent_symbol_texts": 0
+      },
+      "valid_response_tokens": 29838,
+      "valid_tokens_per_response": {
+        "n": 891,
+        "min": 2.0,
+        "p10": 17.0,
+        "median": 30.0,
+        "p90": 55.0,
+        "max": 197.0,
+        "mean": 33.48821548821549
+      },
+      "number_bearing_valid_tokens": 1460,
+      "number_bearing_valid_token_fraction": 0.04893089349152088,
+      "scoring_units": {
+        "status": "actual scorer unit_index unavailable: native observations were not downloaded; prediction JSON omits unit_index",
+        "declared_segmentation_code": "myproject.inputs.text_units: sentence/newline boundaries, maximum64 original tokens",
+        "actual_unit_length_statistics": null
+      },
+      "leading_whitespace_responses": 567,
+      "first_valid_token_text_counts": {
+        " Based": 231,
+        "The": 131,
+        " I": 71,
+        " The": 65,
+        " Sure": 61,
+        " According": 55,
+        "I": 18,
+        "K": 12,
+        " Thank": 9,
+        "One": 8,
+        "P": 8,
+        " La": 7
+      },
+      "first_valid_token_starts_at_character_zero": 891,
+      "duplicate_character_span_extra_tokens": 0,
+      "label_contract": {
+        "granularities": {
+          "sentence": 891
+        },
+        "coverage": {
+          "annotated_sentences": 888,
+          "unalignable": 3
+        },
+        "label_provenance": {
+          "released dataset annotation": 891
+        },
+        "span_count": 1296,
+        "span_characters": {
+          "n": 1296,
+          "min": 4.0,
+          "p10": 33.0,
+          "median": 105.5,
+          "p90": 170.5,
+          "max": 445.0,
+          "mean": 106.00771604938272
+        },
+        "edit_error_type_counts": {},
+        "native_sentence_token_overlap_lengths": {
+          "n": 1296,
+          "min": 2.0,
+          "p10": 9.0,
+          "median": 23.0,
+          "p90": 35.0,
+          "max": 96.0,
+          "mean": 22.96759259259259
+        },
+        "tokens_crossing_multiple_native_sentences": 63
+      },
+      "prepared_evidence": {
+        "manifest_sha256": "32f2122ed27f358d7f58087a2154d4debc6d334b3463ab0c7217ef5a84e04468",
+        "inputs_sha256": "b9fb1cf95807a2822d449421c28b7fae87a27fc07e23001f15ae04f270e36ae2",
+        "annotations_sha256": "48fbb6aa4c18c956f4e7135d0e904c643eff0b22754e4bd030f89a3e8be35cc7"
+      },
+      "pooled_cohort": {
+        "responses": 1782,
+        "responses_per_source": {
+          "22": 81
+        },
+        "distinct_prompt_source_groups": 162,
+        "distinct_prompts_per_source": {
+          "2": 81
+        },
+        "distinct_source_texts_per_source_id": {
+          "2": 81
+        }
+      }
+    }
+  },
+  "cross_task_exact_source_text_overlap_counts": {
+    "RAGTruth_QA__RAGTruth_Summary": 0,
+    "RAGTruth_QA__RAGTruth_Data2txt": 0,
+    "RAGTruth_QA__FRED_FinQA": 0,
+    "RAGTruth_QA__FRED_TATQA": 0,
+    "RAGTruth_QA__HalluRAG_answerable": 0,
+    "RAGTruth_Summary__RAGTruth_Data2txt": 0,
+    "RAGTruth_Summary__FRED_FinQA": 0,
+    "RAGTruth_Summary__FRED_TATQA": 0,
+    "RAGTruth_Summary__HalluRAG_answerable": 0,
+    "RAGTruth_Data2txt__FRED_FinQA": 0,
+    "RAGTruth_Data2txt__FRED_TATQA": 0,
+    "RAGTruth_Data2txt__HalluRAG_answerable": 0,
+    "FRED_FinQA__FRED_TATQA": 0,
+    "FRED_FinQA__HalluRAG_answerable": 0,
+    "FRED_TATQA__HalluRAG_answerable": 0
+  },
+  "FRED_FIT_test_exact_reference_overlap": {
+    "finqa": {
+      "fit_responses": 32,
+      "fit_reference_sources": 32,
+      "test_reference_sources": 142,
+      "exact_reference_overlap": 0,
+      "company_or_filing_overlap": "unidentified: released IDs are exact reference-text hashes"
+    },
+    "tatqa": {
+      "fit_responses": 32,
+      "fit_reference_sources": 32,
+      "test_reference_sources": 110,
+      "exact_reference_overlap": 0,
+      "company_or_filing_overlap": "unidentified: released IDs are exact reference-text hashes"
+    }
+  },
+  "observer_contract": {
+    "hash_sets_by_basename": {
+      "RAGTruth": {
+        "generation_config.json": "189fb0c0d7fd8a527db217c0a60a0e013f0394cd8800f9697a666a9e75e5f7fd",
+        "tokenizer_config.json": "177c7b61e616fecb84c17ce0591acb92c6c4d60e9ac5ababfb940ff23bbcd424",
+        "special_tokens_map.json": "6f38c73729248f6c127296386e3cdde96e254636cc58b4169d3fd32328d9a8ec",
+        "configuration.json": "a78221ae93dd8977b26fcd1d106fa5ad7e7f1fd3a7d93bfd9d6fba5ed00ec4d2",
+        "model.safetensors.index.json": "146776fce3f6db1103aa6f249e65ee5544c5923ce6f971b092eee79aa6e5d37b",
+        "tokenizer.json": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+        "config.json": "29e4c210b0d6ac178b16b2a255a568bdb23b581e50ca1ef6a6d071dd85704e6e"
+      },
+      "finance": {
+        "config.json": "29e4c210b0d6ac178b16b2a255a568bdb23b581e50ca1ef6a6d071dd85704e6e",
+        "configuration.json": "a78221ae93dd8977b26fcd1d106fa5ad7e7f1fd3a7d93bfd9d6fba5ed00ec4d2",
+        "generation_config.json": "189fb0c0d7fd8a527db217c0a60a0e013f0394cd8800f9697a666a9e75e5f7fd",
+        "model-00001-of-00004.safetensors": "2b1879f356aed350030bb40eb45ad362c89d9891096f79a3ab323d3ba5607668",
+        "model-00002-of-00004.safetensors": "09d433f650646834a83c580877bd60c6d1f88f7755305c12576b5c7058f9af15",
+        "model-00003-of-00004.safetensors": "fc1cdddd6bfa91128d6e94ee73d0ce62bfcdb7af29e978ddcab30c66ae9ea7fa",
+        "model-00004-of-00004.safetensors": "92ecfe1a2414458b4821ac8c13cf8cb70aed66b5eea8dc5ad9eeb4ff309d6d7b",
+        "model.safetensors.index.json": "146776fce3f6db1103aa6f249e65ee5544c5923ce6f971b092eee79aa6e5d37b",
+        "special_tokens_map.json": "6f38c73729248f6c127296386e3cdde96e254636cc58b4169d3fd32328d9a8ec",
+        "tokenizer.json": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+        "tokenizer_config.json": "177c7b61e616fecb84c17ce0591acb92c6c4d60e9ac5ababfb940ff23bbcd424"
+      },
+      "HalluRAG": {
+        "config.json": "29e4c210b0d6ac178b16b2a255a568bdb23b581e50ca1ef6a6d071dd85704e6e",
+        "configuration.json": "a78221ae93dd8977b26fcd1d106fa5ad7e7f1fd3a7d93bfd9d6fba5ed00ec4d2",
+        "generation_config.json": "189fb0c0d7fd8a527db217c0a60a0e013f0394cd8800f9697a666a9e75e5f7fd",
+        "model-00001-of-00004.safetensors": "2b1879f356aed350030bb40eb45ad362c89d9891096f79a3ab323d3ba5607668",
+        "model-00002-of-00004.safetensors": "09d433f650646834a83c580877bd60c6d1f88f7755305c12576b5c7058f9af15",
+        "model-00003-of-00004.safetensors": "fc1cdddd6bfa91128d6e94ee73d0ce62bfcdb7af29e978ddcab30c66ae9ea7fa",
+        "model-00004-of-00004.safetensors": "92ecfe1a2414458b4821ac8c13cf8cb70aed66b5eea8dc5ad9eeb4ff309d6d7b",
+        "model.safetensors.index.json": "146776fce3f6db1103aa6f249e65ee5544c5923ce6f971b092eee79aa6e5d37b",
+        "params.json": "b15b6b31b2043c0400b028ecc25c8946e21d76ac260e9ac6a357ed8727c8865f",
+        "tokenizer.model": "82e9d31979e92ab929cd544440f129d9ecd797b69e327f80f17e1c50d5551b55",
+        "special_tokens_map.json": "6f38c73729248f6c127296386e3cdde96e254636cc58b4169d3fd32328d9a8ec",
+        "tokenizer.json": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+        "tokenizer_config.json": "177c7b61e616fecb84c17ce0591acb92c6c4d60e9ac5ababfb940ff23bbcd424"
+      }
+    },
+    "file_set_comparisons": {
+      "RAGTruth__finance": {
+        "left_files": 7,
+        "right_files": 11,
+        "common_files": 7,
+        "identical_common_files": [
+          "config.json",
+          "configuration.json",
+          "generation_config.json",
+          "model.safetensors.index.json",
+          "special_tokens_map.json",
+          "tokenizer.json",
+          "tokenizer_config.json"
+        ],
+        "different_common_files": [],
+        "only_left": [],
+        "only_right": [
+          "model-00001-of-00004.safetensors",
+          "model-00002-of-00004.safetensors",
+          "model-00003-of-00004.safetensors",
+          "model-00004-of-00004.safetensors"
+        ],
+        "common_weight_shards": []
+      },
+      "finance__HalluRAG": {
+        "left_files": 11,
+        "right_files": 13,
+        "common_files": 11,
+        "identical_common_files": [
+          "config.json",
+          "configuration.json",
+          "generation_config.json",
+          "model-00001-of-00004.safetensors",
+          "model-00002-of-00004.safetensors",
+          "model-00003-of-00004.safetensors",
+          "model-00004-of-00004.safetensors",
+          "model.safetensors.index.json",
+          "special_tokens_map.json",
+          "tokenizer.json",
+          "tokenizer_config.json"
+        ],
+        "different_common_files": [],
+        "only_left": [],
+        "only_right": [
+          "params.json",
+          "tokenizer.model"
+        ],
+        "common_weight_shards": [
+          "model-00001-of-00004.safetensors",
+          "model-00002-of-00004.safetensors",
+          "model-00003-of-00004.safetensors",
+          "model-00004-of-00004.safetensors"
+        ]
+      },
+      "RAGTruth__HalluRAG": {
+        "left_files": 7,
+        "right_files": 13,
+        "common_files": 7,
+        "identical_common_files": [
+          "config.json",
+          "configuration.json",
+          "generation_config.json",
+          "model.safetensors.index.json",
+          "special_tokens_map.json",
+          "tokenizer.json",
+          "tokenizer_config.json"
+        ],
+        "different_common_files": [],
+        "only_left": [],
+        "only_right": [
+          "model-00001-of-00004.safetensors",
+          "model-00002-of-00004.safetensors",
+          "model-00003-of-00004.safetensors",
+          "model-00004-of-00004.safetensors",
+          "params.json",
+          "tokenizer.model"
+        ],
+        "common_weight_shards": []
+      }
+    },
+    "finance_authenticated_source": {
+      "myproject/model.py": {
+        "git_commit": "be1b8a3",
+        "sha256": "34eaf45d5a9c0180682d7d676d13385174742ab4421ace9d14f20d97d67d5b29",
+        "relevant_lines": [
+          {
+            "line": 20,
+            "text": "path, dtype=torch.bfloat16, attn_implementation=\"sdpa\", local_files_only=True,"
+          },
+          {
+            "line": 42,
+            "text": "with attention_backend(model, \"sdpa\"):"
+          },
+          {
+            "line": 55,
+            "text": "with attention_backend(model, \"sdpa\"):"
+          }
+        ]
+      },
+      "myproject/source.py": {
+        "git_commit": "be1b8a3",
+        "sha256": "d9e9e4d25fd60dbf7f5777ca39835e8b8c5db82845dcc2f71572af1191198fdb",
+        "relevant_lines": [
+          {
+            "line": 20,
+            "text": "with attention_backend(model, \"eager\"):"
+          }
+        ]
+      },
+      "myproject/observer.py": {
+        "git_commit": "be1b8a3",
+        "sha256": "0ee39bcc624c267cd91711acbeb51563224656840ef51809c9ef4a40afcba91e",
+        "relevant_lines": []
+      }
+    },
+    "RAGTruth": {
+      "collection": "collect_cached; zero new backbone calls; original historical primitive cache repackaged",
+      "observation_identity_scope": "historical primitives; original GPU source/weight hashes unavailable; current tokenizer/config mapping checked",
+      "cache_manifest_sha256": "920d47042ca7bcb304dee56850227d12f0f67b9464c3b63efaff5926a64a11ee",
+      "source_identity_interpretation": "plan.source authenticates repackaging code/runtime, not original GPU observation code/runtime",
+      "original_GPU_weight_hashes": "unavailable",
+      "original_GPU_backend": "unidentified from these native plans"
+    },
+    "finance": {
+      "collection": "fresh native measurement, including64 FIT responses and292 test responses",
+      "arithmetic": "BF16 model, float log-prob reduction; source-present full eager, prefill/local/source-absent SDPA",
+      "recorded_weight_shards": 4,
+      "measured_backend_source_authenticated": true
+    },
+    "HalluRAG": {
+      "backend": "matched_sdpa",
+      "world_columns": [
+        "source_present",
+        "source_absent"
+      ],
+      "archived_eager_byte_equal_claim": false,
+      "native_seal_binds_score_plan": true,
+      "population": {
+        "responses": 1782,
+        "prefix_groups": 162,
+        "responses_per_group": 11
+      },
+      "context_budget_recorded": null,
+      "actual_native_observation_payloads_downloaded": false
+    },
+    "runtimes": {
+      "RAG_repack": {
+        "python": "3.11.15",
+        "dependencies": {
+          "numpy": "2.4.6",
+          "scipy": "1.17.1",
+          "torch": "2.8.0+cu126",
+          "transformers": "4.57.1"
+        }
+      },
+      "finance_measurement": {
+        "python": "3.11.15",
+        "dependencies": {
+          "numpy": "2.4.6",
+          "scipy": "1.17.1",
+          "torch": "2.8.0+cu126",
+          "transformers": "4.57.1"
+        }
+      },
+      "Hallu_measurement": {
+        "python": "3.11.15",
+        "dependencies": {
+          "numpy": "2.4.6",
+          "scipy": "1.17.1",
+          "torch": "2.8.0+cu126",
+          "transformers": "4.57.1"
+        }
+      }
+    }
+  },
+  "known_evidence_reused_without_recomputation": {
+    "docs/results/hallurag_fnfp_evidence.json": "b56be588b0a7a6b6cacb196f11413d6eafa50c53d096ea84fd0ae8e1741bfa82",
+    "docs/results/fnfp_mechanism_summary.json": "bc73e89cecbd43bffd314fd6e331258781867a5db23a0a23e265437ffcdfa723",
+    "outputs/fnfp-mechanism-20261102/active_input_supplement.json": "ba2b9e641efb6dab996cd6679aa82e6f29eaf47525cdef4664a8da1e1f3afee4"
+  },
+  "evidence_sha256": {
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\hallu_v3\\response_metadata.json": "f584cc87b44943d1a6ccf2caee7e09ae13ef2bdb85034e6899c62dfa9cd53951",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\hallu_native_metadata\\seal.json": "d9b79d4bbc410994366e6b8953692ded2164d635b9dcb58a98e01a187b9667e1",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\hallu_v3_scores\\plan.json": "a09fb7d7f82306bc90aa5878730e25710dd01c27f0a6d511126d580107546450",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\prepared\\test_QA\\manifest.json": "b32c4c8d3383ff031c117f5f80feff09d4abddb064484284b51bcd6030f6eecd",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\prepared\\test_QA\\inputs.jsonl": "99f37fd701645e9db14ac123dbdd4ff19e674f535feccd920f9464f2e322ecdd",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\prepared\\test_QA\\annotations.jsonl": "022ab8de9509fd0a48a4b89528a5555b69f57fa469317d5c8cfafa749c1c1fc1",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\native_QA\\plan.json": "ab9628dfaf2f4a95bbd98366ff46c96ed83ec557ee0ce0194f6fc24ce6cf8146",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\native_QA\\collection.json": "82f301bbdfb3e6fc24a125e6c91981a5fa372a5e6dde01d0c195b656ba8047aa",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\native_QA\\seal.json": "7537baa6d28ca723e6e1697f20cbfccde04a8c72e126b2ddc24324bf6be67d48",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\prepared\\test_Summary\\manifest.json": "e75b8ec563015001939d7870650b26d50046199f41bc1aae01a5663759a663ec",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\prepared\\test_Summary\\inputs.jsonl": "50d7ad8ee0c18cc24b83c430bc58bfd23897db6a5485336a30d975f1a576b4fd",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\prepared\\test_Summary\\annotations.jsonl": "86b3df9c5adb47e8f55eb42f8d6342baab05ebb4779c2218f998d8f6cea4315c",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\native_Summary\\plan.json": "a4bcf305723259efacf57b7b1c0ae7dfce2399695f5e9d70dc96eac15b9e647b",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\native_Summary\\collection.json": "8ce71d784b01243cfbee49589a9e4c6ae3d8e62d0416a979b4a9df8a33655946",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\native_Summary\\seal.json": "37ee390824a437d980e01c3b3db13b4ba047704a64bcd7ad1194c6a2fc987ffc",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\prepared\\test_Data2txt\\manifest.json": "d1f0ba0658222556e2542e145da84538d14a9fa5b230dd9bb8fa34b830944b80",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\prepared\\test_Data2txt\\inputs.jsonl": "050c79f2711aa292845f27ed4f3ae8b68f0d263bc9d29678486f7e8fb6477521",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\prepared\\test_Data2txt\\annotations.jsonl": "d6b2f44d12d68b520e5a28dd4d642b03a94854a2ec5b208a3ceee3f73be2b9d2",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\native_Data2txt\\plan.json": "42bf8d83ef995ecfbbe61cbb28f24c300b533c59e16c2402d5b0c6ad12d30fc5",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\native_Data2txt\\collection.json": "00bd597acbb4a1d1b63fee66d4192699c59c5f3e2f0924a25e681376198043cb",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\native_Data2txt\\seal.json": "2e6c73f6bbca746e1383ef5cdbf97d002701f7790583a046111c35c2072eb3e8",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\prepared\\test_finqa\\manifest.json": "0a08e37bb76251780ae959147bd518c6d16488664080661b0231b9838e497238",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\prepared\\test_finqa\\inputs.jsonl": "12b7437d19eb1b138e1d66e499a64defd4e914c774e7542e860c298181833e5c",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\prepared\\test_finqa\\annotations.jsonl": "b611d6e36999dad3f8a977e25a79a43ca3d79e85bd71b7df0ae58ba4c7bef9fd",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\native_finance\\plan.json": "69f751ede4042bf711fc9e3ba45130cfc0bf6c9e0dd65c2023afeed87c4c4802",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\native_finance\\collection.json": "26dbc561c7bfb59f6f6d3d982bfe8f59c95f189281cf40253ee6fec3a330cd95",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\native_finance\\seal.json": "96b34c7b7cfccd6c3cf50dac8026438757529078f31b275d183b73cc4298ba61",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\prepared\\test_tatqa\\manifest.json": "6b78c61485eae13e40e66acb259cb2de187fd6e6c4e732f8cf66fa31bb1a5761",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\prepared\\test_tatqa\\inputs.jsonl": "17e9ffd2caaf8033ae374a7c293039883cdd4ff541372e94a34eaf557b1c4831",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\prepared\\test_tatqa\\annotations.jsonl": "8c315a5788d9e65f27c5c5ed64cd6d36d891e72d7dbae5935ed3f5c1774f4ebc",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\hallu_inputs\\manifest.json": "32f2122ed27f358d7f58087a2154d4debc6d334b3463ab0c7217ef5a84e04468",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\hallu_inputs\\inputs.jsonl": "b9fb1cf95807a2822d449421c28b7fae87a27fc07e23001f15ae04f270e36ae2",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\hallu_inputs\\annotations.jsonl": "48fbb6aa4c18c956f4e7135d0e904c643eff0b22754e4bd030f89a3e8be35cc7",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\hallu_v3_scores\\witness\\predictions\\seal.json": "9fb92e872188c1aa57b29ad2e14a75e0320e563736564dcf8aad2c9869fbcffe",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\hallu_native_metadata\\plan.json": "08c09c9eefc1a750c826311a0090768b87350981700d70af53283b7e28387cd6",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\prepared\\fit_finqa\\inputs.jsonl": "3ef9d0b35261b1e521414064f2b832985f6088c2e8b80942bf7eed05dbeabf56",
+    "D:\\projects\\research\\outputs\\fusion-cache-20261102\\prepared\\fit_tatqa\\inputs.jsonl": "33dce6967c54baf0f80e5f68f58b3c89e914390ac6ca2613cf0dc0ba79b81872"
+  },
+  "script_sha256": "34a37806b0a816ce64c4ec86e1c6e7ae1c2b992172c50679be5cd029eb2177b8",
+  "cross_tabs": {
+    "Hallu_primary_template_by_chunk_count": {
+      "langchain_hub__1chunks": 99,
+      "langchain_hub__3chunks": 99,
+      "langchain_hub__5chunks": 99,
+      "template_1__1chunks": 99,
+      "template_1__3chunks": 99,
+      "template_1__5chunks": 99,
+      "template_2__1chunks": 99,
+      "template_2__3chunks": 99,
+      "template_2__5chunks": 99
+    },
+    "Hallu_primary_generator_leading_whitespace": {
+      "meta-llama/Llama-2-13b-chat-hf (float8)": {
+        "responses": 81,
+        "leading_whitespace": 81
+      },
+      "meta-llama/Llama-2-13b-chat-hf (int4)": {
+        "responses": 81,
+        "leading_whitespace": 81
+      },
+      "meta-llama/Llama-2-13b-chat-hf (int8)": {
+        "responses": 81,
+        "leading_whitespace": 81
+      },
+      "meta-llama/Llama-2-7b-chat-hf (float8)": {
+        "responses": 81,
+        "leading_whitespace": 81
+      },
+      "meta-llama/Llama-2-7b-chat-hf (int4)": {
+        "responses": 81,
+        "leading_whitespace": 81
+      },
+      "meta-llama/Llama-2-7b-chat-hf (int8)": {
+        "responses": 81,
+        "leading_whitespace": 81
+      },
+      "meta-llama/Llama-2-7b-chat-hf": {
+        "responses": 81,
+        "leading_whitespace": 81
+      },
+      "mistralai/Mistral-7B-Instruct-v0.1 (float8)": {
+        "responses": 81,
+        "leading_whitespace": 0
+      },
+      "mistralai/Mistral-7B-Instruct-v0.1 (int4)": {
+        "responses": 81,
+        "leading_whitespace": 0
+      },
+      "mistralai/Mistral-7B-Instruct-v0.1 (int8)": {
+        "responses": 81,
+        "leading_whitespace": 0
+      },
+      "mistralai/Mistral-7B-Instruct-v0.1": {
+        "responses": 81,
+        "leading_whitespace": 0
+      }
+    },
+    "Hallu_sources_with_multiple_templates": 0,
+    "Hallu_sources": 81,
+    "numeric_token_counts": {
+      "RAGTruth_QA": {
+        "number_bearing_tokens": 3563,
+        "valid_tokens": 124817
+      },
+      "RAGTruth_Summary": {
+        "number_bearing_tokens": 2296,
+        "valid_tokens": 121248
+      },
+      "RAGTruth_Data2txt": {
+        "number_bearing_tokens": 3894,
+        "valid_tokens": 178343
+      },
+      "FRED_FinQA": {
+        "number_bearing_tokens": 3160,
+        "valid_tokens": 16047
+      },
+      "FRED_TATQA": {
+        "number_bearing_tokens": 1538,
+        "valid_tokens": 7747
+      },
+      "HalluRAG_answerable": {
+        "number_bearing_tokens": 1460,
+        "valid_tokens": 29838
+      }
+    }
+  },
+  "format_checks": {
+    "RAG_QA_passage_heading_counts": {
+      "3": 900
+    },
+    "Data2txt_source_dict_key_counts": {
+      "name": 900,
+      "address": 900,
+      "city": 900,
+      "state": 900,
+      "categories": 900,
+      "hours": 900,
+      "attributes": 900,
+      "business_stars": 900,
+      "review_info": 900
+    },
+    "FRED_exact_source_id_is_SHA256": {
+      "finqa": true,
+      "tatqa": true
+    },
+    "historical_commit": "be1b8a3d53703490f5ed01ec899dbf895fce77b1",
+    "current_source_sha256": {
+      "experiments/datasets.py": "f54fae13437e031461b159d43c3db5f68d71280147d30572646e09379bc4f644",
+      "experiments/span_markup.py": "62b10a48f9cb9915498152083f219362ab7d83b2aab5cbc38ff6aab640ccb791",
+      "experiments/native_dataset.py": "c23c040fa77c5709876bcebc3fe0beb60238e2b568758274437f857b255d8bcb",
+      "experiments/fullgap_dataset.py": "b3ba6cf32116219bb012bc2a4f0ce0e1e81fbdc0464b23ddc274d2804753fff8",
+      "myproject/inputs.py": "e0d7c60577905214ade564fa17faf9c724cbbb01ad90e89837e727886f4e68a5",
+      "myproject/counterfactual.py": "2c1e0cc6f800a1308fd42689b3739dc03592902413f713fd36fc9ef8aa6430da"
+    }
+  },
+  "certainty_tiers": {
+    "verified": "direct content/hash/axis/recorded-source check",
+    "associated": "co-occurrence without a controlled attribution",
+    "unidentified": "required information or same-input counterfactual is absent"
+  },
+  "findings": [
+    {
+      "id": "V1",
+      "certainty": "verified",
+      "new_in_this_audit": true,
+      "finding": "RAGTruth/finance/HalluRAG model-file records contain7/11/13 files; all common hashes match. Finance and HalluRAG share the same recorded four weight-shard hashes. RAGTruth has no recorded weight-shard hashes.",
+      "evidence": [
+        "observer_contract.file_set_comparisons",
+        "observer_contract.hash_sets_by_basename"
+      ],
+      "identified_implication": "File-set-ID differences are explained by recorded membership/coverage; they do not establish different model weights.",
+      "limit": "RAGTruth original GPU weight identity remains unauthenticated, as its own plan explicitly states."
+    },
+    {
+      "id": "V2",
+      "certainty": "verified",
+      "new_in_this_audit": true,
+      "finding": "Finance recorded model/source/observer hashes exactly match retained Git commit be1b8a3. Its BF16 source-present full pass uses eager; prefill/local/source-absent paths use SDPA. HalluRAG native plan explicitly declares matched_sdpa.",
+      "evidence": [
+        "observer_contract.finance_authenticated_source",
+        "observer_contract.HalluRAG"
+      ],
+      "identified_implication": "The same recorded checkpoint was observed through different execution paths in finance versus HalluRAG.",
+      "limit": "No same-input paired backend observation is present here, so the contribution of this change to any AUROC difference is unidentified."
+    },
+    {
+      "id": "V3",
+      "certainty": "verified",
+      "new_in_this_audit": true,
+      "finding": "All900 RAGTruth Data2txt sources parse as Python dict literals and none as strict JSON, while every prompt describes the source as JSON. Every FRED test reference contains nested-array text embedded in prose.",
+      "evidence": [
+        "tasks.RAGTruth_Data2txt.source_parse_types",
+        "dataset_contract_format_checks.json",
+        "tasks.FRED_FinQA.source_contains_nested_array_text",
+        "tasks.FRED_TATQA.source_contains_nested_array_text"
+      ],
+      "identified_implication": "The observer receives different serialization conventions; a structured-data instruction is not evidence of strict-JSON input.",
+      "limit": "No format-only counterfactual has been measured."
+    },
+    {
+      "id": "V4",
+      "certainty": "verified",
+      "new_in_this_audit": true,
+      "finding": "Digit-bearing valid-token fractions are2.85%,1.89%,2.18%,19.69%,19.85%,4.89% for RAG QA/Summary/Data2txt, FRED FinQA/TATQA and HalluRAG primary. FRED median answers are shorter, but scorer-unit p90 lengths54/51 exceed RAG36/36/32.",
+      "evidence": [
+        "tasks.*.number_bearing_valid_token_fraction",
+        "tasks.*.valid_tokens_per_response",
+        "tasks.*.scoring_units"
+      ],
+      "identified_implication": "Answer length and the context length within a scoring unit are distinct measured variables; numeric character density is not a semantic error label.",
+      "limit": "These are input-structure differences, not evidence that length or digits cause the performance gap."
+    },
+    {
+      "id": "V5",
+      "certainty": "verified",
+      "new_in_this_audit": true,
+      "finding": "HalluRAG primary is a3-template by1/3/5-chunk crossed table with99 responses in each of nine cells. Each source/article occurs in only one template cell. Every one of567 Llama2 responses starts with whitespace; none of324 Mistral responses does. Other five prepared test sets have zero leading-whitespace responses.",
+      "evidence": [
+        "dataset_contract_cross_tabs.json",
+        "tasks.*.leading_whitespace_responses"
+      ],
+      "identified_implication": "Template and chunk-count totals are balanced, while article content is not paired across formats; leading whitespace is perfectly associated with the released generator-family cohort in this cache.",
+      "limit": "This does not identify a causal whitespace, quantization or template effect. The whitespace origin could be generation or release/postprocessing; those original traces are absent."
+    },
+    {
+      "id": "V6",
+      "certainty": "verified",
+      "new_in_this_audit": false,
+      "finding": "RAG QA retains150 actual questions; HalluRAG primary retains81. FRED has a constant source-only Reference material/Response wrapper; its original generation question and generator are not available in the cached contract. HalluRAG preparation joins original message contents, and the observer wraps the result as one user message.",
+      "evidence": [
+        "tasks.*.question_parse",
+        "tasks.*.prompt_policy",
+        "tasks.*.outside_source_prompt_examples",
+        "source_code_evidence"
+      ],
+      "identified_implication": "The retained conditioning information differs; nominal QA task names do not make the observed conditional distributions equal.",
+      "limit": "No invented FRED question can substitute for the missing original question in an attribution study."
+    },
+    {
+      "id": "V7",
+      "certainty": "verified",
+      "new_in_this_audit": false,
+      "finding": "FRED cache labels explicitly describe synthetic/silver edit spans. RAGTruth has released character-error spans. HalluRAG has native sentence judgments projected to overlapping tokens. FRED source IDs are exact reference-text SHA256, rather than verified company/filing identities.",
+      "evidence": [
+        "tasks.*.label_contract",
+        "tasks.*.source_grouping",
+        "FRED_FIT_test_exact_reference_overlap",
+        "dataset_contract_format_checks.json"
+      ],
+      "identified_implication": "The response-generation, label target and source-clustering units differ across datasets.",
+      "limit": "Fine character spans, native sentences and scorer units must be reported separately; exact reference disjointness does not establish issuer-level independence."
+    },
+    {
+      "id": "A1",
+      "certainty": "associated",
+      "new_in_this_audit": true,
+      "finding": "Numeric density, source-table format, question availability, generation provenance and unit-length tails vary jointly in FRED versus the natural-response corpora.",
+      "identified_implication": "These contracts provide concrete competing explanations that a cross-dataset claim must separate.",
+      "limit": "Their individual causal contributions and a guaranteed improvement to AUROC>=0.8 are not identified by the cache audit."
+    },
+    {
+      "id": "A2",
+      "certainty": "associated",
+      "new_in_this_audit": true,
+      "finding": "The previously measured HalluRAG FP position concentration coexists with a newly verified generator-linked whitespace convention and template/role conversion.",
+      "evidence": [
+        "known_evidence_reused_without_recomputation",
+        "dataset_contract_cross_tabs.json"
+      ],
+      "identified_implication": "A position-sensitive observation artifact is a testable explanation, alongside genuine content/model effects.",
+      "limit": "Existing responses must retain their bytes and original token IDs; trimming them now would change the evaluation object and would not establish a correction."
+    },
+    {
+      "id": "U1",
+      "certainty": "unidentified",
+      "new_in_this_audit": false,
+      "finding": "Original RAGTruth GPU code/weights/backend, FRED original generator/questions/issuer identities, and HalluRAG actual scorer-unit lengths are not recoverable from these local payloads.",
+      "evidence": [
+        "observer_contract.RAGTruth.observation_identity_scope",
+        "tasks.FRED_FinQA.question_parse",
+        "tasks.HalluRAG_answerable.scoring_units"
+      ],
+      "limit": "The HalluRAG native plan/collection are recovered, but observation NPZ payloads containing unit_index are not. Its historical plan has no context_budget field; a newer source policy must not be retroactively asserted."
+    }
+  ],
+  "necessary_controlled_interventions": [
+    {
+      "id": "C4",
+      "priority": 1,
+      "kind": "new discriminating observation-interface qualification; not a novel scoring method",
+      "status": "proposed only; not executed",
+      "question": "Does leading whitespace itself alter the same response observation enough to explain first-content false alarms, independently of generator identity?",
+      "why_new": "The known position counts and the567/324 cohort association are observational. A within-response intervention removes that generator confounding and changes only a declared non-factual prefix.",
+      "whole_population": "Keep every original HalluRAG response, source, released cohort and unknown position; all1782 remain, with the891 answerable primary population retained separately. Do not select only existing FP/FN cases.",
+      "paired_response_variants": [
+        "Unchanged original response.",
+        "Insert exactly one U+0020 at the beginning of every response; factual words and punctuation remain unchanged.",
+        "Remove exactly one existing leading U+0020 when present; otherwise retain the identical original as a declared zero-removal control. Other prefix characters remain unchanged."
+      ],
+      "hold_fixed": [
+        "exact source and question/prompt",
+        "observer checkpoint/config/tokenizer hashes",
+        "backend/BF16/hardware",
+        "existing frozen readout and segmentation rule",
+        "source/generator population and original factual character sequence"
+      ],
+      "character_axis": {
+        "mapping": "Map each unchanged original content character to its exact shifted variant offset. Insertion at the front shifts existing spans by+1; removal shifts remaining original characters by-1. The inserted/removed whitespace is separately tracked.",
+        "tokenization": "BPE IDs/counts can change under this intervention, so token index0 is not treated as a comparable semantic position. Record token/character/unit maps and compare the original first content span and full original-content curve.",
+        "gold": "Map existing native-sentence/character spans by the deterministic offset map; retain their semantic labels and unknown status. Do not relabel, delete first tokens, or discard changed-tokenization examples.",
+        "scope": "Character alignment is a diagnostic representation of frozen outputs, not a new weighted detector or a new claim of tokenwise truth."
+      },
+      "length_format_matched_control": {
+        "operation": "Add/remove the same number of U+0020 characters at a predeclared non-initial whitespace boundary, preserving the same factual character sequence.",
+        "matching": "Choose the control boundary by a frozen deterministic tokenizer-only rule, matching character-count and total-token/unit-format changes where feasible; never choose it using risk scores or gold labels.",
+        "fallback": "If a response lacks such an exact match, preserve it and report the unmatched-control stratum. Whole-population preservation takes precedence over obtaining a convenient matched subset.",
+        "purpose": "Distinguish a response-onset/generation-to-observer interface effect from generic added-length/whitespace-format effects."
+      },
+      "endpoints": [
+        "Paired source-present and source-absent logp/contrast change at the same original content spans, with special attention to the first original word/phrase.",
+        "Existing final readout observations mapped back to the same original content characters; report tokenization and unit-boundary changes as possible mediators.",
+        "Contrast the leading-prefix intervention against the length/format-matched interior control, within the same response and then within source/generator cohorts.",
+        "Any label-stratified alarm diagnosis uses the already declared budget and common original-content population after all variants and scores freeze; these previously exposed populations remain exploratory."
+      ],
+      "qualification_decision": {
+        "supports_interface_explanation": "A prefix-specific paired shift beyond matched controls, with factual text/labels unchanged, supports an interface contribution to onset alarms.",
+        "does_not_support": "Absent prefix-specific shifts, or shifts explained equally by matched controls, fail to support the leading-whitespace-specific explanation.",
+        "not_claimed": "Neither outcome by itself establishes a new detector, justifies trimming original answers, or guarantees six-task AUROC>=0.8."
+      },
+      "prohibited_shortcuts": [
+        "dropping first tokens",
+        "relabeling normal words to fit predictions",
+        "recounting known token-position statistics as the result",
+        "score weighting or parameter searches",
+        "discarding responses or unknowns to obtain matching"
+      ]
+    },
+    {
+      "id": "C1",
+      "priority": 1,
+      "status": "necessary attribution control; not run",
+      "question": "How much of the cross-dataset observation difference comes from eager/SDPA execution rather than data or the readout?",
+      "change_only": "legacy source-present-full eager versus matched source-present/source-absent SDPA",
+      "hold_fixed": [
+        "checkpoint shard hashes",
+        "tokenizer/config hashes",
+        "BF16 arithmetic and hardware",
+        "exact source/prompt/answer bytes",
+        "response token IDs and valid-token/unit axes",
+        "frozen readout and evaluation population"
+      ],
+      "selection": "Predeclare a small label-free bridge balanced by dataset/generator/length; do not choose cases from FN/FP labels.",
+      "measure": "paired primitive logp/delta differences and resulting fixed-readout rank changes; freeze every score before any held-out truth read",
+      "identifies": "backend effect on those same inputs; does not identify synthetic-vs-natural generation effects",
+      "resource_gap": "Requires verified model/runtime access; this audit downloaded only three HalluRAG metadata files and made zero model calls."
+    },
+    {
+      "id": "C2",
+      "priority": 2,
+      "status": "format/conditioning controls; not run",
+      "question": "Which preparation choices change the conditional observation while facts and answer stay fixed?",
+      "separate_single_factor_checks": [
+        "Data2txt Python-literal versus strict-JSON serialization of the same parsed record",
+        "HalluRAG original role structure versus recorded content-flattened user wrapper on the same article/question/answer"
+      ],
+      "hold_fixed": [
+        "fact content",
+        "question",
+        "response text and target axis",
+        "checkpoint/backend",
+        "readout"
+      ],
+      "selection": "Use declared input-format cohorts, with no label-derived parameter or score weighting search.",
+      "identifies": "serialization or role-wrapper effect, separately; a balanced template-count table alone is insufficient",
+      "resource_gap": "Original HalluRAG message roles require released raw records. FRED original questions/generator traces must be recovered to study missing-question effects; do not infer or invent them."
+    },
+    {
+      "id": "C3",
+      "priority": 3,
+      "status": "generation/label attribution requirement; not run",
+      "question": "Is a remaining difference caused by natural generation, synthetic edits or the label unit?",
+      "requirement": "A matched source/task/generator comparison with explicit generation provenance and a common factual-proposition evaluation contract; any new annotation is final measurement only after method and scores freeze.",
+      "identifies": "the declared generation/measurement factor only if other factors are held fixed",
+      "limit": "Current unrelated source sets and different annotation granularity cannot certify a causal explanation or guarantee all-six AUROC>=0.8."
+    }
+  ],
+  "source_code_evidence": {
+    "experiments/datasets.py": "f54fae13437e031461b159d43c3db5f68d71280147d30572646e09379bc4f644",
+    "experiments/span_markup.py": "62b10a48f9cb9915498152083f219362ab7d83b2aab5cbc38ff6aab640ccb791",
+    "experiments/native_dataset.py": "c23c040fa77c5709876bcebc3fe0beb60238e2b568758274437f857b255d8bcb",
+    "experiments/fullgap_dataset.py": "b3ba6cf32116219bb012bc2a4f0ce0e1e81fbdc0464b23ddc274d2804753fff8",
+    "myproject/inputs.py": "e0d7c60577905214ade564fa17faf9c724cbbb01ad90e89837e727886f4e68a5",
+    "myproject/counterfactual.py": "2c1e0cc6f800a1308fd42689b3739dc03592902413f713fd36fc9ef8aa6430da"
+  },
+  "artifact_sha256": {
+    "dataset_contract_measurements.json": "81e257a8cd01ab5fdd58931076b3aefc276493f585cf4489c46a697e90ef2deb",
+    "dataset_contract_cross_tabs.json": "98011ff59428e51c068e8a586beb0cf8636f839a1f721f70a722b1d7686088f0",
+    "dataset_contract_format_checks.json": "b687be2452301bf51c4fd42450ef0ab449a948bc65268d610d2dc6b89f5033aa",
+    "audit_dataset_contracts.py": "34a37806b0a816ce64c4ec86e1c6e7ae1c2b992172c50679be5cd029eb2177b8"
+  },
+  "revision": 2,
+  "updated_utc": "2026-11-02T10:35:42.398501+00:00",
+  "previous_revision": {
+    "path": "before_whitespace_discriminator/dataset_contract_audit_seal.json",
+    "sha256": "3c4b37c4521cb54b4a442381aea9303a26d15628ed2443d019e80c2f1fb64b34"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "schema": 1,
+  "base_revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+  "facts": [
+    {
+      "id": "F001",
+      "certainty": "verified_cases_and_observational_limit",
+      "claim": "Source-predictable words can form false actor/time/account relationships; original gap is not a truth posterior.",
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "docs/results/fnfp_qualitative_evidence.json",
+          "git_revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+          "sha256": "7b480a9f29357101923cfd19fedf0f3f0d8cf73b763b7249bad129a55cfa3591"
+        }
+      ]
+    },
+    {
+      "id": "F002",
+      "certainty": "verified_readout_replay",
+      "claim": "TAT54/51 own warning is suppressed by V3 context; Fin53/59 show different primitive-evidence failures, so suppression is not a universal explanation.",
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "docs/results/fnfp_qualitative_evidence.json",
+          "git_revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+          "sha256": "7b480a9f29357101923cfd19fedf0f3f0d8cf73b763b7249bad129a55cfa3591"
+        }
+      ]
+    },
+    {
+      "id": "F003",
+      "certainty": "verified_stage_set_transition_not_domain_causality",
+      "claim": "R4 source-to-base TP changes QA2202to2528, FinQA291to160, TATQA249to103; do not infer or tune a new route weight from these outcomes.",
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "docs/results/fnfp_mechanism_summary.json",
+          "git_revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+          "sha256": "9a43651afa30931c797bf61fc5c4ccba49225b93980a46278ab74c5a352b427f"
+        }
+      ]
+    },
+    {
+      "id": "F004",
+      "certainty": "verified_population_label_scope",
+      "claim": "HalluRAG primary891 has sentence-broadcast labels and a5percent budget ceiling; 396of691FP are in first5tokens. These facts do not identify a generation cause.",
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "docs/results/hallurag_fnfp_evidence.json",
+          "git_revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+          "sha256": "34d09331b9bb2ad82a885122479e6d93601ed130e091047adbebbb26baf54ce6"
+        }
+      ]
+    },
+    {
+      "id": "F005",
+      "certainty": "completed_negative_control",
+      "claim": "Equal-rank control has been evaluated and rejected; no weight sweep or mainline replacement.",
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "docs/results/cpu_fusion_evidence.json",
+          "git_revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+          "sha256": "e7cfebf3f18adb84eda67b109a88088176e97654ff5d39187ad4ae9daa582051"
+        }
+      ]
+    },
+    {
+      "id": "F006",
+      "certainty": "verified_code_scope",
+      "claim": "Unit-local prefix reset and source-by-candidate-future repair interaction already exist. Rephrasing them does not add information.",
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "myproject/counterfactual.py",
+          "git_revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+          "sha256": "2c1e0cc6f800a1308fd42689b3739dc03592902413f713fd36fc9ef8aa6430da"
+        }
+      ]
+    },
+    {
+      "id": "F007",
+      "certainty": "historical_coverage_failure",
+      "claim": "Finite proof and assertion front ends failed their natural-data coverage/semantic gates. Broad frozen semantic verification remains unrun and distinct.",
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "experiments/EXPERIMENTS.md",
+          "git_revision": "05c2e91a039ec060c3f29f7eff3f42e30c97e45b",
+          "sha256": "adc1d32568c65cc50b87e56241c5b0fbabf9f488e55888438624eb332323cc73"
+        }
+      ]
+    },
+    {
+      "id": "F008",
+      "certainty": "verified_provenance_boundary",
+      "claim": "Finance and Hallu recorded weight shards match. Shared RAG config/tokenizer hashes match too, but RAG did not record original shards/backend. File-set IDs alone do not identify a weight change.",
+      "does_not_imply": "RAG original weights or backend have been authenticated",
+      "evidence": [
+        {
+          "path": "research-state/dataset_contracts.json",
+          "sha256": "8171f857c12416635f50df8350cdc81453fc892cd17c5f5571dade67066b70c4"
+        }
+      ]
+    },
+    {
+      "id": "F009",
+      "certainty": "verified_descriptors_not_performance_causality",
+      "claim": "Finance has higher numeric token density and longer scorer units; Data2txt sources are Python literals rather than strict JSON; Hallu leading whitespace is confounded with generator.",
+      "does_not_imply": "Any of these descriptors alone causes the cross-dataset AUROC difference",
+      "evidence": [
+        {
+          "path": "research-state/dataset_contracts.json",
+          "sha256": "8171f857c12416635f50df8350cdc81453fc892cd17c5f5571dade67066b70c4"
+        }
+      ]
+    }
+  ],
+  "rule": "New interventions need different predictions under competing explanations; known counts/cases are reused."
+}

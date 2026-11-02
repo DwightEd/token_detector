@@ -1,0 +1,13 @@
+{
+  "schema": "semantic-qualification-v1",
+  "contract_version": "semantic-probe-v1",
+  "purpose": "observations_only",
+  "max_input_tokens": 4096,
+  "proposer_max_new_tokens": 1536,
+  "observation_max_new_tokens": 256,
+  "do_sample": false,
+  "num_beams": 1,
+  "attention_implementation": "sdpa",
+  "hypothesis_id": "H002_VALUE_BLIND_RECONSTRUCTION",
+  "notes": "Fixed before first inference. Full unhighlighted response-only proposal; same frames/slots direct/blind/leaky; strict unique literal alignment; no scores or truth access; all coverage/unknown/limits retained."
+}

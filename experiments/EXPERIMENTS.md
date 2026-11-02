@@ -844,3 +844,47 @@ The fixed equal-midrank CPU control was sealed before labels, then evaluated on 
 Current priority follows the user: concrete source-grounded FN/FP mechanisms before new method design. Full-five stage diagnostics use fixed task-wide top5% budgets, active-input versus unused-channel distinctions and span-level coverage. TATQA54/51 original-unit replays identify V3 context suppression; FinQA53/59 demonstrate different primitive-evidence and partial-span issues; TATQA3 supports legitimate-derivation FP. HalluRAG primary audit preserves unknowns until evaluation and distinguishes sentence-broadcast labels from human token spans. No fitting, new weight search or new LM calls. Public evidence: `docs/results/fnfp_mechanism_summary.json`, `fnfp_qualitative_evidence.json`, `hallurag_fnfp_evidence.json`.
 
 Separate implementation validation: fresh installed wheel has exactly92 matching modules/resources, all3 added CLI helps pass, and57 focused synthetic tests pass outside the checkout. Receipt: `outputs/rank-fusion-wheel-final-20261102/receipt.json`. Historical full-suite receipts remain unchanged; scientific improvement and the all-task .8 goal remain unachieved.
+
+## 2026-11-02: persistent mechanism goal and H002 observation qualification
+
+The user requested an active, resumable research goal and mechanism-driven
+iteration rather than parameter changes or repeated description of known errors.
+`RESEARCH_BRIEF.md` and `research-state/RESUME.md` are the current handoff;
+the immutable prior index retains31 reviewed experiment records. The local
+`tools/research_memory.py` binds code/data/model/protocol/population/evaluation
+identities, atomically reserves exact runs and reuses completed negative results.
+Its22 synthetic checks passed. This is distinct from scientific novelty admission;
+renaming a hypothesis or changing an output directory does not justify a new run.
+External ARIS watchdog helpers were unavailable; no such service is claimed.
+
+Dataset/observer contract audit completed without rescoring old methods. Common
+RAG config/tokenizer hashes match finance; original RAG shards/backend remain
+unidentified. Finance numeric density and scorer-unit length, Data2txt Python
+literals, and Hallu whitespace/generator confounding are verified descriptors,
+not causal explanations of AUROC. Evidence: `research-state/dataset_contracts.json`.
+
+Selected H002 only for qualification: full-response automatic claim/slot proposal,
+shared direct/blind/leaky observations, deterministic masked-claim blind requests,
+literal quote checks, retained unknown/invalid/uncovered items. No scalar detector
+or ensemble is defined. Exact text is aligned only when unique; bad explicit
+offsets are not repaired. Original complete18-answer inputs are frozen separately
+from evaluation materials. Protocol1536-token proposal/256-token per-observer caps
+were fixed before inference, with all output-limit cases marked coverage-limited.
+
+Fresh peer reviews found and resolved bad-JSON retention, exact-text alignment,
+request-admission cache identity and mapping issues. Final78 synthetic tests passed;
+then a fresh wheel was built and installed outside the checkout: exactly94 matching
+modules/resources,78 installed tests passed and all4 relevant CLI helps passed.
+Receipt: `outputs/semantic-qualification-wheel-20261102/receipt.json`;
+wheel SHA256 `8ab21dfb4e859a6e0ad3940712c797e1fb0c8b44738324d6249c209b09e040b8`.
+These checks establish engineering contracts, not natural-data efficacy or novelty.
+
+The new resource-compatible observer is Qwen2.5-3B-Instruct, intended NF4/SDPA,
+not a replay of historical BF16 Llama. All9 model files match official revision
+`aa8e72537993ba99e69dfaafa59ed015b17504d1`. A separate CUDA environment is being
+prepared; the original CPU environment and other applications are preserved.
+The user explicitly selected idle local automatic execution. At this entry no
+new model observations, scalar scores or AUROC were produced. First run must
+pass runtime/resource admission and exact-run reservation; score/observation
+artifacts are sealed before evaluation. Detailed gates and stop/pivot rules are
+in `refine-logs/EXPERIMENT_PLAN.md`.

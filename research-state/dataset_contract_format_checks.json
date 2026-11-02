@@ -1,0 +1,29 @@
+{
+  "RAG_QA_passage_heading_counts": {
+    "3": 900
+  },
+  "Data2txt_source_dict_key_counts": {
+    "name": 900,
+    "address": 900,
+    "city": 900,
+    "state": 900,
+    "categories": 900,
+    "hours": 900,
+    "attributes": 900,
+    "business_stars": 900,
+    "review_info": 900
+  },
+  "FRED_exact_source_id_is_SHA256": {
+    "finqa": true,
+    "tatqa": true
+  },
+  "historical_commit": "be1b8a3d53703490f5ed01ec899dbf895fce77b1",
+  "current_source_sha256": {
+    "experiments/datasets.py": "f54fae13437e031461b159d43c3db5f68d71280147d30572646e09379bc4f644",
+    "experiments/span_markup.py": "62b10a48f9cb9915498152083f219362ab7d83b2aab5cbc38ff6aab640ccb791",
+    "experiments/native_dataset.py": "c23c040fa77c5709876bcebc3fe0beb60238e2b568758274437f857b255d8bcb",
+    "experiments/fullgap_dataset.py": "b3ba6cf32116219bb012bc2a4f0ce0e1e81fbdc0464b23ddc274d2804753fff8",
+    "myproject/inputs.py": "e0d7c60577905214ade564fa17faf9c724cbbb01ad90e89837e727886f4e68a5",
+    "myproject/counterfactual.py": "2c1e0cc6f800a1308fd42689b3739dc03592902413f713fd36fc9ef8aa6430da"
+  }
+}
