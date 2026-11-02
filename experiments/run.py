@@ -152,6 +152,11 @@ def parser() -> argparse.ArgumentParser:
     for option in ['inputs', 'protocol', 'model', 'model-identity', 'output']:
         reconstruction.add_argument('--' + option, type=Path, required=True)
     reconstruction.add_argument('--admit-resources', action='store_true')
+    masked_reconstruction = transfers.add_parser('qualify-masked-reconstruction',
+        help='freeze fixed response-masked role questions and complete literal candidate plus EOS observations')
+    for option in ['inputs', 'protocol', 'model', 'model-identity', 'output']:
+        masked_reconstruction.add_argument('--' + option, type=Path, required=True)
+    masked_reconstruction.add_argument('--admit-resources', action='store_true')
     reconstruction_eval = transfers.add_parser('evaluate-reconstruction', help='rebuild sealed source completions on CPU before construction reference release')
     for option in ['inputs', 'design', 'construction', 'observations', 'model', 'output', 'protocol']:
         reconstruction_eval.add_argument('--' + option, type=Path, required=True)
@@ -405,6 +410,15 @@ def main() -> None:
             if not args.admit_resources:
                 command.error('qualify-reconstruction requires explicit --admit-resources before HF loading')
             from .reconstruction_qualification import qualify
+            from .answer_completion import HFAnswerCompletion
+
+            identity = data.read_json(args.model_identity)
+            qualify(args.inputs, args.protocol, args.output,
+                    HFAnswerCompletion(args.model, identity, admit_resources=True), identity)
+        elif args.transfer_stage == 'qualify-masked-reconstruction':
+            if not args.admit_resources:
+                command.error('qualify-masked-reconstruction requires explicit --admit-resources before HF loading')
+            from .masked_reconstruction_qualification import qualify
             from .answer_completion import HFAnswerCompletion
 
             identity = data.read_json(args.model_identity)

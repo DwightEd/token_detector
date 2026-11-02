@@ -153,7 +153,8 @@ def _response(raw,metadata):
     return dict(deepcopy(raw),status='scored')
 
 
-def _inventory(root,keys=None,observed=None,*,has_freeze=True,has_complete=False,has_seal=False,pending=None):
+def _inventory(root,keys=None,observed=None,*,has_freeze=True,has_complete=False,has_seal=False,pending=None,
+               expected_requests=32):
     """Validate every allowed member/alias before any payload hash."""
     root=Path(root)
     _require(root.resolve()==root and root.is_dir(),'Unaliased reconstruction tree required')
@@ -168,8 +169,9 @@ def _inventory(root,keys=None,observed=None,*,has_freeze=True,has_complete=False
         files.add(name)
     requests=reader._member(root,'requests',directory=True)
     actual={p.name for p in requests.iterdir()}
-    _require(len(actual)==32 and all(re.fullmatch('[0-9a-f]{64}',k) for k in actual)
-        and (keys is None or actual==set(keys)),'Complete exact32 request inventory required')
+    _require(type(expected_requests) is int and expected_requests>0
+        and len(actual)==expected_requests and all(re.fullmatch('[0-9a-f]{64}',k) for k in actual)
+        and (keys is None or actual==set(keys)),'Complete exact request inventory required')
     observed=actual if observed is None else set(observed)
     _require(observed<=actual and (pending is None or pending in actual-observed),'Invalid cache progress inventory')
     for key in actual:
@@ -210,8 +212,10 @@ def _completion(prepared,executions,responses,frozen):
             case_max_slot_risk=max(s['risk'] for s in slots),unknown_fallback=False))
     return dict(schema='source-reconstruction-complete-v1',state='observations_sealed_not_evaluated',
         queries=predictions,records=records,
-        coverage=dict(original_cases=48,unique_sources=8,unique_queries=16,unique_completions=32,
-            response_slots=96,unknown_cases=0,unknown_slots=0),
+        coverage=dict(original_cases=len(prepared['originals']),unique_sources=len(prepared['sources']),
+            unique_queries=len(prepared['queries']),unique_completions=len(executions),
+            response_slots=sum(len(o['alignment']['slots']) for o in prepared['originals']),
+            unknown_cases=0,unknown_slots=0),
         costs=dict(actual_forward_passes=sum(r['actual_forward_passes'] for r in responses.values()),
             input_tokens=sum(r['input_tokens'] for r in responses.values()),
             teacher_forced_target_tokens=sum(r['target_tokens'] for r in responses.values()),
@@ -221,19 +225,29 @@ def _completion(prepared,executions,responses,frozen):
 
 
 def qualify(inputs,protocol,output,backend,model_identity):
+    return _collect(inputs,protocol,output,backend,model_identity,protocol_loader=_protocol,
+                    prepare=_prepare,plan_builder=_plan,completion_builder=_completion)
+
+
+def _collect(inputs,protocol,output,backend,model_identity,*,protocol_loader,prepare,plan_builder,
+             completion_builder):
+    """Shared exact-population collector; fixed profiles supply semantic preparation."""
     inputs,protocol,output=(Path(p).absolute() for p in (inputs,protocol,output))
     _require(all(p.resolve()==p for p in (inputs,protocol,output))
         and inputs.name=='inputs.jsonl'
         and protocol.name.casefold() not in ANNOTATION_NAMES|{'construction_truth.jsonl'}
+        and not any(part.casefold() in ANNOTATION_NAMES|{'construction_truth.jsonl','evaluation_only','annotations'}
+                    for part in protocol.parts)
         and not protocol.is_relative_to(inputs.parent) and 'outputs' in output.parts
         and not inputs.is_relative_to(output) and not output.is_relative_to(inputs.parent)
         and not protocol.is_relative_to(output),'Independent unaliased inference/protocol/output paths required')
     if output.exists():raise FileExistsError('Retained source-QA run requires inspection, not automatic retry')
-    frozen,identity=_protocol(protocol),_model_identity(model_identity)
+    frozen,identity=protocol_loader(protocol),_model_identity(model_identity)
+    expected_requests=frozen['expected_completions']
     input_hash,protocol_hash=data.file_hash(inputs),data.file_hash(protocol)
     _require(input_hash==frozen['original_inputs_sha256'],'Complete original input hash changed')
     _require(getattr(backend,'model_identity',None)==identity,'Backend model identity differs')
-    source=research_identity();prepared=_prepare(list(read_samples(inputs)))
+    source=research_identity();prepared=prepare(list(read_samples(inputs)))
     executions={}
     for row in prepared['candidates']:
         metadata=_metadata(deepcopy(backend.validate_completion(deepcopy(row['messages']),row['candidate'])),row['candidate'])
@@ -241,7 +255,7 @@ def qualify(inputs,protocol,output,backend,model_identity):
         execution=_execution(row,metadata,protocol_hash,identity,source);key=_digest(execution)
         _require(key not in executions,'Unexpected duplicate semantic completion')
         executions[key]=dict(query_key=row['query_key'],candidate=row['candidate'],key=key,execution=execution)
-    _require(len(executions)==32,'All32 unique completions required before model calls')
+    _require(len(executions)==expected_requests,'Complete unique completion population required before model calls')
     prefixes={}
     for row in executions.values():
         prefix=row['execution']['preflight']['prefix_ids']
@@ -250,18 +264,19 @@ def qualify(inputs,protocol,output,backend,model_identity):
         prefixes[row['query_key']]=prefix
     _require(len({e['execution']['preflight']['eos_token_id'] for e in executions.values()})==1,
         'All complete candidate events require one fixed tokenizer EOS')
-    plan=_plan(inputs,input_hash,protocol_hash,frozen,identity,source,prepared,list(executions.values()))
+    plan=plan_builder(inputs,input_hash,protocol_hash,frozen,identity,source,prepared,list(executions.values()))
     output.mkdir(parents=True)
     for name,value in [('plan.json',plan),('protocol.json',frozen),('model_identity.json',identity),('source_identity.json',source)]:
         data.write_json(output/name,value)
     for key,row in executions.items():
         root=output/'requests'/key;root.mkdir(parents=True);data.write_json(root/'request.json',row['execution'])
-    paths=_inventory(output,executions,set(),has_freeze=False)
+    paths=_inventory(output,executions,set(),has_freeze=False,expected_requests=expected_requests)
     immutable={name:data.file_hash(output/name) for name in paths}
     data.write_json(output/'freeze.json',immutable);freeze_hash=data.file_hash(output/'freeze.json')
-    child_snapshots={};completion_digest=None;root_sealed=False
+    child_snapshots={};completion_digest=None;root_sealed=False;root_seal_hash=None
     def unchanged():
-        _inventory(output,executions,child_snapshots,has_complete=completion_digest is not None,has_seal=root_sealed)
+        _inventory(output,executions,child_snapshots,has_complete=completion_digest is not None,
+                   has_seal=root_sealed,expected_requests=expected_requests)
         _require(data.file_hash(inputs)==input_hash and data.file_hash(protocol)==protocol_hash
             and data.file_hash(output/'freeze.json')==freeze_hash
             and getattr(backend,'model_identity',None)==identity
@@ -272,6 +287,8 @@ def qualify(inputs,protocol,output,backend,model_identity):
             'Previously sealed raw completion/response cache changed')
         if completion_digest is not None:
             _require(data.file_hash(output/'complete.json')==completion_digest,'Final completion changed')
+        if root_seal_hash is not None:
+            _require(data.file_hash(output/'seal.json')==root_seal_hash,'Initial root seal changed')
         completed_identity(source)
     responses={}
     for key,row in executions.items():
@@ -281,9 +298,9 @@ def qualify(inputs,protocol,output,backend,model_identity):
         _require(messages==execution['messages'],'Backend mutated a frozen source-QA request')
         response=_response(raw,execution['preflight']);responses[key]=response
         data.write_json(root/'response.json',response)
-        _inventory(output,executions,child_snapshots,pending=key)
+        _inventory(output,executions,child_snapshots,pending=key,expected_requests=expected_requests)
         _seal(root,['request.json','backend_raw.json','response.json'])
-        _inventory(output,executions,set(child_snapshots)|{key})
+        _inventory(output,executions,set(child_snapshots)|{key},expected_requests=expected_requests)
         data.verify_seal(root,expected={'request.json','backend_raw.json','response.json'})
         _require(data.read_json(root/'request.json')==execution
             and data.read_json(root/'backend_raw.json')=={'value':raw}
@@ -292,13 +309,15 @@ def qualify(inputs,protocol,output,backend,model_identity):
             for name in ('request.json','backend_raw.json','response.json','seal.json')}
     unchanged()
     if hasattr(backend,'verify_frozen_identity'):backend.verify_frozen_identity()
-    result=_completion(prepared,list(executions.values()),responses,frozen)
+    result=completion_builder(prepared,list(executions.values()),responses,frozen)
     data.write_json(output/'complete.json',result)
-    paths=_inventory(output,executions,child_snapshots,has_complete=True)
+    paths=_inventory(output,executions,child_snapshots,has_complete=True,expected_requests=expected_requests)
     completion_digest=data.file_hash(output/'complete.json')
     try:
         unchanged();_seal(output,sorted(paths));root_sealed=True
-        _inventory(output,executions,child_snapshots,has_complete=True,has_seal=True)
+        root_seal_hash=data.file_hash(output/'seal.json')
+        _inventory(output,executions,child_snapshots,has_complete=True,has_seal=True,
+                   expected_requests=expected_requests)
         data.verify_seal(output,expected=paths);unchanged()
     except BaseException:
         (output/'complete.json').unlink(missing_ok=True);(output/'seal.json').unlink(missing_ok=True)
