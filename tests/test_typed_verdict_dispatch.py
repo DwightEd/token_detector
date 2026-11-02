@@ -25,3 +25,17 @@ def test_typed_cli_resource_gate_precedes_identity_or_model_access(monkeypatch):
     monkeypatch.setattr(sys,'argv',arguments())
     with pytest.raises(SystemExit) as e:run.main()
     assert e.value.code==2
+
+def test_typed_cpu_evaluation_never_constructs_instrument(monkeypatch):
+    from experiments import typed_verdict_evaluation
+    calls=[]
+    def forbidden(*a,**k):raise AssertionError('CPU evaluation cannot construct a model')
+    monkeypatch.setattr(semantic_qualification,'HFGenerator',forbidden)
+    monkeypatch.setattr(run.data,'read_json',forbidden)
+    monkeypatch.setattr(typed_verdict_evaluation,'evaluate',lambda *a:calls.append(a))
+    monkeypatch.setattr(sys,'argv',['r4-experiment','transfer','evaluate-typed-verdict',
+       '--inputs','inputs.jsonl','--observations','observations','--natural-panel','natural',
+       '--controls-panel','controls','--protocol','protocol.json','--output','outputs/review'])
+    run.main()
+    assert calls==[(Path('inputs.jsonl'),Path('observations'),Path('natural'),Path('controls'),
+                    Path('outputs/review'),Path('protocol.json'))]
