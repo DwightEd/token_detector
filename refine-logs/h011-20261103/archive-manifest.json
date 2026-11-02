@@ -1,0 +1,86 @@
+{
+  "schema": "exact-research-evidence-archive-v1",
+  "generated_utc": "2026-11-02T20:46:18.231155+00:00",
+  "files": [
+    {
+      "source": "outputs/h011-masked-20261103/DESIGN.md",
+      "archived": "refine-logs/h011-20261103/DESIGN.md",
+      "sha256": "26bd267acd2de7a3c1b5cd172ce168ee57a44c52c59695e528c8d90f313c7329"
+    },
+    {
+      "source": "outputs/h011-masked-20261103/collector-review.md",
+      "archived": "refine-logs/h011-20261103/collector-review.md",
+      "sha256": "2d2a20a6017c6cc201b50f9905488f5e5e797867645ac08bc243bfd0482a343f"
+    },
+    {
+      "source": "outputs/h011-masked-20261103/reader-plan.md",
+      "archived": "refine-logs/h011-20261103/reader-plan.md",
+      "sha256": "26ed3f09ff90ed72b0f799e444a227a24799fc07b711ab3c8740d97ecb0771a2"
+    },
+    {
+      "source": "outputs/h011-masked-20261103/cpu-reader-review.md",
+      "archived": "refine-logs/h011-20261103/cpu-reader-review.md",
+      "sha256": "fe0828c2515a15eaaf6f6680458e2aa5391708f5ca407ee4f1ef136674638e58"
+    },
+    {
+      "source": "outputs/h011-masked-20261103/cache-admission-v1.json",
+      "archived": "refine-logs/h011-20261103/cache-admission-v1.json",
+      "sha256": "9d3ecb53fd06f36e2dede6dbba4f584ef6820292954c58b03af0a713f1b22097"
+    },
+    {
+      "source": "outputs/h011-masked-20261103/evaluation-admission-v1.json",
+      "archived": "refine-logs/h011-20261103/evaluation-admission-v1.json",
+      "sha256": "0218ef04bc61bcb6b5badc54eecdd4f79711fef7783dc41073592c94cc7f93f6"
+    },
+    {
+      "source": "outputs/h011-masked-20261103/post-review-reference-binding-v1.json",
+      "archived": "refine-logs/h011-20261103/post-review-reference-binding-v1.json",
+      "sha256": "91b4b485d0531db957f5b104aaa99d45a3478bdca2a43d4df2b380bb1dd386e0"
+    },
+    {
+      "source": "outputs/h011-masked-20261103/role_collapse_audit.py",
+      "archived": "refine-logs/h011-20261103/role_collapse_audit.py",
+      "sha256": "52483422c22b4981edd1a98eab6ae2442032081125c423ed58a486f3801297e5"
+    },
+    {
+      "source": "outputs/h011-masked-20261103/role-collapse-audit.json",
+      "archived": "refine-logs/h011-20261103/role-collapse-audit.json",
+      "sha256": "db61f34b54c846076869bb1ec6e89b523d651848e2a982a0548830e55e2baa5e"
+    },
+    {
+      "source": "outputs/h011-masked-20261103/role-collapse-audit.md",
+      "archived": "refine-logs/h011-20261103/role-collapse-audit.md",
+      "sha256": "1184e0b2c48067332a06e208c7303fe45c769e39f0e204386a45253db5347de9"
+    },
+    {
+      "source": "outputs/h011-masked-20261103/plot_result.py",
+      "archived": "refine-logs/h011-20261103/plot_result.py",
+      "sha256": "329477578ca3edb7ca8ec387976e4302cc0dfce5605d27a35c6cbcb2079c3ff8"
+    },
+    {
+      "source": "outputs/h011-masked-20261103/plot-runtime.json",
+      "archived": "refine-logs/h011-20261103/plot-runtime.json",
+      "sha256": "d3693f512fbfd3a6a4f65943ffc5b443d2474c61d81b236719c617935e4ee52e"
+    },
+    {
+      "source": "outputs/h011-masked-20261103/prepare_observation.py",
+      "archived": "refine-logs/h011-20261103/prepare_observation.py",
+      "sha256": "8d2bc789b685ae59f8cfb259ac1204a00f5831ba011b4df5981e08104b59c8a4"
+    },
+    {
+      "source": "outputs/h011-masked-20261103/evaluate_finished.py",
+      "archived": "refine-logs/h011-20261103/evaluate_finished.py",
+      "sha256": "a8d54b82572ff2f7c858cd08c9f6f52c6ce3b9d0e0e34d96eac2c7ca469a7ee6"
+    },
+    {
+      "source": "outputs/h011-observer-wheel-v2-20261103/receipt.json",
+      "archived": "refine-logs/h011-20261103/observer117-installed-receipt.json",
+      "sha256": "33137ca95ab045336216362cde0877490dbd83cc92c99c6b0833b9c9e5766b7d"
+    },
+    {
+      "source": "outputs/h011-cpu-wheel-20261103/receipt.json",
+      "archived": "refine-logs/h011-20261103/reader118-installed-receipt.json",
+      "sha256": "c6cca7998909e70605032285a6f4cd0f1dbd1317d458c21acd2ca41cb1db5f6f"
+    }
+  ]
+}

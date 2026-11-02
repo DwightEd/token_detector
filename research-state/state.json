@@ -3,9 +3,9 @@
   "objective": "Mechanism-driven unsupervised hallucination detection improvement toward AUROC >= 0.8 on each of six primary tasks",
   "canonical_project": "D:/projects/research/token_detector",
   "goal_status": "not_achieved",
-  "phase": "H009_completed_no_increment_H010_inventory_complete_natural_question_design",
-  "active_hypothesis": "NATURAL_VALUE_BLIND_QUESTION_CONTRACT",
-  "next_question": "Can one frozen response-masking compiler transfer source-only reconstruction to response-derived questions without exposed target values, and what error location is identifiable without original query anchors?",
+  "phase": "H011_negative_H012_natural_artifact_inventory_preparing",
+  "active_hypothesis": "H012_NATURAL_MASKED_ARTIFACT_INVENTORY",
+  "next_question": "Compile all136 natural NER occurrences with source-only candidates, exact erasure provenance and semanticunknown; no QA yet. Audit whether single-predicate compilation/source-defined query alignment is a genuinely new next intervention.",
   "known_fact_ids": [
     "F001",
     "F002",
@@ -31,7 +31,10 @@
     "F022",
     "F023",
     "F024",
-    "F025"
+    "F025",
+    "F026",
+    "F027",
+    "F028"
   ],
   "do_not_repeat": [
     "Describing known FN/FP counts again without a new discriminating intervention",
@@ -62,20 +65,20 @@
   "checkpoint_policy": "Update at every conclusion, completed run or structural pivot; record the next discriminating question before continuation",
   "pipeline_helpers": "External ARIS run_state/watchdog helpers were not found; no background watchdog is claimed. Repository state and exact-run reservation are implemented locally.",
   "case_panel": "research-state/case_panel_v1.json",
-  "resource_status": "3B observation jobs exited;7B assets complete, separate bounded engineering helper awaiting postwarm resources; no scientific7B job.",
+  "resource_status": "All GPU workers exited;3B research backend and community7B short/512 runtime qualified separately. Do not assume4096 readiness or automatic model experiment.",
   "user_resource_choice": "local_idle_automatic_run",
   "experiment_plan": "refine-logs/EXPERIMENT_PLAN.md",
-  "run_reservation_status": "H009_CPU_completed_no_scientific_job_armed",
-  "frozen_observation_run_spec": null,
-  "live_execution_state": null,
+  "run_reservation_status": "H011_observation_and_CPU_complete_no_GPU_job_armed",
+  "frozen_observation_run_spec": "research-state/protocols/H011_masked_observation_run_spec_v1.json",
+  "live_execution_state": "outputs/h011-masked-20261103/autostart-state.json",
   "local_idle_job": {
-    "pid": 45072,
-    "parent_pid": 7692,
-    "started_utc": "2026-11-02T18:38:45.876943+00:00",
-    "state": "outputs/h006-20261103/autostart-state.json",
-    "status": "observations_and_CPU_review_completed_historical_not_armed",
+    "pid": 36792,
+    "parent_pid": 60036,
+    "started_utc": "2026-11-02T20:30:31.575166+00:00",
+    "state": "outputs/h011-masked-20261103/autostart-state.json",
     "armed": false,
-    "automatic_retries": false
+    "automatic_retries": false,
+    "status": "H011_observations_and_CPU_completed_no_retry"
   },
   "active_variant": "source_only_reconstruction_qualified_natural_question_compiler_pending",
   "live_progress_command": "Inspect current H009 sealed results, H010 completion and NATURAL_CONTRACT_NEXT before defining H011; do not repeat prior neural requests.",
@@ -117,17 +120,29 @@
       "files": 107,
       "immutable_target": "outputs/h006-20261103/evaluator_installed",
       "state": "completed_sealed"
+    },
+    "h011_observer": {
+      "files": 117,
+      "commit": "b6a7995",
+      "wheel_sha256": "60cc608fbc408cde8f09845c71a4c978e6306c5c728585b11da1ad8b1617e5df",
+      "immutable_target": "outputs/h011-masked-20261103/installed"
+    },
+    "h011_cpu_reader": {
+      "files": 118,
+      "commit": "5690007",
+      "wheel_sha256": "b5ece3c5b43f149d33d909e7725cd63d84eaee9898a78ef48605e874594af461",
+      "immutable_target": "outputs/h011-masked-20261103/evaluator_installed"
     }
   },
-  "last_completed_run": "4235ad12a1e91bdda792ac8519adfe3dab88b8fe0b960378bdd13b2340ec77c9",
-  "last_result": "docs/results/h009_cached_bijection.json",
+  "last_completed_run": "5c162fe8ade0a235a221a9c0ad309bb1f98a3a8cb79ba9a06e3887192f7ba3fb",
+  "last_result": "docs/results/h011_masked_reconstruction.json",
   "previous_observation_run_id": "a5d336433cd1a04ce71962fb8500d4f9f0c8b0473a74f146e66302cbacb3e9a5",
   "goal_control_status": "blocked",
   "goal_control_note": "Legacy tool status remains blocked; user explicitly resumed research. Continue authorized work without asking for confirmation or treating legacy control status as a scientific/resource blocker.",
   "work_status": "continuing_under_user_explicit_resume_do_not_stop",
-  "next_design": "refine-logs/h004-20261103/NEXT_MECHANISM.md",
-  "frozen_observation_run_id": null,
-  "last_updated_utc": "2026-11-02T20:23:26.171164+00:00",
+  "next_design": "outputs/h012-natural-masked-20261103/DESIGN.md",
+  "frozen_observation_run_id": "954488248f0417aebefd288d07c8976b502860d1c397579b04af2fc5d7126283",
+  "last_updated_utc": "2026-11-02T20:46:18.231155+00:00",
   "completed_H003": {
     "natural_observer_run": "fa101d666cce73beefcb12cd5979b04fb51e2771a61f48e78f9232caecff968c",
     "natural_cpu_run": "29e82c69db9558ec05c7b868f10cfa58f06cc497864a0ecfebcefa6217a72b47",
@@ -292,5 +307,47 @@
     "latest_batch_lines": 296,
     "pending_files": 145,
     "total_scope_files_at_snapshot": 168
+  },
+  "auxiliary_jobs": [],
+  "completed_H011_observations": {
+    "run_id": "954488248f0417aebefd288d07c8976b502860d1c397579b04af2fc5d7126283",
+    "status": "observations_sealed_not_evaluated",
+    "path": "outputs/h011-masked-20261103/masked_reconstruction_v1",
+    "coverage": {
+      "original_cases": 48,
+      "unique_sources": 8,
+      "unique_queries": 48,
+      "unique_completions": 96,
+      "response_slots": 96,
+      "unknown_cases": 0,
+      "unknown_slots": 0,
+      "logical_completion_requests": 192
+    },
+    "costs": {
+      "actual_forward_passes": 96,
+      "input_tokens": 32816,
+      "teacher_forced_target_tokens": 516,
+      "output_tokens": 0,
+      "seconds_forward": 12.381328800227493
+    },
+    "evaluation_references_released": false,
+    "initial_seal_sha256": "545d732daa0edc8ac0f82036f6e687e6e2067052d7bc02ab4a0cce21c937c0a7"
+  },
+  "completed_H011": {
+    "observation": "954488248f0417aebefd288d07c8976b502860d1c397579b04af2fc5d7126283",
+    "cpu": "5c162fe8ade0a235a221a9c0ad309bb1f98a3a8cb79ba9a06e3887192f7ba3fb",
+    "status": "completed_not_promoted",
+    "result": "docs/results/h011_masked_reconstruction.json",
+    "by_burden": {
+      "0": 9,
+      "4": 8,
+      "12": 10
+    },
+    "secondary_auroc": 0.6371527777777777,
+    "role_collapse": [
+      7,
+      8,
+      6
+    ]
   }
 }

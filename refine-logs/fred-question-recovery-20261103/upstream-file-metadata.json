@@ -1,0 +1,36 @@
+{
+  "finqa": [
+    {
+      "path": "finqa/test-00000-of-00001.parquet",
+      "size": 8936570,
+      "upstream_lfs_sha256": "b55bd373741fbe65933191690267421183f898c8253f5db2a4a4703360ecf94d"
+    },
+    {
+      "path": "finqa/train-00000-of-00001.parquet",
+      "size": 61062997,
+      "upstream_lfs_sha256": "f80ae36515a9460d7c0f746e2990db79aeabe322870c5ded3f56485b3e659c0e"
+    },
+    {
+      "path": "finqa/validation-00000-of-00001.parquet",
+      "size": 5944229,
+      "upstream_lfs_sha256": "df0e19740fb9cbe7e6640f87ecd3ba2294910928a0de9e7fae6cd596fecbb553"
+    }
+  ],
+  "tatqa": [
+    {
+      "path": "tatqa/test-00000-of-00001.parquet",
+      "size": 4746214,
+      "upstream_lfs_sha256": "136d245b28fc6381abe00946ca1f7cab5f3d64ba1847e49e54a2585ec0ec4dab"
+    },
+    {
+      "path": "tatqa/train-00000-of-00001.parquet",
+      "size": 68905870,
+      "upstream_lfs_sha256": "34fbe24647adcace2093ce0bb7aa0194e9ae327d2b905fc819776cd63a17baaf"
+    },
+    {
+      "path": "tatqa/validation-00000-of-00001.parquet",
+      "size": 4836557,
+      "upstream_lfs_sha256": "b620dd85cb2d55da31a1d468a0e42d2087d52314379d6d7010a4c2ab5396e7d7"
+    }
+  ]
+}

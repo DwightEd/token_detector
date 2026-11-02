@@ -1,0 +1,115 @@
+{
+  "schema": "FRED-original-question-recovery-plan-v1",
+  "previous_failed_attempt": "../failure.json",
+  "identity_policy": "Explicit anonymous AuthBase; Authorization/Cookie stripped; redirect auth never consults netrc; environment transport only",
+  "state": "source_and_join_contract_frozen_before_upstream_column_values",
+  "created_utc": "2026-11-02T20:33:09.621199+00:00",
+  "script_sha256": "07c086863bca9853bdb90811f048a03d0291896f258a0c76497c8dc4a5f89927",
+  "lexical_skip_helper_sha256": "56b657e75e43e9e924f79a6026cdf95188bdf215b96a07c85143a4c2e58ca778",
+  "local_inputs": {
+    "finqa": {
+      "path": "D:\\projects\\research\\token_detector\\outputs\\full-input-inventory-20261103\\FRED_FinQA\\inputs.jsonl",
+      "file_sha256": "12b7437d19eb1b138e1d66e499a64defd4e914c774e7542e860c298181833e5c",
+      "original_responses": 162,
+      "unique_sources": 142,
+      "ordered_ids_sha256": "dd6c0e1e1e6647147c778094e1c0a5fb3afcc602d9f0b6603542134a8b22dbf8",
+      "decoded_fields": [
+        "id",
+        "source_id",
+        "source"
+      ],
+      "unknown_field_values_lexically_skipped": true
+    },
+    "tatqa": {
+      "path": "D:\\projects\\research\\token_detector\\outputs\\full-input-inventory-20261103\\FRED_TATQA\\inputs.jsonl",
+      "file_sha256": "17e9ffd2caaf8033ae374a7c293039883cdd4ff541372e94a34eaf557b1c4831",
+      "original_responses": 130,
+      "unique_sources": 110,
+      "ordered_ids_sha256": "45072a16025e7ba20fa8fa7aad616083baf7d44bf56d220b43b8344252bcf233",
+      "decoded_fields": [
+        "id",
+        "source_id",
+        "source"
+      ],
+      "unknown_field_values_lexically_skipped": true
+    }
+  },
+  "local_projection_fields": [
+    "id",
+    "source_id",
+    "source"
+  ],
+  "upstream_dataset": "galileo-ai/ragbench",
+  "upstream_revision": "97808f3e5fd16ede40bbff6c2949af8139b2eb7b",
+  "upstream_fields": [
+    "id",
+    "question",
+    "documents"
+  ],
+  "upstream_files": {
+    "finqa": [
+      {
+        "path": "finqa/test-00000-of-00001.parquet",
+        "size": 8936570,
+        "upstream_lfs_sha256": "b55bd373741fbe65933191690267421183f898c8253f5db2a4a4703360ecf94d"
+      },
+      {
+        "path": "finqa/train-00000-of-00001.parquet",
+        "size": 61062997,
+        "upstream_lfs_sha256": "f80ae36515a9460d7c0f746e2990db79aeabe322870c5ded3f56485b3e659c0e"
+      },
+      {
+        "path": "finqa/validation-00000-of-00001.parquet",
+        "size": 5944229,
+        "upstream_lfs_sha256": "df0e19740fb9cbe7e6640f87ecd3ba2294910928a0de9e7fae6cd596fecbb553"
+      }
+    ],
+    "tatqa": [
+      {
+        "path": "tatqa/test-00000-of-00001.parquet",
+        "size": 4746214,
+        "upstream_lfs_sha256": "136d245b28fc6381abe00946ca1f7cab5f3d64ba1847e49e54a2585ec0ec4dab"
+      },
+      {
+        "path": "tatqa/train-00000-of-00001.parquet",
+        "size": 68905870,
+        "upstream_lfs_sha256": "34fbe24647adcace2093ce0bb7aa0194e9ae327d2b905fc819776cd63a17baaf"
+      },
+      {
+        "path": "tatqa/validation-00000-of-00001.parquet",
+        "size": 4836557,
+        "upstream_lfs_sha256": "b620dd85cb2d55da31a1d468a0e42d2087d52314379d6d7010a4c2ab5396e7d7"
+      }
+    ]
+  },
+  "official_converter_revision": "afdab2c54075ade8c890331da099cc9b25d1f6a5",
+  "official_converter_sha256": "99dd66cb4e52a3a07319d78393ecd644958c0f9bdeed2f78c56a06f78c51a6e2",
+  "rule": "sha256(exact UTF-8 local source)==sha256(documents[0]), then require string equality; no stripping/normalization",
+  "all_splits": [
+    "train",
+    "validation",
+    "test"
+  ],
+  "duplicate_doc_rule": "retain every matching row and every distinct question byte string",
+  "recovery_rule": "recover only if matched rows have exactly one distinct nonempty question UTF-8 byte string",
+  "ambiguity_rule": "zero matches or multiple distinct questions remain explicit unknown; never first-match selection",
+  "ignored_fields_never_decoded": [
+    "answer",
+    "response",
+    "labels",
+    "scores",
+    "all non-whitelisted parquet columns"
+  ],
+  "edited_or_unedited_response_used": false,
+  "target_labels_used": false,
+  "existing_inputs_modified": false,
+  "schema_footer_only_is_metadata": true,
+  "physical_range_may_include_undecoded_neighbor_bytes": true,
+  "upstream_lfs_sha_scope": "declared by official pinned repository; full raw parquet is not downloaded or locally rehashed",
+  "execution": {
+    "executable": "D:\\Apps\\Research\\Tools\\anaconda3\\python.exe",
+    "python": "3.13.9",
+    "pyarrow": "21.0.0",
+    "requests": "2.32.5"
+  }
+}

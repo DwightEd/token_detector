@@ -1,0 +1,37 @@
+{
+  "python": "3.13.9",
+  "matplotlib": "3.10.6",
+  "backend": "Agg",
+  "plotted_values": [
+    [
+      "Closed-candidate QA",
+      [
+        16,
+        9,
+        8,
+        10
+      ],
+      16
+    ],
+    [
+      "Source-flip pairs",
+      [
+        8,
+        3,
+        2,
+        4
+      ],
+      8
+    ],
+    [
+      "Event-flip pairs",
+      [
+        8,
+        1,
+        0,
+        2
+      ],
+      8
+    ]
+  ]
+}

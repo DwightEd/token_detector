@@ -1,0 +1,48 @@
+{
+  "status": "published_code_inspected_metadata_only",
+  "files": [
+    {
+      "path": "data_preparation/convert_format.py",
+      "url": "https://raw.githubusercontent.com/pegasi-ai/fine-grained-editting/afdab2c54075ade8c890331da099cc9b25d1f6a5/data_preparation/convert_format.py",
+      "revision": "afdab2c54075ade8c890331da099cc9b25d1f6a5",
+      "sha256": "99dd66cb4e52a3a07319d78393ecd644958c0f9bdeed2f78c56a06f78c51a6e2",
+      "bytes": 1376,
+      "documents_read_lines": [
+        {
+          "line": 38,
+          "text": "evidence = ast.literal_eval(row[\"documents\"])[0]"
+        }
+      ],
+      "documents_assignment_target_lines": []
+    },
+    {
+      "path": "data_preparation/insert_errors.py",
+      "url": "https://raw.githubusercontent.com/pegasi-ai/fine-grained-editting/afdab2c54075ade8c890331da099cc9b25d1f6a5/data_preparation/insert_errors.py",
+      "revision": "afdab2c54075ade8c890331da099cc9b25d1f6a5",
+      "sha256": "fadaa74a4a0315e47c61bc361b18a692d0324a44f3c750146d303143f0c3de2e",
+      "bytes": 38056,
+      "documents_read_lines": [
+        {
+          "line": 455,
+          "text": "reference = ast.literal_eval(row['documents'])[0]"
+        }
+      ],
+      "documents_assignment_target_lines": []
+    },
+    {
+      "path": "data_preparation/verify_responses.py",
+      "url": "https://raw.githubusercontent.com/pegasi-ai/fine-grained-editting/afdab2c54075ade8c890331da099cc9b25d1f6a5/data_preparation/verify_responses.py",
+      "revision": "afdab2c54075ade8c890331da099cc9b25d1f6a5",
+      "sha256": "cabbb0da8fbe44995b0b839c04075aafad89cac7fd00a0c91f32dde60fd4cc29",
+      "bytes": 4315,
+      "documents_read_lines": [],
+      "documents_assignment_target_lines": []
+    }
+  ],
+  "conclusion": "Converter and error insertion read documents[0]; no assignment to a documents field was found in these three published scripts. No officially justified additional source normalization/strip or raw-RagBench-to-intermediate-CSV mapping was established.",
+  "no_source_transform_added": true,
+  "no_fuzzy_or_strip_join": true,
+  "upstream_raw_response_answer_or_label_values_read": false,
+  "source_only_projection_result_preserved": "attempt-v2/result.json",
+  "original_generator_ragbench_revision_verified": false
+}

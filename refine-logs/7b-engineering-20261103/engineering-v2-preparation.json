@@ -1,0 +1,44 @@
+{
+  "schema": "explicit-engineering-admission-recovery-v2",
+  "prior_script_sha256": "8fb7e97786a176554b2fa23ee0fc8e86be88d6af31d2578e9febb0111d8730c4",
+  "prior_receipt_sha256": "ef92d8e48cfab47a590f3d0c0eec3d8ee4e50611a228362ec70e1159e57abb67",
+  "new_script_sha256": "8d559369a472fa7c5049b3c6a4a6ddfd4e3a9943976d28071f45195cd9c0e935",
+  "prior_actual_model_calls": 0,
+  "old_weights_loaded": false,
+  "changes": [
+    [
+      "RECEIPT = HERE / 'runtime-readiness.json'",
+      "RECEIPT = HERE / 'runtime-readiness-v2.json'"
+    ],
+    [
+      "STOP = HERE / 'STOP_7B_READINESS'",
+      "STOP = HERE / 'STOP_7B_READINESS_V2'"
+    ],
+    [
+      "GPU_FREE, ALLOCATOR_CAP = 7 * GIB, 13 * GIB // 2",
+      "GPU_FREE, ALLOCATOR_CAP = 13 * GIB // 2, 6 * GIB"
+    ],
+    [
+      "MAX_SECONDS, POLL_SECONDS = 3 * 3600, 30",
+      "MAX_SECONDS, POLL_SECONDS = 45 * 60, 30"
+    ],
+    [
+      "three-hour",
+      "45-minute"
+    ],
+    [
+      "ThreeHourDeadline",
+      "FortyFiveMinuteDeadline"
+    ],
+    [
+      "community7b-engineering-readiness-v1",
+      "community7b-engineering-readiness-v2"
+    ]
+  ],
+  "reason": "Prior postwarm free6.78GiB never reached fixed7GiB gate. Reduce the allowed PyTorch allocator budget from6.5 to6GiB and require6.5GiB actual postwarm free, leaving at least0.5GiB outside that smaller allocator budget. No numerical/model/quantization/score change.",
+  "resource_only": true,
+  "scientific_experiment": false,
+  "no_automatic_retry": true,
+  "model_assets": "same verified community saved NF4/BF16 nine assets",
+  "scope": "Exactly two synthetic short/512 forwards; no dataset, truth, labels, model selection or detector efficacy."
+}

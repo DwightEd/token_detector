@@ -789,6 +789,42 @@
           "sha256": "386f194c315275117ca36245b0da834c0198f6dcc11f5bc333ee2d574a8a0b68"
         }
       ]
+    },
+    {
+      "id": "F026",
+      "certainty": "exposed_toy_masked_question_bridge_failed_with_observed_role_collapse",
+      "claim": "H01148fixedmaskedqueries: burden0/4/12 correct9/16,8/16,10/16; sourceflip3/8,2/8,4/8 andeventflip1/8,0/8,2/8. All48caseAUROC.6371527778/AP.6798580339;96forwards12.3813288s. Same-name two-role collapse7/8,8/8,6/8; no double reversed cases.",
+      "does_not_imply": "No natural efficacy, internal attention causality, inherent information loss from erasure, or capacity failure of source-onlyQA. Do not rescue by prompt/model selection.",
+      "evidence": [
+        {
+          "path": "docs/results/h011_masked_reconstruction.json",
+          "sha256": "b7b9f2e427809021c8bed29a88b0e18b8ba536d4070f52fca49eb3c7ab7fb07e"
+        }
+      ]
+    },
+    {
+      "id": "F027",
+      "certainty": "pinned_RagBench_raw_doc0_exact_route_negative_metadata_only",
+      "claim": "FRED originalQ recovery retained162FinQA+130TATQA/252distinctsources; three-column id/question/documents projection of49666official upstream rows gave0exactdoc0 source matches. No official pre-converter normalization recipe established in the three inspected scripts.",
+      "does_not_imply": "Does not prove all question recovery impossible; no fuzzy/response/gold disambiguation or detector efficacy. HTTP/footer transport can contain other-column bytes/stats; only selected columns were materialized.",
+      "evidence": [
+        {
+          "path": "refine-logs/fred-question-recovery-20261103/completion-receipt.json",
+          "sha256": "a1a36dd4e075743438ddf43cf189682c8f20c7ec0b71ceecfbc6ae3627db9c00"
+        }
+      ]
+    },
+    {
+      "id": "F028",
+      "certainty": "community7B_short_and512_engineering_qualified_only",
+      "claim": "Savedcommunity Qwen2.5-7B NF4/BF16 passed exactly2synthetic forwards with cap6GiB, peakreserved5953814528bytes. Nine assets verified, no offload/install/modelretry/dataset. Prior7GiBgatewaiter exited0forward; explicit smaller-cap qualification separately preserved.",
+      "does_not_imply": "No4096 context readiness, detector accuracy, novelty, historical-generator identity or model selection.",
+      "evidence": [
+        {
+          "path": "refine-logs/7b-engineering-20261103/runtime-readiness-v2.json",
+          "sha256": "e067ade72f6916c0ae66abf084483f16e8afd0da89db7404c9e049a2b9d0f974"
+        }
+      ]
     }
   ],
   "rule": "New interventions need different predictions under competing explanations; known counts/cases are reused."

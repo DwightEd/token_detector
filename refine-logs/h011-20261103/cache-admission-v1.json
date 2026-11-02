@@ -1,0 +1,9 @@
+{
+  "old_observation_run_id": "c841a9359221a06af5bc04f1efe2c0b2d86b6691218ec09cdc97bc3deecfebf2",
+  "old_unique_message_candidate_pairs": 32,
+  "new_unique_message_candidate_pairs": 96,
+  "equal_message_candidate_pairs": 0,
+  "new_completion_upper_bound": 96,
+  "basis": "All message/candidate pairs differ before metadata. Exact full completion reuse is impossible when messages differ; protocol/source versions are not used to justify new observations.",
+  "reference_design_or_truth_opened": false
+}

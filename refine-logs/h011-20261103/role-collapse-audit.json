@@ -1,0 +1,1096 @@
+{
+  "schema": "h011-posthoc-role-collapse-v1",
+  "scope": "Existing raw choices only; no new model calls or method scores.",
+  "original_queries_sha256": "d9479d166e935ff0edcace2e2a256317bb7fe25a399ba4a65b41ba5b539af216",
+  "original_CPU_seal_sha256": "3949813ad8a04511a892a41ebf19278a2d0b024f48dcc3881159fbb76f769551",
+  "identity": "For two distinct true roles/two candidates/no ties: N_correct_queries=2*N_both_correct+N_collapsed; N_sources=N_both_correct+N_collapsed+N_both_reversed.",
+  "by_burden": {
+    "0": {
+      "source_matrices": 8,
+      "same_name_for_both_event_roles": 7,
+      "both_roles_correct": 1,
+      "both_roles_reversed": 0,
+      "collapsed_choice_is_first_event_reference": 5,
+      "correct_queries": 9
+    },
+    "4": {
+      "source_matrices": 8,
+      "same_name_for_both_event_roles": 8,
+      "both_roles_correct": 0,
+      "both_roles_reversed": 0,
+      "collapsed_choice_is_first_event_reference": 6,
+      "correct_queries": 8
+    },
+    "12": {
+      "source_matrices": 8,
+      "same_name_for_both_event_roles": 6,
+      "both_roles_correct": 2,
+      "both_roles_reversed": 0,
+      "collapsed_choice_is_first_event_reference": 5,
+      "correct_queries": 10
+    }
+  },
+  "records": [
+    {
+      "burden": 0,
+      "source_key": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+      "relation_family": "sole_signer",
+      "vocabulary": "lex1",
+      "source_direction": 0,
+      "events_in_source_order": [
+        "Quorren Accord",
+        "Meliston Accord"
+      ],
+      "query_keys": [
+        "9f5cea982f299d4b898e6617773893fff4f3c34ed5d23a9e21251845eb9e2473",
+        "6b8538734c15f5aff2580bd2318a344e7338c3c67d55a034c651fdc312584644"
+      ],
+      "choices": [
+        "Lena Cresswell",
+        "Lena Cresswell"
+      ],
+      "references": [
+        "Lena Cresswell",
+        "Tomas Brindle"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": true,
+      "conditional_probabilities": [
+        {
+          "Lena Cresswell": 0.9899865531524332,
+          "Tomas Brindle": 0.010013446847566701
+        },
+        {
+          "Lena Cresswell": 0.5926653915440383,
+          "Tomas Brindle": 0.4073346084559618
+        }
+      ],
+      "raw_canonical_log_odds": [
+        4.593762485890252,
+        0.3749949944287785
+      ],
+      "candidate_mass": [
+        0.999853685605127,
+        0.9998639257257527
+      ]
+    },
+    {
+      "burden": 0,
+      "source_key": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+      "relation_family": "sole_signer",
+      "vocabulary": "lex1",
+      "source_direction": 1,
+      "events_in_source_order": [
+        "Quorren Accord",
+        "Meliston Accord"
+      ],
+      "query_keys": [
+        "a8a629ac639013c6b1b8cbc39180e28aff11775f62b08174cfa3ad35072424e2",
+        "5ac477db59497e57e73373b945758461564127ef911f7e2aa1ec43d7ffeb664d"
+      ],
+      "choices": [
+        "Tomas Brindle",
+        "Tomas Brindle"
+      ],
+      "references": [
+        "Tomas Brindle",
+        "Lena Cresswell"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": true,
+      "conditional_probabilities": [
+        {
+          "Lena Cresswell": 1.4532703765507187e-08,
+          "Tomas Brindle": 0.9999999854672963
+        },
+        {
+          "Lena Cresswell": 2.81304005677527e-06,
+          "Tomas Brindle": 0.9999971869599433
+        }
+      ],
+      "raw_canonical_log_odds": [
+        -18.04686428055224,
+        -12.781241975636476
+      ],
+      "candidate_mass": [
+        0.9998490060219148,
+        0.9998398183423706
+      ]
+    },
+    {
+      "burden": 0,
+      "source_key": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+      "relation_family": "sole_signer",
+      "vocabulary": "lex2",
+      "source_direction": 0,
+      "events_in_source_order": [
+        "Corvellan Accord",
+        "Tremorin Accord"
+      ],
+      "query_keys": [
+        "352cc43679140ce4499c25a125b4f897de9580f03d20be7682a927514fee83fd",
+        "892d5d2465ada6f992bbba4f005fddb907a5432b752427ff084ecb000004d283"
+      ],
+      "choices": [
+        "Nadia Fennbrook",
+        "Nadia Fennbrook"
+      ],
+      "references": [
+        "Nadia Fennbrook",
+        "Hugo Valecrest"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": true,
+      "conditional_probabilities": [
+        {
+          "Hugo Valecrest": 5.255396143427414e-06,
+          "Nadia Fennbrook": 0.9999947446038565
+        },
+        {
+          "Hugo Valecrest": 0.0001795274309595765,
+          "Nadia Fennbrook": 0.9998204725690405
+        }
+      ],
+      "raw_canonical_log_odds": [
+        -12.156249916970086,
+        -8.62500299944729
+      ],
+      "candidate_mass": [
+        0.9998700333831831,
+        0.9998718399042322
+      ]
+    },
+    {
+      "burden": 0,
+      "source_key": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+      "relation_family": "winner",
+      "vocabulary": "lex2",
+      "source_direction": 0,
+      "events_in_source_order": [
+        "Raventon Cup",
+        "Dalespar Cup"
+      ],
+      "query_keys": [
+        "618b43f92ddab960bcaf3d69f8ebcc6b3c0b44906d7a60e183ba4be0109a2c2f",
+        "cf2a7e2a2198e3153a7014d4a72b8ff1939ab898c666a79d3434a4560c27e654"
+      ],
+      "choices": [
+        "Evan Calderby",
+        "Evan Calderby"
+      ],
+      "references": [
+        "Sana Whitmere",
+        "Evan Calderby"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": false,
+      "conditional_probabilities": [
+        {
+          "Evan Calderby": 0.971573400691744,
+          "Sana Whitmere": 0.028426599308256004
+        },
+        {
+          "Evan Calderby": 0.9875732646103196,
+          "Sana Whitmere": 0.01242673538968043
+        }
+      ],
+      "raw_canonical_log_odds": [
+        3.531591517747092,
+        4.375400454614205
+      ],
+      "candidate_mass": [
+        0.9998693058090158,
+        0.9998241177408064
+      ]
+    },
+    {
+      "burden": 0,
+      "source_key": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+      "relation_family": "winner",
+      "vocabulary": "lex2",
+      "source_direction": 1,
+      "events_in_source_order": [
+        "Raventon Cup",
+        "Dalespar Cup"
+      ],
+      "query_keys": [
+        "2d654cced3729202bd4d4d0a528dd4b2e269893f7d3a39b53e36e0ae7e66eb33",
+        "17f7766ce28dcaf0498786797c790981f166228bf56e6b1fce6a51bf956dfc12"
+      ],
+      "choices": [
+        "Evan Calderby",
+        "Evan Calderby"
+      ],
+      "references": [
+        "Evan Calderby",
+        "Sana Whitmere"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": true,
+      "conditional_probabilities": [
+        {
+          "Evan Calderby": 0.9950956238165971,
+          "Sana Whitmere": 0.004904376183402852
+        },
+        {
+          "Evan Calderby": 0.9919398223567856,
+          "Sana Whitmere": 0.008060177643214416
+        }
+      ],
+      "raw_canonical_log_odds": [
+        5.31271093168424,
+        4.812726846121311
+      ],
+      "candidate_mass": [
+        0.9998866799074942,
+        0.9998310703095287
+      ]
+    },
+    {
+      "burden": 0,
+      "source_key": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+      "relation_family": "winner",
+      "vocabulary": "lex1",
+      "source_direction": 1,
+      "events_in_source_order": [
+        "Virelan Cup",
+        "Nerowan Cup"
+      ],
+      "query_keys": [
+        "086e756dae1adc3a409927bbc283e13a4c93deead3f073711b9512d0ab3341ef",
+        "3d1f10fa4b037510c87417ea464d0cea54d5e337c16f828531567e9fbf6d9fef"
+      ],
+      "choices": [
+        "Oren Pellford",
+        "Mira Tanswick"
+      ],
+      "references": [
+        "Oren Pellford",
+        "Mira Tanswick"
+      ],
+      "correct_queries": 2,
+      "category": "both_roles_correct",
+      "collapsed_choice_is_first_event_reference": false,
+      "conditional_probabilities": [
+        {
+          "Mira Tanswick": 0.31406195828292377,
+          "Oren Pellford": 0.6859380417170763
+        },
+        {
+          "Mira Tanswick": 0.5467573978635424,
+          "Oren Pellford": 0.4532426021364576
+        }
+      ],
+      "raw_canonical_log_odds": [
+        -0.7811970196345541,
+        0.18757766239517082
+      ],
+      "candidate_mass": [
+        0.9998837802796724,
+        0.9998730453148208
+      ]
+    },
+    {
+      "burden": 0,
+      "source_key": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+      "relation_family": "sole_signer",
+      "vocabulary": "lex2",
+      "source_direction": 1,
+      "events_in_source_order": [
+        "Corvellan Accord",
+        "Tremorin Accord"
+      ],
+      "query_keys": [
+        "5b1fd83e8bd108eb825f5dd013df4c2201edef18b6794e14ba73fd339716df90",
+        "56755fd857258e73308d995121b2e5fd0fddfec11ef82d61c621afed557dc1b9"
+      ],
+      "choices": [
+        "Hugo Valecrest",
+        "Hugo Valecrest"
+      ],
+      "references": [
+        "Hugo Valecrest",
+        "Nadia Fennbrook"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": true,
+      "conditional_probabilities": [
+        {
+          "Hugo Valecrest": 0.9999999987703156,
+          "Nadia Fennbrook": 1.229684375036666e-09
+        },
+        {
+          "Hugo Valecrest": 0.9999996893797823,
+          "Nadia Fennbrook": 3.1062021765568964e-07
+        }
+      ],
+      "raw_canonical_log_odds": [
+        20.516508304922514,
+        14.984694525470825
+      ],
+      "candidate_mass": [
+        0.9998470064529896,
+        0.9988462435588197
+      ]
+    },
+    {
+      "burden": 0,
+      "source_key": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+      "relation_family": "winner",
+      "vocabulary": "lex1",
+      "source_direction": 0,
+      "events_in_source_order": [
+        "Virelan Cup",
+        "Nerowan Cup"
+      ],
+      "query_keys": [
+        "658f5e596f65723b824a4e116529bdf80fd127483af2f8a42a2390899b095a92",
+        "cdac9fcd7f94a8d7cdf18845589fe06d255507f7e1609f2e6d46fedbfe7858a7"
+      ],
+      "choices": [
+        "Oren Pellford",
+        "Oren Pellford"
+      ],
+      "references": [
+        "Mira Tanswick",
+        "Oren Pellford"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": false,
+      "conditional_probabilities": [
+        {
+          "Mira Tanswick": 0.1366128953923391,
+          "Oren Pellford": 0.863387104607661
+        },
+        {
+          "Mira Tanswick": 0.07370156867469373,
+          "Oren Pellford": 0.9262984313253062
+        }
+      ],
+      "raw_canonical_log_odds": [
+        -1.843711802154889,
+        -2.5311723792096963
+      ],
+      "candidate_mass": [
+        0.9998883218483257,
+        0.9998312242459986
+      ]
+    },
+    {
+      "burden": 4,
+      "source_key": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+      "relation_family": "sole_signer",
+      "vocabulary": "lex1",
+      "source_direction": 0,
+      "events_in_source_order": [
+        "Quorren Accord",
+        "Meliston Accord"
+      ],
+      "query_keys": [
+        "c6e05554644f0f6aa01d605c88d6b4e4260834d5c1f9526957f0dcef151f678d",
+        "c3bf9b496255bfdfe4280c219d82bce34a0b7ccbf4bcb5a4e65f3e13d184b89b"
+      ],
+      "choices": [
+        "Lena Cresswell",
+        "Lena Cresswell"
+      ],
+      "references": [
+        "Lena Cresswell",
+        "Tomas Brindle"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": true,
+      "conditional_probabilities": [
+        {
+          "Lena Cresswell": 0.9808788582023715,
+          "Tomas Brindle": 0.019121141797628385
+        },
+        {
+          "Lena Cresswell": 0.6723436139264071,
+          "Tomas Brindle": 0.32765638607359293
+        }
+      ],
+      "raw_canonical_log_odds": [
+        3.9376543405796838,
+        0.7188040842560568
+      ],
+      "candidate_mass": [
+        0.9998985028970466,
+        0.9998736403504144
+      ]
+    },
+    {
+      "burden": 4,
+      "source_key": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+      "relation_family": "sole_signer",
+      "vocabulary": "lex1",
+      "source_direction": 1,
+      "events_in_source_order": [
+        "Quorren Accord",
+        "Meliston Accord"
+      ],
+      "query_keys": [
+        "8f26f678054c889076b0b279102457afc73f823eb7212f357ebea17b6e5e559e",
+        "6f8af76f6590b954bbbbc0b3abb65eeb53eb1a4f638ebce05251504c2f4ff49c"
+      ],
+      "choices": [
+        "Tomas Brindle",
+        "Tomas Brindle"
+      ],
+      "references": [
+        "Tomas Brindle",
+        "Lena Cresswell"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": true,
+      "conditional_probabilities": [
+        {
+          "Lena Cresswell": 1.3287638447705211e-06,
+          "Tomas Brindle": 0.9999986712361552
+        },
+        {
+          "Lena Cresswell": 0.0001159191213694571,
+          "Tomas Brindle": 0.9998840808786305
+        }
+      ],
+      "raw_canonical_log_odds": [
+        -13.531260159185248,
+        -9.062501913768624
+      ],
+      "candidate_mass": [
+        0.9998428518458714,
+        0.9998092181259095
+      ]
+    },
+    {
+      "burden": 4,
+      "source_key": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+      "relation_family": "sole_signer",
+      "vocabulary": "lex2",
+      "source_direction": 0,
+      "events_in_source_order": [
+        "Corvellan Accord",
+        "Tremorin Accord"
+      ],
+      "query_keys": [
+        "26492c2b4c984bedb527830897f234377a442f9ab413e549761b9c7b6f2b5a3f",
+        "6d3900160fb07f9ec0e1ed66666d438f53b729d55088bc101b8b4bce28e1c25a"
+      ],
+      "choices": [
+        "Nadia Fennbrook",
+        "Nadia Fennbrook"
+      ],
+      "references": [
+        "Nadia Fennbrook",
+        "Hugo Valecrest"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": true,
+      "conditional_probabilities": [
+        {
+          "Hugo Valecrest": 6.786861796492061e-07,
+          "Nadia Fennbrook": 0.9999993213138204
+        },
+        {
+          "Hugo Valecrest": 0.00011960099712574334,
+          "Nadia Fennbrook": 0.9998803990028743
+        }
+      ],
+      "raw_canonical_log_odds": [
+        -14.203106317732118,
+        -9.031229771160834
+      ],
+      "candidate_mass": [
+        0.9998768519724739,
+        0.9998764277173892
+      ]
+    },
+    {
+      "burden": 4,
+      "source_key": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+      "relation_family": "winner",
+      "vocabulary": "lex2",
+      "source_direction": 0,
+      "events_in_source_order": [
+        "Raventon Cup",
+        "Dalespar Cup"
+      ],
+      "query_keys": [
+        "eb3d6cc4aaa04e9d973467648b468cb933ef7f7e96c94e4eae893db91bd65a30",
+        "51598ab1c465681c00437580b2c5f70c784ec6e1f51c52d805954730214f7e22"
+      ],
+      "choices": [
+        "Evan Calderby",
+        "Evan Calderby"
+      ],
+      "references": [
+        "Sana Whitmere",
+        "Evan Calderby"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": false,
+      "conditional_probabilities": [
+        {
+          "Evan Calderby": 0.9304773594316237,
+          "Sana Whitmere": 0.06952264056837627
+        },
+        {
+          "Evan Calderby": 0.9808824863543146,
+          "Sana Whitmere": 0.01911751364568536
+        }
+      ],
+      "raw_canonical_log_odds": [
+        2.594045281075548,
+        3.9378478030252033
+      ],
+      "candidate_mass": [
+        0.999856524067291,
+        0.9998402541967158
+      ]
+    },
+    {
+      "burden": 4,
+      "source_key": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+      "relation_family": "winner",
+      "vocabulary": "lex2",
+      "source_direction": 1,
+      "events_in_source_order": [
+        "Raventon Cup",
+        "Dalespar Cup"
+      ],
+      "query_keys": [
+        "06a300dc5e77a6bd499d0dd85f95a05ba9c0a86cafc122c0bf623df9c6769770",
+        "3e07914c922ddae01053060ec440b5978f58c693128a134fee5baced464c8ded"
+      ],
+      "choices": [
+        "Evan Calderby",
+        "Evan Calderby"
+      ],
+      "references": [
+        "Evan Calderby",
+        "Sana Whitmere"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": true,
+      "conditional_probabilities": [
+        {
+          "Evan Calderby": 0.9783885715794134,
+          "Sana Whitmere": 0.021611428420586512
+        },
+        {
+          "Evan Calderby": 0.9802846516050874,
+          "Sana Whitmere": 0.019715348394912565
+        }
+      ],
+      "raw_canonical_log_odds": [
+        3.8126846352653594,
+        3.9064455515716716
+      ],
+      "candidate_mass": [
+        0.999877537790288,
+        0.999862971030539
+      ]
+    },
+    {
+      "burden": 4,
+      "source_key": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+      "relation_family": "winner",
+      "vocabulary": "lex1",
+      "source_direction": 1,
+      "events_in_source_order": [
+        "Virelan Cup",
+        "Nerowan Cup"
+      ],
+      "query_keys": [
+        "dbf421043e87dd5c9762f4e8fc062c2cd2a038738582a4118edbcc5eb2dfbce7",
+        "470733cf2a9ea8888660f93db470530c3e1bb6dfb771e14f54fc0a94a47e45b9"
+      ],
+      "choices": [
+        "Oren Pellford",
+        "Oren Pellford"
+      ],
+      "references": [
+        "Oren Pellford",
+        "Mira Tanswick"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": true,
+      "conditional_probabilities": [
+        {
+          "Mira Tanswick": 0.25684647032684516,
+          "Oren Pellford": 0.7431535296731548
+        },
+        {
+          "Mira Tanswick": 0.18714808531843508,
+          "Oren Pellford": 0.8128519146815648
+        }
+      ],
+      "raw_canonical_log_odds": [
+        -1.062424143532926,
+        -1.4686487426282078
+      ],
+      "candidate_mass": [
+        0.9998685815165522,
+        0.9998309138184825
+      ]
+    },
+    {
+      "burden": 4,
+      "source_key": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+      "relation_family": "sole_signer",
+      "vocabulary": "lex2",
+      "source_direction": 1,
+      "events_in_source_order": [
+        "Corvellan Accord",
+        "Tremorin Accord"
+      ],
+      "query_keys": [
+        "6794fa7d16c26ac2fc4f288b38c1fb9f1e77e53c43b6de86267c0dc990c71629",
+        "e6e93941f82e369277585b4ea023113f66e0014ee874c634c73e23f1fc99c6e5"
+      ],
+      "choices": [
+        "Hugo Valecrest",
+        "Hugo Valecrest"
+      ],
+      "references": [
+        "Hugo Valecrest",
+        "Nadia Fennbrook"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": true,
+      "conditional_probabilities": [
+        {
+          "Hugo Valecrest": 0.9999999972935698,
+          "Nadia Fennbrook": 2.7064301954884682e-09
+        },
+        {
+          "Hugo Valecrest": 0.999999497918585,
+          "Nadia Fennbrook": 5.020814151034782e-07
+        }
+      ],
+      "raw_canonical_log_odds": [
+        19.727635338749995,
+        14.504503046842103
+      ],
+      "candidate_mass": [
+        0.999853129665504,
+        0.9972415532637829
+      ]
+    },
+    {
+      "burden": 4,
+      "source_key": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+      "relation_family": "winner",
+      "vocabulary": "lex1",
+      "source_direction": 0,
+      "events_in_source_order": [
+        "Virelan Cup",
+        "Nerowan Cup"
+      ],
+      "query_keys": [
+        "3e0ac256ca7cc35c014dc4b97d464f208cb831bd3d4fe11c50278e18c3caa36e",
+        "de881bf4e50b65b7bca7b8409f5be4668504de2014c2f824a11f45452785a80f"
+      ],
+      "choices": [
+        "Oren Pellford",
+        "Oren Pellford"
+      ],
+      "references": [
+        "Mira Tanswick",
+        "Oren Pellford"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": false,
+      "conditional_probabilities": [
+        {
+          "Mira Tanswick": 0.30075572700477166,
+          "Oren Pellford": 0.6992442729952284
+        },
+        {
+          "Mira Tanswick": 0.03846916953663234,
+          "Oren Pellford": 0.9615308304633676
+        }
+      ],
+      "raw_canonical_log_odds": [
+        -0.8437017447545507,
+        -3.218669500246424
+      ],
+      "candidate_mass": [
+        0.9998942326674205,
+        0.9998169947922315
+      ]
+    },
+    {
+      "burden": 12,
+      "source_key": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+      "relation_family": "sole_signer",
+      "vocabulary": "lex1",
+      "source_direction": 0,
+      "events_in_source_order": [
+        "Quorren Accord",
+        "Meliston Accord"
+      ],
+      "query_keys": [
+        "14347ee174d97ce619d6c2144d761297b71a0bea7deb50808f4473088b7411f0",
+        "48fbc8828e356db658c1988d92f76bf206b4f147b9a35bb74ae3fb0bca51c637"
+      ],
+      "choices": [
+        "Lena Cresswell",
+        "Lena Cresswell"
+      ],
+      "references": [
+        "Lena Cresswell",
+        "Tomas Brindle"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": true,
+      "conditional_probabilities": [
+        {
+          "Lena Cresswell": 0.9999657388009334,
+          "Tomas Brindle": 3.42611990665703e-05
+        },
+        {
+          "Lena Cresswell": 0.9669156191243945,
+          "Tomas Brindle": 0.03308438087560554
+        }
+      ],
+      "raw_canonical_log_odds": [
+        10.281462804870522,
+        3.375049937030557
+      ],
+      "candidate_mass": [
+        0.9998991095537436,
+        0.9998989641069584
+      ]
+    },
+    {
+      "burden": 12,
+      "source_key": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+      "relation_family": "sole_signer",
+      "vocabulary": "lex1",
+      "source_direction": 1,
+      "events_in_source_order": [
+        "Quorren Accord",
+        "Meliston Accord"
+      ],
+      "query_keys": [
+        "15561e12b121b1fb94e7f816fe6cc8747b832fe659afc336c035f210786deb08",
+        "83d470eb739d6cf122f2049a80bc6972bacbc5b561cb8bd52a59216fe9e2d091"
+      ],
+      "choices": [
+        "Tomas Brindle",
+        "Tomas Brindle"
+      ],
+      "references": [
+        "Tomas Brindle",
+        "Lena Cresswell"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": true,
+      "conditional_probabilities": [
+        {
+          "Lena Cresswell": 3.4371896587151445e-11,
+          "Tomas Brindle": 0.9999999999656282
+        },
+        {
+          "Lena Cresswell": 2.322285682074225e-08,
+          "Tomas Brindle": 0.9999999767771431
+        }
+      ],
+      "raw_canonical_log_odds": [
+        -24.093781845084074,
+        -17.578128812259347
+      ],
+      "candidate_mass": [
+        0.9998549037984141,
+        0.9997552222702137
+      ]
+    },
+    {
+      "burden": 12,
+      "source_key": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+      "relation_family": "sole_signer",
+      "vocabulary": "lex2",
+      "source_direction": 0,
+      "events_in_source_order": [
+        "Corvellan Accord",
+        "Tremorin Accord"
+      ],
+      "query_keys": [
+        "ed50aef85228be549197e1c917db4a4df9d1df24c8827b3d6d05ecac944d9768",
+        "239a26f317010455d66450dc7af1c32cdaafb917b9fc19050da8f014aaca1f81"
+      ],
+      "choices": [
+        "Nadia Fennbrook",
+        "Nadia Fennbrook"
+      ],
+      "references": [
+        "Nadia Fennbrook",
+        "Hugo Valecrest"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": true,
+      "conditional_probabilities": [
+        {
+          "Hugo Valecrest": 9.004700707558769e-10,
+          "Nadia Fennbrook": 0.9999999990995299
+        },
+        {
+          "Hugo Valecrest": 2.1234116592354573e-06,
+          "Nadia Fennbrook": 0.9999978765883406
+        }
+      ],
+      "raw_canonical_log_odds": [
+        -20.828104187215512,
+        -13.062484366134786
+      ],
+      "candidate_mass": [
+        0.9998770389559554,
+        0.9998866192612721
+      ]
+    },
+    {
+      "burden": 12,
+      "source_key": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+      "relation_family": "winner",
+      "vocabulary": "lex2",
+      "source_direction": 0,
+      "events_in_source_order": [
+        "Raventon Cup",
+        "Dalespar Cup"
+      ],
+      "query_keys": [
+        "b85d44c53df04698c0f00ba168eb2840a60bfe6407f62b581d8fc3f24f96214f",
+        "68aad4c910096e31840ee285757b9930bea1deaf61c9ae9d6bdb93ea5b9759a1"
+      ],
+      "choices": [
+        "Sana Whitmere",
+        "Evan Calderby"
+      ],
+      "references": [
+        "Sana Whitmere",
+        "Evan Calderby"
+      ],
+      "correct_queries": 2,
+      "category": "both_roles_correct",
+      "collapsed_choice_is_first_event_reference": false,
+      "conditional_probabilities": [
+        {
+          "Evan Calderby": 0.0827149820895699,
+          "Sana Whitmere": 0.91728501791043
+        },
+        {
+          "Evan Calderby": 0.731116439935485,
+          "Sana Whitmere": 0.268883560064515
+        }
+      ],
+      "raw_canonical_log_odds": [
+        -2.406017492041876,
+        1.0002943119458898
+      ],
+      "candidate_mass": [
+        0.9996979961074971,
+        0.9998145988643228
+      ]
+    },
+    {
+      "burden": 12,
+      "source_key": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+      "relation_family": "winner",
+      "vocabulary": "lex2",
+      "source_direction": 1,
+      "events_in_source_order": [
+        "Raventon Cup",
+        "Dalespar Cup"
+      ],
+      "query_keys": [
+        "aa24c128f8f2466361ccf36c23f36196c10df88e2c10905544052554c9e978a2",
+        "a8a3f0803d9ac16fa7a3d3f2b022de6968329d2dafb2b5e9b6038f00ab9ccb22"
+      ],
+      "choices": [
+        "Evan Calderby",
+        "Evan Calderby"
+      ],
+      "references": [
+        "Evan Calderby",
+        "Sana Whitmere"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": true,
+      "conditional_probabilities": [
+        {
+          "Evan Calderby": 0.8872216237884702,
+          "Sana Whitmere": 0.1127783762115297
+        },
+        {
+          "Evan Calderby": 0.8808183041183704,
+          "Sana Whitmere": 0.11918169588162977
+        }
+      ],
+      "raw_canonical_log_odds": [
+        2.0626701883752823,
+        2.0002021816350286
+      ],
+      "candidate_mass": [
+        0.9998913061749052,
+        0.9998751653678689
+      ]
+    },
+    {
+      "burden": 12,
+      "source_key": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+      "relation_family": "winner",
+      "vocabulary": "lex1",
+      "source_direction": 1,
+      "events_in_source_order": [
+        "Virelan Cup",
+        "Nerowan Cup"
+      ],
+      "query_keys": [
+        "0177149b785fdb41caf4837eec15339e5874f704b169d670d45e21eba4d9c3e9",
+        "a559158546357e8ab6e66de4991309d8eb25e206954c718351c460edfd3b3f65"
+      ],
+      "choices": [
+        "Mira Tanswick",
+        "Mira Tanswick"
+      ],
+      "references": [
+        "Oren Pellford",
+        "Mira Tanswick"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": false,
+      "conditional_probabilities": [
+        {
+          "Mira Tanswick": 0.9450005449224946,
+          "Oren Pellford": 0.05499945507750533
+        },
+        {
+          "Mira Tanswick": 0.7931281511184607,
+          "Oren Pellford": 0.20687184888153934
+        }
+      ],
+      "raw_canonical_log_odds": [
+        2.8438622266294686,
+        1.3438852974793996
+      ],
+      "candidate_mass": [
+        0.9999214372816062,
+        0.9998995089165889
+      ]
+    },
+    {
+      "burden": 12,
+      "source_key": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+      "relation_family": "sole_signer",
+      "vocabulary": "lex2",
+      "source_direction": 1,
+      "events_in_source_order": [
+        "Corvellan Accord",
+        "Tremorin Accord"
+      ],
+      "query_keys": [
+        "14bc1ca79f5134f8263e39313f858b59af0a9876e3beee7a4e0a0f426659513b",
+        "17d97c169ceac01c1f9f35d265228923dce1c5710764c443eb5ca13b4042fed6"
+      ],
+      "choices": [
+        "Hugo Valecrest",
+        "Hugo Valecrest"
+      ],
+      "references": [
+        "Hugo Valecrest",
+        "Nadia Fennbrook"
+      ],
+      "correct_queries": 1,
+      "category": "same_name_for_both_event_roles",
+      "collapsed_choice_is_first_event_reference": true,
+      "conditional_probabilities": [
+        {
+          "Hugo Valecrest": 0.9999999999708056,
+          "Nadia Fennbrook": 2.9194514302875806e-11
+        },
+        {
+          "Hugo Valecrest": 0.9999999944978322,
+          "Nadia Fennbrook": 5.50216774824016e-09
+        }
+      ],
+      "raw_canonical_log_odds": [
+        24.25704029061408,
+        19.01812368081336
+      ],
+      "candidate_mass": [
+        0.9998834472674504,
+        0.9998270953708545
+      ]
+    },
+    {
+      "burden": 12,
+      "source_key": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+      "relation_family": "winner",
+      "vocabulary": "lex1",
+      "source_direction": 0,
+      "events_in_source_order": [
+        "Virelan Cup",
+        "Nerowan Cup"
+      ],
+      "query_keys": [
+        "2a5cb8ceba74e04135ee70de8b134f7c8b72cb9dc3f570e08c2b178b6acb70f1",
+        "d63d2cea1cce356408df6def0850977205d94f160c06496b7d2671a11ef525ac"
+      ],
+      "choices": [
+        "Mira Tanswick",
+        "Oren Pellford"
+      ],
+      "references": [
+        "Mira Tanswick",
+        "Oren Pellford"
+      ],
+      "correct_queries": 2,
+      "category": "both_roles_correct",
+      "collapsed_choice_is_first_event_reference": false,
+      "conditional_probabilities": [
+        {
+          "Mira Tanswick": 0.8872136483118767,
+          "Oren Pellford": 0.1127863516881234
+        },
+        {
+          "Mira Tanswick": 0.25686070149347423,
+          "Oren Pellford": 0.7431392985065258
+        }
+      ],
+      "raw_canonical_log_odds": [
+        2.062590483426767,
+        -1.0623495878961187
+      ],
+      "candidate_mass": [
+        0.9999159644881067,
+        0.9998098591240699
+      ]
+    }
+  ],
+  "limitations": [
+    "A collapsed output is observable behavior, not proof of an internal attention or generation cause.",
+    "Event and person anchors remain logically sufficient in the toy grammar; this does not prove an information-theoretic loss from erasure.",
+    "No method/threshold/prompt is selected from these posthoc outcomes."
+  ]
+}

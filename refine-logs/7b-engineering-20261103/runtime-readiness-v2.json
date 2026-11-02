@@ -1,0 +1,256 @@
+{
+  "schema": "community7b-engineering-readiness-v2",
+  "status": "engineering_ready_two_synthetic_forwards_only",
+  "stage": "complete",
+  "started_utc": "2026-11-02T20:36:45.283376+00:00",
+  "helper_pid": 23348,
+  "python": "D:\\projects\\research\\envs\\token-detector-cu128\\Scripts\\python.exe",
+  "python_version": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+  "script": "D:\\projects\\research\\token_detector\\outputs\\larger-reference-readiness-20261103\\qualify_runtime_with_reserved_context_v2.py",
+  "script_sha256": "8d559369a472fa7c5049b3c6a4a6ddfd4e3a9943976d28071f45195cd9c0e935",
+  "model_id": "unsloth/Qwen2.5-7B-Instruct-bnb-4bit",
+  "revision": "bdd404162d94997f390efbfa660eb3f21cbbc81d",
+  "download_script_sha256": "74592d261cbd6d526ef58d4826ad4df5941635d985f2ce63774dae3fa72545b6",
+  "maximum_wall_seconds": 2700,
+  "poll_seconds": 30,
+  "thresholds": {
+    "prewarm_ram": 3221225472,
+    "postwarm_ram": 2469606196,
+    "free_gpu": 6979321856,
+    "allocator_cap": 6442450944
+  },
+  "forward_attempts": 2,
+  "forward_successes": 2,
+  "forwards": [
+    {
+      "name": "synthetic_short",
+      "input_shape": [
+        1,
+        43
+      ],
+      "logits_shape": [
+        1,
+        1,
+        152064
+      ],
+      "finite_logits": true,
+      "engineering_label_logits_finite": true,
+      "seconds": 1.1317213999573141,
+      "peak_allocated_bytes": 5740127232,
+      "peak_reserved_bytes": 5796528128,
+      "use_cache": false,
+      "logits_to_keep": 1,
+      "semantic_prediction_or_accuracy": null
+    },
+    {
+      "name": "synthetic_exact_512",
+      "input_shape": [
+        1,
+        512
+      ],
+      "logits_shape": [
+        1,
+        1,
+        152064
+      ],
+      "finite_logits": true,
+      "engineering_label_logits_finite": true,
+      "seconds": 0.31905779999215156,
+      "peak_allocated_bytes": 5786674688,
+      "peak_reserved_bytes": 5953814528,
+      "use_cache": false,
+      "logits_to_keep": 1,
+      "semantic_prediction_or_accuracy": null
+    }
+  ],
+  "weights_loaded": true,
+  "automatic_retry": false,
+  "dataset_or_gold_opened": false,
+  "applications_closed": false,
+  "user_processes_terminated": false,
+  "packages_installed": false,
+  "model_assets_modified": false,
+  "scientific_scope": "Community reference engineering only; no historical replay, semantic accuracy, detector efficacy or method adoption.",
+  "wall_seconds": 35.80250280001201,
+  "updated_utc": "2026-11-02T20:37:21.085861+00:00",
+  "runtime_versions": {
+    "torch": "2.8.0+cu128",
+    "transformers": "4.57.1",
+    "bitsandbytes": "0.48.0",
+    "accelerate": "1.10.1",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.22.2"
+  },
+  "h007_exit_gate": {
+    "run_id": "92cf2597ab7d2217583f07048001da2d715530fee62de9aa314f3c3eedcb8d88",
+    "state_sha256": "28c52448fc17b8bd0d2832613ce68309a754cf9de218a516346ab0a62aa91aa3",
+    "seal_sha256": "36118e42cb86960ba5581a48739e00a0d9a344870586013205babbc8fa94bbf1",
+    "complete_sha256": "8d9d3579bfcb908909799d397f229c52e69973855224683846a6ccbe4069fb28",
+    "exit_witness_utc": "2026-11-02T19:06:07.535977+00:00",
+    "process_identity": {
+      "pid": 59824,
+      "present": false,
+      "interpretation": "Pinned H007 worker absent or exited"
+    },
+    "scope": "Sealed completion identity only; no inference inputs or construction truth are opened"
+  },
+  "download": {
+    "status": "ready_assets_only_no_model_load",
+    "receipt_sha256": "dc2664ef788e8ca855e9831924cb4db34a7783820b8a42cecf0cd4047a370c69"
+  },
+  "model_files": [
+    {
+      "file": "added_tokens.json",
+      "bytes": 605,
+      "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b"
+    },
+    {
+      "file": "config.json",
+      "bytes": 1338,
+      "sha256": "c9b481809ae2e99227ac323b77a9da0b5387a0a21f46329327132273435fa3f7"
+    },
+    {
+      "file": "generation_config.json",
+      "bytes": 271,
+      "sha256": "424e77633729a4c63a0810e0fa32e3344b03499cd3a0b2fc626bfae19e7eb923"
+    },
+    {
+      "file": "merges.txt",
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    {
+      "file": "model.safetensors",
+      "bytes": 5547254622,
+      "sha256": "99b85155b7bb40344d8c3938c8ec1147b27028804bca5d2e5559cb8e6533747d"
+    },
+    {
+      "file": "special_tokens_map.json",
+      "bytes": 614,
+      "sha256": "b5acd1507cb3a3539e63369cb4a2b675a599cf13afe62282d371518288967797"
+    },
+    {
+      "file": "tokenizer.json",
+      "bytes": 11421896,
+      "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa"
+    },
+    {
+      "file": "tokenizer_config.json",
+      "bytes": 7362,
+      "sha256": "0553ada6e92b1a29b4431c72782c6e5e6ab675ef0b20ceb2833cd1074c7fb932"
+    },
+    {
+      "file": "vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  ],
+  "download_receipt_sha256": "dc2664ef788e8ca855e9831924cb4db34a7783820b8a42cecf0cd4047a370c69",
+  "saved_quantization_config": {
+    "_load_in_4bit": true,
+    "_load_in_8bit": false,
+    "bnb_4bit_compute_dtype": "bfloat16",
+    "bnb_4bit_quant_storage": "uint8",
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": true,
+    "llm_int8_enable_fp32_cpu_offload": false,
+    "llm_int8_has_fp16_weight": false,
+    "llm_int8_skip_modules": [
+      "lm_head",
+      "multi_modal_projector",
+      "merger",
+      "modality_projection"
+    ],
+    "llm_int8_threshold": 6.0,
+    "load_in_4bit": true,
+    "load_in_8bit": false,
+    "quant_method": "bitsandbytes"
+  },
+  "available_ram_bytes": 2832019456,
+  "external_gpu": {
+    "free_bytes": 8189378560,
+    "uuid": "GPU-739f8cda-c896-ac87-8202-b998e91f1395",
+    "driver_version": "573.24"
+  },
+  "hardware": {
+    "device": "cuda:0",
+    "name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "capability": [
+      12,
+      0
+    ],
+    "compiled_architectures": [
+      "sm_61",
+      "sm_70",
+      "sm_75",
+      "sm_80",
+      "sm_86",
+      "sm_90",
+      "sm_100",
+      "sm_120"
+    ]
+  },
+  "free_cuda_bytes": 7283408896,
+  "admission": {
+    "prewarm_minimum_ram_bytes": 3221225472,
+    "postwarm_minimum_ram_bytes": 2469606196,
+    "minimum_free_gpu_bytes": 6979321856,
+    "admitted_postwarm_ram_bytes": 2832019456,
+    "admitted_postwarm_gpu_bytes": 7283408896,
+    "allocator_limit_bytes": 6442450944,
+    "allocator_fraction": 0.753813003703732,
+    "allocator_scope": "PyTorch caching allocator only; external CUDA allocations are outside this cap"
+  },
+  "synthetic_inputs": {
+    "short_messages": [
+      {
+        "role": "user",
+        "content": "Choose A, B, or C for a runtime engineering shape check."
+      }
+    ],
+    "short_tokens": 43,
+    "boundary_tokens": 512,
+    "boundary_repeated_non_special_token": 97915,
+    "truncation": false,
+    "label_token_ids": {
+      "A": 32,
+      "B": 33,
+      "C": 34
+    },
+    "semantic_labels_or_expected_predictions": null
+  },
+  "loaded_model": {
+    "class_name": "Qwen2ForCausalLM",
+    "dtype": "torch.bfloat16",
+    "attention": "sdpa",
+    "hf_device_map": {
+      "": "0"
+    },
+    "quantization_config": {
+      "quant_method": "bitsandbytes",
+      "_load_in_8bit": false,
+      "_load_in_4bit": true,
+      "llm_int8_threshold": 6.0,
+      "llm_int8_skip_modules": [
+        "lm_head",
+        "multi_modal_projector",
+        "merger",
+        "modality_projection"
+      ],
+      "llm_int8_enable_fp32_cpu_offload": false,
+      "llm_int8_has_fp16_weight": false,
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_use_double_quant": true,
+      "bnb_4bit_compute_dtype": "bfloat16",
+      "bnb_4bit_quant_storage": "uint8",
+      "load_in_4bit": true,
+      "load_in_8bit": false
+    },
+    "load_seconds": 9.33391670009587,
+    "peak_allocated_bytes": 5588288512,
+    "peak_reserved_bytes": 5628755968
+  },
+  "peak_reserved_bytes": 5953814528,
+  "peak_allocated_bytes": 5786674688,
+  "finished_utc": "2026-11-02T20:37:21.085835+00:00"
+}

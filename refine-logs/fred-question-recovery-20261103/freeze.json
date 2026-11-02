@@ -1,0 +1,7 @@
+{
+  "plan.json": "ba10e46073e775811314b03a2255c5d4646fe66170529f06e2bbde6ec9c6bc29",
+  "upstream-file-metadata.json": "f0f1980752ec1d28ea4acce878cdf2ae332c49102a8bd0d43ba1601543ccf906",
+  "upstream-convert_format.py": "99dd66cb4e52a3a07319d78393ecd644958c0f9bdeed2f78c56a06f78c51a6e2",
+  "finqa-local-source-projection.jsonl": "6ab2ed80bb4a0b93a537517964b6b217e9dd8a0c2cab7b35bc3841d88379f94b",
+  "tatqa-local-source-projection.jsonl": "6cf0d80b3a8297b367556d153b8cecefdba8fdf122006d3fd65ee94d5efa94a9"
+}

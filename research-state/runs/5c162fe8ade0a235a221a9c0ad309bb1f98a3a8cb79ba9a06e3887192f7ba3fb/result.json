@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "run_id": "5c162fe8ade0a235a221a9c0ad309bb1f98a3a8cb79ba9a06e3887192f7ba3fb",
+  "completed_utc": "2026-11-02T20:41:40.145679+00:00",
+  "outcome": "inconclusive",
+  "conclusion": "All96 masked-question observations reconstructed; all fixed burdens and full old source-question control retained after CPUfreeze. Exposed narrow bridge only, no natural efficacy or promotion.",
+  "artifacts": [
+    {
+      "path": "outputs/h011-masked-20261103/posthoc_review_v1/candidate-observations.json",
+      "sha256": "6ddeb0118c98ff6aa7bc8a6826fa27c801c4d7dceb82a79d37a1242a1ccffc77"
+    },
+    {
+      "path": "outputs/h011-masked-20261103/posthoc_review_v1/cases.json",
+      "sha256": "806671312df03086a29dde0dd973bac58cc2ab0f411a63409dcf86e082aa284f"
+    },
+    {
+      "path": "outputs/h011-masked-20261103/posthoc_review_v1/complete.json",
+      "sha256": "9d9ceee7c337da6895a6789278f3ab6deabcf7dccc883ea37f1ce277552680f2"
+    },
+    {
+      "path": "outputs/h011-masked-20261103/posthoc_review_v1/freeze.json",
+      "sha256": "64c43882a17caa773a3d41185ea79236ea671dc68a0f910ef4b03f2823a0ef9c"
+    },
+    {
+      "path": "outputs/h011-masked-20261103/posthoc_review_v1/h008-control.json",
+      "sha256": "0e0c5312bc7a22acd078aefef53a21b8ea8aa87d172ce4ebba0fd9acce28b848"
+    },
+    {
+      "path": "outputs/h011-masked-20261103/posthoc_review_v1/plan.json",
+      "sha256": "dc52ecaf5a470b2471fe5dc6374b6f86ed5eabed137acc91072399f5971219ab"
+    },
+    {
+      "path": "outputs/h011-masked-20261103/posthoc_review_v1/protocol.json",
+      "sha256": "13323e88adf51d4b39c6722b71da7932804aed31f98ca24ed084f2e1f173c62e"
+    },
+    {
+      "path": "outputs/h011-masked-20261103/posthoc_review_v1/queries.json",
+      "sha256": "d9479d166e935ff0edcace2e2a256317bb7fe25a399ba4a65b41ba5b539af216"
+    },
+    {
+      "path": "outputs/h011-masked-20261103/posthoc_review_v1/reference-release.json",
+      "sha256": "441d336e63614e4dbd1597fe5ed4e9f5ad7dc316c20cb3c5f441696494f22b5a"
+    },
+    {
+      "path": "outputs/h011-masked-20261103/posthoc_review_v1/seal.json",
+      "sha256": "3949813ad8a04511a892a41ebf19278a2d0b024f48dcc3881159fbb76f769551"
+    },
+    {
+      "path": "outputs/h011-masked-20261103/posthoc_review_v1/source_identity.json",
+      "sha256": "93c9d5b1cdca14bd5f477d67c263492b3a4ecb196d0e007475137b04efd31299"
+    },
+    {
+      "path": "outputs/h011-masked-20261103/posthoc_review_v1/summary.json",
+      "sha256": "bceaf8637e98e4852270f7b1a52f72c9ba6cb4c7d2c1919288d114abef6e85a0"
+    },
+    {
+      "path": "outputs/h011-masked-20261103/evaluation-admission-v1.json",
+      "sha256": "0218ef04bc61bcb6b5badc54eecdd4f79711fef7783dc41073592c94cc7f93f6"
+    },
+    {
+      "path": "outputs/h011-masked-20261103/post-review-reference-binding-v1.json",
+      "sha256": "91b4b485d0531db957f5b104aaa99d45a3478bdca2a43d4df2b380bb1dd386e0"
+    },
+    {
+      "path": "outputs/h007-burden-20261103/inference/plan.json",
+      "sha256": "7d8e37c4f319b6a851ee7d11f4ae0eb845e1d98d7ae37f4c19355010bf12418d"
+    },
+    {
+      "path": "outputs/h007-burden-20261103/construction/construction_truth.jsonl",
+      "sha256": "b778cdc030f8e8d54b8557eb5a5071ee80ac41fff9bdf54fccb4d04a521423d6"
+    },
+    {
+      "path": "outputs/h007-burden-20261103/construction/seal.json",
+      "sha256": "66acd0c7bff6282b9643a9e951aaedd2d8e652cd5f27fe682a7141dc7c5a87b8"
+    }
+  ]
+}

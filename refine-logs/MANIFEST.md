@@ -15,3 +15,5 @@
 | 2026-11-03 | h008-20261103/; docs/results/h008_source_reconstruction.{md,json,png,pdf} | Source-only full-name QA toy qualification16/16; no natural efficacy |
 | 2026-11-03 | h009-20261103/; docs/results/h009_cached_bijection.{md,json} | Cached4-arm ablation; additive invariance holds, no accuracy increment |
 | 2026-11-03 | h010-20261103/; docs/source-reading/batches/20261103-h008-core-v1 | Natural span inventory only;2newfiles/296lines explained with fullscope pending |
+| 2026-11-03 | h011-20261103; docs/results/h011_masked_reconstruction.* | Fixed bridge failed evenb0, observed role collapse; all arms retained |
+| 2026-11-03 | fred-question-recovery-20261103;7b-engineering-20261103 | Exact question recovery0/292; separate7Bshort/512 engineering only |

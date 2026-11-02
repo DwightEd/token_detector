@@ -1,0 +1,12 @@
+{
+  "design_path": "D:\\projects\\research\\token_detector\\outputs\\h007-burden-20261103\\inference\\plan.json",
+  "design_sha256": "7d8e37c4f319b6a851ee7d11f4ae0eb845e1d98d7ae37f4c19355010bf12418d",
+  "truth_path": "D:\\projects\\research\\token_detector\\outputs\\h007-burden-20261103\\construction\\construction_truth.jsonl",
+  "truth_sha256": "b778cdc030f8e8d54b8557eb5a5071ee80ac41fff9bdf54fccb4d04a521423d6",
+  "construction_seal_sha256": "66acd0c7bff6282b9643a9e951aaedd2d8e652cd5f27fe682a7141dc7c5a87b8",
+  "review_seal_sha256": "3949813ad8a04511a892a41ebf19278a2d0b024f48dcc3881159fbb76f769551",
+  "observation_seal_sha256": "545d732daa0edc8ac0f82036f6e687e6e2067052d7bc02ab4a0cce21c937c0a7",
+  "h008_control_cpu_seal_sha256": "c62f8906d7cfb6986c4da99d29bb152d2f6ea7e85c5e02305356fb0d17dbd32b",
+  "h008_control_observation_seal_sha256": "7558352ae7c3f5d46b4ab5b7bce72940262382806aaa4e9eaab5d81557e85a33",
+  "obtained_after_predictions_and_evaluator_freeze": true
+}

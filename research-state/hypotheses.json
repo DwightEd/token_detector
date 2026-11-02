@@ -134,6 +134,39 @@
       "result": "docs/results/h009_cached_bijection.json",
       "run_id": "4235ad12a1e91bdda792ac8519adfe3dab88b8fe0b960378bdd13b2340ec77c9",
       "next": "Do not retune nuisance offsets or rerun neural donors. Validate value-blind natural question construction and contract identifiability."
+    },
+    {
+      "id": "H011_RESPONSE_MASKED_RECONSTRUCTION_BRIDGE",
+      "status": "completed_bridge_failed_not_promoted",
+      "design": "outputs/h011-masked-20261103/DESIGN.md",
+      "question": "Does source-defined QA ability transfer to one fixed value-erased full-response question under0/4/12 correct suffix burden?",
+      "novelty": "QA masking is established; this is an exposed narrow capability bridge, not a novel natural method.",
+      "admission": "All48cases/96slots/48uniqueQ/96completions/192logicalinstances; exactRswap collapse; S-only sorted pool; same3B numeric instrument;0equalH008message-candidate events; no targetgold or prompt tuning.",
+      "observation_run_id": "954488248f0417aebefd288d07c8976b502860d1c397579b04af2fc5d7126283",
+      "evidence": [
+        "F023",
+        "F026"
+      ],
+      "observation_costs": {
+        "actual_forward_passes": 96,
+        "input_tokens": 32816,
+        "teacher_forced_target_tokens": 516,
+        "output_tokens": 0,
+        "seconds_forward": 12.381328800227493
+      },
+      "observation_coverage": {
+        "original_cases": 48,
+        "unique_sources": 8,
+        "unique_queries": 48,
+        "unique_completions": 96,
+        "response_slots": 96,
+        "unknown_cases": 0,
+        "unknown_slots": 0,
+        "logical_completion_requests": 192
+      },
+      "result": "docs/results/h011_masked_reconstruction.json",
+      "cpu_run_id": "5c162fe8ade0a235a221a9c0ad309bb1f98a3a8cb79ba9a06e3887192f7ba3fb",
+      "next": "No prompt/model rescue. Natural artifact inventory only; inspect structurally new atomic-predicate/source-query compilation after prior/cache audit."
     }
   ]
 }

@@ -1,0 +1,22 @@
+{
+  "schema": "metadata-recovery-evidence-v1",
+  "scope": "Small records only; full projected16-member sealed bundle remains outputs/desktop.",
+  "files": [
+    {
+      "source": "outputs/fred-original-question-recovery-20261103/README.md",
+      "sha256": "b4e28149cce953e02e58ca97a6b1f24ba6bb87586aafb8901ef2349462d067f4"
+    },
+    {
+      "source": "outputs/fred-original-question-recovery-20261103/completion-receipt.json",
+      "sha256": "a1a36dd4e075743438ddf43cf189682c8f20c7ec0b71ceecfbc6ae3627db9c00"
+    },
+    {
+      "source": "outputs/fred-original-question-recovery-20261103/independent-review.md",
+      "sha256": "408e32b6e97bfcf41659e0e572c941fd2d9f6ddc8fc389ebcb65cd44f44e47c1"
+    },
+    {
+      "source": "outputs/fred-original-question-recovery-20261103/source-pipeline-inspection.json",
+      "sha256": "414057781551ddcc58ddc7029a2e8746bd2dac7407ce717136e66fd2c7008ccf"
+    }
+  ]
+}

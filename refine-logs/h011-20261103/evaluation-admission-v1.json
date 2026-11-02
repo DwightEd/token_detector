@@ -1,0 +1,7 @@
+{
+  "observation_run_id": "954488248f0417aebefd288d07c8976b502860d1c397579b04af2fc5d7126283",
+  "cpu_run_id": "5c162fe8ade0a235a221a9c0ad309bb1f98a3a8cb79ba9a06e3887192f7ba3fb",
+  "all_observation_artifacts_verified": true,
+  "runtime_files": 118,
+  "reference_or_control_inputs_opened_by_wrapper_before_stage": false
+}

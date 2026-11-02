@@ -1,0 +1,96 @@
+{
+  "schema": "FRED-question-metadata-recovery-completion-v1",
+  "status": "completed_exact_negative",
+  "application_layer_independent_static_review": "PASS",
+  "successful_attempt": "attempt-v2",
+  "failed_first_attempt_retained": true,
+  "local_inputs": {
+    "finqa": {
+      "original_input_sha256": "12b7437d19eb1b138e1d66e499a64defd4e914c774e7542e860c298181833e5c",
+      "ordered_ids_sha256": "dd6c0e1e1e6647147c778094e1c0a5fb3afcc602d9f0b6603542134a8b22dbf8",
+      "matches_preexisting_frozen_inventory": true,
+      "responses": 162,
+      "sources": 142
+    },
+    "tatqa": {
+      "original_input_sha256": "17e9ffd2caaf8033ae374a7c293039883cdd4ff541372e94a34eaf557b1c4831",
+      "ordered_ids_sha256": "45072a16025e7ba20fa8fa7aad616083baf7d44bf56d220b43b8344252bcf233",
+      "matches_preexisting_frozen_inventory": true,
+      "responses": 130,
+      "sources": 110
+    }
+  },
+  "upstream_revision": "97808f3e5fd16ede40bbff6c2949af8139b2eb7b",
+  "fields_materialized": [
+    "id",
+    "question",
+    "documents"
+  ],
+  "all_upstream_rows": 49666,
+  "all_original_responses": 292,
+  "all_original_sources": 252,
+  "recovered_questions": 0,
+  "summaries": {
+    "finqa": {
+      "original_responses": 162,
+      "original_unique_sources": 142,
+      "response_status_counts": {
+        "unknown": 162
+      },
+      "source_status_counts": {
+        "unknown": 142
+      },
+      "response_unknown_reasons": {
+        "no_exact_first_document_match": 162
+      },
+      "source_unknown_reasons": {
+        "no_exact_first_document_match": 142
+      },
+      "matched_upstream_rows": 0
+    },
+    "tatqa": {
+      "original_responses": 130,
+      "original_unique_sources": 110,
+      "response_status_counts": {
+        "unknown": 130
+      },
+      "source_status_counts": {
+        "unknown": 110
+      },
+      "response_unknown_reasons": {
+        "no_exact_first_document_match": 130
+      },
+      "source_unknown_reasons": {
+        "no_exact_first_document_match": 110
+      },
+      "matched_upstream_rows": 0
+    }
+  },
+  "source_only_exact_join": true,
+  "fuzzy_or_strip_transform_added": false,
+  "official_extra_source_transform_established": false,
+  "question_anchor_available_from_this_run": false,
+  "historical_generator_ragbench_revision_verified": false,
+  "whole_parquet_lfs_sha_locally_verified": false,
+  "projection_gzip_sha_locally_verified": true,
+  "range_bytes_received": 55271218,
+  "application_nonwhitelisted_column_values_materialized": false,
+  "physical_neighbor_or_footer_statistic_bytes_may_have_been_received": true,
+  "model_calls": 0,
+  "qa_calls": 0,
+  "gpu_calls": 0,
+  "target_gold_reads": 0,
+  "original_answer_response_values_used": false,
+  "existing_inputs_predictions_gold_modified": false,
+  "effectiveness_claim": false,
+  "artifact_sha256": {
+    "attempt-v2/plan.json": "ba10e46073e775811314b03a2255c5d4646fe66170529f06e2bbde6ec9c6bc29",
+    "attempt-v2/freeze.json": "b5bc34bc6a64aa4fc651581237772078f8757f1fe05cc4efdd46be0ccd379464",
+    "attempt-v2/result.json": "4850c6adf71bcb286a2fd3105292d0c4e749590b7f1d8c9f2217999af4b31492",
+    "attempt-v2/seal.json": "87eb0246a444e7f0a76cc9099e5ada61d09cd548f1acf69acddb5b1d77847831",
+    "README.md": "b4e28149cce953e02e58ca97a6b1f24ba6bb87586aafb8901ef2349462d067f4",
+    "source-pipeline-inspection.json": "414057781551ddcc58ddc7029a2e8746bd2dac7407ce717136e66fd2c7008ccf",
+    "independent-review.md": "408e32b6e97bfcf41659e0e572c941fd2d9f6ddc8fc389ebcb65cd44f44e47c1",
+    "failure.json": "6d971c4e8273381e12083323488787a70f38c7c060891a47fe029696ed032405"
+  }
+}

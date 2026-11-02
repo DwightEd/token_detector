@@ -28,3 +28,6 @@
 | H002-E2 | 未接触确认与新颖性审查 | NOT_RUN | 资格案例与历史已看人群不可改名为确认集 |
 
 恢复入口：[RESUME](../research-state/RESUME.md)。下一问题：自然回答擦除待检值后，怎样构造语义明确的问题并保持原评价合同？不再搜索缓存读出或已否定的焦点补丁。
+
+| H011-Q1 | 固定R擦值问句桥 | FAILED_NOT_PROMOTED | b0/4/12=9/8/10 of16；同名角色坍缩7/8/6 of8；全48AUC.63715；docs/results/h011_masked_reconstruction.md |
+| H012-Q0 | 自然cloze与source候选artifact | DESIGN_ONLY_NO_QA | 136槽全保留、semanticunknown；不把H011失败绕过成自然方法 |

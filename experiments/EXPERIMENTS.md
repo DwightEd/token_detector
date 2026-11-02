@@ -932,3 +932,26 @@ next-token labels and all6 fixed label assignments, with raw/off-label/permutati
 diagnostics. Direct verification and option-bias controls are established ideas;
 no novelty, calibrated factuality or token detection result is claimed. New H003
 checkout/backend work is a separate release and must not change archived95 bytes.
+
+
+## 2026-11-03 mechanism continuation
+
+H003–H007 and their independent CPU reviews completed. H004 typed-source
+coverage is3natural/0constructed, H005 focus results are mixed, external supervised
+NLI H006 retains table/arithmetic failures, and H007 fixed response-burden
+interaction is−.057753: none promoted. Full reports are docs/results/h003*–h007*;
+the gold-density unit oracle and suffix-removal exact reuse are diagnostics only.
+
+H008 source-only full-name+EOS closed QA passed16/16, source/event flips8/8each,
+32actualforwards4.1325s; strict toy grammar already permits deterministic answers.
+H009 reused those32 observations with0newcalls: all4fixed readouts/nuisance arms
+remain16/16, so additive invariance is verified without an accuracy increment.
+H010 external frozen NER emitted719S/136R spans on18cases; semantic coverage unknown.
+
+H011 single frozen masked-question bridge is now run954488248f0417aebefd288d07c8976b502860d1c397579b04af2fc5d7126283.
+All48originals/96slots/48Q96completions/192logicalinstances retained; exacttemplate,
+fullsurname+EOS, no new model or tuning. References stay outside observation;
+CPU reader/evaluation pending. See research-state/RESUME.md for actual liveness,
+immutable installed117 release and no-repeat rules.
+
+H011 independent CPU review completed5c162fe8ade0a235a221a9c0ad309bb1f98a3a8cb79ba9a06e3887192f7ba3fb. Fixedbridge failed: b0/4/12=9/8/10 of16, whole48AUC.63715; no promotion or prompt rescue. H012 now only prepares natural span/candidate artifacts; no new QA or semantic coverage claim. See docs/results/h011_masked_reconstruction.md.
