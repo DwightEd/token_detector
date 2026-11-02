@@ -1,0 +1,124 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>怎样组织论文主张</title><link rel="stylesheet" href="assets/guide.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
+<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script></head><body>
+<header><div class="eyebrow">TOKEN DETECTOR / 本地离线阅读</div><h1>怎样组织论文主张</h1>
+<nav><a href="VISUAL_GUIDE.html">公式与交互演示</a><a href="THEORY.html">完整公式</a><a href="METHOD.html">方法步骤</a><a href="PAPER_STORY.html">论文主张</a><a href="READING.html">逐行代码</a></nav>
+<p>公式已在浏览器排版；可用浏览器“打印 → 保存为PDF”。本页不需要联网。</p></header>
+<main><article class="article"><h1 id="_1">怎样把当前工作发展成有说服力的论文</h1>
+<p>结论先说：当前项目已有一些数学上可核对的性质和经验诊断；新的检测机制、足够新颖性和独立实证尚未成立。公式应让假设、推断和可否定的预测变清楚。方法简洁可以是优点，论文仍须说明它解决了哪个此前没解决的瓶颈。</p>
+<p>ICML2026分别评价正确性、呈现、重要性和原创性，正确但增量小的工作并不因此变成高影响贡献；ICLR2026强调新知识和社区价值，不要求所有论文都是SOTA。<a href="https://icml.cc/Conferences/2026/ReviewerInstructions">ICML原始审稿指南</a>、<a href="https://iclr.cc/Conferences/2026/ReviewerGuide">ICLR原始审稿指南</a>。下面的判断是对本项目的研究建议，不是会议接收承诺。</p>
+<h2 id="_2">故事应该是一条可以逐段检查的因果论证</h2>
+<p><strong>重要目标 → 反常现象 → 可解释机制 → 理论边界 → 针对性设计 → 独立验证。</strong></p>
+<table>
+<thead>
+<tr>
+<th>叙事环节</th>
+<th>本项目可以写什么</th>
+<th>目前证据状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>目标</td>
+<td>保持原token/字符轴，定位不受给定来源支持的内容</td>
+<td>已明确任务，区别于世界事实真伪</td>
+</tr>
+<tr>
+<td>反常现象</td>
+<td>pooled指标改善未必意味着同片段错误定位改善</td>
+<td>历史六组探索结果；不是新独立确认</td>
+</tr>
+<tr>
+<td>数学边界</td>
+<td>交换型共享模型严格保留固定片段内部排序</td>
+<td>已有推导与CPU数值检查，不声称基础性质首创</td>
+</tr>
+<tr>
+<td>机制</td>
+<td>哪类信息被邻居/历史传播，何时造成真实错误定位失效</td>
+<td>尚未识别；后验耦合、区域平均是计算性质，不等于错误产生的因果机制</td>
+</tr>
+<tr>
+<td>设计</td>
+<td>一个直接处理已确认瓶颈的最小无监督干预</td>
+<td>尚未选定可宣称新颖的方法；不凭堆组件补齐</td>
+</tr>
+<tr>
+<td>验证</td>
+<td>新来源的人类支持性标注、局部指标、跨模型/任务与预算匹配</td>
+<td>待执行；真值仅在方案与分数冻结后的最终评价使用</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">当前最硬的理论结论，究竟帮到了什么</h2>
+<p>默认模型的分数分解为</p>
+<div class="math-block">\[
+s_i=d_i+c_i(d_{-i}).
+\]</div>
+
+<p>d_i 是第i个token在来源缺失/存在两个预测专家间的log比；cavity项c_i是其他位置给的上下文修正。这已经解释算法如何运算，但尚未证明它识别事实错误。</p>
+<p>对固定片段、有限观测和具有内部质量的共同混合先验：</p>
+<div class="math-block">\[
+\operatorname{sign}(s_i-s_j)=\operatorname{sign}(d_i-d_j).
+\]</div>
+
+<p><strong>设计含义</strong>：在这类模型内调整Beta先验，不能改变同片段排序，因此不能解决片段内AUROC的瓶颈。它是排除一类无效改造的边界，不是新的局部检测器。有限序列持久性模型可以改局部顺序，仍须证明新顺序更接近真实支持性。</p>
+<p>再把所有正负token对拆成同片段W和全部跨片段B：</p>
+<div class="math-block">\[
+\mathrm{AUC}_{pool}=\frac{|W|\mathrm{AUC}_W+|B|\mathrm{AUC}_B}{|W|+|B|}.
+\]</div>
+
+<p>这给出一条可验证预测：pooled提升可以由跨片段比较贡献。AP没有此线性分解；跨片段补集也混有跨回答/来源效应，不能据此单独归因于区域机制。理论的价值在于限制解释并指导实验。</p>
+<h2 id="_4">什么才算进一步的机制发现</h2>
+<p>例如一个值得检验、尚未成立的假设是：<strong>原回答历史可能替代显式来源，使来源删除对比丧失某些局部区分信息。</strong> 这个方向与<a href="https://arxiv.org/abs/2606.31033">CORTEX已有的参考信息传播思想</a>重合，不能凭一句话宣称首创。</p>
+<p>现有四种观测允许定义预测交互量：</p>
+<div class="math-block">\[
+I_t=d_t^{full}-d_t^{local}
+=\log\frac{q_0(y_t\mid h_{full})}{q_0(y_t\mid h_{local})}
+-\log\frac{q_1(y_t\mid h_{full})}{q_1(y_t\mid h_{local})}.
+\]</div>
+
+<p>这里还隐含同一提示/来源条件。I_t 只衡量两世界对增加历史的不同预测响应，不能直接叫因果中介效应。full/local同时改变历史长度、内容和位置，须分别控制；两世界及两历史路径还须匹配后端和数值精度，不能直接沿用默认Observer的不匹配测量作机制归因。也不能把I_t大直接等同错误。</p>
+<p>合理的机制研究应当预先写出：移除哪条路径时现象应该消失，恢复哪条合法信息时应该回来，语义保持但格式/长度改变时应该怎样。如果长度、标点或无关历史同样解释效果，假设应被否定。机制探索先用无标签的干预一致性和预测量；与真实错误的关联只在冻结后的独立最终评价检验。</p>
+<h2 id="_5">两种论文路线，贡献要求不同</h2>
+<p><strong>诊断/边界路线</strong>可以围绕“哪些token检测提升只是跨片段排序”组织论文：精确分解+共享模型边界+近期方法的独立再评价。它不自动完成原来的改进检测目标。<a href="https://aclanthology.org/2026.uncertainlp-main.47/">USP/SHROOM-Visions</a>已经讨论区域代理与细粒度定位的脱节，必须找到超出它的、稳定且有实际后果的新发现。</p>
+<p><strong>新无监督方法路线</strong>需要新的、与支持性有关的观测或更合适的识别假设。理想次序是先确认失败机制，再让一个最小模块直接处理它，并从声明的概率模型或优化目标推导推断。不应先命名新算法，再拼Beta、HMM、图或验证器。若现成监督NLI/检测器参与，它只能在当前约束下单列对照；不将其能力归为无监督新贡献。</p>
+<h2 id="_6">能写进论文的理论，应回答哪一个问题</h2>
+<table>
+<thead>
+<tr>
+<th>理论类型</th>
+<th>有用的结论</th>
+<th>本项目边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>推断正确性</td>
+<td>DP/求积确实计算声明模型的目标</td>
+<td>已有，支持实现正确，不支持事实识别</td>
+</tr>
+<tr>
+<td>性质/限制</td>
+<td>保序、影响方向、KL修改界、复杂度</td>
+<td>已有若干，帮助选设计，不自动构成新颖性</td>
+</tr>
+<tr>
+<td>目标识别</td>
+<td>在何种语义/生成假设下分数关联支持性</td>
+<td>尚缺足够桥梁；不能从q0/q1名字直接获得</td>
+</tr>
+<tr>
+<td>真实效果</td>
+<td>局部收益是否可重复、成本是否公平</td>
+<td>需要独立最终评价，不能靠更多推导替代</td>
+</tr>
+</tbody>
+</table>
+<p>可以用作当前摘要骨架、仍须填入新证据的一段话：</p>
+<blockquote>
+<p>我们研究细粒度来源支持性检测中整体排序与局部分辨之间的差异。我们首先刻画一类共享专家模型无法改变片段内排序的条件，并通过成对指标分解定位整体收益的来源。随后，我们检验【尚未确认的具体机制】，据此设计【尚未成立的最小无监督方法】，并在【未接触的独立最终评价】验证其局部收益与失效边界。</p>
+</blockquote>
+<p>方括号目前不能填成已有贡献。下一步的进展标准是获得能改变算法选择的新证据；文案、公式数量和代理分数本身不构成这个证据。</p></article></main></body></html>

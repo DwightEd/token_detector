@@ -62,7 +62,7 @@ for path, notes in annotations.items():
     destination.write_text(body, encoding='utf-8')
     sections.append(f'<details><summary>{html.escape(path)} · {len(lines)} 行</summary>'
                     f'<p>SHA-256: {digest}</p><table><thead><tr><th>行</th><th>源码</th><th>解释</th></tr></thead>'
-                    '<tbody>' + ''.join(markup) + '</tbody></table></details>')
+                    '<tbody>\n' + '\n'.join(markup) + '</tbody></table></details>')
 
 if problems:
     print(json.dumps(problems, ensure_ascii=False, indent=2))
@@ -76,7 +76,8 @@ td:first-child{width:40px;color:#64748b}td:nth-child(2){width:46%;white-space:pr
 p{overflow-wrap:anywhere}a{color:#1658ab}</style><h1>token_detector：真实源码逐行讲解</h1>
 <p>固定源码基线 1210120748b3a05bd271bc79debcbed4fdc0c964。展开文件查看源码与中文说明。
 只展示已经逐行阅读并有具体说明的文件；全项目待讲解范围保存在 SOURCE_INVENTORY.json，未展示不代表不存在。</p>
-<p><a href="METHOD.md">整个方法与调用路径</a> · <a href="THEORY.md">公式、证明与限制</a> · <a href="VALIDATION.md">实际验证与未覆盖路径</a></p>
+<p><strong><a href="VISUAL_GUIDE.html">先看：公式排版与交互演示 →</a></strong></p>
+<p><a href="METHOD.html">整个方法与调用路径</a> · <a href="THEORY.html">公式、证明与限制</a> · <a href="PAPER_STORY.html">论文主张怎么组织</a> · <a href="VALIDATION.html">实际验证与未覆盖路径</a></p>
 '''
 (directory / 'READING.html').write_text(page + ''.join(sections) + '</html>', encoding='utf-8')
 print(json.dumps({'files': len(annotations), 'source_lines': sum(by_path[path]['line_count'] for path in annotations),

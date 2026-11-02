@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>公式与机制：可交互阅读指南</title><link rel="stylesheet" href="assets/guide.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
+<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script></head>
+<body><header><div class="eyebrow">TOKEN DETECTOR / 理解观测、推断和研究证据</div>
+<h1>公式可以看懂，机制需要验证</h1>
+<p>先看符号和交互演示，再读完整证明与源码。所有公式在本地排版，无需联网。</p>
+<nav aria-label="阅读导航"><a href="#symbols">① 符号</a><a href="#borrowing">② 证据借用</a><a href="#ranking">③ 指标与定位</a><a href="THEORY.html">完整公式与证明</a><a href="PAPER_STORY.html">论文怎么组织</a><a href="READING.html">逐行代码</a></nav></header>
+<main>
+<div class="notice"><strong>证据状态：</strong>下方8位置和3位置演示均为人工构造的数学例子，未加载语言模型，不是检测准确率实验。主线坚持无监督；任务真值只用于冻结后的最终评价。</div>
+<section id="symbols"><h2>① 先分清：观测量、模型分数、任务真值</h2>
+<div class="grid"><div class="card"><h3>观测：来源依赖</h3><div class="equation">\[d_i=\log q_0(y_i)-\log q_1(y_i)\]</div><p>给同一个已生成token打分。0表示删除来源，1表示保留来源；原回答历史固定。</p><p class="subtle">d更大表示更偏向来源缺失专家；不直接表示内容错误。</p></div>
+<div class="card"><h3>推断：专家责任</h3><div class="equation">\[s_i=\log\frac{m_i}{1-m_i}=d_i+c_i\]</div><p>m是声明混合模型中的隐状态后验。c是其他token贡献的cavity修正。</p><p class="subtle">sigmoid(s)是专家责任概率，不是已校准事实错误概率。</p></div>
+<div class="card"><h3>任务：来源支持性</h3><div class="equation">\[H_i=\mathbf1\{\text{not supported}\}\]</div><p>目标是原回答中哪些内容不受给定来源支持。来源本身为真还是为假，是另一问题。</p><p class="subtle">要把s联系到H，仍需语义假设与独立最终评价。</p></div></div>
+<div class="symbols"><span>i：原回答token位置</span><span>y：已经生成的回答</span><span>q₀/q₁：同一冻结模型的两个来源条件</span><span>m：专家分配后验</span><span>H：最终评价标签</span></div>
+<details><summary>为什么这里有Beta和隐变量？</summary><div class="equation">\[\pi\sim\operatorname{Beta}(a,b),\quad Z_i\mid\pi\sim\operatorname{Bernoulli}(\pi)\]</div><p>一个固定片段共享“选择来源缺失专家”的倾向π；每个token仍保留自己的d。默认a=b=1。精确积分π与Z得到s；数学上可核对，但隐状态Z的名字并不能让它变成H。</p></details></section>
+<section id="borrowing"><h2>② 邻居证据如何改变当前token？</h2><p>固定第3个位置自身观测d₃=0.2，只改变前两个位置的共同观测c。每个点都调用当前生产函数 <code>cavity_scores([c,c,0.2])</code> 预先计算，浏览器只展示结果。</p>
+<div class="grid two"><div><label for="context">两个邻居的观测 c：<output id="context-value">0.0</output></label><input id="context" type="range" min="0" max="60" value="30" step="1">
+<div class="metrics"><div class="metric"><strong id="own-gap">0.200</strong><span>本位置原始 d₃，不变</span></div><div class="metric"><strong id="own-score">—</strong><span>共享模型的 s₃</span></div><div class="metric"><strong id="own-cavity">—</strong><span>邻居给出的修正 c₃</span></div></div><p id="order-status" class="ok" role="status"></p><p class="subtle">曲线显示模型内的后验耦合。它不证明邻居在语义上支持当前事实，也不证明错误能被正确定位。</p></div>
+<div><svg id="borrow-chart" class="chart" viewBox="0 0 520 270" role="img" aria-label="邻居观测变化与固定位置分数的曲线"></svg><p class="legend"><span style="color:#245bc7">实线：共享分数s₃</span><span style="color:#7542ad">虚线：自身原始d₃</span></p></div></div>
+<div class="equation">\[\operatorname{sign}(s_i-s_j)=\operatorname{sign}(d_i-d_j)\]</div><p><strong>固定片段内保序：</strong>在共同交换混合先验、有限观测及先验具有内部质量的条件下，默认模型不会改变片段内部原始排序。因此调Beta先验不能提高同片段AUROC。此结论不适用于所有时序持久性模型。</p></section>
+<section id="ranking"><h2>③ 整体AUC升高，为什么局部定位可能更差？</h2>
+<p>下面只有两个片段、各4个位置。标签是为展示数学现象而手造的0/1；<strong>不是任何真实回答的真值</strong>。从逐位置原始分数出发，逐渐用每片段的平均分替代差异：</p>
+<div class="equation">\[\widetilde s_i(\lambda)=(1-\lambda)d_i+\lambda\overline d_{u(i)},\quad 0\leq\lambda\leq1\]</div>
+<label for="pooling">片段均值替代程度 λ：<output id="pooling-value">0.00</output></label><input id="pooling" type="range" min="0" max="100" step="1" value="0">
+<div class="metrics"><div class="metric"><strong id="pooled-auc">—</strong><span>整体 pooled AUC</span></div><div class="metric"><strong id="within-auc">—</strong><span>同片段 pair-weighted AUC</span></div><div class="metric"><strong id="between-auc">—</strong><span>全部跨片段 AUC</span></div></div>
+<div id="token-strip" class="token-strip" aria-label="8个构造位置的当前分数"></div><p class="legend"><span>“1/0”只表示构造标签</span><span>背景深浅表示当前分数大小</span><span>A1–A4与B1–B4分别属于两个片段</span></p>
+<p id="pooling-status" role="status"></p><svg id="auc-chart" class="chart" viewBox="0 0 920 270" role="img" aria-label="片段均值替代下整体与局部AUC的变化"></svg>
+<p class="subtle">λ小于1时，片段内只是乘同一个正数并平移，局部排序保留；λ等于1时段内全为ties，AUC变为0.5。这个变换是诊断删除对照，不是新检测器或默认shared的替代实现。</p>
+<p id="shared-example"></p>
+<div class="equation">\[\mathrm{AUC}_{pool}=\frac{|W|\mathrm{AUC}_W+|B|\mathrm{AUC}_B}{|W|+|B|}\]</div><p id="pair-counts"></p><p>W为同片段正负对，B为全部跨片段正负对。分解是代数身份，不适用于AP。B还混合了跨回答、跨来源效应，不能单独叫作某种因果机制。</p></section>
+<section><h2>④ 怎样形成一篇有说服力的论文？</h2><div class="steps"><span>重要目标</span><b>→</b><span>反常现象</span><b>→</b><span>可检验机制</span><b>→</b><span>理论边界</span><b>→</b><span>最小设计</span><b>→</b><span>独立验证</span></div>
+<p>当前最缺的是“哪些新的观测/机制能让局部排序更接近来源支持性”的证据。精确DP说明算得对；保序性质说明哪类改造无效；它们都尚未推出一个有效的新检测器。</p><p><a href="PAPER_STORY.html">阅读：当前能讲什么、不能讲什么，以及两条论文路线 →</a></p><div class="notice">当前没有新的自然数据结果或顶会就绪结论。图中可移动的参数只用于理解数学，不用于挑选真实方法或利用最终真值调参。</div></section>
+</main><footer>构造数据与生产函数SHA见 <a href="assets/visual-data.json">演示数据</a>。<a href="THEORY.html">完整公式</a> · <a href="METHOD.html">方法步骤</a> · <a href="READING.html">源码</a> · <a href="assets/mathjax-3.2.2/VENDOR_MANIFEST.json">本地排版依赖</a></footer>
+<script id="visual-data" type="application/json">__VISUAL_DATA__</script><script src="assets/visual-guide.js"></script></body></html>

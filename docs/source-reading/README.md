@@ -1,6 +1,8 @@
 # 代码讲解导航与真实进度
 
-建议先读 [整个方法](METHOD.md)，再打开可离线展开的 [逐行阅读器](READING.html)，需要证明时查 [THEORY.md](THEORY.md)。GitHub不直接运行HTML，下载后用浏览器打开；下面每个已讲解文件也有可直接在GitHub阅读的Markdown版。
+建议先打开[公式与机制交互指南](VISUAL_GUIDE.html)，拖动滑条理解观测与共享，再读[完整公式与证明](THEORY.html)和[论文主张](PAPER_STORY.html)。[整个方法](METHOD.html)与[逐行阅读器](READING.html)也有浏览器版。下载后打开HTML即可离线排版，不再需要直接打开Markdown看LaTeX。
+
+GitHub不直接运行HTML；在线可读[公式原文](THEORY.md)、[方法原文](METHOD.md)和[论文叙事原文](PAPER_STORY.md)。下面每个已讲解文件也有Markdown版。
 
 当前完成主库全部21个Python文件、2421行、128个函数/嵌套定义的具体讲解，覆盖默认推断完整路径、R4、sequence/witness、条件分布、依赖分段、proofs/revision、命令入口及匹配SDPA观测。每行旁边给出真实操作、目的、轴/精度/状态副作用。多行表达式共用一项完整操作说明；空白行标为无运行效果。源码SHA绑定1210120748b3a05bd271bc79debcbed4fdc0c964。
 
@@ -10,7 +12,7 @@
 
 [VALIDATION.md](VALIDATION.md)记录实际CPU检查与未执行路径。`SOURCE_INVENTORY.json`可机读；`SOURCE_INVENTORY_initial.json`保留初始待处理范围。后续修改源码前先核对hash，不能沿用过期行号。
 
-如需更新排版，在仓库根目录运行 `.venv/Scripts/python.exe -X utf8 tools/render_source_reading.py`。渲染器只排版已经逐项撰写的notes，拒绝缺行、重复和源码hash不符；它不自动写泛泛解释或升级覆盖状态。
+重建公式页先安装可选docs依赖 `python -m pip install -e '.[docs]'`，运行 `python tools/render_math_guide.py`；逐行页运行 `python tools/render_source_reading.py`。渲染器只排版已写内容并检查源码hash，不自动升级讲解覆盖。MathJax3.2.2本地资源及许可证随文档保存；这是固定离线版本，不声称是最新版本。交互页数据调用生产数值函数预计算，全部是构造例子，不读取任务标注或执行LM。
 
 | 原始文件 | 行数 | 函数/嵌套定义 | 讲解状态 |
 |---|---:|---:|---|

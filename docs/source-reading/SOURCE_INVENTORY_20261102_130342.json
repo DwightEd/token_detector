@@ -1,0 +1,5300 @@
+{
+  "base_revision": "1210120748b3a05bd271bc79debcbed4fdc0c964",
+  "initial_worktree_clean": true,
+  "scope": "All current Python files in myproject, experiments, tests, tools; non-Python files are not function-inventoried.",
+  "created_date_beijing": "2026-11-02",
+  "files": [
+    {
+      "path": "myproject/__init__.py",
+      "sha256": "cde213e7a2883957788ba353947e57bcfbbe272a010d3cfd235191ffc4ec6f83",
+      "line_count": 6,
+      "status": "explained",
+      "functions": []
+    },
+    {
+      "path": "myproject/__main__.py",
+      "sha256": "e6a5b8a9b0f5bc30f863a0f88db0d1acf6a56ac41415d9dfd346748a63a015be",
+      "line_count": 3,
+      "status": "explained",
+      "functions": []
+    },
+    {
+      "path": "myproject/api.py",
+      "sha256": "35a052e8f28c461a0eb7978dbd6c38ed798c0144d8d14d8c3731d3182f1616fb",
+      "line_count": 164,
+      "status": "explained",
+      "functions": [
+        {
+          "name": "HallucinationDetector.__init__",
+          "line": 18,
+          "end_line": 34,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "HallucinationDetector.from_pretrained",
+          "line": 36,
+          "end_line": 91,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "HallucinationDetector.measure",
+          "line": 93,
+          "end_line": 119,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "HallucinationDetector.fit",
+          "line": 121,
+          "end_line": 133,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "HallucinationDetector.measure_responses",
+          "line": 135,
+          "end_line": 146,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "HallucinationDetector.save",
+          "line": 148,
+          "end_line": 150,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "HallucinationDetector.predict",
+          "line": 152,
+          "end_line": 164,
+          "kind": "function",
+          "status": "explained"
+        }
+      ]
+    },
+    {
+      "path": "myproject/attention.py",
+      "sha256": "4ec72d0ec9de72f6883fd9463df078b2e4c0c6cdf6cc9d531ceb1551d0e0c4b8",
+      "line_count": 56,
+      "status": "explained",
+      "functions": [
+        {
+          "name": "attention_profiles",
+          "line": 9,
+          "end_line": 56,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "attention_profiles.record",
+          "line": 25,
+          "end_line": 38,
+          "kind": "function",
+          "status": "explained"
+        }
+      ]
+    },
+    {
+      "path": "myproject/counterfactual.py",
+      "sha256": "2c1e0cc6f800a1308fd42689b3739dc03592902413f713fd36fc9ef8aa6430da",
+      "line_count": 54,
+      "status": "explained",
+      "functions": [
+        {
+          "name": "observe_responses",
+          "line": 10,
+          "end_line": 30,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "repair_support",
+          "line": 33,
+          "end_line": 54,
+          "kind": "function",
+          "status": "explained"
+        }
+      ]
+    },
+    {
+      "path": "myproject/detector.py",
+      "sha256": "776fa683830223f1f9393291fa5aa446e6194cb7ab36d5e42f48365e6172ce88",
+      "line_count": 200,
+      "status": "explained",
+      "functions": [
+        {
+          "name": "unit_ranges",
+          "line": 31,
+          "end_line": 36,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "quantile_rank",
+          "line": 39,
+          "end_line": 43,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "source_values",
+          "line": 46,
+          "end_line": 51,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "tempered_prior",
+          "line": 54,
+          "end_line": 62,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "target_window_mean",
+          "line": 65,
+          "end_line": 80,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "center_units",
+          "line": 83,
+          "end_line": 90,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "raw_features",
+          "line": 93,
+          "end_line": 102,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "Detector.__init__",
+          "line": 110,
+          "end_line": 136,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "Detector.calibrate",
+          "line": 138,
+          "end_line": 144,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "Detector.fit",
+          "line": 146,
+          "end_line": 158,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "Detector.score",
+          "line": 160,
+          "end_line": 162,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "Detector.score_components",
+          "line": 164,
+          "end_line": 182,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "Detector.save",
+          "line": 184,
+          "end_line": 192,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "Detector.load",
+          "line": 194,
+          "end_line": 200,
+          "kind": "function",
+          "status": "explained"
+        }
+      ]
+    },
+    {
+      "path": "myproject/distribution.py",
+      "sha256": "891b83c1f5c48dbf9926ac211aaca1c5d5a57942a6b392b86de5ac95104d7bb2",
+      "line_count": 106,
+      "status": "explained",
+      "functions": [
+        {
+          "name": "log_calibrator",
+          "line": 11,
+          "end_line": 18,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "conditional_observations",
+          "line": 21,
+          "end_line": 73,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "conditional_observations.<lambda>@63:13",
+          "line": 63,
+          "end_line": 63,
+          "kind": "lambda",
+          "status": "explained"
+        },
+        {
+          "name": "SourceDistributions.__init__",
+          "line": 79,
+          "end_line": 83,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "SourceDistributions.present",
+          "line": 85,
+          "end_line": 89,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "SourceDistributions.absent",
+          "line": 91,
+          "end_line": 101,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "SourceDistributions.finish",
+          "line": 103,
+          "end_line": 106,
+          "kind": "function",
+          "status": "explained"
+        }
+      ]
+    },
+    {
+      "path": "myproject/graph.py",
+      "sha256": "4081fd8be3a8d662b5d6e02225ece2be3ad9f7ed4f2c9e8510aad1d418d6942d",
+      "line_count": 37,
+      "status": "explained",
+      "functions": [
+        {
+          "name": "bounded_message",
+          "line": 6,
+          "end_line": 8,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "chain_log_odds",
+          "line": 11,
+          "end_line": 23,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "smooth_scores",
+          "line": 26,
+          "end_line": 37,
+          "kind": "function",
+          "status": "explained"
+        }
+      ]
+    },
+    {
+      "path": "myproject/inputs.py",
+      "sha256": "e0d7c60577905214ade564fa17faf9c724cbbb01ad90e89837e727886f4e68a5",
+      "line_count": 71,
+      "status": "explained",
+      "functions": [
+        {
+          "name": "text_units",
+          "line": 12,
+          "end_line": 33,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "encode_source",
+          "line": 36,
+          "end_line": 59,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "encode_response",
+          "line": 62,
+          "end_line": 71,
+          "kind": "function",
+          "status": "explained"
+        }
+      ]
+    },
+    {
+      "path": "myproject/measure.py",
+      "sha256": "0778b233b07a42c1d1a5e6739027394ab5c0644b25cca3082e8b53998eedbbd3",
+      "line_count": 71,
+      "status": "explained",
+      "functions": [
+        {
+          "name": "token_scores",
+          "line": 8,
+          "end_line": 15,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "window_mean",
+          "line": 18,
+          "end_line": 26,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "canonical_delta",
+          "line": 29,
+          "end_line": 41,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "answer_axis",
+          "line": 44,
+          "end_line": 60,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "answer_rows",
+          "line": 63,
+          "end_line": 71,
+          "kind": "function",
+          "status": "explained"
+        }
+      ]
+    },
+    {
+      "path": "myproject/model.py",
+      "sha256": "1e7393ab159f4e9e9feab91c5fe073499a90f31cddb07f2aee8eec18385d2264",
+      "line_count": 68,
+      "status": "explained",
+      "functions": [
+        {
+          "name": "load_model",
+          "line": 15,
+          "end_line": 22,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "input_ids",
+          "line": 25,
+          "end_line": 26,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "attention_backend",
+          "line": 29,
+          "end_line": 37,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "prefill",
+          "line": 40,
+          "end_line": 48,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "score_continuation",
+          "line": 51,
+          "end_line": 68,
+          "kind": "function",
+          "status": "explained"
+        }
+      ]
+    },
+    {
+      "path": "myproject/observer.py",
+      "sha256": "054d7baee1089872b5cbd081d03e6b146fe40309807854dca33dabc7f71da747",
+      "line_count": 39,
+      "status": "explained",
+      "functions": [
+        {
+          "name": "Observer.__init__",
+          "line": 14,
+          "end_line": 16,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "Observer.measure",
+          "line": 18,
+          "end_line": 39,
+          "kind": "function",
+          "status": "explained"
+        }
+      ]
+    },
+    {
+      "path": "myproject/pooling.py",
+      "sha256": "80e852b64e301cf6007893df3b61d058ef39a97c81c561416f2b2917c63bef49",
+      "line_count": 153,
+      "status": "explained",
+      "functions": [
+        {
+          "name": "_values",
+          "line": 8,
+          "end_line": 12,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_parameters",
+          "line": 15,
+          "end_line": 17,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_axes",
+          "line": 20,
+          "end_line": 25,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "forward",
+          "line": 28,
+          "end_line": 38,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_terminal",
+          "line": 41,
+          "end_line": 43,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "cavity_scores",
+          "line": 46,
+          "end_line": 66,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "prior_objective",
+          "line": 69,
+          "end_line": 90,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "fit_prior",
+          "line": 93,
+          "end_line": 116,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "fit_prior.<lambda>@112:29",
+          "line": 112,
+          "end_line": 112,
+          "kind": "lambda",
+          "status": "explained"
+        },
+        {
+          "name": "grouped_scores",
+          "line": 119,
+          "end_line": 131,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "population_spans",
+          "line": 134,
+          "end_line": 153,
+          "kind": "function",
+          "status": "explained"
+        }
+      ]
+    },
+    {
+      "path": "myproject/proofs.py",
+      "sha256": "191727f0f2e073b3ab53ffea7ba4d2e946514a771f6afd4d9d026c70d63de7b9",
+      "line_count": 554,
+      "status": "explained",
+      "functions": [
+        {
+          "name": "_name",
+          "line": 26,
+          "end_line": 27,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_decimal",
+          "line": 30,
+          "end_line": 39,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_unit",
+          "line": 42,
+          "end_line": 55,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_merge_unit",
+          "line": 58,
+          "end_line": 69,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_has_unit",
+          "line": 72,
+          "end_line": 73,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_amount_pattern",
+          "line": 76,
+          "end_line": 79,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_amount",
+          "line": 82,
+          "end_line": 93,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_header_unit",
+          "line": 96,
+          "end_line": 104,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_json_tables",
+          "line": 107,
+          "end_line": 151,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_source_scopes",
+          "line": 154,
+          "end_line": 226,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_anchors",
+          "line": 229,
+          "end_line": 237,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_claims",
+          "line": 240,
+          "end_line": 266,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_assertion_scope",
+          "line": 269,
+          "end_line": 295,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_resolved_unit",
+          "line": 298,
+          "end_line": 300,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_terms",
+          "line": 303,
+          "end_line": 309,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_terms.<lambda>@304:73",
+          "line": 304,
+          "end_line": 304,
+          "kind": "lambda",
+          "status": "explained"
+        },
+        {
+          "name": "_role_tokens",
+          "line": 312,
+          "end_line": 336,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_numeric_roles",
+          "line": 339,
+          "end_line": 343,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_numeric_repairs",
+          "line": 346,
+          "end_line": 353,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_arithmetic",
+          "line": 356,
+          "end_line": 360,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_plausibly_rounded",
+          "line": 363,
+          "end_line": 369,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_evaluate",
+          "line": 372,
+          "end_line": 490,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "compile_proofs",
+          "line": 493,
+          "end_line": 554,
+          "kind": "function",
+          "status": "explained"
+        }
+      ]
+    },
+    {
+      "path": "myproject/revision.py",
+      "sha256": "07b146366085dbb06dd27ce8406918f78035a666b6a0742ca4b84a26cc50890e",
+      "line_count": 211,
+      "status": "explained",
+      "functions": [
+        {
+          "name": "proof_pack",
+          "line": 17,
+          "end_line": 21,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_or_destination",
+          "line": 24,
+          "end_line": 27,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_convolve",
+          "line": 30,
+          "end_line": 33,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "bounded_event_probability",
+          "line": 36,
+          "end_line": 60,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "bounded_event_probability.divergence",
+          "line": 55,
+          "end_line": 57,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_MaskedBlock.__init__",
+          "line": 66,
+          "end_line": 84,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_MaskedBlock.marginals",
+          "line": 86,
+          "end_line": 103,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_canonical_component",
+          "line": 106,
+          "end_line": 120,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "revise_scores",
+          "line": 123,
+          "end_line": 211,
+          "kind": "function",
+          "status": "explained"
+        }
+      ]
+    },
+    {
+      "path": "myproject/routing.py",
+      "sha256": "dd12983cfaa1a5c888c29158e582dc1bdb4206868ceec5e694565e132b6f5fee",
+      "line_count": 68,
+      "status": "explained",
+      "functions": [
+        {
+          "name": "projection_grams",
+          "line": 8,
+          "end_line": 17,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "append_value_energy",
+          "line": 20,
+          "end_line": 25,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "route_magnitudes",
+          "line": 28,
+          "end_line": 42,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "observe_route",
+          "line": 45,
+          "end_line": 68,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "observe_route.observe",
+          "line": 51,
+          "end_line": 60,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "observe_route.observe.record",
+          "line": 52,
+          "end_line": 59,
+          "kind": "function",
+          "status": "explained"
+        }
+      ]
+    },
+    {
+      "path": "myproject/run.py",
+      "sha256": "f7dd726881b201e0a1e02a962f38ee7b5e87066b38ececf9f4ef384fa799a578",
+      "line_count": 47,
+      "status": "explained",
+      "functions": [
+        {
+          "name": "main",
+          "line": 12,
+          "end_line": 43,
+          "kind": "function",
+          "status": "explained"
+        }
+      ]
+    },
+    {
+      "path": "myproject/segmentation.py",
+      "sha256": "300032e312aefefbc9f1a3c9006c5c78024f9f14517f52ad17f047bec69fd62c",
+      "line_count": 136,
+      "status": "explained",
+      "functions": [
+        {
+          "name": "partition_scores",
+          "line": 8,
+          "end_line": 35,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "partition_scores.<lambda>@29:31",
+          "line": 29,
+          "end_line": 29,
+          "kind": "lambda",
+          "status": "explained"
+        },
+        {
+          "name": "legal_atoms",
+          "line": 37,
+          "end_line": 48,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_inputs",
+          "line": 51,
+          "end_line": 59,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "background",
+          "line": 61,
+          "end_line": 64,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_prediction",
+          "line": 66,
+          "end_line": 68,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "interval_gains",
+          "line": 70,
+          "end_line": 85,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "fitted_profiles",
+          "line": 87,
+          "end_line": 104,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "segment",
+          "line": 106,
+          "end_line": 111,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "predictive_gain",
+          "line": 113,
+          "end_line": 120,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "predictive_segment",
+          "line": 123,
+          "end_line": 136,
+          "kind": "function",
+          "status": "explained"
+        }
+      ]
+    },
+    {
+      "path": "myproject/sequence.py",
+      "sha256": "57c839c77eb93081bbde6d4f127497f62bc6586b41ac4b80fea8160d02953114",
+      "line_count": 218,
+      "status": "explained",
+      "functions": [
+        {
+          "name": "_grid",
+          "line": 16,
+          "end_line": 43,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "_check_prevalence",
+          "line": 46,
+          "end_line": 50,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "witness_emissions",
+          "line": 53,
+          "end_line": 59,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "responsibility_logits",
+          "line": 62,
+          "end_line": 72,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "persistent_scores",
+          "line": 75,
+          "end_line": 138,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "token_state_scores",
+          "line": 141,
+          "end_line": 161,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "adaptive_token_scores",
+          "line": 164,
+          "end_line": 184,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "grouped_persistent_scores",
+          "line": 187,
+          "end_line": 217,
+          "kind": "function",
+          "status": "explained"
+        }
+      ]
+    },
+    {
+      "path": "myproject/shared.py",
+      "sha256": "180a4b1d02b94ea560aa12c9b661ed1439ae0f9416e0613c1d3b3573b82889f5",
+      "line_count": 105,
+      "status": "explained",
+      "functions": [
+        {
+          "name": "SharedDetector.__init__",
+          "line": 31,
+          "end_line": 39,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "SharedDetector.score",
+          "line": 41,
+          "end_line": 42,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "SharedDetector.score_components",
+          "line": 44,
+          "end_line": 59,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "SharedDetector.score_full_gap",
+          "line": 61,
+          "end_line": 69,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "SharedDetector._score_values",
+          "line": 71,
+          "end_line": 92,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "SharedDetector.save",
+          "line": 94,
+          "end_line": 97,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "SharedDetector.load",
+          "line": 99,
+          "end_line": 105,
+          "kind": "function",
+          "status": "explained"
+        }
+      ]
+    },
+    {
+      "path": "myproject/source.py",
+      "sha256": "838476d6af7889d22efc09925693245218663f04faf0f79bb9474ef923e1ecbc",
+      "line_count": 54,
+      "status": "explained",
+      "functions": [
+        {
+          "name": "source_full",
+          "line": 15,
+          "end_line": 38,
+          "kind": "function",
+          "status": "explained"
+        },
+        {
+          "name": "source_condition",
+          "line": 41,
+          "end_line": 54,
+          "kind": "function",
+          "status": "explained"
+        }
+      ]
+    },
+    {
+      "path": "experiments/__init__.py",
+      "sha256": "d4274bbed0971192535bf0bbfdee498b4e54b5d257e89726614a0abba2026a97",
+      "line_count": 1,
+      "status": "pending",
+      "functions": []
+    },
+    {
+      "path": "experiments/__main__.py",
+      "sha256": "e6a5b8a9b0f5bc30f863a0f88db0d1acf6a56ac41415d9dfd346748a63a015be",
+      "line_count": 3,
+      "status": "pending",
+      "functions": []
+    },
+    {
+      "path": "experiments/assertion_pilot.py",
+      "sha256": "811ea8b1858eada3a517d5475abcbadb2a5b0aae0c5baee4fc1869e4649666a2",
+      "line_count": 348,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "load_parser",
+          "line": 23,
+          "end_line": 46,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "load_parser.parse",
+          "line": 30,
+          "end_line": 44,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "control_payload",
+          "line": 49,
+          "end_line": 77,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "control_payload.<lambda>@51:34",
+          "line": 51,
+          "end_line": 51,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "structural_controls",
+          "line": 80,
+          "end_line": 129,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "structural_controls.span",
+          "line": 114,
+          "end_line": 118,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "check_control",
+          "line": 132,
+          "end_line": 151,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "project_roles",
+          "line": 154,
+          "end_line": 170,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "prepared_inputs",
+          "line": 173,
+          "end_line": 193,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "reference_controls",
+          "line": 196,
+          "end_line": 210,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "response_axis",
+          "line": 213,
+          "end_line": 220,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "tokenizer_files",
+          "line": 223,
+          "end_line": 227,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "run",
+          "line": 230,
+          "end_line": 348,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/binding_dependency_pilot.py",
+      "sha256": "3909242aa0e0f973ea17afcde6c81fc9e52ab52ab979dea87bc42070e76bef01",
+      "line_count": 295,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "run",
+          "line": 21,
+          "end_line": 133,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "run.count",
+          "line": 97,
+          "end_line": 99,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "score",
+          "line": 136,
+          "end_line": 174,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "replay",
+          "line": 177,
+          "end_line": 205,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "check_fixed_queries",
+          "line": 208,
+          "end_line": 220,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "scored_rows",
+          "line": 223,
+          "end_line": 239,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "cross_sources",
+          "line": 242,
+          "end_line": 295,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/binding_transfer.py",
+      "sha256": "5f449c97ada34355aa54c3647e9d40a5a3a03beeda25a50c027517dbb795b4ae",
+      "line_count": 251,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "run",
+          "line": 25,
+          "end_line": 166,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "run.count",
+          "line": 104,
+          "end_line": 106,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "evaluate",
+          "line": 169,
+          "end_line": 251,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/case_audit.py",
+      "sha256": "3733a82b7f0d2983717d42935ed2894e0cbc04df34f8ce58e3a9d063079d0608",
+      "line_count": 94,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "audit",
+          "line": 17,
+          "end_line": 81,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "main",
+          "line": 84,
+          "end_line": 90,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/conditional_dependencies.py",
+      "sha256": "da499ce39780c658d3723a5b893834b740c7f1e0a28e71613174724780ac8ca8",
+      "line_count": 72,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "lexical_anchors",
+          "line": 13,
+          "end_line": 28,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "deletion_dependencies",
+          "line": 31,
+          "end_line": 72,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "deletion_dependencies.probabilities",
+          "line": 47,
+          "end_line": 49,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/constraint_pilot.py",
+      "sha256": "ab88eab3179b856e8385d30182564dce09848384ff3627f51594d514bf35b667",
+      "line_count": 383,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "variants",
+          "line": 26,
+          "end_line": 46,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "rhs_rows",
+          "line": 49,
+          "end_line": 52,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "check_inputs",
+          "line": 55,
+          "end_line": 59,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "score_or_none",
+          "line": 62,
+          "end_line": 68,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "numeric_reading",
+          "line": 71,
+          "end_line": 77,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "mechanism_checks",
+          "line": 80,
+          "end_line": 104,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "belief_checks",
+          "line": 107,
+          "end_line": 137,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "binding_checks",
+          "line": 140,
+          "end_line": 166,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "run",
+          "line": 169,
+          "end_line": 283,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "run.count",
+          "line": 210,
+          "end_line": 212,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "score",
+          "line": 286,
+          "end_line": 340,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "evaluate",
+          "line": 343,
+          "end_line": 383,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/contextual_probe.py",
+      "sha256": "e4a03af1a486968e9565ffd7452bd1061a1d02a4eac901ea8bf0133815eb49bf",
+      "line_count": 271,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "read_rows",
+          "line": 48,
+          "end_line": 49,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "write_rows",
+          "line": 52,
+          "end_line": 55,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "sentences",
+          "line": 58,
+          "end_line": 68,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "prepare",
+          "line": 71,
+          "end_line": 134,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect",
+          "line": 137,
+          "end_line": 180,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "score",
+          "line": 183,
+          "end_line": 205,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "evaluate",
+          "line": 208,
+          "end_line": 246,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "main",
+          "line": 249,
+          "end_line": 267,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/counterfactual_repairs.py",
+      "sha256": "fb272fc9ff05a28e26f01349cb2c304c5379e2b6409af4ac44070c24f4c57275",
+      "line_count": 135,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "year_repairs",
+          "line": 17,
+          "end_line": 29,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "future_region",
+          "line": 32,
+          "end_line": 43,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "run",
+          "line": 46,
+          "end_line": 135,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "run.count",
+          "line": 76,
+          "end_line": 78,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/data.py",
+      "sha256": "cc8bd3c878c267a5c372a3871824c3402e364c106b0c29c42b5cac2bfe976796",
+      "line_count": 123,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "read_json",
+          "line": 14,
+          "end_line": 15,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "write_json",
+          "line": 18,
+          "end_line": 30,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "file_hash",
+          "line": 33,
+          "end_line": 38,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "file_hash.<lambda>@36:26",
+          "line": 36,
+          "end_line": 36,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "verify_seal",
+          "line": 41,
+          "end_line": 68,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "load_pack",
+          "line": 71,
+          "end_line": 74,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "select_rows",
+          "line": 77,
+          "end_line": 81,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "partition_records",
+          "line": 84,
+          "end_line": 94,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "partition_records.<lambda>@90:39",
+          "line": 90,
+          "end_line": 90,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "prepare",
+          "line": 97,
+          "end_line": 105,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "read_response",
+          "line": 108,
+          "end_line": 109,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "pack_path",
+          "line": 112,
+          "end_line": 114,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "text_hash",
+          "line": 117,
+          "end_line": 118,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "prediction_path",
+          "line": 121,
+          "end_line": 123,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/datasets.py",
+      "sha256": "f54fae13437e031461b159d43c3db5f68d71280147d30572646e09379bc4f644",
+      "line_count": 371,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "Sample.inputs",
+          "line": 28,
+          "end_line": 41,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "read_jsonl",
+          "line": 44,
+          "end_line": 51,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "read_samples",
+          "line": 54,
+          "end_line": 62,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_annotation",
+          "line": 65,
+          "end_line": 67,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_check_spans",
+          "line": 70,
+          "end_line": 75,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "sentence_token_labels",
+          "line": 78,
+          "end_line": 117,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_ragtruth",
+          "line": 120,
+          "end_line": 141,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_claimdb",
+          "line": 144,
+          "end_line": 164,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_fred",
+          "line": 167,
+          "end_line": 190,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_hallurag_source",
+          "line": 193,
+          "end_line": 218,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_hallurag",
+          "line": 221,
+          "end_line": 257,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_write_jsonl",
+          "line": 260,
+          "end_line": 263,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "prepare_dataset",
+          "line": 266,
+          "end_line": 371,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/delta_local_integrity_20261028.py",
+      "sha256": "4af860dd4d164906c99a12d8d4e7a3519f7c591609625d60d44d1d1fc645d7dc",
+      "line_count": 452,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "read",
+          "line": 23,
+          "end_line": 24,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "digest",
+          "line": 27,
+          "end_line": 28,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "compare",
+          "line": 31,
+          "end_line": 37,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "verify",
+          "line": 40,
+          "end_line": 43,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "boundaries",
+          "line": 46,
+          "end_line": 49,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "geometry",
+          "line": 52,
+          "end_line": 73,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "quadrature",
+          "line": 76,
+          "end_line": 80,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "beta_scores",
+          "line": 83,
+          "end_line": 93,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "metric",
+          "line": 96,
+          "end_line": 117,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "compare_metric",
+          "line": 120,
+          "end_line": 127,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "whitening",
+          "line": 130,
+          "end_line": 147,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "load_native",
+          "line": 150,
+          "end_line": 198,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "task_rows",
+          "line": 201,
+          "end_line": 234,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "diagnostics",
+          "line": 237,
+          "end_line": 251,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "bootstrap",
+          "line": 254,
+          "end_line": 271,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "audit_task",
+          "line": 274,
+          "end_line": 355,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "audit_cases",
+          "line": 358,
+          "end_line": 380,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "main",
+          "line": 383,
+          "end_line": 448,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/delta_local_run.py",
+      "sha256": "7b11865f393e72440945101dd782e859779e437853e24fe37a28f762134c7bd1",
+      "line_count": 356,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "prepare",
+          "line": 36,
+          "end_line": 85,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "validate",
+          "line": 88,
+          "end_line": 99,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect",
+          "line": 102,
+          "end_line": 163,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect.count",
+          "line": 120,
+          "end_line": 122,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_readouts",
+          "line": 166,
+          "end_line": 183,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "score",
+          "line": 186,
+          "end_line": 245,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "score_cases",
+          "line": 248,
+          "end_line": 273,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "evaluation_gate",
+          "line": 276,
+          "end_line": 295,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "evaluate_cohort",
+          "line": 298,
+          "end_line": 333,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "main",
+          "line": 336,
+          "end_line": 353,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/delta_observe.py",
+      "sha256": "37b191d0b16cc644e3da736ba446ea20871e559c9a744286ccbf6fdd71a65b06",
+      "line_count": 33,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "hidden_trace",
+          "line": 9,
+          "end_line": 33,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/dependency_probe.py",
+      "sha256": "30340b3fef8ebc3dbcae355ea162145bad67aa74489f5be6cf04f3525ef105a2",
+      "line_count": 270,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "prepare",
+          "line": 43,
+          "end_line": 115,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "prepare.register",
+          "line": 52,
+          "end_line": 58,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "prepare.group",
+          "line": 60,
+          "end_line": 72,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect",
+          "line": 118,
+          "end_line": 168,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect.count",
+          "line": 139,
+          "end_line": 141,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "score",
+          "line": 171,
+          "end_line": 216,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "evaluate",
+          "line": 219,
+          "end_line": 250,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "main",
+          "line": 253,
+          "end_line": 266,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/evaluate.py",
+      "sha256": "285a9225533249386d1a547b5f3f5901cb174bd69e015a37476827c1e5f6fdf6",
+      "line_count": 371,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "token_labels",
+          "line": 12,
+          "end_line": 18,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "official_labels",
+          "line": 21,
+          "end_line": 43,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "ranking",
+          "line": 46,
+          "end_line": 56,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "localization_diagnostics",
+          "line": 59,
+          "end_line": 99,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "evaluate",
+          "line": 102,
+          "end_line": 113,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_span_score",
+          "line": 116,
+          "end_line": 122,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_ranked_rows",
+          "line": 125,
+          "end_line": 128,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_weighted_ranks",
+          "line": 131,
+          "end_line": 145,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_cluster_intervals",
+          "line": 148,
+          "end_line": 161,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "evaluate_dataset",
+          "line": 164,
+          "end_line": 351,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "paired_source_differences",
+          "line": 354,
+          "end_line": 371,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/export_hallurag.py",
+      "sha256": "03751993c63ef530fda4d34dcde9b50fee22b07d8c8a08e1dad2504464908949",
+      "line_count": 63,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "PlainUnpickler.find_class",
+          "line": 16,
+          "end_line": 17,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "export_hallurag",
+          "line": 20,
+          "end_line": 63,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/fit_ablation.py",
+      "sha256": "521051a496758eafa221e72b86ed1737b8f9831ff8b33e7c962dd33185f95911",
+      "line_count": 149,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "verify_seal",
+          "line": 33,
+          "end_line": 36,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "score",
+          "line": 39,
+          "end_line": 88,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "evaluate",
+          "line": 91,
+          "end_line": 131,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "main",
+          "line": 134,
+          "end_line": 145,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/fullgap_dataset.py",
+      "sha256": "0e89cbc9025503c69690dac0c909ae4c1dcb3527b4d3a939b69f96b79eef9e30",
+      "line_count": 849,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "_hash_files",
+          "line": 53,
+          "end_line": 54,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_model_files",
+          "line": 57,
+          "end_line": 67,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_verify_paths",
+          "line": 70,
+          "end_line": 73,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_label_contract",
+          "line": 76,
+          "end_line": 88,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_original_samples",
+          "line": 91,
+          "end_line": 134,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_verify_original_inputs",
+          "line": 137,
+          "end_line": 145,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_prepared",
+          "line": 148,
+          "end_line": 210,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_axis_arrays",
+          "line": 213,
+          "end_line": 223,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect",
+          "line": 226,
+          "end_line": 328,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect.<lambda>@312:65",
+          "line": 312,
+          "end_line": 312,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "collect.<lambda>@320:39",
+          "line": 320,
+          "end_line": 320,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "_verify_simple_seal",
+          "line": 331,
+          "end_line": 332,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_load_observation",
+          "line": 335,
+          "end_line": 361,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_read_native",
+          "line": 364,
+          "end_line": 396,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_score_run",
+          "line": 399,
+          "end_line": 446,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "score",
+          "line": 449,
+          "end_line": 487,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_verify_scores",
+          "line": 490,
+          "end_line": 546,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_response_metadata",
+          "line": 549,
+          "end_line": 599,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_native_token_identities",
+          "line": 602,
+          "end_line": 616,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_native_token_units",
+          "line": 619,
+          "end_line": 626,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_verify_method_evaluation",
+          "line": 629,
+          "end_line": 639,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_token_key",
+          "line": 642,
+          "end_line": 646,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_evaluation_rows",
+          "line": 649,
+          "end_line": 678,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_paired_views",
+          "line": 681,
+          "end_line": 749,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_paired_views.view",
+          "line": 691,
+          "end_line": 733,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_paired_views.<lambda>@739:66",
+          "line": 739,
+          "end_line": 739,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "_paired_views.<lambda>@740:68",
+          "line": 740,
+          "end_line": 740,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "_paired_views.<lambda>@742:38",
+          "line": 742,
+          "end_line": 742,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "_paired_views.<lambda>@744:40",
+          "line": 744,
+          "end_line": 744,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "evaluate",
+          "line": 752,
+          "end_line": 849,
+          "kind": "function",
+          "status": "pending"
+        }
+      ],
+      "current_sha256": "b3ba6cf32116219bb012bc2a4f0ce0e1e81fbdc0464b23ddc274d2804753fff8",
+      "current_status": "pending_modified_worktree"
+    },
+    {
+      "path": "experiments/hidden.py",
+      "sha256": "dc23cc5c1dac858ea6d27f063aaf2965f9cf32aa3933da17fb2c9cab88b7d150",
+      "line_count": 60,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "hidden_observation",
+          "line": 10,
+          "end_line": 60,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/inputs.py",
+      "sha256": "7bafa7900acc70fb0051a95d8857cfdbab90e10b28c52e4c3c87f3407b54539d",
+      "line_count": 58,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "source_span",
+          "line": 10,
+          "end_line": 20,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "prepare_official",
+          "line": 23,
+          "end_line": 58,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "prepare_official.<lambda>@32:18",
+          "line": 32,
+          "end_line": 33,
+          "kind": "lambda",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/local_evaluation.py",
+      "sha256": "1aea91af94cd39a2a971625d458909d5e82e97eb813352ff3a09da09cbfdd549",
+      "line_count": 61,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "paired_span_differences",
+          "line": 9,
+          "end_line": 61,
+          "kind": "function",
+          "status": "pending"
+        }
+      ],
+      "current_sha256": "75150108aaa541b0dbb4825f7af3023de36e0686852e2d4fd7e9825ff65f3e88",
+      "current_status": "pending_modified_worktree"
+    },
+    {
+      "path": "experiments/loo_pooling.py",
+      "sha256": "f94a7390906e3c9c2947f358792c5596b20a7e7def7611acbbc0193fdd2f86c7",
+      "line_count": 112,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "score",
+          "line": 30,
+          "end_line": 93,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "main",
+          "line": 96,
+          "end_line": 108,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/lumina_dataset.py",
+      "sha256": "b247152c6e473c403434cb796f21dc20a4d0a48cbac6e6be529ecff374e2c469",
+      "line_count": 417,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "donor_mapping",
+          "line": 22,
+          "end_line": 50,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "donor_mapping.<lambda>@50:44",
+          "line": 50,
+          "end_line": 50,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "_feature_scores",
+          "line": 53,
+          "end_line": 56,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_load_features",
+          "line": 59,
+          "end_line": 72,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_write_predictions",
+          "line": 75,
+          "end_line": 96,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect",
+          "line": 99,
+          "end_line": 246,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect.<lambda>@105:8",
+          "line": 105,
+          "end_line": 105,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "collect.count",
+          "line": 165,
+          "end_line": 167,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect.<lambda>@213:21",
+          "line": 213,
+          "end_line": 213,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "collect.<lambda>@214:28",
+          "line": 214,
+          "end_line": 214,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "_read_collection",
+          "line": 249,
+          "end_line": 328,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "evaluate",
+          "line": 331,
+          "end_line": 417,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "evaluate.<lambda>@336:8",
+          "line": 336,
+          "end_line": 336,
+          "kind": "lambda",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/measure.py",
+      "sha256": "ec60b104313bc57611e015f6256be373522a4fb5d201311ad155abffdd173b02",
+      "line_count": 58,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "cached_measurement",
+          "line": 11,
+          "end_line": 18,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "measure",
+          "line": 21,
+          "end_line": 58,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/native_dataset.py",
+      "sha256": "c23c040fa77c5709876bcebc3fe0beb60238e2b568758274437f857b255d8bcb",
+      "line_count": 581,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "prepared_inputs",
+          "line": 24,
+          "end_line": 54,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect",
+          "line": 57,
+          "end_line": 114,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect.count",
+          "line": 85,
+          "end_line": 87,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "read_native",
+          "line": 117,
+          "end_line": 144,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect_cached",
+          "line": 147,
+          "end_line": 244,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "validate",
+          "line": 247,
+          "end_line": 251,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "qualify_proofs",
+          "line": 254,
+          "end_line": 277,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "score",
+          "line": 280,
+          "end_line": 473,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "evaluate",
+          "line": 476,
+          "end_line": 581,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/native_response.py",
+      "sha256": "23f29f8f9b6e0bad2c64c28e59100e85beb5819a4faf6f1dc2230cf00562dba0",
+      "line_count": 258,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "_records",
+          "line": 26,
+          "end_line": 86,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_begin",
+          "line": 89,
+          "end_line": 102,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_begin.<lambda>@90:43",
+          "line": 90,
+          "end_line": 90,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "_finish",
+          "line": 105,
+          "end_line": 114,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_certificates",
+          "line": 117,
+          "end_line": 143,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "probe_native",
+          "line": 146,
+          "end_line": 209,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "local_uncertainty",
+          "line": 212,
+          "end_line": 258,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/pipeline.py",
+      "sha256": "25a0192563ef4be00a385c7b6f7d3e7060eb53cb005d37c09cc31df38a2ad445",
+      "line_count": 195,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "fit",
+          "line": 12,
+          "end_line": 15,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "score",
+          "line": 18,
+          "end_line": 36,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "predict_dataset",
+          "line": 39,
+          "end_line": 150,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_complete_predictions",
+          "line": 153,
+          "end_line": 162,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_validate_prediction",
+          "line": 165,
+          "end_line": 186,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_verify_predictions",
+          "line": 188,
+          "end_line": 195,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/pooling_run.py",
+      "sha256": "ebc045f2d95a666901e8b6f2f9861b1bb64945768e028239e0460b778c07adc6",
+      "line_count": 212,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "prepare",
+          "line": 33,
+          "end_line": 53,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect",
+          "line": 56,
+          "end_line": 120,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect.count",
+          "line": 73,
+          "end_line": 75,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_unit_index",
+          "line": 123,
+          "end_line": 133,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_unit_index.<lambda>@129:68",
+          "line": 129,
+          "end_line": 129,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "score",
+          "line": 136,
+          "end_line": 186,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "main",
+          "line": 189,
+          "end_line": 208,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/prevalence_probe.py",
+      "sha256": "438cc709939be397fb42c9350bcda9355a069efc62a973e6e44d04bf3bc929e7",
+      "line_count": 180,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "influence",
+          "line": 22,
+          "end_line": 35,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "shrink_context",
+          "line": 38,
+          "end_line": 50,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "span_candidates",
+          "line": 53,
+          "end_line": 60,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "select_span_candidates",
+          "line": 63,
+          "end_line": 65,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "select_span_candidates.<lambda>@64:34",
+          "line": 64,
+          "end_line": 65,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "selected_spans",
+          "line": 68,
+          "end_line": 77,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "inspect_span",
+          "line": 80,
+          "end_line": 117,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "probe",
+          "line": 120,
+          "end_line": 180,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/provenance.py",
+      "sha256": "196e7d1f5c8e218b6b6217a793df6eef7512029fc887f9edef83d1f648470515",
+      "line_count": 45,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "research_identity",
+          "line": 14,
+          "end_line": 39,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "completed_identity",
+          "line": 42,
+          "end_line": 45,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/relational_transfer.py",
+      "sha256": "360c5e339b1021dca9e8a2a195bf16f85ef31a55ca98f4c57eab4b9c7c9ea004",
+      "line_count": 109,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "read_worlds",
+          "line": 15,
+          "end_line": 27,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect",
+          "line": 30,
+          "end_line": 109,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect.count",
+          "line": 60,
+          "end_line": 62,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/research/__init__.py",
+      "sha256": "dc38805b2a984c6e89889af8e6242a59748a3c82987813a4d18c76e77ba44af7",
+      "line_count": 1,
+      "status": "pending",
+      "functions": []
+    },
+    {
+      "path": "experiments/research/__main__.py",
+      "sha256": "e6a5b8a9b0f5bc30f863a0f88db0d1acf6a56ac41415d9dfd346748a63a015be",
+      "line_count": 3,
+      "status": "pending",
+      "functions": []
+    },
+    {
+      "path": "experiments/research/assertions.py",
+      "sha256": "6d12088bc68ac7acc03b4da2c621ebd24d65211139f3494f664ec95251e8d864",
+      "line_count": 364,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "parse_conllu",
+          "line": 26,
+          "end_line": 104,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "parse_conllu.finish",
+          "line": 40,
+          "end_line": 88,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "numeric_mentions",
+          "line": 107,
+          "end_line": 122,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_base",
+          "line": 125,
+          "end_line": 126,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_lemma",
+          "line": 129,
+          "end_line": 130,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_role",
+          "line": 133,
+          "end_line": 137,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_ancestors",
+          "line": 140,
+          "end_line": 144,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_descendants",
+          "line": 147,
+          "end_line": 152,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_frame",
+          "line": 155,
+          "end_line": 165,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_path",
+          "line": 168,
+          "end_line": 174,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_temporal_root",
+          "line": 177,
+          "end_line": 186,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_record",
+          "line": 189,
+          "end_line": 194,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_math_roles",
+          "line": 197,
+          "end_line": 236,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "numeric_assertions",
+          "line": 239,
+          "end_line": 364,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "numeric_assertions.<lambda>@313:57",
+          "line": 313,
+          "end_line": 313,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "numeric_assertions.<lambda>@364:31",
+          "line": 364,
+          "end_line": 364,
+          "kind": "lambda",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/research/binding_dependency.py",
+      "sha256": "a01ec2b788ca4206f0d0e78796be2d5f2af235df5b700411450c715b06bc6355",
+      "line_count": 150,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "source_cells",
+          "line": 10,
+          "end_line": 16,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "relation",
+          "line": 19,
+          "end_line": 31,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "dependency_readout",
+          "line": 34,
+          "end_line": 107,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "dependency_readout.<lambda>@87:36",
+          "line": 87,
+          "end_line": 87,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "dependency_checks",
+          "line": 110,
+          "end_line": 150,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/research/binding_witnesses.py",
+      "sha256": "613ba58843e481e33b6177be45eaa2db13cc68621857f6d838e033c797baf9c6",
+      "line_count": 151,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "binding_pairs",
+          "line": 12,
+          "end_line": 46,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "binding_pairs.<lambda>@46:29",
+          "line": 46,
+          "end_line": 46,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "binding_text",
+          "line": 49,
+          "end_line": 66,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "binding_worlds",
+          "line": 69,
+          "end_line": 78,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "binding_probe_pair",
+          "line": 81,
+          "end_line": 86,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "swap_year_columns",
+          "line": 89,
+          "end_line": 110,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "binding_probes",
+          "line": 113,
+          "end_line": 151,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/research/constraint_interaction.py",
+      "sha256": "be069ffbd941ada04c4f3ea3410d385794cdd348b08428bc24a3547f3bf66939",
+      "line_count": 226,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "numbers",
+          "line": 15,
+          "end_line": 20,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "numbers.embedded",
+          "line": 16,
+          "end_line": 17,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "literal",
+          "line": 23,
+          "end_line": 24,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "equations",
+          "line": 27,
+          "end_line": 40,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "witnesses",
+          "line": 43,
+          "end_line": 73,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "belief_worlds",
+          "line": 76,
+          "end_line": 95,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "belief_model",
+          "line": 98,
+          "end_line": 126,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "belief_scores",
+          "line": 129,
+          "end_line": 135,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "belief_loo",
+          "line": 138,
+          "end_line": 153,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "normalized",
+          "line": 156,
+          "end_line": 158,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "representations",
+          "line": 161,
+          "end_line": 164,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "prototype_scores",
+          "line": 167,
+          "end_line": 177,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "block_mask",
+          "line": 180,
+          "end_line": 190,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "interaction_states",
+          "line": 193,
+          "end_line": 226,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/research/constraints.py",
+      "sha256": "7e78582c1092fa0852222533a69e8aa52d2acecbc53ef1df7faa1bfdea562fbc",
+      "line_count": 54,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "constraint_log_odds",
+          "line": 8,
+          "end_line": 54,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/research/contextual_alignment.py",
+      "sha256": "45766d0c657eed37dc66aa6652e4d85340fa96057cf3e31ace4a6701ad043697",
+      "line_count": 89,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "word_states",
+          "line": 14,
+          "end_line": 31,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "anchored_residual",
+          "line": 34,
+          "end_line": 61,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "qualify_family",
+          "line": 64,
+          "end_line": 89,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/research/delta_local.py",
+      "sha256": "b8cdcf1fccf17ed1f9f9d042370b08d0f05893591122c16d16e8fe0dba830182",
+      "line_count": 69,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "_matrix",
+          "line": 11,
+          "end_line": 15,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "direction_scores",
+          "line": 18,
+          "end_line": 45,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "fit_whitening",
+          "line": 48,
+          "end_line": 60,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "whiten",
+          "line": 63,
+          "end_line": 69,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/research/dependence.py",
+      "sha256": "cb7827f26b83514ec393ca2b90c843c15c960544ab6e21d7365a3b835864873a",
+      "line_count": 51,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "maxent",
+          "line": 6,
+          "end_line": 30,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "legal_orders",
+          "line": 32,
+          "end_line": 51,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "legal_orders.visit",
+          "line": 40,
+          "end_line": 49,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/research/fingerprints.py",
+      "sha256": "c5596645cf91ac857a8dc58b1b369044fe845952f46cdb646cd3696b23b59258",
+      "line_count": 87,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "signed_profile_distance",
+          "line": 6,
+          "end_line": 27,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "mask_preserving_permutation",
+          "line": 30,
+          "end_line": 42,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "qualify_dependency_family",
+          "line": 45,
+          "end_line": 87,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "qualify_dependency_family.value",
+          "line": 55,
+          "end_line": 56,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "qualify_dependency_family.delta",
+          "line": 73,
+          "end_line": 76,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/research/hierarchy.py",
+      "sha256": "da67ea7e36e51e044634967db66c489d58bf656eab6f09056e185ca9d5d9df53",
+      "line_count": 76,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "quadrature",
+          "line": 14,
+          "end_line": 20,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "hierarchical_scores",
+          "line": 23,
+          "end_line": 59,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "shared_exploration",
+          "line": 62,
+          "end_line": 76,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/research/lumina.py",
+      "sha256": "fa9c4714589a940f804085b7a39c0118126dc1c0ece11d0658b7631aa262341f",
+      "line_count": 206,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "_finite",
+          "line": 53,
+          "end_line": 55,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "topk_view",
+          "line": 58,
+          "end_line": 67,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_cosine",
+          "line": 70,
+          "end_line": 72,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "mmd_from_topk",
+          "line": 75,
+          "end_line": 93,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "context_mmd",
+          "line": 96,
+          "end_line": 103,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "layer_statistics",
+          "line": 106,
+          "end_line": 111,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "information_rate",
+          "line": 114,
+          "end_line": 133,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "random_prompt",
+          "line": 136,
+          "end_line": 140,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_present",
+          "line": 143,
+          "end_line": 159,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "measure_group",
+          "line": 162,
+          "end_line": 206,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/research/relational.py",
+      "sha256": "41b3e183b5e6c6ecfc47af079e91946643aa6a340c8322652fa42241a7b4a8c7",
+      "line_count": 86,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "relational_sources",
+          "line": 16,
+          "end_line": 59,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "multiworld_scores",
+          "line": 62,
+          "end_line": 86,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/research/relational_shared.py",
+      "sha256": "ae916729222fafdc654c2acfff2ac7e324230d11c7536846b039117a243d64a6",
+      "line_count": 142,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "relation_factors",
+          "line": 18,
+          "end_line": 55,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "constrained_scores",
+          "line": 58,
+          "end_line": 120,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "grouped_relational_scores",
+          "line": 123,
+          "end_line": 142,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/research/run.py",
+      "sha256": "76300ae5b620b18f30457fc5378422e6610cd6de793555e7fe2769d48bc90134",
+      "line_count": 94,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "parser",
+          "line": 12,
+          "end_line": 28,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "output_path",
+          "line": 31,
+          "end_line": 38,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "segment",
+          "line": 41,
+          "end_line": 67,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "main",
+          "line": 70,
+          "end_line": 90,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/research/sequence_controls.py",
+      "sha256": "d480959c71e4073651d4cbd447b06e256d08b53bd146eb1fbef94a09fa07c6a0",
+      "line_count": 90,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "span_score_components",
+          "line": 9,
+          "end_line": 26,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "span_order_checks",
+          "line": 29,
+          "end_line": 50,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "token_state_controls",
+          "line": 53,
+          "end_line": 66,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "grouped_witness_controls",
+          "line": 69,
+          "end_line": 90,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/research/spans.py",
+      "sha256": "a830a414b0a86ff69d38ddb679a641c4872c4b65688bd26d46a81022c7c4811c",
+      "line_count": 61,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "contexts",
+          "line": 6,
+          "end_line": 34,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "interval_scores",
+          "line": 36,
+          "end_line": 43,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "partition",
+          "line": 45,
+          "end_line": 47,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "quality",
+          "line": 50,
+          "end_line": 51,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "constrained_partition",
+          "line": 54,
+          "end_line": 61,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/research/state.py",
+      "sha256": "e2d4451d04b088154684706ce777a40a51afdee4bc8b670912e40928e4a54dc8",
+      "line_count": 128,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "HistoryView.__init__",
+          "line": 10,
+          "end_line": 37,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "HistoryView.bins",
+          "line": 39,
+          "end_line": 43,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "HistoryView._compute_bins",
+          "line": 45,
+          "end_line": 62,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "HistoryView.gain",
+          "line": 64,
+          "end_line": 68,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "estimate",
+          "line": 70,
+          "end_line": 86,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "estimate.score",
+          "line": 74,
+          "end_line": 75,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "SpanInteraction.__init__",
+          "line": 91,
+          "end_line": 93,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "SpanInteraction.interval",
+          "line": 95,
+          "end_line": 99,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "SpanInteraction._compute_interval",
+          "line": 101,
+          "end_line": 119,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "SpanInteraction.partition",
+          "line": 121,
+          "end_line": 128,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/research/state_partition.py",
+      "sha256": "75ceddf65b434657087f7bb6a3b96aa0f74519c82f8fe0f724e5e70d2fa0889e",
+      "line_count": 52,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "residual_gains",
+          "line": 8,
+          "end_line": 39,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "residual_gains.cumulative",
+          "line": 22,
+          "end_line": 23,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "routing_partition",
+          "line": 42,
+          "end_line": 52,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/research/table_bindings.py",
+      "sha256": "b59ba6fea81393849976c14b8b9f35edbb41fedd3d1ec4163d7932054ee0b481",
+      "line_count": 129,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "number",
+          "line": 22,
+          "end_line": 33,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "table_regions",
+          "line": 36,
+          "end_line": 48,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "tables",
+          "line": 51,
+          "end_line": 53,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "bindings",
+          "line": 56,
+          "end_line": 73,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "literal_links",
+          "line": 76,
+          "end_line": 89,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "conflicts",
+          "line": 92,
+          "end_line": 109,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "scores",
+          "line": 112,
+          "end_line": 129,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/run.py",
+      "sha256": "e504d9d54adbe1cd436bfdc954fa616d5b3f1338e90b4ac919358c220f4e8b5c",
+      "line_count": 374,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "parser",
+          "line": 10,
+          "end_line": 216,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "main",
+          "line": 219,
+          "end_line": 370,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/source_write_integrity_20261028.py",
+      "sha256": "4e7bac8ea1a33849ee133d4bb578564db451b4807fe96bd2a9c39b485eb2c04f",
+      "line_count": 261,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "read",
+          "line": 13,
+          "end_line": 13,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "sha",
+          "line": 14,
+          "end_line": 18,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "sha.<lambda>@17:22",
+          "line": 17,
+          "end_line": 17,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "verify",
+          "line": 19,
+          "end_line": 22,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "close",
+          "line": 23,
+          "end_line": 29,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "bounds",
+          "line": 30,
+          "end_line": 31,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "quadrature",
+          "line": 32,
+          "end_line": 35,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "pooled",
+          "line": 36,
+          "end_line": 48,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "rank_vector",
+          "line": 49,
+          "end_line": 64,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "point",
+          "line": 65,
+          "end_line": 70,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "metric_close",
+          "line": 71,
+          "end_line": 75,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "bootstrap",
+          "line": 76,
+          "end_line": 91,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "run",
+          "line": 93,
+          "end_line": 259,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/source_write_observe.py",
+      "sha256": "45cc825e8cef8cfd26ca8e092d756924c1f2c4ae3b6541772351de1da274766c",
+      "line_count": 123,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "partition_writes",
+          "line": 10,
+          "end_line": 22,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "source_readouts",
+          "line": 25,
+          "end_line": 56,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "source_readouts.logp",
+          "line": 29,
+          "end_line": 31,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "write_trace",
+          "line": 59,
+          "end_line": 123,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "write_trace.attention_hook",
+          "line": 77,
+          "end_line": 92,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "write_trace.attention_hook.record",
+          "line": 78,
+          "end_line": 91,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "write_trace.mlp_hook",
+          "line": 94,
+          "end_line": 95,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "write_trace.final_input",
+          "line": 97,
+          "end_line": 98,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/source_write_run.py",
+      "sha256": "f2a2ba6910b98581c28e544b4f9afd92ea5f108777e8739fda1eda38901fb4b1",
+      "line_count": 246,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "prepare",
+          "line": 41,
+          "end_line": 65,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "inputs",
+          "line": 68,
+          "end_line": 83,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect",
+          "line": 86,
+          "end_line": 128,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect.count",
+          "line": 101,
+          "end_line": 102,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "readouts",
+          "line": 131,
+          "end_line": 135,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "score",
+          "line": 138,
+          "end_line": 205,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "verify_completed_scores",
+          "line": 208,
+          "end_line": 219,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "evaluate_cohort",
+          "line": 222,
+          "end_line": 224,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "main",
+          "line": 227,
+          "end_line": 243,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/span_markup.py",
+      "sha256": "62b10a48f9cb9915498152083f219362ab7d83b2aab5cbc38ff6aab640ccb791",
+      "line_count": 61,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "decode_edits",
+          "line": 10,
+          "end_line": 48,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "decode_edits.append",
+          "line": 18,
+          "end_line": 30,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "fred_text",
+          "line": 51,
+          "end_line": 61,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/span_pilot.py",
+      "sha256": "223f2a9a876593f78c9dae35469cd2505d73ed8f33e116a0d440042409f65333",
+      "line_count": 279,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "select_records",
+          "line": 20,
+          "end_line": 37,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "select_records.<lambda>@31:26",
+          "line": 31,
+          "end_line": 31,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "select_records.<lambda>@35:48",
+          "line": 35,
+          "end_line": 35,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "prepare",
+          "line": 40,
+          "end_line": 55,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "units",
+          "line": 58,
+          "end_line": 59,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "validated_inputs",
+          "line": 62,
+          "end_line": 71,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect",
+          "line": 74,
+          "end_line": 161,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect.count",
+          "line": 94,
+          "end_line": 96,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "load_batches",
+          "line": 164,
+          "end_line": 192,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "load_batches.<lambda>@181:39",
+          "line": 181,
+          "end_line": 181,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "score",
+          "line": 195,
+          "end_line": 224,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "evaluate",
+          "line": 227,
+          "end_line": 257,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "main",
+          "line": 260,
+          "end_line": 275,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/span_resolution.py",
+      "sha256": "e1d289e1dc8e72131dcea9c48e8cf6cd3a1067ab11c5866f1809f48f63464762",
+      "line_count": 292,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "_sources",
+          "line": 24,
+          "end_line": 46,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_bindings",
+          "line": 49,
+          "end_line": 51,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_rows",
+          "line": 54,
+          "end_line": 71,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect",
+          "line": 74,
+          "end_line": 123,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "collect.<lambda>@77:8",
+          "line": 77,
+          "end_line": 77,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "_read_collection",
+          "line": 126,
+          "end_line": 168,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_checked_projection",
+          "line": 171,
+          "end_line": 179,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "_reference_evaluations",
+          "line": 182,
+          "end_line": 227,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "evaluate",
+          "line": 230,
+          "end_line": 292,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "evaluate.<lambda>@235:8",
+          "line": 235,
+          "end_line": 235,
+          "kind": "lambda",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/transfer_diagnostics.py",
+      "sha256": "bdb8f79fc83b79fe283f367ae1843ffb83d2c1cdf4293f451f7cca3ef8d3779a",
+      "line_count": 285,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "alarm",
+          "line": 17,
+          "end_line": 20,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "check_dependencies",
+          "line": 23,
+          "end_line": 36,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "check_derived",
+          "line": 39,
+          "end_line": 42,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "fit_shared_prior",
+          "line": 45,
+          "end_line": 68,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "diagnose",
+          "line": 71,
+          "end_line": 285,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/verify.py",
+      "sha256": "71a9234d7a26f3cccae2ac7a6d0cf22887fa03748292cb97bc99862ed0982c9e",
+      "line_count": 79,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "assert_bitexact",
+          "line": 13,
+          "end_line": 16,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "verify",
+          "line": 19,
+          "end_line": 64,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "main",
+          "line": 67,
+          "end_line": 75,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "experiments/write_competition_integrity_20261028.py",
+      "sha256": "c4499593e9c716f6e7241aeb65ee05b398a6941c3134b873d018e2aa4e768831",
+      "line_count": 258,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "read",
+          "line": 18,
+          "end_line": 18,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "sha",
+          "line": 19,
+          "end_line": 23,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "sha.<lambda>@22:22",
+          "line": 22,
+          "end_line": 22,
+          "kind": "lambda",
+          "status": "pending"
+        },
+        {
+          "name": "same",
+          "line": 24,
+          "end_line": 30,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "seal",
+          "line": 31,
+          "end_line": 34,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "identity",
+          "line": 35,
+          "end_line": 40,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "quad",
+          "line": 41,
+          "end_line": 44,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "beta",
+          "line": 45,
+          "end_line": 57,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "metrics",
+          "line": 58,
+          "end_line": 74,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "point",
+          "line": 75,
+          "end_line": 81,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "boot",
+          "line": 82,
+          "end_line": 95,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "run",
+          "line": 98,
+          "end_line": 248,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "main",
+          "line": 251,
+          "end_line": 255,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "tests/__init__.py",
+      "sha256": "4d6bf021c1d3a9895bd8b2d5ac1ab134fbac3b519fed15e54c38cae6a83a9644",
+      "line_count": 1,
+      "status": "pending",
+      "functions": []
+    },
+    {
+      "path": "tests/test_api.py",
+      "sha256": "be7ed90d5d45af6ab103699f0f66e1bff55620fa1bc29754c53a3773d6490e30",
+      "line_count": 169,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "CharacterTokenizer.apply_chat_template",
+          "line": 22,
+          "end_line": 24,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "CharacterTokenizer.__call__",
+          "line": 26,
+          "end_line": 29,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "CharacterTokenizer.decode",
+          "line": 31,
+          "end_line": 32,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "text_detector",
+          "line": 35,
+          "end_line": 44,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_fit_predict_is_silent_keeps_original_offsets_and_writes_only_on_save",
+          "line": 47,
+          "end_line": 67,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_from_pretrained_uses_bundled_task_references",
+          "line": 70,
+          "end_line": 79,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_custom_reference_task_is_checked_before_loading_model",
+          "line": 82,
+          "end_line": 88,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_model_loading_is_quiet_and_restores_caller_logging_settings",
+          "line": 91,
+          "end_line": 135,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_model_loading_is_quiet_and_restores_caller_logging_settings.noisy_loader",
+          "line": 100,
+          "end_line": 106,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_unfitted_empty_and_invalid_source_inputs_fail_before_measurement",
+          "line": 138,
+          "end_line": 152,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_default_shared_predicts_without_fit_and_preserves_text_offsets",
+          "line": 155,
+          "end_line": 169,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_bootstrap.py",
+      "sha256": "f932d1e00870dbce9f079b39a6f819bd17bbe70cb2d6cf0d30aafba40fd9a1a4",
+      "line_count": 48,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "BootstrapTests.test_matches_explicit_resampling",
+          "line": 12,
+          "end_line": 48,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_dataset_pipeline.py",
+      "sha256": "0b0e8b4500d4c14927fec11fb59cbe17e2df066e6c222034e246c063a57734e0",
+      "line_count": 311,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "write_rows",
+          "line": 17,
+          "end_line": 19,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "make_sample",
+          "line": 22,
+          "end_line": 26,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "prepare_fixture",
+          "line": 29,
+          "end_line": 42,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "model_files",
+          "line": 45,
+          "end_line": 57,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "FakeDetector.__init__",
+          "line": 63,
+          "end_line": 66,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "FakeDetector.predict",
+          "line": 68,
+          "end_line": 76,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "install_detector",
+          "line": 79,
+          "end_line": 82,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "predict",
+          "line": 85,
+          "end_line": 87,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_failure_leaves_checkpoint_and_resume_scores_only_missing_response",
+          "line": 90,
+          "end_line": 111,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_prediction_never_opens_annotations",
+          "line": 114,
+          "end_line": 128,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_prediction_never_opens_annotations.guarded_open",
+          "line": 120,
+          "end_line": 123,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_structured_evidence_is_rejected_before_loading_model",
+          "line": 131,
+          "end_line": 138,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_sealed_prediction_tampering_is_rejected_before_annotation_reads",
+          "line": 141,
+          "end_line": 165,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_sealed_prediction_tampering_is_rejected_before_annotation_reads.guarded_open",
+          "line": 157,
+          "end_line": 160,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_sentence_evaluation_weights_overlap_and_bootstraps_whole_articles",
+          "line": 168,
+          "end_line": 212,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_modified_prepared_input_cannot_be_scored_under_original_manifest",
+          "line": 215,
+          "end_line": 223,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_weight_mutation_prevents_failed_run_resume",
+          "line": 226,
+          "end_line": 242,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_cli_prepares_predicts_and_evaluates_without_gpu",
+          "line": 245,
+          "end_line": 268,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_atomic_json_failure_publishes_nothing_and_existing_result_is_immutable",
+          "line": 271,
+          "end_line": 290,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_atomic_json_failure_publishes_nothing_and_existing_result_is_immutable.interrupted_dump",
+          "line": 274,
+          "end_line": 277,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_resume_cleans_only_owned_hard_kill_temporaries",
+          "line": 293,
+          "end_line": 311,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_dataset_selection.py",
+      "sha256": "d2794648ce3b6ed2e7dedc700abbafd2f7746b38bb7dcd32ce04937e0b054be8",
+      "line_count": 131,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "native_dataset",
+          "line": 12,
+          "end_line": 33,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_selected_rows_keep_native_order_labels_and_provenance",
+          "line": 36,
+          "end_line": 51,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_default_and_explicit_none_have_identical_files",
+          "line": 54,
+          "end_line": 59,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_invalid_or_incomplete_selection_publishes_nothing",
+          "line": 62,
+          "end_line": 72,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_ids_and_limit_are_not_silently_combined",
+          "line": 75,
+          "end_line": 79,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_unselected_duplicate_native_id_still_fails",
+          "line": 82,
+          "end_line": 90,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_id_from_another_split_is_missing",
+          "line": 93,
+          "end_line": 98,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_cli_reads_json_array_or_roster_object",
+          "line": 101,
+          "end_line": 111,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_cli_invalid_roster_never_defaults_to_all_samples",
+          "line": 114,
+          "end_line": 124,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_cli_ids_and_limit_are_mutually_exclusive",
+          "line": 127,
+          "end_line": 131,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_datasets.py",
+      "sha256": "aa44855529838018be1fa47923b05a5db12988499ae1d15942edae5fd21d1753",
+      "line_count": 258,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "write_rows",
+          "line": 12,
+          "end_line": 15,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "ragtruth_files",
+          "line": 18,
+          "end_line": 23,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "rag_response",
+          "line": 26,
+          "end_line": 28,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_ragtruth_unicode_offsets_and_labels_are_separate",
+          "line": 31,
+          "end_line": 46,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_ragtruth_keeps_official_splits_and_all_source_siblings",
+          "line": 49,
+          "end_line": 60,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_duplicate_ids_and_invalid_offsets_fail_before_creating_outputs",
+          "line": 63,
+          "end_line": 72,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "hallurag_row",
+          "line": 75,
+          "end_line": 93,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_hallurag_uses_retrieved_context_and_retains_unknown_sentences",
+          "line": 96,
+          "end_line": 114,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_hallurag_misaligned_labels_are_retained_without_inventing_spans",
+          "line": 117,
+          "end_line": 131,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_hallurag_unknown_native_labels_remain_unknown",
+          "line": 134,
+          "end_line": 143,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_claimdb_preserves_native_labels_and_rejects_text_inference",
+          "line": 146,
+          "end_line": 164,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_private_claims_stay_unlabelled_and_prepared_ids_cannot_collide",
+          "line": 167,
+          "end_line": 177,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_claimdb_uses_official_flat_database_paths_and_binds_revision_receipt",
+          "line": 180,
+          "end_line": 194,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_inference_inputs_validate_strings_and_unique_source",
+          "line": 197,
+          "end_line": 202,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_hallurag_cli_accepts_native_val_and_validation_alias",
+          "line": 205,
+          "end_line": 224,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_hallurag_binds_only_the_requested_split_receipt",
+          "line": 227,
+          "end_line": 241,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_hallurag_val_alias_preserves_frozen_test_inputs_and_annotations",
+          "line": 244,
+          "end_line": 258,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_experiment_json.py",
+      "sha256": "ffe7f2ea20fbace031c2052c629da8c08fd883d33070e8fa8e74f618597273af",
+      "line_count": 10,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "test_json_metadata_round_trip_preserves_unicode",
+          "line": 6,
+          "end_line": 10,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_hallurag_export.py",
+      "sha256": "4b47efd3e60e5f390ef0fc82f7c2d4cb8633582c8f192874c2af96b61852fea4",
+      "line_count": 54,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "test_export_then_prepare_preserves_original_response_and_native_labels",
+          "line": 14,
+          "end_line": 38,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_export_rejects_ambiguous_members_before_reading_files",
+          "line": 41,
+          "end_line": 45,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_pickle_globals_are_rejected_without_publishing_partial_export",
+          "line": 48,
+          "end_line": 54,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_measurement.py",
+      "sha256": "62614e0ba2b8e2fc1af140540801126ba82d67a6220af9e3df7e7f948641c102",
+      "line_count": 105,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "dense_logp",
+          "line": 15,
+          "end_line": 20,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "observer",
+          "line": 23,
+          "end_line": 32,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_four_source_worlds_match_independent_dense_forward",
+          "line": 35,
+          "end_line": 48,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_route_matches_explicit_physical_head_write_vectors",
+          "line": 51,
+          "end_line": 94,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_route_matches_explicit_physical_head_write_vectors.save_value",
+          "line": 59,
+          "end_line": 62,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_route_matches_explicit_physical_head_write_vectors.save_value.capture",
+          "line": 60,
+          "end_line": 61,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_route_matches_explicit_physical_head_write_vectors.save_weight",
+          "line": 64,
+          "end_line": 67,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_route_matches_explicit_physical_head_write_vectors.save_weight.capture",
+          "line": 65,
+          "end_line": 66,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_forward_failure_restores_backend_and_removes_hooks",
+          "line": 97,
+          "end_line": 105,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_method.py",
+      "sha256": "ef637865a59d39416d8afc291edda05c9fd6fda4f45f2887de5ed8ff25efdeae",
+      "line_count": 52,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "test_chain_matches_complete_binary_enumeration",
+          "line": 12,
+          "end_line": 20,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_chain_respects_answer_boundaries_and_zero_strength",
+          "line": 23,
+          "end_line": 30,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_window_keeps_excluded_raw_position_gaps",
+          "line": 33,
+          "end_line": 36,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_dev_values_never_fit_references",
+          "line": 39,
+          "end_line": 52,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_shared_readout.py",
+      "sha256": "3a4c0ef15ec443a9686b87bb40195878394b6070b23b22766b71813c82787ca9",
+      "line_count": 57,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "test_shared_log_odds_match_complete_assignment_enumeration",
+          "line": 13,
+          "end_line": 25,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_shared_state_never_crosses_answer_or_span_boundaries",
+          "line": 28,
+          "end_line": 34,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_shared_uses_full_source_gap_without_local_or_route_fields",
+          "line": 37,
+          "end_line": 46,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_shared_configuration_round_trip_and_rejects_nonfinite_gap",
+          "line": 49,
+          "end_line": 57,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_token_projection.py",
+      "sha256": "bcb67a826fd20623133c2241c1d1ef0997167c612a11e8993a98521619b90e6c",
+      "line_count": 183,
+      "status": "pending",
+      "functions": [
+        {
+          "name": "annotation",
+          "line": 21,
+          "end_line": 22,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "token",
+          "line": 25,
+          "end_line": 26,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_unicode_duplicate_bpe_offsets_keep_distinct_token_labels",
+          "line": 29,
+          "end_line": 42,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_positive_overlap_has_priority_over_negative_unknown_and_uncovered",
+          "line": 45,
+          "end_line": 52,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_unknown_and_uncovered_are_excluded_with_half_open_boundaries",
+          "line": 55,
+          "end_line": 65,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_negative_requires_complete_coverage_and_can_cross_adjacent_sentences",
+          "line": 68,
+          "end_line": 71,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_unalignable_response_excludes_every_token",
+          "line": 74,
+          "end_line": 79,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_invalid_native_labels_offsets_and_sentence_order_are_rejected",
+          "line": 82,
+          "end_line": 93,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_projection_is_score_independent_and_does_not_modify_inputs",
+          "line": 96,
+          "end_line": 107,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_sealed_token_evaluation_preserves_scores_exports_all_labels_and_keeps_native_results",
+          "line": 110,
+          "end_line": 167,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_sealed_token_evaluation_preserves_scores_exports_all_labels_and_keeps_native_results.guarded_open",
+          "line": 130,
+          "end_line": 133,
+          "kind": "function",
+          "status": "pending"
+        },
+        {
+          "name": "test_token_evaluation_rejects_annotations_beyond_original_response",
+          "line": 170,
+          "end_line": 183,
+          "kind": "function",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "path": "tools/verify_frozen.py",
+      "sha256": "48d93c01203945482459af9bd7a6189790e1f7fbc03c51f67d341d06737d1d0f",
+      "line_count": 7,
+      "status": "pending",
+      "functions": []
+    }
+  ],
+  "completed_files": [
+    "myproject/__init__.py",
+    "myproject/__main__.py",
+    "myproject/api.py",
+    "myproject/attention.py",
+    "myproject/counterfactual.py",
+    "myproject/detector.py",
+    "myproject/distribution.py",
+    "myproject/graph.py",
+    "myproject/inputs.py",
+    "myproject/measure.py",
+    "myproject/model.py",
+    "myproject/observer.py",
+    "myproject/pooling.py",
+    "myproject/proofs.py",
+    "myproject/revision.py",
+    "myproject/routing.py",
+    "myproject/run.py",
+    "myproject/segmentation.py",
+    "myproject/sequence.py",
+    "myproject/shared.py",
+    "myproject/source.py"
+  ],
+  "completed_functions": 128,
+  "unreviewed_branches": "See VALIDATION.md: explanation coverage is separate from execution coverage; unannotated files and new additions remain pending.",
+  "completed_source_lines": 2421,
+  "current_additions": [
+    {
+      "path": "tests/test_pooling_theory.py",
+      "sha256": "c7a015373c26891a439ef93787b3149c694c3b3e5cc49a752d3402ee5061e113",
+      "line_count": 114,
+      "functions": 6,
+      "status": "pending_line_explanation",
+      "validation": "see VALIDATION.md"
+    },
+    {
+      "path": "tests/test_auc_decomposition.py",
+      "sha256": "eaaa15cb28dd09cdc2fb764215cffba0959b4aad3aed916b333c93e22d7195ed",
+      "line_count": 144,
+      "functions": 18,
+      "status": "pending_line_explanation",
+      "validation": "see VALIDATION.md"
+    },
+    {
+      "path": "tools/render_source_reading.py",
+      "sha256": "ad4fecacfc266cdc8ae069bc8135511af5bea70fd8f165ba3fc21c2df677e13b",
+      "line_count": 85,
+      "functions": 0,
+      "status": "pending_line_explanation",
+      "validation": "MATH_READING_VALIDATION.md"
+    },
+    {
+      "path": "tools/render_math_guide.py",
+      "sha256": "d041a11040c42d46f781d21c0ff0d38ec2b5119a2a22469661b1110e0d755840",
+      "line_count": 118,
+      "functions": 5,
+      "status": "pending_line_explanation",
+      "validation": "MATH_READING_VALIDATION.md"
+    }
+  ]
+}

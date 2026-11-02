@@ -4,6 +4,8 @@
 
 研究主线固定为**无监督检测，真值仅用于冻结后的最终评价**，不用于训练、调参、选方法或风险校准。完整约束见[用户确认记录](refine-logs/theory-grounding-20261102/USER_CONSTRAINTS.md)。
 
+浏览器阅读从[公式与机制交互指南](docs/source-reading/VISUAL_GUIDE.html)进入；[完整公式](docs/source-reading/THEORY.html)与[论文主张](docs/source-reading/PAPER_STORY.html)均可离线排版。下载仓库后打开HTML；GitHub在线查看可读[文字版](docs/source-reading/PAPER_STORY.md)。
+
 本版本接回 2026-10-31 已核验的远端 v7 源码：`myproject/` 为主库，`experiments/` 为统一实验入口，`experiments/research/` 保存研究候选。[恢复与验证记录](docs/SOURCE_RECOVERY_20261102.md)区分历史运行和本次检查。
 
 代码学习从[完整方法与调用路径](docs/source-reading/METHOD.md)开始，再打开[源码逐行阅读器](docs/source-reading/READING.html)或[Markdown文件目录](docs/source-reading/README.md)。[数学推导与边界](docs/source-reading/THEORY.md)解释默认共享读出的保序性质；[当前研究方案](refine-logs/theory-grounding-20261102/FINAL_PROPOSAL.md)记录独立审查后的修订、用户确认的无监督约束和待验证事项。

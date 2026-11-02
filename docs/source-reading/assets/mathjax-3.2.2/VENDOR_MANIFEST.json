@@ -1,0 +1,19 @@
+{
+  "package": "mathjax",
+  "version": "3.2.2",
+  "purpose": "Offline TeX to SVG documentation; pinned version, not a latest-version claim",
+  "files": [
+    {
+      "file": "docs/source-reading/assets/mathjax-3.2.2/tex-svg-full.js",
+      "url": "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg-full.js",
+      "sha256": "a4354ff94fd868aea0cc6eaaa79a57fda0588646fc46ee3700a349ee0a11cbe6",
+      "bytes": 2275113
+    },
+    {
+      "file": "docs/source-reading/assets/mathjax-3.2.2/LICENSE",
+      "url": "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358
+    }
+  ]
+}

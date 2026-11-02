@@ -70,3 +70,20 @@
 | 20261102_091210 | /research-refine | refine-logs/theory-grounding-20261102/REFINE_STATE_20261102_091210.json | implementation | User-confirmed unsupervised / final-label-only constraint; no new experiment |
 | 20261102_091210 | /research-refine | refine-logs/theory-grounding-20261102/FINAL_PROPOSAL_20261102_091210.md | implementation | User-confirmed unsupervised / final-label-only constraint; no new experiment |
 | 20261102_091210 | /research-refine | refine-logs/theory-grounding-20261102/REFINEMENT_REPORT_20261102_091210.md | implementation | User-confirmed unsupervised / final-label-only constraint; no new experiment |
+| 20261102_130342 | /source-to-interview | docs/source-reading/SOURCE_INVENTORY_20261102_130342.json | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |
+| 20261102_130342 | /source-to-interview | refine-logs/theory-grounding-20261102/WORK_STATE_20261102_130342.json | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |
+| 20261102_130342 | /source-to-interview | docs/source-reading/PAPER_STORY.md | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |
+| 20261102_130342 | /source-to-interview | docs/source-reading/MATH_READING_VALIDATION.md | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |
+| 20261102_130342 | /source-to-interview | tools/render_math_guide.py | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |
+| 20261102_130342 | /source-to-interview | tools/templates/theory_visual.html | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |
+| 20261102_130342 | /source-to-interview | docs/source-reading/THEORY.html | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |
+| 20261102_130342 | /source-to-interview | docs/source-reading/METHOD.html | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |
+| 20261102_130342 | /source-to-interview | docs/source-reading/PAPER_STORY.html | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |
+| 20261102_130342 | /source-to-interview | docs/source-reading/VALIDATION.html | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |
+| 20261102_130342 | /source-to-interview | docs/source-reading/VISUAL_GUIDE.html | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |
+| 20261102_130342 | /source-to-interview | docs/source-reading/assets/guide.css | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |
+| 20261102_130342 | /source-to-interview | docs/source-reading/assets/visual-data.json | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |
+| 20261102_130342 | /source-to-interview | docs/source-reading/assets/visual-guide.js | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |
+| 20261102_130342 | /source-to-interview | docs/source-reading/assets/mathjax-3.2.2/LICENSE | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |
+| 20261102_130342 | /source-to-interview | docs/source-reading/assets/mathjax-3.2.2/tex-svg-full.js | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |
+| 20261102_130342 | /source-to-interview | docs/source-reading/assets/mathjax-3.2.2/VENDOR_MANIFEST.json | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |

@@ -7,7 +7,7 @@
     "source_lines": 2421,
     "functions": 128,
     "baseline_files": 98,
-    "additional_files": 3,
+    "additional_files": 4,
     "full_scope_complete": false
   },
   "method_refinement": {
@@ -64,5 +64,13 @@
     "label_based_training": false,
     "label_based_hyperparameter_or_method_selection": false,
     "label_based_risk_calibration": false
+  },
+  "last_visualization": {
+    "date_beijing": "2026-11-02",
+    "offline_math": true,
+    "browser_verified": true,
+    "toy_only": true,
+    "new_detector_results": false,
+    "entry": "docs/source-reading/VISUAL_GUIDE.html"
   }
 }

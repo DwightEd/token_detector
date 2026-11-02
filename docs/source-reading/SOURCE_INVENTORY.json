@@ -5282,11 +5282,19 @@
     },
     {
       "path": "tools/render_source_reading.py",
-      "sha256": "ae99a62ccee87afa0eb9bcde97be6a4758c406d7e987587cc2daf37616735c4c",
-      "line_count": 84,
+      "sha256": "ad4fecacfc266cdc8ae069bc8135511af5bea70fd8f165ba3fc21c2df677e13b",
+      "line_count": 85,
       "functions": 0,
       "status": "pending_line_explanation",
-      "validation": "see VALIDATION.md"
+      "validation": "MATH_READING_VALIDATION.md"
+    },
+    {
+      "path": "tools/render_math_guide.py",
+      "sha256": "d041a11040c42d46f781d21c0ff0d38ec2b5119a2a22469661b1110e0d755840",
+      "line_count": 118,
+      "functions": 5,
+      "status": "pending_line_explanation",
+      "validation": "MATH_READING_VALIDATION.md"
     }
   ]
 }
