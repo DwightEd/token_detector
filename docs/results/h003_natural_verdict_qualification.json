@@ -1,0 +1,1632 @@
+{
+  "schema": "h003-natural-verdict-diagnosis-v1",
+  "created_utc": "2026-11-02T14:43:13.812976+00:00",
+  "observer_run_id": "fa101d666cce73beefcb12cd5979b04fb51e2771a61f48e78f9232caecff968c",
+  "cpu_review_run_id": "29e82c69db9558ec05c7b868f10cfa58f06cc497864a0ecfebcefa6217a72b47",
+  "observation_seal_sha256": "da957b5f7039415781b9c57db6a824b42a4b6cf70da451f8693bf5903c305a73",
+  "review_seal_sha256": "bf11e716dd7f5bd25dcce07820381df295250d1fc903801293f8170d7882de19",
+  "costs": {
+    "scope": "retained artifact lifetime; resume adds no repeated forwards",
+    "logical_requests": 108,
+    "unique_requests": 108,
+    "exact_request_reuses": 0,
+    "actual_forward_passes": 108,
+    "input_tokens_scored": 110370,
+    "output_tokens": 0,
+    "input_rejections": 0,
+    "seconds_forward": 41.484458800405264
+  },
+  "diagnostics": {
+    "whole_case_denominator": 18,
+    "review_cases": 18,
+    "cases": 18,
+    "scored_cases": 18,
+    "unscored_unknown_cases": 0,
+    "retained_label_requests": 108,
+    "scored_label_requests": 108,
+    "input_rejected_label_requests": 0,
+    "aggregate_score_ties": 0,
+    "unanimous_unique_argmax_cases": 0,
+    "cases_with_tied_permutations": 0,
+    "tied_permutations": 0,
+    "unique_permutation_argmax_counts": {
+      "supported": 49,
+      "unresolved": 39,
+      "contradicted": 20
+    },
+    "scored_permutations": 108,
+    "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+    "off_label_mass": {
+      "count": 108,
+      "min": 1.2245330390642352e-09,
+      "max": 0.9991670364253845,
+      "mean": 0.13258694349059244
+    },
+    "full_vocab_class_mass_means": {
+      "supported": 0.3827370652002016,
+      "contradicted": 0.16337296039201343,
+      "unresolved": 0.3213030309171925
+    },
+    "cohorts": {
+      "QA": {
+        "cases": 2,
+        "scored_cases": 2,
+        "unscored_unknown_cases": 0,
+        "retained_label_requests": 12,
+        "scored_label_requests": 12,
+        "input_rejected_label_requests": 0,
+        "aggregate_score_ties": 0,
+        "unanimous_unique_argmax_cases": 0,
+        "cases_with_tied_permutations": 0,
+        "tied_permutations": 0,
+        "unique_permutation_argmax_counts": {
+          "supported": 5,
+          "unresolved": 5,
+          "contradicted": 2
+        },
+        "scored_permutations": 12,
+        "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+        "off_label_mass": {
+          "count": 12,
+          "min": 0.0009478653003167628,
+          "max": 0.9494793656832791,
+          "mean": 0.31961865412511636
+        },
+        "full_vocab_class_mass_means": {
+          "supported": 0.32301811703803335,
+          "contradicted": 0.11269351704896173,
+          "unresolved": 0.24466971178788854
+        }
+      },
+      "Summary": {
+        "cases": 2,
+        "scored_cases": 2,
+        "unscored_unknown_cases": 0,
+        "retained_label_requests": 12,
+        "scored_label_requests": 12,
+        "input_rejected_label_requests": 0,
+        "aggregate_score_ties": 0,
+        "unanimous_unique_argmax_cases": 0,
+        "cases_with_tied_permutations": 0,
+        "tied_permutations": 0,
+        "unique_permutation_argmax_counts": {
+          "supported": 9,
+          "unresolved": 3
+        },
+        "scored_permutations": 12,
+        "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+        "off_label_mass": {
+          "count": 12,
+          "min": 2.0835888496299284e-09,
+          "max": 1.4457735258002405e-06,
+          "mean": 3.6397385943347733e-07
+        },
+        "full_vocab_class_mass_means": {
+          "supported": 0.727769633205833,
+          "contradicted": 0.03300520111714058,
+          "unresolved": 0.23922480170316698
+        }
+      },
+      "Data2txt": {
+        "cases": 3,
+        "scored_cases": 3,
+        "unscored_unknown_cases": 0,
+        "retained_label_requests": 18,
+        "scored_label_requests": 18,
+        "input_rejected_label_requests": 0,
+        "aggregate_score_ties": 0,
+        "unanimous_unique_argmax_cases": 0,
+        "cases_with_tied_permutations": 0,
+        "tied_permutations": 0,
+        "unique_permutation_argmax_counts": {
+          "supported": 13,
+          "unresolved": 5
+        },
+        "scored_permutations": 18,
+        "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+        "off_label_mass": {
+          "count": 18,
+          "min": 1.2245330390642352e-09,
+          "max": 0.0001233268738919329,
+          "mean": 8.255685751321023e-06
+        },
+        "full_vocab_class_mass_means": {
+          "supported": 0.7088236937807726,
+          "contradicted": 0.05058412822022338,
+          "unresolved": 0.24058392231325276
+        }
+      },
+      "FinQA": {
+        "cases": 2,
+        "scored_cases": 2,
+        "unscored_unknown_cases": 0,
+        "retained_label_requests": 12,
+        "scored_label_requests": 12,
+        "input_rejected_label_requests": 0,
+        "aggregate_score_ties": 0,
+        "unanimous_unique_argmax_cases": 0,
+        "cases_with_tied_permutations": 0,
+        "tied_permutations": 0,
+        "unique_permutation_argmax_counts": {
+          "unresolved": 6,
+          "contradicted": 3,
+          "supported": 3
+        },
+        "scored_permutations": 12,
+        "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+        "off_label_mass": {
+          "count": 12,
+          "min": 7.690196446391338e-08,
+          "max": 0.9991670364253845,
+          "mean": 0.35631576373126767
+        },
+        "full_vocab_class_mass_means": {
+          "supported": 0.09138156941672432,
+          "contradicted": 0.16839291283019306,
+          "unresolved": 0.383909754021815
+        }
+      },
+      "TATQA": {
+        "cases": 4,
+        "scored_cases": 4,
+        "unscored_unknown_cases": 0,
+        "retained_label_requests": 24,
+        "scored_label_requests": 24,
+        "input_rejected_label_requests": 0,
+        "aggregate_score_ties": 0,
+        "unanimous_unique_argmax_cases": 0,
+        "cases_with_tied_permutations": 0,
+        "tied_permutations": 0,
+        "unique_permutation_argmax_counts": {
+          "unresolved": 10,
+          "contradicted": 6,
+          "supported": 8
+        },
+        "scored_permutations": 24,
+        "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+        "off_label_mass": {
+          "count": 24,
+          "min": 1.7112350339993596e-08,
+          "max": 0.9926451824197611,
+          "mean": 0.2570652368056806
+        },
+        "full_vocab_class_mass_means": {
+          "supported": 0.19575515500644805,
+          "contradicted": 0.16533300505097281,
+          "unresolved": 0.38184660313689855
+        }
+      },
+      "HalluRAG": {
+        "cases": 5,
+        "scored_cases": 5,
+        "unscored_unknown_cases": 0,
+        "retained_label_requests": 30,
+        "scored_label_requests": 30,
+        "input_rejected_label_requests": 0,
+        "aggregate_score_ties": 0,
+        "unanimous_unique_argmax_cases": 0,
+        "cases_with_tied_permutations": 0,
+        "tied_permutations": 0,
+        "unique_permutation_argmax_counts": {
+          "contradicted": 9,
+          "supported": 11,
+          "unresolved": 10
+        },
+        "scored_permutations": 30,
+        "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+        "off_label_mass": {
+          "count": 30,
+          "min": 3.684974175707662e-07,
+          "max": 0.01588133111970038,
+          "mean": 0.001281940978040118
+        },
+        "full_vocab_class_mass_means": {
+          "supported": 0.33908736658286753,
+          "contradicted": 0.299889124039818,
+          "unresolved": 0.3597415683992743
+        }
+      }
+    },
+    "released_annotation_granularities": {
+      "token": 13,
+      "sentence": 5
+    },
+    "automatic_accuracy_created": false,
+    "new_scalar_scores_created": false,
+    "token_score_projection_created": false,
+    "auroc_created": false,
+    "fitted_calibration_created": false,
+    "model_calls": 0,
+    "scope": "Whole exploratory panel diagnostics; human semantic review pending. Model unresolved is a semantic class; unknown means input was not fully scored."
+  },
+  "fixed_label_argmax_counts": {
+    "A": 33,
+    "C": 63,
+    "B": 12
+  },
+  "analyst_status": "Provisional independent assistant source-only audits, blind to predictions/annotation. Not new benchmark truth or human adjudication.",
+  "provisional_three_class_cross_tab": [
+    {
+      "analyst": "contradicted",
+      "model": "supported",
+      "cases": 5
+    },
+    {
+      "analyst": "contradicted",
+      "model": "unresolved",
+      "cases": 7
+    },
+    {
+      "analyst": "supported",
+      "model": "supported",
+      "cases": 2
+    },
+    {
+      "analyst": "supported",
+      "model": "unresolved",
+      "cases": 1
+    },
+    {
+      "analyst": "unresolved",
+      "model": "contradicted",
+      "cases": 1
+    },
+    {
+      "analyst": "unresolved",
+      "model": "supported",
+      "cases": 1
+    },
+    {
+      "analyst": "unresolved",
+      "model": "unresolved",
+      "cases": 1
+    }
+  ],
+  "all_18_cases": [
+    {
+      "id": "15716",
+      "cohort": "QA",
+      "input_text_sha256": {
+        "prompt": "8d4c576d1bfccf9c25688219ca665fcac90361aaa6929ec1d1e60a611827f7d1",
+        "source": "485cc2e00a43df28446cbed4a383f6c63bd8aa7066f6e3fc538acd258fedc186",
+        "response": "12f93c29a5fc62a1eef76f02a731eac9489204a3534a0b748c47d9fcb88eadc4"
+      },
+      "class_scores": {
+        "supported": 0.526659009347528,
+        "contradicted": 0.10281465876847444,
+        "unresolved": 0.3705263318839976
+      },
+      "diagnostic_argmax": "supported",
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.12018949642195416,
+          "max": 0.8065059808974728,
+          "range": 0.6863164844755186
+        },
+        "contradicted": {
+          "min": 0.04716591738695506,
+          "max": 0.16085889544418105,
+          "range": 0.113692978057226
+        },
+        "unresolved": {
+          "min": 0.10579056242419128,
+          "max": 0.7596210071560917,
+          "range": 0.6538304447319004
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 3,
+          "contradicted": 0,
+          "unresolved": 3
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.5,
+        "unanimous_unique_argmax": false
+      },
+      "fixed_label_argmax_counts": {
+        "A": 4,
+        "C": 2
+      },
+      "off_label_mass": 0.39914969278652085,
+      "provisional_blind_analyst_audit": {
+        "id": "15716",
+        "inputhash": {
+          "prompt": "8d4c576d1bfccf9c25688219ca665fcac90361aaa6929ec1d1e60a611827f7d1",
+          "source": "485cc2e00a43df28446cbed4a383f6c63bd8aa7066f6e3fc538acd258fedc186",
+          "response": "12f93c29a5fc62a1eef76f02a731eac9489204a3534a0b748c47d9fcb88eadc4"
+        },
+        "class": "contradicted",
+        "confidence": "high",
+        "source_evidence": [
+          "a Latin word for twins",
+          "The first known reference of the Gemini constellation was in Aristotle",
+          "over 300 years BC",
+          "the twins represented in Gemini mythology are Castor and Pollux"
+        ],
+        "response_claim": "The first known reference to the Gemini constellation was in Aristotle's Meteorologica, around 300 years ago.",
+        "evidence_reason": "The source dates the reference to over 300 years BC. The response changes that date to around 300 years ago, a clear temporal contradiction. The Latin meaning and identification of the twins otherwise follow the source.",
+        "ambiguities": []
+      },
+      "released_annotation_scope": {
+        "granularity": "token",
+        "coverage": "complete",
+        "native_units_preserved": true,
+        "per_token_fact_truth_created": false,
+        "note": "Whole-answer classes and native annotation units do not establish the truth of each contained token."
+      }
+    },
+    {
+      "id": "12297",
+      "cohort": "QA",
+      "input_text_sha256": {
+        "prompt": "22c09e497c08549ce3a4df1438ae9c33e48d5446557ca393bf18c035af40b307",
+        "source": "ff23d3cb9cb78ba36c9ba6b07fe0bfe8c14d00b839f18590dac72a2f656df44b",
+        "response": "df26239d64a63e9c8c02d2b7f778722a56b3748ed2e3509c24bc82130f6f551a"
+      },
+      "class_scores": {
+        "supported": 0.46131801958852514,
+        "contradicted": 0.21643290045221966,
+        "unresolved": 0.32224907995925517
+      },
+      "diagnostic_argmax": "supported",
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.1138063563179654,
+          "max": 0.8764774699466014,
+          "range": 0.7626711136286359
+        },
+        "contradicted": {
+          "min": 0.018297757286765824,
+          "max": 0.604455012807726,
+          "range": 0.5861572555209601
+        },
+        "unresolved": {
+          "min": 0.08412414203919677,
+          "max": 0.8676152667243905,
+          "range": 0.7834911246851937
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 2,
+          "contradicted": 2,
+          "unresolved": 2
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.3333333333333333,
+        "unanimous_unique_argmax": false
+      },
+      "fixed_label_argmax_counts": {
+        "A": 6
+      },
+      "off_label_mass": 0.24008761546371185,
+      "provisional_blind_analyst_audit": {
+        "id": "12297",
+        "inputhash": {
+          "prompt": "22c09e497c08549ce3a4df1438ae9c33e48d5446557ca393bf18c035af40b307",
+          "source": "ff23d3cb9cb78ba36c9ba6b07fe0bfe8c14d00b839f18590dac72a2f656df44b",
+          "response": "df26239d64a63e9c8c02d2b7f778722a56b3748ed2e3509c24bc82130f6f551a"
+        },
+        "class": "supported",
+        "confidence": "medium",
+        "source_evidence": [
+          "put the flag out for collection only after you have removed the blue field from the flag",
+          "The blue field is to be burned in a peaceful manner and the ashes buried.",
+          "passage 3:The other method is to burn the flag yourself in a proper ceremony.",
+          "The flag must be folded in the customary triangle fold."
+        ],
+        "response_claim": "Remove the blue field before collection, burn the blue field and bury its ashes; alternatively burn the flag in a proper ceremony using the customary triangle fold.",
+        "evidence_reason": "Both described disposal procedures and the folding requirement are present in the supplied passages. The substantive answer is supported. Its second numbered item incorrectly labels passage 3 material as '(Passage 2)'.",
+        "ambiguities": [
+          "Primary judgment treats the mistaken passage number as a citation defect rather than a material disposal claim. If exact source-location attribution is material, the alternative class is contradicted because the ceremony and triangle-fold instructions are in passage 3, not passage 2.",
+          "The final sentence applies 'peaceful manner' to ceremonial burning of the flag, while passage 1 explicitly applies that phrase to burning its blue field. This is a minor extension of wording; no contrary procedure is given."
+        ]
+      },
+      "released_annotation_scope": {
+        "granularity": "token",
+        "coverage": "complete",
+        "native_units_preserved": true,
+        "per_token_fact_truth_created": false,
+        "note": "Whole-answer classes and native annotation units do not establish the truth of each contained token."
+      }
+    },
+    {
+      "id": "410",
+      "cohort": "Summary",
+      "input_text_sha256": {
+        "prompt": "dc216046072b9e5eb8c8630c7a300bf706fc78c661e11e4486768844c8ebdebf",
+        "source": "bef852eaa0bc0b9742fb4460d16a98cea4ab0b3968fad22d3231b1c049601f63",
+        "response": "167cefee4e541bb7a4ecf33c030c30b18dc4696be0b7f8038ee2b759fb7c088e"
+      },
+      "class_scores": {
+        "supported": 0.802503798500196,
+        "contradicted": 0.02378228924804374,
+        "unresolved": 0.17371391225176017
+      },
+      "diagnostic_argmax": "supported",
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.0394137661507285,
+          "max": 0.9986432387808669,
+          "range": 0.9592294726301385
+        },
+        "contradicted": {
+          "min": 6.109345338800839e-05,
+          "max": 0.1341189747591146,
+          "range": 0.1340578813057266
+        },
+        "unresolved": {
+          "min": 0.0003566136117111055,
+          "max": 0.9549081424786285,
+          "range": 0.9545515288669174
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 5,
+          "contradicted": 0,
+          "unresolved": 1
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.8333333333333334,
+        "unanimous_unique_argmax": false
+      },
+      "fixed_label_argmax_counts": {
+        "A": 3,
+        "B": 1,
+        "C": 2
+      },
+      "off_label_mass": 2.7346564745541485e-07,
+      "provisional_blind_analyst_audit": {
+        "id": "410",
+        "inputhash": {
+          "prompt": "dc216046072b9e5eb8c8630c7a300bf706fc78c661e11e4486768844c8ebdebf",
+          "source": "bef852eaa0bc0b9742fb4460d16a98cea4ab0b3968fad22d3231b1c049601f63",
+          "response": "167cefee4e541bb7a4ecf33c030c30b18dc4696be0b7f8038ee2b759fb7c088e"
+        },
+        "class": "contradicted",
+        "confidence": "high",
+        "source_evidence": [
+          "The first robot, which was sent in on April 10, stalled after moving about 10 meters",
+          "it had already collected data on radiation levels in 14 of the 18 targeted locations, completing around two-thirds of the originally planned route",
+          "The second robot was sent in on April 15 and collected data from all 11 points, as scheduled.",
+          "The shape-shifting robots were sent in to assess the damage"
+        ],
+        "response_claim": "The second robot collected data from all 11 points as scheduled and completed around two-thirds of the originally planned route.",
+        "evidence_reason": "The response transfers the first robot's two-thirds route completion to the second robot. The source assigns the first robot 14 of 18 targeted locations and the two-thirds route, and assigns the second robot all 11 scheduled points. This is a material actor attribution contradiction. The opening also changes capturing a green glow from an observed result into the probe's stated purpose, which the source does not establish.",
+        "ambiguities": [
+          "The source does not separately quantify the second robot's route fraction; the contradiction rests on transferring the explicitly first-robot route result to the second robot."
+        ]
+      },
+      "released_annotation_scope": {
+        "granularity": "token",
+        "coverage": "complete",
+        "native_units_preserved": true,
+        "per_token_fact_truth_created": false,
+        "note": "Whole-answer classes and native annotation units do not establish the truth of each contained token."
+      }
+    },
+    {
+      "id": "8937",
+      "cohort": "Data2txt",
+      "input_text_sha256": {
+        "prompt": "10222c20a6db8cc4954af0dcd7c5206163f6b84c5de996e2addcf11dffb0b990",
+        "source": "c72de29ba2f3ccd4f6f3303b64169152cdfa9d43eba2ffe13fe5fe29be5fe160",
+        "response": "65539bab1e889b73dab240bc8725e775fee71d4e347cf95e7d55d40ff958732a"
+      },
+      "class_scores": {
+        "supported": 0.8770448042398087,
+        "contradicted": 0.012439085617266019,
+        "unresolved": 0.11051611014292527
+      },
+      "diagnostic_argmax": "supported",
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.44427664151363355,
+          "max": 0.9999205296144116,
+          "range": 0.555643888100778
+        },
+        "contradicted": {
+          "min": 1.3419127096002432e-05,
+          "max": 0.06707983201359885,
+          "range": 0.06706641288650285
+        },
+        "unresolved": {
+          "min": 2.7534183307994e-05,
+          "max": 0.552911213774506,
+          "range": 0.552883679591198
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 5,
+          "contradicted": 0,
+          "unresolved": 1
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.8333333333333334,
+        "unanimous_unique_argmax": false
+      },
+      "fixed_label_argmax_counts": {
+        "A": 3,
+        "B": 1,
+        "C": 2
+      },
+      "off_label_mass": 1.2823988683553839e-08,
+      "provisional_blind_analyst_audit": {
+        "id": "8937",
+        "inputhash": {
+          "prompt": "10222c20a6db8cc4954af0dcd7c5206163f6b84c5de996e2addcf11dffb0b990",
+          "source": "c72de29ba2f3ccd4f6f3303b64169152cdfa9d43eba2ffe13fe5fe29be5fe160",
+          "response": "65539bab1e889b73dab240bc8725e775fee71d4e347cf95e7d55d40ff958732a"
+        },
+        "class": "contradicted",
+        "confidence": "high",
+        "source_evidence": [
+          "'RestaurantsReservations': False",
+          "'RestaurantsTakeOut': True",
+          "'OutdoorSeating': True",
+          "'WiFi': 'free'",
+          "The owner is really friendly and funny",
+          "They gave my burritos away."
+        ],
+        "response_claim": "The restaurant offers free WiFi and outdoor seating, and takes reservations, takeout, and catering orders.",
+        "evidence_reason": "The response says the restaurant takes reservations, directly contradicting the explicit false reservation attribute. Free WiFi, outdoor seating, and takeout are supported. Catering orders, popularity, and a loyal customer base are not established anywhere in the provided data. The praise of the owner does not establish that the staff generally are friendly, particularly alongside the service complaint.",
+        "ambiguities": [
+          "The response generalizes one review's bug in one salad to bugs in customers' salads; the source does not establish multiple such incidents. These additional support gaps do not change the clear reservation contradiction."
+        ]
+      },
+      "released_annotation_scope": {
+        "granularity": "token",
+        "coverage": "complete",
+        "native_units_preserved": true,
+        "per_token_fact_truth_created": false,
+        "note": "Whole-answer classes and native annotation units do not establish the truth of each contained token."
+      }
+    },
+    {
+      "id": "7000",
+      "cohort": "Data2txt",
+      "input_text_sha256": {
+        "prompt": "a7373ea63122ac7094077e0948030521a5882ead9317f9e0eb76cab657215d44",
+        "source": "284a0ec49d07ffb2f653bb23478680f21733a11a8445b85d8b1d0c0e9dd02343",
+        "response": "fdadb3abcdcd97c166cbf8061b0a60ce6558369f81f537c61060b3ea9a83d297"
+      },
+      "class_scores": {
+        "supported": 0.5528596237959629,
+        "contradicted": 0.06810632605771556,
+        "unresolved": 0.3790340501463216
+      },
+      "diagnostic_argmax": "supported",
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.11352553023996877,
+          "max": 0.9656256363542405,
+          "range": 0.8521001061142717
+        },
+        "contradicted": {
+          "min": 0.006112135487607177,
+          "max": 0.18679718766934272,
+          "range": 0.18068505218173556
+        },
+        "unresolved": {
+          "min": 0.010121790003923858,
+          "max": 0.8654743582510228,
+          "range": 0.8553525682470989
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 3,
+          "contradicted": 0,
+          "unresolved": 3
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.5,
+        "unanimous_unique_argmax": false
+      },
+      "fixed_label_argmax_counts": {
+        "A": 4,
+        "B": 2
+      },
+      "off_label_mass": 3.4031619510271877e-07,
+      "provisional_blind_analyst_audit": {
+        "id": "7000",
+        "inputhash": {
+          "prompt": "a7373ea63122ac7094077e0948030521a5882ead9317f9e0eb76cab657215d44",
+          "source": "284a0ec49d07ffb2f653bb23478680f21733a11a8445b85d8b1d0c0e9dd02343",
+          "response": "fdadb3abcdcd97c166cbf8061b0a60ce6558369f81f537c61060b3ea9a83d297"
+        },
+        "class": "contradicted",
+        "confidence": "high",
+        "source_evidence": [
+          "'BusinessParking': None, 'RestaurantsReservations': None, 'OutdoorSeating': None, 'WiFi': None, 'RestaurantsTakeOut': None",
+          "'Music': None",
+          "'Ambience': {'romantic': False, 'intimate': False, 'touristy': False, 'hipster': False, 'divey': False, 'classy': False, 'trendy': False, 'upscale': False, 'casual': False}",
+          "they have some parking with a cost"
+        ],
+        "response_claim": "The business does not offer BusinessParking, RestaurantsReservations, OutdoorSeating, WiFi, or RestaurantsTakeOut. However, it does offer Music and Ambience, with a romantic, intimate, touristy, hipster, divey, classy, trendy, upscale, and casual atmosphere.",
+        "evidence_reason": "Every named ambience attribute is explicitly false, so the response's assertion that all those atmospheres are present directly contradicts the source. The response additionally converts unknown/null facility attributes into absence and unknown/null music into availability; neither conversion is justified. Its parking absence claim also conflicts with the review reporting paid parking.",
+        "ambiguities": [
+          "The three supplied reviews are a review sample; the source does not establish that the 3.5 business rating was computed from precisely those three reviews. This is an additional unresolved claim, independent of the explicit ambience contradictions."
+        ]
+      },
+      "released_annotation_scope": {
+        "granularity": "token",
+        "coverage": "complete",
+        "native_units_preserved": true,
+        "per_token_fact_truth_created": false,
+        "note": "Whole-answer classes and native annotation units do not establish the truth of each contained token."
+      }
+    },
+    {
+      "id": "fred:finqa:test:53",
+      "cohort": "FinQA",
+      "input_text_sha256": {
+        "prompt": "20da9d1be82881a1677706d94b8f79da21919be4b511589cc2a88f4117b6a300",
+        "source": "49d907f61fd8bf05c43f6c55ce6d46144c0cdd04c63be4ab914e4f25c3d43dd5",
+        "response": "6737b9b4612272448a6b1fe8aa64f3995ade54ee1d2bb836edb0f3ba4b164a97"
+      },
+      "class_scores": {
+        "supported": 0.20049255013332612,
+        "contradicted": 0.23469896608040175,
+        "unresolved": 0.5648084837862722
+      },
+      "diagnostic_argmax": "unresolved",
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.008999436883873965,
+          "max": 0.6285786433988625,
+          "range": 0.6195792065149885
+        },
+        "contradicted": {
+          "min": 0.014563439888447506,
+          "max": 0.9005155108423977,
+          "range": 0.8859520709539501
+        },
+        "unresolved": {
+          "min": 0.08916311001299797,
+          "max": 0.9296091889940862,
+          "range": 0.8404460789810883
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 1,
+          "contradicted": 1,
+          "unresolved": 4
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.6666666666666666,
+        "unanimous_unique_argmax": false
+      },
+      "fixed_label_argmax_counts": {
+        "C": 4,
+        "B": 1,
+        "A": 1
+      },
+      "off_label_mass": 0.34243458172458446,
+      "provisional_blind_analyst_audit": {
+        "id": "fred:finqa:test:53",
+        "inputhash": {
+          "prompt": "20da9d1be82881a1677706d94b8f79da21919be4b511589cc2a88f4117b6a300",
+          "source": "49d907f61fd8bf05c43f6c55ce6d46144c0cdd04c63be4ab914e4f25c3d43dd5",
+          "response": "6737b9b4612272448a6b1fe8aa64f3995ade54ee1d2bb836edb0f3ba4b164a97"
+        },
+        "class": "contradicted",
+        "confidence": "high",
+        "source_evidence": [
+          "[\"2014 net revenue\", \"$ 5735\"]",
+          "[\"2015 net revenue\", \"$ 5829\"]",
+          "analysis of the change in net revenue comparing 2015 to 2014"
+        ],
+        "response_claim": "The net change in net revenue during 2015 for Entergy Corporation was a decrease of $8 million ($5829 million - $5735 million).",
+        "evidence_reason": "The cited balances give 5829 - 5735 = +94 million, an increase. The response correctly repeats the two balances but contradicts them by claiming a decrease of 8 million; its stated subtraction does not yield its claimed result.",
+        "ambiguities": [
+          "The prompt supplies reference material and a response cue but no explicit question. This verdict concerns the response claims against the source, not whether an unseen question was answered."
+        ]
+      },
+      "released_annotation_scope": {
+        "granularity": "token",
+        "coverage": "complete",
+        "native_units_preserved": true,
+        "per_token_fact_truth_created": false,
+        "note": "Whole-answer classes and native annotation units do not establish the truth of each contained token."
+      }
+    },
+    {
+      "id": "fred:finqa:test:59",
+      "cohort": "FinQA",
+      "input_text_sha256": {
+        "prompt": "44f5bb7f2ef10a82f5e0ea9c4430dbdce6e0c06fcd4eed9359a3e286842ad80a",
+        "source": "50eb82e757598f13b3b68df1cdb9ea1fae4fb3c0ff95e0c3690e3c07e35ff57c",
+        "response": "e2cbd432d38657468d1fc648b25b47cd59352697ef464bb136cab6c490cbdc0e"
+      },
+      "class_scores": {
+        "supported": 0.296848776215847,
+        "contradicted": 0.33138366786049495,
+        "unresolved": 0.3717675559236581
+      },
+      "diagnostic_argmax": "unresolved",
+      "class_score_ranges": {
+        "supported": {
+          "min": 2.1144344553559332e-08,
+          "max": 0.9800339612837042,
+          "range": 0.9800339401393596
+        },
+        "contradicted": {
+          "min": 7.889262419430002e-06,
+          "max": 0.9999816359627154,
+          "range": 0.9999737467002959
+        },
+        "unresolved": {
+          "min": 1.8342892940038393e-05,
+          "max": 0.999992089593015,
+          "range": 0.999973746700075
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 2,
+          "contradicted": 2,
+          "unresolved": 2
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.3333333333333333,
+        "unanimous_unique_argmax": false
+      },
+      "fixed_label_argmax_counts": {
+        "C": 6
+      },
+      "off_label_mass": 0.3701969457379508,
+      "provisional_blind_analyst_audit": {
+        "id": "fred:finqa:test:59",
+        "inputhash": {
+          "prompt": "44f5bb7f2ef10a82f5e0ea9c4430dbdce6e0c06fcd4eed9359a3e286842ad80a",
+          "source": "50eb82e757598f13b3b68df1cdb9ea1fae4fb3c0ff95e0c3690e3c07e35ff57c",
+          "response": "e2cbd432d38657468d1fc648b25b47cd59352697ef464bb136cab6c490cbdc0e"
+        },
+        "class": "contradicted",
+        "confidence": "high",
+        "source_evidence": [
+          "gross liability , excluding interest and penalties , for unrecognized tax benefits",
+          "[\"increases in current period tax positions\", \"53818\"]",
+          "[\"decreases in prior period measurement of tax positions\", \"-36528 ( 36528 )\"]",
+          "[\"balance at december 31 2014\", \"$ 195237\"]"
+        ],
+        "response_claim": "In 2014, the net change in revenue recognition was an increase of $17,290. This can be calculated by subtracting the decrease in prior period measurement of tax positions ($36,528) from the increase in current period tax positions ($53,818): $53,818 - $36,528 = $17,290.",
+        "evidence_reason": "The arithmetic 53818 - 36528 = 17290 is valid for the 2014 movement in the table. The source explicitly identifies this table as gross liability for unrecognized tax benefits, excluding interest and penalties. Calling this movement a net change in revenue recognition assigns the figures to the wrong accounting measure. Correct arithmetic therefore does not support the whole answer.",
+        "ambiguities": [
+          "No explicit question is included, so the intended requested measure cannot be recovered from the prompt alone. The verdict rests on the explicit table identity, not a presumed question.",
+          "The excerpt does not supply a broader reporting-unit heading; no external unit scale is assumed."
+        ]
+      },
+      "released_annotation_scope": {
+        "granularity": "token",
+        "coverage": "complete",
+        "native_units_preserved": true,
+        "per_token_fact_truth_created": false,
+        "note": "Whole-answer classes and native annotation units do not establish the truth of each contained token."
+      }
+    },
+    {
+      "id": "fred:tatqa:test:54",
+      "cohort": "TATQA",
+      "input_text_sha256": {
+        "prompt": "f296f96811c596f81591ed348f2a79503cbbdae70426e1f8e2a16557da5ec6f4",
+        "source": "e98205960126eb1a6b436dc0426e59de84e46b51b75a22bd1565951b9d2eeb8e",
+        "response": "198298b6e10b3f6783aead9924b36969e4bf2cd2361f7642c0d337285ef92c53"
+      },
+      "class_scores": {
+        "supported": 0.17015788298459042,
+        "contradicted": 0.33279966552600465,
+        "unresolved": 0.4970424514894049
+      },
+      "diagnostic_argmax": "unresolved",
+      "class_score_ranges": {
+        "supported": {
+          "min": 2.833379211031743e-10,
+          "max": 0.9668392979046212,
+          "range": 0.9668392976212833
+        },
+        "contradicted": {
+          "min": 4.363015852353216e-09,
+          "max": 0.9998147736571269,
+          "range": 0.9998147692941111
+        },
+        "unresolved": {
+          "min": 0.0001852257431542274,
+          "max": 0.9999941369026517,
+          "range": 0.9998089111594974
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 1,
+          "contradicted": 2,
+          "unresolved": 3
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.5,
+        "unanimous_unique_argmax": false
+      },
+      "fixed_label_argmax_counts": {
+        "C": 5,
+        "B": 1
+      },
+      "off_label_mass": 0.3180124937253766,
+      "provisional_blind_analyst_audit": {
+        "id": "fred:tatqa:test:54",
+        "inputhash": {
+          "prompt": "f296f96811c596f81591ed348f2a79503cbbdae70426e1f8e2a16557da5ec6f4",
+          "source": "e98205960126eb1a6b436dc0426e59de84e46b51b75a22bd1565951b9d2eeb8e",
+          "response": "198298b6e10b3f6783aead9924b36969e4bf2cd2361f7642c0d337285ef92c53"
+        },
+        "class": "contradicted",
+        "confidence": "medium",
+        "source_evidence": [
+          "Deferred tax assets",
+          "Deferred tax liabilities",
+          "[\"Company - 2018\", \"Provisions\", \"Others\", \"Total\"]"
+        ],
+        "response_claim": "The two main items measured in this table are Accrued expenses and Deferred tax liabilities.",
+        "evidence_reason": "The table explicitly identifies its two tax-balance sections as deferred tax assets and deferred tax liabilities. The response substitutes accrued expenses for the deferred-tax-asset section when naming the two main items. This is a conflicting category identification, while the deferred-tax-liability identification is supported.",
+        "ambiguities": [
+          "No explicit question is included, and the phrase two main items is not defined. The verdict interprets it as referring to the two named balance sections of this table.",
+          "Provisions is a column label, but the source does not identify that column or deferred tax assets as accrued expenses. This wording ambiguity lowers confidence."
+        ]
+      },
+      "released_annotation_scope": {
+        "granularity": "token",
+        "coverage": "complete",
+        "native_units_preserved": true,
+        "per_token_fact_truth_created": false,
+        "note": "Whole-answer classes and native annotation units do not establish the truth of each contained token."
+      }
+    },
+    {
+      "id": "fred:tatqa:test:51",
+      "cohort": "TATQA",
+      "input_text_sha256": {
+        "prompt": "b8a70afeb8c6c18a6db2a8f3c29a22a985df17a4ea8e32181b3fc28f3ad8a7a1",
+        "source": "57ccf64d0d3c5969719031a65296224216e1bbe147637d42c8ea7160f7b7922b",
+        "response": "e718194c8b9439da8ee5cbfda1264cda69c032953114d4a740d6a384b87289a1"
+      },
+      "class_scores": {
+        "supported": 0.19142498889202816,
+        "contradicted": 0.3646918524196398,
+        "unresolved": 0.44388315868833206
+      },
+      "diagnostic_argmax": "unresolved",
+      "class_score_ranges": {
+        "supported": {
+          "min": 6.601604551004e-08,
+          "max": 0.6616351484718742,
+          "range": 0.6616350824558287
+        },
+        "contradicted": {
+          "min": 0.0003755452054812326,
+          "max": 0.9987549933676272,
+          "range": 0.998379448162146
+        },
+        "unresolved": {
+          "min": 0.001244843098514346,
+          "max": 0.9978842307230319,
+          "range": 0.9966393876245175
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 1,
+          "contradicted": 2,
+          "unresolved": 3
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.5,
+        "unanimous_unique_argmax": false
+      },
+      "fixed_label_argmax_counts": {
+        "C": 5,
+        "B": 1
+      },
+      "off_label_mass": 0.38762365905208,
+      "provisional_blind_analyst_audit": {
+        "id": "fred:tatqa:test:51",
+        "inputhash": {
+          "prompt": "b8a70afeb8c6c18a6db2a8f3c29a22a985df17a4ea8e32181b3fc28f3ad8a7a1",
+          "source": "57ccf64d0d3c5969719031a65296224216e1bbe147637d42c8ea7160f7b7922b",
+          "response": "e718194c8b9439da8ee5cbfda1264cda69c032953114d4a740d6a384b87289a1"
+        },
+        "class": "contradicted",
+        "confidence": "high",
+        "source_evidence": [
+          "For multi-year agreements, we generally invoice customers annually at the beginning of each annual coverage period."
+        ],
+        "response_claim": "Multi-year agreement customers are generally invoiced annually at the beginning of each monthly coverage period.",
+        "evidence_reason": "The source says each annual coverage period. The response retains annual invoicing but changes the coverage period to monthly, directly contradicting the stated schedule.",
+        "ambiguities": [
+          "No explicit question is included; the invoicing claim itself can nevertheless be checked directly against the supplied sentence."
+        ]
+      },
+      "released_annotation_scope": {
+        "granularity": "token",
+        "coverage": "complete",
+        "native_units_preserved": true,
+        "per_token_fact_truth_created": false,
+        "note": "Whole-answer classes and native annotation units do not establish the truth of each contained token."
+      }
+    },
+    {
+      "id": "fred:tatqa:test:3",
+      "cohort": "TATQA",
+      "input_text_sha256": {
+        "prompt": "5b8f9aae8f2ea34effe5999456316bd37e0824d777289e894d14d52e472f0090",
+        "source": "5cf2202a00c0c91cb5efd1e353db7c6e3dac981153d1a98ce516ff4c8d1dce2e",
+        "response": "adc5ab2d8bf1c9b09056c6b132117f1ed4c3431262539025945ca865a1da28a0"
+      },
+      "class_scores": {
+        "supported": 0.6620717258835085,
+        "contradicted": 0.0808834377297681,
+        "unresolved": 0.25704483638672343
+      },
+      "diagnostic_argmax": "supported",
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.20768451717424913,
+          "max": 0.9234016145047974,
+          "range": 0.7157170973305482
+        },
+        "contradicted": {
+          "min": 0.034329393813147376,
+          "max": 0.2546116243923337,
+          "range": 0.22028223057918633
+        },
+        "unresolved": {
+          "min": 0.030624926182856244,
+          "max": 0.7248901918930033,
+          "range": 0.694265265710147
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 5,
+          "contradicted": 0,
+          "unresolved": 1
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.8333333333333334,
+        "unanimous_unique_argmax": false
+      },
+      "fixed_label_argmax_counts": {
+        "A": 3,
+        "B": 1,
+        "C": 2
+      },
+      "off_label_mass": 0.03684438445267544,
+      "provisional_blind_analyst_audit": {
+        "id": "fred:tatqa:test:3",
+        "inputhash": {
+          "prompt": "5b8f9aae8f2ea34effe5999456316bd37e0824d777289e894d14d52e472f0090",
+          "source": "5cf2202a00c0c91cb5efd1e353db7c6e3dac981153d1a98ce516ff4c8d1dce2e",
+          "response": "adc5ab2d8bf1c9b09056c6b132117f1ed4c3431262539025945ca865a1da28a0"
+        },
+        "class": "supported",
+        "confidence": "high",
+        "source_evidence": [
+          "[\"USDm\", \"2019\", \"2018\", \"2017\"]",
+          "[\"Net profit/(loss) for the year excluding impairment\", \"46.0\", \"-34.8\", \"2.4\"]"
+        ],
+        "response_claim": "In 2019, the Net profit/(loss) for the year excluding impairment was 46.0 USDm and in 2018 it was -34.8 USDm. \n\nTo calculate the change, we subtract the 2018 figure from the 2019 figure:\n\n46.0 - (-34.8) = 80.8\n\nTherefore, the change in Net profit/(loss) for the year excluding impairment in 2019 from 2018 was an increase of 80.8 USD million.",
+        "evidence_reason": "The response correctly attributes 46.0 USDm to 2019 and -34.8 USDm to 2018 for net profit/(loss) excluding impairment. Its explicitly scoped arithmetic, 46.0 - (-34.8) = 80.8 USDm, is valid and establishes an increase. The calculated change is a supported derivation rather than a purported source quotation.",
+        "ambiguities": [
+          "No explicit question is included, so responsiveness to an unseen question is not assessed. Every material claim actually made in the response follows from the displayed row and valid arithmetic."
+        ]
+      },
+      "released_annotation_scope": {
+        "granularity": "token",
+        "coverage": "complete",
+        "native_units_preserved": true,
+        "per_token_fact_truth_created": false,
+        "note": "Whole-answer classes and native annotation units do not establish the truth of each contained token."
+      }
+    },
+    {
+      "id": "fred:tatqa:test:50",
+      "cohort": "TATQA",
+      "input_text_sha256": {
+        "prompt": "6ce25ce33671d91b3dae201a25fbc1f9b39f9e8853efeb25a54a16add1bd7330",
+        "source": "f5d7ec8b739c8e0189a4929f1b080c8e5185f45e4dc776c8e0ff8ce8124737af",
+        "response": "e91a557671cee8d7998f45ab1da3911e0bd919d0e1f28b2649df1b9bc7671634"
+      },
+      "class_scores": {
+        "supported": 0.23532416968218028,
+        "contradicted": 0.3162594593099694,
+        "unresolved": 0.44841637100785037
+      },
+      "diagnostic_argmax": "unresolved",
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.0003290927851348775,
+          "max": 0.9285890531626174,
+          "range": 0.9282599603774825
+        },
+        "contradicted": {
+          "min": 0.005187055976372736,
+          "max": 0.9505001805139884,
+          "range": 0.9453131245376157
+        },
+        "unresolved": {
+          "min": 0.04882479860122043,
+          "max": 0.9508292073351325,
+          "range": 0.9020044087339121
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 1,
+          "contradicted": 2,
+          "unresolved": 3
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.5,
+        "unanimous_unique_argmax": false
+      },
+      "fixed_label_argmax_counts": {
+        "C": 5,
+        "B": 1
+      },
+      "off_label_mass": 0.28578040999259047,
+      "provisional_blind_analyst_audit": {
+        "id": "fred:tatqa:test:50",
+        "inputhash": {
+          "prompt": "6ce25ce33671d91b3dae201a25fbc1f9b39f9e8853efeb25a54a16add1bd7330",
+          "source": "f5d7ec8b739c8e0189a4929f1b080c8e5185f45e4dc776c8e0ff8ce8124737af",
+          "response": "e91a557671cee8d7998f45ab1da3911e0bd919d0e1f28b2649df1b9bc7671634"
+        },
+        "class": "contradicted",
+        "confidence": "high",
+        "source_evidence": [
+          "[\"\", \"2019\", \"2018\"]",
+          "[\"\", \"$ million\", \"$ million\"]",
+          "[\"Current\", \"53.2\", \"55.2\"]"
+        ],
+        "response_claim": "The change in Current deferred income was a decrease of $2.0 million ($55.2 million in 2018 to $53.2 million in 2020).",
+        "evidence_reason": "The table assigns current deferred income of 53.2 million to 2019 and 55.2 million to 2018. Their difference is correctly a decrease of 2.0 million, but the response assigns the 53.2 figure to 2020 instead of the explicitly labeled 2019 column. Correct subtraction does not support that year claim.",
+        "ambiguities": [
+          "No explicit question is included. The stated 2020 endpoint contradicts the source column label; the source contains no 2020 column, so no separate 2020 balance is inferred."
+        ]
+      },
+      "released_annotation_scope": {
+        "granularity": "token",
+        "coverage": "complete",
+        "native_units_preserved": true,
+        "per_token_fact_truth_created": false,
+        "note": "Whole-answer classes and native annotation units do not establish the truth of each contained token."
+      }
+    },
+    {
+      "id": "hallurag:test_meta-llama_Llama-2-7b-chat-hf (int4).pickle:33",
+      "cohort": "HalluRAG",
+      "input_text_sha256": {
+        "prompt": "8a554c3b2ccefae61ed6ccfb19326e09f8a000d6ee9eff66daa94ec53c2825f9",
+        "source": "ae4ced73596ea8a17ac3dc9ae521347ba2fb754fda40961399a1fe43b6f00d1f",
+        "response": "a15974778dcc0f41d1d4366c5bd2591e9aecc48fe41606264bfe8ea7ccff02e0"
+      },
+      "class_scores": {
+        "supported": 0.412054277677572,
+        "contradicted": 0.17355930205542572,
+        "unresolved": 0.4143864202670023
+      },
+      "diagnostic_argmax": "unresolved",
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.024407300952399912,
+          "max": 0.9025623793776703,
+          "range": 0.8781550784252703
+        },
+        "contradicted": {
+          "min": 0.002308245717212013,
+          "max": 0.579898259944325,
+          "range": 0.577590014227113
+        },
+        "unresolved": {
+          "min": 0.09512937490511766,
+          "max": 0.8876986319029803,
+          "range": 0.7925692569978626
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 3,
+          "contradicted": 1,
+          "unresolved": 2
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.5,
+        "unanimous_unique_argmax": false
+      },
+      "fixed_label_argmax_counts": {
+        "B": 1,
+        "A": 2,
+        "C": 3
+      },
+      "off_label_mass": 0.00017823618926463033,
+      "provisional_blind_analyst_audit": {
+        "id": "hallurag:test_meta-llama_Llama-2-7b-chat-hf (int4).pickle:33",
+        "inputhash": {
+          "prompt": "8a554c3b2ccefae61ed6ccfb19326e09f8a000d6ee9eff66daa94ec53c2825f9",
+          "source": "ae4ced73596ea8a17ac3dc9ae521347ba2fb754fda40961399a1fe43b6f00d1f",
+          "response": "a15974778dcc0f41d1d4366c5bd2591e9aecc48fe41606264bfe8ea7ccff02e0"
+        },
+        "class": "unresolved",
+        "confidence": "moderate; provisional assistant assessment, not benchmark truth",
+        "shortsourcequotes": [
+          "Early concerns for OWCS included the lack of well-defined prize pools, the lack of a clear roadmap, and challenges in maintaining consistent viewership, compared to that of the Overwatch League.",
+          "== 2024 season =="
+        ],
+        "response_claim": "The listed early OWCS concerns were raised in the context of OWCS in 2024.",
+        "evidence_reason": "The three concerns and the Overwatch League comparison follow directly from the source. The extra sentence assigns these concerns a 2024 temporal context. The adjacent 2024-season heading identifies a season but does not explicitly date the concerns; under a strict all-material-facts rule this additional temporal assertion lacks sufficient support. No source statement contradicts that year.",
+        "ambiguities": [
+          "If the final year phrase is read only as nonmaterial topic framing rather than a historical dating claim, supported is a reasonable alternative. The principal answer content is directly supported.",
+          "The introductory AI/personality disclaimer is treated as courtesy, outside the material source-faithfulness judgment."
+        ]
+      },
+      "released_annotation_scope": {
+        "granularity": "sentence",
+        "coverage": "annotated_sentences",
+        "native_units_preserved": true,
+        "per_token_fact_truth_created": false,
+        "note": "Whole-answer classes and native annotation units do not establish the truth of each contained token."
+      }
+    },
+    {
+      "id": "hallurag:test_meta-llama_Llama-2-7b-chat-hf (int4).pickle:123",
+      "cohort": "HalluRAG",
+      "input_text_sha256": {
+        "prompt": "90ef8990ef6102ff31e634fb225ab501887123699104a000f257e8732c74b6ab",
+        "source": "c1350323c44f0f06cc32f681057d133f19dccc6135a234cb6e104aeb0fd3c5d5",
+        "response": "3d235f93ff5267f0bbe33b5d657fe3391ad054b30791a2f106103dbadda91a32"
+      },
+      "class_scores": {
+        "supported": 0.33339602577589716,
+        "contradicted": 0.3173099453949129,
+        "unresolved": 0.34929402882918975
+      },
+      "diagnostic_argmax": "unresolved",
+      "class_score_ranges": {
+        "supported": {
+          "min": 1.0108559141154916e-05,
+          "max": 0.9994053443459512,
+          "range": 0.99939523578681
+        },
+        "contradicted": {
+          "min": 3.31955465024576e-05,
+          "max": 0.9987916801597425,
+          "range": 0.99875848461324
+        },
+        "unresolved": {
+          "min": 0.0005614601075462527,
+          "max": 0.9992084035050908,
+          "range": 0.9986469433975446
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 2,
+          "contradicted": 2,
+          "unresolved": 2
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.3333333333333333,
+        "unanimous_unique_argmax": false
+      },
+      "fixed_label_argmax_counts": {
+        "C": 6
+      },
+      "off_label_mass": 0.0009595970205280163,
+      "provisional_blind_analyst_audit": {
+        "id": "hallurag:test_meta-llama_Llama-2-7b-chat-hf (int4).pickle:123",
+        "inputhash": {
+          "prompt": "90ef8990ef6102ff31e634fb225ab501887123699104a000f257e8732c74b6ab",
+          "source": "c1350323c44f0f06cc32f681057d133f19dccc6135a234cb6e104aeb0fd3c5d5",
+          "response": "3d235f93ff5267f0bbe33b5d657fe3391ad054b30791a2f106103dbadda91a32"
+        },
+        "class": "contradicted",
+        "confidence": "high; provisional assistant assessment, not benchmark truth",
+        "shortsourcequotes": [
+          "\"Two Night Stands\" will be released on April 1, 2024, as Morgan's second single to country radio."
+        ],
+        "response_claim": "Kylie Morgan's second single to country radio is not mentioned in any provided context, so the question has no factual information to support an answer.",
+        "evidence_reason": "The source explicitly identifies the second country-radio single and its release date. The response makes a factual claim that this information is absent, which directly conflicts with that supplied statement. This is a false claim about the source, not merely an unhelpful abstention.",
+        "ambiguities": [
+          "The surrounding safety and politeness statements do not remove the explicit false source-absence claim."
+        ]
+      },
+      "released_annotation_scope": {
+        "granularity": "sentence",
+        "coverage": "annotated_sentences",
+        "native_units_preserved": true,
+        "per_token_fact_truth_created": false,
+        "note": "Whole-answer classes and native annotation units do not establish the truth of each contained token."
+      }
+    },
+    {
+      "id": "hallurag:test_meta-llama_Llama-2-7b-chat-hf (int4).pickle:119",
+      "cohort": "HalluRAG",
+      "input_text_sha256": {
+        "prompt": "fa8f44fb31e40f76e0969ea306ca5828e5d6b74d8c6886c64564a126a2a2eec5",
+        "source": "4906d2f9e01e4854ed531c496e8d24566ccb791bd8abf7bafed8d79b582f472a",
+        "response": "986dc5f37cdb2e49b20040c9c26950528a078ba2008ac84251edd18b6dd9fccf"
+      },
+      "class_scores": {
+        "supported": 0.3063126383728713,
+        "contradicted": 0.325907170027224,
+        "unresolved": 0.3677801915999046
+      },
+      "diagnostic_argmax": "unresolved",
+      "class_score_ranges": {
+        "supported": {
+          "min": 1.9627845532059915e-06,
+          "max": 0.9951106169385687,
+          "range": 0.9951086541540155
+        },
+        "contradicted": {
+          "min": 8.470212744007111e-05,
+          "max": 0.9995592754188927,
+          "range": 0.9994745732914526
+        },
+        "unresolved": {
+          "min": 0.0004373329202282953,
+          "max": 0.9994787333702353,
+          "range": 0.999041400450007
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 2,
+          "contradicted": 2,
+          "unresolved": 2
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.3333333333333333,
+        "unanimous_unique_argmax": false
+      },
+      "fixed_label_argmax_counts": {
+        "C": 6
+      },
+      "off_label_mass": 0.0030614190196261754,
+      "provisional_blind_analyst_audit": {
+        "id": "hallurag:test_meta-llama_Llama-2-7b-chat-hf (int4).pickle:119",
+        "inputhash": {
+          "prompt": "fa8f44fb31e40f76e0969ea306ca5828e5d6b74d8c6886c64564a126a2a2eec5",
+          "source": "4906d2f9e01e4854ed531c496e8d24566ccb791bd8abf7bafed8d79b582f472a",
+          "response": "986dc5f37cdb2e49b20040c9c26950528a078ba2008ac84251edd18b6dd9fccf"
+        },
+        "class": "contradicted",
+        "confidence": "high; provisional assistant assessment, not benchmark truth",
+        "shortsourcequotes": [
+          "On 1 April, Pakistani police said that they had arrested 12 people in connection with the attack."
+        ],
+        "response_claim": "The context contains no information about Pakistani police actions on April 1 in connection with the Shangla bombing.",
+        "evidence_reason": "The source provides the date, actor, and police statement that 12 people had been arrested in connection with the attack. That directly defeats the response's categorical assertion that no relevant information is provided.",
+        "ambiguities": [
+          "The source dates the police announcement to April 1; it does not necessarily date every arrest to April 1. The response nevertheless falsely denies all information about the police action or announcement."
+        ]
+      },
+      "released_annotation_scope": {
+        "granularity": "sentence",
+        "coverage": "annotated_sentences",
+        "native_units_preserved": true,
+        "per_token_fact_truth_created": false,
+        "note": "Whole-answer classes and native annotation units do not establish the truth of each contained token."
+      }
+    },
+    {
+      "id": "hallurag:test_meta-llama_Llama-2-13b-chat-hf (float8).pickle:45",
+      "cohort": "HalluRAG",
+      "input_text_sha256": {
+        "prompt": "1508123d1a9e5116e27ce196e807e3f7539da8fa6d780e50413f87748365713e",
+        "source": "f1133febab68ee4ac739849995b9687db0dcf13fcaf28417785c8373bbca9385",
+        "response": "47a6d3cc8445c1f5d617b2b5bf01c44de6336df1dd86786f76ab091a51212638"
+      },
+      "class_scores": {
+        "supported": 0.31335328029131854,
+        "contradicted": 0.35360229655343844,
+        "unresolved": 0.33304442315524296
+      },
+      "diagnostic_argmax": "contradicted",
+      "class_score_ranges": {
+        "supported": {
+          "min": 1.1287592071266179e-05,
+          "max": 0.9378005614706958,
+          "range": 0.9377892738786245
+        },
+        "contradicted": {
+          "min": 1.8297539094970668e-05,
+          "max": 0.9988192153438279,
+          "range": 0.9988009178047329
+        },
+        "unresolved": {
+          "min": 0.0011694970641007196,
+          "max": 0.997509124547189,
+          "range": 0.9963396274830882
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 2,
+          "contradicted": 2,
+          "unresolved": 2
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.3333333333333333,
+        "unanimous_unique_argmax": false
+      },
+      "fixed_label_argmax_counts": {
+        "C": 6
+      },
+      "off_label_mass": 0.0020847911543996392,
+      "provisional_blind_analyst_audit": {
+        "id": "hallurag:test_meta-llama_Llama-2-13b-chat-hf (float8).pickle:45",
+        "inputhash": {
+          "prompt": "1508123d1a9e5116e27ce196e807e3f7539da8fa6d780e50413f87748365713e",
+          "source": "f1133febab68ee4ac739849995b9687db0dcf13fcaf28417785c8373bbca9385",
+          "response": "47a6d3cc8445c1f5d617b2b5bf01c44de6336df1dd86786f76ab091a51212638"
+        },
+        "class": "unresolved",
+        "confidence": "high; provisional assistant assessment, not benchmark truth",
+        "shortsourcequotes": [
+          "One man was detained after he drove towards protesters in a car and pepper sprayed several of them.",
+          "### Chunk 2: Mohammad Nauman Khan",
+          "In 2010, Nauman acted as head coach of Pakistan Army."
+        ],
+        "response_claim": "Mohammad Nauman Khan was the man detained for driving towards protesters and pepper spraying them during the Portland State University occupation.",
+        "evidence_reason": "The incident passage leaves the man unnamed. The separate Mohammad Nauman Khan passage concerns Pakistani football and elections; it supplies no link between that named person and the Portland incident. The claimed identity therefore lacks source support. The source does not name a different man or explicitly exclude Nauman, so absence of an identity link alone does not establish a contradictory event fact.",
+        "ambiguities": [
+          "The response inaccurately presents Chunk 3 as supporting the name. I classify the unsupported person-event binding as unresolved under the stipulated distinction between missing support and explicit contradiction; no outside identity knowledge was used."
+        ]
+      },
+      "released_annotation_scope": {
+        "granularity": "sentence",
+        "coverage": "annotated_sentences",
+        "native_units_preserved": true,
+        "per_token_fact_truth_created": false,
+        "note": "Whole-answer classes and native annotation units do not establish the truth of each contained token."
+      }
+    },
+    {
+      "id": "886",
+      "cohort": "Summary",
+      "input_text_sha256": {
+        "prompt": "fe04c2c89bac8605a3ac3b0067d0de7c52196a0d4fa9c8c0da8ae6ccaeabf857",
+        "source": "e9b8f41e8d947a983d3bae255a50812e92a45762798f0a41c29d012449848676",
+        "response": "308fb886d229ef7a7e474f47e6e737136b7e1e79b6a8fcb8eb850514c206b3dc"
+      },
+      "class_scores": {
+        "supported": 0.6530359716290915,
+        "contradicted": 0.04222812249003235,
+        "unresolved": 0.3047359058808761
+      },
+      "diagnostic_argmax": "supported",
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.019091122048953947,
+          "max": 0.9968937088977157,
+          "range": 0.9778025868487618
+        },
+        "contradicted": {
+          "min": 0.001164290528161845,
+          "max": 0.2193266735145062,
+          "range": 0.21816238298634436
+        },
+        "unresolved": {
+          "min": 0.0014079632454951573,
+          "max": 0.9791877610987986,
+          "range": 0.9777797978533034
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 4,
+          "contradicted": 0,
+          "unresolved": 2
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.6666666666666666,
+        "unanimous_unique_argmax": false
+      },
+      "fixed_label_argmax_counts": {
+        "A": 4,
+        "B": 1,
+        "C": 1
+      },
+      "off_label_mass": 4.544820714115398e-07,
+      "provisional_blind_analyst_audit": {
+        "id": "886",
+        "inputhash": {
+          "prompt": "fe04c2c89bac8605a3ac3b0067d0de7c52196a0d4fa9c8c0da8ae6ccaeabf857",
+          "source": "e9b8f41e8d947a983d3bae255a50812e92a45762798f0a41c29d012449848676",
+          "response": "308fb886d229ef7a7e474f47e6e737136b7e1e79b6a8fcb8eb850514c206b3dc"
+        },
+        "class": "unresolved",
+        "confidence": "high",
+        "source_evidence": [
+          "whose writings have recently been found underneath battlefields near Naours, France",
+          "Photographer Jeff Gusky, who has been chronicling details of the site",
+          "Gusky has noted 1,821 names.",
+          "Leach, \"merely a private,\" was killed a month later in battle",
+          "It could very well have been the last time he recorded his name as a living, breathing human being"
+        ],
+        "response_claim": "Photographer Jeff Gusky has discovered over 1,800 graffiti inscriptions ... Gusky notes that some of the soldiers may have carved their names as a last act before heading to the front lines.",
+        "evidence_reason": "The source identifies Gusky as chronicling the site and noting 1,821 names; it does not establish that he discovered more than 1,800 distinct inscriptions. A name count is not explicitly an inscription count, and one quoted inscription contains multiple names. The source speculates that Leach may have recorded his name for the last time while alive; the response changes that into soldiers carving names as a last act before going to the front. Those stronger discovery, counting, and timing claims are unsupported, without a clear source statement excluding their possibility. Thus the whole answer is unresolved rather than contradicted.",
+        "ambiguities": [
+          "A broad journalistic reading could treat 'discovered' as 'documented' and names as a proxy for inscriptions, but the source does not make those equivalences explicit.",
+          "The speculative phrase 'may have' softens certainty but still attributes a particular last-act-before-the-front interpretation to Gusky; the supplied quotation concerns the last recording of one man's name."
+        ]
+      },
+      "released_annotation_scope": {
+        "granularity": "token",
+        "coverage": "complete",
+        "native_units_preserved": true,
+        "per_token_fact_truth_created": false,
+        "note": "Whole-answer classes and native annotation units do not establish the truth of each contained token."
+      }
+    },
+    {
+      "id": "9940",
+      "cohort": "Data2txt",
+      "input_text_sha256": {
+        "prompt": "08cb9ea3ef1cbdf5cf804c6c4c1a238eb4d56b2fcc3bcb1a695b2c64606896df",
+        "source": "b4a8b4aabc1f2c6ece06af0bf8e1b73b5f836b5ebd9375b8b91b20c49e8dc6be",
+        "response": "48e9d2441fa124c8c4e124d29b57b86a3bdaf74057fd6e2c0986390545653963"
+      },
+      "class_scores": {
+        "supported": 0.6965878126814214,
+        "contradicted": 0.07120703972210975,
+        "unresolved": 0.23220514759646874
+      },
+      "diagnostic_argmax": "supported",
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.10907161048258585,
+          "max": 0.9993245471632983,
+          "range": 0.8902529366807125
+        },
+        "contradicted": {
+          "min": 0.00022305945498720447,
+          "max": 0.3145640803932978,
+          "range": 0.3143410209383106
+        },
+        "unresolved": {
+          "min": 0.00013974717216937816,
+          "max": 0.8851478059349099,
+          "range": 0.8850080587627406
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 5,
+          "contradicted": 0,
+          "unresolved": 1
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.8333333333333334,
+        "unanimous_unique_argmax": false
+      },
+      "fixed_label_argmax_counts": {
+        "A": 3,
+        "B": 1,
+        "C": 2
+      },
+      "off_label_mass": 2.4413917070176795e-05,
+      "provisional_blind_analyst_audit": {
+        "id": "9940",
+        "inputhash": {
+          "prompt": "08cb9ea3ef1cbdf5cf804c6c4c1a238eb4d56b2fcc3bcb1a695b2c64606896df",
+          "source": "b4a8b4aabc1f2c6ece06af0bf8e1b73b5f836b5ebd9375b8b91b20c49e8dc6be",
+          "response": "48e9d2441fa124c8c4e124d29b57b86a3bdaf74057fd6e2c0986390545653963"
+        },
+        "class": "contradicted",
+        "confidence": "high; provisional assistant assessment, not benchmark truth",
+        "shortsourcequotes": [
+          "'Friday': '7:0-21:0', 'Saturday': '7:0-21:0'",
+          "'BusinessParking': None, 'RestaurantsReservations': None",
+          "'WiFi': None",
+          "it took forever for the waiter to come to the table."
+        ],
+        "response_claim": "Cafe Lido closes at 20:00 every day, provides WiFi and reservations, has no parking, and customers report long food waits.",
+        "evidence_reason": "The overview gives a uniform Monday-through-Sunday closing time of 20:00, while the structured source gives 21:00 on Friday and Saturday. That is a clear material hours contradiction and determines the whole-answer class even though other facts are supported. WiFi, parking, and reservations have None values, which do not establish either availability or unavailability; these additional amenity claims are unsupported. The quoted review concerns waiting for the waiter rather than explicitly waiting for food.",
+        "ambiguities": [
+          "The malformed notation 20:00 PM is interpreted as the intended 20:00 closing time, not as an independent time conversion.",
+          "Null amenity fields are missing information, not negative facts; they are not counted as the decisive contradiction.",
+          "The source contains mixed subjective food and service reviews; broad positive summaries are less precise, but the explicit Friday/Saturday hours already settle the whole-answer classification."
+        ]
+      },
+      "released_annotation_scope": {
+        "granularity": "token",
+        "coverage": "complete",
+        "native_units_preserved": true,
+        "per_token_fact_truth_created": false,
+        "note": "Whole-answer classes and native annotation units do not establish the truth of each contained token."
+      }
+    },
+    {
+      "id": "hallurag:test_mistralai_Mistral-7B-Instruct-v0.1 (int4).pickle:64",
+      "cohort": "HalluRAG",
+      "input_text_sha256": {
+        "prompt": "587674eab4961442e0d8d78b3d2e9ce8a3246defe193ae1dfba9c4ca8ebdee7f",
+        "source": "a405a0334adcc6f0b87a025c7cbe7c42ee587c8ccaebc4036a90c11622e85637",
+        "response": "3ebffbb69161eed5db14ac0f2f6d672b274fce09e1b6e482f9b1ae9c8b8d40ff"
+      },
+      "class_scores": {
+        "supported": 0.33269779560775536,
+        "contradicted": 0.3327077210701303,
+        "unresolved": 0.33459448332211433
+      },
+      "diagnostic_argmax": "unresolved",
+      "class_score_ranges": {
+        "supported": {
+          "min": 3.3929907719565666e-06,
+          "max": 0.9988670461550003,
+          "range": 0.9988636531642283
+        },
+        "contradicted": {
+          "min": 4.539771466788483e-05,
+          "max": 0.9999568135259304,
+          "range": 0.9999114158112624
+        },
+        "unresolved": {
+          "min": 3.3213863715700695e-05,
+          "max": 0.9999512092945603,
+          "range": 0.9999179954308446
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 2,
+          "contradicted": 2,
+          "unresolved": 2
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.3333333333333333,
+        "unanimous_unique_argmax": false
+      },
+      "fixed_label_argmax_counts": {
+        "C": 6
+      },
+      "off_label_mass": 0.00012566150638212853,
+      "provisional_blind_analyst_audit": {
+        "id": "hallurag:test_mistralai_Mistral-7B-Instruct-v0.1 (int4).pickle:64",
+        "inputhash": {
+          "prompt": "587674eab4961442e0d8d78b3d2e9ce8a3246defe193ae1dfba9c4ca8ebdee7f",
+          "source": "a405a0334adcc6f0b87a025c7cbe7c42ee587c8ccaebc4036a90c11622e85637",
+          "response": "3ebffbb69161eed5db14ac0f2f6d672b274fce09e1b6e482f9b1ae9c8b8d40ff"
+        },
+        "class": "supported",
+        "confidence": "high; provisional assistant assessment, not benchmark truth",
+        "shortsourcequotes": [
+          "### Chunk 1: Portal (sculptures)",
+          "### Chunk 2: Lego Masters (Australian TV series) season 6",
+          "### Chunk 3: 201 Elizabeth Street"
+        ],
+        "response_claim": "The provided context has no information about Afghanistan's squad for the 2024 ICC Men's T20 World Cup, so the release-date question cannot be answered from it.",
+        "evidence_reason": "The entire supplied source was checked. It discusses Portal sculptures, an Australian Lego Masters season, and a Sydney building, with no Afghanistan cricket squad or announcement date. The response correctly reports the limitation of this context and adds no unsupported external date.",
+        "ambiguities": [
+          "This assesses the supplied context only; it makes no claim about whether the real-world question has an answer elsewhere."
+        ]
+      },
+      "released_annotation_scope": {
+        "granularity": "sentence",
+        "coverage": "annotated_sentences",
+        "native_units_preserved": true,
+        "per_token_fact_truth_created": false,
+        "note": "Whole-answer classes and native annotation units do not establish the truth of each contained token."
+      }
+    }
+  ],
+  "auroc_created": false,
+  "target_label_tuning": false,
+  "token_detector_created": false,
+  "conclusion": "Finite labels remove span-generation admission failure, but natural semantic and label-assignment failures remain. Do not promote to detector; run frozen construction controls next."
+}

@@ -158,6 +158,32 @@
           "sha256": "491198f664006a86927567634e3345bfbad558b10d018e26c78679eeebcf3e1e"
         }
       ]
+    },
+    {
+      "id": "F013",
+      "certainty": "completed_frozen_observations_with_scope_limits",
+      "claim": "Natural18/108 finite-label forwards completed and sealed. No input exclusions; no case has unanimous semantic argmax across all6 label assignments. Independent prediction-blind source audits identify material natural false-support cases even when output label mass is high.",
+      "does_not_imply": "Assistant audits are provisional and preserve ambiguity, not new benchmark gold. No token detector, natural AUROC or original-generation cause established.",
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "docs/results/h003_natural_verdict_qualification.json",
+          "sha256": "915f24c1ab3027068312158192d047a3616ba32a0ed829fa5a4b7fdff4eea83e"
+        }
+      ]
+    },
+    {
+      "id": "F014",
+      "certainty": "completed_frozen_observations_with_scope_limits",
+      "claim": "Prespecified16/8pairs completed96 forwards. Fixed3class argmax11/16;6/7 support-vs-other margins positive. Five of six same-wordbag pairs have positive margins; null-vs-False is reversed. Valid arithmetic is unresolved until explicit result is added.",
+      "does_not_imply": "Constructed descriptive controls, not natural performance. Relation sensitivity exists on simple cases; do not claim all natural errors are relation blindness. Old H002 abstention policy is not construction truth.",
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "docs/results/h003_constructed_controls.json",
+          "sha256": "e5bdb5e5ef735d168eaa1d14d1af5a28f9176587c091ee09b894f14170af63e4"
+        }
+      ]
     }
   ],
   "rule": "New interventions need different predictions under competing explanations; known counts/cases are reused."

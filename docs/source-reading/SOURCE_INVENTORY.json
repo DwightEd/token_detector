@@ -5305,6 +5305,14 @@
       "validation": "Tests/hashes do not complete line explanation"
     },
     {
+      "path": "experiments/research/semantic_verdict.py",
+      "sha256": "631f91cefb36e8ff7c75f7ab39bbc778f2246cf45c7b10b64af7ba6504da4f24",
+      "line_count": 195,
+      "functions": 6,
+      "status": "pending_line_explanation",
+      "validation": "Tests/hashes do not complete line explanation"
+    },
+    {
       "path": "experiments/semantic_evaluation.py",
       "sha256": "7aea34e54ecb32ecc64c5ce06a4748841b5779892bdddb64ecf9a9b1aa43748f",
       "line_count": 549,
@@ -5314,9 +5322,25 @@
     },
     {
       "path": "experiments/semantic_qualification.py",
-      "sha256": "cf68431551e85cc618e9fb9eab255c484dbf2051efe4ba01e921669d6309353f",
-      "line_count": 481,
-      "functions": 18,
+      "sha256": "68955f6d11a83f7196e375eee5d0b6b89dab2d5028f7d1db933a5f4136bde95c",
+      "line_count": 539,
+      "functions": 21,
+      "status": "pending_line_explanation",
+      "validation": "Tests/hashes do not complete line explanation"
+    },
+    {
+      "path": "experiments/verdict_evaluation.py",
+      "sha256": "2923e89c8ea956259eff8af8288e71e31e64b43711e672a65515b34b9dee577a",
+      "line_count": 466,
+      "functions": 19,
+      "status": "pending_line_explanation",
+      "validation": "Tests/hashes do not complete line explanation"
+    },
+    {
+      "path": "experiments/verdict_qualification.py",
+      "sha256": "8a5177d6a89c10fec3372599fb1e20565d81b7a50143281808ec73a6eb94aa23",
+      "line_count": 342,
+      "functions": 9,
       "status": "pending_line_explanation",
       "validation": "Tests/hashes do not complete line explanation"
     },
@@ -5389,6 +5413,38 @@
       "sha256": "78e1cd65abd206bf521ddc0e4ae2d221181e1b1e6d22c18799d5b7a214c08775",
       "line_count": 376,
       "functions": 37,
+      "status": "pending_line_explanation",
+      "validation": "Tests/hashes do not complete line explanation"
+    },
+    {
+      "path": "tests/test_semantic_verdict.py",
+      "sha256": "53b2815584a5a6575ddee4227975c0d63809bf1ed324899526369340683ceec0",
+      "line_count": 222,
+      "functions": 19,
+      "status": "pending_line_explanation",
+      "validation": "Tests/hashes do not complete line explanation"
+    },
+    {
+      "path": "tests/test_verdict_dispatch.py",
+      "sha256": "aa844cb4f6e932dbc0f034dbb98a2e2ce4c4fdd647377ab495068542531cc9fa",
+      "line_count": 41,
+      "functions": 6,
+      "status": "pending_line_explanation",
+      "validation": "Tests/hashes do not complete line explanation"
+    },
+    {
+      "path": "tests/test_verdict_evaluation.py",
+      "sha256": "cf4d96634686576e5811ad5320497bc1ae25a2b417b2562894d4bf1b821e5c60",
+      "line_count": 442,
+      "functions": 38,
+      "status": "pending_line_explanation",
+      "validation": "Tests/hashes do not complete line explanation"
+    },
+    {
+      "path": "tests/test_verdict_qualification.py",
+      "sha256": "9e8b0cff252f95f6e9ac4926729c0bb088458d7ef605efcfb4f03da3e57e6e71",
+      "line_count": 393,
+      "functions": 39,
       "status": "pending_line_explanation",
       "validation": "Tests/hashes do not complete line explanation"
     },
@@ -5472,8 +5528,8 @@
     },
     {
       "path": "experiments/run.py",
-      "sha256": "151b6d7b0fa8fb0c0f2da2d80fe322d28a6b5bd59a74e590265a148e7904787d",
-      "line_count": 429,
+      "sha256": "3305d6fc517c076a1a76f5b8ae1ddc689c5909125e3db0aedad83754b32400e7",
+      "line_count": 454,
       "functions": 2,
       "status": "pending_line_explanation",
       "validation": "Tests/hashes do not complete line explanation",
@@ -5482,7 +5538,7 @@
     }
   ],
   "latest_update_date_beijing": "2026-11-02",
-  "current_addition_count": 23,
-  "current_file_count": 121,
+  "current_addition_count": 30,
+  "current_file_count": 128,
   "coverage_note": "The baseline 21-file/2421-line/128-definition explanation remains unchanged. Current additions and modifications listed here require line explanation; hashes or passing tests do not complete it. Post-recovery files are outside the original 88-file receipt."
 }

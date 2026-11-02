@@ -68,6 +68,32 @@ def first_case(panel):
     return data.read_json(panel[2] / 'cases' / data.text_hash('META_ONLY_0') / 'case.json')
 
 
+def test_prespecified_sixteen_control_population_keeps_full_s3_and_gold_isolation(panel, monkeypatch):
+    inputs, protocol, output = panel
+    inputs.write_text(''.join(inputs.read_text(encoding='utf-8').splitlines(keepends=True)[:16]), encoding='utf-8')
+    frozen = dict(module.DEFAULT_PROTOCOL, expected_cases=16, max_forward_passes=96)
+    protocol.write_text(json.dumps(frozen), encoding='utf-8')
+    original=Path.open
+    def guarded(path,*a,**k):
+        assert path.name not in {'evaluation_only.jsonl','annotations.jsonl','manifest.json'}
+        return original(path,*a,**k)
+    monkeypatch.setattr(Path,'open',guarded)
+    complete=run(panel)
+    assert complete['coverage']['cases']==complete['coverage']['scored_cases']==16
+    assert complete['costs']['logical_requests']==96
+    assert complete['costs']['actual_forward_passes']==6
+    assert complete['evaluation_material_accessed'] is False
+
+
+@pytest.mark.parametrize('cases,budget',[(16,108),(18,96),(17,102),(True,6)])
+def test_population_budget_pairs_are_frozen_before_any_forward(panel,cases,budget):
+    frozen=dict(module.DEFAULT_PROTOCOL,expected_cases=cases,max_forward_passes=budget)
+    panel[1].write_text(json.dumps(frozen),encoding='utf-8')
+    scorer=FakeScorer()
+    with pytest.raises(ValueError):run(panel,scorer)
+    assert scorer.calls==scorer.validations==[]
+
+
 def test_full_roster_freezes_before_forward_and_never_opens_gold(panel, monkeypatch):
     original = Path.open
     def guarded(path, *args, **kwargs):

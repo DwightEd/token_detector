@@ -1,28 +1,34 @@
-# 恢复时先读：自然资格已完成，提议前端未通过
+# 恢复入口：H003两组已完成，下一项只检验来源类型表达
 
-项目 `D:/projects/research/token_detector`；goal active，六任务分别AUROC≥0.8仍未达成。无监督，真值只用于封存后的评价/事后诊断；不训练、扫权重/阈值或挑任务赢家。
+项目 `D:/projects/research/token_detector`。六任务分别AUROC≥0.8未达成；无监督，gold只用于封存后的评价与事后诊断，不训练、扫权重/阈值或挑任务赢家。用户本轮授权的资源处理和研究已执行。`get_goal`仍返回旧`blocked`控制状态，API不能自行恢复；不要声称自动续跑已开启，也不要另建目标覆盖旧目标。
 
-## 当前事实与下一条问题
+## 已有证据，不重复消耗模型
 
-H002原18输入已完整运行、封存和CPU评价；18模型调用全为提议，8个有效frame均无slot，40个无效frame、4个envelope失败，三路来源核验**零调用**。31个整数成对slot字段的全文/claim相对字符、空白token、JSON/wire坐标均未解释；不能把它当成来源推理机制已被否定。原结果不修补、不重跑。事实F012与 `docs/results/h002_proposal_qualification.json` 为准。
+- H002：18次自由提议，8个合法frame均无slot；来源direct/blind/leaky各0调用。位置与角色接口失败，核心来源重建未测试。F012及[结果](../docs/results/h002_proposal_qualification.json)为准，不补输出、不重跑。
+- H003自然：原18完整答、108前向已封存及CPU复核，前向41.48秒。18例无一在全部标签分配下语义argmax一致；Data2txt等存在高支持分放过错误。3个独立助手盲复核保持歧义，不是新增benchmark gold。见F013与[自然结果](../docs/results/h003_natural_verdict_qualification.md)。
+- H003控制：16答/8对、96前向12.58秒，完整封存及复核。三类argmax11/16，6/7支持差方向正确；六个同词袋对五正一反。null被当False；合法80.8计算判为证据不足，直接写出结果后支持。见F014与[控制结果](../docs/results/h003_constructed_controls.md)。不是自然AUROC或原始生成因果证明。
 
-下一步H003：同一3B模型、同一整18输入，用完整来源/预生成上下文/整回答做直接语义核验，读取有限下一token标签分数，绕过自由生成位置/角色。固定三类与全部6种标签排列，报告原始分数、off-label质量和排列敏感性；不拟合参数，不称事实后验/新颖性，不把whole-answer资格当token AUROC。先验证核心能力，再决定后续定位和隐藏值模块。
+下一条问题：保留全部字段路径/类型的来源表达，能否改善null语义及自然结构化来源错误，还是仅增加规则提醒有效？[H004交叉对照](TYPED_SOURCE_NEXT.md)已设计，未实现/运行。只按输入语法处理；表达×规则四条件，不按gold挑选。算术执行和盲重建保持后续独立假设，不同时堆模块。
 
-## 运行与版本，避免重复或误恢复
+## 运行、版本与恢复边界
 
-- H002解释器28236已正常退出，原31576在claim前已取消。都不要重启。实际旧状态在 `outputs/h002-context-20261102/autostart-state.json`，阶段应为 `observations_sealed_not_evaluated`，是观察阶段历史，不代表CPU评价尚未做。
-- H002 runID `a5d336433cd1a04ce71962fb8500d4f9f0c8b0473a74f146e66302cbacb3e9a5`，精确登记115产物核验后才读取评价材料。CPU结果 `outputs/h002-context-20261102/natural_review_v1` 已封存。
-- H002冻结95文件/旧reader在 `outputs/h002-context-20261102/installed`，wheel SHA `697d35b288d3503bbd684ddcc138a495570f8946b7faa631811af126c5e16571`。原CUDA环境94包也保留。**不覆盖历史目标；当前checkout为后续H003开发，不能拿其新helper去误判旧数据或要求重跑模型。**
-- 第一次CPU评价误选旧安装入口，在CLI解析时停止，未开gold；已显式选95冻结reader成功。评价入口 `evaluate_finished.py` 与admission-v2记录修正，避免再次用默认旧包。
-- 131源码合成检查、95安装字节检查与6安装接口检查已通过；后续代码有实质变化才做相应检查，不重跑旧科学现象。代码解释覆盖仍以SOURCE_INVENTORY为准，测试通过不等于逐行解释完成。
+所有H002/H003 worker已完成；历史autostart-state的observations_sealed_not_evaluated只描述观察阶段，不代表CPU评价没做或进程活着。不要恢复31576、28236、62168或24272。模型资源已释放，不再关闭应用。
 
-## 下轮操作
+| 已完成运行 | 完整ID | 精确源码/只读目标 |
+|---|---|---|
+| H003自然观察 | `fa101d666cce73beefcb12cd5979b04fb51e2771a61f48e78f9232caecff968c` | 97文件，Git `91ae38f`，outputs/h003-verdict-20261102/installed |
+| 自然CPU复核 | `29e82c69db9558ec05c7b868f10cfa58f06cc497864a0ecfebcefa6217a72b47` | 98文件，Git `4fed6e1`，同目录evaluator_installed |
+| 构造观察 | `1dfd32b1cdf5ad6f389ee9b26eaaa9c4a1c96b497ae67d851d351996eca5688b` | 98文件，outputs/h003-controls-20261102/installed |
 
-1. `python tools/research_memory.py context`；只读取与活动H003相关事实/先前记录，不重读130KB长索引。P031是先前提出但未运行的直接核验器，H002不是其语义效能测试。
-2. H003独立冻结协议、代码、模型/后端、输入人口、分数及运行身份后，才调用模型；源/评估版本分别登记。新任务先check/claim，已完成原始观察复用。不得从单个运行中案例改参数。
-3. H003全部分数封存后再评价；来源支持性、模型未知、标签粒度和完整回答判断与局部token定位分开。语义成功后仍须冻结全token投影/unknown规则、完整六任务消融与未接触确认数据。
-4. 构造16答/8对已封存、六组词袋检查通过，尚未运行。新verifier的真值与旧H002“无执行器则未知”政策必须区别，不给模型人工slot或正确值。
+原CUDA环境94包、H00295包、H00397/98目标分别保留。不能拿当前helper误判旧缓存后要求重跑模型；恢复对应只读reader。自然观察与CPU源码逐字节发布在不同commit，控制人口改动另行提交。详见state.json与verdict_qualification_validation.json。
 
-用户许可关闭Edge/Termius/夸克已执行；WPS问题因模型成功启动而撤回，不需再关。不得持续杀重开的应用或关闭Code/其他未授权程序。只对当时自有零模型待机进程做过一次驻留页回收，不循环操作。
+CPU登记v1因少两个身份字段在claim/gold前停止；无效spec已归档outputs，v2成功。旧H002第一次评价也只是在错误CLI入口停止，已修复。两者都不是科学负结果或重复模型运行。
 
-已知F001–F011与31条原实验索引复用；F012为本轮新负结果。等权、local重置/repair、有限证书零覆盖、原始数据合同差异不换名复验。上游格式失败需要改变观测合同，不扫权重。每个结论保存证据、确定性与下一条判别实验。Goal仅按用户明确要求暂停；未达到完整目标不标complete。
+## 继续操作
+
+1. `python tools/research_memory.py context`；只读F013/F014、当前设计及有关历史。31条旧索引保持，不重读130KB原索引。
+2. 新条件先冻结代码、输入、模型/后端、分数与完整人口，check/claim；已完成观察复用。三个H003登记均已再次核验为reuse。
+3. H004先实现受限语法的类型/绑定保留与拒绝行为，再冻结实际交叉条件。它不是论文主方法，未知/超长/解析拒绝不能当正常。任何收益仍需完整六任务和未接触确认人口。
+4. SOURCE_INVENTORY目前128个Python文件；原21文件/2421行/128定义的解释覆盖保持。新文件与改动仍待逐行解释，检查通过不代表讲解完成。
+
+用户允许关闭Edge/Termius/夸克，已完成；不关闭Code/WPS或其他应用，不反复关闭重开的程序。两次不同零模型待机worker各做过一次自身驻留页回收，不循环清内存。等权、local重置/repair、有限证书覆盖不足及格式/数据合同差异不换名复验。目标未达成，不标complete。

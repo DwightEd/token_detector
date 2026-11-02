@@ -1,0 +1,932 @@
+{
+  "schema": "h003-constructed-control-result-v1",
+  "created_utc": "2026-11-02T14:48:15.483751+00:00",
+  "observation_run_id": "1dfd32b1cdf5ad6f389ee9b26eaaa9c4a1c96b497ae67d851d351996eca5688b",
+  "observation_seal_sha256": "c47e19c3bb036e7edd72857ac7df08effa85d436c7f79422aff21b202d3dd593",
+  "review_seal_sha256": "0adc666dee8585e9fe9e4fb82f3edc83f286044d43c518349137190eaaac0bc8",
+  "costs": {
+    "scope": "retained artifact lifetime; resume adds no repeated forwards",
+    "logical_requests": 96,
+    "unique_requests": 96,
+    "exact_request_reuses": 0,
+    "actual_forward_passes": 96,
+    "input_tokens_scored": 36084,
+    "output_tokens": 0,
+    "input_rejections": 0,
+    "seconds_forward": 12.58293690055143
+  },
+  "cases": 16,
+  "pairs": 8,
+  "correct_fixed_three_class_argmax": 11,
+  "confusion": {
+    "supported": {
+      "supported": 8,
+      "contradicted": 0,
+      "unresolved": 1,
+      "unknown": 0
+    },
+    "contradicted": {
+      "supported": 0,
+      "contradicted": 2,
+      "unresolved": 3,
+      "unknown": 0
+    },
+    "unresolved": {
+      "supported": 1,
+      "contradicted": 0,
+      "unresolved": 1,
+      "unknown": 0
+    }
+  },
+  "paired_comparisons": 7,
+  "positive_margins": 6,
+  "scope": "Prespecified synthetic construction diagnostics, not natural benchmark performance or original-generation causal proof.",
+  "auroc_created": false,
+  "target_label_tuning": false,
+  "token_detector_created": false,
+  "all_cases": [
+    {
+      "id": "ccv1:01:a",
+      "pair_id": "01",
+      "construction_class": "supported",
+      "model_class": "supported",
+      "class_scores": {
+        "supported": 0.5648595511562712,
+        "contradicted": 0.07680397119979229,
+        "unresolved": 0.35833647764393656
+      },
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.06396478025819613,
+          "max": 0.9745736662308878,
+          "range": 0.9106088859726917
+        },
+        "contradicted": {
+          "min": 0.011524787032443787,
+          "max": 0.22422705944946056,
+          "range": 0.21270227241701678
+        },
+        "unresolved": {
+          "min": 0.013901546736668354,
+          "max": 0.8830065543697484,
+          "range": 0.8691050076330801
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 4,
+          "contradicted": 0,
+          "unresolved": 2
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.6666666666666666,
+        "unanimous_unique_argmax": false
+      },
+      "family": "actor_event_binding",
+      "input_sha256": {
+        "source_sha256": "084c14f58162451afbb803a2e4f3712b35e08edf3df7a2c59a6b13a084de9ff7",
+        "response_sha256": "c348acd34592558b3b0708a950a3fbef6b4ddb98a9999ece6380a80fe40ccf40"
+      }
+    },
+    {
+      "id": "ccv1:01:b",
+      "pair_id": "01",
+      "construction_class": "contradicted",
+      "model_class": "unresolved",
+      "class_scores": {
+        "supported": 0.16464488586753506,
+        "contradicted": 0.30967967324171286,
+        "unresolved": 0.5256754408907521
+      },
+      "class_score_ranges": {
+        "supported": {
+          "min": 1.3029411830580418e-05,
+          "max": 0.5799579277147063,
+          "range": 0.5799448983028758
+        },
+        "contradicted": {
+          "min": 0.009654351865481392,
+          "max": 0.9172747093576572,
+          "range": 0.9076203574921758
+        },
+        "unresolved": {
+          "min": 0.0826948230893702,
+          "max": 0.9107639785913405,
+          "range": 0.8280691555019704
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 1,
+          "contradicted": 2,
+          "unresolved": 3
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.5,
+        "unanimous_unique_argmax": false
+      },
+      "family": "actor_event_binding",
+      "input_sha256": {
+        "source_sha256": "084c14f58162451afbb803a2e4f3712b35e08edf3df7a2c59a6b13a084de9ff7",
+        "response_sha256": "2f522fa9dbce42118cfccff75061f6e691801409e6a73a4cae8e9ff209492e4d"
+      }
+    },
+    {
+      "id": "ccv1:02:a",
+      "pair_id": "02",
+      "construction_class": "supported",
+      "model_class": "supported",
+      "class_scores": {
+        "supported": 0.6084550083814356,
+        "contradicted": 0.07534636080925479,
+        "unresolved": 0.3161986308093096
+      },
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.1623457446117717,
+          "max": 0.9838818954487861,
+          "range": 0.8215361508370145
+        },
+        "contradicted": {
+          "min": 0.010054557379077917,
+          "max": 0.20303169560504736,
+          "range": 0.19297713822596943
+        },
+        "unresolved": {
+          "min": 0.005850375603436235,
+          "max": 0.7990937611513782,
+          "range": 0.7932433855479419
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 4,
+          "contradicted": 0,
+          "unresolved": 2
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.6666666666666666,
+        "unanimous_unique_argmax": false
+      },
+      "family": "year_value_binding",
+      "input_sha256": {
+        "source_sha256": "035a34ca9b331770f453539ff607652a970034f20486ffdb2c5b311e32467761",
+        "response_sha256": "035a34ca9b331770f453539ff607652a970034f20486ffdb2c5b311e32467761"
+      }
+    },
+    {
+      "id": "ccv1:02:b",
+      "pair_id": "02",
+      "construction_class": "contradicted",
+      "model_class": "unresolved",
+      "class_scores": {
+        "supported": 0.16207131559892585,
+        "contradicted": 0.3312806401041687,
+        "unresolved": 0.5066480442969055
+      },
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.0003443627482068434,
+          "max": 0.6219108622926058,
+          "range": 0.621566499544399
+        },
+        "contradicted": {
+          "min": 0.07533851620517966,
+          "max": 0.7655392632916509,
+          "range": 0.6902007470864713
+        },
+        "unresolved": {
+          "min": 0.23347628407571228,
+          "max": 0.8622036601402205,
+          "range": 0.6287273760645082
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 1,
+          "contradicted": 2,
+          "unresolved": 3
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.5,
+        "unanimous_unique_argmax": false
+      },
+      "family": "year_value_binding",
+      "input_sha256": {
+        "source_sha256": "035a34ca9b331770f453539ff607652a970034f20486ffdb2c5b311e32467761",
+        "response_sha256": "ee95c390e03a4ad6a95257424ffd75b0b6aed60095a696b6d9d4d15c8310c2c6"
+      }
+    },
+    {
+      "id": "ccv1:03:a",
+      "pair_id": "03",
+      "construction_class": "supported",
+      "model_class": "supported",
+      "class_scores": {
+        "supported": 0.8910762582695315,
+        "contradicted": 0.01711575508964685,
+        "unresolved": 0.09180798664082161
+      },
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.4820907820689123,
+          "max": 0.9999271150441077,
+          "range": 0.5178363329751954
+        },
+        "contradicted": {
+          "min": 2.1443845268949918e-05,
+          "max": 0.09384240558184094,
+          "range": 0.09382096173657199
+        },
+        "unresolved": {
+          "min": 5.1441110623337196e-05,
+          "max": 0.5131829662077345,
+          "range": 0.5131315250971111
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 5,
+          "contradicted": 0,
+          "unresolved": 1
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.8333333333333334,
+        "unanimous_unique_argmax": false
+      },
+      "family": "account_value_binding",
+      "input_sha256": {
+        "source_sha256": "a1a16140308c9ca83b6f66a6c3bd9d3ec9078b242b62e3156692ca64e658d92f",
+        "response_sha256": "5fd48bf656719ac6de50ba8c99b9b66c4eb888a4d9563b45999c18fe64c8f30b"
+      }
+    },
+    {
+      "id": "ccv1:03:b",
+      "pair_id": "03",
+      "construction_class": "contradicted",
+      "model_class": "contradicted",
+      "class_scores": {
+        "supported": 0.24895868120071443,
+        "contradicted": 0.3979733310047864,
+        "unresolved": 0.35306798779449916
+      },
+      "class_score_ranges": {
+        "supported": {
+          "min": 1.5145647930786182e-06,
+          "max": 0.7620980568495411,
+          "range": 0.7620965422847481
+        },
+        "contradicted": {
+          "min": 0.003310739275500814,
+          "max": 0.9902900236578495,
+          "range": 0.9869792843823486
+        },
+        "unresolved": {
+          "min": 0.009708461777357392,
+          "max": 0.9925689791245673,
+          "range": 0.9828605173472099
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 2,
+          "contradicted": 2,
+          "unresolved": 2
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.3333333333333333,
+        "unanimous_unique_argmax": false
+      },
+      "family": "account_value_binding",
+      "input_sha256": {
+        "source_sha256": "a1a16140308c9ca83b6f66a6c3bd9d3ec9078b242b62e3156692ca64e658d92f",
+        "response_sha256": "e4c25f3632219976aca4da34c420ad661c040ad808236cfc1034f967f82a767b"
+      }
+    },
+    {
+      "id": "ccv1:04:a",
+      "pair_id": "04",
+      "construction_class": "supported",
+      "model_class": "supported",
+      "class_scores": {
+        "supported": 0.6770991020104083,
+        "contradicted": 0.08657811822369811,
+        "unresolved": 0.23632277976589355
+      },
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.3264265062950448,
+          "max": 0.9918124300481282,
+          "range": 0.6653859237530835
+        },
+        "contradicted": {
+          "min": 0.0018405294392058497,
+          "max": 0.20089583332682948,
+          "range": 0.19905530388762363
+        },
+        "unresolved": {
+          "min": 0.002102829895363835,
+          "max": 0.6491766241337955,
+          "range": 0.6470737942384317
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 4,
+          "contradicted": 0,
+          "unresolved": 2
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.6666666666666666,
+        "unanimous_unique_argmax": false
+      },
+      "family": "source_actor_assignment",
+      "input_sha256": {
+        "source_sha256": "c2fc30c76fa065a7273d09959c447c62e5305d23a55f1ae7decdfecbf8904e50",
+        "response_sha256": "850d1c5bcda4695cf6feb99450b9344a776762245e02b2f41727e8a60c3f668a"
+      }
+    },
+    {
+      "id": "ccv1:04:b",
+      "pair_id": "04",
+      "construction_class": "contradicted",
+      "model_class": "unresolved",
+      "class_scores": {
+        "supported": 0.26687775911451134,
+        "contradicted": 0.25883885927057054,
+        "unresolved": 0.4742833816149181
+      },
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.1695649115386229,
+          "max": 0.34568782120988145,
+          "range": 0.17612290967125854
+        },
+        "contradicted": {
+          "min": 0.11654014575963514,
+          "max": 0.5244201206905444,
+          "range": 0.40787997493090933
+        },
+        "unresolved": {
+          "min": 0.21188488250291787,
+          "max": 0.7138949427017419,
+          "range": 0.502010060198824
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 0,
+          "contradicted": 1,
+          "unresolved": 5
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.8333333333333334,
+        "unanimous_unique_argmax": false
+      },
+      "family": "source_actor_assignment",
+      "input_sha256": {
+        "source_sha256": "42ee3cdbde1199be9df0e54db95051060fb930b83db67a2b5b187784a52060eb",
+        "response_sha256": "850d1c5bcda4695cf6feb99450b9344a776762245e02b2f41727e8a60c3f668a"
+      }
+    },
+    {
+      "id": "ccv1:05:a",
+      "pair_id": "05",
+      "construction_class": "supported",
+      "model_class": "supported",
+      "class_scores": {
+        "supported": 0.682261002818824,
+        "contradicted": 0.07373352589921987,
+        "unresolved": 0.24400547128195613
+      },
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.07665655479162527,
+          "max": 0.9955752448150212,
+          "range": 0.918918690023396
+        },
+        "contradicted": {
+          "min": 0.0015921126142704998,
+          "max": 0.25560156845376697,
+          "range": 0.25400945583949647
+        },
+        "unresolved": {
+          "min": 0.0022469431794631305,
+          "max": 0.905135917525232,
+          "range": 0.9028889743457689
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 5,
+          "contradicted": 0,
+          "unresolved": 1
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.8333333333333334,
+        "unanimous_unique_argmax": false
+      },
+      "family": "target_evidence_removal",
+      "input_sha256": {
+        "source_sha256": "d5bc808093a8ce7fdb99f28ad81c08b8d846e9cc81e185c167e38490f67d722c",
+        "response_sha256": "cbac0906bf07369bd284bbe577e896d57ebf13479578e2f143725aa1e58617af"
+      }
+    },
+    {
+      "id": "ccv1:05:b",
+      "pair_id": "05",
+      "construction_class": "unresolved",
+      "model_class": "unresolved",
+      "class_scores": {
+        "supported": 0.17020859964640025,
+        "contradicted": 0.3353359863465775,
+        "unresolved": 0.49445541400702214
+      },
+      "class_score_ranges": {
+        "supported": {
+          "min": 4.895439656763175e-10,
+          "max": 0.9850803876991547,
+          "range": 0.9850803872096108
+        },
+        "contradicted": {
+          "min": 3.6316035021895355e-07,
+          "max": 0.9998601768882294,
+          "range": 0.9998598137278791
+        },
+        "unresolved": {
+          "min": 0.00010718766489005685,
+          "max": 0.9999531606262294,
+          "range": 0.9998459729613394
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 1,
+          "contradicted": 2,
+          "unresolved": 3
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.5,
+        "unanimous_unique_argmax": false
+      },
+      "family": "target_evidence_removal",
+      "input_sha256": {
+        "source_sha256": "e9493c56614a34bd8f00435318451f6150385b3ead2453a14984fe69b605ab55",
+        "response_sha256": "cbac0906bf07369bd284bbe577e896d57ebf13479578e2f143725aa1e58617af"
+      }
+    },
+    {
+      "id": "ccv1:06:a",
+      "pair_id": "06",
+      "construction_class": "supported",
+      "model_class": "supported",
+      "class_scores": {
+        "supported": 0.45939650211896493,
+        "contradicted": 0.22800051967173018,
+        "unresolved": 0.3126029782093049
+      },
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.08002353650761854,
+          "max": 0.9846983809029197,
+          "range": 0.9046748443953012
+        },
+        "contradicted": {
+          "min": 0.0047819662139487375,
+          "max": 0.8876440319905967,
+          "range": 0.8828620657766479
+        },
+        "unresolved": {
+          "min": 0.006232860533021447,
+          "max": 0.8835571539221246,
+          "range": 0.8773242933891032
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 3,
+          "contradicted": 1,
+          "unresolved": 2
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.5,
+        "unanimous_unique_argmax": false
+      },
+      "family": "false_versus_not_reported",
+      "input_sha256": {
+        "source_sha256": "bb63799afffe451c1d8c03c60c7d1311488613bebbcc1b2358da38c0fe0e6106",
+        "response_sha256": "9b32309cea76a39499cbd425a57ca29c3f1b9e3ee5479b8ae7675b6fde006af4"
+      }
+    },
+    {
+      "id": "ccv1:06:b",
+      "pair_id": "06",
+      "construction_class": "unresolved",
+      "model_class": "supported",
+      "class_scores": {
+        "supported": 0.7409598233379745,
+        "contradicted": 0.11477865913155529,
+        "unresolved": 0.14426151753047026
+      },
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.6168898225232791,
+          "max": 0.9038204062073588,
+          "range": 0.28693058368407975
+        },
+        "contradicted": {
+          "min": 0.020459359157458522,
+          "max": 0.25426807191415485,
+          "range": 0.23380871275669632
+        },
+        "unresolved": {
+          "min": 0.012111200371089306,
+          "max": 0.36265081831926244,
+          "range": 0.3505396179481731
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 6,
+          "contradicted": 0,
+          "unresolved": 0
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 1.0,
+        "unanimous_unique_argmax": true
+      },
+      "family": "false_versus_not_reported",
+      "input_sha256": {
+        "source_sha256": "d21e3957b81723a2b0deda45434673ccfe2773e2239977c32c656a311c5e7294",
+        "response_sha256": "9b32309cea76a39499cbd425a57ca29c3f1b9e3ee5479b8ae7675b6fde006af4"
+      }
+    },
+    {
+      "id": "ccv1:07:a",
+      "pair_id": "07",
+      "construction_class": "supported",
+      "model_class": "supported",
+      "class_scores": {
+        "supported": 0.7412242859297784,
+        "contradicted": 0.10972536909202735,
+        "unresolved": 0.14905034497819433
+      },
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.5550637185423262,
+          "max": 0.9957018277458171,
+          "range": 0.4406381092034909
+        },
+        "contradicted": {
+          "min": 0.0010603546753874312,
+          "max": 0.37146672829733923,
+          "range": 0.3704063736219518
+        },
+        "unresolved": {
+          "min": 0.0013210777001909585,
+          "max": 0.4322840586552895,
+          "range": 0.43096298095509855
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 6,
+          "contradicted": 0,
+          "unresolved": 0
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 1.0,
+        "unanimous_unique_argmax": true
+      },
+      "family": "same_result_wrong_account",
+      "input_sha256": {
+        "source_sha256": "977d1904609a604ce9136c9e6bb65a674477f8bd756225107403f429291e5962",
+        "response_sha256": "43c22081d8cf6ad868707c07088c01608d5b385205896be3785a108a2a765a49"
+      }
+    },
+    {
+      "id": "ccv1:07:b",
+      "pair_id": "07",
+      "construction_class": "contradicted",
+      "model_class": "contradicted",
+      "class_scores": {
+        "supported": 0.14384651489143582,
+        "contradicted": 0.6188697324126382,
+        "unresolved": 0.23728375269592597
+      },
+      "class_score_ranges": {
+        "supported": {
+          "min": 4.495827708086456e-07,
+          "max": 0.7158410158513298,
+          "range": 0.715840566268559
+        },
+        "contradicted": {
+          "min": 0.008651887211472708,
+          "max": 0.9944446282109366,
+          "range": 0.9857927409994639
+        },
+        "unresolved": {
+          "min": 0.005554922206292663,
+          "max": 0.969254744812961,
+          "range": 0.9636998226066684
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 1,
+          "contradicted": 4,
+          "unresolved": 1
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.6666666666666666,
+        "unanimous_unique_argmax": false
+      },
+      "family": "same_result_wrong_account",
+      "input_sha256": {
+        "source_sha256": "977d1904609a604ce9136c9e6bb65a674477f8bd756225107403f429291e5962",
+        "response_sha256": "91cc23ee2be859eac88dbffe7bae1f7decef693b17a9f8e777b72887ede2c5cc"
+      }
+    },
+    {
+      "id": "ccv1:08:a",
+      "pair_id": "08",
+      "construction_class": "supported",
+      "model_class": "unresolved",
+      "class_scores": {
+        "supported": 0.22285652921000446,
+        "contradicted": 0.1989862626742208,
+        "unresolved": 0.5781572081157748
+      },
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.0240937682868484,
+          "max": 0.6771716753570204,
+          "range": 0.653077907070172
+        },
+        "contradicted": {
+          "min": 0.012796540017758784,
+          "max": 0.4810148622439608,
+          "range": 0.468218322226202
+        },
+        "unresolved": {
+          "min": 0.31003178462522085,
+          "max": 0.7978760262069926,
+          "range": 0.48784424158177175
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 1,
+          "contradicted": 1,
+          "unresolved": 4
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.6666666666666666,
+        "unanimous_unique_argmax": false
+      },
+      "family": "typed_execution_abstention",
+      "input_sha256": {
+        "source_sha256": "48b51ca8644de4deed5ea8a8dd371e6bd57ec41aa5131dcb1df80ae0330fd06e",
+        "response_sha256": "e0dc683143b34db2f62650fb97f8a9f74f82d6c6180d15d9e5295b2922e6db5a"
+      }
+    },
+    {
+      "id": "ccv1:08:b",
+      "pair_id": "08",
+      "construction_class": "supported",
+      "model_class": "supported",
+      "class_scores": {
+        "supported": 0.699237061104293,
+        "contradicted": 0.08346936452931049,
+        "unresolved": 0.21729357436639649
+      },
+      "class_score_ranges": {
+        "supported": {
+          "min": 0.3425231111229527,
+          "max": 0.9578335310555888,
+          "range": 0.615310419932636
+        },
+        "contradicted": {
+          "min": 0.01118649543354303,
+          "max": 0.29175596372884977,
+          "range": 0.2805694682953067
+        },
+        "unresolved": {
+          "min": 0.02315775482387221,
+          "max": 0.6202292285382214,
+          "range": 0.5970714737143492
+        }
+      },
+      "permutation_agreement": {
+        "unique_argmax_counts": {
+          "supported": 5,
+          "contradicted": 0,
+          "unresolved": 1
+        },
+        "tied_permutations": 0,
+        "modal_unique_argmax_fraction": 0.8333333333333334,
+        "unanimous_unique_argmax": false
+      },
+      "family": "typed_execution_abstention",
+      "input_sha256": {
+        "source_sha256": "a59256c6188e92b45f914f78ff185d6fda648ccb679fd5e4771446664d0efa4a",
+        "response_sha256": "e0dc683143b34db2f62650fb97f8a9f74f82d6c6180d15d9e5295b2922e6db5a"
+      }
+    }
+  ],
+  "all_pairs": [
+    {
+      "pair_id": "01",
+      "ids": [
+        "ccv1:01:a",
+        "ccv1:01:b"
+      ],
+      "family": "actor_event_binding",
+      "construction_classes": [
+        "supported",
+        "contradicted"
+      ],
+      "model_classes": [
+        "supported",
+        "unresolved"
+      ],
+      "q_supported": {
+        "ccv1:01:a": 0.5648595511562712,
+        "ccv1:01:b": 0.16464488586753506
+      },
+      "margin": 0.4002146652887361,
+      "strictly_positive": true,
+      "comparison": "one_supported_vs_one_other",
+      "same_word_bag": true
+    },
+    {
+      "pair_id": "02",
+      "ids": [
+        "ccv1:02:a",
+        "ccv1:02:b"
+      ],
+      "family": "year_value_binding",
+      "construction_classes": [
+        "supported",
+        "contradicted"
+      ],
+      "model_classes": [
+        "supported",
+        "unresolved"
+      ],
+      "q_supported": {
+        "ccv1:02:a": 0.6084550083814356,
+        "ccv1:02:b": 0.16207131559892585
+      },
+      "margin": 0.4463836927825098,
+      "strictly_positive": true,
+      "comparison": "one_supported_vs_one_other",
+      "same_word_bag": true
+    },
+    {
+      "pair_id": "03",
+      "ids": [
+        "ccv1:03:a",
+        "ccv1:03:b"
+      ],
+      "family": "account_value_binding",
+      "construction_classes": [
+        "supported",
+        "contradicted"
+      ],
+      "model_classes": [
+        "supported",
+        "contradicted"
+      ],
+      "q_supported": {
+        "ccv1:03:a": 0.8910762582695315,
+        "ccv1:03:b": 0.24895868120071443
+      },
+      "margin": 0.6421175770688171,
+      "strictly_positive": true,
+      "comparison": "one_supported_vs_one_other",
+      "same_word_bag": true
+    },
+    {
+      "pair_id": "04",
+      "ids": [
+        "ccv1:04:a",
+        "ccv1:04:b"
+      ],
+      "family": "source_actor_assignment",
+      "construction_classes": [
+        "supported",
+        "contradicted"
+      ],
+      "model_classes": [
+        "supported",
+        "unresolved"
+      ],
+      "q_supported": {
+        "ccv1:04:a": 0.6770991020104083,
+        "ccv1:04:b": 0.26687775911451134
+      },
+      "margin": 0.410221342895897,
+      "strictly_positive": true,
+      "comparison": "one_supported_vs_one_other",
+      "same_word_bag": true
+    },
+    {
+      "pair_id": "05",
+      "ids": [
+        "ccv1:05:a",
+        "ccv1:05:b"
+      ],
+      "family": "target_evidence_removal",
+      "construction_classes": [
+        "supported",
+        "unresolved"
+      ],
+      "model_classes": [
+        "supported",
+        "unresolved"
+      ],
+      "q_supported": {
+        "ccv1:05:a": 0.682261002818824,
+        "ccv1:05:b": 0.17020859964640025
+      },
+      "margin": 0.5120524031724237,
+      "strictly_positive": true,
+      "comparison": "one_supported_vs_one_other",
+      "same_word_bag": false
+    },
+    {
+      "pair_id": "06",
+      "ids": [
+        "ccv1:06:a",
+        "ccv1:06:b"
+      ],
+      "family": "false_versus_not_reported",
+      "construction_classes": [
+        "supported",
+        "unresolved"
+      ],
+      "model_classes": [
+        "supported",
+        "supported"
+      ],
+      "q_supported": {
+        "ccv1:06:a": 0.45939650211896493,
+        "ccv1:06:b": 0.7409598233379745
+      },
+      "margin": -0.28156332121900957,
+      "strictly_positive": false,
+      "comparison": "one_supported_vs_one_other",
+      "same_word_bag": true
+    },
+    {
+      "pair_id": "07",
+      "ids": [
+        "ccv1:07:a",
+        "ccv1:07:b"
+      ],
+      "family": "same_result_wrong_account",
+      "construction_classes": [
+        "supported",
+        "contradicted"
+      ],
+      "model_classes": [
+        "supported",
+        "contradicted"
+      ],
+      "q_supported": {
+        "ccv1:07:a": 0.7412242859297784,
+        "ccv1:07:b": 0.14384651489143582
+      },
+      "margin": 0.5973777710383426,
+      "strictly_positive": true,
+      "comparison": "one_supported_vs_one_other",
+      "same_word_bag": true
+    },
+    {
+      "pair_id": "08",
+      "ids": [
+        "ccv1:08:a",
+        "ccv1:08:b"
+      ],
+      "family": "typed_execution_abstention",
+      "construction_classes": [
+        "supported",
+        "supported"
+      ],
+      "model_classes": [
+        "unresolved",
+        "supported"
+      ],
+      "q_supported": {
+        "ccv1:08:a": 0.22285652921000446,
+        "ccv1:08:b": 0.699237061104293
+      },
+      "margin": null,
+      "strictly_positive": null,
+      "comparison": "both_supported_arithmetic_and_quote",
+      "same_word_bag": false
+    }
+  ],
+  "interpretation": "Minimal source-binding capability is present but null/false and arithmetic-source-support failures remain. Natural full-answer errors are not explained by global absence of relation sensitivity. No promotion."
+}

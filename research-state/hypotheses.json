@@ -31,11 +31,24 @@
     },
     {
       "id": "H003_FINITE_LABEL_DIRECT_VERIFICATION",
-      "status": "selected_for_baseline_qualification_not_main_method",
+      "status": "natural_and_constructed_qualification_complete_not_promoted",
       "question": "Can a direct whole-answer source judge provide useful semantic observations without the failed extraction interface, and do its decisions depend on arbitrary answer labels?",
       "new_condition": "One dense next-label forward for each of all6 assignments of three semantic classes, same full18 original inputs; no generated span, offset or JSON output.",
       "prior_overlap": "P031 broad frozen semantic verification was proposed/unrun; H002 never issued source-verification calls. Direct verification and label permutation are established baselines, not claimed novel.",
-      "admission": "All whole-answer cases retained. No token detector score, target-label tuning, training, semantic calibration claim or AUROC yet."
+      "admission": "All whole-answer cases retained. No token detector score, target-label tuning, training, semantic calibration claim or AUROC yet.",
+      "evidence": [
+        "F013",
+        "F014"
+      ],
+      "next": "Separate typed evidence semantics, long-context/source composition and arithmetic rather than inventing method weights."
+    },
+    {
+      "id": "H004_TYPED_SOURCE_REPRESENTATION",
+      "status": "proposed_not_implemented",
+      "question": "Does lossless typed source rendering improve null/False and natural structured-source verification beyond a null-semantics instruction alone? Freeze crossed controls before inference; reuse unchanged baselines; do not redo H003.",
+      "design": "research-state/TYPED_SOURCE_NEXT.md",
+      "prior_overlap": "Typed semantics and reversible representation are established concepts; old finite certificates had limited coverage. No novelty or efficacy claimed.",
+      "admission": "Input-grammar routing only, preserve all facts/types; crossed source/instruction controls, no gold spans/tuning; full original population and unknown retained."
     }
   ]
 }

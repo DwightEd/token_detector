@@ -1,0 +1,20 @@
+{
+  "schema": "verdict-qualification-v1",
+  "contract_version": "semantic-verdict-v1",
+  "context_policy": "replace_unique_source_with_fixed_placeholder_v1",
+  "purpose": "observations_only",
+  "expected_cases": 16,
+  "max_input_tokens": 4096,
+  "labels": [
+    "A",
+    "B",
+    "C"
+  ],
+  "permutations": 6,
+  "max_forward_passes": 96,
+  "use_cache": false,
+  "logits_to_keep": 1,
+  "attention_implementation": "sdpa",
+  "hypothesis_id": "H003_FINITE_LABEL_DIRECT_VERIFICATION",
+  "notes": "Prespecified16 constructed source-binding controls; full source and preserved pre-generation context. Same prompts, weights, quantization and readout as natural18; only population admission16/96 differs. All six A/B/C class assignments, no spans, examples, target labels, score tuning, token projection or efficacy claim. Canonical assignment and variation retained alongside group mean."
+}

@@ -1,0 +1,50 @@
+{
+  "scope": "Versioned checks; overlapping suites are not summed into a single test count",
+  "observer97": {
+    "source_checks": 96,
+    "installed_checks": 8,
+    "wheel_sha256": "220569600b75c0904edd9420d18c01870226e5fee14c79ed3515d7393c4347dd"
+  },
+  "cpu98": {
+    "evaluator_source_checks": 43,
+    "installed_checks": 8,
+    "source_test_session": 99827,
+    "source_test_final_chunk": "2f0221",
+    "source_log_on_disk": false,
+    "wheel_sha256": "7c22a29112ba63a8f29f95526cc12c91b75e216607f20037d26d4e8628634eb1"
+  },
+  "controls98": {
+    "collector_source_checks": 32,
+    "source_test_session": 42701,
+    "source_test_final_chunk": "fb4b77",
+    "installed_checks": 8,
+    "wheel_sha256": "9c830a91e86ac732d9c0aeeaf2e6c06bffaecea3d20bdd6de224a664bde93e06"
+  },
+  "actual_natural": {
+    "cases": 18,
+    "forwards": 108,
+    "seconds_forward": 41.484458800405264
+  },
+  "actual_controls": {
+    "cases": 16,
+    "forwards": 96,
+    "seconds_forward": 12.58293690055143
+  },
+  "reused_run_checks": {
+    "H003_verdict_observation_run_spec_v1": {
+      "action": "reuse",
+      "run_id": "fa101d666cce73beefcb12cd5979b04fb51e2771a61f48e78f9232caecff968c"
+    },
+    "H003_verdict_cpu_review_run_spec_v2": {
+      "action": "reuse",
+      "run_id": "29e82c69db9558ec05c7b868f10cfa58f06cc497864a0ecfebcefa6217a72b47"
+    },
+    "H003_controls_observation_run_spec_v1": {
+      "action": "reuse",
+      "run_id": "1dfd32b1cdf5ad6f389ee9b26eaaa9c4a1c96b497ae67d851d351996eca5688b"
+    }
+  },
+  "unclaimed_registration_recovery": "CPU wrapper v1 lacked hypothesis/intervention IDs; failed before claim/gold. Archived invalid spec under outputs; v2 registration and reader succeeded. No model rerun.",
+  "line_explanation_complete": false,
+  "full_detector_or_auroc_validated": false
+}

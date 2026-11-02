@@ -25,8 +25,12 @@ DEFAULT_PROTOCOL = {
 
 def _protocol(path):
     value = data.read_json(path)
+    population_fields = {'expected_cases', 'max_forward_passes'}
     if (not isinstance(value, dict) or any(type(value.get(k)) is not type(v) or value.get(k) != v
-                                         for k, v in DEFAULT_PROTOCOL.items())
+                                         for k, v in DEFAULT_PROTOCOL.items() if k not in population_fields)
+            or type(value.get('expected_cases')) is not int
+            or type(value.get('max_forward_passes')) is not int
+            or (value['expected_cases'], value['max_forward_passes']) not in {(18, 108), (16, 96)}
             or set(value) - set(DEFAULT_PROTOCOL) - {'notes', 'hypothesis_id'}):
         raise ValueError('Unsupported frozen verdict-qualification-v1 protocol')
     return value

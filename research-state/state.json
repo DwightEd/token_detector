@@ -2,10 +2,10 @@
   "schema": 1,
   "objective": "Mechanism-driven unsupervised hallucination detection improvement toward AUROC >= 0.8 on each of six primary tasks",
   "canonical_project": "D:/projects/research/token_detector",
-  "goal_status": "active",
-  "phase": "H002_frontend_qualification_failed_H003_direct_baseline_preparing",
-  "active_hypothesis": "H003_FINITE_LABEL_DIRECT_VERIFICATION",
-  "next_question": "Can the same frozen3B model judge complete original answers from source without a free-form span/role proposal? Use finite-label next-token scores and all six label assignments; freeze every score before posthoc source review. H002 source-QA remains untested.",
+  "goal_status": "not_achieved",
+  "phase": "H003_natural_and_controls_completed_H004_typed_source_proposed",
+  "active_hypothesis": "H004_TYPED_SOURCE_REPRESENTATION",
+  "next_question": "Does lossless typed source rendering improve null/False and natural structured-source verification beyond a null-semantics instruction alone? Freeze crossed controls before inference; reuse unchanged baselines; do not redo H003.",
   "known_fact_ids": [
     "F001",
     "F002",
@@ -18,7 +18,9 @@
     "F009",
     "F010",
     "F011",
-    "F012"
+    "F012",
+    "F013",
+    "F014"
   ],
   "do_not_repeat": [
     "Describing known FN/FP counts again without a new discriminating intervention",
@@ -32,7 +34,7 @@
     "Whether target-slot-blind source reconstruction adds useful information beyond direct verification",
     "Whether natural claim/role proposal has enough reliable coverage without gold spans",
     "How to preserve legitimate arithmetic/units and handle missing original financial questions",
-    "Full checkpoint loading and partial generation have succeeded; full18 completion, automatic coverage, mechanism advantage, complete detector scores and all-six efficacy remain unverified."
+    "H003 minimal relation sensitivity exists but natural errors/null ambiguity/valid arithmetic remain. No full token detector or six-task improvement established; H004 is unimplemented."
   ],
   "constraints": {
     "learning": "unsupervised",
@@ -46,27 +48,21 @@
   "checkpoint_policy": "Update at every conclusion, completed run or structural pivot; record the next discriminating question before continuation",
   "pipeline_helpers": "External ARIS run_state/watchdog helpers were not found; no background watchdog is claimed. Repository state and exact-run reservation are implemented locally.",
   "case_panel": "research-state/case_panel_v1.json",
-  "resource_status": "Full model ran all18 proposals and exited normally; no live H002 worker. Model resources have been released. Closed apps remain user-approved only; WPS need not be closed.",
+  "resource_status": "16GiB installed RAM; approved Edge/Termius/Quark closure completed. H003 natural and controls both finished and released model resources. No live inference is claimed.",
   "user_resource_choice": "local_idle_automatic_run",
   "experiment_plan": "refine-logs/EXPERIMENT_PLAN.md",
-  "frozen_observation_run_id": "a5d336433cd1a04ce71962fb8500d4f9f0c8b0473a74f146e66302cbacb3e9a5",
-  "run_reservation_status": "completed_inconclusive_reusable_observations_reviewed",
-  "frozen_observation_run_spec": "research-state/protocols/H002_context_observation_run_spec_v1.json",
-  "live_execution_state": "outputs/h002-context-20261102/autostart-state.json",
+  "run_reservation_status": "all_three_H003_registered_runs_complete_reusable",
+  "frozen_observation_run_spec": "research-state/protocols/H003_controls_observation_run_spec_v1.json",
+  "live_execution_state": "no_live_job_both_H003_groups_complete",
   "local_idle_job": {
-    "pid_at_start": 28236,
-    "started_utc": "2026-11-02T12:48:29.881269+00:00",
-    "state": "outputs/h002-context-20261102/autostart-state.json",
-    "script": "outputs/h002-context-20261102/idle_launch.py",
-    "stop_file": "outputs/h002-context-20261102/STOP_AUTORUN",
-    "maximum_resource_wait_hours": 6,
-    "poll_seconds": 30,
-    "permanent_service": false,
+    "status": "completed_observations_and_posthoc_review",
+    "state": "outputs/h003-controls-20261102/autostart-state.json",
+    "pid_at_start": 24272,
     "automatic_retries": false,
-    "status": "completed_observations_then_cpu_review"
+    "permanent_service": false
   },
-  "active_variant": "shared_pre_generation_context_candidate_answer_value_blind",
-  "live_progress_command": "python outputs/h002-context-20261102/progress.py",
+  "active_variant": "next_proposed_lossless_typed_source_representation_not_implemented",
+  "live_progress_command": "Read results and RESUME; historical autostart-state is not liveness or pending evaluation",
   "superseded_local_job": {
     "pid": 31576,
     "status": "cancelled_before_launch",
@@ -76,13 +72,41 @@
   },
   "code_releases": {
     "active_observer": {
-      "files": 95,
-      "wheel_sha256": "697d35b288d3503bbd684ddcc138a495570f8946b7faa631811af126c5e16571",
-      "immutable_target": "outputs/h002-context-20261102/installed"
+      "files": 98,
+      "wheel_sha256": "9c830a91e86ac732d9c0aeeaf2e6c06bffaecea3d20bdd6de224a664bde93e06",
+      "immutable_target": "outputs/h003-controls-20261102/installed"
     },
     "original_cuda_environment_package": "old94-file package preserved; dedicated95-file target is selected via PYTHONPATH",
-    "cpu_evaluator": "Separate evaluation release/source identity; reused observer helpers must be compatible; no model rerun for evaluator changes"
+    "cpu_evaluator": "Separate evaluation release/source identity; reused observer helpers must be compatible; no model rerun for evaluator changes",
+    "natural_observer": {
+      "files": 97,
+      "commit": "91ae38f",
+      "wheel_sha256": "220569600b75c0904edd9420d18c01870226e5fee14c79ed3515d7393c4347dd",
+      "immutable_target": "outputs/h003-verdict-20261102/installed"
+    },
+    "natural_cpu_reader": {
+      "files": 98,
+      "commit": "4fed6e1",
+      "wheel_sha256": "7c22a29112ba63a8f29f95526cc12c91b75e216607f20037d26d4e8628634eb1",
+      "immutable_target": "outputs/h003-verdict-20261102/evaluator_installed"
+    }
   },
-  "last_completed_run": "a5d336433cd1a04ce71962fb8500d4f9f0c8b0473a74f146e66302cbacb3e9a5",
-  "last_result": "docs/results/h002_proposal_qualification.json"
+  "last_completed_run": "1dfd32b1cdf5ad6f389ee9b26eaaa9c4a1c96b497ae67d851d351996eca5688b",
+  "last_result": "docs/results/h003_constructed_controls.json",
+  "previous_observation_run_id": "a5d336433cd1a04ce71962fb8500d4f9f0c8b0473a74f146e66302cbacb3e9a5",
+  "goal_control_status": "blocked",
+  "goal_control_note": "get_goal returned blocked during this turn; user-authorized research progressed after resources became available. No API is available to resume the goal control; do not claim automatic continuations are active.",
+  "work_status": "authorized_current_checkpoint_complete_next_module_proposed",
+  "next_design": "research-state/TYPED_SOURCE_NEXT.md",
+  "frozen_observation_run_id": "1dfd32b1cdf5ad6f389ee9b26eaaa9c4a1c96b497ae67d851d351996eca5688b",
+  "last_updated_utc": "2026-11-02T14:51:46.317595+00:00",
+  "completed_H003": {
+    "natural_observer_run": "fa101d666cce73beefcb12cd5979b04fb51e2771a61f48e78f9232caecff968c",
+    "natural_cpu_run": "29e82c69db9558ec05c7b868f10cfa58f06cc497864a0ecfebcefa6217a72b47",
+    "constructed_observer_run": "1dfd32b1cdf5ad6f389ee9b26eaaa9c4a1c96b497ae67d851d351996eca5688b",
+    "natural_forward_seconds": 41.484458800405264,
+    "constructed_forward_seconds": 12.58293690055143,
+    "natural_result": "docs/results/h003_natural_verdict_qualification.json",
+    "constructed_result": "docs/results/h003_constructed_controls.json"
+  }
 }

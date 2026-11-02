@@ -1,0 +1,15 @@
+{
+  "schema": "verdict-qualification-evaluation-v1",
+  "purpose": "posthoc_review_only",
+  "required_panel_size": 18,
+  "whole_case_population": true,
+  "model_calls_allowed": false,
+  "target_label_tuning_allowed": false,
+  "automatic_correctness_judgment": false,
+  "token_score_projection_allowed": false,
+  "auroc_allowed": false,
+  "fitted_calibration_allowed": false,
+  "gold_based_threshold_allowed": false,
+  "hypothesis_id": "H003_FINITE_LABEL_DIRECT_VERIFICATION",
+  "notes": "Posthoc full-original-panel review only. No model calls, automatic accuracy, token projection or AUROC. All18 cases retained; source support manually reviewed separately."
+}
