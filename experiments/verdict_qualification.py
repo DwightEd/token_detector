@@ -173,7 +173,8 @@ def _case(sample, row, responses, protocol):
             'state': 'observations_sealed_not_evaluated'}
 
 
-def qualify(inputs, protocol, output, generator, model_identity, *, request_builder=None, protocol_loader=None):
+def qualify(inputs, protocol, output, generator, model_identity, *, request_builder=None,
+            protocol_loader=None, sample_request_builder=None):
     """Score the entire original 18-case roster; reuse exact sealed observations.
 
     A scorer implements count_input_tokens(messages), score_labels(messages,
@@ -182,6 +183,8 @@ def qualify(inputs, protocol, output, generator, model_identity, *, request_buil
     artifact recovery and is never sent to the instrument again.
     """
     inputs, protocol, output = Path(inputs).resolve(), Path(protocol).resolve(), Path(output).resolve()
+    if request_builder is not None and sample_request_builder is not None:
+        raise ValueError('Choose one explicit request builder')
     if inputs.name != 'inputs.jsonl' or protocol.name.casefold() in ANNOTATION_NAMES:
         raise ValueError('Only original inputs.jsonl and an independent protocol may be read')
     if 'outputs' not in output.parts:
@@ -200,7 +203,8 @@ def qualify(inputs, protocol, output, generator, model_identity, *, request_buil
         context, transformation = _context(sample.inputs)
         requests = []
         for assignment in verdict.label_assignments():
-            request = build_request(sample.source, sample.response, context, assignment)
+            request = (sample_request_builder(sample, assignment) if sample_request_builder is not None else
+                       build_request(sample.source, sample.response, context, assignment))
             execution = {'messages': request['messages'], 'labels': list(verdict.LABELS),
                          'model_identity': identity, 'protocol_sha256': protocol_hash,
                          'source_identity_sha256': _digest(source),
