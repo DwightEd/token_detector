@@ -1,5 +1,7 @@
 # Research status through 2026-10-31
 
+2026-11-02 user correction: [natural semantic relation qualification cannot be inferred from unlabeled structural checks](source-reading/UNLABELLED_LIMITS.md). Relation perturbations are deferred from the default research line; V3 remains the empirical anchor. The next proposed study measures operational source/history prediction effects, without promoting them to factuality scores or asserting a new detector.
+
 2026-11-02 reconciliation: **V3 / witness remains the retained historical finance candidate**, while the API defaults to V1 / shared. See the [complete recovered comparison](RESULTS_CURRENT.md), [V3 derivation](source-reading/METHOD_V3.md), and [proposed integrated design](source-reading/INTEGRATED_DESIGN.md). Later implemented candidates did not establish a replacement. The integrated proposal is unrun and does not imply promotion or universal superiority.
 
 2026-11-02 local follow-up: [theory and source walkthrough](source-reading/README.md) now documents all 21 detector-library Python files. The new post-seal AUC pair decomposition and finite-state checks validate computation, not new detector performance. [The refinement record](../refine-logs/theory-grounding-20261102/REVIEW_SUMMARY.md) retains unresolved natural-data and novelty gates. The remote research results below remain historical.

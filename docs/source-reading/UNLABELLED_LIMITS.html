@@ -1,0 +1,104 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>无标注识别边界与当前决策</title><link rel="stylesheet" href="assets/guide.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
+<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
+<style>@media print{body[data-article="EXPERIMENT_PLAN"]{font-size:14px;line-height:1.65}}</style></head><body data-article="UNLABELLED_LIMITS">
+<header><div class="eyebrow">TOKEN DETECTOR / 本地离线阅读</div><h1>无标注识别边界与当前决策</h1>
+<nav><a href="UNLABELLED_LIMITS.html">无标注边界与决策</a><a href="METHOD_V3.html">V3方法</a><a href="RESULTS_CURRENT.html">全数据集对照</a><a href="INTEGRATED_DESIGN.html">受限关系候选</a><a href="EXPERIMENT_PLAN.html">当前计划</a><a href="VISUAL_GUIDE.html">交互演示</a><a href="THEORY.html">完整公式</a><a href="READING.html">逐行代码</a></nav>
+<p>公式已在浏览器排版；可用浏览器“打印 → 保存为PDF”。本页不需要联网。</p></header>
+<main><article class="article"><h1 id="_1">无标注时，关系信息能够确认到哪里</h1>
+<p><strong>用户的质疑成立：上一版把关系转换的自然语义资格说得过于容易。关系扰动退出当前默认研究主线，保留为闭合结构化来源的可选诊断。</strong> V3 仍是已有探索证据的研究基础；不立即把关系模块替换成另一个未经验证的门控或混合模块。</p>
+<h2 id="_2">“交换完成”与“关系有效”是两件事</h2>
+<table>
+<thead>
+<tr>
+<th>要确认的事情</th>
+<th>无目标标签时能否完成</th>
+<th>实际边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>哪些字符、单元格、ID被改变</td>
+<td>能</td>
+<td>程序与哈希可以核对</td>
+</tr>
+<tr>
+<td>数值集合、显式单位、表结构是否满足合同</td>
+<td>对有权威schema的结构化来源可以</td>
+<td>自由文本的隐含单位、跨表引用和例外规则未必可恢复</td>
+</tr>
+<tr>
+<td>指定语义关系改变、全部非目标关系保持</td>
+<td>一般不能靠上述程序检查确认</td>
+<td>需要可信的关系语义、闭合生成规则或额外审计；这是实质前提</td>
+</tr>
+<tr>
+<td>模型的预测发生何种变化</td>
+<td>能测量</td>
+<td>反映模型响应，不自动说明原关系正确、干预有语义效度或答案错误</td>
+</tr>
+<tr>
+<td>分数是否定位真实不受支持片段</td>
+<td>只能在冻结后的最终标注评价检验</td>
+<td>不能从无标签一致性、似然或推断精度推出</td>
+</tr>
+</tbody>
+</table>
+<p>给定来源中的明确关系属于合法输入，并不自动等于使用目标评价标签。若输入本身是有权威键、单位和语义规则的JSON数据库，可以直接取得一些关系，无需目标错误标签。但是当前自然来源缺少这样的统一合同，旧解析资格与关系专家也有实际失败；不能把这一特殊情形推广成通用方法前提。</p>
+<p>冻结基础模型能够引入预训练语义知识，LLM抽取/判断也能提供候选关系；它们不会自动产生可证明正确的关系。若使用，必须承认外部知识与模型错误，不能把同一模型自己判定的关系既作依据又作正确性验证。合成闭合世界只验证其生成规则覆盖的情形。</p>
+<h2 id="_3">无监督不意味着不需要识别假设</h2>
+<p>没有目标标签仍然可以设计检测器，但必须说明：为什么当前可观测量应当与真实支持性有关。V3 的 qS / qA 是两种输入条件的下一token概率，并非“正确内容类／错误内容类”的真实类条件分布。</p>
+<p>标准Bayes判别公式是</p>
+<div class="math-block">\[
+\log\frac{P(Y=1\mid O)}{P(Y=0\mid O)}
+=\log\frac{P(O\mid Y=1)}{P(O\mid Y=0)}
+ +\log\frac{P(Y=1)}{P(Y=0)}.
+\]</div>
+
+<p>其中 O 为实际观测、Y 为最终支持性标签。把 V3 的预测专家比直接代入右侧，需要额外的生成/语义联系假设；名称、精确积分和上下文界都不会自动补上这一步。</p>
+<p>如果完全不约束 Y 与 O 的联系，相同的P(O)可以对应不同的P(Y|O)统计假设模型；仅观察O的程序无法区分这些假设。因此不存在对所有这些无限制模型都成立的标签识别保证。这是一个“缺少联系假设就无法推出目标”的逻辑说明，<strong>不是声称固定自然语言支持性定义下的无监督LLM检测不可能</strong>：真实任务另有来源文本、固定语义定义和预训练知识，本文不改变标签定义。</p>
+<p>相似的警示也出现在密度估计研究中：高似然未必对应预期的语义类别，但那项研究针对图像OOD，不是本项目的幻觉识别定理。<a href="https://arxiv.org/abs/1810.09136">Nalisnick等原文</a>。</p>
+<h2 id="_4">当前改为先研究可操作的预测信息</h2>
+<p>保留V3为基线；下一步只做来源条件与历史条件的交叉测量：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>完整原回答历史</th>
+<th>预定局部历史</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>有来源 S</td>
+<td>qS,full</td>
+<td>qS,local</td>
+</tr>
+<tr>
+<td>删除来源 A</td>
+<td>qA,full</td>
+<td>qA,local</td>
+</tr>
+</tbody>
+</table>
+<p>这些操作可以用原token ID、mask和日志定义，不要求预先确认任何自然关系被正确破坏。在各自条件下得到</p>
+<div class="math-block">\[
+d_t^{full}=\log q_{A,full}(y_t)-\log q_{S,full}(y_t),\quad
+d_t^{local}=\log q_{A,local}(y_t)-\log q_{S,local}(y_t),\quad
+I_t=d_t^{full}-d_t^{local}.
+\]</div>
+
+<p>I 只是来源对比对历史条件的预测交互。测量目标是发现哪些观测对历史依赖、哪些个体信号在原前缀下被改变；<strong>不把 I 直接叫错误分数、关系证据或已识别的因果中介量</strong>。</p>
+<p>必须匹配两世界与两历史的后端、数值精度和完整原轴；额外比较按预定位置/哈希选取的等长历史片段替换、受控位置变化及同预算原路径重复，以辨别长度、位置、数值误差。逐项记录编辑位置，不能称所选历史“非关键”“无关”或假定其语义保持不变。默认Observer的混合后端历史缓存不能直接当这次控制已匹配。</p>
+<p>两历史只检验“输入操作改变预测”的计算机制；它们既不能证明错误已进入历史，也不能确认信号改变一定有害。生成顺序上的第一错误／后续错误差异已有研究，但该研究使用了评价标注；这里可把它作为待检验假设来源，不能据此在我们的无标签数据上标记错误起点。<a href="https://arxiv.org/abs/2507.20836">Snel与Oh原文</a>。</p>
+<h2 id="_5">先做什么，暂时不做什么</h2>
+<ol>
+<li><strong>操作与数值审计</strong>：核对四条件token轴、query位置、历史mask、后端、dtype和重复误差；无须任务标注。</li>
+<li><strong>无标签预测诊断</strong>：固定来源样本、历史规则及统计量，报告四条件预测响应与成本；不以自然正确率挑规则。</li>
+<li><strong>方法决定</strong>：只有出现可解释、可复现且非数值/长度伪影的观测现象，才提出一个最小评分改动；现阶段没有选定新的检测器。预测拟合更好、一致性更高，均不作为其正确率代理。</li>
+<li><strong>冻结后效用检验</strong>：若形成候选，先固定全部对照、参数、评价协议与分数，再用新来源的人类支持性标签评价。计算机制证据与真实效用分别报告；若效用失败，不在同一最终集上挑另一配置。</li>
+</ol>
+<p>这沿用了V3的统一模型和R4已有的full/local观测思路，尚未建立新颖性。CORTEX已经考虑前序token中的来源信息传播，不能把“考虑历史”作为新贡献。<a href="https://arxiv.org/abs/2606.31033">CORTEX原文</a>。</p>
+<p>当前撤销“优先上关系观测”的建议；不撤销已有266条历史对照，不改变V3分数，也不把更复杂模型当进展。关系分支仅在来源自带可验证语义合同的范围内保留可选资格检查，不能承担通用无监督方法的核心保证。</p></article></main></body></html>

@@ -126,3 +126,36 @@
 | 20261102_145620 | /experiment-plan | tools/render_math_guide.py | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
 | 20261102_145620 | /experiment-plan | tools/render_source_reading.py | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
 | 20261102_145620 | /experiment-plan | tools/templates/theory_visual.html | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_150803 | /experiment-plan | docs/source-reading/SOURCE_INVENTORY_20261102_150657.json | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/source-reading/UNLABELLED_LIMITS.html | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/source-reading/UNLABELLED_LIMITS.md | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/source-reading/UNLABELLED_VALIDATION.md | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | refine-logs/EXPERIMENT_PLAN_20261102_150442.md | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | refine-logs/EXPERIMENT_TRACKER_20261102_150442.md | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | refine-logs/theory-grounding-20261102/FINAL_PROPOSAL_20261102_150657.md | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | refine-logs/theory-grounding-20261102/WORK_STATE_20261102_150657.json | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | README.md | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/LATEST_RESEARCH.md | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/source-reading/EXPERIMENT_PLAN.html | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/source-reading/INTEGRATED_DESIGN.html | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/source-reading/INTEGRATED_DESIGN.md | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/source-reading/METHOD.html | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/source-reading/METHOD_V3.html | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/source-reading/METHOD_V3.md | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/source-reading/PAPER_STORY.html | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/source-reading/PAPER_STORY.md | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/source-reading/READING.html | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/source-reading/README.md | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/source-reading/RESULTS_CURRENT.html | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/source-reading/SOURCE_INVENTORY.json | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/source-reading/THEORY.html | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/source-reading/VALIDATION.html | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/source-reading/VISUAL_GUIDE.html | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | docs/source-reading/assets/guide.css | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | refine-logs/EXPERIMENT_PLAN.md | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | refine-logs/EXPERIMENT_TRACKER.md | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | refine-logs/theory-grounding-20261102/FINAL_PROPOSAL.md | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | refine-logs/theory-grounding-20261102/WORK_STATE.json | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | tools/render_math_guide.py | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | tools/render_source_reading.py | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |
+| 20261102_150803 | /experiment-plan | tools/templates/theory_visual.html | implementation | Correct unlabeled semantic assumptions; relation branch deferred; no new detector |

@@ -83,6 +83,10 @@
     "experiment_plan": "refine-logs/EXPERIMENT_PLAN.md",
     "candidate_implemented": false,
     "new_detector_results": false,
-    "source_comparison_review": "same-family provisional; no remaining blockers"
+    "source_comparison_review": "same-family provisional; previous266 records unchanged",
+    "integrated_candidate_status": "DEFERRED_RELATION_ASSUMPTION_UNRESOLVED",
+    "current_priority": "Operational source/history prediction diagnostics; no new detector selected",
+    "decision_note": "docs/source-reading/UNLABELLED_LIMITS.md",
+    "current_decision_review": "unsupervised_observation_review; no remaining local blockers"
   }
 }

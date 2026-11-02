@@ -121,4 +121,4 @@ detector = HallucinationDetector.from_pretrained(
 旧 Llama 上，FinQA 从 V1 的0.7283/0.2572升至 V3 的0.8027/0.3250，TATQA 从0.7688/0.3559升至0.8430/0.4657。这是 FRED 发布的162/130答 silver 人群上的历史探索证据，使用source-only completion提示；不代表原始FinQA/TATQA全基准，原生成问题没有恢复。
 R4 在 QA 和 Data2txt 更强；Qwen 金融上 Matched local 的点值略高，配对区间跨0；Qwen HalluRAG 上 NLL / LUMINA 也能高于 V3。因此“当前保留候选”不能改写为“全部任务最优”。
 
-后续 responsibility、onset、token_state、adaptive_token、conditional 等已有失败结果，新的代码时间戳不代表新的有效方法。当前推荐围绕 V3 继续建立一个有统一模型的改进方案；每项新增机制都必须通过[组合设计与验证计划](INTEGRATED_DESIGN.md)，不能用既有探索标签挑选组合。
+后续 responsibility、onset、token_state、adaptive_token、conditional 等已有失败结果，新的代码时间戳不代表新的有效方法。当前保留V3；[无标注的识别边界](UNLABELLED_LIMITS.md)说明为何关系分支退出主线，下一步先测可操作的预测瓶颈，再决定是否形成新的评分方法。[此前组合候选](INTEGRATED_DESIGN.md)保留为未执行的受限分支，不能用既有探索标签挑选组合。

@@ -5282,7 +5282,7 @@
     },
     {
       "path": "tools/render_source_reading.py",
-      "sha256": "bbad633f4a78f973b4881090cb74af75beda23ccb36381ad5dd987dcfb0d20f0",
+      "sha256": "3fed41d1ab2e68c74d5f65c3e2149dc87a8eb98ea7a48461280d9c7d88316edb",
       "line_count": 85,
       "functions": 0,
       "status": "pending_line_explanation",
@@ -5290,8 +5290,8 @@
     },
     {
       "path": "tools/render_math_guide.py",
-      "sha256": "ccb4578aeaae8d647c690ae9479cefa30e584cdb08a145d8507b194c2b43b259",
-      "line_count": 142,
+      "sha256": "232fdf4e702ade0aea4c7ec49d6ecdbb31087311602b6f4ea848cc48a373586b",
+      "line_count": 143,
       "functions": 6,
       "status": "pending_line_explanation",
       "validation": "../results/VALIDATION.md"

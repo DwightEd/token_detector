@@ -4,7 +4,7 @@
 
 研究主线固定为**无监督检测，真值仅用于冻结后的最终评价**，不用于训练、调参、选方法或风险校准。完整约束见[用户确认记录](refine-logs/theory-grounding-20261102/USER_CONSTRAINTS.md)。
 
-**当前保留的金融研究候选是 V3 / witness。** [V3 做了什么优化](docs/source-reading/METHOD_V3.md)、[六组数据与各方法完整对照](docs/RESULTS_CURRENT.md)、[统一组合设计](docs/source-reading/INTEGRATED_DESIGN.md)与[逐项验证计划](refine-logs/EXPERIMENT_PLAN.md)是当前研究入口。离线阅读从 [V3 已排版页面](docs/source-reading/METHOD_V3.html)进入。V3 并非所有任务/观察模型最优；新增组合候选未执行。
+**当前保留的金融研究候选是 V3 / witness。** 先看[无标注识别边界与当前决策](docs/source-reading/UNLABELLED_LIMITS.md)、[V3优化](docs/source-reading/METHOD_V3.md)、[六组完整对照](docs/RESULTS_CURRENT.md)与[当前诊断计划](refine-logs/EXPERIMENT_PLAN.md)。[此前关系组合](docs/source-reading/INTEGRATED_DESIGN.md)因自然语义确认前提未解而退出默认主线，保留为受限可选分支。离线阅读从[识别边界页面](docs/source-reading/UNLABELLED_LIMITS.html)进入；V3并非所有任务/观察模型最优，没有新检测结果。
 
 浏览器阅读从[公式与机制交互指南](docs/source-reading/VISUAL_GUIDE.html)进入；[完整公式](docs/source-reading/THEORY.html)与[论文主张](docs/source-reading/PAPER_STORY.html)均可离线排版。下载仓库后打开HTML；GitHub在线查看可读[文字版](docs/source-reading/PAPER_STORY.md)。
 
