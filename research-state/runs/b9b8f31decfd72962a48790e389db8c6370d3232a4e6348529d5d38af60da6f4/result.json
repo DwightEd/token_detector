@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "run_id": "b9b8f31decfd72962a48790e389db8c6370d3232a4e6348529d5d38af60da6f4",
+  "completed_utc": "2026-11-02T19:45:31.912993+00:00",
+  "outcome": "inconclusive",
+  "conclusion": "Complete32 source-only literal name+EOS observations reconstructed and references released after CPUfreeze. Closed toy role qualification only, no natural task efficacy or method promotion.",
+  "artifacts": [
+    {
+      "path": "outputs/h008-reconstruction-20261103/posthoc_review_v1/candidate-observations.json",
+      "sha256": "e2bce93fa408065d33382cfff7976b5bcc9685fe4d221ad73c404c9d2553cb86"
+    },
+    {
+      "path": "outputs/h008-reconstruction-20261103/posthoc_review_v1/cases.json",
+      "sha256": "58d4f3c48855f5ee19b9f9f35380c3ab6f6f8683d3562a100318a901dd397682"
+    },
+    {
+      "path": "outputs/h008-reconstruction-20261103/posthoc_review_v1/complete.json",
+      "sha256": "1b2b59ebfe94add8b69bc5d6aa61b31014a1933d16257d7b6aa6e18e4e0f3e73"
+    },
+    {
+      "path": "outputs/h008-reconstruction-20261103/posthoc_review_v1/freeze.json",
+      "sha256": "27e520e79552c94a0dd3d413c1adf741270ca237eba76cabd470353cc7bbb82f"
+    },
+    {
+      "path": "outputs/h008-reconstruction-20261103/posthoc_review_v1/plan.json",
+      "sha256": "f47f7ff869f3ec8c4a7b5fba232146e9e9cd722b1a21f7d60bdea4ee0c5ed308"
+    },
+    {
+      "path": "outputs/h008-reconstruction-20261103/posthoc_review_v1/protocol.json",
+      "sha256": "d2326c093924f27ce3651347247f8dbda0366ac7592e4aaaf5ee26bd2501b665"
+    },
+    {
+      "path": "outputs/h008-reconstruction-20261103/posthoc_review_v1/queries.json",
+      "sha256": "72f53abaad3cc300fda771299cee3dcf218bf1da737b8fe7083d29eee91b61b5"
+    },
+    {
+      "path": "outputs/h008-reconstruction-20261103/posthoc_review_v1/reference-release.json",
+      "sha256": "163047b0c05249d11b7d87c1de82f59cfe6d05de731a72497ef1e1e16337f020"
+    },
+    {
+      "path": "outputs/h008-reconstruction-20261103/posthoc_review_v1/seal.json",
+      "sha256": "c62f8906d7cfb6986c4da99d29bb152d2f6ea7e85c5e02305356fb0d17dbd32b"
+    },
+    {
+      "path": "outputs/h008-reconstruction-20261103/posthoc_review_v1/source_identity.json",
+      "sha256": "331c50838e3756ba37557cabd885019a91d20e5c3db6dda1df53ce7ae683bfa8"
+    },
+    {
+      "path": "outputs/h008-reconstruction-20261103/posthoc_review_v1/summary.json",
+      "sha256": "9a630538cadd49f96a8f8ecdce616e8a5f1fc36b70ce56da9a1b2d4cd82df615"
+    },
+    {
+      "path": "outputs/h008-reconstruction-20261103/evaluation-admission-v1.json",
+      "sha256": "3d7d1dca557ccc1530e4535b7f4d1ff3a2800c15f9bb3af1cd370a5f5f539ed0"
+    },
+    {
+      "path": "outputs/h008-reconstruction-20261103/post-review-reference-binding-v1.json",
+      "sha256": "7998d90c6077a8b5cee1dc446af756d4e32f6a1f2a7a2a580e6391050b3b61fc"
+    },
+    {
+      "path": "outputs/h007-burden-20261103/inference/plan.json",
+      "sha256": "7d8e37c4f319b6a851ee7d11f4ae0eb845e1d98d7ae37f4c19355010bf12418d"
+    },
+    {
+      "path": "outputs/h007-burden-20261103/construction/construction_truth.jsonl",
+      "sha256": "b778cdc030f8e8d54b8557eb5a5071ee80ac41fff9bdf54fccb4d04a521423d6"
+    },
+    {
+      "path": "outputs/h007-burden-20261103/construction/seal.json",
+      "sha256": "66acd0c7bff6282b9643a9e951aaedd2d8e652cd5f27fe682a7141dc7c5a87b8"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema": "exact-research-evidence-archive-v1",
+  "generated_utc": "2026-11-02T20:23:26.171164+00:00",
+  "scope": "Exact byte copies; pre-run design status is historical, completed results are separately linked.",
+  "files": [
+    {
+      "source": "outputs/h010-natural-span-20261103/FEASIBILITY.md",
+      "archived": "refine-logs/h010-20261103/FEASIBILITY.md",
+      "sha256": "c385603c906a7094bbeab49af87e7bf33d1043103d43eaa15ed07c0accf5d257"
+    },
+    {
+      "source": "outputs/h010-natural-span-20261103/completion-receipt.json",
+      "archived": "refine-logs/h010-20261103/completion-receipt.json",
+      "sha256": "46523a46e84f69dea0794a927c22a5fb2a55867bc1b86db9da9f9968f2a0a494"
+    },
+    {
+      "source": "outputs/h010-natural-span-20261103/pilot-freeze.json",
+      "archived": "refine-logs/h010-20261103/pilot-freeze.json",
+      "sha256": "90d9af0c47520abed43165ef5ad5b25f96b6a07fe6a003f2bc53464d4c8fd6a7"
+    },
+    {
+      "source": "outputs/h010-natural-span-20261103/pilot-summary.json",
+      "archived": "refine-logs/h010-20261103/pilot-summary.json",
+      "sha256": "386f194c315275117ca36245b0da834c0198f6dcc11f5bc333ee2d574a8a0b68"
+    },
+    {
+      "source": "outputs/h010-natural-span-20261103/pilot-seal.json",
+      "archived": "refine-logs/h010-20261103/pilot-seal.json",
+      "sha256": "357dae5e95ce9d355b1899e7be07a6047d6f954853ff90f9763d4b4794c84bdd"
+    },
+    {
+      "source": "outputs/h010-natural-span-20261103/independent-review.json",
+      "archived": "refine-logs/h010-20261103/independent-review.json",
+      "sha256": "520000ff392cd9b475e3d6310eaa59be6cef620a8bd1b48c4f460df7e7481b17"
+    },
+    {
+      "source": "outputs/h010-natural-span-20261103/inventory_frontend.py",
+      "archived": "refine-logs/h010-20261103/inventory_frontend.py",
+      "sha256": "9ba7029c3fdc6625e4a025a98e1d0d10290ecbe1b802afabbb05d9067bcdb7c6"
+    },
+    {
+      "source": "outputs/h010-natural-span-20261103/requirements-locked.txt",
+      "archived": "refine-logs/h010-20261103/requirements-locked.txt",
+      "sha256": "6902165aae7f0a54a60b2c14fdd81bcfd99401031d49d62e9a2072e62b964908"
+    },
+    {
+      "source": "outputs/h010-natural-span-20261103/synthetic-probe.json",
+      "archived": "refine-logs/h010-20261103/synthetic-probe.json",
+      "sha256": "4dd5778997746c441be65abb466107b7a209e2209c8a9802e47f67e678b77997"
+    }
+  ]
+}

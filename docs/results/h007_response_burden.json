@@ -1,0 +1,642 @@
+{
+  "schema": "H007-balanced-response-burden-result-v1",
+  "status": "completed_not_promoted_hypothesis_not_supported",
+  "observation_run_id": "92cf2597ab7d2217583f07048001da2d715530fee62de9aa314f3c3eedcb8d88",
+  "evaluation_run_id": "ea8ba04dba677059028c4ae6442444313c41ea1bbb9b808e428f2853eb959c59",
+  "observation_seal_sha256": "36118e42cb86960ba5581a48739e00a0d9a344870586013205babbc8fa94bbf1",
+  "review_seal_sha256": "7384598dff2b43d883f911fe9f9d1fd5276df9413ac33fd3989b59795c698622",
+  "post_review_label_binding": {
+    "scope": "Construction input snapshot immediately after the validated sealed CPU review",
+    "truth_path": "D:\\projects\\research\\token_detector\\outputs\\h007-burden-20261103\\construction\\construction_truth.jsonl",
+    "truth_sha256": "b778cdc030f8e8d54b8557eb5a5071ee80ac41fff9bdf54fccb4d04a521423d6",
+    "construction_seal_sha256": "66acd0c7bff6282b9643a9e951aaedd2d8e652cd5f27fe682a7141dc7c5a87b8",
+    "review_seal_sha256": "7384598dff2b43d883f911fe9f9d1fd5276df9413ac33fd3989b59795c698622",
+    "construction_truth_hash_obtained_after_predictions_and_evaluator_freeze": true
+  },
+  "summary": {
+    "cases": 48,
+    "paired_cells": 24,
+    "by_mode_and_burden": {
+      "whole": {
+        "0": {
+          "evaluation_units": 16,
+          "known_units": 16,
+          "known_positive": 8,
+          "known_negative": 8,
+          "missing_label_units": 0,
+          "unknown_score_units": 0,
+          "unknown_score_known_label_units": 0,
+          "auroc": 0.578125,
+          "ap": 0.6897095959595959,
+          "paired_cells": 8,
+          "mean_wrong_minus_supported_risk": 0.08139438195639939,
+          "correctly_ordered_pairs": 5,
+          "tied_pairs": 0
+        },
+        "4": {
+          "evaluation_units": 16,
+          "known_units": 16,
+          "known_positive": 8,
+          "known_negative": 8,
+          "missing_label_units": 0,
+          "unknown_score_units": 0,
+          "unknown_score_known_label_units": 0,
+          "auroc": 0.59375,
+          "ap": 0.7313034188034188,
+          "paired_cells": 8,
+          "mean_wrong_minus_supported_risk": 0.0489904806855896,
+          "correctly_ordered_pairs": 6,
+          "tied_pairs": 0
+        },
+        "12": {
+          "evaluation_units": 16,
+          "known_units": 16,
+          "known_positive": 8,
+          "known_negative": 8,
+          "missing_label_units": 0,
+          "unknown_score_units": 0,
+          "unknown_score_known_label_units": 0,
+          "auroc": 0.546875,
+          "ap": 0.7030792124542125,
+          "paired_cells": 8,
+          "mean_wrong_minus_supported_risk": 0.05422502505328479,
+          "correctly_ordered_pairs": 5,
+          "tied_pairs": 0
+        }
+      },
+      "target_first_unit": {
+        "0": {
+          "evaluation_units": 16,
+          "known_units": 16,
+          "known_positive": 8,
+          "known_negative": 8,
+          "missing_label_units": 0,
+          "unknown_score_units": 0,
+          "unknown_score_known_label_units": 0,
+          "auroc": 0.578125,
+          "ap": 0.6897095959595959,
+          "paired_cells": 8,
+          "mean_wrong_minus_supported_risk": 0.08139438195639939,
+          "correctly_ordered_pairs": 5,
+          "tied_pairs": 0
+        },
+        "4": {
+          "evaluation_units": 16,
+          "known_units": 16,
+          "known_positive": 8,
+          "known_negative": 8,
+          "missing_label_units": 0,
+          "unknown_score_units": 0,
+          "unknown_score_known_label_units": 0,
+          "auroc": 0.421875,
+          "ap": 0.5515415140415141,
+          "paired_cells": 8,
+          "mean_wrong_minus_supported_risk": -0.004769836115426904,
+          "correctly_ordered_pairs": 2,
+          "tied_pairs": 0
+        },
+        "12": {
+          "evaluation_units": 16,
+          "known_units": 16,
+          "known_positive": 8,
+          "known_negative": 8,
+          "missing_label_units": 0,
+          "unknown_score_units": 0,
+          "unknown_score_known_label_units": 0,
+          "auroc": 0.4375,
+          "ap": 0.47794982794982793,
+          "paired_cells": 8,
+          "mean_wrong_minus_supported_risk": -0.0035276943102938996,
+          "correctly_ordered_pairs": 2,
+          "tied_pairs": 0
+        }
+      }
+    },
+    "pairs": [
+      {
+        "relation_family": "winner",
+        "vocabulary": "lex1",
+        "source_direction": 0,
+        "distractor_count": 0,
+        "differences": {
+          "whole": 0.1183209068647626,
+          "target_first_unit": 0.1183209068647626
+        }
+      },
+      {
+        "relation_family": "winner",
+        "vocabulary": "lex1",
+        "source_direction": 0,
+        "distractor_count": 4,
+        "differences": {
+          "whole": 0.08930390453173442,
+          "target_first_unit": -0.008384353717574067
+        }
+      },
+      {
+        "relation_family": "winner",
+        "vocabulary": "lex1",
+        "source_direction": 0,
+        "distractor_count": 12,
+        "differences": {
+          "whole": 0.0919294057680865,
+          "target_first_unit": -0.01599911464624526
+        }
+      },
+      {
+        "relation_family": "winner",
+        "vocabulary": "lex1",
+        "source_direction": 1,
+        "distractor_count": 0,
+        "differences": {
+          "whole": 0.15792527878022067,
+          "target_first_unit": 0.15792527878022067
+        }
+      },
+      {
+        "relation_family": "winner",
+        "vocabulary": "lex1",
+        "source_direction": 1,
+        "distractor_count": 4,
+        "differences": {
+          "whole": 0.05585205371325208,
+          "target_first_unit": -0.012044904823214075
+        }
+      },
+      {
+        "relation_family": "winner",
+        "vocabulary": "lex1",
+        "source_direction": 1,
+        "distractor_count": 12,
+        "differences": {
+          "whole": 0.018671521689003434,
+          "target_first_unit": 0.03366438180170639
+        }
+      },
+      {
+        "relation_family": "winner",
+        "vocabulary": "lex2",
+        "source_direction": 0,
+        "distractor_count": 0,
+        "differences": {
+          "whole": 0.05406759618595569,
+          "target_first_unit": 0.05406759618595569
+        }
+      },
+      {
+        "relation_family": "winner",
+        "vocabulary": "lex2",
+        "source_direction": 0,
+        "distractor_count": 4,
+        "differences": {
+          "whole": 0.12005614777098783,
+          "target_first_unit": 0.013844051644578248
+        }
+      },
+      {
+        "relation_family": "winner",
+        "vocabulary": "lex2",
+        "source_direction": 0,
+        "distractor_count": 12,
+        "differences": {
+          "whole": 0.17830572138992284,
+          "target_first_unit": -0.00487366651919563
+        }
+      },
+      {
+        "relation_family": "winner",
+        "vocabulary": "lex2",
+        "source_direction": 1,
+        "distractor_count": 0,
+        "differences": {
+          "whole": 0.3603661764061008,
+          "target_first_unit": 0.3603661764061008
+        }
+      },
+      {
+        "relation_family": "winner",
+        "vocabulary": "lex2",
+        "source_direction": 1,
+        "distractor_count": 4,
+        "differences": {
+          "whole": 0.17527650268899986,
+          "target_first_unit": -0.025594808236743427
+        }
+      },
+      {
+        "relation_family": "winner",
+        "vocabulary": "lex2",
+        "source_direction": 1,
+        "distractor_count": 12,
+        "differences": {
+          "whole": 0.13242354610641238,
+          "target_first_unit": 0.01746409241698932
+        }
+      },
+      {
+        "relation_family": "sole_signer",
+        "vocabulary": "lex1",
+        "source_direction": 0,
+        "distractor_count": 0,
+        "differences": {
+          "whole": 0.08940902071767631,
+          "target_first_unit": 0.08940902071767631
+        }
+      },
+      {
+        "relation_family": "sole_signer",
+        "vocabulary": "lex1",
+        "source_direction": 0,
+        "distractor_count": 4,
+        "differences": {
+          "whole": 0.1687764972234419,
+          "target_first_unit": 0.0069179288234348935
+        }
+      },
+      {
+        "relation_family": "sole_signer",
+        "vocabulary": "lex1",
+        "source_direction": 0,
+        "distractor_count": 12,
+        "differences": {
+          "whole": 0.10732217436780722,
+          "target_first_unit": -0.006451204341860639
+        }
+      },
+      {
+        "relation_family": "sole_signer",
+        "vocabulary": "lex1",
+        "source_direction": 1,
+        "distractor_count": 0,
+        "differences": {
+          "whole": -0.005606878894198863,
+          "target_first_unit": -0.005606878894198863
+        }
+      },
+      {
+        "relation_family": "sole_signer",
+        "vocabulary": "lex1",
+        "source_direction": 1,
+        "distractor_count": 4,
+        "differences": {
+          "whole": -0.1838763485981708,
+          "target_first_unit": -0.009405047679283185
+        }
+      },
+      {
+        "relation_family": "sole_signer",
+        "vocabulary": "lex1",
+        "source_direction": 1,
+        "distractor_count": 12,
+        "differences": {
+          "whole": -0.018435053435618354,
+          "target_first_unit": -0.02102079168750548
+        }
+      },
+      {
+        "relation_family": "sole_signer",
+        "vocabulary": "lex2",
+        "source_direction": 0,
+        "distractor_count": 0,
+        "differences": {
+          "whole": -0.0257092286901468,
+          "target_first_unit": -0.0257092286901468
+        }
+      },
+      {
+        "relation_family": "sole_signer",
+        "vocabulary": "lex2",
+        "source_direction": 0,
+        "distractor_count": 4,
+        "differences": {
+          "whole": -0.06850420357317921,
+          "target_first_unit": -0.0011927172942985953
+        }
+      },
+      {
+        "relation_family": "sole_signer",
+        "vocabulary": "lex2",
+        "source_direction": 0,
+        "distractor_count": 12,
+        "differences": {
+          "whole": -0.05924202128113665,
+          "target_first_unit": -0.01565370661425558
+        }
+      },
+      {
+        "relation_family": "sole_signer",
+        "vocabulary": "lex2",
+        "source_direction": 1,
+        "distractor_count": 0,
+        "differences": {
+          "whole": -0.09761781571917527,
+          "target_first_unit": -0.09761781571917527
+        }
+      },
+      {
+        "relation_family": "sole_signer",
+        "vocabulary": "lex2",
+        "source_direction": 1,
+        "distractor_count": 4,
+        "differences": {
+          "whole": 0.035039291727650745,
+          "target_first_unit": -0.0022988376403150212
+        }
+      },
+      {
+        "relation_family": "sole_signer",
+        "vocabulary": "lex2",
+        "source_direction": 1,
+        "distractor_count": 12,
+        "differences": {
+          "whole": -0.01717509417819907,
+          "target_first_unit": -0.015351544891984314
+        }
+      }
+    ],
+    "by_family_pairs": {
+      "winner": [
+        {
+          "relation_family": "winner",
+          "vocabulary": "lex1",
+          "source_direction": 0,
+          "distractor_count": 0,
+          "differences": {
+            "whole": 0.1183209068647626,
+            "target_first_unit": 0.1183209068647626
+          }
+        },
+        {
+          "relation_family": "winner",
+          "vocabulary": "lex1",
+          "source_direction": 0,
+          "distractor_count": 4,
+          "differences": {
+            "whole": 0.08930390453173442,
+            "target_first_unit": -0.008384353717574067
+          }
+        },
+        {
+          "relation_family": "winner",
+          "vocabulary": "lex1",
+          "source_direction": 0,
+          "distractor_count": 12,
+          "differences": {
+            "whole": 0.0919294057680865,
+            "target_first_unit": -0.01599911464624526
+          }
+        },
+        {
+          "relation_family": "winner",
+          "vocabulary": "lex1",
+          "source_direction": 1,
+          "distractor_count": 0,
+          "differences": {
+            "whole": 0.15792527878022067,
+            "target_first_unit": 0.15792527878022067
+          }
+        },
+        {
+          "relation_family": "winner",
+          "vocabulary": "lex1",
+          "source_direction": 1,
+          "distractor_count": 4,
+          "differences": {
+            "whole": 0.05585205371325208,
+            "target_first_unit": -0.012044904823214075
+          }
+        },
+        {
+          "relation_family": "winner",
+          "vocabulary": "lex1",
+          "source_direction": 1,
+          "distractor_count": 12,
+          "differences": {
+            "whole": 0.018671521689003434,
+            "target_first_unit": 0.03366438180170639
+          }
+        },
+        {
+          "relation_family": "winner",
+          "vocabulary": "lex2",
+          "source_direction": 0,
+          "distractor_count": 0,
+          "differences": {
+            "whole": 0.05406759618595569,
+            "target_first_unit": 0.05406759618595569
+          }
+        },
+        {
+          "relation_family": "winner",
+          "vocabulary": "lex2",
+          "source_direction": 0,
+          "distractor_count": 4,
+          "differences": {
+            "whole": 0.12005614777098783,
+            "target_first_unit": 0.013844051644578248
+          }
+        },
+        {
+          "relation_family": "winner",
+          "vocabulary": "lex2",
+          "source_direction": 0,
+          "distractor_count": 12,
+          "differences": {
+            "whole": 0.17830572138992284,
+            "target_first_unit": -0.00487366651919563
+          }
+        },
+        {
+          "relation_family": "winner",
+          "vocabulary": "lex2",
+          "source_direction": 1,
+          "distractor_count": 0,
+          "differences": {
+            "whole": 0.3603661764061008,
+            "target_first_unit": 0.3603661764061008
+          }
+        },
+        {
+          "relation_family": "winner",
+          "vocabulary": "lex2",
+          "source_direction": 1,
+          "distractor_count": 4,
+          "differences": {
+            "whole": 0.17527650268899986,
+            "target_first_unit": -0.025594808236743427
+          }
+        },
+        {
+          "relation_family": "winner",
+          "vocabulary": "lex2",
+          "source_direction": 1,
+          "distractor_count": 12,
+          "differences": {
+            "whole": 0.13242354610641238,
+            "target_first_unit": 0.01746409241698932
+          }
+        }
+      ],
+      "sole_signer": [
+        {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex1",
+          "source_direction": 0,
+          "distractor_count": 0,
+          "differences": {
+            "whole": 0.08940902071767631,
+            "target_first_unit": 0.08940902071767631
+          }
+        },
+        {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex1",
+          "source_direction": 0,
+          "distractor_count": 4,
+          "differences": {
+            "whole": 0.1687764972234419,
+            "target_first_unit": 0.0069179288234348935
+          }
+        },
+        {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex1",
+          "source_direction": 0,
+          "distractor_count": 12,
+          "differences": {
+            "whole": 0.10732217436780722,
+            "target_first_unit": -0.006451204341860639
+          }
+        },
+        {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex1",
+          "source_direction": 1,
+          "distractor_count": 0,
+          "differences": {
+            "whole": -0.005606878894198863,
+            "target_first_unit": -0.005606878894198863
+          }
+        },
+        {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex1",
+          "source_direction": 1,
+          "distractor_count": 4,
+          "differences": {
+            "whole": -0.1838763485981708,
+            "target_first_unit": -0.009405047679283185
+          }
+        },
+        {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex1",
+          "source_direction": 1,
+          "distractor_count": 12,
+          "differences": {
+            "whole": -0.018435053435618354,
+            "target_first_unit": -0.02102079168750548
+          }
+        },
+        {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex2",
+          "source_direction": 0,
+          "distractor_count": 0,
+          "differences": {
+            "whole": -0.0257092286901468,
+            "target_first_unit": -0.0257092286901468
+          }
+        },
+        {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex2",
+          "source_direction": 0,
+          "distractor_count": 4,
+          "differences": {
+            "whole": -0.06850420357317921,
+            "target_first_unit": -0.0011927172942985953
+          }
+        },
+        {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex2",
+          "source_direction": 0,
+          "distractor_count": 12,
+          "differences": {
+            "whole": -0.05924202128113665,
+            "target_first_unit": -0.01565370661425558
+          }
+        },
+        {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex2",
+          "source_direction": 1,
+          "distractor_count": 0,
+          "differences": {
+            "whole": -0.09761781571917527,
+            "target_first_unit": -0.09761781571917527
+          }
+        },
+        {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex2",
+          "source_direction": 1,
+          "distractor_count": 4,
+          "differences": {
+            "whole": 0.035039291727650745,
+            "target_first_unit": -0.0022988376403150212
+          }
+        },
+        {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex2",
+          "source_direction": 1,
+          "distractor_count": 12,
+          "differences": {
+            "whole": -0.01717509417819907,
+            "target_first_unit": -0.015351544891984314
+          }
+        }
+      ]
+    },
+    "primary_interaction": -0.05775271936357869,
+    "primary_effect": "(target_D12-target_D0)-(whole_D12-whole_D0)",
+    "threshold_search_performed": false,
+    "target_benchmark_labels_accessed": false,
+    "method_promoted": false,
+    "natural_task_performance_claim": false,
+    "limitations": [
+      "Constructed explicit relations only; no original-generator causality or benchmark efficacy.",
+      "Four lexical scenarios with correlated factor cells; no large-sample significance or model selection."
+    ],
+    "costs": {
+      "scope": "retained artifact lifetime; resume adds no repeated forwards",
+      "logical_requests": 576,
+      "unique_requests": 480,
+      "exact_request_reuses": 96,
+      "actual_forward_passes": 480,
+      "input_tokens_scored": 329844,
+      "output_tokens": 0,
+      "input_rejections": 0,
+      "seconds_forward": 107.99532939970959
+    },
+    "coverage": {
+      "original_cases": 48,
+      "whole_focuses": 48,
+      "unit_focuses": 48,
+      "flat_cases": 96,
+      "scored_focuses": 96,
+      "unknown_focuses": 0,
+      "unknown_units": 0,
+      "empty_responses": 0
+    },
+    "model_calls": 0
+  },
+  "conclusion": "Exact focus does not rescue relation discrimination from correct response distractors under this fixed instrument. Basic binding is already weak; no original-generator causal claim.",
+  "new_method_promoted": false,
+  "target_benchmark_labels_used": false,
+  "natural_task_performance_claim": false,
+  "counterfactual_reuse": "Removing all response suffix fillers gives exactly the existing burden0 requests for every source/target cell. No new model run is needed; burden0 remains only5/8 correctly ordered.",
+  "theory": "outputs/h007-burden-20261103/THEORY.md"
+}

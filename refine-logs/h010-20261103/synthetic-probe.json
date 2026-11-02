@@ -1,0 +1,1102 @@
+{
+  "schema": "h010-synthetic-offset-engineering-v1",
+  "probes": [
+    {
+      "id": "repeated",
+      "text": "Ada Lovelace met Ada Lovelace in London. Ada Lovelace returned to London.",
+      "text_sha256": "206634fd05873b92cb3dfb9bdf7c5efee96910b89482d4a5e286583bc02b3471",
+      "characters": 73,
+      "offset_unit": "Python Unicode code points; half-open",
+      "semantic_answerability": "unknown_not_assessed",
+      "entities": [
+        {
+          "occurrence_id": 0,
+          "same_value_occurrence": 0,
+          "text": "Ada Lovelace",
+          "type": "PERSON",
+          "start_char": 0,
+          "end_char": 12,
+          "start_token": 0,
+          "end_token": 2,
+          "root_token_index": 1,
+          "root_pos": "PROPN",
+          "root_dependency": "nsubj",
+          "root_head_token_index": 2,
+          "semantic_answerability": "unknown_not_assessed"
+        },
+        {
+          "occurrence_id": 1,
+          "same_value_occurrence": 1,
+          "text": "Ada Lovelace",
+          "type": "PERSON",
+          "start_char": 17,
+          "end_char": 29,
+          "start_token": 3,
+          "end_token": 5,
+          "root_token_index": 4,
+          "root_pos": "PROPN",
+          "root_dependency": "dobj",
+          "root_head_token_index": 2,
+          "semantic_answerability": "unknown_not_assessed"
+        },
+        {
+          "occurrence_id": 2,
+          "same_value_occurrence": 0,
+          "text": "London",
+          "type": "GPE",
+          "start_char": 33,
+          "end_char": 39,
+          "start_token": 6,
+          "end_token": 7,
+          "root_token_index": 6,
+          "root_pos": "PROPN",
+          "root_dependency": "pobj",
+          "root_head_token_index": 5,
+          "semantic_answerability": "unknown_not_assessed"
+        },
+        {
+          "occurrence_id": 3,
+          "same_value_occurrence": 2,
+          "text": "Ada Lovelace",
+          "type": "PERSON",
+          "start_char": 41,
+          "end_char": 53,
+          "start_token": 8,
+          "end_token": 10,
+          "root_token_index": 9,
+          "root_pos": "PROPN",
+          "root_dependency": "nsubj",
+          "root_head_token_index": 10,
+          "semantic_answerability": "unknown_not_assessed"
+        },
+        {
+          "occurrence_id": 4,
+          "same_value_occurrence": 1,
+          "text": "London",
+          "type": "GPE",
+          "start_char": 66,
+          "end_char": 72,
+          "start_token": 12,
+          "end_token": 13,
+          "root_token_index": 12,
+          "root_pos": "PROPN",
+          "root_dependency": "pobj",
+          "root_head_token_index": 11,
+          "semantic_answerability": "unknown_not_assessed"
+        }
+      ],
+      "tokens": [
+        {
+          "index": 0,
+          "start_char": 0,
+          "end_char": 3,
+          "text": "Ada",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "compound",
+          "head_token_index": 1
+        },
+        {
+          "index": 1,
+          "start_char": 4,
+          "end_char": 12,
+          "text": "Lovelace",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "nsubj",
+          "head_token_index": 2
+        },
+        {
+          "index": 2,
+          "start_char": 13,
+          "end_char": 16,
+          "text": "met",
+          "pos": "VERB",
+          "tag": "VBD",
+          "dependency": "ROOT",
+          "head_token_index": 2
+        },
+        {
+          "index": 3,
+          "start_char": 17,
+          "end_char": 20,
+          "text": "Ada",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "compound",
+          "head_token_index": 4
+        },
+        {
+          "index": 4,
+          "start_char": 21,
+          "end_char": 29,
+          "text": "Lovelace",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "dobj",
+          "head_token_index": 2
+        },
+        {
+          "index": 5,
+          "start_char": 30,
+          "end_char": 32,
+          "text": "in",
+          "pos": "ADP",
+          "tag": "IN",
+          "dependency": "prep",
+          "head_token_index": 4
+        },
+        {
+          "index": 6,
+          "start_char": 33,
+          "end_char": 39,
+          "text": "London",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "pobj",
+          "head_token_index": 5
+        },
+        {
+          "index": 7,
+          "start_char": 39,
+          "end_char": 40,
+          "text": ".",
+          "pos": "PUNCT",
+          "tag": ".",
+          "dependency": "punct",
+          "head_token_index": 2
+        },
+        {
+          "index": 8,
+          "start_char": 41,
+          "end_char": 44,
+          "text": "Ada",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "compound",
+          "head_token_index": 9
+        },
+        {
+          "index": 9,
+          "start_char": 45,
+          "end_char": 53,
+          "text": "Lovelace",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "nsubj",
+          "head_token_index": 10
+        },
+        {
+          "index": 10,
+          "start_char": 54,
+          "end_char": 62,
+          "text": "returned",
+          "pos": "VERB",
+          "tag": "VBD",
+          "dependency": "ROOT",
+          "head_token_index": 10
+        },
+        {
+          "index": 11,
+          "start_char": 63,
+          "end_char": 65,
+          "text": "to",
+          "pos": "ADP",
+          "tag": "IN",
+          "dependency": "prep",
+          "head_token_index": 10
+        },
+        {
+          "index": 12,
+          "start_char": 66,
+          "end_char": 72,
+          "text": "London",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "pobj",
+          "head_token_index": 11
+        },
+        {
+          "index": 13,
+          "start_char": 72,
+          "end_char": 73,
+          "text": ".",
+          "pos": "PUNCT",
+          "tag": ".",
+          "dependency": "punct",
+          "head_token_index": 10
+        }
+      ],
+      "sentences": [
+        {
+          "start_char": 0,
+          "end_char": 40
+        },
+        {
+          "start_char": 41,
+          "end_char": 73
+        }
+      ],
+      "token_count": 14,
+      "status": "processed",
+      "reason": null,
+      "slot_availability": "model_spans_present"
+    },
+    {
+      "id": "unicode",
+      "text": "😀 Beyoncé visited Zürich on 3 May 2024. Café Labs paid €12.50; Beyoncé received 10%.",
+      "text_sha256": "7bc9118019f8113d259456fb4af6cc3c303962ecb08eaddf0ab1d48a7347d8bd",
+      "characters": 85,
+      "offset_unit": "Python Unicode code points; half-open",
+      "semantic_answerability": "unknown_not_assessed",
+      "entities": [
+        {
+          "occurrence_id": 0,
+          "same_value_occurrence": 0,
+          "text": "Zürich",
+          "type": "PERSON",
+          "start_char": 18,
+          "end_char": 24,
+          "start_token": 3,
+          "end_token": 4,
+          "root_token_index": 3,
+          "root_pos": "PROPN",
+          "root_dependency": "dobj",
+          "root_head_token_index": 2,
+          "semantic_answerability": "unknown_not_assessed"
+        },
+        {
+          "occurrence_id": 1,
+          "same_value_occurrence": 0,
+          "text": "3 May 2024",
+          "type": "DATE",
+          "start_char": 28,
+          "end_char": 38,
+          "start_token": 5,
+          "end_token": 8,
+          "root_token_index": 6,
+          "root_pos": "PROPN",
+          "root_dependency": "pobj",
+          "root_head_token_index": 4,
+          "semantic_answerability": "unknown_not_assessed"
+        },
+        {
+          "occurrence_id": 2,
+          "same_value_occurrence": 0,
+          "text": "Café Labs",
+          "type": "PRODUCT",
+          "start_char": 40,
+          "end_char": 50,
+          "start_token": 9,
+          "end_token": 11,
+          "root_token_index": 10,
+          "root_pos": "PROPN",
+          "root_dependency": "nsubj",
+          "root_head_token_index": 11,
+          "semantic_answerability": "unknown_not_assessed"
+        },
+        {
+          "occurrence_id": 3,
+          "same_value_occurrence": 0,
+          "text": "12.50",
+          "type": "MONEY",
+          "start_char": 57,
+          "end_char": 62,
+          "start_token": 13,
+          "end_token": 14,
+          "root_token_index": 13,
+          "root_pos": "NUM",
+          "root_dependency": "dobj",
+          "root_head_token_index": 11,
+          "semantic_answerability": "unknown_not_assessed"
+        },
+        {
+          "occurrence_id": 4,
+          "same_value_occurrence": 0,
+          "text": "Beyoncé",
+          "type": "ORG",
+          "start_char": 64,
+          "end_char": 71,
+          "start_token": 15,
+          "end_token": 16,
+          "root_token_index": 15,
+          "root_pos": "PROPN",
+          "root_dependency": "nsubj",
+          "root_head_token_index": 16,
+          "semantic_answerability": "unknown_not_assessed"
+        },
+        {
+          "occurrence_id": 5,
+          "same_value_occurrence": 0,
+          "text": "10%",
+          "type": "PERCENT",
+          "start_char": 81,
+          "end_char": 84,
+          "start_token": 17,
+          "end_token": 19,
+          "root_token_index": 18,
+          "root_pos": "NOUN",
+          "root_dependency": "dobj",
+          "root_head_token_index": 16,
+          "semantic_answerability": "unknown_not_assessed"
+        }
+      ],
+      "tokens": [
+        {
+          "index": 0,
+          "start_char": 0,
+          "end_char": 1,
+          "text": "😀",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "compound",
+          "head_token_index": 1
+        },
+        {
+          "index": 1,
+          "start_char": 2,
+          "end_char": 9,
+          "text": "Beyoncé",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "nsubj",
+          "head_token_index": 2
+        },
+        {
+          "index": 2,
+          "start_char": 10,
+          "end_char": 17,
+          "text": "visited",
+          "pos": "VERB",
+          "tag": "VBD",
+          "dependency": "ROOT",
+          "head_token_index": 2
+        },
+        {
+          "index": 3,
+          "start_char": 18,
+          "end_char": 24,
+          "text": "Zürich",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "dobj",
+          "head_token_index": 2
+        },
+        {
+          "index": 4,
+          "start_char": 25,
+          "end_char": 27,
+          "text": "on",
+          "pos": "ADP",
+          "tag": "IN",
+          "dependency": "prep",
+          "head_token_index": 2
+        },
+        {
+          "index": 5,
+          "start_char": 28,
+          "end_char": 29,
+          "text": "3",
+          "pos": "NUM",
+          "tag": "CD",
+          "dependency": "nummod",
+          "head_token_index": 6
+        },
+        {
+          "index": 6,
+          "start_char": 30,
+          "end_char": 33,
+          "text": "May",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "pobj",
+          "head_token_index": 4
+        },
+        {
+          "index": 7,
+          "start_char": 34,
+          "end_char": 38,
+          "text": "2024",
+          "pos": "NUM",
+          "tag": "CD",
+          "dependency": "nummod",
+          "head_token_index": 6
+        },
+        {
+          "index": 8,
+          "start_char": 38,
+          "end_char": 39,
+          "text": ".",
+          "pos": "PUNCT",
+          "tag": ".",
+          "dependency": "punct",
+          "head_token_index": 2
+        },
+        {
+          "index": 9,
+          "start_char": 40,
+          "end_char": 45,
+          "text": "Café",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "compound",
+          "head_token_index": 10
+        },
+        {
+          "index": 10,
+          "start_char": 46,
+          "end_char": 50,
+          "text": "Labs",
+          "pos": "PROPN",
+          "tag": "NNPS",
+          "dependency": "nsubj",
+          "head_token_index": 11
+        },
+        {
+          "index": 11,
+          "start_char": 51,
+          "end_char": 55,
+          "text": "paid",
+          "pos": "VERB",
+          "tag": "VBD",
+          "dependency": "ccomp",
+          "head_token_index": 16
+        },
+        {
+          "index": 12,
+          "start_char": 56,
+          "end_char": 57,
+          "text": "€",
+          "pos": "SYM",
+          "tag": "$",
+          "dependency": "nmod",
+          "head_token_index": 13
+        },
+        {
+          "index": 13,
+          "start_char": 57,
+          "end_char": 62,
+          "text": "12.50",
+          "pos": "NUM",
+          "tag": "CD",
+          "dependency": "dobj",
+          "head_token_index": 11
+        },
+        {
+          "index": 14,
+          "start_char": 62,
+          "end_char": 63,
+          "text": ";",
+          "pos": "PUNCT",
+          "tag": ":",
+          "dependency": "punct",
+          "head_token_index": 16
+        },
+        {
+          "index": 15,
+          "start_char": 64,
+          "end_char": 71,
+          "text": "Beyoncé",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "nsubj",
+          "head_token_index": 16
+        },
+        {
+          "index": 16,
+          "start_char": 72,
+          "end_char": 80,
+          "text": "received",
+          "pos": "VERB",
+          "tag": "VBD",
+          "dependency": "ROOT",
+          "head_token_index": 16
+        },
+        {
+          "index": 17,
+          "start_char": 81,
+          "end_char": 83,
+          "text": "10",
+          "pos": "NUM",
+          "tag": "CD",
+          "dependency": "nummod",
+          "head_token_index": 18
+        },
+        {
+          "index": 18,
+          "start_char": 83,
+          "end_char": 84,
+          "text": "%",
+          "pos": "NOUN",
+          "tag": "NN",
+          "dependency": "dobj",
+          "head_token_index": 16
+        },
+        {
+          "index": 19,
+          "start_char": 84,
+          "end_char": 85,
+          "text": ".",
+          "pos": "PUNCT",
+          "tag": ".",
+          "dependency": "punct",
+          "head_token_index": 16
+        }
+      ],
+      "sentences": [
+        {
+          "start_char": 0,
+          "end_char": 39
+        },
+        {
+          "start_char": 40,
+          "end_char": 85
+        }
+      ],
+      "token_count": 20,
+      "status": "processed",
+      "reason": null,
+      "slot_availability": "model_spans_present"
+    },
+    {
+      "id": "quantity",
+      "text": "Acme Corp paid $25 million on June 4, 2024. Acme Corp paid $25 million again.",
+      "text_sha256": "ca9b6bc8abb66081ef6ad71133adb374213e96638914c18115774ea10c7ec30f",
+      "characters": 77,
+      "offset_unit": "Python Unicode code points; half-open",
+      "semantic_answerability": "unknown_not_assessed",
+      "entities": [
+        {
+          "occurrence_id": 0,
+          "same_value_occurrence": 0,
+          "text": "Acme Corp",
+          "type": "ORG",
+          "start_char": 0,
+          "end_char": 9,
+          "start_token": 0,
+          "end_token": 2,
+          "root_token_index": 1,
+          "root_pos": "PROPN",
+          "root_dependency": "nsubj",
+          "root_head_token_index": 2,
+          "semantic_answerability": "unknown_not_assessed"
+        },
+        {
+          "occurrence_id": 1,
+          "same_value_occurrence": 0,
+          "text": "$25 million",
+          "type": "MONEY",
+          "start_char": 15,
+          "end_char": 26,
+          "start_token": 3,
+          "end_token": 6,
+          "root_token_index": 5,
+          "root_pos": "NUM",
+          "root_dependency": "dobj",
+          "root_head_token_index": 2,
+          "semantic_answerability": "unknown_not_assessed"
+        },
+        {
+          "occurrence_id": 2,
+          "same_value_occurrence": 0,
+          "text": "June 4, 2024",
+          "type": "DATE",
+          "start_char": 30,
+          "end_char": 42,
+          "start_token": 7,
+          "end_token": 11,
+          "root_token_index": 7,
+          "root_pos": "PROPN",
+          "root_dependency": "pobj",
+          "root_head_token_index": 6,
+          "semantic_answerability": "unknown_not_assessed"
+        },
+        {
+          "occurrence_id": 3,
+          "same_value_occurrence": 1,
+          "text": "Acme Corp",
+          "type": "ORG",
+          "start_char": 44,
+          "end_char": 53,
+          "start_token": 12,
+          "end_token": 14,
+          "root_token_index": 13,
+          "root_pos": "PROPN",
+          "root_dependency": "nsubj",
+          "root_head_token_index": 14,
+          "semantic_answerability": "unknown_not_assessed"
+        },
+        {
+          "occurrence_id": 4,
+          "same_value_occurrence": 1,
+          "text": "$25 million",
+          "type": "MONEY",
+          "start_char": 59,
+          "end_char": 70,
+          "start_token": 15,
+          "end_token": 18,
+          "root_token_index": 17,
+          "root_pos": "NUM",
+          "root_dependency": "dobj",
+          "root_head_token_index": 14,
+          "semantic_answerability": "unknown_not_assessed"
+        }
+      ],
+      "tokens": [
+        {
+          "index": 0,
+          "start_char": 0,
+          "end_char": 4,
+          "text": "Acme",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "compound",
+          "head_token_index": 1
+        },
+        {
+          "index": 1,
+          "start_char": 5,
+          "end_char": 9,
+          "text": "Corp",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "nsubj",
+          "head_token_index": 2
+        },
+        {
+          "index": 2,
+          "start_char": 10,
+          "end_char": 14,
+          "text": "paid",
+          "pos": "VERB",
+          "tag": "VBD",
+          "dependency": "ROOT",
+          "head_token_index": 2
+        },
+        {
+          "index": 3,
+          "start_char": 15,
+          "end_char": 16,
+          "text": "$",
+          "pos": "SYM",
+          "tag": "$",
+          "dependency": "quantmod",
+          "head_token_index": 5
+        },
+        {
+          "index": 4,
+          "start_char": 16,
+          "end_char": 18,
+          "text": "25",
+          "pos": "NUM",
+          "tag": "CD",
+          "dependency": "compound",
+          "head_token_index": 5
+        },
+        {
+          "index": 5,
+          "start_char": 19,
+          "end_char": 26,
+          "text": "million",
+          "pos": "NUM",
+          "tag": "CD",
+          "dependency": "dobj",
+          "head_token_index": 2
+        },
+        {
+          "index": 6,
+          "start_char": 27,
+          "end_char": 29,
+          "text": "on",
+          "pos": "ADP",
+          "tag": "IN",
+          "dependency": "prep",
+          "head_token_index": 2
+        },
+        {
+          "index": 7,
+          "start_char": 30,
+          "end_char": 34,
+          "text": "June",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "pobj",
+          "head_token_index": 6
+        },
+        {
+          "index": 8,
+          "start_char": 35,
+          "end_char": 36,
+          "text": "4",
+          "pos": "NUM",
+          "tag": "CD",
+          "dependency": "nummod",
+          "head_token_index": 7
+        },
+        {
+          "index": 9,
+          "start_char": 36,
+          "end_char": 37,
+          "text": ",",
+          "pos": "PUNCT",
+          "tag": ",",
+          "dependency": "punct",
+          "head_token_index": 7
+        },
+        {
+          "index": 10,
+          "start_char": 38,
+          "end_char": 42,
+          "text": "2024",
+          "pos": "NUM",
+          "tag": "CD",
+          "dependency": "nummod",
+          "head_token_index": 7
+        },
+        {
+          "index": 11,
+          "start_char": 42,
+          "end_char": 43,
+          "text": ".",
+          "pos": "PUNCT",
+          "tag": ".",
+          "dependency": "punct",
+          "head_token_index": 2
+        },
+        {
+          "index": 12,
+          "start_char": 44,
+          "end_char": 48,
+          "text": "Acme",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "compound",
+          "head_token_index": 13
+        },
+        {
+          "index": 13,
+          "start_char": 49,
+          "end_char": 53,
+          "text": "Corp",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "nsubj",
+          "head_token_index": 14
+        },
+        {
+          "index": 14,
+          "start_char": 54,
+          "end_char": 58,
+          "text": "paid",
+          "pos": "VERB",
+          "tag": "VBD",
+          "dependency": "ROOT",
+          "head_token_index": 14
+        },
+        {
+          "index": 15,
+          "start_char": 59,
+          "end_char": 60,
+          "text": "$",
+          "pos": "SYM",
+          "tag": "$",
+          "dependency": "quantmod",
+          "head_token_index": 17
+        },
+        {
+          "index": 16,
+          "start_char": 60,
+          "end_char": 62,
+          "text": "25",
+          "pos": "NUM",
+          "tag": "CD",
+          "dependency": "compound",
+          "head_token_index": 17
+        },
+        {
+          "index": 17,
+          "start_char": 63,
+          "end_char": 70,
+          "text": "million",
+          "pos": "NUM",
+          "tag": "CD",
+          "dependency": "dobj",
+          "head_token_index": 14
+        },
+        {
+          "index": 18,
+          "start_char": 71,
+          "end_char": 76,
+          "text": "again",
+          "pos": "ADV",
+          "tag": "RB",
+          "dependency": "advmod",
+          "head_token_index": 14
+        },
+        {
+          "index": 19,
+          "start_char": 76,
+          "end_char": 77,
+          "text": ".",
+          "pos": "PUNCT",
+          "tag": ".",
+          "dependency": "punct",
+          "head_token_index": 14
+        }
+      ],
+      "sentences": [
+        {
+          "start_char": 0,
+          "end_char": 43
+        },
+        {
+          "start_char": 44,
+          "end_char": 77
+        }
+      ],
+      "token_count": 20,
+      "status": "processed",
+      "reason": null,
+      "slot_availability": "model_spans_present"
+    },
+    {
+      "id": "whitespace",
+      "text": "\tAlice Smith visited Paris.\n\nAlice Smith left Paris.  ",
+      "text_sha256": "833784bd9e6318d3c021a8bbeaab0bf68b92086ca33193b398982d03e3348c1a",
+      "characters": 54,
+      "offset_unit": "Python Unicode code points; half-open",
+      "semantic_answerability": "unknown_not_assessed",
+      "entities": [
+        {
+          "occurrence_id": 0,
+          "same_value_occurrence": 0,
+          "text": "Alice Smith",
+          "type": "PERSON",
+          "start_char": 1,
+          "end_char": 12,
+          "start_token": 1,
+          "end_token": 3,
+          "root_token_index": 2,
+          "root_pos": "PROPN",
+          "root_dependency": "nsubj",
+          "root_head_token_index": 3,
+          "semantic_answerability": "unknown_not_assessed"
+        },
+        {
+          "occurrence_id": 1,
+          "same_value_occurrence": 0,
+          "text": "Paris",
+          "type": "GPE",
+          "start_char": 21,
+          "end_char": 26,
+          "start_token": 4,
+          "end_token": 5,
+          "root_token_index": 4,
+          "root_pos": "PROPN",
+          "root_dependency": "dobj",
+          "root_head_token_index": 3,
+          "semantic_answerability": "unknown_not_assessed"
+        },
+        {
+          "occurrence_id": 2,
+          "same_value_occurrence": 1,
+          "text": "Alice Smith",
+          "type": "PERSON",
+          "start_char": 29,
+          "end_char": 40,
+          "start_token": 7,
+          "end_token": 9,
+          "root_token_index": 8,
+          "root_pos": "PROPN",
+          "root_dependency": "nsubj",
+          "root_head_token_index": 9,
+          "semantic_answerability": "unknown_not_assessed"
+        },
+        {
+          "occurrence_id": 3,
+          "same_value_occurrence": 1,
+          "text": "Paris",
+          "type": "GPE",
+          "start_char": 46,
+          "end_char": 51,
+          "start_token": 10,
+          "end_token": 11,
+          "root_token_index": 10,
+          "root_pos": "PROPN",
+          "root_dependency": "dobj",
+          "root_head_token_index": 9,
+          "semantic_answerability": "unknown_not_assessed"
+        }
+      ],
+      "tokens": [
+        {
+          "index": 0,
+          "start_char": 0,
+          "end_char": 1,
+          "text": "\t",
+          "pos": "SPACE",
+          "tag": "_SP",
+          "dependency": "dep",
+          "head_token_index": 2
+        },
+        {
+          "index": 1,
+          "start_char": 1,
+          "end_char": 6,
+          "text": "Alice",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "compound",
+          "head_token_index": 2
+        },
+        {
+          "index": 2,
+          "start_char": 7,
+          "end_char": 12,
+          "text": "Smith",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "nsubj",
+          "head_token_index": 3
+        },
+        {
+          "index": 3,
+          "start_char": 13,
+          "end_char": 20,
+          "text": "visited",
+          "pos": "VERB",
+          "tag": "VBD",
+          "dependency": "ROOT",
+          "head_token_index": 3
+        },
+        {
+          "index": 4,
+          "start_char": 21,
+          "end_char": 26,
+          "text": "Paris",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "dobj",
+          "head_token_index": 3
+        },
+        {
+          "index": 5,
+          "start_char": 26,
+          "end_char": 27,
+          "text": ".",
+          "pos": "PUNCT",
+          "tag": ".",
+          "dependency": "punct",
+          "head_token_index": 3
+        },
+        {
+          "index": 6,
+          "start_char": 27,
+          "end_char": 29,
+          "text": "\n\n",
+          "pos": "SPACE",
+          "tag": "_SP",
+          "dependency": "dep",
+          "head_token_index": 5
+        },
+        {
+          "index": 7,
+          "start_char": 29,
+          "end_char": 34,
+          "text": "Alice",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "compound",
+          "head_token_index": 8
+        },
+        {
+          "index": 8,
+          "start_char": 35,
+          "end_char": 40,
+          "text": "Smith",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "nsubj",
+          "head_token_index": 9
+        },
+        {
+          "index": 9,
+          "start_char": 41,
+          "end_char": 45,
+          "text": "left",
+          "pos": "VERB",
+          "tag": "VBD",
+          "dependency": "ROOT",
+          "head_token_index": 9
+        },
+        {
+          "index": 10,
+          "start_char": 46,
+          "end_char": 51,
+          "text": "Paris",
+          "pos": "PROPN",
+          "tag": "NNP",
+          "dependency": "dobj",
+          "head_token_index": 9
+        },
+        {
+          "index": 11,
+          "start_char": 51,
+          "end_char": 52,
+          "text": ".",
+          "pos": "PUNCT",
+          "tag": ".",
+          "dependency": "punct",
+          "head_token_index": 9
+        },
+        {
+          "index": 12,
+          "start_char": 53,
+          "end_char": 54,
+          "text": " ",
+          "pos": "SPACE",
+          "tag": "_SP",
+          "dependency": "dep",
+          "head_token_index": 11
+        }
+      ],
+      "sentences": [
+        {
+          "start_char": 0,
+          "end_char": 29
+        },
+        {
+          "start_char": 29,
+          "end_char": 54
+        }
+      ],
+      "token_count": 13,
+      "status": "processed",
+      "reason": null,
+      "slot_availability": "model_spans_present"
+    },
+    {
+      "id": "empty",
+      "text": "",
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "characters": 0,
+      "offset_unit": "Python Unicode code points; half-open",
+      "semantic_answerability": "unknown_not_assessed",
+      "entities": [],
+      "tokens": [],
+      "sentences": [],
+      "token_count": 0,
+      "status": "processed",
+      "reason": null,
+      "slot_availability": "unknown_no_model_spans"
+    }
+  ],
+  "checks": {
+    "raw_string_roundtrip": true,
+    "every_entity_exact_offset": true,
+    "every_token_exact_offset": true,
+    "repeated_detected_values_not_deduplicated": true,
+    "unicode_and_combining_marks_unchanged": true
+  },
+  "semantic_NER_accuracy_assessed": false
+}

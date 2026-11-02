@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "run_id": "ea8ba04dba677059028c4ae6442444313c41ea1bbb9b808e428f2853eb959c59",
+  "completed_utc": "2026-11-02T19:05:17.221290+00:00",
+  "outcome": "inconclusive",
+  "conclusion": "All48 designed burden controls/24paired cells reviewed after full request reconstruction. Fixed interaction only; no benchmark efficacy or label fitting.",
+  "artifacts": [
+    {
+      "path": "outputs/h007-burden-20261103/posthoc_review_v1/cases.json",
+      "sha256": "15dd7dd383d6f2c4d1a2ce41b264f084e9a49a2fb3e5d542f770c663c5808bd8"
+    },
+    {
+      "path": "outputs/h007-burden-20261103/posthoc_review_v1/complete.json",
+      "sha256": "f04866474c93275e72019dbd3f2e28bbf3fb1489ad4a21e287d7f33cfedb2a8b"
+    },
+    {
+      "path": "outputs/h007-burden-20261103/posthoc_review_v1/freeze.json",
+      "sha256": "43dc406f75ad9ef4f488355b523ed0c9936ea51ec3d7674f7cc58d7d1adea077"
+    },
+    {
+      "path": "outputs/h007-burden-20261103/posthoc_review_v1/plan.json",
+      "sha256": "eabf5b5a8ceef308012284cdf980c71764216411aaab04417e085b8b91863ea1"
+    },
+    {
+      "path": "outputs/h007-burden-20261103/posthoc_review_v1/seal.json",
+      "sha256": "7384598dff2b43d883f911fe9f9d1fd5276df9413ac33fd3989b59795c698622"
+    },
+    {
+      "path": "outputs/h007-burden-20261103/posthoc_review_v1/summary.json",
+      "sha256": "4e06e43a05fa852d8595e99cd9365a060d76834ad3b9ed5c3a98c7a692df5033"
+    },
+    {
+      "path": "outputs/h007-burden-20261103/evaluation-admission-v1.json",
+      "sha256": "80d9b5fce72ea09cc5da2abe52678aa14f6fa490c697cc586654e9dc4f493fdc"
+    },
+    {
+      "path": "outputs/h007-burden-20261103/post-review-label-binding-v1.json",
+      "sha256": "a69de26dd17aae3a1b30a28935720828b3218e4eaa72f0424dc5fd23ad5c31c0"
+    },
+    {
+      "path": "outputs/h007-burden-20261103/construction/construction_truth.jsonl",
+      "sha256": "b778cdc030f8e8d54b8557eb5a5071ee80ac41fff9bdf54fccb4d04a521423d6"
+    },
+    {
+      "path": "outputs/h007-burden-20261103/construction/seal.json",
+      "sha256": "66acd0c7bff6282b9643a9e951aaedd2d8e652cd5f27fe682a7141dc7c5a87b8"
+    }
+  ]
+}

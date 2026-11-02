@@ -1,0 +1,23 @@
+{
+  "schema": "source-reconstruction-evaluation-v1",
+  "purpose": "exposed_construction_source_role_qualification",
+  "required_cases": 48,
+  "required_sources": 8,
+  "required_queries": 16,
+  "required_completions": 32,
+  "required_slots": 96,
+  "sourceflip_pairs": 8,
+  "eventflip_pairs": 8,
+  "model_calls_allowed": false,
+  "tokenizer_only_validation": true,
+  "primary": "raw_joint_log_probability_flip_directions",
+  "secondary_case_risk": "maximum_of_two_frozen_slot_risks",
+  "candidate_length_normalization": false,
+  "fitted_calibration_allowed": false,
+  "threshold_search_allowed": false,
+  "target_label_selection_allowed": false,
+  "natural_task_performance_claim": false,
+  "population_previously_exposed": true,
+  "hypothesis_id": "H008_SOURCE_ONLY_EXACT_SLOT_RECONSTRUCTION",
+  "notes": "All32 complete candidate+EOS observations reconstructed before reference design/truth release. Main16 closed-candidate QA and8sourceflip/8eventflip raw log-odds qualification. No fitted calibration, length correction, target-label selection or natural-task efficacy."
+}

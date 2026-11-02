@@ -1,0 +1,9 @@
+{
+  "schema": "h010-engineering-inventory-seal-v1",
+  "files_sha256": {
+    "pilot-freeze.json": "90d9af0c47520abed43165ef5ad5b25f96b6a07fe6a003f2bc53464d4c8fd6a7",
+    "synthetic-probe.json": "4dd5778997746c441be65abb466107b7a209e2209c8a9802e47f67e678b77997",
+    "pilot-inventory.jsonl": "f3dd492aed9cb0a860ed5ef9535966391be105a2457f77d44d852dbf7ac53d72",
+    "pilot-summary.json": "386f194c315275117ca36245b0da834c0198f6dcc11f5bc333ee2d574a8a0b68"
+  }
+}

@@ -88,7 +88,7 @@
     },
     {
       "id": "H007_RELATION_RESPONSE_BURDEN",
-      "status": "preparing_not_run",
+      "status": "completed_not_promoted_hypothesis_not_supported",
       "question": "With source fixed and relationship/response directions fully counterbalanced, does adding true unrelated response statements degrade relation discrimination, and does exact first-unit focus preserve it?",
       "design": "outputs/h007-burden-20261103/DESIGN.md",
       "prior_plan": "refine-logs/h004-20261103/NEXT_MECHANISM.md comparison2",
@@ -98,8 +98,42 @@
       "owner": "root",
       "evidence": [
         "F017",
-        "F020"
-      ]
+        "F020",
+        "F021"
+      ],
+      "run_id": "92cf2597ab7d2217583f07048001da2d715530fee62de9aa314f3c3eedcb8d88",
+      "theory": "outputs/h007-burden-20261103/THEORY.md",
+      "next": "Do not rerun scope/suffix stripping. Refine genuinely new source-reconstruction observation with a deterministic slot frontend; verify prior overlap and necessary observer capability first.",
+      "result": "docs/results/h007_response_burden.json"
+    },
+    {
+      "id": "H008_SOURCE_ONLY_EXACT_SLOT_RECONSTRUCTION",
+      "status": "core_toy_qualification_passed_not_promoted",
+      "result": "docs/results/h008_source_reconstruction.json",
+      "prior_overlap": "H002 core sourceQA had0calls; P021/P026/P027 are different already audited mechanisms. QA verification has literature predecessors; no novelty claim.",
+      "admission": "All48oldtoy originals/8S/16source-onlyqueries/32completecandidate+EOS/96exactslots. No R value in QA prefix, canonical S-only pool/order, no targetgold/fitting.",
+      "evidence": [
+        "F021",
+        "F023"
+      ],
+      "observation_run_id": "c841a9359221a06af5bc04f1efe2c0b2d86b6691218ec09cdc97bc3deecfebf2",
+      "cpu_run_id": "b9b8f31decfd72962a48790e389db8c6370d3232a4e6348529d5d38af60da6f4",
+      "next": "Do not rerun32. Reuse for predeclared source-bijection CPU ablation; natural frontend and data contracts remain separate unanswered requirements."
+    },
+    {
+      "id": "H009_CACHED_SOURCE_BIJECTION_READOUT",
+      "status": "completed_invariance_passed_no_accuracy_increment_not_promoted",
+      "design": "outputs/h008-reconstruction-20261103/STRUCTURED_FOLLOWUP.md",
+      "question": "Under an explicitly licensed two-by-two source bijection, do complete assignment energies cancel fixed additive query/name terms while preserving all baseline outcomes?",
+      "admission": "No new model calls; use all32 H008 rawLL; freeze8matrices/48case predictions before prior H008 references. Fixed baseline+nuisance[-2,-5]rows/[-1,-9]cols and both readouts, no winner selection. No natural claim; baseline alreadyceiling.",
+      "evidence": [
+        "F023",
+        "F024"
+      ],
+      "owner": "root",
+      "result": "docs/results/h009_cached_bijection.json",
+      "run_id": "4235ad12a1e91bdda792ac8519adfe3dab88b8fe0b960378bdd13b2340ec77c9",
+      "next": "Do not retune nuisance offsets or rerun neural donors. Validate value-blind natural question construction and contract identifiability."
     }
   ]
 }

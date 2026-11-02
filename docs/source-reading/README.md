@@ -1,5 +1,7 @@
 # 代码讲解导航与真实进度
 
+新增版本化阅读：[H008 source-QA 与完整姓名+EOS 核心逐行讲解](batches/20261103-h008-core-v1/README.md)（[离线HTML](batches/20261103-h008-core-v1/README.html)、[机读覆盖](batches/20261103-h008-core-v1/coverage.json)、[全范围AST快照](batches/20261103-h008-core-v1/inventory.json)）。本批新增2文件/296行/12定义；当前四目录全范围为168文件/1734定义，其余145文件/1594定义仍待讲。下方21文件/2421行/128定义及98文件原范围统计属于保留的历史基线，旧行覆盖未被重写；新批次不把两个文件重新定义为整个阅读scope。
+
 最新入口：[完整 TEST 的 FN/FP 机制审查](FNFP_MECHANISM.html) → [原始来源与逐例分数](FNFP_CASES.html)。先确认为什么出错，再设计与验证模块；等权对照已拒绝，属于历史实验记录。
 
 

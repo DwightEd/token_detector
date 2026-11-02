@@ -1,0 +1,24 @@
+{
+  "timestamp_utc": "2026-11-02T20:07:17.562554+00:00",
+  "status": "completed",
+  "executable": "D:\\Apps\\Research\\Tools\\anaconda3\\python.exe",
+  "python": "3.13.9",
+  "matplotlib": "3.10.6",
+  "argv": [
+    "outputs/h008-reconstruction-20261103/plot_result.py"
+  ],
+  "working_directory": "D:\\projects\\research\\token_detector",
+  "script_sha256": "2e42ca8efc2cc0a7b15c470ec4c1e871a9ac9e9975e74269fea3fe93c8d61b32",
+  "input_report": "D:\\projects\\research\\token_detector\\docs\\results\\h008_source_reconstruction.json",
+  "input_report_sha256": "342e2bb5715d7743ffe68c69dc5e238b19b8684d5d5e63aaca6b4891fa0851d4",
+  "plot_seconds": 1.4777436000294983,
+  "new_model_calls": 0,
+  "new_tokenizer_calls": 0,
+  "new_ground_truth_reads": 0,
+  "input_is_already_released_result_report": true,
+  "natural_task_performance_claim": false,
+  "outputs": {
+    "docs\\results\\h008_source_reconstruction_comparison.png": "e1f457a1ceb6b9264cc47b7c8a0bb32002ab2bc469100c699777a60323c52451",
+    "docs\\results\\h008_source_reconstruction_comparison.pdf": "17fab319fd4c142b1819d0706441ef7110dbf1a905772ba69ffa8502cd68de8c"
+  }
+}

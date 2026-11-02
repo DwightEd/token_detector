@@ -661,6 +661,134 @@
           "sha256": "23172e2a4df5eff305a1e59208269372cfa466ee9ca6463a29b9363f398d878b"
         }
       ]
+    },
+    {
+      "id": "F021",
+      "certainty": "frozen_constructed_factorial_negative_result",
+      "claim": "H007 does not support exact-focus rescue of response burden: target relation contrast falls .081394 -> -.004770 -> -.003528 for0/4/12 true distractors; whole .081394/.048990/.054225. Prespecified interaction=-.0577527194. Minimal relation pairs only5/8 correctly ordered, target12 only2/8.",
+      "observation_run_id": "92cf2597ab7d2217583f07048001da2d715530fee62de9aa314f3c3eedcb8d88",
+      "evaluation_run_id": "ea8ba04dba677059028c4ae6442444313c41ea1bbb9b808e428f2853eb959c59",
+      "costs": {
+        "scope": "retained artifact lifetime; resume adds no repeated forwards",
+        "logical_requests": 576,
+        "unique_requests": 480,
+        "exact_request_reuses": 96,
+        "actual_forward_passes": 480,
+        "input_tokens_scored": 329844,
+        "output_tokens": 0,
+        "input_rejections": 0,
+        "seconds_forward": 107.99532939970959
+      },
+      "coverage": {
+        "original_cases": 48,
+        "whole_focuses": 48,
+        "unit_focuses": 48,
+        "flat_cases": 96,
+        "scored_focuses": 96,
+        "unknown_focuses": 0,
+        "unknown_units": 0,
+        "empty_responses": 0
+      },
+      "does_not_imply": "No original-generator causality, general relationship incapability, natural task AUROC, six-task point8, statistical significance, or method novelty. Four lexical scenarios and copied filler limit scope.",
+      "decision": "Reject scope-only rescue under this fixed instrument. Reuse identical zero-burden requests for suffix removal, never rerun as a new improvement. Refine a different source-reconstruction observation with explicit exact slots; H002 core remains untested.",
+      "evidence": [
+        {
+          "path": "docs/results/h007_response_burden.json",
+          "sha256": "686b26456e3922ce992867c224ec775ab656146a14c759faa9a5dd7d85e6f303"
+        },
+        {
+          "path": "docs/results/h007_response_burden.md",
+          "sha256": "d71bfb2a4891f6093f9b103fd0770392b5e80b37f8c96ebc35da0ad898a2efa4"
+        },
+        {
+          "path": "docs/results/h007_burden_comparison.png",
+          "sha256": "7f002dbefad52eb2d6635e003f19b547c5285f8aaef05098c06db47be9082ef7"
+        },
+        {
+          "path": "outputs/h007-burden-20261103/posthoc_review_v1/seal.json",
+          "sha256": "7384598dff2b43d883f911fe9f9d1fd5276df9413ac33fd3989b59795c698622"
+        }
+      ],
+      "cache_identity_proof": {
+        "path": "outputs/h007-burden-20261103/context-stripping-reuse.json",
+        "sha256": "319a73a1fc895dcaa45ac9c5a8eb2e129387ae4884fbec6ffda1044c2a752141",
+        "logical_requests": 288,
+        "existing_unique_requests": 96,
+        "new_model_calls": 0
+      }
+    },
+    {
+      "id": "F022",
+      "certainty": "inference_only_historical_axis_inventory",
+      "claim": "Existing five-group historical axes are complete for2992 responses/448202 valid tokens; no need to re-export. Hallu primary891 historical axis remains unvalidated; local serialized JSON token axes are a possible selective recovery entry, full raw indices unknown.",
+      "does_not_imply": "No new scores/gold/evaluation or six-task performance. Do not silently substitute characters or a new tokenizer, or claim V3full_gap is R4.",
+      "evidence": [
+        {
+          "path": "outputs/full-input-inventory-20261103/historical-axis-readiness.json",
+          "sha256": "876189bf55099a11d2c817fb0f87eddc6df1030ed33d3bbdcdf5e4f51f2bf133"
+        },
+        {
+          "path": "outputs/full-input-inventory-20261103/hallurag-axis-feasibility.md",
+          "sha256": "28eee014f7027653392191bfda1a45003f6bb798b7acdd8b60ea38b9d908683b"
+        }
+      ]
+    },
+    {
+      "id": "F023",
+      "certainty": "exposed_toy_core_qualification_passed_not_natural_efficacy",
+      "claim": "H008 source-only full-name+fixedEOS reconstruction is16/16 closed-candidate correct, sourceflip8/8 andeventflip8/8. Secondary48 constructed case AUROC/AP1.0. All32 complete observations/96slots retained; actual32forwards4.1325464seconds,7692input/172forcedtarget/0generatedtokens.",
+      "observer": "Same frozen Qwen2.5-3B NF4/FP16/SDPA; changed source-only question/answer observable, not model weights or fitted parameters.",
+      "candidate_mass_range": [
+        0.99868699737353,
+        0.9999388104704537
+      ],
+      "does_not_imply": "Not natural coverage or fulltaskpoint8, novelty, H002 entire pipeline success, original-generator causality, unique verbalizer-bias attribution, length-bias removal, unrestricted answer accuracy, or48independentQAqueries. Strict toy parser already knows the binding and can solve the domain deterministically.",
+      "observation_run_id": "c841a9359221a06af5bc04f1efe2c0b2d86b6691218ec09cdc97bc3deecfebf2",
+      "cpu_run_id": "b9b8f31decfd72962a48790e389db8c6370d3232a4e6348529d5d38af60da6f4",
+      "decision": "The core now has necessary role-reconstruction evidence; retain all old negative results. Next inspect source-licensed structured readout with zero new GPU and then natural exact-span frontend coverage.",
+      "evidence": [
+        {
+          "path": "docs/results/h008_source_reconstruction.json",
+          "sha256": "342e2bb5715d7743ffe68c69dc5e238b19b8684d5d5e63aaca6b4891fa0851d4"
+        },
+        {
+          "path": "docs/results/h008_source_reconstruction.md",
+          "sha256": "9a2cb84b26c58a12ca139ce9f219393fdb21e058c1b572898023a5658c5c197e"
+        },
+        {
+          "path": "docs/results/h008_source_reconstruction_comparison.png",
+          "sha256": "e1f457a1ceb6b9264cc47b7c8a0bb32002ab2bc469100c699777a60323c52451"
+        },
+        {
+          "path": "outputs/h008-reconstruction-20261103/posthoc_review_v1/seal.json",
+          "sha256": "c62f8906d7cfb6986c4da99d29bb152d2f6ea7e85c5e02305356fb0d17dbd32b"
+        }
+      ]
+    },
+    {
+      "id": "F024",
+      "certainty": "cached_toy_invariance_checked_no_accuracy_improvement",
+      "claim": "H009 all4 fixed arms retain8/8 source assignments,16/16 questions and48caseAUROC/AP1. Additive nuisance invariance passes8/8, but fixed nuisance does not break independent rows. Zero new model calls.",
+      "does_not_imply": "No evidence of accuracy gain or natural efficacy; do not increase nuisance strength after seeing this result.",
+      "run_id": "4235ad12a1e91bdda792ac8519adfe3dab88b8fe0b960378bdd13b2340ec77c9",
+      "evidence": [
+        {
+          "path": "docs/results/h009_cached_bijection.json",
+          "sha256": "14a32039734ef0a5bf50a8f50bf68db564d207fb48bde1194011477af4d35f78"
+        }
+      ]
+    },
+    {
+      "id": "F025",
+      "certainty": "natural_span_inventory_engineering_only_semantics_unknown",
+      "claim": "H010 frozen external spaCy3.8.18/en_core_web_sm3.8.0 emits719source/136response exact spans on all18inputs/36fields,0operationalunknown,5offsetprobes passed. No QA, scores, gold or semantic coverage assessed.",
+      "does_not_imply": "NER external supervision disclosed; not target label training, complete candidate inventory, factuality, role identification or natural detection coverage.",
+      "evidence": [
+        {
+          "path": "refine-logs/h010-20261103/pilot-summary.json",
+          "sha256": "386f194c315275117ca36245b0da834c0198f6dcc11f5bc333ee2d574a8a0b68"
+        }
+      ]
     }
   ],
   "rule": "New interventions need different predictions under competing explanations; known counts/cases are reused."

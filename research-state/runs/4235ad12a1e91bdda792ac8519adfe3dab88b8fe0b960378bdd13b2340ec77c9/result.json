@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "run_id": "4235ad12a1e91bdda792ac8519adfe3dab88b8fe0b960378bdd13b2340ec77c9",
+  "completed_utc": "2026-11-02T20:21:31.985187+00:00",
+  "outcome": "inconclusive",
+  "conclusion": "All fixed cached-only arms sealed. Conditional additive-nuisance invariance qualification only; no new model calls, natural efficacy, or method promotion.",
+  "artifacts": [
+    {
+      "path": "outputs/h009-assignment-20261103/assignment_review_v1/cases.json",
+      "sha256": "9151b6a5af59c8d40070ff573fb56758c6894561446d692bbfee058b918744f3"
+    },
+    {
+      "path": "outputs/h009-assignment-20261103/assignment_review_v1/complete.json",
+      "sha256": "2547859dfa3b87b8e53fc2dddc2b639cf658fc553709ea9dec3d5fdd16a7a025"
+    },
+    {
+      "path": "outputs/h009-assignment-20261103/assignment_review_v1/freeze.json",
+      "sha256": "89c25cbb2510a42c521c9dbe54afad0992a38dd6bf0a934a1d337432e58ee7d7"
+    },
+    {
+      "path": "outputs/h009-assignment-20261103/assignment_review_v1/h008-cases.json",
+      "sha256": "58d4f3c48855f5ee19b9f9f35380c3ab6f6f8683d3562a100318a901dd397682"
+    },
+    {
+      "path": "outputs/h009-assignment-20261103/assignment_review_v1/h008-queries.json",
+      "sha256": "72f53abaad3cc300fda771299cee3dcf218bf1da737b8fe7083d29eee91b61b5"
+    },
+    {
+      "path": "outputs/h009-assignment-20261103/assignment_review_v1/h008-summary.json",
+      "sha256": "9a630538cadd49f96a8f8ecdce616e8a5f1fc36b70ce56da9a1b2d4cd82df615"
+    },
+    {
+      "path": "outputs/h009-assignment-20261103/assignment_review_v1/plan.json",
+      "sha256": "414112ba5921dfa20df267979625f9663570d5990b587f5767510955a1da15ab"
+    },
+    {
+      "path": "outputs/h009-assignment-20261103/assignment_review_v1/protocol.json",
+      "sha256": "8eab785214654b27923ab8f8969787645172b69e2b28e3d22181a1af10ad6bd7"
+    },
+    {
+      "path": "outputs/h009-assignment-20261103/assignment_review_v1/queries.json",
+      "sha256": "df63a97f6cb2ed2120b3354e2f314ad7043b7355b5cdfa784164a6da5bcfa61c"
+    },
+    {
+      "path": "outputs/h009-assignment-20261103/assignment_review_v1/reference-release.json",
+      "sha256": "3f2aef6bae820ec3bea790c53073452f9c456579923e8a64d8c4186b29ee3c6c"
+    },
+    {
+      "path": "outputs/h009-assignment-20261103/assignment_review_v1/scores.json",
+      "sha256": "b0a9bf3457d4d75a0397beee3752ba2bdfd5ad91c018b9800053182116fa8b4a"
+    },
+    {
+      "path": "outputs/h009-assignment-20261103/assignment_review_v1/seal.json",
+      "sha256": "582e5d6aa658d9051381e8fb3242364c6c524b3ac60a151ea001f0cd24ded0c1"
+    },
+    {
+      "path": "outputs/h009-assignment-20261103/assignment_review_v1/sources.json",
+      "sha256": "9c1cfba4e55f8b24f582c323312e00215fc77316588aaa56aa54f65b900ead49"
+    },
+    {
+      "path": "outputs/h009-assignment-20261103/assignment_review_v1/source_identity.json",
+      "sha256": "ad8153131cef6521945ff9c98e102028dbaa7d6f595f1c6fbf7e4bcede48364c"
+    },
+    {
+      "path": "outputs/h009-assignment-20261103/assignment_review_v1/summary.json",
+      "sha256": "edf49b9c5503f88327bbeb7754a48b7f99e7f8be8725d6c245e2f4617269ab60"
+    },
+    {
+      "path": "outputs/h009-assignment-20261103/admission-v1.json",
+      "sha256": "158516fef455176070aca216b352534a5131a7869b1303a285d890be13352240"
+    },
+    {
+      "path": "outputs/h009-assignment-20261103/post-review-reference-binding-v1.json",
+      "sha256": "49f90a6c9a84cb3330fcc8a6125cfac7aca3605a261291ea0f89eb754100bbdf"
+    }
+  ]
+}

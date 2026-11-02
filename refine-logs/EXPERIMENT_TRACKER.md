@@ -17,10 +17,14 @@
 | H005-Q1 | 完整回答与精确单元焦点 | COMPLETED_NOT_PROMOTED | 原34答、104单元，714新增前向；字符/句子轴混合效果，不是历史BPE；docs/results/h005_focused_verdict.md |
 | H005-D1 | 固定单元的标签密度排序上界 | POSTHOC_DIAGNOSTIC_ONLY | 13自然答字符轴，绝不用于预测；大部分排序损失不能只归咎于分段；outputs/h005-20261103/unit-ceiling-audit.json |
 | H006-Q1 | 冻结外部监督NLI诊断 | COMPLETED_NOT_PROMOTED | 34答104单元、144来源文本对、18批前向；标准对照而非主方法；表格交换/合法计算仍错；docs/results/h006_external_nli.md |
-| H007-Q1 | 关系方向×回答判定负担新控制 | PREPARING_NOT_RUN | 既定NEXT_MECHANISM第2比较；来源固定且全部保留，0/4/12正确干扰句，matched whole/target；不据自然gold选模板 |
+| H007-Q1 | 关系方向×回答判定负担新控制 | COMPLETED_HYPOTHESIS_NOT_SUPPORTED | 48答/96焦点、480真实前向；I=−.057753；target方向5/8→2/8，scope抗负担不成立；docs/results/h007_response_burden.md |
+| H007-D1 | 回答后缀删除的请求身份核对 | EXACT_CACHE_REUSE_NO_NEW_INFERENCE | 288逻辑请求严格对应96个已封存b0 execution；0新增模型调用，仍5/8正确，不包装新改进 |
+| H008-Q1 | 程序槽位+无R值来源QA完整候选重建 | CORE_QUALIFICATION_PASSED_NOT_PROMOTED | 32forward4.13s，16/16QA、两flip各8/8；仅toy资格；docs/results/h008_source_reconstruction.md |
+| H009-Q1 | 完整候选矩阵双射×固定加性偏置 | COMPLETED_NO_ACCURACY_INCREMENT | 0新模型、4臂均16/16；不变性8/8，但未修复错误；docs/results/h009_cached_bijection.md |
+| H010-Q0 | 自然NER exactspan前端 | INVENTORY_ONLY_NO_QA | 719S/136R spans、18例保留；语义可答性未知；refine-logs/h010-20261103/FEASIBILITY.md |
 | H001-Q0 | 前导 ASCII 空格的同回答配对控制 | CONTRACT_ONLY_NOT_RUN | 映射测试不等于观测机制已识别；旧生成器混杂仍未解除 |
 | H002-D1 | 比较器、全token投影、unknown与评分冻结 | NOT_DEFINED_PENDING_QUALIFICATION | 不临时加权，不拿观察输出直接称最终检测器 |
 | H002-E1 | 完整六任务与模块消融 | NOT_RUN | 原人口/原标签；每项 AUROC/AP/区间与成本 |
 | H002-E2 | 未接触确认与新颖性审查 | NOT_RUN | 资格案例与历史已看人群不可改名为确认集 |
 
-恢复入口：[RESUME](../research-state/RESUME.md)。下一问题：在来源不变、目标关系方向全因子平衡时，增加回答中的正确无关命题会不会改变正确/错误关系的分离，精确焦点是否保留该分离？H002 核心值盲重建仍未检验，但不再重复失败的自由索引前端。
+恢复入口：[RESUME](../research-state/RESUME.md)。下一问题：自然回答擦除待检值后，怎样构造语义明确的问题并保持原评价合同？不再搜索缓存读出或已否定的焦点补丁。

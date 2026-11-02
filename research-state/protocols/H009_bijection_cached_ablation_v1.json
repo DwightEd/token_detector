@@ -1,0 +1,45 @@
+{
+  "schema": "source-reconstruction-assignment-v1",
+  "purpose": "preregistered_cached_bijection_nuisance_ablation",
+  "required_sources": 8,
+  "required_queries": 16,
+  "required_completions": 32,
+  "required_cases": 48,
+  "required_slots": 96,
+  "model_calls_allowed": false,
+  "tokenizer_only_validation": true,
+  "source_bijection_must_be_explicitly_admitted": true,
+  "canonical_order": "sorted_complete_event_and_name_strings",
+  "energy": "sum_of_two_full_candidate_plus_eos_joint_log_probabilities",
+  "temperature": 1.0,
+  "length_normalization": false,
+  "arms": [
+    "baseline",
+    "fixed_additive_nuisance"
+  ],
+  "nuisance_row_offsets": [
+    -2,
+    -5
+  ],
+  "nuisance_column_offsets": [
+    -1,
+    -9
+  ],
+  "readouts": [
+    "independent_rows_max_slot",
+    "bijection_joint_assignment_mass"
+  ],
+  "unknown_risk": 1.0,
+  "numerical_absolute_tolerance": 1e-10,
+  "numerical_relative_tolerance": 1e-12,
+  "target_label_selection_allowed": false,
+  "threshold_search_allowed": false,
+  "fitted_calibration_allowed": false,
+  "natural_task_performance_claim": false,
+  "method_promoted": false,
+  "population_previously_exposed": true,
+  "nuisance_is_synthetic_score_intervention": true,
+  "new_language_observations": false,
+  "hypothesis_id": "H009_CACHED_SOURCE_BIJECTION_READOUT",
+  "notes": "Both fixed arms and both readouts retained. Predeclared additive score intervention; no language changes, weight search, target benchmark evaluation, or natural efficacy claim."
+}

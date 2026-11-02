@@ -11,3 +11,7 @@
 | 2026-11-03 | h004-20261103/; docs/results/h004_typed_factorial.{md,json} | H004 completed; strict typed representation covers only 3 natural cases, no constructed controls; not promoted |
 | 2026-11-03 | docs/results/h005_focused_verdict.{md,json}; outputs/h005-20261103/unit-ceiling-audit.{py,json,md} | Matched focus pilot and posthoc character-unit ceiling; mixed result, not historical BPE or full six-task evaluation |
 | 2026-11-03 | docs/results/h006_external_nli.{md,json} | Frozen externally supervised NLI diagnostic on same34/104; seals validated before gold release; not adopted main method |
+| 2026-11-03 | docs/results/h007_response_burden.{md,json}; h007_burden_comparison.{png,pdf}; refine-logs/h007-20261103 | Balanced constructed relation×response-burden negative result; fixed interaction −.057753; no scope-only rescue or natural-task efficacy |
+| 2026-11-03 | h008-20261103/; docs/results/h008_source_reconstruction.{md,json,png,pdf} | Source-only full-name QA toy qualification16/16; no natural efficacy |
+| 2026-11-03 | h009-20261103/; docs/results/h009_cached_bijection.{md,json} | Cached4-arm ablation; additive invariance holds, no accuracy increment |
+| 2026-11-03 | h010-20261103/; docs/source-reading/batches/20261103-h008-core-v1 | Natural span inventory only;2newfiles/296lines explained with fullscope pending |

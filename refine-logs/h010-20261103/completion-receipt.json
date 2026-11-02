@@ -1,0 +1,68 @@
+{
+  "schema": "h010-final-engineering-readiness-v1",
+  "status": "ready_cpu_span_inventory_only",
+  "natural_cases": 18,
+  "natural_fields": 36,
+  "operational_unknown_fields": 0,
+  "semantic_answerability": "unknown_not_assessed_for_all_cases",
+  "source_model_spans": 719,
+  "response_model_spans": 136,
+  "max_tokens_observed": {
+    "source": 735,
+    "response": 280
+  },
+  "fields_without_model_spans": {
+    "source": 0,
+    "response": 0
+  },
+  "package_wheels": 46,
+  "pip_check": "passed",
+  "synthetic_engineering_probes": 5,
+  "all_output_offsets_rechecked": true,
+  "all_frozen_model_files_unchanged": true,
+  "gold_opened": false,
+  "gpu_calls": 0,
+  "qa_or_factuality_scores": 0,
+  "external_supervision": "Frozen externally supervised spaCy NER/POS/dependency pipeline; OntoNotes 5 training; no target task labels used.",
+  "disk_after": {
+    "free_bytes": 23613177856,
+    "remaining_7b_bytes": 1143235422,
+    "free_after_remaining_7b": 22469942434,
+    "minimum_reserve_bytes": 22011707392,
+    "reserve_satisfied": true
+  },
+  "identities": {
+    "spacy_version": "3.8.18",
+    "spacy_wheel_sha256": "c332e2aef42e05e8d96d557fd420f298723bb0d856f1293ef61a9dc362a4cf31",
+    "model_version": "3.8.0",
+    "model_wheel_sha256": "1932429db727d4bff3deed6b34cfc05df17794f4a52eeb26cf8928f7c1a0fb85",
+    "inputs_sha256": "1bf9a26ad06ac350988302999776e7288f9da570d35316fd6b27ca21e36e8baf"
+  },
+  "commands": [
+    [
+      "python",
+      "outputs/h010-natural-span-20261103/prepare_frontend.py"
+    ],
+    [
+      "D:/projects/research/envs/token-detector-nlp/Scripts/python.exe",
+      "outputs/h010-natural-span-20261103/inventory_frontend.py"
+    ]
+  ],
+  "evidence_sha256": {
+    "prepare_frontend.py": "b6fe5839cd8a7f8c77d3465b46c1ee9da1eb29c4cf45a984695e8bf675d85afb",
+    "readiness.json": "9807d39410bd9716708d4f2e51a85914412ad2e9b89b65f61d102890f20e4307",
+    "requirements-locked.txt": "6902165aae7f0a54a60b2c14fdd81bcfd99401031d49d62e9a2072e62b964908",
+    "inventory_frontend.py": "9ba7029c3fdc6625e4a025a98e1d0d10290ecbe1b802afabbb05d9067bcdb7c6",
+    "pilot-freeze.json": "90d9af0c47520abed43165ef5ad5b25f96b6a07fe6a003f2bc53464d4c8fd6a7",
+    "synthetic-probe.json": "4dd5778997746c441be65abb466107b7a209e2209c8a9802e47f67e678b77997",
+    "pilot-inventory.jsonl": "f3dd492aed9cb0a860ed5ef9535966391be105a2457f77d44d852dbf7ac53d72",
+    "pilot-summary.json": "386f194c315275117ca36245b0da834c0198f6dcc11f5bc333ee2d574a8a0b68",
+    "pilot-seal.json": "357dae5e95ce9d355b1899e7be07a6047d6f954853ff90f9763d4b4794c84bdd",
+    "FEASIBILITY.md": "c385603c906a7094bbeab49af87e7bf33d1043103d43eaa15ed07c0accf5d257"
+  },
+  "notes": [
+    "readiness.json is the immutable assets-preparation receipt taken before probe; final readiness is recorded here, preserving that earlier frozen byte identity.",
+    "Native NER span counts describe emitted candidates, not semantic coverage; repeated emitted occurrences are retained.",
+    "No QA/scorer has been implemented; cloze interface in FEASIBILITY.md remains a proposal."
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "schema": "exact-research-evidence-archive-v1",
+  "generated_utc": "2026-11-02T20:23:26.171164+00:00",
+  "scope": "Exact byte copies; pre-run design status is historical, completed results are separately linked.",
+  "files": [
+    {
+      "source": "outputs/h008-reconstruction-20261103/DESIGN.md",
+      "archived": "refine-logs/h008-20261103/DESIGN.md",
+      "sha256": "13b24dfbeac9eadaa24d5c184542e285fc6d3f1157d236a45ff9d487bac92382"
+    },
+    {
+      "source": "outputs/h008-reconstruction-20261103/STRUCTURED_FOLLOWUP.md",
+      "archived": "refine-logs/h008-20261103/STRUCTURED_FOLLOWUP.md",
+      "sha256": "1d1a099c7a766c633fe5c6ade3230d960663dc8bb41a7c8dcae6e16904fca7b2"
+    },
+    {
+      "source": "outputs/h008-reconstruction-20261103/backend-root-review.md",
+      "archived": "refine-logs/h008-20261103/backend-root-review.md",
+      "sha256": "762876fd9db7a798190e8dbd9670529907c8dccc81846e2b4bad99f03af0e2a7"
+    },
+    {
+      "source": "outputs/h008-reconstruction-20261103/collector-review.md",
+      "archived": "refine-logs/h008-20261103/collector-review.md",
+      "sha256": "4ed5c46aec36cd1e6fd633373595742a6b9ada36746a10da718fac4f55bb22ba"
+    },
+    {
+      "source": "outputs/h008-reconstruction-20261103/reader-review.md",
+      "archived": "refine-logs/h008-20261103/reader-review.md",
+      "sha256": "b0b27b3e28b6c51dd57d9791de987567d58d9e1ebb69077704dd3286a023ecee"
+    },
+    {
+      "source": "outputs/h008-reconstruction-20261103/plot-runtime.json",
+      "archived": "refine-logs/h008-20261103/plot-runtime.json",
+      "sha256": "b7ca78cdfdcffb9fbb2c7a0eeee6e19fe80fed17aa0c23f4a1e80c8c887101ef"
+    },
+    {
+      "source": "outputs/h008-reconstruction-20261103/evaluation-admission-v1.json",
+      "archived": "refine-logs/h008-20261103/evaluation-admission-v1.json",
+      "sha256": "3d7d1dca557ccc1530e4535b7f4d1ff3a2800c15f9bb3af1cd370a5f5f539ed0"
+    },
+    {
+      "source": "outputs/h008-reconstruction-20261103/post-review-reference-binding-v1.json",
+      "archived": "refine-logs/h008-20261103/post-review-reference-binding-v1.json",
+      "sha256": "7998d90c6077a8b5cee1dc446af756d4e32f6a1f2a7a2a580e6391050b3b61fc"
+    },
+    {
+      "source": "outputs/h008-reconstruction-20261103/prepare_observation.py",
+      "archived": "refine-logs/h008-20261103/prepare_observation.py",
+      "sha256": "98e7449003dc54ad282c6b4f5aad86e2d3867c433a0ddf54de95208268482516"
+    },
+    {
+      "source": "outputs/h008-reconstruction-20261103/evaluate_finished.py",
+      "archived": "refine-logs/h008-20261103/evaluate_finished.py",
+      "sha256": "df4c57d280bc7e047ada7b0079a89f2d726691e8d552c6f90bfeffe75a351737"
+    },
+    {
+      "source": "outputs/h008-reconstruction-20261103/plot_result.py",
+      "archived": "refine-logs/h008-20261103/plot_result.py",
+      "sha256": "2e42ca8efc2cc0a7b15c470ec4c1e871a9ac9e9975e74269fea3fe93c8d61b32"
+    },
+    {
+      "source": "outputs/h008-observer-wheel-20261103/receipt.json",
+      "archived": "refine-logs/h008-20261103/observer112-installed-receipt.json",
+      "sha256": "fb62a9ca021c90111852eff64678eb0d86d26593a06bef40dc3ad115334cc9b5"
+    },
+    {
+      "source": "outputs/h008-evaluation-wheel-20261103/receipt.json",
+      "archived": "refine-logs/h008-20261103/reader113-installed-receipt.json",
+      "sha256": "7daefa7273b622de1b769ec70cad738a5f625ee3b1841748e597385027567257"
+    }
+  ]
+}

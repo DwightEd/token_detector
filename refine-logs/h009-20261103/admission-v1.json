@@ -1,0 +1,9 @@
+{
+  "run_id": "4235ad12a1e91bdda792ac8519adfe3dab88b8fe0b960378bdd13b2340ec77c9",
+  "donor_run_id": "c841a9359221a06af5bc04f1efe2c0b2d86b6691218ec09cdc97bc3deecfebf2",
+  "donor_artifacts_verified": true,
+  "runtime_files": 115,
+  "reference_inputs_opened_by_wrapper": false,
+  "source_followup_sha256": "1d1a099c7a766c633fe5c6ade3230d960663dc8bb41a7c8dcae6e16904fca7b2",
+  "new_model_calls": 0
+}

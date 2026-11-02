@@ -1,0 +1,23 @@
+{
+  "schema": "designed-focus-evaluation-v1",
+  "purpose": "construction_control_diagnosis",
+  "required_cases": 48,
+  "modes": [
+    "whole",
+    "target_first_unit"
+  ],
+  "burdens": [
+    0,
+    4,
+    12
+  ],
+  "model_calls_allowed": false,
+  "tokenizer_calls_allowed": false,
+  "target_label_selection_allowed": false,
+  "primary_effect": "(target_D12-target_D0)-(whole_D12-whole_D0)",
+  "risk": "one-minus-uniform-six-supported",
+  "unknown_risk": 1.0,
+  "natural_task_auroc_claim": false,
+  "hypothesis_id": "H007_RELATION_RESPONSE_BURDEN",
+  "notes": "Complete48 balanced source/response/burden construction diagnosis. No threshold/fitting/winner selection; independent construction truth opens only after full observation validation and CPU plan freeze."
+}

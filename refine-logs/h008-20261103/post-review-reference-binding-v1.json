@@ -1,0 +1,10 @@
+{
+  "scope": "Reference snapshot immediately after validated sealed CPU release",
+  "design_path": "D:\\projects\\research\\token_detector\\outputs\\h007-burden-20261103\\inference\\plan.json",
+  "design_sha256": "7d8e37c4f319b6a851ee7d11f4ae0eb845e1d98d7ae37f4c19355010bf12418d",
+  "truth_path": "D:\\projects\\research\\token_detector\\outputs\\h007-burden-20261103\\construction\\construction_truth.jsonl",
+  "truth_sha256": "b778cdc030f8e8d54b8557eb5a5071ee80ac41fff9bdf54fccb4d04a521423d6",
+  "construction_seal_sha256": "66acd0c7bff6282b9643a9e951aaedd2d8e652cd5f27fe682a7141dc7c5a87b8",
+  "review_seal_sha256": "c62f8906d7cfb6986c4da99d29bb152d2f6ea7e85c5e02305356fb0d17dbd32b",
+  "obtained_after_predictions_and_evaluator_freeze": true
+}

@@ -3,9 +3,9 @@
   "objective": "Mechanism-driven unsupervised hallucination detection improvement toward AUROC >= 0.8 on each of six primary tasks",
   "canonical_project": "D:/projects/research/token_detector",
   "goal_status": "not_achieved",
-  "phase": "H006_diagnostic_completed_H007_controls_preparing",
-  "active_hypothesis": "H007_RELATION_RESPONSE_BURDEN",
-  "next_question": "Freeze new balanced burden controls, instrument and all requests before one actual observation run. Reuse H004/H005/H006 results; no targetlabel tuning or arbitrary fusion.",
+  "phase": "H009_completed_no_increment_H010_inventory_complete_natural_question_design",
+  "active_hypothesis": "NATURAL_VALUE_BLIND_QUESTION_CONTRACT",
+  "next_question": "Can one frozen response-masking compiler transfer source-only reconstruction to response-derived questions without exposed target values, and what error location is identifiable without original query anchors?",
   "known_fact_ids": [
     "F001",
     "F002",
@@ -26,7 +26,12 @@
     "F017",
     "F018",
     "F019",
-    "F020"
+    "F020",
+    "F021",
+    "F022",
+    "F023",
+    "F024",
+    "F025"
   ],
   "do_not_repeat": [
     "Describing known FN/FP counts again without a new discriminating intervention",
@@ -57,10 +62,10 @@
   "checkpoint_policy": "Update at every conclusion, completed run or structural pivot; record the next discriminating question before continuation",
   "pipeline_helpers": "External ARIS run_state/watchdog helpers were not found; no background watchdog is claimed. Repository state and exact-run reservation are implemented locally.",
   "case_panel": "research-state/case_panel_v1.json",
-  "resource_status": "H005 and H006 observation/CPU review archives are sealed. Root owns H006 final interpretation and new H007 factorial-control preparation; no H005/H006 worker should be restarted.",
+  "resource_status": "3B observation jobs exited;7B assets complete, separate bounded engineering helper awaiting postwarm resources; no scientific7B job.",
   "user_resource_choice": "local_idle_automatic_run",
   "experiment_plan": "refine-logs/EXPERIMENT_PLAN.md",
-  "run_reservation_status": "H005_and_H006_completed_do_not_duplicate_root_prepares_H007",
+  "run_reservation_status": "H009_CPU_completed_no_scientific_job_armed",
   "frozen_observation_run_spec": null,
   "live_execution_state": null,
   "local_idle_job": {
@@ -72,8 +77,8 @@
     "armed": false,
     "automatic_retries": false
   },
-  "active_variant": "external_NLI_same104_units_max_source_chunk_entailment_diagnostic_pending",
-  "live_progress_command": "Read H005 results and RESUME; inspect root-owned H006 actual claim/PID/starttime before any new launch. Historical H005 autostart-state is not liveness.",
+  "active_variant": "source_only_reconstruction_qualified_natural_question_compiler_pending",
+  "live_progress_command": "Inspect current H009 sealed results, H010 completion and NATURAL_CONTRACT_NEXT before defining H011; do not repeat prior neural requests.",
   "superseded_local_job": {
     "pid": 31576,
     "status": "cancelled_before_launch",
@@ -114,15 +119,15 @@
       "state": "completed_sealed"
     }
   },
-  "last_completed_run": "b484904456032737a9de6975d9a485caf9ef455ea14f4e23349b1c24c4782130",
-  "last_result": "docs/results/h005_focused_verdict.json",
+  "last_completed_run": "4235ad12a1e91bdda792ac8519adfe3dab88b8fe0b960378bdd13b2340ec77c9",
+  "last_result": "docs/results/h009_cached_bijection.json",
   "previous_observation_run_id": "a5d336433cd1a04ce71962fb8500d4f9f0c8b0473a74f146e66302cbacb3e9a5",
   "goal_control_status": "blocked",
   "goal_control_note": "Legacy tool status remains blocked; user explicitly resumed research. Continue authorized work without asking for confirmation or treating legacy control status as a scientific/resource blocker.",
   "work_status": "continuing_under_user_explicit_resume_do_not_stop",
   "next_design": "refine-logs/h004-20261103/NEXT_MECHANISM.md",
   "frozen_observation_run_id": null,
-  "last_updated_utc": "2026-11-02T18:42:55.613839+00:00",
+  "last_updated_utc": "2026-11-02T20:23:26.171164+00:00",
   "completed_H003": {
     "natural_observer_run": "fa101d666cce73beefcb12cd5979b04fb51e2771a61f48e78f9232caecff968c",
     "natural_cpu_run": "29e82c69db9558ec05c7b868f10cfa58f06cc497864a0ecfebcefa6217a72b47",
@@ -241,5 +246,51 @@
     "same_context_as_Qwen": false,
     "main_method_adopted": false,
     "target_label_selection_allowed": false
+  },
+  "active_run": null,
+  "last_completed_cpu_review": "b9b8f31decfd72962a48790e389db8c6370d3232a4e6348529d5d38af60da6f4",
+  "auxiliary_resource_jobs": {
+    "download": {
+      "parent_pid": 33404,
+      "worker_pid": 28176,
+      "receipt": "outputs/larger-reference-readiness-20261103/receipt-v2.json"
+    },
+    "engineering_readiness": {
+      "parent_pid": 27852,
+      "receipt": "outputs/larger-reference-readiness-20261103/runtime-readiness.json",
+      "scope": "bounded3h; after download+resource gates, two synthetic forwards only; no task inference"
+    },
+    "natural_span_frontend": {
+      "directory": "outputs/h010-natural-span-20261103",
+      "environment": "D:/projects/research/envs/token-detector-nlp",
+      "scope": "new isolated frozenCPU spaCy front-end; externalNER/POS labels disclosed; no taskgold or scores",
+      "status": "resource_preparation_in_progress_no_QA"
+    }
+  },
+  "completed_H009": {
+    "run_id": "4235ad12a1e91bdda792ac8519adfe3dab88b8fe0b960378bdd13b2340ec77c9",
+    "new_model_calls": 0,
+    "result": "docs/results/h009_cached_bijection.json",
+    "accuracy_increment_observed": false,
+    "invariance_sources": 8,
+    "status": "not_promoted"
+  },
+  "completed_H010": {
+    "path": "outputs/h010-natural-span-20261103",
+    "source_spans": 719,
+    "response_spans": 136,
+    "cases": 18,
+    "unknown_fields": 0,
+    "semantic_coverage": "unknown_not_assessed",
+    "external_supervision": true
+  },
+  "source_reading": {
+    "files": 23,
+    "lines": 2717,
+    "definitions": 140,
+    "latest_batch_files": 2,
+    "latest_batch_lines": 296,
+    "pending_files": 145,
+    "total_scope_files_at_snapshot": 168
   }
 }

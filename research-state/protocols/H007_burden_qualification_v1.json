@@ -1,0 +1,29 @@
+{
+  "schema": "designed-focus-qualification-v1",
+  "contract_version": "focused-verdict-v1",
+  "purpose": "observations_only",
+  "context_policy": "replace_unique_source_with_fixed_placeholder_v1",
+  "expected_original_cases": 48,
+  "original_inputs_sha256": "0d298932778c5ad60a43b059cc860b31679e7649350a825f5b1de72d2585cf66",
+  "modes": [
+    "whole",
+    "target_first_unit"
+  ],
+  "partition_policy": "response_units_v1",
+  "unit_selection": "first_automatic_exact_character_partition_unit",
+  "max_input_tokens": 4096,
+  "labels": [
+    "A",
+    "B",
+    "C"
+  ],
+  "permutations": 6,
+  "use_cache": false,
+  "logits_to_keep": 1,
+  "attention_implementation": "sdpa",
+  "risk_definition": "1-minus-uniform-six-supported",
+  "unknown_risk": 1.0,
+  "token_projection_performed": false,
+  "hypothesis_id": "H007_RELATION_RESPONSE_BURDEN",
+  "notes": "Fixed48 balanced relation/source/response/burden controls; source fixed with all12 unrelated facts. Whole/first automatic exact unit only. No target benchmark labels or construction truth access."
+}

@@ -1,0 +1,7 @@
+{
+  "reference_seal_sha256": "c62f8906d7cfb6986c4da99d29bb152d2f6ea7e85c5e02305356fb0d17dbd32b",
+  "donor_seal_sha256": "7558352ae7c3f5d46b4ab5b7bce72940262382806aaa4e9eaab5d81557e85a33",
+  "assignment_seal_sha256": "582e5d6aa658d9051381e8fb3242364c6c524b3ac60a151ea001f0cd24ded0c1",
+  "prior_review_run_id": "b9b8f31decfd72962a48790e389db8c6370d3232a4e6348529d5d38af60da6f4",
+  "read_after_assignment_stage_complete": true
+}

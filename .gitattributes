@@ -14,3 +14,8 @@ docs/source-reading/assets/mathjax-3.2.2/LICENSE -text
 research-state/protocols/** -text
 research-state/runs/** -text
 docs/results/** -text
+refine-logs/h007-20261103/** -text
+
+refine-logs/h008-20261103/** -text
+refine-logs/h009-20261103/** -text
+refine-logs/h010-20261103/** -text

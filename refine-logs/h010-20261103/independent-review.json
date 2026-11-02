@@ -1,0 +1,34 @@
+{
+  "schema": "h010-independent-static-review-v1",
+  "created_utc": "2026-11-02T20:13:42.111962+00:00",
+  "reviewer_agent": "/root/nli_baseline_readiness/nli_tests/h010_static_review",
+  "status": "passed_preparation_scope",
+  "material_blockers": [],
+  "scope": [
+    "new CPU environment isolation",
+    "official pinned wheel/model identity and MIT licenses",
+    "remaining 7B plus 20GiB+512MiB reserve plus 640MiB NLP allowance",
+    "18 cases/36 fields retained with operational unknown and no truncation",
+    "exact Unicode slices and repeated emitted occurrences",
+    "external frozen OntoNotes supervision declaration",
+    "no semantic accuracy/coverage claim",
+    "cloze proposal only; no QA/scoring"
+  ],
+  "checked_files": [
+    "prepare_frontend.py",
+    "inventory_frontend.py",
+    "readiness.json",
+    "pilot-freeze.json",
+    "completion-receipt.json",
+    "FEASIBILITY.md"
+  ],
+  "reviewer_model_or_data_calls": 0,
+  "reviewer_gpu_calls": 0,
+  "reviewer_gold_or_prediction_reads": 0,
+  "reviewer_no_edits": true,
+  "limitations": [
+    "Static review did not independently re-observe 719/136 emitted span counts or unchanged old environments/models.",
+    "All semantic answerability remains unassessed; candidate span counts are not semantic coverage."
+  ],
+  "completion_receipt_sha256": "46523a46e84f69dea0794a927c22a5fb2a55867bc1b86db9da9f9968f2a0a494"
+}
