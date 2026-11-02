@@ -7,10 +7,10 @@ import sys
 import pytest
 
 from experiments.research.semantic_probe import (
-    CONTRACT_VERSION, LIMITATIONS, MASK, ClaimFrame, ClaimSlot, ProbeValidationError,
+    CONTRACT_VERSION, LIMITATIONS, MASK, SOURCE_PLACEHOLDER, ClaimFrame, ClaimSlot, ProbeValidationError,
     build_blind, build_direct, build_leaky, build_proposer, leading_whitespace_variants,
     literal_value_leaks, map_variant_span, masked_claim, parse_observation,
-    parse_proposal, parse_proposal_items, proposal_coverage, unknown_observation,
+    parse_proposal, parse_proposal_items, pre_generation_context, proposal_coverage, unknown_observation,
 )
 
 
@@ -27,15 +27,37 @@ def data(request):
     return json.loads(request['messages'][1]['content'])
 
 
-def test_response_only_proposer_retains_the_whole_unhighlighted_text():
+def test_context_proposer_retains_the_whole_unhighlighted_response_and_context():
     response = 'Courtesy first. Account X has an annual period. Final claim remains.'
-    request = build_proposer(response)
+    context = 'Question about account X: ' + SOURCE_PLACEHOLDER + '\nAnswer in full.'
+    request = build_proposer(response, context=context)
     assert request['contract_version'] == CONTRACT_VERSION
     assert request['mode'] == 'proposal'
-    assert data(request) == {'response': response}
+    assert data(request) == {'response': response, 'pre_generation_context': context}
     assert 'source' not in data(request) and 'gold' not in data(request)
     request['messages'][1]['content'] = 'mutated by caller'
-    assert data(build_proposer(response)) == {'response': response}
+    assert data(build_proposer(response)) == {'response': response, 'pre_generation_context': ''}
+
+
+def test_pre_generation_context_replaces_only_the_unique_source_interval():
+    source = 'Evidence\n北京 costs 5.'
+    before, after = '  Original question mentions 5?\r\n', '\nReturn units exactly.  '
+    assert pre_generation_context(before + source + after, source) == before + SOURCE_PLACEHOLDER + after
+    assert pre_generation_context(source, source) == SOURCE_PLACEHOLDER
+
+
+@pytest.mark.parametrize('prompt,source', [('missing', 'source'), ('source twice source', 'source'),
+                                          ('aaa', 'aa'), ('text', '')])
+def test_missing_repeated_overlapping_or_empty_context_source_is_rejected(prompt, source):
+    with pytest.raises(ProbeValidationError) as error:
+        pre_generation_context(prompt, source)
+    assert error.value.code == 'nonunique_context_source'
+
+
+def test_original_reserved_context_placeholder_is_explicitly_rejected():
+    with pytest.raises(ProbeValidationError) as error:
+        pre_generation_context('Question ' + SOURCE_PLACEHOLDER + ' source', 'source')
+    assert error.value.code == 'reserved_context_placeholder'
 
 
 def test_value_only_change_has_identical_blind_query_but_changes_controls():
@@ -47,13 +69,19 @@ def test_value_only_change_has_identical_blind_query_but_changes_controls():
     bs = ClaimSlot('coverage', start, start + 6, 'annual')
     second = ClaimFrame(0, len(b), b, (bs,))
     source = 'Annual and monthly plans exist; the contract identifies annual coverage.'
-    blind_a, blind_b = build_blind(source, a, first, fs), build_blind(source, b, second, bs)
+    context = pre_generation_context('Is annual coverage the stated period?\n' + source, source)
+    blind_a = build_blind(source, a, first, fs, context=context)
+    blind_b = build_blind(source, b, second, bs, context=context)
     assert blind_a == blind_b
     assert data(blind_a) == {'source': source, 'role': 'coverage',
+                             'pre_generation_context': context,
                              'masked_claim': 'Invoices are sent annually for each ' + MASK + ' coverage period.'}
-    assert set(data(blind_a)) == {'source', 'masked_claim', 'role'}
-    assert build_direct(source, a, first, fs) != build_direct(source, b, second, bs)
-    leaky_a, leaky_b = build_leaky(source, a, first, fs), build_leaky(source, b, second, bs)
+    assert set(data(blind_a)) == {'source', 'pre_generation_context', 'masked_claim', 'role'}
+    assert 'annual' in data(blind_b)['pre_generation_context']  # Prior value is legitimate context.
+    assert build_blind(source, a, first, fs, context=context + ' Other question.') != blind_a
+    assert build_direct(source, a, first, fs, context=context) != build_direct(source, b, second, bs, context=context)
+    leaky_a = build_leaky(source, a, first, fs, context=context)
+    leaky_b = build_leaky(source, b, second, bs, context=context)
     assert leaky_a != leaky_b
     assert data(leaky_a)['masked_claim'] == data(blind_a)['masked_claim']
     assert data(leaky_a)['claimed_value'] == 'monthly'

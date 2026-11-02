@@ -905,3 +905,30 @@ stage reports call count as unknown until completion; failure preserves partial
 artifacts and cannot be reported as zero calls or semantic refutation. No automatic
 rerun or precision/parameter downgrade. The16-answer/8-pair constructed panel is
 also sealed and independently reviewed, but Q2 remains unrun until Q1 admission.
+
+
+## 2026-11-02: H002 context-preserving natural qualification completed, frontend failed
+
+The source-only prototype was cancelled unclaimed/unrun; the context-preserving
+replacement retained all18 original inputs. Frozen95-file observer wheel SHA256
+697d35b288d3503bbd684ddcc138a495570f8946b7faa631811af126c5e16571 passed exact installed
+identity and6 interface smoke checks;131 source synthetic checks passed separately.
+The real model loaded both shards, then completed18 proposal calls,4943 output
+tokens and792.877s generation lifetime. All observations sealed;115 registered
+artifacts were verified before CPU gold release. First CPU dispatch selected an
+old installed CLI and stopped before review; explicit frozen-reader selection
+corrected it without new model calls.
+
+Run a5d336433cd1a04ce71962fb8500d4f9f0c8b0473a74f146e66302cbacb3e9a5 failed the
+proposal gate:48 raw frames,8 valid empty-slot frames,40 invalid frames,4 envelope
+failures and0 direct/blind/leaky calls. Not a fence or token-limit issue. Independent
+predefined coordinate checks explained0/31 paired integer slot fields; role and
+context/answer confusion also occurred. This does not test source-QA efficacy.
+No scalar score/AUROC or promotion. Evidence docs/results/h002_proposal_qualification.json;
+immutable observations, old95 reader and CPU review: outputs/h002-context-20261102/.
+
+H003 is the next strong-baseline qualification: whole original answers, finite
+next-token labels and all6 fixed label assignments, with raw/off-label/permutation
+diagnostics. Direct verification and option-bias controls are established ideas;
+no novelty, calibrated factuality or token detection result is claimed. New H003
+checkout/backend work is a separate release and must not change archived95 bytes.

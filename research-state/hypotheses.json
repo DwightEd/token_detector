@@ -17,7 +17,7 @@
     },
     {
       "id": "H002_VALUE_BLIND_RECONSTRUCTION",
-      "status": "contract_frozen_pending_natural_qualification",
+      "status": "proposal_qualification_failed_core_mechanism_untested",
       "question": "Does value-blind source reconstruction recover actor/time/account ownership more reliably than equal-budget direct verification?",
       "new_condition": "Deterministic masked-claim query never receives selected value; compare same-wordbag bindings and a deliberately value-visible condition.",
       "prior_overlap": "QAGS/QAFactEval/CoVe are existing work; novelty remains unestablished. Existing local/repair readouts are not this new semantic query.",
@@ -28,6 +28,14 @@
         "Frozen model cannot reconstruct or validate a relation"
       ],
       "admission": "Automatic full response proposal only; no gold spans or manually supplied wrong slots; unknown/coverage reported; no scalar ensemble defined yet."
+    },
+    {
+      "id": "H003_FINITE_LABEL_DIRECT_VERIFICATION",
+      "status": "selected_for_baseline_qualification_not_main_method",
+      "question": "Can a direct whole-answer source judge provide useful semantic observations without the failed extraction interface, and do its decisions depend on arbitrary answer labels?",
+      "new_condition": "One dense next-label forward for each of all6 assignments of three semantic classes, same full18 original inputs; no generated span, offset or JSON output.",
+      "prior_overlap": "P031 broad frozen semantic verification was proposed/unrun; H002 never issued source-verification calls. Direct verification and label permutation are established baselines, not claimed novel.",
+      "admission": "All whole-answer cases retained. No token detector score, target-label tuning, training, semantic calibration claim or AUROC yet."
     }
   ]
 }

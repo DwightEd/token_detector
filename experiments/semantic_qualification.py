@@ -20,7 +20,8 @@ from .research import semantic_probe as probe
 
 
 DEFAULT_PROTOCOL = {
-    'schema': 'semantic-qualification-v1', 'contract_version': probe.CONTRACT_VERSION,
+    'schema': 'semantic-qualification-v2', 'contract_version': probe.CONTRACT_VERSION,
+    'context_policy': probe.CONTEXT_POLICY,
     'purpose': 'observations_only', 'max_input_tokens': 4096,
     'proposer_max_new_tokens': 1536, 'observation_max_new_tokens': 256,
     'do_sample': False, 'num_beams': 1, 'attention_implementation': 'sdpa',
@@ -44,7 +45,7 @@ def _protocol(path):
     value = data.read_json(path)
     if not isinstance(value, dict) or any(value.get(k) != v or type(value.get(k)) is not type(v)
                                          for k, v in DEFAULT_PROTOCOL.items()):
-        raise ValueError('Protocol must preserve every fixed observation/decode limit')
+        raise ValueError('Unsupported observation protocol: preserve the fixed v2 context policy and observation/decode limits')
     if set(value) - set(DEFAULT_PROTOCOL) - {'notes', 'hypothesis_id'}:
         raise ValueError('Unsupported protocol field')
     return value
@@ -120,9 +121,19 @@ def _execute(generator, request, protocol, identity, requests):
             'execution': result}
 
 
-def _case(sample, generator, protocol, identity, requests):
+def _context(inputs):
+    context = probe.pre_generation_context(inputs['prompt'], inputs['source'])
+    start = inputs['prompt'].index(inputs['source'])
+    transformation = {'policy': probe.CONTEXT_POLICY, 'placeholder': probe.SOURCE_PLACEHOLDER,
+                      'original_source_span': [start, start + len(inputs['source'])],
+                      'other_prompt_characters_preserved': True}
+    return context, transformation
+
+
+def _case(sample, generator, protocol, identity, requests, context_info):
     inputs = sample.inputs
-    proposal = _execute(generator, probe.build_proposer(inputs['response']),
+    context, transformation = context_info
+    proposal = _execute(generator, probe.build_proposer(inputs['response'], context=context),
                         protocol, identity, requests)
     if proposal['execution']['status'] == 'input_rejected':
         parsed = {'frames': (), 'invalid': (), 'raw_claim_count': None,
@@ -146,7 +157,8 @@ def _case(sample, generator, protocol, identity, requests):
             for mode in MODES:
                 item = {'frame_index': frame_index, 'slot_index': slot_index, 'mode': mode}
                 try:
-                    request = getattr(probe, 'build_' + mode)(inputs['source'], inputs['response'], frame, slot)
+                    request = getattr(probe, 'build_' + mode)(inputs['source'], inputs['response'], frame, slot,
+                                                             context=context)
                 except probe.ProbeValidationError as error:
                     item.update(parse_status='request_invalid', error={'code': error.code, 'message': str(error)},
                                 observation=asdict(probe.unknown_observation('request_invalid:' + error.code)))
@@ -165,9 +177,11 @@ def _case(sample, generator, protocol, identity, requests):
                         else:
                             item.update(parse_status='valid', observation=asdict(observation))
                 observations.append(item)
-    return {'schema': 'semantic-qualification-case-v1', 'id': sample.id,
+    return {'schema': 'semantic-qualification-case-v2', 'id': sample.id,
             'source_id': sample.source_id, 'task': sample.task, 'generator': sample.generator,
             'input_text_sha256': {name: data.text_hash(text) for name, text in inputs.items()},
+            'pre_generation_context_sha256': data.text_hash(context),
+            'context_transformation': transformation,
             'proposal': proposal, 'raw_claim_count': parsed['raw_claim_count'],
             'proposal_envelope_error': parsed['envelope_error'],
             'invalid_frames': parsed['invalid'], 'frames': [asdict(frame) for frame in frames],
@@ -212,11 +226,12 @@ def qualify(inputs, protocol, output, generator, model_identity):
     samples = list(read_samples(inputs))
     if not samples:
         raise ValueError('Qualification requires nonempty original inference inputs')
+    contexts = {s.id: _context(s.inputs) for s in samples}
     roster = [{'id': s.id, 'source_id': s.source_id, 'response_sha256': data.text_hash(s.inputs['response'])}
               for s in samples]
     if data.file_hash(inputs) != input_hash or data.file_hash(protocol) != protocol_hash:
         raise ValueError('Inputs or protocol changed while being frozen')
-    plan = {'schema': 'semantic-qualification-plan-v1', 'state': 'observations_only',
+    plan = {'schema': 'semantic-qualification-plan-v2', 'state': 'observations_only',
             'inputs_path': str(inputs), 'inputs_sha256': input_hash, 'protocol_sha256': protocol_hash,
             'protocol': frozen_protocol, 'model_identity_sha256': _digest(identity),
             'source_identity_sha256': _digest(source), 'records': roster,
@@ -267,13 +282,16 @@ def qualify(inputs, protocol, output, generator, model_identity):
                 data.verify_seal(root, expected={'case.json'})
                 case = data.read_json(root / 'case.json')
                 if (case['id'] != sample.id or case['input_text_sha256'] !=
-                        {name: data.text_hash(text) for name, text in sample.inputs.items()}):
+                        {name: data.text_hash(text) for name, text in sample.inputs.items()}
+                        or case.get('schema') != 'semantic-qualification-case-v2'
+                        or case.get('pre_generation_context_sha256') != data.text_hash(contexts[sample.id][0])
+                        or case.get('context_transformation') != contexts[sample.id][1]):
                     raise ValueError('Sealed case input identity changed')
             else:
                 if (output / 'seal.json').exists():
                     raise ValueError('Completed qualification is missing a case')
                 root.mkdir()
-                case = _case(sample, generator, frozen_protocol, identity, requests)
+                case = _case(sample, generator, frozen_protocol, identity, requests, contexts[sample.id])
                 data.write_json(root / 'case.json', case)
                 _seal(root, ['case.json'])
             records.append({'id': sample.id, 'file': str((root / 'case.json').relative_to(output)),
@@ -300,7 +318,7 @@ def qualify(inputs, protocol, output, generator, model_identity):
             generator.verify_frozen_identity()
         if [record['id'] for record in records] != [sample.id for sample in samples]:
             raise ValueError('Qualification did not retain the entire original case roster')
-        complete = {'schema': 'semantic-qualification-complete-v1',
+        complete = {'schema': 'semantic-qualification-complete-v2',
                     'state': 'observations_sealed_not_evaluated', 'records': records,
                     'input_id_order_sha256': _digest([sample.id for sample in samples]),
                     'coverage': {'cases': len(records),

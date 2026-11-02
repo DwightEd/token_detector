@@ -5270,7 +5270,7 @@
       "line_count": 235,
       "functions": 6,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "experiments/fusion_evaluation.py",
@@ -5278,7 +5278,7 @@
       "line_count": 239,
       "functions": 5,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "experiments/rank_fusion.py",
@@ -5286,7 +5286,7 @@
       "line_count": 132,
       "functions": 5,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "experiments/research/score_fusion.py",
@@ -5294,23 +5294,31 @@
       "line_count": 24,
       "functions": 1,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "experiments/research/semantic_probe.py",
-      "sha256": "a72396e2ef40fadecdc9313c0f4f2b3586ecc2a0612c7c21fd65807b42f9c162",
-      "line_count": 638,
-      "functions": 28,
+      "sha256": "ae81b71e6f846c0aa91ba105adda7ce56e7a94f7ba70ca7d3b721df62898fff9",
+      "line_count": 672,
+      "functions": 29,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
+    },
+    {
+      "path": "experiments/semantic_evaluation.py",
+      "sha256": "7aea34e54ecb32ecc64c5ce06a4748841b5779892bdddb64ecf9a9b1aa43748f",
+      "line_count": 549,
+      "functions": 19,
+      "status": "pending_line_explanation",
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "experiments/semantic_qualification.py",
-      "sha256": "9768eb39e48eba1ffba0dc212ec5f39f3931f2ae6f1deb36974233b5ea027b84",
-      "line_count": 463,
-      "functions": 17,
+      "sha256": "cf68431551e85cc618e9fb9eab255c484dbf2051efe4ba01e921669d6309353f",
+      "line_count": 481,
+      "functions": 18,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "tests/test_auc_decomposition.py",
@@ -5318,7 +5326,7 @@
       "line_count": 144,
       "functions": 8,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "tests/test_fusion_cache.py",
@@ -5326,7 +5334,7 @@
       "line_count": 212,
       "functions": 16,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "tests/test_fusion_evaluation.py",
@@ -5334,7 +5342,7 @@
       "line_count": 325,
       "functions": 25,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "tests/test_pooling_theory.py",
@@ -5342,7 +5350,7 @@
       "line_count": 114,
       "functions": 6,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "tests/test_rank_fusion.py",
@@ -5350,7 +5358,7 @@
       "line_count": 183,
       "functions": 15,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "tests/test_research_memory.py",
@@ -5358,23 +5366,31 @@
       "line_count": 134,
       "functions": 11,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
+    },
+    {
+      "path": "tests/test_semantic_evaluation.py",
+      "sha256": "2a60e546e2a7a5a5215bd6bf42fa2a135095438e475c870728482a01b1520526",
+      "line_count": 485,
+      "functions": 38,
+      "status": "pending_line_explanation",
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "tests/test_semantic_probe.py",
-      "sha256": "9430f101f5f40f33bff288aa29f576a3e5cb8d942d3d91c79b1e299bce8d522b",
-      "line_count": 424,
-      "functions": 34,
+      "sha256": "e26c7347a289daa1f8b99164befe04509d0a59aaf89ccacc6b79442ec7ff0891",
+      "line_count": 452,
+      "functions": 37,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "tests/test_semantic_qualification.py",
-      "sha256": "d7c1a91bb959bc679713f74c8cbda442429b48a9de399c3b8af052514afd927f",
-      "line_count": 342,
-      "functions": 34,
+      "sha256": "78e1cd65abd206bf521ddc0e4ae2d221181e1b1e6d22c18799d5b7a214c08775",
+      "line_count": 376,
+      "functions": 37,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "tools/render_cpu_fusion_review.py",
@@ -5382,7 +5398,7 @@
       "line_count": 136,
       "functions": 2,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "tools/render_fnfp_mechanism.py",
@@ -5390,7 +5406,7 @@
       "line_count": 201,
       "functions": 2,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "tools/render_math_guide.py",
@@ -5398,7 +5414,7 @@
       "line_count": 148,
       "functions": 6,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "tools/render_method_comparison.py",
@@ -5406,7 +5422,7 @@
       "line_count": 286,
       "functions": 4,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "tools/render_performance_review.py",
@@ -5414,7 +5430,7 @@
       "line_count": 75,
       "functions": 2,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "tools/render_source_reading.py",
@@ -5422,7 +5438,7 @@
       "line_count": 85,
       "functions": 0,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
     },
     {
       "path": "tools/research_memory.py",
@@ -5430,7 +5446,7 @@
       "line_count": 228,
       "functions": 13,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation"
+      "validation": "Tests/hashes do not complete line explanation"
     }
   ],
   "current_modifications": [
@@ -5440,7 +5456,7 @@
       "line_count": 859,
       "functions": 24,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation",
+      "validation": "Tests/hashes do not complete line explanation",
       "baseline_sha256": "0e89cbc9025503c69690dac0c909ae4c1dcb3527b4d3a939b69f96b79eef9e30",
       "role": "Post-baseline modification; original inventory retained"
     },
@@ -5450,23 +5466,23 @@
       "line_count": 108,
       "functions": 4,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation",
+      "validation": "Tests/hashes do not complete line explanation",
       "baseline_sha256": "1aea91af94cd39a2a971625d458909d5e82e97eb813352ff3a09da09cbfdd549",
       "role": "Post-baseline modification; original inventory retained"
     },
     {
       "path": "experiments/run.py",
-      "sha256": "61183187fd3ad4dccc37849ceab6d443f8dd92686221ce9fb2b8e16262a0f9ad",
-      "line_count": 420,
+      "sha256": "151b6d7b0fa8fb0c0f2da2d80fe322d28a6b5bd59a74e590265a148e7904787d",
+      "line_count": 429,
       "functions": 2,
       "status": "pending_line_explanation",
-      "validation": "Separate test/build receipts do not count as line explanation",
+      "validation": "Tests/hashes do not complete line explanation",
       "baseline_sha256": "e504d9d54adbe1cd436bfdc954fa616d5b3f1338e90b4ac919358c220f4e8b5c",
       "role": "Post-baseline modification; original inventory retained"
     }
   ],
   "latest_update_date_beijing": "2026-11-02",
-  "current_addition_count": 21,
-  "current_file_count": 119,
+  "current_addition_count": 23,
+  "current_file_count": 121,
   "coverage_note": "The baseline 21-file/2421-line/128-definition explanation remains unchanged. Current additions and modifications listed here require line explanation; hashes or passing tests do not complete it. Post-recovery files are outside the original 88-file receipt."
 }

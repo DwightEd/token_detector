@@ -79,3 +79,7 @@
   verify PID/start time/command and never duplicate it. STOP_AUTORUN cancels this
   task when the user requests stopping. Its six-hour wait is bounded, with no
   automatic retry or parameter change. Evaluate only after observation seals pass.
+- H002 completed18 proposal-only calls, failed its frontend gate, and exited;
+  its frozen95-file target under outputs/h002-context-20261102/installed is the
+  archived compatible reader. Preserve it. H003 checkout/backend development is
+  a separate release; do not rerun H002 when an evaluator/helper changes.

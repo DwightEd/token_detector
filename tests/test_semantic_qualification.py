@@ -14,6 +14,7 @@ IDENTITY = {'model_id': 'fake-observation-instrument',
             'model_files_sha256': {'weights.bin': 'a' * 64}}
 RESPONSE = 'A has X.'
 SOURCE = 'Evidence X.'
+PROMPT = 'Question: Is X assigned to A?\nRead ' + SOURCE + '\nAnswer completely.'
 
 
 def proposal():
@@ -56,7 +57,7 @@ def panel(tmp_path, monkeypatch):
     monkeypatch.setattr(module, 'completed_identity', lambda old: old)
     source = tmp_path / 'panel'; source.mkdir()
     rows = [{'id': 'META_ONLY_' + str(i), 'source_id': 'S' + str(i), 'split': 'test',
-             'task': 'QA', 'prompt': 'Read ' + SOURCE, 'source': SOURCE, 'response': RESPONSE,
+             'task': 'QA', 'prompt': PROMPT, 'source': SOURCE, 'response': RESPONSE,
              'generator': 'original-generator'} for i in range(18)]
     inputs = source / 'inputs.jsonl'
     inputs.write_text(''.join(json.dumps(row) + '\n' for row in rows), encoding='utf-8')
@@ -83,6 +84,7 @@ def test_full_panel_never_reads_gold_or_puts_case_ids_in_messages(panel, monkeyp
     monkeypatch.setattr(Path, 'open', guarded)
     generator = FakeGenerator()
     complete = run(panel, generator)
+    context = module.probe.pre_generation_context(PROMPT, SOURCE)
     assert [r['id'] for r in complete['records']] == ['META_ONLY_' + str(i) for i in range(18)]
     assert complete['state'] == 'observations_sealed_not_evaluated'
     assert complete['evaluation_material_accessed'] is False
@@ -98,13 +100,18 @@ def test_full_panel_never_reads_gold_or_puts_case_ids_in_messages(panel, monkeyp
         assert 'META_ONLY' not in json.dumps(messages)
         payload = json.loads(messages[-1]['content'])
         if 'response' in payload:
-            assert payload == {'response': RESPONSE} and cap == 1536
+            assert payload == {'response': RESPONSE, 'pre_generation_context': context} and cap == 1536
         else:
             assert cap == 256 and payload['source'] == SOURCE
+            assert payload['pre_generation_context'] == context
             if 'claimed_value' not in payload and 'claim' not in payload:
-                assert set(payload) == {'source', 'masked_claim', 'role'}
+                assert set(payload) == {'source', 'pre_generation_context', 'masked_claim', 'role'}
                 assert payload['masked_claim'] == 'A has [VALUE_REMOVED].'
     case = first_case(panel[2])
+    assert case['schema'] == 'semantic-qualification-case-v2'
+    assert case['pre_generation_context_sha256'] == data.text_hash(context)
+    assert case['context_transformation']['original_source_span'] == [PROMPT.index(SOURCE), PROMPT.index(SOURCE) + len(SOURCE)]
+    assert case['coverage']['response_characters'] == len(RESPONSE)
     assert case['proposal']['execution']['raw_text'].endswith('<eos>')
     assert len(case['observations']) == 3
     data.verify_seal(panel[2], required={'plan.json', 'complete.json', 'source_identity.json'})
@@ -191,12 +198,14 @@ def test_input_token_limit_rejects_without_truncating_or_generating(panel, propo
         assert all(o['parse_status'] == 'input_rejected' for o in case['observations'])
 
 
-@pytest.mark.parametrize('changed', ['input', 'protocol', 'model', 'code'])
+@pytest.mark.parametrize('changed', ['input', 'context', 'protocol', 'model', 'code'])
 def test_resume_rejects_changed_dependencies_before_inference(panel, monkeypatch, changed):
     run(panel)
     identity = IDENTITY
     if changed == 'input':
         panel[0].write_text(panel[0].read_text(encoding='utf-8').replace('A has X.', 'A has Y.'), encoding='utf-8')
+    elif changed == 'context':
+        panel[0].write_text(panel[0].read_text(encoding='utf-8').replace('Is X assigned to A?', 'Is X assigned to B?'), encoding='utf-8')
     elif changed == 'protocol':
         value = dict(module.DEFAULT_PROTOCOL, notes='changed frozen protocol')
         panel[1].write_text(json.dumps(value), encoding='utf-8')
@@ -247,9 +256,34 @@ def test_sealed_case_tampering_fails_without_generation(panel):
 
 def test_protocol_limits_cannot_be_changed(panel):
     panel[1].write_text(json.dumps({**module.DEFAULT_PROTOCOL, 'max_input_tokens': 100}), encoding='utf-8')
-    with pytest.raises(ValueError, match='fixed observation'):
+    with pytest.raises(ValueError, match='fixed v2'):
         run(panel)
     assert not panel[2].exists()
+
+
+def test_v1_observation_protocol_is_rejected_without_model_calls(panel):
+    old = {**module.DEFAULT_PROTOCOL, 'schema': 'semantic-qualification-v1', 'contract_version': 'semantic-probe-v1'}
+    old.pop('context_policy')
+    panel[1].write_text(json.dumps(old), encoding='utf-8')
+    generator = FakeGenerator()
+    with pytest.raises(ValueError, match='Unsupported observation protocol'):
+        run(panel, generator)
+    assert not generator.calls and not panel[2].exists()
+
+
+def test_reserved_context_marker_rejects_the_whole_input_contract_before_generation(panel, monkeypatch):
+    rows = [json.loads(line) for line in panel[0].read_text(encoding='utf-8').splitlines()]
+    rows[-1]['prompt'] += module.probe.SOURCE_PLACEHOLDER
+    panel[0].write_text(''.join(json.dumps(row) + '\n' for row in rows), encoding='utf-8')
+    original = Path.open
+    def guarded(path, *args, **kwargs):
+        assert path.name not in {'evaluation_only.jsonl', 'annotations.jsonl', 'manifest.json'}
+        return original(path, *args, **kwargs)
+    monkeypatch.setattr(Path, 'open', guarded)
+    generator = FakeGenerator()
+    with pytest.raises(module.probe.ProbeValidationError, match='reserved source placeholder'):
+        run(panel, generator)
+    assert not generator.calls and not generator.counts and not panel[2].exists()
 
 
 def test_request_cache_key_includes_input_admission_limit(tmp_path):

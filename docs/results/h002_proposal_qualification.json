@@ -1,0 +1,133 @@
+{
+  "schema": "h002-proposal-qualification-result-v1",
+  "status": "frontend_qualification_failed_source_mechanism_not_tested",
+  "created_utc": "2026-11-02T14:00:28.960490+00:00",
+  "model_id": "Qwen/Qwen2.5-3B-Instruct",
+  "observer": "NF4/SDPA secondary observer; distinct from historical BF16 Llama",
+  "run_id": "a5d336433cd1a04ce71962fb8500d4f9f0c8b0473a74f146e66302cbacb3e9a5",
+  "whole_case_denominator": 18,
+  "input_population_changed": false,
+  "source_coverage": {
+    "cases": 18,
+    "raw_claims": 48,
+    "valid_frames": 8,
+    "valid_slots": 0,
+    "frames_without_slots": 8,
+    "invalid_frames": 40,
+    "proposal_envelope_failures": 4,
+    "proposal_output_token_limits": 0,
+    "cases_with_coverage_limitations": 18,
+    "cases_without_valid_frames": 16,
+    "semantic_exhaustiveness_verified": false,
+    "observation_statuses": {},
+    "observation_output_token_limits": 0,
+    "unknown_observations": 0
+  },
+  "costs": {
+    "logical_requests": 18,
+    "scope": "retained artifact lifetime; completed resume adds no model calls",
+    "unique_requests": 18,
+    "actual_model_calls": 18,
+    "exact_request_reuses": 0,
+    "input_tokens_generated": 11076,
+    "output_tokens_generated": 4943,
+    "input_rejections": 0,
+    "seconds_generation": 792.8768622998614
+  },
+  "whole_case_review": {
+    "whole_case_denominator": 18,
+    "review_cases": 18,
+    "cases_without_valid_frames": 16,
+    "unobserved_case_count": 18,
+    "frames_without_slots": 8,
+    "invalid_frames": 40,
+    "proposal_envelope_failures": 4,
+    "proposal_output_limited_cases": 0,
+    "cases_with_coverage_limitations": 18,
+    "valid_frames": 8,
+    "proposed_slots": 0,
+    "slot_modes": {
+      "direct": {
+        "whole_case_denominator": 18,
+        "proposed_slot_denominator": 0,
+        "retained_observations": 0,
+        "parse_statuses": {},
+        "answerable": 0,
+        "unknown": 0,
+        "output_limited": 0,
+        "unobserved_cases": 18
+      },
+      "blind": {
+        "whole_case_denominator": 18,
+        "proposed_slot_denominator": 0,
+        "retained_observations": 0,
+        "parse_statuses": {},
+        "answerable": 0,
+        "unknown": 0,
+        "output_limited": 0,
+        "unobserved_cases": 18
+      },
+      "leaky": {
+        "whole_case_denominator": 18,
+        "proposed_slot_denominator": 0,
+        "retained_observations": 0,
+        "parse_statuses": {},
+        "answerable": 0,
+        "unknown": 0,
+        "output_limited": 0,
+        "unobserved_cases": 18
+      }
+    },
+    "unproposed_facts_count": null,
+    "released_annotation_granularities": {
+      "token": 13,
+      "sentence": 5
+    },
+    "semantic_exhaustiveness_verified": false,
+    "automatic_accuracy_created": false,
+    "scalar_scores_created": false,
+    "auroc_created": false,
+    "model_calls": 0,
+    "scope": "Whole exploratory panel and proposed-slot coverage only; human semantic review pending."
+  },
+  "source_qa_calls": {
+    "direct": 0,
+    "blind": 0,
+    "leaky": 0
+  },
+  "diagnostic_funnel": {
+    "standard_json_decodable": 16,
+    "strict_duplicate_key_rejecting_json": 15,
+    "valid_top_level_envelope": 14
+  },
+  "root_cause_scope": {
+    "paired_integer_slot_offsets": 31,
+    "matched_original_answer_offsets": 0,
+    "alternative_coordinate_explanations_matched": 0,
+    "offset_width_matches_text_length": 0,
+    "invalid_roles_seen_after_position_checks": 11,
+    "pure_fence_problem": false,
+    "output_limit_problem": false,
+    "other_failures": [
+      "claim/slot text not in original answer",
+      "schema fields mixed with instance fields",
+      "question or placeholder selected instead of answer content",
+      "empty slots"
+    ]
+  },
+  "interpretation": "The automatic extraction interface failed before any source-verification request. It does not refute or support value-blind source reconstruction. No detector or AUROC was produced.",
+  "method_promoted": false,
+  "scalar_scores_created": false,
+  "auroc_created": false,
+  "registered_artifacts_verified_before_gold": 115,
+  "source_before_gold_gate_passed": true,
+  "observer_wheel_sha256": "697d35b288d3503bbd684ddcc138a495570f8946b7faa631811af126c5e16571",
+  "staged_observer_source_files_verified": 95,
+  "artifact_bindings": {
+    "outputs\\h002-context-20261102\\natural_qualification_v2\\seal.json": "9c6458d997f3a0e742f4024fce6c6bb4a15cc52d3604b47412d8a8d382a75ad3",
+    "outputs\\h002-context-20261102\\natural_qualification_v2\\complete.json": "9d4f6b35186cba955bcc48ee15bd8b068d4ece565021e61efa601f16fdc83845",
+    "outputs\\h002-context-20261102\\natural_review_v1\\seal.json": "e2b2841ba8bb4b6c40f4daf7c9b1a22196407d6b937fd2549c8dfff05ff4ce70",
+    "outputs\\h002-context-20261102\\natural_review_v1\\summary.json": "b0a1ed3598a139e2f736c3e925529e66445582e24404cbfcbfbaa6dd7ab564f2"
+  },
+  "next_discriminating_step": "Test a whole-answer direct source verifier with finite next-token labels, bypassing free-form span/role extraction; preserve this negative result and test label-representation sensitivity, not target-label tuning."
+}

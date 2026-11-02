@@ -116,6 +116,48 @@
           "sha256": "8171f857c12416635f50df8350cdc81453fc892cd17c5f5571dade67066b70c4"
         }
       ]
+    },
+    {
+      "id": "F010",
+      "certainty": "verified_local_runtime_qualification_not_efficacy",
+      "claim": "The isolated CUDA/NF4 instrument passed a tiny GPU kernel, loaded both frozen Qwen3B checkpoint shards and started producing sealed model responses. Full natural-panel efficacy is not established.",
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "research-state/context_qualification_validation.json",
+          "sha256": "62457569e27045d09b6a9f2dc4eda618152f92af89ff3ac6e8e196860da8c863"
+        }
+      ]
+    },
+    {
+      "id": "F011",
+      "certainty": "verified_pre_inference_contract_correction",
+      "claim": "The source-only prototype discarded available prompt context and was never run. The active integrated v2 derives context by unique source replacement, preserves all other prompt characters and shares it across proposal/direct/blind/leaky. The blind condition excludes candidate values introduced from the answer, not values already present in source/context.",
+      "does_not_imply": "A clean question, semantically correct frame, factuality oracle, original-generator causal explanation or new AUROC",
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "experiments/research/semantic_probe.py",
+          "sha256": "ae81b71e6f846c0aa91ba105adda7ce56e7a94f7ba70ca7d3b721df62898fff9"
+        },
+        {
+          "path": "experiments/semantic_qualification.py",
+          "sha256": "cf68431551e85cc618e9fb9eab255c484dbf2051efe4ba01e921669d6309353f"
+        }
+      ]
+    },
+    {
+      "id": "F012",
+      "certainty": "completed_natural_panel_frontend_failure_only",
+      "claim": "All18 original inputs were retained;18 model proposal calls produced8 valid empty-slot frames,40 invalid frames and4 envelope failures, yielding zero source-verifier calls. No observed offset coordinate convention explained the31 paired integer slot fields. The core source reconstruction mechanism was not tested.",
+      "does_not_imply": "The model has no semantic source-verification ability or a new detector has achieved any AUROC",
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "docs\\results\\h002_proposal_qualification.json",
+          "sha256": "491198f664006a86927567634e3345bfbad558b10d018e26c78679eeebcf3e1e"
+        }
+      ]
     }
   ],
   "rule": "New interventions need different predictions under competing explanations; known counts/cases are reused."

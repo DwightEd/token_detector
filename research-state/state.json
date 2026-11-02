@@ -3,9 +3,9 @@
   "objective": "Mechanism-driven unsupervised hallucination detection improvement toward AUROC >= 0.8 on each of six primary tasks",
   "canonical_project": "D:/projects/research/token_detector",
   "goal_status": "active",
-  "phase": "H002_idle_job_armed_waiting_for_host_memory",
-  "active_hypothesis": "H002_VALUE_BLIND_RECONSTRUCTION",
-  "next_question": "Check the one already-armed local-idle job. Once sealed, evaluate automatic coverage and ownership/unknown failures in shared direct/blind/leaky observations; do not repeat completed engineering checks without an actual dependency change.",
+  "phase": "H002_frontend_qualification_failed_H003_direct_baseline_preparing",
+  "active_hypothesis": "H003_FINITE_LABEL_DIRECT_VERIFICATION",
+  "next_question": "Can the same frozen3B model judge complete original answers from source without a free-form span/role proposal? Use finite-label next-token scores and all six label assignments; freeze every score before posthoc source review. H002 source-QA remains untested.",
   "known_fact_ids": [
     "F001",
     "F002",
@@ -15,7 +15,10 @@
     "F006",
     "F007",
     "F008",
-    "F009"
+    "F009",
+    "F010",
+    "F011",
+    "F012"
   ],
   "do_not_repeat": [
     "Describing known FN/FP counts again without a new discriminating intervention",
@@ -29,7 +32,7 @@
     "Whether target-slot-blind source reconstruction adds useful information beyond direct verification",
     "Whether natural claim/role proposal has enough reliable coverage without gold spans",
     "How to preserve legitimate arithmetic/units and handle missing original financial questions",
-    "Whether the complete frozen3B NF4 model fits the admitted host/GPU budget on full original inputs; tiny backend success does not establish this."
+    "Full checkpoint loading and partial generation have succeeded; full18 completion, automatic coverage, mechanism advantage, complete detector scores and all-six efficacy remain unverified."
   ],
   "constraints": {
     "learning": "unsupervised",
@@ -43,22 +46,43 @@
   "checkpoint_policy": "Update at every conclusion, completed run or structural pivot; record the next discriminating question before continuation",
   "pipeline_helpers": "External ARIS run_state/watchdog helpers were not found; no background watchdog is claimed. Repository state and exact-run reservation are implemented locally.",
   "case_panel": "research-state/case_panel_v1.json",
-  "resource_status": "CUDA/NF4 tiny kernel passed; local idle job actually armed at2026-11-02T11:39:30Z. Host RAM below admission at start; no natural LM outputs yet. Read live_execution_state for current truth.",
+  "resource_status": "Full model ran all18 proposals and exited normally; no live H002 worker. Model resources have been released. Closed apps remain user-approved only; WPS need not be closed.",
   "user_resource_choice": "local_idle_automatic_run",
   "experiment_plan": "refine-logs/EXPERIMENT_PLAN.md",
-  "frozen_observation_run_id": "17882f108bcd7448ffa822fa0a134111b6552dd252578064c1ef05af3dc4807c",
-  "run_reservation_status": "checked_new_not_claimed_before_resource_admission",
-  "frozen_observation_run_spec": "research-state/protocols/H002_observation_run_spec_v2.json",
-  "live_execution_state": "outputs/research-goal-20261102/autostart-state.json",
+  "frozen_observation_run_id": "a5d336433cd1a04ce71962fb8500d4f9f0c8b0473a74f146e66302cbacb3e9a5",
+  "run_reservation_status": "completed_inconclusive_reusable_observations_reviewed",
+  "frozen_observation_run_spec": "research-state/protocols/H002_context_observation_run_spec_v1.json",
+  "live_execution_state": "outputs/h002-context-20261102/autostart-state.json",
   "local_idle_job": {
-    "pid_at_start": 31576,
-    "started_utc": "2026-11-02T11:39:30.426330+00:00",
-    "state": "outputs/research-goal-20261102/autostart-state.json",
-    "script": "outputs/research-goal-20261102/idle_launch.py",
+    "pid_at_start": 28236,
+    "started_utc": "2026-11-02T12:48:29.881269+00:00",
+    "state": "outputs/h002-context-20261102/autostart-state.json",
+    "script": "outputs/h002-context-20261102/idle_launch.py",
+    "stop_file": "outputs/h002-context-20261102/STOP_AUTORUN",
     "maximum_resource_wait_hours": 6,
     "poll_seconds": 30,
-    "stop_file": "outputs/research-goal-20261102/STOP_AUTORUN",
     "permanent_service": false,
-    "automatic_retries": false
-  }
+    "automatic_retries": false,
+    "status": "completed_observations_then_cpu_review"
+  },
+  "active_variant": "shared_pre_generation_context_candidate_answer_value_blind",
+  "live_progress_command": "python outputs/h002-context-20261102/progress.py",
+  "superseded_local_job": {
+    "pid": 31576,
+    "status": "cancelled_before_launch",
+    "claimed": false,
+    "language_model_calls": 0,
+    "reason": "Original-context omission was established from code; corrected before first natural inference, no model experiment repeated."
+  },
+  "code_releases": {
+    "active_observer": {
+      "files": 95,
+      "wheel_sha256": "697d35b288d3503bbd684ddcc138a495570f8946b7faa631811af126c5e16571",
+      "immutable_target": "outputs/h002-context-20261102/installed"
+    },
+    "original_cuda_environment_package": "old94-file package preserved; dedicated95-file target is selected via PYTHONPATH",
+    "cpu_evaluator": "Separate evaluation release/source identity; reused observer helpers must be compatible; no model rerun for evaluator changes"
+  },
+  "last_completed_run": "a5d336433cd1a04ce71962fb8500d4f9f0c8b0473a74f146e66302cbacb3e9a5",
+  "last_result": "docs/results/h002_proposal_qualification.json"
 }

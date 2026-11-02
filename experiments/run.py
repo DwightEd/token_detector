@@ -85,6 +85,11 @@ def parser() -> argparse.ArgumentParser:
     semantic.add_argument('--model-identity', type=Path, required=True, help='frozen model ID and model_files_sha256 JSON')
     semantic.add_argument('--admit-resources', action='store_true', help='explicit permission for gated local HF loading')
     semantic.add_argument('--output', type=Path, required=True)
+    semantic_eval = transfers.add_parser('evaluate-semantic', help='review a fully sealed semantic qualification without model calls or scalar scores')
+    semantic_eval.add_argument('--observations', type=Path, required=True)
+    semantic_eval.add_argument('--panel', type=Path, required=True)
+    semantic_eval.add_argument('--protocol', type=Path, required=True)
+    semantic_eval.add_argument('--output', type=Path, required=True)
     fusion_cache = transfers.add_parser('prepare-fusion', help='export verified historical R4/V3 caches without labels')
     fusion_cache.add_argument('--scores', type=Path, required=True)
     fusion_cache.add_argument('--native', type=Path, required=True)
@@ -256,6 +261,10 @@ def main() -> None:
             identity = data.read_json(args.model_identity)
             qualify(args.inputs, args.protocol, args.output,
                     HFGenerator(args.model, identity, admit_resources=True), identity)
+        elif args.transfer_stage == 'evaluate-semantic':
+            from .semantic_evaluation import evaluate
+
+            evaluate(args.observations, args.panel, args.output, args.protocol)
         elif args.transfer_stage == 'prepare-fusion':
             from .fusion_cache import export
 

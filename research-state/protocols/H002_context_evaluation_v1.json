@@ -1,0 +1,10 @@
+{
+  "schema": "semantic-qualification-evaluation-v1",
+  "purpose": "posthoc_review_only",
+  "required_panel_size": 18,
+  "whole_case_population": true,
+  "scalar_scores_created": false,
+  "model_calls_allowed": false,
+  "target_label_tuning_allowed": false,
+  "literal_answer_inequality_is_semantic_conflict": false
+}
