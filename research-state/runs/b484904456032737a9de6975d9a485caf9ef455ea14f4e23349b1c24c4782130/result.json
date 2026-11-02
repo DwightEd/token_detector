@@ -1,0 +1,173 @@
+{
+  "schema": 1,
+  "run_id": "b484904456032737a9de6975d9a485caf9ef455ea14f4e23349b1c24c4782130",
+  "completed_utc": "2026-11-02T18:39:30.609718+00:00",
+  "outcome": "inconclusive",
+  "conclusion": "All34/104 external NLI diagnostic cases exported after completecache/tokenizer validation. Exploratory character/native-sentence metrics, not adopted unsupervised method or historical BPE AUROC.",
+  "artifacts": [
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/complete.json",
+      "sha256": "ab91daf1916d1f9270014524f1c3a697858ecdb9c7f2400784f934d22717cc05"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/plan.json",
+      "sha256": "45ea503cd35e186b7cc202a30d1aa5222fd1c991a7ffac00be49244c8bacc6e6"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/protocol.json",
+      "sha256": "1648a563da6f3491ce0f51846bbe71f1fdd515f9a5d133125236e392ace91e4e"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/seal.json",
+      "sha256": "2c66c9bd6f39c46049f1063cfbe3c0ce5c1e6c52c1aa2e6124a3f98c1447f1a9"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/source_identity.json",
+      "sha256": "d8c3a1d7733f3ba73cf78f0a7fa9fc2b8ea466bf8faf046653b1d9393ccd8156"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/summary.json",
+      "sha256": "123ff2453352a81a12d12a248265147984b03aad337af7e62872e0f410243b93"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/000f21ac06aceb9cdd0575e82d0d85fc39bed0a7a1d71970ba1641666a44f530.json",
+      "sha256": "75fa17e9071d52bf77abe58a952fe743117f08026aa9290c41dddbd53e1f179b"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/0020a5f0369e6f342cbf1d709408b4c3257e4e6c79593089a18a8e0f23e23325.json",
+      "sha256": "88a6f91592f745b03d1ccbdafcf25380baa4ec6c918e50b85beaa478a26424d8"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/0026077b7f378e4e03e62610a1ffab055c5a01f137b3fefa38264302e11a9939.json",
+      "sha256": "2a3fc81af7b1787202ae126dcff8203391d85766ecf13a0ad2bfecfb199fa5fd"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/0756ab88c934d0e01157e3c6b9c9bd404ab8fd3d93de6fc3c7a127587a2d41f7.json",
+      "sha256": "be0a912aa7cb89e6fd10167e2104b2f87d0a43d70884d0b7f7dd12cad6808853"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/07ace2bfe32ccb0c38571ca4c96249b7f04f6b79e0f7afbde106cbfa1caefabf.json",
+      "sha256": "e5b5cb15be43975a406878d43897f7f8c840f0fba7288c08ded714946b90b750"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/0bc7101041f64555138651e574a4d92f840a1e1607a08873c5a323f47a6cf46b.json",
+      "sha256": "269d0b81752b1f89bb898becf8189531e28dfff6f65ec7f254f1e631a6e486e2"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/0c80ba4a99427cfdb9b84b7b256ad571acd09f2bc909d7f72ba9c5c0408bd2d1.json",
+      "sha256": "34a514f5a84ec089d6556577e4f6c39f1ff158bb24f66eb0061eb767a8b09aa6"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/10b5dbbfa21a1dc45e03e4a9ff3c751d7d6a0c34ca5f5e8be57df1ebb81eb810.json",
+      "sha256": "368d7ee71c588ce9c48cf2c6dc72e8a8c976cd9f41f86281084e77f00ab2731e"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/26a1ecc26ae95b2f984d708774ab6c1aba3b3008a887d0cff91b6a11d04109c3.json",
+      "sha256": "7ba6a731459d8874a50cc94e29ed6c80ae51567044bcae762204626eb190d0e6"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/2e1bf3fb5c46241ecdc87f094c7234f3e19cc3bf17e0c28ae0568ad66d43dfed.json",
+      "sha256": "49c62e11eccb64056aa078b217d3cabb3c5a3b686aa078512d426f098a468b6a"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/3990f7627043f80189ede1c5e41b450dcaf9dbe2f7120ea3543795e876bf55e8.json",
+      "sha256": "d300052ff4f37285065c0d4c48aa116f7699377510ddcc5070a60853686ec735"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/3db4c14be4185183bdc670b9089b081e5c7b704afe93056a0af4a9418148a545.json",
+      "sha256": "3284e6d25b5772882808ce15083002d307c7f877eb4883caa649d76c395245c6"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/612111a352a571cbed3927ec6f74948849bcc9fe8489bf4f0d6235afdc0a4ad7.json",
+      "sha256": "cecb8f16ed07fda2e5b745fdc8288cb41f0701e6feef5cee53d39ef4397f2e7e"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/743b807dadaa9d51dd493fdca41f97bb9e00603878b4f3560f47da8938e6bc30.json",
+      "sha256": "8e747bc660be46278ea6d88f98e4c05938122a4d36b8ca1030f242d578dc7669"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/763c60092dde03e23138807e26c0f65d0b5b0e6628cb2f76c5a15dff90422f7a.json",
+      "sha256": "b472176c366c854b54a54da8717b801472a01fc9b9de4baf5f24712dfd517c93"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/76ef26e99120640ffc22901edc79ac64863f452cd87a1222fa7d3b265c370c57.json",
+      "sha256": "3779507c2da9a19bba0a05fcde883e6c352db1906ac732ac1f8223a7b498fc34"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/7c1f689c149d16beb9e51faed58f5745d85f154c5eec2d8a65431fa32a130ff8.json",
+      "sha256": "598920fbb2be28736617f3cea9172073d8e5bed942543157c072d8d4e98b06ee"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/88c80f55bd21ee094db07e26e1e0941fbe0eb0f1749ebeaf7094e35d5be1a2f5.json",
+      "sha256": "e7005dbd9638a72b6e71c73fcf63674ba3822331dbf55e6d5bc0a7a2d4ac1892"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/953e992e78d8071041c1a73fa9d091b2e5332f7eb5e1541a296a2a83081895e8.json",
+      "sha256": "1cefcde2a57c716371f441a43ec6d02ae7d8a34eb00e183ebddebdd06268f028"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/95b2283a4f35963d225f8be528659310c06a0f63a368cdc4204305651cd927c7.json",
+      "sha256": "98e3542ba19f1cffdf7b704590f46aa658dd6f9a1d982c55ddea91b41dcde4df"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/a3be81b84a8cf2c600f81c67c73a5dc1c14081c7eadf93ece5b66770e2e0d618.json",
+      "sha256": "43488efa2042c76810e1b7499993fcd1eaed2d2050bfbb6f1cd7d84679adf55e"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/ab756bc98471b0ef36cd8e9f8086dcf90ba84903f1e9e25c7468e966d0dffbeb.json",
+      "sha256": "1330a1bbff6d877ca355a84c20273b76a2e0847067fde8d60c68ce49fdeeb819"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/b6224cab07fa8b8b246a0d75b7b314a5f838eca3c79dec9df6b88708d9a0d87e.json",
+      "sha256": "2c8a7ad6adfd77c597577d25574332ac8e4545ce992d33c4adcdc23573bc34da"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/b698d86c67a2cff80405bd47af322216c552fd3a52f9c58a70f7b3a3313895b1.json",
+      "sha256": "97e71c16566d549079bd729c85376064702b089cef399dde44dfcfefe72f57ad"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/c0f313e17150349b3ccdefc4728d2b3e41f6cdc6101f8b6b71d313e4e73299ae.json",
+      "sha256": "08b010f9b56377ae1bf351ee44f336552bd1d8b980444762bfcb9d42156ec6bd"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/cfc28356286dbc7b01347b0e42ed52a4f775d92a6e3777a051a2068e87a8246e.json",
+      "sha256": "83e670386a3a31ac8a60a75007934719baaa292a25e003df43abed90cf41671d"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/d1802ba29c33b050e0f56ec858f2d0a3fe62e4838ff5eb9af2b1b0a1586640ff.json",
+      "sha256": "57859f22425958283725aefad40bc171f78fe9cad6b075da042df0f17b271553"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/d3aa1e4dc94fc193d3b249df4312f56641e42ed8789841baab9584260bb1094f.json",
+      "sha256": "76915e6ab558e8498af07e432e998e654acfb6d6300b5ec44ff4f6b3d6f96393"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/d4c992883d2129e72928cb7fca98d6bacbe2de7bca321ec7d7095df5e10789f1.json",
+      "sha256": "e8598eb0c6afd717a941bb45a7a8e352901414d4d87f9cc0b368cdcefddb040a"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/d7cf29f04ec8c91e217196f84353bc287e906504a953886b7f882694d7032877.json",
+      "sha256": "80473eec435b69b2f579e5935ef38ffe88fbda2ce0d21f6ce6a8b60c5b76c66e"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/da16a462f05ac61431550988d1a6a6ef97e9e10166d8a7f5da8887dbfddd2d45.json",
+      "sha256": "5b2c952a52dea169115dd344c4b06bdf1f0ef1dc05800bbdd8946b98a14f983a"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/e15fce9db0cca21f6ad0327bfc3d4a5e371859ec5f79849768fde8400bc8e2b2.json",
+      "sha256": "418cd512bf31ad21007fdfc35594b3a22ef4e40f58c6d724589c00164b04a0ba"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/f1f74c4b1e3ecd00fd1997499cda3261d28e0ece07064955a84e2de42756f919.json",
+      "sha256": "0467d87ac2831d83e47a7db7f0df7b8aa1440b9f5cdf5a78da0a857e98e1df55"
+    },
+    {
+      "path": "outputs/h006-20261103/posthoc_review_v1/cases/f4988222bdf147132451ed96169d1263c89f1bfe4ee376908e8dde711a2b2930.json",
+      "sha256": "5bb1a2dc70396fc2e34d6d6351e313ce6c29f3182fb38e97167b9a8b5602b263"
+    },
+    {
+      "path": "outputs/h006-20261103/evaluation-admission-v1.json",
+      "sha256": "f3a860369bdcb9d843bd3c0b14ac3eaa738b775135d6d2614b79dc1726ae48ef"
+    }
+  ]
+}

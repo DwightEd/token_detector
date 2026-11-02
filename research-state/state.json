@@ -3,9 +3,9 @@
   "objective": "Mechanism-driven unsupervised hallucination detection improvement toward AUROC >= 0.8 on each of six primary tasks",
   "canonical_project": "D:/projects/research/token_detector",
   "goal_status": "not_achieved",
-  "phase": "H003_natural_and_controls_completed_H004_typed_source_proposed",
-  "active_hypothesis": "H004_TYPED_SOURCE_REPRESENTATION",
-  "next_question": "Does lossless typed source rendering improve null/False and natural structured-source verification beyond a null-semantics instruction alone? Freeze crossed controls before inference; reuse unchanged baselines; do not redo H003.",
+  "phase": "H006_diagnostic_completed_H007_controls_preparing",
+  "active_hypothesis": "H007_RELATION_RESPONSE_BURDEN",
+  "next_question": "Freeze new balanced burden controls, instrument and all requests before one actual observation run. Reuse H004/H005/H006 results; no targetlabel tuning or arbitrary fusion.",
   "known_fact_ids": [
     "F001",
     "F002",
@@ -20,21 +20,30 @@
     "F011",
     "F012",
     "F013",
-    "F014"
+    "F014",
+    "F015",
+    "F016",
+    "F017",
+    "F018",
+    "F019",
+    "F020"
   ],
   "do_not_repeat": [
     "Describing known FN/FP counts again without a new discriminating intervention",
     "Equal rank or arbitrary score-weight search",
     "Renaming local prefix reset or retrospective repair as a new observation",
     "Token-state/adaptive/persistence variants without a substantively changed hypothesis",
-    "Treating zero-coverage finite certificates as a successful or failed natural-data detector"
+    "Treating zero-coverage finite certificates as a successful or failed natural-data detector",
+    "Rerunning H004 typed serialization or H005 scope-only scoring on unchanged inputs under a new title",
+    "Using the posthoc gold-density unit oracle as detector scores or selecting methods/thresholds from pilot labels"
   ],
   "unresolved_assumptions": [
     "Original RAGTruth weight shards and original GPU backend lack complete provenance",
     "Whether target-slot-blind source reconstruction adds useful information beyond direct verification",
     "Whether natural claim/role proposal has enough reliable coverage without gold spans",
     "How to preserve legitimate arithmetic/units and handle missing original financial questions",
-    "H003 minimal relation sensitivity exists but natural errors/null ambiguity/valid arithmetic remain. No full token detector or six-task improvement established; H004 is unimplemented."
+    "H005 scope alone failed promotion; remaining semantic binding/arithmetic/label-bias/ranking causes are not identified by the character-only oracle bound.",
+    "External NLI changes training objective and source/context provision; its diagnostic cannot isolate Qwen architecture or original-generator causality."
   ],
   "constraints": {
     "learning": "unsupervised",
@@ -48,21 +57,23 @@
   "checkpoint_policy": "Update at every conclusion, completed run or structural pivot; record the next discriminating question before continuation",
   "pipeline_helpers": "External ARIS run_state/watchdog helpers were not found; no background watchdog is claimed. Repository state and exact-run reservation are implemented locally.",
   "case_panel": "research-state/case_panel_v1.json",
-  "resource_status": "16GiB installed RAM; approved Edge/Termius/Quark closure completed. H003 natural and controls both finished and released model resources. No live inference is claimed.",
+  "resource_status": "H005 and H006 observation/CPU review archives are sealed. Root owns H006 final interpretation and new H007 factorial-control preparation; no H005/H006 worker should be restarted.",
   "user_resource_choice": "local_idle_automatic_run",
   "experiment_plan": "refine-logs/EXPERIMENT_PLAN.md",
-  "run_reservation_status": "all_three_H003_registered_runs_complete_reusable",
-  "frozen_observation_run_spec": "research-state/protocols/H003_controls_observation_run_spec_v1.json",
-  "live_execution_state": "no_live_job_both_H003_groups_complete",
+  "run_reservation_status": "H005_and_H006_completed_do_not_duplicate_root_prepares_H007",
+  "frozen_observation_run_spec": null,
+  "live_execution_state": null,
   "local_idle_job": {
-    "status": "completed_observations_and_posthoc_review",
-    "state": "outputs/h003-controls-20261102/autostart-state.json",
-    "pid_at_start": 24272,
-    "automatic_retries": false,
-    "permanent_service": false
+    "pid": 45072,
+    "parent_pid": 7692,
+    "started_utc": "2026-11-02T18:38:45.876943+00:00",
+    "state": "outputs/h006-20261103/autostart-state.json",
+    "status": "observations_and_CPU_review_completed_historical_not_armed",
+    "armed": false,
+    "automatic_retries": false
   },
-  "active_variant": "next_proposed_lossless_typed_source_representation_not_implemented",
-  "live_progress_command": "Read results and RESUME; historical autostart-state is not liveness or pending evaluation",
+  "active_variant": "external_NLI_same104_units_max_source_chunk_entailment_diagnostic_pending",
+  "live_progress_command": "Read H005 results and RESUME; inspect root-owned H006 actual claim/PID/starttime before any new launch. Historical H005 autostart-state is not liveness.",
   "superseded_local_job": {
     "pid": 31576,
     "status": "cancelled_before_launch",
@@ -71,11 +82,7 @@
     "reason": "Original-context omission was established from code; corrected before first natural inference, no model experiment repeated."
   },
   "code_releases": {
-    "active_observer": {
-      "files": 98,
-      "wheel_sha256": "9c830a91e86ac732d9c0aeeaf2e6c06bffaecea3d20bdd6de224a664bde93e06",
-      "immutable_target": "outputs/h003-controls-20261102/installed"
-    },
+    "active_observer": null,
     "original_cuda_environment_package": "old94-file package preserved; dedicated95-file target is selected via PYTHONPATH",
     "cpu_evaluator": "Separate evaluation release/source identity; reused observer helpers must be compatible; no model rerun for evaluator changes",
     "natural_observer": {
@@ -89,17 +96,33 @@
       "commit": "4fed6e1",
       "wheel_sha256": "7c22a29112ba63a8f29f95526cc12c91b75e216607f20037d26d4e8628634eb1",
       "immutable_target": "outputs/h003-verdict-20261102/evaluator_installed"
+    },
+    "h005_observer": {
+      "files": 104,
+      "wheel_sha256": "ddbded83b3bfd3b05e053f29570aa41dcd81616f578932225e75cb87230c20d1",
+      "immutable_target": "outputs/h005-20261103/installed"
+    },
+    "h006_observer": {
+      "files": 107,
+      "wheel_sha256": "c11e4c3b912d906febf3ee39137130e18aac2b5fb9c68bb933f3d95539851c4d",
+      "immutable_target": "outputs/h006-20261103/installed",
+      "commit": "884d812"
+    },
+    "h006_cpu_evaluator": {
+      "files": 107,
+      "immutable_target": "outputs/h006-20261103/evaluator_installed",
+      "state": "completed_sealed"
     }
   },
-  "last_completed_run": "1dfd32b1cdf5ad6f389ee9b26eaaa9c4a1c96b497ae67d851d351996eca5688b",
-  "last_result": "docs/results/h003_constructed_controls.json",
+  "last_completed_run": "b484904456032737a9de6975d9a485caf9ef455ea14f4e23349b1c24c4782130",
+  "last_result": "docs/results/h005_focused_verdict.json",
   "previous_observation_run_id": "a5d336433cd1a04ce71962fb8500d4f9f0c8b0473a74f146e66302cbacb3e9a5",
   "goal_control_status": "blocked",
-  "goal_control_note": "get_goal returned blocked during this turn; user-authorized research progressed after resources became available. No API is available to resume the goal control; do not claim automatic continuations are active.",
-  "work_status": "authorized_current_checkpoint_complete_next_module_proposed",
-  "next_design": "research-state/TYPED_SOURCE_NEXT.md",
-  "frozen_observation_run_id": "1dfd32b1cdf5ad6f389ee9b26eaaa9c4a1c96b497ae67d851d351996eca5688b",
-  "last_updated_utc": "2026-11-02T14:51:46.317595+00:00",
+  "goal_control_note": "Legacy tool status remains blocked; user explicitly resumed research. Continue authorized work without asking for confirmation or treating legacy control status as a scientific/resource blocker.",
+  "work_status": "continuing_under_user_explicit_resume_do_not_stop",
+  "next_design": "refine-logs/h004-20261103/NEXT_MECHANISM.md",
+  "frozen_observation_run_id": null,
+  "last_updated_utc": "2026-11-02T18:42:55.613839+00:00",
   "completed_H003": {
     "natural_observer_run": "fa101d666cce73beefcb12cd5979b04fb51e2771a61f48e78f9232caecff968c",
     "natural_cpu_run": "29e82c69db9558ec05c7b868f10cfa58f06cc497864a0ecfebcefa6217a72b47",
@@ -108,5 +131,115 @@
     "constructed_forward_seconds": 12.58293690055143,
     "natural_result": "docs/results/h003_natural_verdict_qualification.json",
     "constructed_result": "docs/results/h003_constructed_controls.json"
+  },
+  "user_continuation_instruction": "继续迭代跑实验不要停",
+  "completed_H004": {
+    "observation": "163708a0cfed0a80cf2b35a7055933dcbab8d57c987e679d1a7169d43be8aaee",
+    "cpu": "f727c1d5218ab5f1583919d916cef2f099903360aa4916d00586811b524620b2",
+    "costs": {
+      "logical_requests": 816,
+      "unique_equivalent_observations": 444,
+      "new_forward_passes": 240,
+      "borrowed_unique_observations": 204,
+      "within_run_reused_artifacts": 186,
+      "input_rejected_artifacts": 0,
+      "new_forward_seconds": 99.96748640050646,
+      "new_input_tokens": 240906,
+      "output_tokens": 0,
+      "imported_forward_cost_is_not_new_compute": true
+    },
+    "transformed_cases": 3,
+    "all_cases": 34,
+    "all_arms": 4,
+    "decision": "not_promoted"
+  },
+  "full_task_inputs": {
+    "path": "outputs/full-input-inventory-20261103/inventory.json",
+    "primary_records": 3883,
+    "counts": {
+      "QA": 900,
+      "Summary": 900,
+      "Data2txt": 900,
+      "FinQA": 162,
+      "TATQA": 130,
+      "HalluRAG_answerable": 891
+    },
+    "pooled_HalluRAG": 1782,
+    "unavailable_HalluRAG": 891,
+    "context_admission_failures": 0,
+    "gold_read": false
+  },
+  "last_completed_job": {
+    "pid": 45072,
+    "parent_pid": 7692,
+    "started_utc": "2026-11-02T18:38:45.876943+00:00",
+    "state": "outputs/h006-20261103/autostart-state.json",
+    "status": "observations_and_CPU_review_completed_historical_not_armed",
+    "armed": false,
+    "automatic_retries": false
+  },
+  "completed_H005": {
+    "status": "completed_not_promoted",
+    "observation": "bedd217f55b341b2558de6f28820fd93dbb5f2b9ee02131c79bd0ad58f8f43be",
+    "cpu": "747970d9d6aabf87643ad58c2f9d951c3d2c6019fddbd7911fa3c43579c6691c",
+    "coverage": {
+      "original_cases": 34,
+      "whole_focuses": 34,
+      "unit_focuses": 104,
+      "flat_cases": 138,
+      "scored_focuses": 138,
+      "unknown_focuses": 0,
+      "unknown_units": 0,
+      "empty_responses": 0
+    },
+    "costs": {
+      "scope": "retained artifact lifetime; resume adds no repeated forwards",
+      "logical_requests": 828,
+      "unique_requests": 714,
+      "exact_request_reuses": 114,
+      "actual_forward_passes": 714,
+      "input_tokens_scored": 752910,
+      "output_tokens": 0,
+      "input_rejections": 0,
+      "seconds_forward": 286.0440772003494
+    },
+    "result": "docs/results/h005_focused_verdict.json",
+    "review": "outputs/h005-20261103/posthoc_review_v1",
+    "observer_seal_sha256": "2ed8b93aa29585018ddbf7a568083f2ea9427b24df6c8101adc3b4bae108e024",
+    "review_seal_sha256": "ea8825b1106d25b15fa146e88a96953210edcd8194330973b4d268d8b29d4cbc",
+    "unit_ceiling_audit": "outputs/h005-20261103/unit-ceiling-audit.json",
+    "used_oracle_for_predictions": false,
+    "source_snapshots": {
+      "observer_commit": "eabfffc",
+      "cpu_commit": "98007cf",
+      "pushed": false
+    }
+  },
+  "completed_H006_observation": {
+    "status": "evaluation_sealed_pending_root_interpretation",
+    "owner": "root",
+    "observation": "77b26cefda05c920159b46866ee94a8aa49f901fb30072a9c0c5e9d19606b849",
+    "cpu": "b484904456032737a9de6975d9a485caf9ef455ea14f4e23349b1c24c4782130",
+    "coverage": {
+      "original_cases": 34,
+      "units": 104,
+      "scored_units": 104,
+      "unknown_units": 0
+    },
+    "costs": {
+      "logical_pairs": 144,
+      "unique_pairs": 144,
+      "exact_pair_reuses": 0,
+      "actual_forward_passes": 18,
+      "input_tokens": 48677,
+      "padded_input_tokens": 62576,
+      "seconds": 2.37712509999983
+    },
+    "observation_path": "outputs/h006-20261103/nli_v1",
+    "review_path": "outputs/h006-20261103/posthoc_review_v1",
+    "observation_spec": "research-state/protocols/H006_nli_observation_run_spec_v1.json",
+    "same_context_as_Qwen": false,
+    "main_method_adopted": false,
+    "target_label_selection_allowed": false
   }
 }

@@ -1,0 +1,21 @@
+{
+  "schema": "nli-evaluation-v1",
+  "purpose": "posthoc_exploratory_evaluation",
+  "required_cases": 34,
+  "required_units": 104,
+  "natural_cases": 18,
+  "constructed_cases": 16,
+  "model_calls_allowed": false,
+  "tokenizer_only_validation": true,
+  "target_label_selection_allowed": false,
+  "threshold_sweeps_allowed": false,
+  "fitted_calibration_allowed": false,
+  "unknown_risk": 1.0,
+  "natural_axis": "released_token_span_character_axis_or_native_sentence_axis",
+  "sentence_reduction": "maximum_overlapping_unit_risk",
+  "controls_reduction": "maximum_all_unit_risks_empty_response_zero",
+  "document_score_name": "document_max_unit_broadcast",
+  "token_label_rewrites_allowed": false,
+  "hypothesis_id": "H006_EXTERNAL_NLI_DIAGNOSTIC",
+  "notes": "All frozen external NLI cases preserved; character/native-sentence diagnostic only. Document-max-unit broadcast is descriptive, not a matched whole-answer inference. No fitting/sweeps/selection."
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "focused-verdict-evaluation-v1",
+  "purpose": "posthoc_exploratory_evaluation",
+  "required_cases": 34,
+  "natural_cases": 18,
+  "constructed_cases": 16,
+  "modes": [
+    "whole",
+    "unit"
+  ],
+  "permutations": 6,
+  "whole_case_population": true,
+  "model_calls_allowed": false,
+  "tokenizer_calls_allowed": false,
+  "target_label_selection_allowed": false,
+  "threshold_sweeps_allowed": false,
+  "fitted_calibration_allowed": false,
+  "unknown_risk": 1.0,
+  "natural_axis": "released_token_span_character_axis_or_native_sentence_axis",
+  "sentence_reduction": "maximum_overlapping_unit_risk",
+  "controls_reduction": "maximum_all_unit_risks_empty_response_zero",
+  "token_label_rewrites_allowed": false,
+  "hypothesis_id": "H005_EXACT_UNIT_FOCUS",
+  "notes": "Matched whole/unit focus preserved; exploratory character or native-sentence metrics only, not historicalBPEtokenAUROC; no targetlabelselection or sweeps."
+}

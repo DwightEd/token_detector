@@ -1,0 +1,25 @@
+{
+  "schema": "typed-verdict-evaluation-v1",
+  "purpose": "posthoc_review_only",
+  "required_cases": 34,
+  "natural_cases": 18,
+  "constructed_cases": 16,
+  "conditions": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "permutations": 6,
+  "whole_case_population": true,
+  "model_calls_allowed": false,
+  "tokenizer_calls_allowed": false,
+  "token_score_projection_allowed": false,
+  "auroc_allowed": false,
+  "automatic_natural_accuracy_allowed": false,
+  "target_label_selection_allowed": false,
+  "threshold_sweeps_allowed": false,
+  "fitted_calibration_allowed": false,
+  "hypothesis_id": "H004_TYPED_SOURCE_REPRESENTATION",
+  "notes": "All4arms preserved, B primary expression factor, C instruction control, D interaction; no arm selection on target labels or automatic natural accuracy."
+}

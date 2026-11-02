@@ -1,0 +1,589 @@
+{
+  "schema": "h005-focused-verdict-result-v1",
+  "created_utc": "2026-11-02T18:41:17.273138+00:00",
+  "status": "completed_not_promoted",
+  "observation_run_id": "bedd217f55b341b2558de6f28820fd93dbb5f2b9ee02131c79bd0ad58f8f43be",
+  "cpu_review_run_id": "747970d9d6aabf87643ad58c2f9d951c3d2c6019fddbd7911fa3c43579c6691c",
+  "observation_seal_sha256": "2ed8b93aa29585018ddbf7a568083f2ea9427b24df6c8101adc3b4bae108e024",
+  "review_seal_sha256": "ea8825b1106d25b15fa146e88a96953210edcd8194330973b4d268d8b29d4cbc",
+  "original_inputs_sha256": "99a649a191001104f8de686f8ee4578071c453b2a6bf84063ef220a8f8b1d6bc",
+  "source_releases": {
+    "observer_files": 104,
+    "observer_wheel_sha256": "ddbded83b3bfd3b05e053f29570aa41dcd81616f578932225e75cb87230c20d1",
+    "root_reported_observer_snapshot_commit": "eabfffc",
+    "cpu_files": 105,
+    "root_reported_cpu_snapshot_commit": "98007cf",
+    "snapshots_pushed": false
+  },
+  "design": {
+    "population": "same18 natural plus16constructed originals",
+    "whole_focuses": 34,
+    "exact_units": 104,
+    "logical_cases": 138,
+    "label_assignments_per_case": 6,
+    "same_focus_prompt_source_and_full_original_context": true,
+    "unit_risk": "1-minus-uniform-six-supported",
+    "whole_control_is_new_matched_focus_prompt": true,
+    "oldH003_whole_observations_imported": false,
+    "free_offsets_or_claim_rewriting": false,
+    "target_label_method_selection": false
+  },
+  "summary": {
+    "whole_case_denominator": 34,
+    "natural": {
+      "whole_case_denominator": 18,
+      "cohorts": {
+        "QA::token": {
+          "cohort": "QA",
+          "original_annotation_granularity": "token",
+          "cases": 2,
+          "annotation_coverage": {
+            "complete": 2
+          },
+          "denominator_granularity": "character",
+          "response_characters": 1103,
+          "released_span_covered_characters": 240,
+          "outside_released_span_characters": 863,
+          "eval_axis": "original_unicode_characters_from_released_token_spans",
+          "historical_bpe_metrics_or_point8_target_comparison_allowed": false,
+          "whole": {
+            "evaluation_units": 1103,
+            "known_units": 1103,
+            "known_positive": 240,
+            "known_negative": 863,
+            "missing_label_units": 0,
+            "unknown_score_units": 0,
+            "unknown_score_known_label_units": 0,
+            "character_auroc": 0.6582174584781768,
+            "character_average_precision": 0.2913934322177915
+          },
+          "unit": {
+            "evaluation_units": 1103,
+            "known_units": 1103,
+            "known_positive": 240,
+            "known_negative": 863,
+            "missing_label_units": 0,
+            "unknown_score_units": 0,
+            "unknown_score_known_label_units": 0,
+            "character_auroc": 0.36679219775975286,
+            "character_average_precision": 0.2128117851099186
+          }
+        },
+        "Summary::token": {
+          "cohort": "Summary",
+          "original_annotation_granularity": "token",
+          "cases": 2,
+          "annotation_coverage": {
+            "complete": 2
+          },
+          "denominator_granularity": "character",
+          "response_characters": 1659,
+          "released_span_covered_characters": 128,
+          "outside_released_span_characters": 1531,
+          "eval_axis": "original_unicode_characters_from_released_token_spans",
+          "historical_bpe_metrics_or_point8_target_comparison_allowed": false,
+          "whole": {
+            "evaluation_units": 1659,
+            "known_units": 1659,
+            "known_positive": 128,
+            "known_negative": 1531,
+            "missing_label_units": 0,
+            "unknown_score_units": 0,
+            "unknown_score_known_label_units": 0,
+            "character_auroc": 0.7086871325930764,
+            "character_average_precision": 0.12549019607843137
+          },
+          "unit": {
+            "evaluation_units": 1659,
+            "known_units": 1659,
+            "known_positive": 128,
+            "known_negative": 1531,
+            "missing_label_units": 0,
+            "unknown_score_units": 0,
+            "unknown_score_known_label_units": 0,
+            "character_auroc": 0.43860222077073807,
+            "character_average_precision": 0.12955465587044535
+          }
+        },
+        "Data2txt::token": {
+          "cohort": "Data2txt",
+          "original_annotation_granularity": "token",
+          "cases": 3,
+          "annotation_coverage": {
+            "complete": 3
+          },
+          "denominator_granularity": "character",
+          "response_characters": 3452,
+          "released_span_covered_characters": 409,
+          "outside_released_span_characters": 3043,
+          "eval_axis": "original_unicode_characters_from_released_token_spans",
+          "historical_bpe_metrics_or_point8_target_comparison_allowed": false,
+          "whole": {
+            "evaluation_units": 3452,
+            "known_units": 3452,
+            "known_positive": 409,
+            "known_negative": 3043,
+            "missing_label_units": 0,
+            "unknown_score_units": 0,
+            "unknown_score_known_label_units": 0,
+            "character_auroc": 0.6022045867424295,
+            "character_average_precision": 0.151541865832268
+          },
+          "unit": {
+            "evaluation_units": 3452,
+            "known_units": 3452,
+            "known_positive": 409,
+            "known_negative": 3043,
+            "missing_label_units": 0,
+            "unknown_score_units": 0,
+            "unknown_score_known_label_units": 0,
+            "character_auroc": 0.7127553156187555,
+            "character_average_precision": 0.3349471540101038
+          }
+        },
+        "FinQA::token": {
+          "cohort": "FinQA",
+          "original_annotation_granularity": "token",
+          "cases": 2,
+          "annotation_coverage": {
+            "complete": 2
+          },
+          "denominator_granularity": "character",
+          "response_characters": 397,
+          "released_span_covered_characters": 29,
+          "outside_released_span_characters": 368,
+          "eval_axis": "original_unicode_characters_from_released_token_spans",
+          "historical_bpe_metrics_or_point8_target_comparison_allowed": false,
+          "whole": {
+            "evaluation_units": 397,
+            "known_units": 397,
+            "known_positive": 29,
+            "known_negative": 368,
+            "missing_label_units": 0,
+            "unknown_score_units": 0,
+            "unknown_score_known_label_units": 0,
+            "character_auroc": 0.48655359820089955,
+            "character_average_precision": 0.07129364229164455
+          },
+          "unit": {
+            "evaluation_units": 397,
+            "known_units": 397,
+            "known_positive": 29,
+            "known_negative": 368,
+            "missing_label_units": 0,
+            "unknown_score_units": 0,
+            "unknown_score_known_label_units": 0,
+            "character_auroc": 0.6601386806596702,
+            "character_average_precision": 0.1911659283708272
+          }
+        },
+        "TATQA::token": {
+          "cohort": "TATQA",
+          "original_annotation_granularity": "token",
+          "cases": 4,
+          "annotation_coverage": {
+            "complete": 4
+          },
+          "denominator_granularity": "character",
+          "response_characters": 664,
+          "released_span_covered_characters": 27,
+          "outside_released_span_characters": 637,
+          "eval_axis": "original_unicode_characters_from_released_token_spans",
+          "historical_bpe_metrics_or_point8_target_comparison_allowed": false,
+          "whole": {
+            "evaluation_units": 664,
+            "known_units": 664,
+            "known_positive": 27,
+            "known_negative": 637,
+            "missing_label_units": 0,
+            "unknown_score_units": 0,
+            "unknown_score_known_label_units": 0,
+            "character_auroc": 0.7466422466422465,
+            "character_average_precision": 0.08319849132917176
+          },
+          "unit": {
+            "evaluation_units": 664,
+            "known_units": 664,
+            "known_positive": 27,
+            "known_negative": 637,
+            "missing_label_units": 0,
+            "unknown_score_units": 0,
+            "unknown_score_known_label_units": 0,
+            "character_auroc": 0.7466422466422467,
+            "character_average_precision": 0.08319849132917176
+          }
+        },
+        "HalluRAG::sentence": {
+          "cohort": "HalluRAG",
+          "original_annotation_granularity": "sentence",
+          "cases": 5,
+          "annotation_coverage": {
+            "annotated_sentences": 5
+          },
+          "denominator_granularity": "sentence",
+          "response_characters": 2077,
+          "released_span_covered_characters": 2077,
+          "outside_released_span_characters": 0,
+          "eval_axis": "native_released_sentence_spans",
+          "historical_bpe_metrics_or_point8_target_comparison_allowed": false,
+          "whole": {
+            "evaluation_units": 18,
+            "known_units": 18,
+            "known_positive": 6,
+            "known_negative": 12,
+            "missing_label_units": 0,
+            "unknown_score_units": 0,
+            "unknown_score_known_label_units": 0,
+            "sentence_auroc": 0.611111111111111,
+            "sentence_average_precision": 0.42121212121212126
+          },
+          "unit": {
+            "evaluation_units": 18,
+            "known_units": 18,
+            "known_positive": 6,
+            "known_negative": 12,
+            "missing_label_units": 0,
+            "unknown_score_units": 0,
+            "unknown_score_known_label_units": 0,
+            "sentence_auroc": 0.625,
+            "sentence_average_precision": 0.5992965367965368
+          }
+        }
+      },
+      "exploratory_only": true,
+      "pooled_mixed_granularity_metric_created": false,
+      "note": "Exploratory character metrics are not historical BPE-token metrics or evidence toward the six-task 0.8 target. Token-span complements are negative only with released complete coverage; sentence labels retain native units."
+    },
+    "controls": {
+      "denominator": 16,
+      "whole": {
+        "evaluation_units": 16,
+        "known_units": 16,
+        "known_positive": 7,
+        "known_negative": 9,
+        "missing_label_units": 0,
+        "unknown_score_units": 0,
+        "unknown_score_known_label_units": 0,
+        "auroc": 0.7936507936507936,
+        "ap": 0.811139455782313
+      },
+      "unit": {
+        "evaluation_units": 16,
+        "known_units": 16,
+        "known_positive": 7,
+        "known_negative": 9,
+        "missing_label_units": 0,
+        "unknown_score_units": 0,
+        "unknown_score_known_label_units": 0,
+        "auroc": 0.7936507936507936,
+        "ap": 0.811139455782313
+      },
+      "pairs": [
+        {
+          "pair_id": "01",
+          "ids": [
+            "ccv1:01:a",
+            "ccv1:01:b"
+          ],
+          "positive_minus_supported_risk": {
+            "whole": 0.3859848276244866,
+            "unit": 0.3859848276244866
+          },
+          "descriptive_only": true
+        },
+        {
+          "pair_id": "02",
+          "ids": [
+            "ccv1:02:a",
+            "ccv1:02:b"
+          ],
+          "positive_minus_supported_risk": {
+            "whole": 0.1364441049055245,
+            "unit": 0.1364441049055245
+          },
+          "descriptive_only": true
+        },
+        {
+          "pair_id": "03",
+          "ids": [
+            "ccv1:03:a",
+            "ccv1:03:b"
+          ],
+          "positive_minus_supported_risk": {
+            "whole": 0.7988265248858466,
+            "unit": 0.5031472537828734
+          },
+          "descriptive_only": true
+        },
+        {
+          "pair_id": "04",
+          "ids": [
+            "ccv1:04:a",
+            "ccv1:04:b"
+          ],
+          "positive_minus_supported_risk": {
+            "whole": 0.4317158394428319,
+            "unit": 0.4317158394428319
+          },
+          "descriptive_only": true
+        },
+        {
+          "pair_id": "05",
+          "ids": [
+            "ccv1:05:a",
+            "ccv1:05:b"
+          ],
+          "positive_minus_supported_risk": {
+            "whole": 0.4728064791167881,
+            "unit": 0.4728064791167881
+          },
+          "descriptive_only": true
+        },
+        {
+          "pair_id": "06",
+          "ids": [
+            "ccv1:06:a",
+            "ccv1:06:b"
+          ],
+          "positive_minus_supported_risk": {
+            "whole": -0.2639776084380836,
+            "unit": -0.2639776084380836
+          },
+          "descriptive_only": true
+        },
+        {
+          "pair_id": "07",
+          "ids": [
+            "ccv1:07:a",
+            "ccv1:07:b"
+          ],
+          "positive_minus_supported_risk": {
+            "whole": 0.5946248695314529,
+            "unit": 0.5946248695314529
+          },
+          "descriptive_only": true
+        },
+        {
+          "pair_id": "08",
+          "ids": [
+            "ccv1:08:a",
+            "ccv1:08:b"
+          ],
+          "positive_minus_supported_risk": {
+            "whole": null,
+            "unit": null
+          },
+          "descriptive_only": true
+        }
+      ],
+      "truth": "construction only: supported=0; conflict/not_determined=1",
+      "empty_response_unit_risk": 0.0
+    },
+    "costs": {
+      "scope": "retained artifact lifetime; resume adds no repeated forwards",
+      "logical_requests": 828,
+      "unique_requests": 714,
+      "exact_request_reuses": 114,
+      "actual_forward_passes": 714,
+      "input_tokens_scored": 752910,
+      "output_tokens": 0,
+      "input_rejections": 0,
+      "seconds_forward": 286.0440772003494
+    },
+    "coverage": {
+      "original_cases": 34,
+      "whole_focuses": 34,
+      "unit_focuses": 104,
+      "flat_cases": 138,
+      "scored_focuses": 138,
+      "unknown_focuses": 0,
+      "unknown_units": 0,
+      "empty_responses": 0
+    },
+    "model_calls": 0,
+    "tokenizer_calls": 0,
+    "target_label_selection_performed": false,
+    "threshold_sweeps": 0,
+    "method_promoted": false,
+    "six_task_performance_claim": false,
+    "limitations": [
+      "Text units are deterministic character partitions, not complete atomic claims.",
+      "Pronouns, cross-unit dependencies, abbreviations and quoted speech can impair units.",
+      "Full response context resolves references; only the designated source supplies facts.",
+      "Conditional-label risks are uncalibrated diagnostics, not hallucination posteriors.",
+      "Broadcasting unit risk to tokens cannot locate errors within a multi-claim unit.",
+      "Unknown risk 1 is a conservative engineering fallback, not a model judgment."
+    ]
+  },
+  "unit_ceiling_audit": {
+    "scope": "posthoc CHARACTER-axis bound only on13alreadyreleased naturalcases",
+    "excluded_native_sentence_cases": 5,
+    "already_released_gold_used_for_audit": true,
+    "used_for_predictions": false,
+    "oracle_is_detector_score": false,
+    "target_label_method_selection": false,
+    "parameter_tuning_performed": false,
+    "cohorts": [
+      {
+        "cohort": "QA",
+        "axis": "CHARACTER",
+        "cases": 2,
+        "positive_characters": 240,
+        "negative_characters": 863,
+        "unknown_characters": 0,
+        "units": 15,
+        "mixed_units": 2,
+        "observed_whole_character_auroc": 0.6582174584781768,
+        "observed_unit_character_auroc": 0.36679219775975286,
+        "evaluation_only_oracle_ceiling": 0.9954084588644264,
+        "verifier_ranking_gap": 0.6286162611046735,
+        "partition_loss": 0.004591541135573585
+      },
+      {
+        "cohort": "Summary",
+        "axis": "CHARACTER",
+        "cases": 2,
+        "positive_characters": 128,
+        "negative_characters": 1531,
+        "unknown_characters": 0,
+        "units": 15,
+        "mixed_units": 1,
+        "observed_whole_character_auroc": 0.7086871325930764,
+        "observed_unit_character_auroc": 0.43860222077073807,
+        "evaluation_only_oracle_ceiling": 0.9996734160679295,
+        "verifier_ranking_gap": 0.5610711952971914,
+        "partition_loss": 0.0003265839320705233
+      },
+      {
+        "cohort": "Data2txt",
+        "axis": "CHARACTER",
+        "cases": 3,
+        "positive_characters": 409,
+        "negative_characters": 3043,
+        "unknown_characters": 0,
+        "units": 28,
+        "mixed_units": 7,
+        "observed_whole_character_auroc": 0.6022045867424295,
+        "observed_unit_character_auroc": 0.7127553156187555,
+        "evaluation_only_oracle_ceiling": 0.9711486621666464,
+        "verifier_ranking_gap": 0.2583933465478909,
+        "partition_loss": 0.028851337833353585
+      },
+      {
+        "cohort": "FinQA",
+        "axis": "CHARACTER",
+        "cases": 2,
+        "positive_characters": 29,
+        "negative_characters": 368,
+        "unknown_characters": 0,
+        "units": 3,
+        "mixed_units": 2,
+        "observed_whole_character_auroc": 0.48655359820089955,
+        "observed_unit_character_auroc": 0.6601386806596702,
+        "evaluation_only_oracle_ceiling": 0.842859820089955,
+        "verifier_ranking_gap": 0.18272113943028478,
+        "partition_loss": 0.15714017991004503
+      },
+      {
+        "cohort": "TATQA",
+        "axis": "CHARACTER",
+        "cases": 4,
+        "positive_characters": 27,
+        "negative_characters": 637,
+        "unknown_characters": 0,
+        "units": 7,
+        "mixed_units": 3,
+        "observed_whole_character_auroc": 0.7466422466422465,
+        "observed_unit_character_auroc": 0.7466422466422467,
+        "evaluation_only_oracle_ceiling": 0.8569974998546427,
+        "verifier_ranking_gap": 0.11035525321239603,
+        "partition_loss": 0.14300250014535731
+      }
+    ],
+    "toy_check": {
+      "cells": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "permutations_checked": 6,
+      "optimum_exact": "49/72",
+      "optimum": 0.6805555555555556,
+      "best_low_to_high_orders": [
+        [
+          1,
+          2,
+          0
+        ]
+      ],
+      "density_order": [
+        1,
+        2,
+        0
+      ],
+      "passed": true
+    },
+    "proof": "For adjacent low-to-high cells i,j, swapping changes AUC by (p_i*n_j-p_j*n_i)/(P*N). Its sign is the density difference, so ascending p/(p+n) is optimal; equal densities tie without loss. Within-cell positive-negative ties are unavoidable."
+  },
+  "finding": "Matched exact-unit focus is mixed rather than uniformly helpful: QA/Summary characterAUROC decline, Data2txt/FinQA improve, TATQA effectivelyunchanged, HalluRAG native-sentenceAUROC0.611111to0.625. Scopealone doesnot supportpromotion. Highposthoc fixedpartition ceilings show substantialremaining rankingheadroom, not a specificcausal failuremechanism.",
+  "decision": "Keep H005 completed_not_promoted, preservebothmodes/allcases, no best-taskwinnerenvelope or retuning onpilotgold.",
+  "limitations": [
+    "Exposed18natural/16constructed exploratorypanel; notnewconfirmationdata.",
+    "FivecohortsuseUnicodecharacteraxis fromreleasedtoken spans; HalluRAGusesnative18sentences across5cases. Theseare nothistoricalBPEtoken metrics or six-task0.8evidence.",
+    "No pooledmixed-granularitymetric, targetlabeltraining, thresholdsearch, fittedcalibration or methodselection.",
+    "Oracle usesgoldposthoc; neverruntimepredictions and no sentenceceiling inferred.",
+    "Scope changesobserverdecisiontarget; itdoesnot identifyoriginalgenerator attention/prefix/internalstate causes."
+  ],
+  "next_diagnostic": {
+    "hypothesis": "H006_EXTERNAL_NLI_DIAGNOSTIC",
+    "status_at_write": "evaluation_sealed_pending_root_interpretation",
+    "owner": "root",
+    "note": "Same34/104units with externallyMNLI/FEVER-NLI/ANLI-supervised NLI source-premise/unit-hypothesis. ContextdiffersfromQwen, so notmatched-contextcausalcontrol oradoptedmainmethod. RootrecordsfinalH006evaluation separately."
+  },
+  "report_generation": {
+    "review_seal_members_verified": 39,
+    "audit_input_receipts_verified": true,
+    "new_model_calls": 0,
+    "new_tokenizer_calls": 0,
+    "predictions_or_metrics_recomputed": false
+  },
+  "evidence": [
+    {
+      "path": "outputs/h005-20261103/posthoc_review_v1/summary.json",
+      "sha256": "9d49df092133bc59dedf16152616860933a0a97fab4a002df9f2fd23f620862c"
+    },
+    {
+      "path": "outputs/h005-20261103/posthoc_review_v1/complete.json",
+      "sha256": "0dc608d66b41ddc6b71af529c04b8c056a7794827641149272fda4caeeacdc06"
+    },
+    {
+      "path": "outputs/h005-20261103/posthoc_review_v1/plan.json",
+      "sha256": "1bdbecac98c7d1abc049dcef0a8383f4a26962a16880da2b09235e9cb510f50f"
+    },
+    {
+      "path": "outputs/h005-20261103/posthoc_review_v1/seal.json",
+      "sha256": "ea8825b1106d25b15fa146e88a96953210edcd8194330973b4d268d8b29d4cbc"
+    },
+    {
+      "path": "outputs/h005-20261103/focused_v1/seal.json",
+      "sha256": "2ed8b93aa29585018ddbf7a568083f2ea9427b24df6c8101adc3b4bae108e024"
+    },
+    {
+      "path": "outputs/h005-20261103/unit-ceiling-audit.json",
+      "sha256": "d563f5b95a68e8e0c6471a2c557dda74974d02328de4ecd7e5d00ed2002d6450"
+    },
+    {
+      "path": "outputs/h005-20261103/unit-ceiling-audit.py",
+      "sha256": "6bad44d38d6bc72f62b70d6afefc802a8a00bc001d6c32fbd6665e3b6d4f4dee"
+    }
+  ]
+}

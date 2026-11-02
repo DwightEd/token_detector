@@ -1,34 +1,31 @@
-# 恢复入口：H003两组已完成，下一项只检验来源类型表达
+# 当前恢复：H006 诊断已完成，H007 新关系×回答负担控制正在准备
 
-项目 `D:/projects/research/token_detector`。六任务分别AUROC≥0.8未达成；无监督，gold只用于封存后的评价与事后诊断，不训练、扫权重/阈值或挑任务赢家。用户本轮授权的资源处理和研究已执行。`get_goal`仍返回旧`blocked`控制状态，API不能自行恢复；不要声称自动续跑已开启，也不要另建目标覆盖旧目标。
+用户要求持续推进；六任务各 0.8 尚未达成。H006 全部预测和 CPU 评价已封存，结果 docs/results/h006_external_nli.{md,json}，F020。QA/Summary/Data/Fin/TAT 字符 AUROC .728655/.820705/.732662/.660139/.580005；Hallu 原生句子 .736111。它是使用外部监督训练的诊断基线，不是已采用无监督主方法或完整任务成绩。04表格交换仍反向，合法80.8推导被误判冲突而直接引用可识别；不能重跑旧面板或挑任务赢家。
 
-## 已有证据，不重复消耗模型
+当前 H007 为既定 NEXT_MECHANISM 第2比较的新控制：2关系×2词汇×2来源方向×2回答方向×3负担=48答，matched whole/首个自动单元=96逻辑case。来源始终含同样12个正确无关事实，回答增加0/4/12正确干扰句；目标句首部固定，比较关系分离和交互效应。资格代码和生成器正由各agent实现，root准备CPU reader/CLI/统一109文件wheel；尚未宣称冻结、模型调用或结果。重启前必须查最新spec/claim/PID，不能重复启动。
 
-- H002：18次自由提议，8个合法frame均无slot；来源direct/blind/leaky各0调用。位置与角色接口失败，核心来源重建未测试。F012及[结果](../docs/results/h002_proposal_qualification.json)为准，不补输出、不重跑。
-- H003自然：原18完整答、108前向已封存及CPU复核，前向41.48秒。18例无一在全部标签分配下语义argmax一致；Data2txt等存在高支持分放过错误。3个独立助手盲复核保持歧义，不是新增benchmark gold。见F013与[自然结果](../docs/results/h003_natural_verdict_qualification.md)。
-- H003控制：16答/8对、96前向12.58秒，完整封存及复核。三类argmax11/16，6/7支持差方向正确；六个同词袋对五正一反。null被当False；合法80.8计算判为证据不足，直接写出结果后支持。见F014与[控制结果](../docs/results/h003_constructed_controls.md)。不是自然AUROC或原始生成因果证明。
+辅助7B公共量化参考仅在下载：outputs/larger-reference-readiness-20261103/receipt-v2.json，parent33404、02:40:10北京启动；不是模型已可运行或已有效。旧v1工程失败回执保留；v2严格计算剩余下载量+20GiB+512MiB空间，.part原子rename，无覆盖/无自动重试。当前主实验不依赖下载完成。
 
-下一条问题：保留全部字段路径/类型的来源表达，能否改善null语义及自然结构化来源错误，还是仅增加规则提醒有效？[H004交叉对照](TYPED_SOURCE_NEXT.md)已设计，未实现/运行。只按输入语法处理；表达×规则四条件，不按gold挑选。算术执行和盲重建保持后续独立假设，不同时堆模块。
+以下为此前恢复记录，当前状态由上面及最新运行工件覆盖：
 
-## 运行、版本与恢复边界
+# 当前恢复：H005 不晋升，H006 已封存，主线程整理结果并准备 H007
 
-所有H002/H003 worker已完成；历史autostart-state的observations_sealed_not_evaluated只描述观察阶段，不代表CPU评价没做或进程活着。不要恢复31576、28236、62168或24272。模型资源已释放，不再关闭应用。
+用户要求持续迭代，不因旧 goal 工具的 blocked 状态停止或重问许可。目标仍是六项主任务各 AUROC≥0.8；无监督约束、先冻结评分再评价、禁止 gold 训练/调参/选臂保持。已暴露面板永远是探索数据，不能重命名或重分组为新确认集。
 
-| 已完成运行 | 完整ID | 精确源码/只读目标 |
-|---|---|---|
-| H003自然观察 | `fa101d666cce73beefcb12cd5979b04fb51e2771a61f48e78f9232caecff968c` | 97文件，Git `91ae38f`，outputs/h003-verdict-20261102/installed |
-| 自然CPU复核 | `29e82c69db9558ec05c7b868f10cfa58f06cc497864a0ecfebcefa6217a72b47` | 98文件，Git `4fed6e1`，同目录evaluator_installed |
-| 构造观察 | `1dfd32b1cdf5ad6f389ee9b26eaaa9c4a1c96b497ae67d851d351996eca5688b` | 98文件，outputs/h003-controls-20261102/installed |
+H005 已完成且不晋升。固定自然18+构造16=34答，匹配整答34+精确单元104=138逻辑case、828逻辑请求，实际714前向、114精确复用、286.044077秒、752910输入token；无拒绝、unknown或空回答。观察 run `bedd217f55b341b2558de6f28820fd93dbb5f2b9ee02131c79bd0ad58f8f43be`，CPU run `747970d9d6aabf87643ad58c2f9d951c3d2c6019fddbd7911fa3c43579c6691c`。原观察104文件目标和单独105文件CPU目标保持，不因文档或评价器变更重跑。
 
-原CUDA环境94包、H00295包、H00397/98目标分别保留。不能拿当前helper误判旧缓存后要求重跑模型；恢复对应只读reader。自然观察与CPU源码逐字节发布在不同commit，控制人口改动另行提交。详见state.json与verdict_qualification_validation.json。
+完整结果见 [H005 报告](../docs/results/h005_focused_verdict.md) 和 JSON；事实 F016/F017。字符轴 whole→unit AUROC：QA .658217→.366792、Summary .708687→.438602、Data2txt .602205→.712755、FinQA .486554→.660139、TATQA .746642→.746642；HalluRAG 原生18句/5答 .611111→.625。构造16答两模式 AUROC 都为 .793651，null/False 配对仍反向。保留所有组与两个模式，不选任务赢家包络、不拟合阈值或权重。这些不是历史 BPE 指标，也不是六任务0.8证据。
 
-CPU登记v1因少两个身份字段在claim/gold前停止；无效spec已归档outputs，v2成功。旧H002第一次评价也只是在错误CLI入口停止，已修复。两者都不是科学负结果或重复模型运行。
+事后字符单元上界审计仅覆盖13条已释放自然案例，5条原生句子案例不在此几何中。QA/Summary/Data2txt/FinQA/TATQA oracle 上界为 .995408/.999673/.971149/.842860/.856997。gold 单元正密度只用于上界审计，从未用于预测、分割、调参或方法选择。它说明当前排序还有余量，不能单凭它定位语义绑定、算术或标签偏差的具体原因。见 outputs/h005-20261103/unit-ceiling-audit.json；禁止把 oracle 当检测器或据此重跑旧范围读出。
 
-## 继续操作
+H006 已在主线程实际完成观察及 CPU 封存，最终解释仍由 root 更新，不能停在旧 pending 文本。观察 run `77b26cefda05c920159b46866ee94a8aa49f901fb30072a9c0c5e9d19606b849`，CPU run `b484904456032737a9de6975d9a485caf9ef455ea14f4e23349b1c24c4782130`。34答/104单元全覆盖、0 unknown；144独立pair、18 batch前向、2.3771251秒。工件 outputs/h006-20261103/nli_v1 与 posthoc_review_v1，事实 F019 只记录封存和覆盖，不替代 root 的最终诊断。历史 worker45072、parent7692、启动18:38:45UTC；autostart-state 的旧 PID 与阶段不是活跃进程证明，禁止另启同一任务。
 
-1. `python tools/research_memory.py context`；只读F013/F014、当前设计及有关历史。31条旧索引保持，不重读130KB原索引。
-2. 新条件先冻结代码、输入、模型/后端、分数与完整人口，check/claim；已完成观察复用。三个H003登记均已再次核验为reuse。
-3. H004先实现受限语法的类型/绑定保留与拒绝行为，再冻结实际交叉条件。它不是论文主方法，未知/超长/解析拒绝不能当正常。任何收益仍需完整六任务和未接触确认人口。
-4. SOURCE_INVENTORY目前128个Python文件；原21文件/2421行/128定义的解释覆盖保持。新文件与改动仍待逐行解释，检查通过不代表讲解完成。
+H006 是冻结外部 MNLI/FEVER-NLI/ANLI 监督的 NLI 诊断，并非已采用的无监督主方法或新颖机制。固定 DeBERTa revision `6f5cf0a2b59cabb106aca4c287eed12e357e90eb`、7文件哈希，标准 source-premise/exact-unit-hypothesis，512总token含3special，source窗预算509−hyp长度、overlap=min(64,budget//4)，max-entailment风险；没有原回答/QA上下文，不能当作与 Qwen 严格匹配的架构因果对照。root 的107文件 release wheel `c11e4c3b912d906febf3ee39137130e18aac2b5fb9c68bb933f3d95539851c4d`、commit `884d812` 已保留。此前两个13/512 token工程前向通过（F018），不能与真实诊断成绩混称。
 
-用户允许关闭Edge/Termius/夸克，已完成；不关闭Code/WPS或其他应用，不反复关闭重开的程序。两次不同零模型待机worker各做过一次自身驻留页回收，不循环清内存。等权、local重置/repair、有限证书覆盖不足及格式/数据合同差异不换名复验。目标未达成，不标complete。
+主线程下一步整理 H006 最终结果，并推进此前 NEXT_MECHANISM 第2项已经计划的全新负担控制 H007。新构造材料来自 relation×lexicalization×source×response×burden 的全因子，不是重新扫描 H005 参数或提示词。root/其 agent 正在生成48原答与集成专用 whole/首单元 collector；此处不声明已冻结、已调用模型或已有结果。恢复前核查 root 最新 claim、真实PID/starttime/命令及状态，不重复启动任何等待或已认领工作。STOP 仅按用户明确停止请求创建。
+
+H004 也已完成且不晋升：仅3条自然 Data2txt 来源实际类型转换，构造控制覆盖0，B=A、D=C；不能把 null 控制说成 typed 干预成功或失败。三自然错例仍高支持，规则未修复 null 顺序，构造三类 A/B11/16、C/D10/16。见 [H004 报告](../docs/results/h004_typed_factorial.md)、F015。H002自由提议前端失败/sourceQA零调用不等于核心重建失败；H003自然/构造结果 F013/F014 继续复用。
+
+完整输入库存仍是 outputs/full-input-inventory-20261103/inventory.json：主组900/900/900/162/130/891=3883，Hallu pooled1782、unavailable891另保留；全任务模型运行未由本报告启动。H005/H006都是小型暴露面板，不是完整六任务验证。禁止 blind weighting、旧 prefix reset/repair 或有限证书换名复验。SummaC 等已建立粒度核验先例，效能、原生成因果与论文新颖性必须分别举证。
+
+已知本地源快照：H005 observer `eabfffc`、CPU `98007cf`、H006 `884d812`，均未 push。本轮仅整理既有文档和状态，不修改任何活跃代码、环境或模型产物。状态文件写权限交回 root 后，由 root 追加 H006 最终结论与 H007 的真实运行状态。

@@ -1,0 +1,2395 @@
+{
+  "schema": "h004-typed-factorial-result-v1",
+  "created_utc": "2026-11-02T17:36:06.101162+00:00",
+  "observation_run_id": "163708a0cfed0a80cf2b35a7055933dcbab8d57c987e679d1a7169d43be8aaee",
+  "cpu_review_run_id": "f727c1d5218ab5f1583919d916cef2f099903360aa4916d00586811b524620b2",
+  "observation_seal_sha256": "032520df7f5469799119e237d871fa9cc067a81bbc0d5c8ade959ac86ef718ce",
+  "review_seal_sha256": "7082bd6363d5581b90acf9ee2036fd969866bb8c0ab544449a4046fe61bd2d28",
+  "source_releases": {
+    "observer_commit": "206571c",
+    "observer_files": 101,
+    "cpu_commit": "c7a112e",
+    "cpu_files": 102
+  },
+  "costs": {
+    "logical_requests": 816,
+    "unique_equivalent_observations": 444,
+    "new_forward_passes": 240,
+    "borrowed_unique_observations": 204,
+    "within_run_reused_artifacts": 186,
+    "input_rejected_artifacts": 0,
+    "new_forward_seconds": 99.96748640050646,
+    "new_input_tokens": 240906,
+    "output_tokens": 0,
+    "imported_forward_cost_is_not_new_compute": true
+  },
+  "source_transform_admission": {
+    "original_cases": 34,
+    "rows": [
+      {
+        "id": "15716",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "12297",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "410",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "8937",
+        "status": "transformed",
+        "syntax": "python_literal"
+      },
+      {
+        "id": "7000",
+        "status": "transformed",
+        "syntax": "python_literal"
+      },
+      {
+        "id": "fred:finqa:test:53",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "fred:finqa:test:59",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "fred:tatqa:test:54",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "fred:tatqa:test:51",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "fred:tatqa:test:3",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "fred:tatqa:test:50",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "hallurag:test_meta-llama_Llama-2-7b-chat-hf (int4).pickle:33",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "hallurag:test_meta-llama_Llama-2-7b-chat-hf (int4).pickle:123",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "hallurag:test_meta-llama_Llama-2-7b-chat-hf (int4).pickle:119",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "hallurag:test_meta-llama_Llama-2-13b-chat-hf (float8).pickle:45",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "886",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "9940",
+        "status": "transformed",
+        "syntax": "python_literal"
+      },
+      {
+        "id": "hallurag:test_mistralai_Mistral-7B-Instruct-v0.1 (int4).pickle:64",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "ccv1:01:a",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "ccv1:01:b",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "ccv1:02:a",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "ccv1:02:b",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "ccv1:03:a",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "ccv1:03:b",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "ccv1:04:a",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "ccv1:04:b",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "ccv1:05:a",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "ccv1:05:b",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "ccv1:06:a",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "ccv1:06:b",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "ccv1:07:a",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "ccv1:07:b",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "ccv1:08:a",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      },
+      {
+        "id": "ccv1:08:b",
+        "status": "unchanged_unparseable",
+        "syntax": null
+      }
+    ],
+    "evaluation_material_accessed": false,
+    "model_calls": 0
+  },
+  "summary": {
+    "whole_case_denominator": 34,
+    "conditions": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "natural": {
+      "A": {
+        "whole_case_denominator": 18,
+        "review_cases": 18,
+        "cases": 18,
+        "scored_cases": 18,
+        "unscored_unknown_cases": 0,
+        "retained_label_requests": 108,
+        "scored_label_requests": 108,
+        "input_rejected_label_requests": 0,
+        "aggregate_score_ties": 0,
+        "unanimous_unique_argmax_cases": 0,
+        "cases_with_tied_permutations": 0,
+        "tied_permutations": 0,
+        "unique_permutation_argmax_counts": {
+          "supported": 49,
+          "unresolved": 39,
+          "contradicted": 20
+        },
+        "scored_permutations": 108,
+        "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+        "off_label_mass": {
+          "count": 108,
+          "min": 1.2245330390642352e-09,
+          "max": 0.9991670364253845,
+          "mean": 0.13258694349059244
+        },
+        "full_vocab_class_mass_means": {
+          "supported": 0.3827370652002016,
+          "contradicted": 0.16337296039201343,
+          "unresolved": 0.3213030309171925
+        },
+        "cohorts": {
+          "QA": {
+            "cases": 2,
+            "scored_cases": 2,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 12,
+            "scored_label_requests": 12,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "supported": 5,
+              "unresolved": 5,
+              "contradicted": 2
+            },
+            "scored_permutations": 12,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 12,
+              "min": 0.0009478653003167628,
+              "max": 0.9494793656832791,
+              "mean": 0.31961865412511636
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.32301811703803335,
+              "contradicted": 0.11269351704896173,
+              "unresolved": 0.24466971178788854
+            }
+          },
+          "Summary": {
+            "cases": 2,
+            "scored_cases": 2,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 12,
+            "scored_label_requests": 12,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "supported": 9,
+              "unresolved": 3
+            },
+            "scored_permutations": 12,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 12,
+              "min": 2.0835888496299284e-09,
+              "max": 1.4457735258002405e-06,
+              "mean": 3.6397385943347733e-07
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.727769633205833,
+              "contradicted": 0.03300520111714058,
+              "unresolved": 0.23922480170316698
+            }
+          },
+          "Data2txt": {
+            "cases": 3,
+            "scored_cases": 3,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 18,
+            "scored_label_requests": 18,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "supported": 13,
+              "unresolved": 5
+            },
+            "scored_permutations": 18,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 18,
+              "min": 1.2245330390642352e-09,
+              "max": 0.0001233268738919329,
+              "mean": 8.255685751321023e-06
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.7088236937807726,
+              "contradicted": 0.05058412822022338,
+              "unresolved": 0.24058392231325276
+            }
+          },
+          "FinQA": {
+            "cases": 2,
+            "scored_cases": 2,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 12,
+            "scored_label_requests": 12,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "unresolved": 6,
+              "contradicted": 3,
+              "supported": 3
+            },
+            "scored_permutations": 12,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 12,
+              "min": 7.690196446391338e-08,
+              "max": 0.9991670364253845,
+              "mean": 0.35631576373126767
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.09138156941672432,
+              "contradicted": 0.16839291283019306,
+              "unresolved": 0.383909754021815
+            }
+          },
+          "TATQA": {
+            "cases": 4,
+            "scored_cases": 4,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 24,
+            "scored_label_requests": 24,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "unresolved": 10,
+              "contradicted": 6,
+              "supported": 8
+            },
+            "scored_permutations": 24,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 24,
+              "min": 1.7112350339993596e-08,
+              "max": 0.9926451824197611,
+              "mean": 0.2570652368056806
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.19575515500644805,
+              "contradicted": 0.16533300505097281,
+              "unresolved": 0.38184660313689855
+            }
+          },
+          "HalluRAG": {
+            "cases": 5,
+            "scored_cases": 5,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 30,
+            "scored_label_requests": 30,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "contradicted": 9,
+              "supported": 11,
+              "unresolved": 10
+            },
+            "scored_permutations": 30,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 30,
+              "min": 3.684974175707662e-07,
+              "max": 0.01588133111970038,
+              "mean": 0.001281940978040118
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.33908736658286753,
+              "contradicted": 0.299889124039818,
+              "unresolved": 0.3597415683992743
+            }
+          }
+        },
+        "released_annotation_granularities": {
+          "token": 13,
+          "sentence": 5
+        },
+        "automatic_accuracy_created": false,
+        "new_scalar_scores_created": false,
+        "token_score_projection_created": false,
+        "auroc_created": false,
+        "fitted_calibration_created": false,
+        "model_calls": 0,
+        "scope": "Whole exploratory panel diagnostics; human semantic review pending. Model unresolved is a semantic class; unknown means input was not fully scored."
+      },
+      "B": {
+        "whole_case_denominator": 18,
+        "review_cases": 18,
+        "cases": 18,
+        "scored_cases": 18,
+        "unscored_unknown_cases": 0,
+        "retained_label_requests": 108,
+        "scored_label_requests": 108,
+        "input_rejected_label_requests": 0,
+        "aggregate_score_ties": 0,
+        "unanimous_unique_argmax_cases": 0,
+        "cases_with_tied_permutations": 0,
+        "tied_permutations": 0,
+        "unique_permutation_argmax_counts": {
+          "supported": 50,
+          "unresolved": 38,
+          "contradicted": 20
+        },
+        "scored_permutations": 108,
+        "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+        "off_label_mass": {
+          "count": 108,
+          "min": 2.0835888496299284e-09,
+          "max": 0.9991670364253845,
+          "mean": 0.1325860668171506
+        },
+        "full_vocab_class_mass_means": {
+          "supported": 0.3820557209784467,
+          "contradicted": 0.1646416068426215,
+          "unresolved": 0.3207166053617812
+        },
+        "cohorts": {
+          "QA": {
+            "cases": 2,
+            "scored_cases": 2,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 12,
+            "scored_label_requests": 12,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "supported": 5,
+              "unresolved": 5,
+              "contradicted": 2
+            },
+            "scored_permutations": 12,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 12,
+              "min": 0.0009478653003167628,
+              "max": 0.9494793656832791,
+              "mean": 0.31961865412511636
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.32301811703803335,
+              "contradicted": 0.11269351704896173,
+              "unresolved": 0.24466971178788854
+            }
+          },
+          "Summary": {
+            "cases": 2,
+            "scored_cases": 2,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 12,
+            "scored_label_requests": 12,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "supported": 9,
+              "unresolved": 3
+            },
+            "scored_permutations": 12,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 12,
+              "min": 2.0835888496299284e-09,
+              "max": 1.4457735258002405e-06,
+              "mean": 3.6397385943347733e-07
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.727769633205833,
+              "contradicted": 0.03300520111714058,
+              "unresolved": 0.23922480170316698
+            }
+          },
+          "Data2txt": {
+            "cases": 3,
+            "scored_cases": 3,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 18,
+            "scored_label_requests": 18,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "supported": 14,
+              "unresolved": 4
+            },
+            "scored_permutations": 18,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 18,
+              "min": 1.3846960951855392e-08,
+              "max": 2.698572238426353e-05,
+              "mean": 2.9956451002367164e-06
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.704735628450243,
+              "contradicted": 0.05819600692387182,
+              "unresolved": 0.237065368980785
+            }
+          },
+          "FinQA": {
+            "cases": 2,
+            "scored_cases": 2,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 12,
+            "scored_label_requests": 12,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "unresolved": 6,
+              "contradicted": 3,
+              "supported": 3
+            },
+            "scored_permutations": 12,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 12,
+              "min": 7.690196446391338e-08,
+              "max": 0.9991670364253845,
+              "mean": 0.35631576373126767
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.09138156941672432,
+              "contradicted": 0.16839291283019306,
+              "unresolved": 0.383909754021815
+            }
+          },
+          "TATQA": {
+            "cases": 4,
+            "scored_cases": 4,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 24,
+            "scored_label_requests": 24,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "unresolved": 10,
+              "contradicted": 6,
+              "supported": 8
+            },
+            "scored_permutations": 24,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 24,
+              "min": 1.7112350339993596e-08,
+              "max": 0.9926451824197611,
+              "mean": 0.2570652368056806
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.19575515500644805,
+              "contradicted": 0.16533300505097281,
+              "unresolved": 0.38184660313689855
+            }
+          },
+          "HalluRAG": {
+            "cases": 5,
+            "scored_cases": 5,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 30,
+            "scored_label_requests": 30,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "contradicted": 9,
+              "supported": 11,
+              "unresolved": 10
+            },
+            "scored_permutations": 30,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 30,
+              "min": 3.684974175707662e-07,
+              "max": 0.01588133111970038,
+              "mean": 0.001281940978040118
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.33908736658286753,
+              "contradicted": 0.299889124039818,
+              "unresolved": 0.3597415683992743
+            }
+          }
+        },
+        "released_annotation_granularities": {
+          "token": 13,
+          "sentence": 5
+        },
+        "automatic_accuracy_created": false,
+        "new_scalar_scores_created": false,
+        "token_score_projection_created": false,
+        "auroc_created": false,
+        "fitted_calibration_created": false,
+        "model_calls": 0,
+        "scope": "Whole exploratory panel diagnostics; human semantic review pending. Model unresolved is a semantic class; unknown means input was not fully scored."
+      },
+      "C": {
+        "whole_case_denominator": 18,
+        "review_cases": 18,
+        "cases": 18,
+        "scored_cases": 18,
+        "unscored_unknown_cases": 0,
+        "retained_label_requests": 108,
+        "scored_label_requests": 108,
+        "input_rejected_label_requests": 0,
+        "aggregate_score_ties": 0,
+        "unanimous_unique_argmax_cases": 0,
+        "cases_with_tied_permutations": 1,
+        "tied_permutations": 1,
+        "unique_permutation_argmax_counts": {
+          "supported": 56,
+          "unresolved": 31,
+          "contradicted": 20
+        },
+        "scored_permutations": 108,
+        "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+        "off_label_mass": {
+          "count": 108,
+          "min": 1.0871510188494944e-08,
+          "max": 0.999999027939507,
+          "mean": 0.23252929021610072
+        },
+        "full_vocab_class_mass_means": {
+          "supported": 0.3534885304205776,
+          "contradicted": 0.14790213962706836,
+          "unresolved": 0.2660800397362533
+        },
+        "cohorts": {
+          "QA": {
+            "cases": 2,
+            "scored_cases": 2,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 12,
+            "scored_label_requests": 12,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "supported": 7,
+              "unresolved": 3,
+              "contradicted": 2
+            },
+            "scored_permutations": 12,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 12,
+              "min": 0.09653445899467418,
+              "max": 0.9979523706442189,
+              "mean": 0.542137396256063
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.2259325077706037,
+              "contradicted": 0.08094125343697837,
+              "unresolved": 0.15098884253635483
+            }
+          },
+          "Summary": {
+            "cases": 2,
+            "scored_cases": 2,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 12,
+            "scored_label_requests": 12,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "supported": 10,
+              "unresolved": 2
+            },
+            "scored_permutations": 12,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 12,
+              "min": 1.2680812479327358e-08,
+              "max": 4.099714942490971e-05,
+              "mean": 9.108485116030849e-06
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.7174016802756786,
+              "contradicted": 0.04279278447390831,
+              "unresolved": 0.23979642676529708
+            }
+          },
+          "Data2txt": {
+            "cases": 3,
+            "scored_cases": 3,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 18,
+            "scored_label_requests": 18,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 1,
+            "tied_permutations": 1,
+            "unique_permutation_argmax_counts": {
+              "supported": 14,
+              "unresolved": 3
+            },
+            "scored_permutations": 18,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 18,
+              "min": 1.0871510188494944e-08,
+              "max": 0.00377369958260842,
+              "mean": 0.00028749596183596143
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.6978958924922228,
+              "contradicted": 0.06341521022551355,
+              "unresolved": 0.23840140132042764
+            }
+          },
+          "FinQA": {
+            "cases": 2,
+            "scored_cases": 2,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 12,
+            "scored_label_requests": 12,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "unresolved": 5,
+              "contradicted": 3,
+              "supported": 4
+            },
+            "scored_permutations": 12,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 12,
+              "min": 1.0253901828348442e-05,
+              "max": 0.9999855717328363,
+              "mean": 0.5285345153507514
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.035509697268395354,
+              "contradicted": 0.14134654731127996,
+              "unresolved": 0.29460924006957334
+            }
+          },
+          "TATQA": {
+            "cases": 4,
+            "scored_cases": 4,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 24,
+            "scored_label_requests": 24,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "unresolved": 8,
+              "contradicted": 7,
+              "supported": 9
+            },
+            "scored_permutations": 24,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 24,
+              "min": 4.191678172451386e-07,
+              "max": 0.999999027939507,
+              "mean": 0.43055407179720434
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.15664911808152865,
+              "contradicted": 0.14504307124104224,
+              "unresolved": 0.26775373888022475
+            }
+          },
+          "HalluRAG": {
+            "cases": 5,
+            "scored_cases": 5,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 30,
+            "scored_label_requests": 30,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "supported": 12,
+              "unresolved": 10,
+              "contradicted": 8
+            },
+            "scored_permutations": 30,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 30,
+              "min": 3.1014036350545695e-07,
+              "max": 0.8704500878558274,
+              "mean": 0.06421728172632533
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.3369643254276517,
+              "contradicted": 0.27233188544043746,
+              "unresolved": 0.3264865074055855
+            }
+          }
+        },
+        "released_annotation_granularities": {
+          "token": 13,
+          "sentence": 5
+        },
+        "automatic_accuracy_created": false,
+        "new_scalar_scores_created": false,
+        "token_score_projection_created": false,
+        "auroc_created": false,
+        "fitted_calibration_created": false,
+        "model_calls": 0,
+        "scope": "Whole exploratory panel diagnostics; human semantic review pending. Model unresolved is a semantic class; unknown means input was not fully scored."
+      },
+      "D": {
+        "whole_case_denominator": 18,
+        "review_cases": 18,
+        "cases": 18,
+        "scored_cases": 18,
+        "unscored_unknown_cases": 0,
+        "retained_label_requests": 108,
+        "scored_label_requests": 108,
+        "input_rejected_label_requests": 0,
+        "aggregate_score_ties": 0,
+        "unanimous_unique_argmax_cases": 0,
+        "cases_with_tied_permutations": 0,
+        "tied_permutations": 0,
+        "unique_permutation_argmax_counts": {
+          "supported": 57,
+          "unresolved": 31,
+          "contradicted": 20
+        },
+        "scored_permutations": 108,
+        "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+        "off_label_mass": {
+          "count": 108,
+          "min": 1.2680812479327358e-08,
+          "max": 0.999999027939507,
+          "mean": 0.23248951340964388
+        },
+        "full_vocab_class_mass_means": {
+          "supported": 0.35571723347454426,
+          "contradicted": 0.14673053125728136,
+          "unresolved": 0.2650627218585304
+        },
+        "cohorts": {
+          "QA": {
+            "cases": 2,
+            "scored_cases": 2,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 12,
+            "scored_label_requests": 12,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "supported": 7,
+              "unresolved": 3,
+              "contradicted": 2
+            },
+            "scored_permutations": 12,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 12,
+              "min": 0.09653445899467418,
+              "max": 0.9979523706442189,
+              "mean": 0.542137396256063
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.2259325077706037,
+              "contradicted": 0.08094125343697837,
+              "unresolved": 0.15098884253635483
+            }
+          },
+          "Summary": {
+            "cases": 2,
+            "scored_cases": 2,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 12,
+            "scored_label_requests": 12,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "supported": 10,
+              "unresolved": 2
+            },
+            "scored_permutations": 12,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 12,
+              "min": 1.2680812479327358e-08,
+              "max": 4.099714942490971e-05,
+              "mean": 9.108485116030849e-06
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.7174016802756786,
+              "contradicted": 0.04279278447390831,
+              "unresolved": 0.23979642676529708
+            }
+          },
+          "Data2txt": {
+            "cases": 3,
+            "scored_cases": 3,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 18,
+            "scored_label_requests": 18,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "supported": 15,
+              "unresolved": 3
+            },
+            "scored_permutations": 18,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 18,
+              "min": 4.12163758094865e-08,
+              "max": 0.0004175027036866959,
+              "mean": 4.883512309502596e-05
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.7112681108160229,
+              "contradicted": 0.05638556000679167,
+              "unresolved": 0.23229749405409036
+            }
+          },
+          "FinQA": {
+            "cases": 2,
+            "scored_cases": 2,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 12,
+            "scored_label_requests": 12,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "unresolved": 5,
+              "contradicted": 3,
+              "supported": 4
+            },
+            "scored_permutations": 12,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 12,
+              "min": 1.0253901828348442e-05,
+              "max": 0.9999855717328363,
+              "mean": 0.5285345153507514
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.035509697268395354,
+              "contradicted": 0.14134654731127996,
+              "unresolved": 0.29460924006957334
+            }
+          },
+          "TATQA": {
+            "cases": 4,
+            "scored_cases": 4,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 24,
+            "scored_label_requests": 24,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "unresolved": 8,
+              "contradicted": 7,
+              "supported": 9
+            },
+            "scored_permutations": 24,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 24,
+              "min": 4.191678172451386e-07,
+              "max": 0.999999027939507,
+              "mean": 0.43055407179720434
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.15664911808152865,
+              "contradicted": 0.14504307124104224,
+              "unresolved": 0.26775373888022475
+            }
+          },
+          "HalluRAG": {
+            "cases": 5,
+            "scored_cases": 5,
+            "unscored_unknown_cases": 0,
+            "retained_label_requests": 30,
+            "scored_label_requests": 30,
+            "input_rejected_label_requests": 0,
+            "aggregate_score_ties": 0,
+            "unanimous_unique_argmax_cases": 0,
+            "cases_with_tied_permutations": 0,
+            "tied_permutations": 0,
+            "unique_permutation_argmax_counts": {
+              "supported": 12,
+              "unresolved": 10,
+              "contradicted": 8
+            },
+            "scored_permutations": 30,
+            "permutation_diagnostic_scope": "Fully scored cases; all raw events, including partial cases, remain in review packets.",
+            "off_label_mass": {
+              "count": 30,
+              "min": 3.1014036350545695e-07,
+              "max": 0.8704500878558274,
+              "mean": 0.06421728172632533
+            },
+            "full_vocab_class_mass_means": {
+              "supported": 0.3369643254276517,
+              "contradicted": 0.27233188544043746,
+              "unresolved": 0.3264865074055855
+            }
+          }
+        },
+        "released_annotation_granularities": {
+          "token": 13,
+          "sentence": 5
+        },
+        "automatic_accuracy_created": false,
+        "new_scalar_scores_created": false,
+        "token_score_projection_created": false,
+        "auroc_created": false,
+        "fitted_calibration_created": false,
+        "model_calls": 0,
+        "scope": "Whole exploratory panel diagnostics; human semantic review pending. Model unresolved is a semantic class; unknown means input was not fully scored."
+      }
+    },
+    "controls": {
+      "A": {
+        "denominator": 16,
+        "confusion": {
+          "supported": {
+            "supported": 8,
+            "contradicted": 0,
+            "unresolved": 1,
+            "unknown": 0
+          },
+          "contradicted": {
+            "supported": 0,
+            "contradicted": 2,
+            "unresolved": 3,
+            "unknown": 0
+          },
+          "unresolved": {
+            "supported": 1,
+            "contradicted": 0,
+            "unresolved": 1,
+            "unknown": 0
+          }
+        },
+        "correct_fixed_argmax": 11,
+        "unknown_predictions": 0,
+        "pairs": [
+          {
+            "pair_id": "01",
+            "ids": [
+              "ccv1:01:a",
+              "ccv1:01:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:01:a": 0.5648595511562712,
+              "ccv1:01:b": 0.16464488586753506
+            },
+            "margin": 0.4002146652887361,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "02",
+            "ids": [
+              "ccv1:02:a",
+              "ccv1:02:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:02:a": 0.6084550083814356,
+              "ccv1:02:b": 0.16207131559892585
+            },
+            "margin": 0.4463836927825098,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "03",
+            "ids": [
+              "ccv1:03:a",
+              "ccv1:03:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:03:a": 0.8910762582695315,
+              "ccv1:03:b": 0.24895868120071443
+            },
+            "margin": 0.6421175770688171,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "04",
+            "ids": [
+              "ccv1:04:a",
+              "ccv1:04:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:04:a": 0.6770991020104083,
+              "ccv1:04:b": 0.26687775911451134
+            },
+            "margin": 0.410221342895897,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "05",
+            "ids": [
+              "ccv1:05:a",
+              "ccv1:05:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "unresolved"
+            ],
+            "q_supported": {
+              "ccv1:05:a": 0.682261002818824,
+              "ccv1:05:b": 0.17020859964640025
+            },
+            "margin": 0.5120524031724237,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": false
+          },
+          {
+            "pair_id": "06",
+            "ids": [
+              "ccv1:06:a",
+              "ccv1:06:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "unresolved"
+            ],
+            "q_supported": {
+              "ccv1:06:a": 0.45939650211896493,
+              "ccv1:06:b": 0.7409598233379745
+            },
+            "margin": -0.28156332121900957,
+            "strictly_positive": false,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "07",
+            "ids": [
+              "ccv1:07:a",
+              "ccv1:07:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:07:a": 0.7412242859297784,
+              "ccv1:07:b": 0.14384651489143582
+            },
+            "margin": 0.5973777710383426,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "08",
+            "ids": [
+              "ccv1:08:a",
+              "ccv1:08:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "supported"
+            ],
+            "q_supported": {
+              "ccv1:08:a": 0.22285652921000446,
+              "ccv1:08:b": 0.699237061104293
+            },
+            "margin": null,
+            "strictly_positive": null,
+            "both_supported": true,
+            "same_word_bag": false
+          }
+        ]
+      },
+      "B": {
+        "denominator": 16,
+        "confusion": {
+          "supported": {
+            "supported": 8,
+            "contradicted": 0,
+            "unresolved": 1,
+            "unknown": 0
+          },
+          "contradicted": {
+            "supported": 0,
+            "contradicted": 2,
+            "unresolved": 3,
+            "unknown": 0
+          },
+          "unresolved": {
+            "supported": 1,
+            "contradicted": 0,
+            "unresolved": 1,
+            "unknown": 0
+          }
+        },
+        "correct_fixed_argmax": 11,
+        "unknown_predictions": 0,
+        "pairs": [
+          {
+            "pair_id": "01",
+            "ids": [
+              "ccv1:01:a",
+              "ccv1:01:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:01:a": 0.5648595511562712,
+              "ccv1:01:b": 0.16464488586753506
+            },
+            "margin": 0.4002146652887361,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "02",
+            "ids": [
+              "ccv1:02:a",
+              "ccv1:02:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:02:a": 0.6084550083814356,
+              "ccv1:02:b": 0.16207131559892585
+            },
+            "margin": 0.4463836927825098,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "03",
+            "ids": [
+              "ccv1:03:a",
+              "ccv1:03:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:03:a": 0.8910762582695315,
+              "ccv1:03:b": 0.24895868120071443
+            },
+            "margin": 0.6421175770688171,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "04",
+            "ids": [
+              "ccv1:04:a",
+              "ccv1:04:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:04:a": 0.6770991020104083,
+              "ccv1:04:b": 0.26687775911451134
+            },
+            "margin": 0.410221342895897,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "05",
+            "ids": [
+              "ccv1:05:a",
+              "ccv1:05:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "unresolved"
+            ],
+            "q_supported": {
+              "ccv1:05:a": 0.682261002818824,
+              "ccv1:05:b": 0.17020859964640025
+            },
+            "margin": 0.5120524031724237,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": false
+          },
+          {
+            "pair_id": "06",
+            "ids": [
+              "ccv1:06:a",
+              "ccv1:06:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "unresolved"
+            ],
+            "q_supported": {
+              "ccv1:06:a": 0.45939650211896493,
+              "ccv1:06:b": 0.7409598233379745
+            },
+            "margin": -0.28156332121900957,
+            "strictly_positive": false,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "07",
+            "ids": [
+              "ccv1:07:a",
+              "ccv1:07:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:07:a": 0.7412242859297784,
+              "ccv1:07:b": 0.14384651489143582
+            },
+            "margin": 0.5973777710383426,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "08",
+            "ids": [
+              "ccv1:08:a",
+              "ccv1:08:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "supported"
+            ],
+            "q_supported": {
+              "ccv1:08:a": 0.22285652921000446,
+              "ccv1:08:b": 0.699237061104293
+            },
+            "margin": null,
+            "strictly_positive": null,
+            "both_supported": true,
+            "same_word_bag": false
+          }
+        ]
+      },
+      "C": {
+        "denominator": 16,
+        "confusion": {
+          "supported": {
+            "supported": 8,
+            "contradicted": 0,
+            "unresolved": 1,
+            "unknown": 0
+          },
+          "contradicted": {
+            "supported": 0,
+            "contradicted": 1,
+            "unresolved": 4,
+            "unknown": 0
+          },
+          "unresolved": {
+            "supported": 1,
+            "contradicted": 0,
+            "unresolved": 1,
+            "unknown": 0
+          }
+        },
+        "correct_fixed_argmax": 10,
+        "unknown_predictions": 0,
+        "pairs": [
+          {
+            "pair_id": "01",
+            "ids": [
+              "ccv1:01:a",
+              "ccv1:01:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:01:a": 0.456437643813826,
+              "ccv1:01:b": 0.2031219126987648
+            },
+            "margin": 0.2533157311150612,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "02",
+            "ids": [
+              "ccv1:02:a",
+              "ccv1:02:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:02:a": 0.6477815411544782,
+              "ccv1:02:b": 0.18759447754111822
+            },
+            "margin": 0.4601870636133599,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "03",
+            "ids": [
+              "ccv1:03:a",
+              "ccv1:03:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:03:a": 0.8074993615520919,
+              "ccv1:03:b": 0.24931467885820724
+            },
+            "margin": 0.5581846826938847,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "04",
+            "ids": [
+              "ccv1:04:a",
+              "ccv1:04:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:04:a": 0.5544737216461185,
+              "ccv1:04:b": 0.21946989006583797
+            },
+            "margin": 0.3350038315802806,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "05",
+            "ids": [
+              "ccv1:05:a",
+              "ccv1:05:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "unresolved"
+            ],
+            "q_supported": {
+              "ccv1:05:a": 0.7510761285246992,
+              "ccv1:05:b": 0.28597784586767233
+            },
+            "margin": 0.46509828265702685,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": false
+          },
+          {
+            "pair_id": "06",
+            "ids": [
+              "ccv1:06:a",
+              "ccv1:06:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "unresolved"
+            ],
+            "q_supported": {
+              "ccv1:06:a": 0.3410085981338023,
+              "ccv1:06:b": 0.4015642198815832
+            },
+            "margin": -0.0605556217477809,
+            "strictly_positive": false,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "07",
+            "ids": [
+              "ccv1:07:a",
+              "ccv1:07:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:07:a": 0.6688898285146071,
+              "ccv1:07:b": 0.15962043182232755
+            },
+            "margin": 0.5092693966922796,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "08",
+            "ids": [
+              "ccv1:08:a",
+              "ccv1:08:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "supported"
+            ],
+            "q_supported": {
+              "ccv1:08:a": 0.2364895345169009,
+              "ccv1:08:b": 0.739193709456741
+            },
+            "margin": null,
+            "strictly_positive": null,
+            "both_supported": true,
+            "same_word_bag": false
+          }
+        ]
+      },
+      "D": {
+        "denominator": 16,
+        "confusion": {
+          "supported": {
+            "supported": 8,
+            "contradicted": 0,
+            "unresolved": 1,
+            "unknown": 0
+          },
+          "contradicted": {
+            "supported": 0,
+            "contradicted": 1,
+            "unresolved": 4,
+            "unknown": 0
+          },
+          "unresolved": {
+            "supported": 1,
+            "contradicted": 0,
+            "unresolved": 1,
+            "unknown": 0
+          }
+        },
+        "correct_fixed_argmax": 10,
+        "unknown_predictions": 0,
+        "pairs": [
+          {
+            "pair_id": "01",
+            "ids": [
+              "ccv1:01:a",
+              "ccv1:01:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:01:a": 0.456437643813826,
+              "ccv1:01:b": 0.2031219126987648
+            },
+            "margin": 0.2533157311150612,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "02",
+            "ids": [
+              "ccv1:02:a",
+              "ccv1:02:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:02:a": 0.6477815411544782,
+              "ccv1:02:b": 0.18759447754111822
+            },
+            "margin": 0.4601870636133599,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "03",
+            "ids": [
+              "ccv1:03:a",
+              "ccv1:03:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:03:a": 0.8074993615520919,
+              "ccv1:03:b": 0.24931467885820724
+            },
+            "margin": 0.5581846826938847,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "04",
+            "ids": [
+              "ccv1:04:a",
+              "ccv1:04:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:04:a": 0.5544737216461185,
+              "ccv1:04:b": 0.21946989006583797
+            },
+            "margin": 0.3350038315802806,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "05",
+            "ids": [
+              "ccv1:05:a",
+              "ccv1:05:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "unresolved"
+            ],
+            "q_supported": {
+              "ccv1:05:a": 0.7510761285246992,
+              "ccv1:05:b": 0.28597784586767233
+            },
+            "margin": 0.46509828265702685,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": false
+          },
+          {
+            "pair_id": "06",
+            "ids": [
+              "ccv1:06:a",
+              "ccv1:06:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "unresolved"
+            ],
+            "q_supported": {
+              "ccv1:06:a": 0.3410085981338023,
+              "ccv1:06:b": 0.4015642198815832
+            },
+            "margin": -0.0605556217477809,
+            "strictly_positive": false,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "07",
+            "ids": [
+              "ccv1:07:a",
+              "ccv1:07:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "contradicted"
+            ],
+            "q_supported": {
+              "ccv1:07:a": 0.6688898285146071,
+              "ccv1:07:b": 0.15962043182232755
+            },
+            "margin": 0.5092693966922796,
+            "strictly_positive": true,
+            "both_supported": false,
+            "same_word_bag": true
+          },
+          {
+            "pair_id": "08",
+            "ids": [
+              "ccv1:08:a",
+              "ccv1:08:b"
+            ],
+            "construction_classes": [
+              "supported",
+              "supported"
+            ],
+            "q_supported": {
+              "ccv1:08:a": 0.2364895345169009,
+              "ccv1:08:b": 0.739193709456741
+            },
+            "margin": null,
+            "strictly_positive": null,
+            "both_supported": true,
+            "same_word_bag": false
+          }
+        ]
+      }
+    },
+    "factorial_effects": {
+      "natural": {
+        "denominator": 18,
+        "rows": [
+          {
+            "id": "15716",
+            "q_supported": {
+              "A": 0.526659009347528,
+              "B": 0.526659009347528,
+              "C": 0.5334325558373497,
+              "D": 0.5334325558373497
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.006773546489821758,
+              "D_minus_C": 0.0,
+              "D_minus_B": 0.006773546489821758,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "12297",
+            "q_supported": {
+              "A": 0.46131801958852514,
+              "B": 0.46131801958852514,
+              "C": 0.4893708355984249,
+              "D": 0.4893708355984249
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.028052816009899784,
+              "D_minus_C": 0.0,
+              "D_minus_B": 0.028052816009899784,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "410",
+            "q_supported": {
+              "A": 0.802503798500196,
+              "B": 0.802503798500196,
+              "C": 0.7479384190722435,
+              "D": 0.7479384190722435
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": -0.05456537942795259,
+              "D_minus_C": 0.0,
+              "D_minus_B": -0.05456537942795259,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "8937",
+            "q_supported": {
+              "A": 0.8770448042398087,
+              "B": 0.8147254073260441,
+              "C": 0.8556962095408945,
+              "D": 0.8002625407531164
+            },
+            "differences": {
+              "B_minus_A": -0.062319396913764535,
+              "C_minus_A": -0.021348594698914147,
+              "D_minus_C": -0.05543366878777811,
+              "D_minus_B": -0.014462866572927724,
+              "interaction_D_minus_C_minus_B_plus_A": 0.006885728125986423
+            }
+          },
+          {
+            "id": "7000",
+            "q_supported": {
+              "A": 0.5528596237959629,
+              "B": 0.5701173510933181,
+              "C": 0.5406573020238503,
+              "D": 0.627210532429134
+            },
+            "differences": {
+              "B_minus_A": 0.017257727297355197,
+              "C_minus_A": -0.012202321772112557,
+              "D_minus_C": 0.08655323040528373,
+              "D_minus_B": 0.05709318133581598,
+              "interaction_D_minus_C_minus_B_plus_A": 0.06929550310792854
+            }
+          },
+          {
+            "id": "fred:finqa:test:53",
+            "q_supported": {
+              "A": 0.20049255013332612,
+              "B": 0.20049255013332612,
+              "C": 0.28017144786556586,
+              "D": 0.28017144786556586
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.07967889773223974,
+              "D_minus_C": 0.0,
+              "D_minus_B": 0.07967889773223974,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "fred:finqa:test:59",
+            "q_supported": {
+              "A": 0.296848776215847,
+              "B": 0.296848776215847,
+              "C": 0.31521081888448715,
+              "D": 0.31521081888448715
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.018362042668640166,
+              "D_minus_C": 0.0,
+              "D_minus_B": 0.018362042668640166,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "fred:tatqa:test:54",
+            "q_supported": {
+              "A": 0.17015788298459042,
+              "B": 0.17015788298459042,
+              "C": 0.2718379260041503,
+              "D": 0.2718379260041503
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.10168004301955988,
+              "D_minus_C": 0.0,
+              "D_minus_B": 0.10168004301955988,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "fred:tatqa:test:51",
+            "q_supported": {
+              "A": 0.19142498889202816,
+              "B": 0.19142498889202816,
+              "C": 0.12435318789311449,
+              "D": 0.12435318789311449
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": -0.06707180099891367,
+              "D_minus_C": 0.0,
+              "D_minus_B": -0.06707180099891367,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "fred:tatqa:test:3",
+            "q_supported": {
+              "A": 0.6620717258835085,
+              "B": 0.6620717258835085,
+              "C": 0.7105656248385451,
+              "D": 0.7105656248385451
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.04849389895503664,
+              "D_minus_C": 0.0,
+              "D_minus_B": 0.04849389895503664,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "fred:tatqa:test:50",
+            "q_supported": {
+              "A": 0.23532416968218028,
+              "B": 0.23532416968218028,
+              "C": 0.27313232149498684,
+              "D": 0.27313232149498684
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.037808151812806556,
+              "D_minus_C": 0.0,
+              "D_minus_B": 0.037808151812806556,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "hallurag:test_meta-llama_Llama-2-7b-chat-hf (int4).pickle:33",
+            "q_supported": {
+              "A": 0.412054277677572,
+              "B": 0.412054277677572,
+              "C": 0.5782903248786265,
+              "D": 0.5782903248786265
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.1662360472010545,
+              "D_minus_C": 0.0,
+              "D_minus_B": 0.1662360472010545,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "hallurag:test_meta-llama_Llama-2-7b-chat-hf (int4).pickle:123",
+            "q_supported": {
+              "A": 0.33339602577589716,
+              "B": 0.33339602577589716,
+              "C": 0.3317706048938949,
+              "D": 0.3317706048938949
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": -0.0016254208820022376,
+              "D_minus_C": 0.0,
+              "D_minus_B": -0.0016254208820022376,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "hallurag:test_meta-llama_Llama-2-7b-chat-hf (int4).pickle:119",
+            "q_supported": {
+              "A": 0.3063126383728713,
+              "B": 0.3063126383728713,
+              "C": 0.31722599414170904,
+              "D": 0.31722599414170904
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.01091335576883773,
+              "D_minus_C": 0.0,
+              "D_minus_B": 0.01091335576883773,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "hallurag:test_meta-llama_Llama-2-13b-chat-hf (float8).pickle:45",
+            "q_supported": {
+              "A": 0.31335328029131854,
+              "B": 0.31335328029131854,
+              "C": 0.2901589136565083,
+              "D": 0.2901589136565083
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": -0.023194366634810226,
+              "D_minus_C": 0.0,
+              "D_minus_B": -0.023194366634810226,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "886",
+            "q_supported": {
+              "A": 0.6530359716290915,
+              "B": 0.6530359716290915,
+              "C": 0.6868750922840331,
+              "D": 0.6868750922840331
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.033839120654941546,
+              "D_minus_C": 0.0,
+              "D_minus_B": 0.033839120654941546,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "9940",
+            "q_supported": {
+              "A": 0.6965878126814214,
+              "B": 0.7293693247096334,
+              "C": 0.6980131277243745,
+              "D": 0.7064246107576411
+            },
+            "differences": {
+              "B_minus_A": 0.032781512028212,
+              "C_minus_A": 0.001425315042953068,
+              "D_minus_C": 0.008411483033266554,
+              "D_minus_B": -0.02294471395199238,
+              "interaction_D_minus_C_minus_B_plus_A": -0.024370028994945447
+            }
+          },
+          {
+            "id": "hallurag:test_mistralai_Mistral-7B-Instruct-v0.1 (int4).pickle:64",
+            "q_supported": {
+              "A": 0.33269779560775536,
+              "B": 0.33269779560775536,
+              "C": 0.3320473101657648,
+              "D": 0.3320473101657648
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": -0.0006504854419905892,
+              "D_minus_C": 0.0,
+              "D_minus_B": -0.0006504854419905892,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          }
+        ],
+        "descriptive_only": true,
+        "method_selected": false
+      },
+      "controls": {
+        "denominator": 16,
+        "rows": [
+          {
+            "id": "ccv1:01:a",
+            "q_supported": {
+              "A": 0.5648595511562712,
+              "B": 0.5648595511562712,
+              "C": 0.456437643813826,
+              "D": 0.456437643813826
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": -0.10842190734244517,
+              "D_minus_C": 0.0,
+              "D_minus_B": -0.10842190734244517,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "ccv1:01:b",
+            "q_supported": {
+              "A": 0.16464488586753506,
+              "B": 0.16464488586753506,
+              "C": 0.2031219126987648,
+              "D": 0.2031219126987648
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.03847702683122975,
+              "D_minus_C": 0.0,
+              "D_minus_B": 0.03847702683122975,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "ccv1:02:a",
+            "q_supported": {
+              "A": 0.6084550083814356,
+              "B": 0.6084550083814356,
+              "C": 0.6477815411544782,
+              "D": 0.6477815411544782
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.039326532773042544,
+              "D_minus_C": 0.0,
+              "D_minus_B": 0.039326532773042544,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "ccv1:02:b",
+            "q_supported": {
+              "A": 0.16207131559892585,
+              "B": 0.16207131559892585,
+              "C": 0.18759447754111822,
+              "D": 0.18759447754111822
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.02552316194219237,
+              "D_minus_C": 0.0,
+              "D_minus_B": 0.02552316194219237,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "ccv1:03:a",
+            "q_supported": {
+              "A": 0.8910762582695315,
+              "B": 0.8910762582695315,
+              "C": 0.8074993615520919,
+              "D": 0.8074993615520919
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": -0.08357689671743962,
+              "D_minus_C": 0.0,
+              "D_minus_B": -0.08357689671743962,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "ccv1:03:b",
+            "q_supported": {
+              "A": 0.24895868120071443,
+              "B": 0.24895868120071443,
+              "C": 0.24931467885820724,
+              "D": 0.24931467885820724
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.000355997657492807,
+              "D_minus_C": 0.0,
+              "D_minus_B": 0.000355997657492807,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "ccv1:04:a",
+            "q_supported": {
+              "A": 0.6770991020104083,
+              "B": 0.6770991020104083,
+              "C": 0.5544737216461185,
+              "D": 0.5544737216461185
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": -0.12262538036428983,
+              "D_minus_C": 0.0,
+              "D_minus_B": -0.12262538036428983,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "ccv1:04:b",
+            "q_supported": {
+              "A": 0.26687775911451134,
+              "B": 0.26687775911451134,
+              "C": 0.21946989006583797,
+              "D": 0.21946989006583797
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": -0.04740786904867336,
+              "D_minus_C": 0.0,
+              "D_minus_B": -0.04740786904867336,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "ccv1:05:a",
+            "q_supported": {
+              "A": 0.682261002818824,
+              "B": 0.682261002818824,
+              "C": 0.7510761285246992,
+              "D": 0.7510761285246992
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.06881512570587522,
+              "D_minus_C": 0.0,
+              "D_minus_B": 0.06881512570587522,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "ccv1:05:b",
+            "q_supported": {
+              "A": 0.17020859964640025,
+              "B": 0.17020859964640025,
+              "C": 0.28597784586767233,
+              "D": 0.28597784586767233
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.11576924622127208,
+              "D_minus_C": 0.0,
+              "D_minus_B": 0.11576924622127208,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "ccv1:06:a",
+            "q_supported": {
+              "A": 0.45939650211896493,
+              "B": 0.45939650211896493,
+              "C": 0.3410085981338023,
+              "D": 0.3410085981338023
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": -0.11838790398516263,
+              "D_minus_C": 0.0,
+              "D_minus_B": -0.11838790398516263,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "ccv1:06:b",
+            "q_supported": {
+              "A": 0.7409598233379745,
+              "B": 0.7409598233379745,
+              "C": 0.4015642198815832,
+              "D": 0.4015642198815832
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": -0.3393956034563913,
+              "D_minus_C": 0.0,
+              "D_minus_B": -0.3393956034563913,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "ccv1:07:a",
+            "q_supported": {
+              "A": 0.7412242859297784,
+              "B": 0.7412242859297784,
+              "C": 0.6688898285146071,
+              "D": 0.6688898285146071
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": -0.0723344574151713,
+              "D_minus_C": 0.0,
+              "D_minus_B": -0.0723344574151713,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "ccv1:07:b",
+            "q_supported": {
+              "A": 0.14384651489143582,
+              "B": 0.14384651489143582,
+              "C": 0.15962043182232755,
+              "D": 0.15962043182232755
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.015773916930891724,
+              "D_minus_C": 0.0,
+              "D_minus_B": 0.015773916930891724,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "ccv1:08:a",
+            "q_supported": {
+              "A": 0.22285652921000446,
+              "B": 0.22285652921000446,
+              "C": 0.2364895345169009,
+              "D": 0.2364895345169009
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.013633005306896456,
+              "D_minus_C": 0.0,
+              "D_minus_B": 0.013633005306896456,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          },
+          {
+            "id": "ccv1:08:b",
+            "q_supported": {
+              "A": 0.699237061104293,
+              "B": 0.699237061104293,
+              "C": 0.739193709456741,
+              "D": 0.739193709456741
+            },
+            "differences": {
+              "B_minus_A": 0.0,
+              "C_minus_A": 0.039956648352448054,
+              "D_minus_C": 0.0,
+              "D_minus_B": 0.039956648352448054,
+              "interaction_D_minus_C_minus_B_plus_A": 0.0
+            }
+          }
+        ],
+        "descriptive_only": true,
+        "method_selected": false
+      }
+    },
+    "model_calls": 0,
+    "tokenizer_calls": 0,
+    "auroc_computed": false,
+    "automatic_natural_accuracy_created": false,
+    "target_label_selection_performed": false,
+    "threshold_sweeps": 0
+  },
+  "primary_factor": "B-A typed expression only; no target-label arm selection",
+  "finding": "Only3natural sources transformed; all16constructed sources retainedraw soB=A,D=C there. Natural3typedreadout changes are mixed and allremain high-support errors. Rulealone doesnotrepairnull/False ordering. Do not promote.",
+  "limitation": "Exploratory selected cases; no natural token AUROC, no method novelty, no original-generation causal identification. Typed control coverage wasnot tested.",
+  "auroc_created": false,
+  "target_label_arm_selection": false
+}

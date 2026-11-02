@@ -44,11 +44,62 @@
     },
     {
       "id": "H004_TYPED_SOURCE_REPRESENTATION",
-      "status": "proposed_not_implemented",
+      "status": "qualification_complete_not_promoted",
       "question": "Does lossless typed source rendering improve null/False and natural structured-source verification beyond a null-semantics instruction alone? Freeze crossed controls before inference; reuse unchanged baselines; do not redo H003.",
       "design": "research-state/TYPED_SOURCE_NEXT.md",
       "prior_overlap": "Typed semantics and reversible representation are established concepts; old finite certificates had limited coverage. No novelty or efficacy claimed.",
-      "admission": "Input-grammar routing only, preserve all facts/types; crossed source/instruction controls, no gold spans/tuning; full original population and unknown retained."
+      "admission": "Input-grammar routing only, preserve all facts/types; crossed source/instruction controls, no gold spans/tuning; full original population and unknown retained.",
+      "evidence": [
+        "F015"
+      ]
+    },
+    {
+      "id": "H005_EXACT_UNIT_FOCUS",
+      "status": "completed_not_promoted",
+      "question": "Does exact occurrence-aware focus resolve whole-answer decision burden under matched source/context/prompt? Freezewhole andallunits beforemodel; no free offsets/no source/rule changes.",
+      "prior_overlap": "SummaC/atomicclaimverification/granularitymatchingareestablished;no noveltyclaim.",
+      "admission": "Alloriginalresponsechars/units retained; sameprompt matchedfullcontrol; no goldslot locations or parameterselection; nativeannotationunits retained; tokenprojectionfrozenbeforefulltask.",
+      "evidence": [
+        "F016",
+        "F017"
+      ],
+      "result": "docs/results/h005_focused_verdict.json",
+      "conclusion": "The fixed scope-only intervention has mixed exploratory native-axis results and is not promoted. Posthoc geometry leaves substantial ranking headroom; the actual ranking mechanism remains unresolved.",
+      "next": "Retain the failed promotion result; compare one frozen external NLI diagnostic without target-label fitting, while declaring its different context contract."
+    },
+    {
+      "id": "H006_EXTERNAL_NLI_DIAGNOSTIC",
+      "status": "completed_diagnostic_not_promoted",
+      "not_a_new_method": true,
+      "question": "What does a standard frozen external NLI head recover on the same original34/104 unit partition under an all-source-window contract? Context and external training differ from Qwen, so the comparison cannot isolate architecture causality.",
+      "prior_overlap": "Established source-entailment/max-evidence baseline; no method novelty or matched-Qwen-context claim.",
+      "admission": "Root freezes protocol, allpairs, source/model identities and original34/104 units before forwards. Premise is source-only; hypothesis is exact unit. Max512including3specials; budget509-hypothesis length, overlapmin64budget//4, batch8; no truncation, cap or dropped units. Risk1-maxchunkEntailment; too-long hypotheses/empty tokenized sources retained as unknown1. Allraw3head logits S0/C2/U1/costs/seals retained. No target-label training/tuning, thresholds, routing, winner selection or full3883 run in this diagnostic.",
+      "evidence": [
+        "F018",
+        "F019",
+        "F020"
+      ],
+      "runtime_readiness": "outputs/nli-readiness-20261103/runtime-readiness.json",
+      "owner": "root",
+      "next": "Do not rerun fixed pilot. Continue preplanned new balanced response-burden controls; model/context confounds remain explicit.",
+      "observation_run_id": "77b26cefda05c920159b46866ee94a8aa49f901fb30072a9c0c5e9d19606b849",
+      "cpu_review_run_id": "b484904456032737a9de6975d9a485caf9ef455ea14f4e23349b1c24c4782130",
+      "result": "docs/results/h006_external_nli.json"
+    },
+    {
+      "id": "H007_RELATION_RESPONSE_BURDEN",
+      "status": "preparing_not_run",
+      "question": "With source fixed and relationship/response directions fully counterbalanced, does adding true unrelated response statements degrade relation discrimination, and does exact first-unit focus preserve it?",
+      "design": "outputs/h007-burden-20261103/DESIGN.md",
+      "prior_plan": "refine-logs/h004-20261103/NEXT_MECHANISM.md comparison2",
+      "intervention": "relation2 x lexicalization2 x source_direction2 x response_direction2 x correct_response_distractors[0,4,12]; whole versus target_first_unit",
+      "admission": "All48originals, all96focuses, all6labelassignments. Source contains all12filler facts and is invariant across burden. Construction labels sealed separately and opened after all predictions; no benchmarkgold, fitting or sweeps.",
+      "not_a_new_method": true,
+      "owner": "root",
+      "evidence": [
+        "F017",
+        "F020"
+      ]
     }
   ]
 }

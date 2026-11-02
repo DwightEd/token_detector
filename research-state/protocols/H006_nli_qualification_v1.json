@@ -1,0 +1,24 @@
+{
+  "schema": "nli-qualification-v1",
+  "purpose": "observations_only",
+  "expected_original_cases": 34,
+  "expected_units": 104,
+  "original_inputs_sha256": "99a649a191001104f8de686f8ee4578071c453b2a6bf84063ef220a8f8b1d6bc",
+  "partition_policy": "response_units_v1",
+  "max_pair_tokens": 512,
+  "batch_size": 8,
+  "overlap_rule": "min(64,budget//4)",
+  "risk_definition": "1-minus-max-chunk-entailment",
+  "class_order": [
+    "supported",
+    "contradicted",
+    "unresolved"
+  ],
+  "unknown_risk": 1.0,
+  "context_policy": "source-premise-exact-unit-hypothesis-no-answer-or-QA-context",
+  "attention_implementation": "eager",
+  "dtype": "float16",
+  "token_projection_performed": false,
+  "hypothesis_id": "H006_EXTERNAL_NLI_DIAGNOSTIC",
+  "notes": "Fixed externally supervised diagnostic; not adopted unsupervised main method. All34/104 retained; target gold evaluation only."
+}

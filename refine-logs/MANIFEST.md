@@ -8,3 +8,6 @@
 | 2026-11-02 19:00 | EXPERIMENT_TRACKER_20261102_190000.md → EXPERIMENT_TRACKER.md | 实际执行状态；持续更新时另留时间版本 |
 | 20261102_194058 | EXPERIMENT_PLAN_20261102_194058.md / EXPERIMENT_TRACKER_20261102_194058.md | Runtime qualification passed; bounded idle job armed; scientific observations not yet produced |
 | 20261102_194257 | EXPERIMENT_PLAN_20261102_194257.md / EXPERIMENT_TRACKER_20261102_194257.md | Actual local-idle execution checkpoint, no new language-model results |
+| 2026-11-03 | h004-20261103/; docs/results/h004_typed_factorial.{md,json} | H004 completed; strict typed representation covers only 3 natural cases, no constructed controls; not promoted |
+| 2026-11-03 | docs/results/h005_focused_verdict.{md,json}; outputs/h005-20261103/unit-ceiling-audit.{py,json,md} | Matched focus pilot and posthoc character-unit ceiling; mixed result, not historical BPE or full six-task evaluation |
+| 2026-11-03 | docs/results/h006_external_nli.{md,json} | Frozen externally supervised NLI diagnostic on same34/104; seals validated before gold release; not adopted main method |

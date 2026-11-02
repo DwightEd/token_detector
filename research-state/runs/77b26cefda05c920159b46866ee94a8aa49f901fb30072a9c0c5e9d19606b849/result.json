@@ -1,0 +1,257 @@
+{
+  "schema": 1,
+  "run_id": "77b26cefda05c920159b46866ee94a8aa49f901fb30072a9c0c5e9d19606b849",
+  "completed_utc": "2026-11-02T18:39:05.124357+00:00",
+  "outcome": "inconclusive",
+  "conclusion": "Frozen external NLI diagnostic observations sealed. All34/104 units retained; no target-label fitting; native/character posthoc evaluation pending.",
+  "artifacts": [
+    {
+      "path": "outputs/h006-20261103/nli_v1/complete.json",
+      "sha256": "d16b05c26923367152e307fa21de1355bb97f74ce661cc21c809b3d97d75ab28"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/freeze.json",
+      "sha256": "7a16088d6861a93e04935d96e0044e24ea976cc23fa6f497e7c16d11f0666f26"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/model_identity.json",
+      "sha256": "2f2230b30d0ef8a840123226b6531f51746da167f155f1127b5ec107faa94036"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/plan.json",
+      "sha256": "de309490eb441d2dc8b0c4c18d34559e017bc4b18464c75b3a3dc5158ed93693"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/protocol.json",
+      "sha256": "22e8d88b3dad6ce383139de20cef1be4482b7439e63145302cb33d57f572f2bb"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/seal.json",
+      "sha256": "bf17c2d9232267d95803d4fb379f7ccce82e976675a57095220668f35d7ecc32"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/source_identity.json",
+      "sha256": "eb91ae2790861e61877849a83e96ba4dfc80eb5eb85e8437ae922d55eef2c383"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00000/backend_raw.json",
+      "sha256": "622572d69d567dc3436dc28fd403332ff0b1885ed58bd706c1d97f675ad4cf50"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00000/request.json",
+      "sha256": "2034e1314b3872317be4f3fdeff00af7efb4627f4abac27a8ed2f380f337abb4"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00000/seal.json",
+      "sha256": "b87e86efa55e119ea254a52af5610b54eaf6f42cd3d4a6d324c3929790dee123"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00001/backend_raw.json",
+      "sha256": "f62862bb16b6630d011709fccd055d3f9b3689c205cf38cd63bc0f25d7a5f3e0"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00001/request.json",
+      "sha256": "1b0869aef4a465656d2a833b81cecc59684baac6bb4a956d3b41e1e99b67bd03"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00001/seal.json",
+      "sha256": "a38f239a5b3baf07a9a3844812fda8edb85f5444da29708116de7153a334b8ef"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00002/backend_raw.json",
+      "sha256": "a20b204b66386b734a7d0398eb0e81561a92bfbda19624a83439ffa1b77d1c18"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00002/request.json",
+      "sha256": "8c00776b2f064dcb1be2db906628ae7595395c9b41064db00f793db70c7af3d0"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00002/seal.json",
+      "sha256": "171b1359c433fa9f15fbe2d7cf8272afa7b767ae6a34773f62eefb263aa8596c"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00003/backend_raw.json",
+      "sha256": "29740fcf73849e4ff4556b2ac4fe48310bed917965dd41cf3000bf808d5a6e50"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00003/request.json",
+      "sha256": "c5b78e5f9e825bd77c5328ad5d0f3946085ad6350ed84acc95af8ba268f2f8cc"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00003/seal.json",
+      "sha256": "f751bb1f0b4692c26882e14133cac8e23e75e53f7d7be6a7906737bd3ba0f575"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00004/backend_raw.json",
+      "sha256": "21beebc74eb6275e7770d748da9f4aa19ee719ea1740eb290fc15f148a4dc3b8"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00004/request.json",
+      "sha256": "ff50c9017658564815d8618c683fec9616061d6d320b624fdca005def733aaf4"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00004/seal.json",
+      "sha256": "749fc42657c617362345b1f2f894c371ed51f3147de35897695c86ea2d9f7e3e"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00005/backend_raw.json",
+      "sha256": "759aca45de79441d44bdf5d1c2036219758fc14f1590634b693edbd3ba244d01"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00005/request.json",
+      "sha256": "1be60c462f70e8df80e51817f0d6f4146146fee4829f35772fad9ebc5864e6eb"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00005/seal.json",
+      "sha256": "e57ca8194deb00df9122a943d7864ecfc2ac84dc5e80e1e69b1275274913b2b9"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00006/backend_raw.json",
+      "sha256": "582d5208cf219cc8060c9dfedee12add99320a9b39e91bcabc9b1c94878aca13"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00006/request.json",
+      "sha256": "a8321e3bf4e9383f945bd47079f5d3b1d072680d614f119e4bc02bd2ff9e7367"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00006/seal.json",
+      "sha256": "0c92cfcef9b22503b8e0a2bdc39049cb5fd2943730855753506ef3d2aaefe0aa"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00007/backend_raw.json",
+      "sha256": "4e243e9b4d1833fe98f1da5dda3fbc3c57ae59770a906c47aace029a15fdd508"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00007/request.json",
+      "sha256": "278a6c08e2c6e52ccc727f6bdea4add8f05022e4ca55e9309fb248b3aad96794"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00007/seal.json",
+      "sha256": "230ee391ff36ea2b6e7fd3699dd2d4e1fbf741eca80dd1ee6707026c71d5ef39"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00008/backend_raw.json",
+      "sha256": "d933725ee89fc7775f13716148fd56aa87ffdff4fbe2a534c8914d37b5294725"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00008/request.json",
+      "sha256": "6dcc119af9b5afb9648d03dc028ca2d400fe7fded5805037976d5c1d6de067f5"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00008/seal.json",
+      "sha256": "306ae292f05b947132d6b9719f3a98d807949e4a2515c7f3c7c672f2711a3260"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00009/backend_raw.json",
+      "sha256": "60a18559d1388f515cd409109dec8e34859c1cff06f57a9d8342b66975aa6430"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00009/request.json",
+      "sha256": "4aed09a58403fd3ef339e5d1af84ab55d3bca2eb4e03b5cc6f6c7bc093d7df5b"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00009/seal.json",
+      "sha256": "beda53875b99db6591853cbdeada31e69b3efd8b9a4fdc8a273d95c584ab0e47"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00010/backend_raw.json",
+      "sha256": "35c9b2531a43c31f552a29fb45f0fdfc3d9d9cad3c50be8fcfd7fb7fb813b8c4"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00010/request.json",
+      "sha256": "6da7ad21a24d5eb11aa0fd0c0ab54f278d5d64cca71e8a6a33622ca56cf262ec"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00010/seal.json",
+      "sha256": "80ea3153c265c90256edc1f9549a4289312678f8852599fe2f0c8e8a654a5dc6"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00011/backend_raw.json",
+      "sha256": "e63b0a2a5d28db670d663cbd358e177974c3106c9a1f2233cbe804837782e380"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00011/request.json",
+      "sha256": "43948a5ad15d3dc56e077f7b01d4aad71f05f25d2447b19af99c15e4f1526c6f"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00011/seal.json",
+      "sha256": "6236885853f2b701e59e9ee3555e7b89bcfff4b09c2325c46a854d75b2937073"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00012/backend_raw.json",
+      "sha256": "e9a4488074b0e5901aa414bd7ae39233abb2427f4ef1e188bd47094c5368a0e1"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00012/request.json",
+      "sha256": "57cd1f08e5abee4e1dac1b3f87adf23e2c19a777567a3d15746664fec97fe7f2"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00012/seal.json",
+      "sha256": "789b4ab3847e64d7aa8f5384c13caee2fd430af2871c23a35bf535e30316aab3"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00013/backend_raw.json",
+      "sha256": "13ea678324ea0dcaf9aeb52c6e8c36a6df07ab67a30c81719e43f4b570d18c10"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00013/request.json",
+      "sha256": "b2c5faf3759a56da1600680727975a188c7bb47408af2b8f0a8730adecbd04b4"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00013/seal.json",
+      "sha256": "7587eb3f26ae24a211fd89094d64334585ed228277a89e9cadc301fe17c25761"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00014/backend_raw.json",
+      "sha256": "d9508fdecc372940d383191490b10f0946554849e3dd90ff79d1ef9854689fc0"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00014/request.json",
+      "sha256": "83d54a30ebc62cc60f670b5e4ef23368f85ff5d5d956bba682ef78750832e95c"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00014/seal.json",
+      "sha256": "673642af1aeea4730f614f65eaaf01f2c863cc82168bc3b52bfad8a4a0b0dbf4"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00015/backend_raw.json",
+      "sha256": "3d6e86cf39d4621d27c49bb2f410a8475435678b84684f33926c80ef37b69608"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00015/request.json",
+      "sha256": "a615ef9e529c4719cfd60a811e73d4cda7f668be955bba604e2ea1044418a099"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00015/seal.json",
+      "sha256": "640e1c20f3f87563dbb72ee0665240cc6988f85c9fdbd874ce81d9348aa3ef5d"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00016/backend_raw.json",
+      "sha256": "91c54b8e1367e3581168e6d59bd7b5201b2a1dc9f579007120641cd04510d952"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00016/request.json",
+      "sha256": "8934d4e68b1e3cc2d7e8144236f020f04c50ebc35aea99bd0a223b74746ad550"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00016/seal.json",
+      "sha256": "699ed02ad864f0cec71d82eeb48b99750db5bf6d29fe67c4c5205dc30fb3460d"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00017/backend_raw.json",
+      "sha256": "5e52eabc1297f4f2d5e6eef59ffd262ac66e795107f7922ce4f2476b04ef823f"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00017/request.json",
+      "sha256": "002c05bb135bd6f81d62f54354553dbff1187640d8875cd7aded798651342804"
+    },
+    {
+      "path": "outputs/h006-20261103/nli_v1/batches/00017/seal.json",
+      "sha256": "af7f133ae7fa867efd28c0d3fc13d8717c01a69e5cb755e012c11e29932a6aa0"
+    },
+    {
+      "path": "outputs/h006-20261103/nli.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

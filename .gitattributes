@@ -10,3 +10,7 @@ docs/source-reading/assets/mathjax-3.2.2/LICENSE -text
 *.yml text eol=lf
 *.txt text eol=lf
 *.npz binary
+# Research artifacts carry byte-level SHA256 identities; retain frozen bytes.
+research-state/protocols/** -text
+research-state/runs/** -text
+docs/results/** -text

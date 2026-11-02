@@ -2,7 +2,7 @@
 
 本任务的持久状态位于 [research-state/RESUME.md](research-state/RESUME.md)。恢复时先读该短文件与其中指定的事实、先前实验索引，不从聊天摘要重新推测研究方向。
 
-最新实际进展：H003自然18答/108前向、构造16答/96前向及复核均已完成，存在自然关系漏检、标签排列敏感性、null/False与合法推导错误，未晋升完整检测器。见 [自然结果](docs/results/h003_natural_verdict_qualification.md)、[控制结果](docs/results/h003_constructed_controls.md)。下一项 [H004来源表达交叉对照](research-state/TYPED_SOURCE_NEXT.md)尚未实现。长期goal工具仍保留旧blocked状态；不声称自动续跑已启用。
+最新实际进展：H004 类型表达与 H005 匹配整答/精确单元核验均已完成、未晋升。H005 保留34答/104单元，结果混合；事后字符单元上界只作已暴露面板的几何诊断，不是预测器。见 [H004](docs/results/h004_typed_factorial.md)、[H005](docs/results/h005_focused_verdict.md)。外部监督 NLI 诊断 H006 的观察与 CPU 评价也已封存，由主线程另记最终解释并准备此前计划的 H007 新负担控制；真实 claim/PID 与当前状态以 RESUME 为准，不能重复启动。所有字符/原生句子 pilot 指标均不能冒充历史 BPE 或六任务各0.8结果。旧 goal 工具 blocked 不覆盖用户持续迭代授权；不声称存在永久自动服务。
 
 用户目标：从生成机制、具体错误成因、数据集与观测合同差异出发，设计并检验无监督幻觉检测模块，争取六项主任务 AUROC 均达到 0.8。真值仅用于冻结评分后的评价与事后诊断，不用于训练、参数搜索或经验权重选择。先在冻结错例面板上检验模块的作用条件与反例，再进行完整任务评价与消融。局部案例改善不构成总体改善，新颖性和顶会水准必须另外举证。
 

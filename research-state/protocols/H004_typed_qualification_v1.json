@@ -1,0 +1,30 @@
+{
+  "schema": "typed-verdict-factorial-v1",
+  "purpose": "observations_only",
+  "conditions": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "expected_cases": 34,
+  "max_input_tokens": 4096,
+  "permutations": 6,
+  "max_new_forward_passes": 612,
+  "labels": [
+    "A",
+    "B",
+    "C"
+  ],
+  "source_transform_id": "typed-source-v1",
+  "null_rule": " Interpret structured field types explicitly: a null or None value means the field is not reported, and cannot support either a positive or a negative assertion. A boolean false or False is an explicitly negative value for that field, not missing evidence. Preserve the binding of every value to its own field, entity and time. Do not transfer a value or missing status from a different field. These rules do not add any source facts.",
+  "use_cache": false,
+  "logits_to_keep": 1,
+  "attention_implementation": "sdpa",
+  "donor_inputs_sha256": [
+    "1bf9a26ad06ac350988302999776e7288f9da570d35316fd6b27ca21e36e8baf",
+    "7bf1a14dff728aa367ce66664413cdb1d58bea9500218dec4173144a412f6a19"
+  ],
+  "hypothesis_id": "H004_TYPED_SOURCE_REPRESENTATION",
+  "notes": "Primary B typed-only, C rule-only confound control, D interaction; allfour reported, no target-label arm selection. Original A must reuse H003, including raw fallback equivalence; 34original cases retained. No token detector or AUROC."
+}
