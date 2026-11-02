@@ -26,3 +26,16 @@ def test_central_verdict_refuses_before_identity_or_model_access(monkeypatch):
     monkeypatch.setattr(sys,'argv',arguments())
     with pytest.raises(SystemExit) as error:run.main()
     assert error.value.code==2
+
+def test_central_verdict_evaluation_dispatch_never_loads_model(monkeypatch):
+    from experiments import verdict_evaluation
+    calls=[]
+    def denied(*a,**k):raise AssertionError('CPU review must not load model or model identity')
+    monkeypatch.setattr(semantic_qualification,'HFGenerator',denied)
+    monkeypatch.setattr(run.data,'read_json',denied)
+    monkeypatch.setattr(verdict_evaluation,'evaluate',lambda *a:calls.append(a))
+    monkeypatch.setattr(sys,'argv',['r4-experiment','transfer','evaluate-verdict',
+        '--observations','observations','--panel','panel','--protocol','protocol.json',
+        '--output','review'])
+    run.main()
+    assert calls==[(Path('observations'),Path('panel'),Path('review'),Path('protocol.json'))]
