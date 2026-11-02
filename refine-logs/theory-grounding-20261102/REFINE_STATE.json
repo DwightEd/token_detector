@@ -5,9 +5,12 @@
   "last_score": null,
   "last_verdict": "science_not_established",
   "status": "in_progress",
-  "timestamp": "2026-11-02T01:25:53.070981+08:00",
+  "timestamp": "2026-11-02T09:12:10.769436+08:00",
   "run_directory": "refine-logs/theory-grounding-20261102",
   "max_rounds": 5,
   "review_independence": "same-family",
-  "acceptance_status": "provisional"
+  "acceptance_status": "provisional",
+  "learning_regime": "unsupervised",
+  "ground_truth_usage": "final_evaluation_only",
+  "user_constraint_file": "refine-logs/theory-grounding-20261102/USER_CONSTRAINTS.md"
 }

@@ -11,21 +11,24 @@
     "full_scope_complete": false
   },
   "method_refinement": {
-    "phase": "anchor",
-    "round": 0,
+    "phase": "evidence_pending",
+    "round": 3,
     "max_rounds": 5,
     "venue_readiness": "unestablished",
-    "reviewer_status": "not_requested_yet",
-    "natural_data_validation": "not_run"
+    "reviewer_status": "passed_narrow_scope_round_3",
+    "natural_data_validation": "not_run",
+    "learning_regime": "unsupervised",
+    "ground_truth_usage": "final_evaluation_only"
   },
   "constraints": [
     "Preserve original artifacts and frozen R4 comparison",
     "No claim that polished exposition or a numerical model guarantees factuality",
     "No new GPU/model dataset execution yet",
-    "Primary-source citations and traceable review required"
+    "Primary-source citations and traceable review required",
+    "User-confirmed unsupervised detection; ground truth is final-evaluation-only, never for training, tuning, method selection or risk calibration"
   ],
   "previous_task": {
-    "desktop_folder": "D:/Desktop/myproject_????_20261102",
+    "desktop_folder": "D:\\Desktop\\myproject_研究资料_20261102",
     "github_main": "1210120748b3a05bd271bc79debcbed4fdc0c964",
     "status": "complete"
   },
@@ -52,5 +55,14 @@
     "per-run observation provenance",
     "budget-matched baseline comparisons",
     "confirmed novelty"
-  ]
+  ],
+  "user_confirmation": {
+    "confirmed_date_beijing": "2026-11-02",
+    "user_text": "坚持无监督，真值只用于最终评价",
+    "learning_regime": "unsupervised",
+    "ground_truth_usage": "final_evaluation_only",
+    "label_based_training": false,
+    "label_based_hyperparameter_or_method_selection": false,
+    "label_based_risk_calibration": false
+  }
 }

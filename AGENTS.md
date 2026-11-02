@@ -1,5 +1,19 @@
 # Code organization
 
+## Confirmed research constraint (2026-11-02)
+
+- The user requires unsupervised detection. Ground-truth support/error labels
+  may be opened only for final evaluation after freezing methods, parameters,
+  thresholds, partitions and scores. Do not use them for training, tuning,
+  method selection or label-based risk calibration.
+- Keep previously inspected evaluation populations exploratory; they cannot
+  become fresh confirmation data by renaming or resplitting them.
+- Follow refine-logs/theory-grounding-20261102/USER_CONSTRAINTS.md. Preserve
+  historical proposals and the immutable anchor; this confirmed user choice
+  supersedes their previously pending supervised/calibration alternatives.
+
+## Implementation
+
 - This repository is the canonical token-detector workspace. Develop from its root;
   test installed packages in a clean directory to avoid unrelated same-name packages.
 - Keep the callable detector library in myproject/. Put all experiment code in

@@ -6,7 +6,7 @@
 
 **全项目尚未全部讲完。** 原始98个Python文件共15610行、636个定义，主库以外剩余77文件/508定义待逐行讲解。新增两测试文件与渲染工具另列在inventory.current_additions，保持待逐行解释状态。没有把自动AST清单冒充逐行完成。非Python资源没有伪造函数覆盖。
 
-科学状态：[论文对照](../../refine-logs/theory-grounding-20261102/LITERATURE.md)、[完整修订方案](../../refine-logs/theory-grounding-20261102/round-2-refinement.md)、[独立审查摘要](../../refine-logs/theory-grounding-20261102/REVIEW_SUMMARY.md)。已有理论推断不等于事实标签识别；没有新的自然数据效果或顶会就绪结论。
+科学状态：[论文对照](../../refine-logs/theory-grounding-20261102/LITERATURE.md)、[当前完整方案](../../refine-logs/theory-grounding-20261102/FINAL_PROPOSAL.md)、[独立审查摘要](../../refine-logs/theory-grounding-20261102/REVIEW_SUMMARY.md)。[用户已确认](../../refine-logs/theory-grounding-20261102/USER_CONSTRAINTS.md)坚持无监督，真值只用于最终评价。已有理论推断不等于事实标签识别；没有新的自然数据效果或顶会就绪结论。
 
 [VALIDATION.md](VALIDATION.md)记录实际CPU检查与未执行路径。`SOURCE_INVENTORY.json`可机读；`SOURCE_INVENTORY_initial.json`保留初始待处理范围。后续修改源码前先核对hash，不能沿用过期行号。
 

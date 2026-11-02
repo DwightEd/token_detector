@@ -64,3 +64,9 @@
 | 20261102_012751 | /research-refine | tests/test_auc_decomposition.py | implementation | Versioned explanation, refinement or computational check; see file for limits |
 | 20261102_012751 | /research-refine | tests/test_pooling_theory.py | implementation | Versioned explanation, refinement or computational check; see file for limits |
 | 20261102_012751 | /source-to-interview | tools/render_source_reading.py | implementation | Versioned explanation, refinement or computational check; see file for limits |
+| 20261102_091210 | /research-refine | refine-logs/theory-grounding-20261102/USER_CONSTRAINTS.md | implementation | User-confirmed unsupervised / final-label-only constraint; no new experiment |
+| 20261102_091210 | /research-refine | refine-logs/theory-grounding-20261102/WORK_STATE_20261102_091210.json | implementation | User-confirmed unsupervised / final-label-only constraint; no new experiment |
+| 20261102_091210 | /research-refine | refine-logs/REFINE_STATE_20261102_091210.json | implementation | User-confirmed unsupervised / final-label-only constraint; no new experiment |
+| 20261102_091210 | /research-refine | refine-logs/theory-grounding-20261102/REFINE_STATE_20261102_091210.json | implementation | User-confirmed unsupervised / final-label-only constraint; no new experiment |
+| 20261102_091210 | /research-refine | refine-logs/theory-grounding-20261102/FINAL_PROPOSAL_20261102_091210.md | implementation | User-confirmed unsupervised / final-label-only constraint; no new experiment |
+| 20261102_091210 | /research-refine | refine-logs/theory-grounding-20261102/REFINEMENT_REPORT_20261102_091210.md | implementation | User-confirmed unsupervised / final-label-only constraint; no new experiment |
