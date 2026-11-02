@@ -2,11 +2,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>整个方法与调用路径</title><link rel="stylesheet" href="assets/guide.css">
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
-<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script></head><body>
+<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
+<style>@media print{body[data-article="EXPERIMENT_PLAN"]{font-size:14px;line-height:1.65}}</style></head><body data-article="METHOD">
 <header><div class="eyebrow">TOKEN DETECTOR / 本地离线阅读</div><h1>整个方法与调用路径</h1>
-<nav><a href="VISUAL_GUIDE.html">公式与交互演示</a><a href="THEORY.html">完整公式</a><a href="METHOD.html">方法步骤</a><a href="PAPER_STORY.html">论文主张</a><a href="READING.html">逐行代码</a></nav>
+<nav><a href="METHOD_V3.html">V3方法</a><a href="RESULTS_CURRENT.html">全数据集对照</a><a href="INTEGRATED_DESIGN.html">组合设计</a><a href="EXPERIMENT_PLAN.html">实验计划</a><a href="VISUAL_GUIDE.html">交互演示</a><a href="THEORY.html">完整公式</a><a href="READING.html">逐行代码</a></nav>
 <p>公式已在浏览器排版；可用浏览器“打印 → 保存为PDF”。本页不需要联网。</p></header>
-<main><article class="article"><h1 id="token">从输入到 token 分数：整个方法</h1>
+<main><article class="article"><h1 id="token">从输入到 token 分数：库调用路径</h1>
+<p>当前研究对象以 <a href="METHOD_V3.html">V3 / witness</a> 为基础；本页解释包含 V1 默认值和历史 R4 的完整库调用链。请先看 <a href="RESULTS_CURRENT.html">全数据集对照</a> 与 <a href="INTEGRATED_DESIGN.html">组合方法设计</a>。下文 V1 的保序定理不适用于完整 V3。</p>
 <p>阅读基线是 Git 提交 <code>1210120748b3a05bd271bc79debcbed4fdc0c964</code>。先理解本文，再打开 <a href="READING.html">逐行阅读器</a>，最后看 <a href="THEORY.html">数学证明</a>。代码中 <code>myproject</code> 是包名；GitHub 仓库是 <code>token_detector</code>，不是当前另一项目 Paper-Analysis-Viewer。</p>
 <h2 id="_1">先区分三个概念</h2>
 <ol>

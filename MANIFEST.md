@@ -87,3 +87,42 @@
 | 20261102_130342 | /source-to-interview | docs/source-reading/assets/mathjax-3.2.2/LICENSE | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |
 | 20261102_130342 | /source-to-interview | docs/source-reading/assets/mathjax-3.2.2/tex-svg-full.js | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |
 | 20261102_130342 | /source-to-interview | docs/source-reading/assets/mathjax-3.2.2/VENDOR_MANIFEST.json | implementation | Offline math reading / synthetic mechanism visualization; not empirical evidence |
+| 20261102_145620 | /experiment-plan | docs/METHOD_V3.md | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/RESULTS_CURRENT.md | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/results/VALIDATION.md | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/results/comparison.csv | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/results/comparison.json | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/results/evidence.json | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/source-reading/EXPERIMENT_PLAN.html | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/source-reading/INTEGRATED_DESIGN.html | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/source-reading/INTEGRATED_DESIGN.md | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/source-reading/METHOD_V3.html | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/source-reading/METHOD_V3.md | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/source-reading/RESULTS_CURRENT.html | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/source-reading/SOURCE_INVENTORY_20261102_145336.json | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/source-reading/SOURCE_INVENTORY_20261102_145507.json | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | refine-logs/EXPERIMENT_PLAN.md | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | refine-logs/EXPERIMENT_PLAN_20261102_144407.md | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | refine-logs/EXPERIMENT_TRACKER.md | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | refine-logs/EXPERIMENT_TRACKER_20261102_144407.md | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | refine-logs/theory-grounding-20261102/FINAL_PROPOSAL_20261102_145507.md | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | refine-logs/theory-grounding-20261102/WORK_STATE_20261102_145336.json | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | refine-logs/theory-grounding-20261102/WORK_STATE_20261102_145507.json | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | tools/render_method_comparison.py | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | README.md | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/LATEST_RESEARCH.md | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/source-reading/METHOD.html | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/source-reading/METHOD.md | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/source-reading/PAPER_STORY.html | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/source-reading/PAPER_STORY.md | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/source-reading/READING.html | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/source-reading/README.md | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/source-reading/SOURCE_INVENTORY.json | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/source-reading/THEORY.html | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/source-reading/VALIDATION.html | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | docs/source-reading/VISUAL_GUIDE.html | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | refine-logs/theory-grounding-20261102/FINAL_PROPOSAL.md | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | refine-logs/theory-grounding-20261102/WORK_STATE.json | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | tools/render_math_guide.py | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | tools/render_source_reading.py | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |
+| 20261102_145620 | /experiment-plan | tools/templates/theory_visual.html | implementation | V3 comparison / integrated proposal and falsifiable validation; no new detector results |

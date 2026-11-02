@@ -1,4 +1,6 @@
-# 从输入到 token 分数：整个方法
+# 从输入到 token 分数：库调用路径
+
+当前研究对象以 [V3 / witness](METHOD_V3.md) 为基础；本页解释包含 V1 默认值和历史 R4 的完整库调用链。请先看 [全数据集对照](../RESULTS_CURRENT.md) 与 [组合方法设计](INTEGRATED_DESIGN.md)。下文 V1 的保序定理不适用于完整 V3。
 
 阅读基线是 Git 提交 `1210120748b3a05bd271bc79debcbed4fdc0c964`。先理解本文，再打开 [逐行阅读器](READING.html)，最后看 [数学证明](THEORY.md)。代码中 `myproject` 是包名；GitHub 仓库是 `token_detector`，不是当前另一项目 Paper-Analysis-Viewer。
 

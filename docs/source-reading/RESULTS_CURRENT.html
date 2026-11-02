@@ -1,0 +1,674 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>全数据集方法对照</title><link rel="stylesheet" href="assets/guide.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
+<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
+<style>@media print{body[data-article="EXPERIMENT_PLAN"]{font-size:14px;line-height:1.65}}</style></head><body data-article="RESULTS_CURRENT">
+<header><div class="eyebrow">TOKEN DETECTOR / 本地离线阅读</div><h1>全数据集方法对照</h1>
+<nav><a href="METHOD_V3.html">V3方法</a><a href="RESULTS_CURRENT.html">全数据集对照</a><a href="INTEGRATED_DESIGN.html">组合设计</a><a href="EXPERIMENT_PLAN.html">实验计划</a><a href="VISUAL_GUIDE.html">交互演示</a><a href="THEORY.html">完整公式</a><a href="READING.html">逐行代码</a></nav>
+<p>公式已在浏览器排版；可用浏览器“打印 → 保存为PDF”。本页不需要联网。</p></header>
+<main><article class="article"><h1 id="2026-10-31">全数据集方法对照：截至恢复记录 2026-10-31</h1>
+<p><strong>V3 / witness 是仍保留的金融研究候选；它不是所有数据集、所有观察模型上的最优方法。</strong>
+时间上更晚的候选已试验，但没有建立稳定替代证据。当前公开 API 的默认值仍为 V1 / shared；R4 是历史任务配方。研究讲解以 <a href="METHOD_V3.html">V3 方法</a>为主。</p>
+<p>单元格为 <strong>AUROC / AP</strong>，越大越好；AP 是 average precision。这里只整理已有结果，没有新运行、重算指标或据标签挑选新方法。— 表示该运行体系中未恢复到结果，不能跨观察模型补数。
+历史任务已被查看，只能作为探索证据。金融是 silver 编辑标签；HalluRAG 是句标签投影；它们不能等同人类自然 token 错误标注。</p>
+<h2 id="1-llamar4v1v2v3">1. Llama：R4、V1、V2、V3 与控制</h2>
+<p>前三列为 RAGTruth 三任务完整 TEST；金融为 FRED 发布的 FinQA 162答 / TATQA 130答 silver 测试人群，不是原始 FinQA/TATQA 整个基准。原生成问题和提示未恢复，统一采用 source-only completion prompt，不能宣称复现原金融问答系统。前五列来自论文第6页表2，概率基线来自第21页表17。
+HalluRAG 来自第29页表35的另一次匹配 SDPA 采集，独立列示。V3 span permutation 为实验账本的固定段内置换消融，保留六位打印值。R4 使用额外 local/route 观测和无标签参考校准，预算与 full-gap 方法不同。
+旧 RAG 观测生产者身份未全部恢复，不宣称全链路独立复现。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align: right;">QA</th>
+<th style="text-align: right;">Summary</th>
+<th style="text-align: right;">Data2txt</th>
+<th style="text-align: right;">FinQA</th>
+<th style="text-align: right;">TATQA</th>
+<th style="text-align: right;">HalluRAG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R4</td>
+<td style="text-align: right;">0.8929/0.3527</td>
+<td style="text-align: right;">0.7621/0.0966</td>
+<td style="text-align: right;">0.7983/0.1904</td>
+<td style="text-align: right;">0.6617/0.1452</td>
+<td style="text-align: right;">0.7110/0.2209</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr>
+<td>Raw gap</td>
+<td style="text-align: right;">0.6839/0.0956</td>
+<td style="text-align: right;">0.6260/0.0479</td>
+<td style="text-align: right;">0.6127/0.0801</td>
+<td style="text-align: right;">0.6375/0.1937</td>
+<td style="text-align: right;">0.6869/0.2811</td>
+<td style="text-align: right;">0.5523/0.2489</td>
+</tr>
+<tr>
+<td>V1 shared</td>
+<td style="text-align: right;">0.8450/0.2175</td>
+<td style="text-align: right;">0.7255/0.0895</td>
+<td style="text-align: right;">0.6996/0.1126</td>
+<td style="text-align: right;">0.7283/0.2572</td>
+<td style="text-align: right;">0.7688/0.3559</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr>
+<td>V2 persistent</td>
+<td style="text-align: right;">0.8481/0.2292</td>
+<td style="text-align: right;">0.7351/0.1025</td>
+<td style="text-align: right;">0.7139/0.1247</td>
+<td style="text-align: right;">0.7356/0.2790</td>
+<td style="text-align: right;">0.7898/0.3838</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr>
+<td>V3 witness</td>
+<td style="text-align: right;">0.8470/0.2148</td>
+<td style="text-align: right;">0.7623/0.1046</td>
+<td style="text-align: right;">0.7557/0.1452</td>
+<td style="text-align: right;">0.8027/0.3250</td>
+<td style="text-align: right;">0.8430/0.4657</td>
+<td style="text-align: right;">0.6378/0.3219</td>
+</tr>
+<tr>
+<td>V3 c=0</td>
+<td style="text-align: right;">0.8475/0.2089</td>
+<td style="text-align: right;">0.7601/0.0953</td>
+<td style="text-align: right;">0.7449/0.1301</td>
+<td style="text-align: right;">0.7898/0.2948</td>
+<td style="text-align: right;">0.8187/0.4085</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr>
+<td>Fixed clipping</td>
+<td style="text-align: right;">0.8426/0.2090</td>
+<td style="text-align: right;">0.7552/0.0982</td>
+<td style="text-align: right;">0.7445/0.1358</td>
+<td style="text-align: right;">0.7967/0.3227</td>
+<td style="text-align: right;">0.8377/0.4599</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr>
+<td>V3 span permutation</td>
+<td style="text-align: right;">0.844615/0.213015</td>
+<td style="text-align: right;">0.755925/0.100447</td>
+<td style="text-align: right;">0.746135/0.135095</td>
+<td style="text-align: right;">0.791376/0.315781</td>
+<td style="text-align: right;">0.822525/0.444746</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr>
+<td>Matched local</td>
+<td style="text-align: right;">0.8255/0.1806</td>
+<td style="text-align: right;">0.7485/0.0900</td>
+<td style="text-align: right;">0.7426/0.1372</td>
+<td style="text-align: right;">0.7894/0.3184</td>
+<td style="text-align: right;">0.8421/0.4700</td>
+<td style="text-align: right;">0.6215/0.3039</td>
+</tr>
+<tr>
+<td>Symmetric local</td>
+<td style="text-align: right;">0.8173/0.1672</td>
+<td style="text-align: right;">0.7420/0.0816</td>
+<td style="text-align: right;">0.7319/0.1251</td>
+<td style="text-align: right;">0.7763/0.2963</td>
+<td style="text-align: right;">0.8331/0.4394</td>
+<td style="text-align: right;">0.6132/0.2959</td>
+</tr>
+<tr>
+<td>Fixed HMM</td>
+<td style="text-align: right;">0.7900/0.1451</td>
+<td style="text-align: right;">0.7204/0.0763</td>
+<td style="text-align: right;">0.7165/0.1241</td>
+<td style="text-align: right;">0.7588/0.2859</td>
+<td style="text-align: right;">0.8197/0.4243</td>
+<td style="text-align: right;">0.5978/0.2804</td>
+</tr>
+<tr>
+<td>Partial</td>
+<td style="text-align: right;">0.8440/0.2054</td>
+<td style="text-align: right;">0.7600/0.0997</td>
+<td style="text-align: right;">0.7526/0.1418</td>
+<td style="text-align: right;">0.7979/0.3122</td>
+<td style="text-align: right;">0.8378/0.4497</td>
+<td style="text-align: right;">0.6335/0.3141</td>
+</tr>
+<tr>
+<td>Source NLL</td>
+<td style="text-align: right;">0.6204/0.0774</td>
+<td style="text-align: right;">0.6165/0.0437</td>
+<td style="text-align: right;">0.5858/0.0613</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">0.6057/0.2434</td>
+</tr>
+<tr>
+<td>Source entropy</td>
+<td style="text-align: right;">0.6374/0.1016</td>
+<td style="text-align: right;">0.6315/0.0586</td>
+<td style="text-align: right;">0.5797/0.0577</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+</tr>
+</tbody>
+</table>
+<p>V3 相对 V1 的 AUROC 增量约为：QA +0.0020、Summary +0.0368、Data2txt +0.0561、FinQA +0.0744、TATQA +0.0742（由表内四位数相减，非置信区间）。
+R4 仍在 QA / Data2txt 更强；QA 上 V2 的 AUROC/AP 也高于 V3。V3 比简单 clipping 的金融增益配对区间跨零，未建立稳定优越性。
+金融 V3 AUROC 的历史95%区间约为 FinQA [0.7690, 0.8350]、TATQA [0.7927, 0.8919]，都跨0.8。</p>
+<h2 id="2-qwen">2. Qwen：密集执行主比较（六组）</h2>
+<p>论文第7页表3及第26页表26；保留原三位打印精度。V1/V2/R4 在这套观测上没有恢复到对应结果，不填入旧 Llama 数值。
+七种 source-gap 读出共用与 LUMINA 完全相同的 source-present 前向，并使用匹配 source-absent 前向。
+LUMINA 额外使用另一条来源及内部表示；属于输入合同适配后的官方代码比较，不是原论文 checkpoint 指标复现，也非相同观测预算。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align: right;">QA</th>
+<th style="text-align: right;">Summary</th>
+<th style="text-align: right;">Data2txt</th>
+<th style="text-align: right;">FinQA</th>
+<th style="text-align: right;">TATQA</th>
+<th style="text-align: right;">HalluRAG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V3 witness</td>
+<td style="text-align: right;">0.812/0.154</td>
+<td style="text-align: right;">0.740/0.095</td>
+<td style="text-align: right;">0.685/0.087</td>
+<td style="text-align: right;">0.775/0.287</td>
+<td style="text-align: right;">0.815/0.411</td>
+<td style="text-align: right;">0.544/0.221</td>
+</tr>
+<tr>
+<td>Matched local</td>
+<td style="text-align: right;">0.791/0.133</td>
+<td style="text-align: right;">0.728/0.082</td>
+<td style="text-align: right;">0.671/0.083</td>
+<td style="text-align: right;">0.783/0.296</td>
+<td style="text-align: right;">0.820/0.419</td>
+<td style="text-align: right;">0.541/0.221</td>
+</tr>
+<tr>
+<td>Symmetric local</td>
+<td style="text-align: right;">0.785/0.127</td>
+<td style="text-align: right;">0.722/0.075</td>
+<td style="text-align: right;">0.663/0.079</td>
+<td style="text-align: right;">0.772/0.280</td>
+<td style="text-align: right;">0.809/0.393</td>
+<td style="text-align: right;">0.537/0.220</td>
+</tr>
+<tr>
+<td>Fixed HMM</td>
+<td style="text-align: right;">0.760/0.113</td>
+<td style="text-align: right;">0.703/0.069</td>
+<td style="text-align: right;">0.652/0.078</td>
+<td style="text-align: right;">0.761/0.277</td>
+<td style="text-align: right;">0.796/0.380</td>
+<td style="text-align: right;">0.530/0.217</td>
+</tr>
+<tr>
+<td>Partial</td>
+<td style="text-align: right;">0.809/0.150</td>
+<td style="text-align: right;">0.738/0.090</td>
+<td style="text-align: right;">0.683/0.086</td>
+<td style="text-align: right;">0.770/0.278</td>
+<td style="text-align: right;">0.806/0.393</td>
+<td style="text-align: right;">0.540/0.220</td>
+</tr>
+<tr>
+<td>Raw gap</td>
+<td style="text-align: right;">0.659/0.083</td>
+<td style="text-align: right;">0.610/0.045</td>
+<td style="text-align: right;">0.582/0.060</td>
+<td style="text-align: right;">0.604/0.180</td>
+<td style="text-align: right;">0.662/0.253</td>
+<td style="text-align: right;">0.519/0.218</td>
+</tr>
+<tr>
+<td>Source NLL</td>
+<td style="text-align: right;">0.618/0.075</td>
+<td style="text-align: right;">0.592/0.041</td>
+<td style="text-align: right;">0.556/0.056</td>
+<td style="text-align: right;">0.658/0.174</td>
+<td style="text-align: right;">0.617/0.204</td>
+<td style="text-align: right;">0.588/0.228</td>
+</tr>
+<tr>
+<td>LUMINA</td>
+<td style="text-align: right;">0.633/0.082</td>
+<td style="text-align: right;">0.534/0.032</td>
+<td style="text-align: right;">0.495/0.042</td>
+<td style="text-align: right;">0.526/0.112</td>
+<td style="text-align: right;">0.530/0.141</td>
+<td style="text-align: right;">0.548/0.244</td>
+</tr>
+<tr>
+<td>IPR only</td>
+<td style="text-align: right;">0.577/0.073</td>
+<td style="text-align: right;">0.512/0.031</td>
+<td style="text-align: right;">0.474/0.041</td>
+<td style="text-align: right;">0.535/0.112</td>
+<td style="text-align: right;">0.504/0.135</td>
+<td style="text-align: right;">0.577/0.252</td>
+</tr>
+<tr>
+<td>-MMD only</td>
+<td style="text-align: right;">0.620/0.068</td>
+<td style="text-align: right;">0.553/0.032</td>
+<td style="text-align: right;">0.540/0.046</td>
+<td style="text-align: right;">0.432/0.075</td>
+<td style="text-align: right;">0.514/0.120</td>
+<td style="text-align: right;">0.441/0.171</td>
+</tr>
+</tbody>
+</table>
+<p>这套金融上 Matched local 的点值略高于 V3，但四个 AUROC/AP 配对95%区间均跨0。
+HalluRAG 上 Source NLL 的 AUROC 高于 V3：差 +0.0439，配对区间 [+0.0043,+0.0866]；AP 差的区间跨0。
+LUMINA 的 HalluRAG 点值也高于 V3。不能从旧金融结果推出 V3 跨观察模型全面最优。</p>
+<h2 id="3-v3-llama">3. V3 之后的候选（旧 Llama 五组）</h2>
+<p>Token state、Adaptive token、Onset 的完整五组数值从私人历史中的实际工具输出恢复；发布的证据摘录只含数值行和文件哈希，不发布私人会话。
+Responsibility 与 Conditional 来自实验账本。— 不是零，也不表示已失败；Conditional 没有触发后三组自然 RAG 采集。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align: right;">QA</th>
+<th style="text-align: right;">Summary</th>
+<th style="text-align: right;">Data2txt</th>
+<th style="text-align: right;">FinQA</th>
+<th style="text-align: right;">TATQA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V3 witness</td>
+<td style="text-align: right;">0.846975/0.214833</td>
+<td style="text-align: right;">0.762337/0.104562</td>
+<td style="text-align: right;">0.755716/0.145209</td>
+<td style="text-align: right;">0.802656/0.325033</td>
+<td style="text-align: right;">0.842992/0.465722</td>
+</tr>
+<tr>
+<td>Responsibility</td>
+<td style="text-align: right;">0.820332/0.171270</td>
+<td style="text-align: right;">0.722511/0.079181</td>
+<td style="text-align: right;">0.707506/0.115250</td>
+<td style="text-align: right;">0.743079/0.269941</td>
+<td style="text-align: right;">0.785727/0.381096</td>
+</tr>
+<tr>
+<td>Conditional</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">0.718312/0.218039</td>
+<td style="text-align: right;">0.770173/0.357203</td>
+</tr>
+<tr>
+<td>Onset</td>
+<td style="text-align: right;">0.851473/0.212407</td>
+<td style="text-align: right;">0.756600/0.099360</td>
+<td style="text-align: right;">0.748047/0.133949</td>
+<td style="text-align: right;">0.769276/0.286886</td>
+<td style="text-align: right;">0.821409/0.416008</td>
+</tr>
+<tr>
+<td>Token state</td>
+<td style="text-align: right;">0.825825/0.166537</td>
+<td style="text-align: right;">0.737745/0.075764</td>
+<td style="text-align: right;">0.717082/0.110421</td>
+<td style="text-align: right;">0.761636/0.266000</td>
+<td style="text-align: right;">0.804987/0.372500</td>
+</tr>
+<tr>
+<td>Adaptive token</td>
+<td style="text-align: right;">0.844776/0.201986</td>
+<td style="text-align: right;">0.759535/0.093727</td>
+<td style="text-align: right;">0.747991/0.132130</td>
+<td style="text-align: right;">0.793303/0.304330</td>
+<td style="text-align: right;">0.836417/0.437438</td>
+</tr>
+</tbody>
+</table>
+<p>Responsibility、Token state、Adaptive token 在五任务的两个点指标均降低；Onset 的 QA AUROC 上升但 AP 下降，金融及另两 RAG 任务未通过原门槛。Conditional 两金融指标下降。均未晋升。
+proof_revision 在2992答资格检查中找到0条可用 incompatible 证明，没有检测 AUROC/AP；assertion parser 的6773文本资格检查也未通过。代码存在不等于实验有效。
+ClaimDB 只进入解析资格检查；HaluEval / RAGognize 只准备了数据，RAGHallu 身份未定；不将这些写成已完成检测的数据集。
+更早的关系约束、层级等金融探索与完整历史见实验账本；本页覆盖主版本、后续主要替代候选及论文现存控制，不宣称所有历史临时实验都拥有全数据集结果。</p>
+<p>特别保留会影响下一轮设计的旧关系专家失败结果（2026-10-28 v4）：同片段共享关系世界并积分，完整292答。与本次提出的关系观测有实质重叠，不能重新命名为已发现的新信息。下列对照来自同次匹配SDPA采集，不能用历史V1值替换其控制。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align: right;">FinQA</th>
+<th style="text-align: right;">TATQA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Relational world_shared</td>
+<td style="text-align: right;">0.693095/0.248915</td>
+<td style="text-align: right;">0.674423/0.305032</td>
+</tr>
+<tr>
+<td>Same-run SDPA shared control</td>
+<td style="text-align: right;">0.729517/0.260282</td>
+<td style="text-align: right;">0.768258/0.355036</td>
+</tr>
+</tbody>
+</table>
+<p>当时大量关系null对正常与错误token都接近原来源，分离反而恶化。新方案最多是资格收紧和融合方式改变的再检验；必须与旧world_shared在同一新观测上比较，不能跳过这个失败先例。</p>
+<h2 id="4-hallurag">4. HalluRAG：两个元数据分层</h2>
+<p>来自第29页表35。Available / Unavailable 各891答；是发布的检索可用性元数据，不是新的语义审计。不能把分层当两份独立复现。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align: right;">HalluRAG</th>
+<th style="text-align: right;">HalluRAG_available</th>
+<th style="text-align: right;">HalluRAG_unavailable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V3 witness</td>
+<td style="text-align: right;">0.6378/0.3219</td>
+<td style="text-align: right;">0.7669/0.4561</td>
+<td style="text-align: right;">0.5374/0.2574</td>
+</tr>
+<tr>
+<td>Matched local</td>
+<td style="text-align: right;">0.6215/0.3039</td>
+<td style="text-align: right;">0.7499/0.4129</td>
+<td style="text-align: right;">0.5249/0.2538</td>
+</tr>
+<tr>
+<td>Symmetric local</td>
+<td style="text-align: right;">0.6132/0.2959</td>
+<td style="text-align: right;">0.7417/0.4012</td>
+<td style="text-align: right;">0.5176/0.2480</td>
+</tr>
+<tr>
+<td>Fixed HMM</td>
+<td style="text-align: right;">0.5978/0.2804</td>
+<td style="text-align: right;">0.7161/0.3743</td>
+<td style="text-align: right;">0.5035/0.2332</td>
+</tr>
+<tr>
+<td>Partial</td>
+<td style="text-align: right;">0.6335/0.3141</td>
+<td style="text-align: right;">0.7631/0.4503</td>
+<td style="text-align: right;">0.5290/0.2471</td>
+</tr>
+<tr>
+<td>Raw gap</td>
+<td style="text-align: right;">0.5523/0.2489</td>
+<td style="text-align: right;">0.6337/0.3284</td>
+<td style="text-align: right;">0.4852/0.2028</td>
+</tr>
+<tr>
+<td>Source NLL</td>
+<td style="text-align: right;">0.6057/0.2434</td>
+<td style="text-align: right;">0.6852/0.3252</td>
+<td style="text-align: right;">0.5429/0.1959</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5">5. 分辨率删除诊断：不能晋升为新有效方法</h2>
+<p>密集 Qwen 第30页表38。Original 是原分数；Span mean 抹掉片段内差异；Span centered 去掉片段均值。
+V3 均值 AP 在六组中的五组上升，但金融 AUROC 下降；Data2txt AP 的实际微小差为 -0.0000087，四位打印看起来相同。
+均值的同片段 AUROC 恒为0.5；centering 保持局部排序却降低全局指标。因此不能把 pooled AP 上升解释为局部识别改善。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align: right;">QA</th>
+<th style="text-align: right;">Summary</th>
+<th style="text-align: right;">Data2txt</th>
+<th style="text-align: right;">FinQA</th>
+<th style="text-align: right;">TATQA</th>
+<th style="text-align: right;">HalluRAG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V3 witness / Original</td>
+<td style="text-align: right;">0.8115/0.1537</td>
+<td style="text-align: right;">0.7397/0.0946</td>
+<td style="text-align: right;">0.6850/0.0867</td>
+<td style="text-align: right;">0.7754/0.2866</td>
+<td style="text-align: right;">0.8153/0.4110</td>
+<td style="text-align: right;">0.5438/0.2212</td>
+</tr>
+<tr>
+<td>V3 witness / Span mean</td>
+<td style="text-align: right;">0.8137/0.1724</td>
+<td style="text-align: right;">0.7416/0.1246</td>
+<td style="text-align: right;">0.6859/0.0867</td>
+<td style="text-align: right;">0.7654/0.3529</td>
+<td style="text-align: right;">0.7796/0.4783</td>
+<td style="text-align: right;">0.5561/0.2340</td>
+</tr>
+<tr>
+<td>V3 witness / Span centered</td>
+<td style="text-align: right;">0.5200/0.0556</td>
+<td style="text-align: right;">0.5194/0.0375</td>
+<td style="text-align: right;">0.5210/0.0538</td>
+<td style="text-align: right;">0.5146/0.1432</td>
+<td style="text-align: right;">0.5534/0.2217</td>
+<td style="text-align: right;">0.4587/0.1972</td>
+</tr>
+<tr>
+<td>LUMINA / Original</td>
+<td style="text-align: right;">0.6334/0.0823</td>
+<td style="text-align: right;">0.5339/0.0325</td>
+<td style="text-align: right;">0.4953/0.0423</td>
+<td style="text-align: right;">0.5262/0.1118</td>
+<td style="text-align: right;">0.5296/0.1412</td>
+<td style="text-align: right;">0.5478/0.2444</td>
+</tr>
+<tr>
+<td>LUMINA / Span mean</td>
+<td style="text-align: right;">0.8168/0.1840</td>
+<td style="text-align: right;">0.6309/0.0454</td>
+<td style="text-align: right;">0.5579/0.0539</td>
+<td style="text-align: right;">0.7239/0.2468</td>
+<td style="text-align: right;">0.7276/0.3369</td>
+<td style="text-align: right;">0.6698/0.3341</td>
+</tr>
+<tr>
+<td>LUMINA / Span centered</td>
+<td style="text-align: right;">0.4562/0.0573</td>
+<td style="text-align: right;">0.4723/0.0286</td>
+<td style="text-align: right;">0.4682/0.0398</td>
+<td style="text-align: right;">0.4218/0.0920</td>
+<td style="text-align: right;">0.4264/0.1182</td>
+<td style="text-align: right;">0.4440/0.2041</td>
+</tr>
+</tbody>
+</table>
+<p>历史 Llama 均值删除（第29页表37）：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align: right;">QA</th>
+<th style="text-align: right;">Summary</th>
+<th style="text-align: right;">Data2txt</th>
+<th style="text-align: right;">FinQA</th>
+<th style="text-align: right;">TATQA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V3 witness</td>
+<td style="text-align: right;">0.8470/0.2148</td>
+<td style="text-align: right;">0.7623/0.1046</td>
+<td style="text-align: right;">0.7557/0.1452</td>
+<td style="text-align: right;">0.8027/0.3250</td>
+<td style="text-align: right;">0.8430/0.4657</td>
+</tr>
+<tr>
+<td>V3 span mean</td>
+<td style="text-align: right;">0.8507/0.2563</td>
+<td style="text-align: right;">0.7637/0.1466</td>
+<td style="text-align: right;">0.7540/0.1435</td>
+<td style="text-align: right;">0.7994/0.3684</td>
+<td style="text-align: right;">0.8074/0.4972</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-qwen-cached-lumina">6. Qwen cached 存档：不与密集 LUMINA 混比</h2>
+<p>第32页表41。与密集运行使用同一观察模型、原始人群，是执行变体，不是第三个独立模型复现。
+cached 适配器未通过原定 dense-equivalence 门槛；保留其内部匹配结果，主比较使用上面的密集执行。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align: right;">QA</th>
+<th style="text-align: right;">Summary</th>
+<th style="text-align: right;">Data2txt</th>
+<th style="text-align: right;">FinQA</th>
+<th style="text-align: right;">TATQA</th>
+<th style="text-align: right;">HalluRAG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V3 witness</td>
+<td style="text-align: right;">0.811/0.153</td>
+<td style="text-align: right;">0.741/0.094</td>
+<td style="text-align: right;">0.684/0.086</td>
+<td style="text-align: right;">0.776/0.285</td>
+<td style="text-align: right;">0.814/0.405</td>
+<td style="text-align: right;">0.546/0.222</td>
+</tr>
+<tr>
+<td>Matched local</td>
+<td style="text-align: right;">0.791/0.132</td>
+<td style="text-align: right;">0.729/0.082</td>
+<td style="text-align: right;">0.670/0.083</td>
+<td style="text-align: right;">0.784/0.295</td>
+<td style="text-align: right;">0.819/0.414</td>
+<td style="text-align: right;">0.543/0.222</td>
+</tr>
+<tr>
+<td>Symmetric local</td>
+<td style="text-align: right;">0.785/0.126</td>
+<td style="text-align: right;">0.723/0.075</td>
+<td style="text-align: right;">0.662/0.079</td>
+<td style="text-align: right;">0.773/0.279</td>
+<td style="text-align: right;">0.808/0.389</td>
+<td style="text-align: right;">0.538/0.221</td>
+</tr>
+<tr>
+<td>Fixed HMM</td>
+<td style="text-align: right;">0.760/0.113</td>
+<td style="text-align: right;">0.704/0.069</td>
+<td style="text-align: right;">0.651/0.078</td>
+<td style="text-align: right;">0.763/0.276</td>
+<td style="text-align: right;">0.795/0.378</td>
+<td style="text-align: right;">0.531/0.218</td>
+</tr>
+<tr>
+<td>Partial</td>
+<td style="text-align: right;">0.808/0.149</td>
+<td style="text-align: right;">0.739/0.090</td>
+<td style="text-align: right;">0.682/0.085</td>
+<td style="text-align: right;">0.771/0.276</td>
+<td style="text-align: right;">0.805/0.388</td>
+<td style="text-align: right;">0.542/0.221</td>
+</tr>
+<tr>
+<td>Raw gap</td>
+<td style="text-align: right;">0.658/0.083</td>
+<td style="text-align: right;">0.611/0.045</td>
+<td style="text-align: right;">0.581/0.060</td>
+<td style="text-align: right;">0.607/0.181</td>
+<td style="text-align: right;">0.661/0.252</td>
+<td style="text-align: right;">0.519/0.218</td>
+</tr>
+<tr>
+<td>Source NLL</td>
+<td style="text-align: right;">0.618/0.075</td>
+<td style="text-align: right;">0.592/0.041</td>
+<td style="text-align: right;">0.556/0.056</td>
+<td style="text-align: right;">0.658/0.174</td>
+<td style="text-align: right;">0.617/0.204</td>
+<td style="text-align: right;">0.588/0.228</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_1">覆盖与可追溯性</h2>
+<table>
+<thead>
+<tr>
+<th>人群</th>
+<th style="text-align: right;">回答数</th>
+<th style="text-align: right;">来源组数</th>
+<th style="text-align: right;">Llama 有效token</th>
+<th style="text-align: right;">Qwen 有效token</th>
+<th>标签</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QA</td>
+<td style="text-align: right;">900</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">124817</td>
+<td style="text-align: right;">126075</td>
+<td>人工跨度</td>
+</tr>
+<tr>
+<td>Summary</td>
+<td style="text-align: right;">900</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">121248</td>
+<td style="text-align: right;">123653</td>
+<td>人工跨度</td>
+</tr>
+<tr>
+<td>Data2txt</td>
+<td style="text-align: right;">900</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">178343</td>
+<td style="text-align: right;">180474</td>
+<td>人工跨度</td>
+</tr>
+<tr>
+<td>FinQA</td>
+<td style="text-align: right;">162</td>
+<td style="text-align: right;">142</td>
+<td style="text-align: right;">16047</td>
+<td style="text-align: right;">19425</td>
+<td>silver 编辑</td>
+</tr>
+<tr>
+<td>TATQA</td>
+<td style="text-align: right;">130</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">7747</td>
+<td style="text-align: right;">9389</td>
+<td>silver 编辑</td>
+</tr>
+<tr>
+<td>HalluRAG</td>
+<td style="text-align: right;">1782</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: right;">69483</td>
+<td style="text-align: right;">71210</td>
+<td>自动句标签投影</td>
+</tr>
+</tbody>
+</table>
+<p>HalluRAG Llama 已知62649、unknown6834；Qwen 已知64269、unknown6941。unknown 参与推断/覆盖，不进入有标签指标。来源组依据已恢复的文本身份，不一定等于独立公司/报告。有效token随 tokenizer 不同；不能跨模型混合平均。</p>
+<p>可下载 <a href="../results/comparison.csv">CSV</a>、<a href="../results/comparison.json">JSON</a>、<a href="../results/evidence.json">逐行证据摘录</a>。JSON 每行保留观察模型、执行组、标签类型、来源表号/历史记录位置和打印精度。
+原33页研究稿保存在用户桌面01_Paper；原会话仅在04_History。本页是恢复汇总，没有重新验证原始分数/标签。
+生成命令：python tools/render_method_comparison.py。</p></article></main></body></html>

@@ -1,0 +1,129 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>组合设计与验证</title><link rel="stylesheet" href="assets/guide.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
+<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
+<style>@media print{body[data-article="EXPERIMENT_PLAN"]{font-size:14px;line-height:1.65}}</style></head><body data-article="INTEGRATED_DESIGN">
+<header><div class="eyebrow">TOKEN DETECTOR / 本地离线阅读</div><h1>组合设计与验证</h1>
+<nav><a href="METHOD_V3.html">V3方法</a><a href="RESULTS_CURRENT.html">全数据集对照</a><a href="INTEGRATED_DESIGN.html">组合设计</a><a href="EXPERIMENT_PLAN.html">实验计划</a><a href="VISUAL_GUIDE.html">交互演示</a><a href="THEORY.html">完整公式</a><a href="READING.html">逐行代码</a></nav>
+<p>公式已在浏览器排版；可用浏览器“打印 → 保存为PDF”。本页不需要联网。</p></header>
+<main><article class="article"><h1 id="_1">怎样把已有优点组合成一个可验证的方法</h1>
+<p><strong>建议以 V3 为统一推断骨架，优先验证一种能补足关系信息的新观测；局部／完整历史用于辨别机制，token 归责用于审计。</strong> 无需让这些思路彼此隔离；也不要求把每个旧模块都放进最终算法。判断标准是同一个模型是否解释各部分的作用，实验是否允许否定它。</p>
+<p>这里给出一个可检验的组合候选，尚未实现为新公开方法，也没有新检测结果。<strong>关系扰动本身是旧关系专家路线的复用，不是新观测发明</strong>；本次差异仅为更严格的资格合同与在 V3 中的融合。对应<a href="EXPERIMENT_PLAN.html">执行计划</a>和<a href="../../refine-logs/EXPERIMENT_TRACKER.md">任务表</a>。<a href="METHOD_V3.html">V3 已有方法</a>与<a href="RESULTS_CURRENT.html">历史比较</a>保持原样记录。</p>
+<h2 id="_2">先收敛到一个瓶颈</h2>
+<p>现有证据支持的是：共享上下文能改善全局排序，却可能把错误词和普通词一起抬高，或压低某个错误词；很多关系错绑还没有足够的个体观测信号。它尚未支持“所有失败都来自过度平滑”。
+此前 token_state、adaptive_token 的五任务下降，已经反驳了“只限制上下文就会更好”的简单推断。旧关系专家 v4 的 world_shared 在 FinQA 为0.693095/0.248915、TATQA 为0.674423/0.305032，均输给同次匹配控制；关系 null 经常对正常与错误 token 都接近原来源。<strong>仅换融合方式不保证补出信息</strong>；先检验资格与独立预测响应，若仍复现旧失败，应停止这条候选而保留 V3。</p>
+<p>因此候选主张只保留两条：</p>
+<ol>
+<li><strong>新观测主张（待检验）</strong>：在有明确可操作关系的来源中，受控关系破坏提供了来源整体删除之外的 token 区分信息，而且收益不能由格式、长度、数值频次或额外推理预算解释。</li>
+<li><strong>组合主张（待检验）</strong>：将这类观测放进 V3 同一个专家似然模型，在局部定位改善的同时保留可接受的全局表现；它比新观测单独使用、旧 V3、简单局部 HMM 更有价值。</li>
+</ol>
+<p>如果第一条失败，停止第二条的有效性宣传。假设、反例和实验构成证据链；不预先规定消融必须显著，否则很容易只保留好看的模块。</p>
+<h2 id="_3">单一概率模型：观测分布 → 混合发射 → 持续推断</h2>
+<p>来源条件分三种，使用同一个冻结语言模型、相同原回答历史与 tokenizer：</p>
+<ul>
+<li>S：原来源，分布 qS。</li>
+<li>A：删除来源，分布 qA，复用 V3。</li>
+<li>B：按预先固定规则改变一个声明的目标绑定集合、保留合法结构的来源，分布 qB。交换两个值会同时改变至少两个绑定，不能声称只动一个事实。</li>
+</ul>
+<p>B 的第一阶段只考虑无歧义的结构化表格：在同列、相同显式类型/单位的不同实体或年份之间交换值，不改变原问题或回答，不按回答中某个错误选择最有利的交换。转换前后验证单元格集合、标签、单位、表结构和预定扰动位置；隐含单位、重复杂项、无法解析的关系均判不适用。词项集合不变不等于所有语义只改变了一点，必须审查连带影响。
+不适用时事先规定 qB=qA，从代数上精确退回 V3，并报告覆盖率。工程上必须直接调用原生产 V3 路径来保证逐位不变；重新经过 logaddexp(a,a)−log2 可能带来舍入差。不能为获得全面覆盖而启用已失败的自由文本解析器。初始贡献范围是可资格检查的结构化关系，推广到 QA / Summary 需要另一条可审核的语义转换合同。</p>
+<p>把 A 与 B 当作两个替代预测专家，而不是相互独立的两份证据：</p>
+<div class="math-block">\[
+q_U=\tfrac12q_A+\tfrac12q_B,\qquad
+q(y_t\mid Z_t=0)=q_S(y_t),\qquad
+q(y_t\mid Z_t=1)=\tfrac12q_S(y_t)+\tfrac12q_U(y_t).
+\]</div>
+
+<p>所有量都以同一固定历史为条件。这里的 U、Z 是模型定义的专家/状态名称，不是真实不受支持事件。固定均匀权重只是无需标签的最小声明，不具有最佳性保证；不在最终真值上扫权重。</p>
+<p>令</p>
+<div class="math-block">\[
+a_t=\log q_A(y_t)-\log q_S(y_t),\quad
+b_t=\log q_B(y_t)-\log q_S(y_t),
+\]</div>
+
+<div class="math-block">\[
+u_t=\log\!\left(\tfrac12e^{a_t}+\tfrac12e^{b_t}\right),\qquad
+e_t^\star=\log(1+e^{u_t})-\log2.
+\]</div>
+
+<p>随后直接复用 V3 的 π,c,Z 先验及精确积分，输出原 token 边缘 log odds。既不将三套最终风险分数线性叠加，也不把高度相关的 LM 观测相乘成独立似然。额外观测是否有用，完全留给受控实验。</p>
+<h2 id="_4">哪些理论能先给出，哪些不能</h2>
+<table>
+<thead>
+<tr>
+<th>命题</th>
+<th>推导与含义</th>
+<th>对应验证</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>合法概率模型</td>
+<td>qU、风险专家均为归一化分布的凸组合；共享链给出一个明确的工作模型</td>
+<td>有限词表归一化 oracle，原始 logp 与稳定 logsumexp 对照</td>
+</tr>
+<tr>
+<td>精确退化</td>
+<td>若 qB=qA，则 u=a，e*=eV3；逐 token 输出必须一致</td>
+<td>退化恒等式、封存历史 V3 数组逐位对照</td>
+</tr>
+<tr>
+<td>空信息退化</td>
+<td>若 qB=qS，则风险专家为0.75qS+0.25qA，可能只是改了稳健混合比例</td>
+<td>无新LM成本的精确 qB=qS 控制，完整方法必须与它比较</td>
+</tr>
+<tr>
+<td>单词反证有界</td>
+<td>e*&gt;−log2；与 V3 一样允许风险区域包含来源可预测词</td>
+<td>极值、数值稳定与单调导数核对</td>
+</tr>
+<tr>
+<td>组合推断正确</td>
+<td>发射不依赖 π,c，状态联合仍为有限多项式；复用正权求积及前后向</td>
+<td>小段独立 copy/refresh 枚举，不复制生产递推</td>
+</tr>
+<tr>
+<td>观测误差如何传到分数</td>
+<td>以下 Lipschitz 界限制数值扰动；它不保证分类准确</td>
+<td>有限差分、全局误差上界与 adversarial 数值构造</td>
+</tr>
+<tr>
+<td>来源支持性识别</td>
+<td>必须另有“干预保持非目标因素、正确关系影响预测”等可被否定的语义假设</td>
+<td>sham 对照、已知结构生成例、最终自然标注；当前没有无条件识别证明</td>
+</tr>
+</tbody>
+</table>
+<p>对任意有限发射向量和固定先验，令输出 sᵢ 为该状态边缘 log odds。微分配分函数可得，对 j≠i：</p>
+<div class="math-block">\[
+\frac{\partial s_i}{\partial e_j}
+=E[Z_j\mid Z_i=1,e]-E[Z_j\mid Z_i=0,e]\in[-1,1],
+\qquad
+\frac{\partial s_i}{\partial e_i}=1.
+\]</div>
+
+<p>沿两组发射的直线路径积分：</p>
+<div class="math-block">\[
+|s_i(e+\delta)-s_i(e)|\leq\sum_j|\delta_j|.
+\]</div>
+
+<p>这个通用界很保守，只是数值稳定的条件结论；它允许负交叉影响，不声称 V3 单调传播，更不证明事实错误可被识别。有限语义信号弱、干预失真时，上述推断即便精确也可能无用。</p>
+<p>尤其当旧失败中的 qB≈qS 再次出现时，新增观测会近似变成</p>
+<div class="math-block">\[
+e_t^{null}=\log\!\left(\tfrac34+\tfrac14e^{a_t}\right).
+\]</div>
+
+<p>这是仅改变发射稳健度的控制，完全复用现存 a，无新增LM调用。完整候选必须在资格和最终局部评价上区别于此控制；否则撤销关系新信息主张。sham 对照仍用于格式伪影，不能替代这个精确解释。</p>
+<h2 id="_5">精巧的验证在于匹配对照，而非增加表格数</h2>
+<p><strong>第一层：干预资格。</strong> 在与评价集分离的无标签来源上预先固定转换器；报告全部适用/不适用原因，不只挑能处理的错例。另构造解析闭合的小型表格世界，验证交换确实破坏指定绑定且保留其他指定属性。人工生成的逻辑答案只用于检验转换合同；不用于选择检测权重、先验、阈值或按准确率筛候选。真实任务标注不打开。</p>
+<p><strong>第二层：来源 × 历史的交叉实验。</strong> 同时看 S/A/B 三个来源条件与 full/local 两个历史条件，固定原 token 轴。加入保持关系的 sham（例如在具有稳定键引用的表格中重排行）并匹配编辑规模，检查 B 是否只是造成格式或流畅度变化。比较目标单元与未触及单元、错误绑定与格式保持；如果所有变化同样出现在 sham 上，就不能叫关系信息。full/local 改变长度与位置，另用等长非关键信息替换控制；不直接把差中差称因果中介量。</p>
+<p><strong>第三层：完整因子消融。</strong> 在同一封存观测上做 2×2×2：关系观测 A/B 开关 × 持续性 c=0/积分 × 原专家/混合发射，共8种。每项都能退化为明确模型，不是随意把张量置零。再单列“新观测无上下文”“qB=qS精确退化”“同预算 sham 观测”和“同新观测上的旧关系 world_shared”必要强对照。旧算法所需两种 null 若与新 B 的数量不同，需提前冻结变体合同并单列额外预算，不能把改造版叫原始精确复现。既检验主效应也报告组合的交互差；删除一个模块只支持它在这个上下文中的边际贡献，不能证明普遍必要或唯一机制。</p>
+<p><strong>第四层：冻结后的自然最终评价。</strong> 原六组已暴露，只作历史探索。最终选新的来源组，含自然错误的人类支持性跨度；银标和句投影另表。冻结方法、所有8个对照、参数、分段、种子、主指标与所有分数后才读真值。主估计量为预定的来源等权局部 concordance；同时报告常用 pooled AP/AUROC、同片段 pair-weighted AUROC、top5%召回及覆盖。只处理到局部正负对的来源进入条件主估计量，必须报告纳入/未纳入数量。没有混合片段时为不可评价，不能填0.5冒充观测。</p>
+<p><strong>第五层：成本和替代解释。</strong> 同观察模型、后端、完整输入、原 token 和调用预算进行比较。外部强基线优先 LUMINA 官方实现；CORTEX 使用监督分类能力，单列。新观测本身若优于整套组合，删除无收益推断模块；如果只是 pooled AP 提升而局部不升，则撤销局部机制主张。</p>
+<h2 id="_6">为什么不立即把所有旧模块加回来</h2>
+<p>R4 的优势提示额外观测可能重要，但任务 route 权重与参考分位数会把预算、任务先验和推断混在一起。它保留为强历史对照，不直接复制进新方法。
+token_state 的上下文界有价值，却已有全任务下降；它作为必要的失败反例和可选审计对照，不能先当“已证明有用的模块”。
+full/local 可与 V3 联合研究；只有机制实验显示它提供稳定、非长度伪影的信息时，才另外冻结使用历史条件的模型版本。当前候选不同时引入三类未经验证的新模块。</p>
+<p>这个组合与已有 source-null / sequence 方向有重叠，尚未建立新颖性。CORTEX 已比较有无来源的内部表示、传播与连续性；LUMINA 已采用替换来源的分布观测。仅说“多视角+时序”不能作贡献。<a href="https://arxiv.org/abs/2606.31033">CORTEX 原文</a>、<a href="https://github.com/deeplearning-wisc/LUMINA">LUMINA 官方代码</a>、<a href="https://aclanthology.org/2024.acl-long.585/">RAGTruth 原始论文</a>。</p>
+<p><strong>本次交付是组合模型、理论边界和可执行验证协议；没有新方法有效性、独立自然确认或顶会就绪结论。</strong></p></article></main></body></html>

@@ -7,7 +7,7 @@
     "source_lines": 2421,
     "functions": 128,
     "baseline_files": 98,
-    "additional_files": 4,
+    "additional_files": 5,
     "full_scope_complete": false
   },
   "method_refinement": {
@@ -72,5 +72,17 @@
     "toy_only": true,
     "new_detector_results": false,
     "entry": "docs/source-reading/VISUAL_GUIDE.html"
+  },
+  "current_research_artifacts": {
+    "date": "2026-11-02",
+    "retained_historical_candidate": "V3 / witness",
+    "api_default": "V1 / shared",
+    "recovered_metric_records": 266,
+    "comparison": "docs/RESULTS_CURRENT.md",
+    "integrated_candidate": "docs/source-reading/INTEGRATED_DESIGN.md",
+    "experiment_plan": "refine-logs/EXPERIMENT_PLAN.md",
+    "candidate_implemented": false,
+    "new_detector_results": false,
+    "source_comparison_review": "same-family provisional; no remaining blockers"
   }
 }

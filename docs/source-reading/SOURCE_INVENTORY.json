@@ -5282,19 +5282,27 @@
     },
     {
       "path": "tools/render_source_reading.py",
-      "sha256": "ad4fecacfc266cdc8ae069bc8135511af5bea70fd8f165ba3fc21c2df677e13b",
+      "sha256": "bbad633f4a78f973b4881090cb74af75beda23ccb36381ad5dd987dcfb0d20f0",
       "line_count": 85,
       "functions": 0,
       "status": "pending_line_explanation",
-      "validation": "MATH_READING_VALIDATION.md"
+      "validation": "../results/VALIDATION.md"
     },
     {
       "path": "tools/render_math_guide.py",
-      "sha256": "d041a11040c42d46f781d21c0ff0d38ec2b5119a2a22469661b1110e0d755840",
-      "line_count": 118,
-      "functions": 5,
+      "sha256": "ccb4578aeaae8d647c690ae9479cefa30e584cdb08a145d8507b194c2b43b259",
+      "line_count": 142,
+      "functions": 6,
       "status": "pending_line_explanation",
-      "validation": "MATH_READING_VALIDATION.md"
+      "validation": "../results/VALIDATION.md"
+    },
+    {
+      "path": "tools/render_method_comparison.py",
+      "sha256": "9fa382c0cf15f1b6e4ca530171e1e22aaf7796901c557747f99f16de7294450b",
+      "line_count": 269,
+      "functions": 4,
+      "status": "pending_line_explanation",
+      "validation": "../results/VALIDATION.md"
     }
   ]
 }

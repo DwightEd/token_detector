@@ -5,9 +5,11 @@ Install the optional docs extra. No network, LM execution, fitting or task label
 import hashlib
 import html
 import json
+import os
 from pathlib import Path
 import re
 import sys
+from urllib.parse import urlsplit
 
 import markdown
 import numpy as np
@@ -18,6 +20,16 @@ from myproject.pooling import cavity_scores, grouped_scores
 from experiments.local_evaluation import auc_pair_decomposition
 
 DIRECTORY = ROOT / 'docs/source-reading'
+ARTICLES = {
+    'THEORY': (DIRECTORY/'THEORY.md', '完整公式与证明'),
+    'METHOD': (DIRECTORY/'METHOD.md', '整个方法与调用路径'),
+    'PAPER_STORY': (DIRECTORY/'PAPER_STORY.md', '怎样组织论文主张'),
+    'VALIDATION': (DIRECTORY/'VALIDATION.md', '验证结果与边界'),
+    'METHOD_V3': (DIRECTORY/'METHOD_V3.md', 'V3：模型、优化与代码'),
+    'RESULTS_CURRENT': (ROOT/'docs/RESULTS_CURRENT.md', '全数据集方法对照'),
+    'INTEGRATED_DESIGN': (DIRECTORY/'INTEGRATED_DESIGN.md', '组合设计与验证'),
+    'EXPERIMENT_PLAN': (ROOT/'refine-logs/EXPERIMENT_PLAN.md', '组合方法实验计划'),
+}
 
 
 def article(source):
@@ -39,27 +51,39 @@ def article(source):
     for i, equation in enumerate(equations):
         rendered = rendered.replace(f'<div data-equation="{i}"></div>',
             '<div class="math-block">\\[' + html.escape(equation) + '\\]</div>')
-    # Links between rendered articles stay in the offline HTML experience.
-    for name in ['THEORY', 'METHOD', 'PAPER_STORY', 'VALIDATION']:
-        rendered = rendered.replace(f'href="{name}.md', f'href="{name}.html')
+    # Sources can live outside the output directory. Resolve links against the
+    # actual source, then point known articles to their offline HTML copies.
+    targets = {path.resolve(): DIRECTORY/f'{name}.html'
+               for name,(path,_) in ARTICLES.items()}
+    def local_link(match):
+        href = html.unescape(match.group(1))
+        parts = urlsplit(href)
+        if parts.scheme or parts.netloc or not parts.path:
+            return match.group(0)
+        path = (source.parent/parts.path).resolve()
+        target = targets.get(path,path)
+        relative = Path(os.path.relpath(target,DIRECTORY)).as_posix()
+        suffix = ('?'+parts.query if parts.query else '')+('#'+parts.fragment if parts.fragment else '')
+        return 'href="'+html.escape(relative+suffix,quote=True)+'"'
+    rendered = re.sub(r'href="([^"]+)"',local_link,rendered)
     return rendered, len(equations)
 
 
 def render_article(name):
-    body, count = article(DIRECTORY / f'{name}.md')
-    title = {'THEORY': '完整公式与证明', 'METHOD': '整个方法与调用路径',
-             'PAPER_STORY': '怎样组织论文主张', 'VALIDATION': '验证结果与边界'}[name]
+    source,title = ARTICLES[name]
+    body, count = article(source)
     page = r'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>__TITLE__</title><link rel="stylesheet" href="assets/guide.css">
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
-<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script></head><body>
+<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
+<style>@media print{body[data-article="EXPERIMENT_PLAN"]{font-size:14px;line-height:1.65}}</style></head><body data-article="__ARTICLE__">
 <header><div class="eyebrow">TOKEN DETECTOR / 本地离线阅读</div><h1>__TITLE__</h1>
-<nav><a href="VISUAL_GUIDE.html">公式与交互演示</a><a href="THEORY.html">完整公式</a><a href="METHOD.html">方法步骤</a><a href="PAPER_STORY.html">论文主张</a><a href="READING.html">逐行代码</a></nav>
+<nav><a href="METHOD_V3.html">V3方法</a><a href="RESULTS_CURRENT.html">全数据集对照</a><a href="INTEGRATED_DESIGN.html">组合设计</a><a href="EXPERIMENT_PLAN.html">实验计划</a><a href="VISUAL_GUIDE.html">交互演示</a><a href="THEORY.html">完整公式</a><a href="READING.html">逐行代码</a></nav>
 <p>公式已在浏览器排版；可用浏览器“打印 → 保存为PDF”。本页不需要联网。</p></header>
 <main><article class="article">__BODY__</article></main></body></html>'''
     (DIRECTORY / f'{name}.html').write_text(
-        page.replace('__TITLE__', title).replace('__BODY__', body), encoding='utf-8')
+        page.replace('__TITLE__', title).replace('__ARTICLE__',name).replace('__BODY__', body), encoding='utf-8')
     return count
 
 
@@ -104,7 +128,7 @@ def main():
     vendor = DIRECTORY/'assets/mathjax-3.2.2/VENDOR_MANIFEST.json'
     for item in json.loads(vendor.read_text(encoding='utf-8'))['files']:
         assert hashlib.sha256((ROOT/item['file']).read_bytes()).hexdigest() == item['sha256']
-    counts = {name: render_article(name) for name in ['THEORY', 'METHOD', 'PAPER_STORY', 'VALIDATION']}
+    counts = {name: render_article(name) for name in ARTICLES}
     data = visual_data()
     packed = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('<', r'\u003c')
     template = (ROOT/'tools/templates/theory_visual.html').read_text(encoding='utf-8')

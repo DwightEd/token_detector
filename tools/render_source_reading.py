@@ -76,8 +76,8 @@ td:first-child{width:40px;color:#64748b}td:nth-child(2){width:46%;white-space:pr
 p{overflow-wrap:anywhere}a{color:#1658ab}</style><h1>token_detector：真实源码逐行讲解</h1>
 <p>固定源码基线 1210120748b3a05bd271bc79debcbed4fdc0c964。展开文件查看源码与中文说明。
 只展示已经逐行阅读并有具体说明的文件；全项目待讲解范围保存在 SOURCE_INVENTORY.json，未展示不代表不存在。</p>
-<p><strong><a href="VISUAL_GUIDE.html">先看：公式排版与交互演示 →</a></strong></p>
-<p><a href="METHOD.html">整个方法与调用路径</a> · <a href="THEORY.html">公式、证明与限制</a> · <a href="PAPER_STORY.html">论文主张怎么组织</a> · <a href="VALIDATION.html">实际验证与未覆盖路径</a></p>
+<p><strong><a href="METHOD_V3.html">先看：V3当前研究方法、优化与公式 →</a></strong> · <a href="VISUAL_GUIDE.html">V1构造例与指标交互</a></p>
+<p><a href="METHOD_V3.html">V3当前研究方法</a> · <a href="RESULTS_CURRENT.html">全数据集对照</a> · <a href="INTEGRATED_DESIGN.html">组合设计</a> · <a href="EXPERIMENT_PLAN.html">实验计划</a> · <a href="METHOD.html">库调用路径</a> · <a href="THEORY.html">完整公式</a> · <a href="VALIDATION.html">实际验证</a></p>
 '''
 (directory / 'READING.html').write_text(page + ''.join(sections) + '</html>', encoding='utf-8')
 print(json.dumps({'files': len(annotations), 'source_lines': sum(by_path[path]['line_count'] for path in annotations),

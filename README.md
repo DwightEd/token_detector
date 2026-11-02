@@ -4,6 +4,8 @@
 
 研究主线固定为**无监督检测，真值仅用于冻结后的最终评价**，不用于训练、调参、选方法或风险校准。完整约束见[用户确认记录](refine-logs/theory-grounding-20261102/USER_CONSTRAINTS.md)。
 
+**当前保留的金融研究候选是 V3 / witness。** [V3 做了什么优化](docs/source-reading/METHOD_V3.md)、[六组数据与各方法完整对照](docs/RESULTS_CURRENT.md)、[统一组合设计](docs/source-reading/INTEGRATED_DESIGN.md)与[逐项验证计划](refine-logs/EXPERIMENT_PLAN.md)是当前研究入口。离线阅读从 [V3 已排版页面](docs/source-reading/METHOD_V3.html)进入。V3 并非所有任务/观察模型最优；新增组合候选未执行。
+
 浏览器阅读从[公式与机制交互指南](docs/source-reading/VISUAL_GUIDE.html)进入；[完整公式](docs/source-reading/THEORY.html)与[论文主张](docs/source-reading/PAPER_STORY.html)均可离线排版。下载仓库后打开HTML；GitHub在线查看可读[文字版](docs/source-reading/PAPER_STORY.md)。
 
 本版本接回 2026-10-31 已核验的远端 v7 源码：`myproject/` 为主库，`experiments/` 为统一实验入口，`experiments/research/` 保存研究候选。[恢复与验证记录](docs/SOURCE_RECOVERY_20261102.md)区分历史运行和本次检查。
