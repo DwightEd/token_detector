@@ -155,6 +155,9 @@ def parser() -> argparse.ArgumentParser:
     reconstruction_eval = transfers.add_parser('evaluate-reconstruction', help='rebuild sealed source completions on CPU before construction reference release')
     for option in ['inputs', 'design', 'construction', 'observations', 'model', 'output', 'protocol']:
         reconstruction_eval.add_argument('--' + option, type=Path, required=True)
+    assignment = transfers.add_parser('analyze-reconstruction-assignments', help='freeze cached bijection readouts before reference-only CPU ablation')
+    for option in ['inputs', 'observations', 'model', 'reconstruction-review', 'output', 'protocol']:
+        assignment.add_argument('--' + option, type=Path, required=True)
     fusion_cache = transfers.add_parser('prepare-fusion', help='export verified historical R4/V3 caches without labels')
     fusion_cache.add_argument('--scores', type=Path, required=True)
     fusion_cache.add_argument('--native', type=Path, required=True)
@@ -412,6 +415,11 @@ def main() -> None:
 
             evaluate(args.inputs, args.design, args.construction, args.observations,
                      args.model, args.output, args.protocol)
+        elif args.transfer_stage == 'analyze-reconstruction-assignments':
+            from .reconstruction_assignment import analyze
+
+            analyze(args.inputs, args.observations, args.model,
+                    args.reconstruction_review, args.output, args.protocol)
         elif args.transfer_stage == 'prepare-fusion':
             from .fusion_cache import export
 
