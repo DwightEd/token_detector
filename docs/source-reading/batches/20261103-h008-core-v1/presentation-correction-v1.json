@@ -1,0 +1,22 @@
+{
+  "schema": "source-reading-presentation-correction-v1",
+  "created_at_utc": "2026-11-02T20:56:53.231159+00:00",
+  "changes": [
+    {
+      "location": "title",
+      "old": "<title>H008???????? ? 20261103-h008-core-v1</title>",
+      "new": "<title>H008核心源码逐行讲解 · 20261103-h008-core-v1</title>"
+    },
+    {
+      "location": "nav",
+      "old": "<nav><a href=\"../../README.md\">??????</a> ? <a href=\"README.md\">Markdown</a> ? <a href=\"coverage.json\">????</a> ? <a href=\"inventory.json\">???AST??</a></nav>",
+      "new": "<nav><a href=\"../../README.md\">历史阅读导航</a> · <a href=\"README.md\">Markdown</a> · <a href=\"coverage.json\">机读覆盖</a> · <a href=\"inventory.json\">全范围AST快照</a></nav>"
+    }
+  ],
+  "previous_html_sha256": "0188fd8e123520c84d2a1be686b758dc7cb9852af9f44b51d5fb07759c35aa7a",
+  "corrected_html_sha256": "66500b00cd6a331ca2e8708f576af50367bd87df22d61b41f65f2ddaddc95ad8",
+  "scope": "UTF8 presentation only; no source bytes, line notes, function contracts, Markdown or scope counts changed",
+  "reversible_by_exact_replacements": true,
+  "source_line_coverage": 296,
+  "source_function_coverage": 12
+}

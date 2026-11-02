@@ -17024,6 +17024,8 @@
       "Transformers4.57.1",
       "PyTorch2.8"
     ],
-    "documentation_only_no_production_import": true
+    "documentation_only_no_production_import": true,
+    "presentation_html_sha256": "66500b00cd6a331ca2e8708f576af50367bd87df22d61b41f65f2ddaddc95ad8",
+    "presentation_correction_sidecar": "presentation-correction-v1.json"
   }
 }
