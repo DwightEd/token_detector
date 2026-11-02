@@ -888,3 +888,20 @@ new model observations, scalar scores or AUROC were produced. First run must
 pass runtime/resource admission and exact-run reservation; score/observation
 artifacts are sealed before evaluation. Detailed gates and stop/pivot rules are
 in `refine-logs/EXPERIMENT_PLAN.md`.
+
+Runtime checkpoint19:39: the isolated CUDA environment finished exact-pin and
+dependency checks. An actual tiny NF4 GPU kernel passed on RTX5060/SM12.0 with
+zero language-model calls. Installed94-source wheel remained unchanged. Completed
+operational identity in observation spec/model descriptorv2 with hardware, driver,
+CUDA, dependency-lock and thread settings; v1 remained unclaimed/unrun and no
+scientific parameters changed. A reviewed, task-specific local-idle process was
+actually armed (PID31576 at11:39:30UTC), polls30s with a six-hour resource deadline,
+and reads no evaluation material. Three fake early-exit controls passed (STOP,
+timeout, missing frozen spec retained); they are engineering checks only.
+
+Authoritative live state: `outputs/research-goal-20261102/autostart-state.json`.
+At arming it waited for host RAM, with no natural LM outputs or new AUROC. A running
+stage reports call count as unknown until completion; failure preserves partial
+artifacts and cannot be reported as zero calls or semantic refutation. No automatic
+rerun or precision/parameter downgrade. The16-answer/8-pair constructed panel is
+also sealed and independently reviewed, but Q2 remains unrun until Q1 admission.

@@ -74,3 +74,8 @@
 - Request a fresh code review for substantial changes and fix verified important issues.
 - Keep run commands, input/source identities, logs and actual outcomes alongside outputs;
   record experiment status in experiments/EXPERIMENTS.md without duplicating the code.
+- On continuation inspect research-state/RESUME.md and its live local-idle job
+  before starting anything. A waiting unclaimed job is still a real armed job;
+  verify PID/start time/command and never duplicate it. STOP_AUTORUN cancels this
+  task when the user requests stopping. Its six-hour wait is bounded, with no
+  automatic retry or parameter change. Evaluate only after observation seals pass.

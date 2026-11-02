@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "engineering_only": true,
+  "language_model_calls_in_backend_probe": 0,
+  "cuda_nf4_tiny_kernel": "passed",
+  "readiness_receipt_sha256": "57b61c683bb7fdba99f8b1e0214a7f6eaf36a0d4b920e43142df49224536df86",
+  "launcher_sha256": "14616ef1c3c697541a7abd3454e73076180185f30f5de7f8cc3cd3232903601d",
+  "launcher_review": "fresh read-only review; fixed pre-try digest retention and mid-run0-call misreport before launching",
+  "early_exit_fake_checks": {
+    "scope": "three fake early-exit controls; no real model/sensors/claims",
+    "checks": [
+      {
+        "case": "stop_before_launch",
+        "passed": true,
+        "model_calls": 0
+      },
+      {
+        "case": "bounded_timeout",
+        "passed": true,
+        "model_calls": 0
+      },
+      {
+        "case": "missing_spec_retained",
+        "passed": true,
+        "model_calls": 0
+      }
+    ]
+  },
+  "scientific_results_established": false,
+  "live_execution_state": "outputs/research-goal-20261102/autostart-state.json"
+}

@@ -1,0 +1,53 @@
+{
+  "model_id": "Qwen/Qwen2.5-3B-Instruct",
+  "official_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "model_files_sha256": {
+    "config.json": "eed00b17e22553979d090fa492e587e92885e328914c8e0b0b78f0a0d3576b3b",
+    "generation_config.json": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9",
+    "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+    "model.safetensors.index.json": "bc8aaa0c87d4335177e01c765f1de0db81661c67c1a72fbfb0d521b09f5ddc56",
+    "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "model-00001-of-00002.safetensors": "67347b23fb4165b652eb6611f5e1f2a06dfcddba8e909df1b2b0b1857bee06c2",
+    "model-00002-of-00002.safetensors": "a40d941d0e7e0b966ad8b62bb6d6b7c88cce1299197b599d9d0a4ce59aabfc1d"
+  },
+  "runtime": {
+    "torch": "2.8.0+cu128",
+    "transformers": "4.57.1",
+    "accelerate": "1.10.1",
+    "bitsandbytes": "0.48.0"
+  },
+  "attention_implementation": "sdpa",
+  "weight_quantization": {
+    "load_in_4bit": true,
+    "quant_type": "nf4",
+    "double_quant": true,
+    "compute_dtype": "float16"
+  },
+  "loading_dtype": "float16",
+  "device": "cuda:0",
+  "cuda_allocator_limit_bytes": 3221225472,
+  "observer_role": "new_secondary_instrument_not_historical_replay",
+  "hardware": {
+    "device_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "capability": [
+      12,
+      0
+    ],
+    "cuda_runtime": "12.8",
+    "driver_version": "573.24"
+  },
+  "execution": {
+    "python": "3.13.9",
+    "platform": "Windows-AMD64",
+    "threads": {
+      "OMP_NUM_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "2",
+      "MKL_NUM_THREADS": "2"
+    },
+    "TOKENIZERS_PARALLELISM": "false",
+    "offline_model_loading": true,
+    "installed_versions_lock_sha256": "9e898c91233aa00678d1174ee50d09c9020a5ccc0f7b84a7e99fb0176fa74f45"
+  }
+}

@@ -3,9 +3,9 @@
   "objective": "Mechanism-driven unsupervised hallucination detection improvement toward AUROC >= 0.8 on each of six primary tasks",
   "canonical_project": "D:/projects/research/token_detector",
   "goal_status": "active",
-  "phase": "H002_frozen_awaiting_cuda_runtime_qualification",
+  "phase": "H002_idle_job_armed_waiting_for_host_memory",
   "active_hypothesis": "H002_VALUE_BLIND_RECONSTRUCTION",
-  "next_question": "On the fixed18-case exploratory panel, can an automatic, value-blind source-query contract recover relation ownership while preserving correct derivation? First qualify interface invariance and available frozen-model resources.",
+  "next_question": "Check the one already-armed local-idle job. Once sealed, evaluate automatic coverage and ownership/unknown failures in shared direct/blind/leaky observations; do not repeat completed engineering checks without an actual dependency change.",
   "known_fact_ids": [
     "F001",
     "F002",
@@ -29,7 +29,7 @@
     "Whether target-slot-blind source reconstruction adds useful information beyond direct verification",
     "Whether natural claim/role proposal has enough reliable coverage without gold spans",
     "How to preserve legitimate arithmetic/units and handle missing original financial questions",
-    "Availability of a resource-compatible frozen model for genuinely new observations"
+    "Whether the complete frozen3B NF4 model fits the admitted host/GPU budget on full original inputs; tiny backend success does not establish this."
   ],
   "constraints": {
     "learning": "unsupervised",
@@ -43,9 +43,22 @@
   "checkpoint_policy": "Update at every conclusion, completed run or structural pivot; record the next discriminating question before continuation",
   "pipeline_helpers": "External ARIS run_state/watchdog helpers were not found; no background watchdog is claimed. Repository state and exact-run reservation are implemented locally.",
   "case_panel": "research-state/case_panel_v1.json",
-  "resource_status": "All9 model files verified, exact94-module wheel and78 installed checks passed. Official CUDA torch wheel downloaded and installing; pinned dependencies and actual CUDA/bnb probe pending. User authorized idle auto-run.",
+  "resource_status": "CUDA/NF4 tiny kernel passed; local idle job actually armed at2026-11-02T11:39:30Z. Host RAM below admission at start; no natural LM outputs yet. Read live_execution_state for current truth.",
   "user_resource_choice": "local_idle_automatic_run",
   "experiment_plan": "refine-logs/EXPERIMENT_PLAN.md",
-  "frozen_observation_run_id": "399c2453ffac6456171187c9eac846bcc32eaf562180b5ee5792e917b69b0bd5",
-  "run_reservation_status": "checked_new_not_claimed_before_resource_admission"
+  "frozen_observation_run_id": "17882f108bcd7448ffa822fa0a134111b6552dd252578064c1ef05af3dc4807c",
+  "run_reservation_status": "checked_new_not_claimed_before_resource_admission",
+  "frozen_observation_run_spec": "research-state/protocols/H002_observation_run_spec_v2.json",
+  "live_execution_state": "outputs/research-goal-20261102/autostart-state.json",
+  "local_idle_job": {
+    "pid_at_start": 31576,
+    "started_utc": "2026-11-02T11:39:30.426330+00:00",
+    "state": "outputs/research-goal-20261102/autostart-state.json",
+    "script": "outputs/research-goal-20261102/idle_launch.py",
+    "maximum_resource_wait_hours": 6,
+    "poll_seconds": 30,
+    "stop_file": "outputs/research-goal-20261102/STOP_AUTORUN",
+    "permanent_service": false,
+    "automatic_retries": false
+  }
 }

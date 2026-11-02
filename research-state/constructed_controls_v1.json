@@ -1,0 +1,13 @@
+{
+  "status": "prepared_sealed_not_run",
+  "population": "constructed16_answers_8_pairs_separate_from_natural18",
+  "inputs_sha256": "7bf1a14dff728aa367ce66664413cdb1d58bea9500218dec4173144a412f6a19",
+  "manifest_sha256": "bf28cf5d9a045c6ddb62e74d1b07304cc5a3ef06a3e4ae32f97006813663aeec",
+  "seal_sha256": "df38d6bef5273a23ac3b325919c0b00001c2f429306e6c6139d22cb4a2233726",
+  "original_panel_changed": false,
+  "manual_frames_or_slots": false,
+  "wordbag_pairs_programmatically_checked": 6,
+  "fresh_peer_review": "passed",
+  "language_model_calls": 0,
+  "local_path": "outputs/research-goal-20261102/constructed_controls_v1"
+}

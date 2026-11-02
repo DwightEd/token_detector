@@ -6,3 +6,5 @@
 |---|---|---|
 | 2026-11-02 19:00 | EXPERIMENT_PLAN_20261102_190000.md → EXPERIMENT_PLAN.md | 机制假设、门禁、消融与完整评价路线；没有新效能结果 |
 | 2026-11-02 19:00 | EXPERIMENT_TRACKER_20261102_190000.md → EXPERIMENT_TRACKER.md | 实际执行状态；持续更新时另留时间版本 |
+| 20261102_194058 | EXPERIMENT_PLAN_20261102_194058.md / EXPERIMENT_TRACKER_20261102_194058.md | Runtime qualification passed; bounded idle job armed; scientific observations not yet produced |
+| 20261102_194257 | EXPERIMENT_PLAN_20261102_194257.md / EXPERIMENT_TRACKER_20261102_194257.md | Actual local-idle execution checkpoint, no new language-model results |

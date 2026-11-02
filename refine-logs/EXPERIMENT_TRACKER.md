@@ -8,10 +8,10 @@
 | G001 | 数据/观察合同与先前覆盖审查 | COMPLETED | research-state/dataset_contracts.json；31 条先前实验索引 |
 | G002 | 持久目标、上下文恢复与精确运行去重 | IMPLEMENTED_TESTED | tools/research_memory.py；22 项合同检查已过；不冒充外部 watchdog |
 | G003 | 固定完整自然面板、评价隔离 | PREPARED_NOT_SCORED | 18 答，case_panel_v1.json 中输入/评价材料分别绑定 |
-| G004 | H002 自动提议与 direct/blind/leaky | IMPLEMENTED_UNDER_REVIEW | 未产生真实模型观察；精确文字对齐修订后重测 |
-| G005 | 独立 CUDA 环境及新观察模型 | PREPARING | 模型文件已下载并验官方快照，CUDA 环境安装中；不称历史8B重放 |
-| H002-Q1 | 18 答自动语义资格 | NOT_RUN | 等新鲜审查、安装包身份、资源准入；先封存后打开评价材料 |
-| H002-Q2 | 同词袋归属/证据缺失/合法推导控制 | PLANNED_AFTER_Q1 | 构造控制单列，不伪装自然样本效果 |
+| G004 | H002 自动提议与 direct/blind/leaky | FROZEN_REVIEWED_INSTALLED_CHECKS_PASSED | 94安装模块身份一致，78合成检查通过；无效/未知/上限全部保留 |
+| G005 | 独立 CUDA 环境及新观察模型 | PREPARED_KERNEL_PROBE_PASSED | 9模型文件匹配官方快照，固定依赖/实际CUDA与NF4微型运算通过；未证明完整3B装载已成功 |
+| H002-Q1 | 18 答自动语义资格 | IDLE_JOB_ARMED | 19:39真实任务已启动，等内存准入；实时状态见outputs/research-goal-20261102/autostart-state.json；当时零LM调用 |
+| H002-Q2 | 同词袋归属/证据缺失/合法推导控制 | PREPARED_SEALED_NOT_RUN | 16答/8对，六组严格词袋相同，独立审查通过；仍待Q1后决定执行 |
 | H001-Q0 | 前导 ASCII 空格的同回答配对控制 | CONTRACT_ONLY_NOT_RUN | 映射测试不等于观测机制已识别；旧生成器混杂仍未解除 |
 | H002-D1 | 比较器、全token投影、unknown与评分冻结 | NOT_DEFINED_PENDING_QUALIFICATION | 不临时加权，不拿观察输出直接称最终检测器 |
 | H002-E1 | 完整六任务与模块消融 | NOT_RUN | 原人口/原标签；每项 AUROC/AP/区间与成本 |
