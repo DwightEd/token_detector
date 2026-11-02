@@ -173,7 +173,7 @@ def _case(sample, row, responses, protocol):
             'state': 'observations_sealed_not_evaluated'}
 
 
-def qualify(inputs, protocol, output, generator, model_identity):
+def qualify(inputs, protocol, output, generator, model_identity, *, request_builder=None, protocol_loader=None):
     """Score the entire original 18-case roster; reuse exact sealed observations.
 
     A scorer implements count_input_tokens(messages), score_labels(messages,
@@ -186,19 +186,21 @@ def qualify(inputs, protocol, output, generator, model_identity):
         raise ValueError('Only original inputs.jsonl and an independent protocol may be read')
     if 'outputs' not in output.parts:
         raise ValueError('Verdict artifacts must be retained under outputs/')
-    frozen, identity, source = _protocol(protocol), _model_identity(model_identity), research_identity()
+    frozen = (protocol_loader or _protocol)(protocol)
+    identity, source = _model_identity(model_identity), research_identity()
+    build_request = request_builder or verdict.build_request
     if hasattr(generator, 'model_identity') and generator.model_identity != identity:
         raise ValueError('Generator and supplied model identities differ')
     input_hash, protocol_hash = data.file_hash(inputs), data.file_hash(protocol)
     samples = list(read_samples(inputs))
     if len(samples) != frozen['expected_cases']:
-        raise ValueError('Whole original 18-case input roster is required')
+        raise ValueError(f"Whole original {frozen['expected_cases']}-case input roster is required")
     roster, executions = [], {}
     for sample in samples:
         context, transformation = _context(sample.inputs)
         requests = []
         for assignment in verdict.label_assignments():
-            request = verdict.build_request(sample.source, sample.response, context, assignment)
+            request = build_request(sample.source, sample.response, context, assignment)
             execution = {'messages': request['messages'], 'labels': list(verdict.LABELS),
                          'model_identity': identity, 'protocol_sha256': protocol_hash,
                          'source_identity_sha256': _digest(source),
