@@ -56,7 +56,7 @@ def _paths(inputs, design, construction, observations, model_path, output, proto
     return paths
 
 
-def _inventory(root):
+def _inventory(root, *, profile=observer):
     """Admit every nested path and seal key before hashing archive payloads."""
     _require(root.is_dir() and root.resolve() == root
         and {p.name for p in root.iterdir()} == _META | {'requests', 'seal.json'},
@@ -74,15 +74,16 @@ def _inventory(root):
         for name in expected | {'seal.json'}:
             members.add(str(reader._member(child, name).relative_to(root)))
         children.append((child, expected))
-    _require(len(children) == 32, 'All32 completion request directories required')
+    count = profile.DEFAULT_PROTOCOL['expected_completions']
+    _require(len(children) == count, f'All{count} completion request directories required')
     seal, raw = reader._seal_content(root, members)
     for child, expected in children:
         reader._seal_content(child, expected)
     return members, seal, data.text_hash(raw.decode('utf-8')), children
 
 
-def _snapshot(root, inventory):
-    current = _inventory(root)
+def _snapshot(root, inventory, *, profile=observer):
+    current = _inventory(root, profile=profile)
     _require(current[0] == inventory[0] and current[2] == inventory[2],
              'Observation archive inventory or initial seal changed')
     reader._verify_observation_snapshot(root, *inventory)
@@ -115,19 +116,19 @@ def _cpu_tokenizer(model_path, identity):
     return tokenizer, unchanged
 
 
-def _validate(inputs, root, model_path, current):
+def _validate(inputs, root, model_path, current, *, profile=observer, helpers=_HELPERS):
     plan = data.read_json(root / 'plan.json')
-    protocol = observer._protocol(root / 'protocol.json')
+    protocol = profile._protocol(root / 'protocol.json')
     model = observer._model_identity(data.read_json(root / 'model_identity.json'))
     source = data.read_json(root / 'source_identity.json')
-    for name in _HELPERS:
+    for name in helpers:
         digest = source.get('source_sha256', {}).get(name)
         _require(reader._sha(digest) and digest == current.get('source_sha256', {}).get(name),
                  'Incompatible archived reconstruction helper: ' + name)
     input_hash = data.file_hash(inputs)
     _require(input_hash == protocol['original_inputs_sha256'] and reader._sha(plan.get('protocol_sha256')),
              'Frozen input or original protocol identity changed')
-    prepared = observer._prepare(list(read_samples(inputs)))
+    prepared = profile._prepare(list(read_samples(inputs)))
     tokenizer, model_guard = _cpu_tokenizer(model_path, model)
     executions = []
     for row in prepared['candidates']:
@@ -137,9 +138,10 @@ def _validate(inputs, root, model_path, current):
         execution = observer._execution(row, metadata, plan['protocol_sha256'], model, source)
         executions.append(dict(query_key=row['query_key'], candidate=row['candidate'],
                                key=observer._digest(execution), execution=execution))
-    _require(len(executions) == 32 and len({e['key'] for e in executions}) == 32,
-             'All32 unique completion requests required')
-    expected = observer._plan(inputs, input_hash, plan['protocol_sha256'], protocol, model, source, prepared, executions)
+    count = profile.DEFAULT_PROTOCOL['expected_completions']
+    _require(len(executions) == count and len({e['key'] for e in executions}) == count,
+             f'All{count} unique completion requests required')
+    expected = profile._plan(inputs, input_hash, plan['protocol_sha256'], protocol, model, source, prepared, executions)
     reader._equal(plan, expected, 'Full source-only query/slot/tokenizer/request plan changed')
     _require({p.name for p in (root / 'requests').iterdir()} == {e['key'] for e in executions},
              'Completion request population changed')
@@ -159,7 +161,7 @@ def _validate(inputs, root, model_path, current):
         response = observer._response(wrapper['value'], row['execution']['preflight'])
         reader._equal(data.read_json(child / 'response.json'), response, 'Token log-probability/joint sum/cost changed')
         responses[row['key']] = response
-    complete = observer._completion(prepared, executions, responses, protocol)
+    complete = profile._completion(prepared, executions, responses, protocol)
     reader._equal(data.read_json(root / 'complete.json'), complete, 'Completion distributions/readouts/costs changed')
     model_guard()
     return prepared, executions, responses, complete, plan, model_guard

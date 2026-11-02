@@ -157,6 +157,10 @@ def parser() -> argparse.ArgumentParser:
     for option in ['inputs', 'protocol', 'model', 'model-identity', 'output']:
         masked_reconstruction.add_argument('--' + option, type=Path, required=True)
     masked_reconstruction.add_argument('--admit-resources', action='store_true')
+    masked_reconstruction_eval = transfers.add_parser('evaluate-masked-reconstruction',
+        help='rebuild all masked-question completions on CPU before construction/control release')
+    for option in ['inputs', 'design', 'construction', 'observations', 'model', 'h008-review', 'output', 'protocol']:
+        masked_reconstruction_eval.add_argument('--' + option, type=Path, required=True)
     reconstruction_eval = transfers.add_parser('evaluate-reconstruction', help='rebuild sealed source completions on CPU before construction reference release')
     for option in ['inputs', 'design', 'construction', 'observations', 'model', 'output', 'protocol']:
         reconstruction_eval.add_argument('--' + option, type=Path, required=True)
@@ -424,6 +428,11 @@ def main() -> None:
             identity = data.read_json(args.model_identity)
             qualify(args.inputs, args.protocol, args.output,
                     HFAnswerCompletion(args.model, identity, admit_resources=True), identity)
+        elif args.transfer_stage == 'evaluate-masked-reconstruction':
+            from .masked_reconstruction_evaluation import evaluate
+
+            evaluate(args.inputs, args.design, args.construction, args.observations,
+                     args.model, args.h008_review, args.output, args.protocol)
         elif args.transfer_stage == 'evaluate-reconstruction':
             from .reconstruction_evaluation import evaluate
 

@@ -30,3 +30,22 @@ def test_masked_resource_gate_precedes_metadata_and_backend(monkeypatch):
     with pytest.raises(SystemExit) as error:
         run.main()
     assert error.value.code == 2
+
+
+def test_masked_cpu_dispatch_cannot_construct_observation_backend(monkeypatch):
+    from experiments import masked_reconstruction_evaluation as evaluator
+    calls = []
+    def forbidden(*args, **kwargs):
+        raise AssertionError('CPU dispatch cannot construct or prepare a neural observer')
+    monkeypatch.setattr(run.data, 'read_json', forbidden)
+    monkeypatch.setattr(answer_completion, 'HFAnswerCompletion', forbidden)
+    monkeypatch.setattr(evaluator, 'evaluate', lambda *values: calls.append(values))
+    values = ['inputs.jsonl', 'plan.json', 'construction_truth.jsonl', 'observations',
+              'model', 'h008-review', 'outputs/review', 'protocol.json']
+    options = ['inputs', 'design', 'construction', 'observations', 'model', 'h008-review', 'output', 'protocol']
+    argv = ['r4-experiment', 'transfer', 'evaluate-masked-reconstruction']
+    for name, value in zip(options, values, strict=True):
+        argv.extend(['--' + name, value])
+    monkeypatch.setattr(sys, 'argv', argv)
+    run.main()
+    assert calls == [tuple(Path(value) for value in values)]
