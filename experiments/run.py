@@ -90,6 +90,13 @@ def parser() -> argparse.ArgumentParser:
     semantic_eval.add_argument('--panel', type=Path, required=True)
     semantic_eval.add_argument('--protocol', type=Path, required=True)
     semantic_eval.add_argument('--output', type=Path, required=True)
+    verdict = transfers.add_parser('qualify-verdict', help='seal finite-label whole-answer source judgments without generating spans or text')
+    verdict.add_argument('--inputs', type=Path, required=True)
+    verdict.add_argument('--protocol', type=Path, required=True)
+    verdict.add_argument('--model', type=Path, required=True)
+    verdict.add_argument('--model-identity', type=Path, required=True)
+    verdict.add_argument('--admit-resources', action='store_true')
+    verdict.add_argument('--output', type=Path, required=True)
     fusion_cache = transfers.add_parser('prepare-fusion', help='export verified historical R4/V3 caches without labels')
     fusion_cache.add_argument('--scores', type=Path, required=True)
     fusion_cache.add_argument('--native', type=Path, required=True)
@@ -265,6 +272,15 @@ def main() -> None:
             from .semantic_evaluation import evaluate
 
             evaluate(args.observations, args.panel, args.output, args.protocol)
+        elif args.transfer_stage == 'qualify-verdict':
+            if not args.admit_resources:
+                command.error('qualify-verdict requires explicit --admit-resources before HF loading')
+            from .verdict_qualification import qualify
+            from .semantic_qualification import HFGenerator
+
+            identity = data.read_json(args.model_identity)
+            qualify(args.inputs, args.protocol, args.output,
+                    HFGenerator(args.model, identity, admit_resources=True), identity)
         elif args.transfer_stage == 'prepare-fusion':
             from .fusion_cache import export
 

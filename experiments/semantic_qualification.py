@@ -445,10 +445,7 @@ class HFGenerator:
         self._prepare()
         return len(self.tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True))
 
-    def __call__(self, messages, *, max_new_tokens):
-        if type(max_new_tokens) is not int or max_new_tokens not in {
-                DEFAULT_PROTOCOL['proposer_max_new_tokens'], DEFAULT_PROTOCOL['observation_max_new_tokens']}:
-            raise ValueError('HF generation budget must be one of the frozen protocol limits')
+    def _ensure_model(self):
         self._prepare()
         import torch
         from transformers import AutoModelForCausalLM, BitsAndBytesConfig
@@ -462,6 +459,67 @@ class HFGenerator:
                     bnb_4bit_use_double_quant=True, bnb_4bit_compute_dtype=torch.float16),
                 low_cpu_mem_usage=True)
             self.model.eval()
+
+    def validate_labels(self, messages, labels):
+        """Check the exact frozen completions against the full chat prefix.
+
+        This loads only the admitted tokenizer, so a complete request panel can
+        fail engineering checks before any model forward is attempted.
+        """
+        if not isinstance(labels, (tuple, list)) or tuple(labels) != ('A', 'B', 'C'):
+            raise ValueError('HF label scoring requires the frozen A/B/C verbalizers')
+        self._prepare()
+        prefix = self.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+        prefix_ids = self.tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True)
+        if self.tokenizer.encode(prefix, add_special_tokens=False) != prefix_ids:
+            raise ValueError('Chat-template prefix tokenization is not aligned')
+        token_ids, decodes = {}, {}
+        for label in labels:
+            completion_ids = self.tokenizer.encode(label, add_special_tokens=False)
+            if len(completion_ids) != 1:
+                raise ValueError('Frozen label completion must be exactly one token: ' + label)
+            if self.tokenizer.encode(prefix + label, add_special_tokens=False) != prefix_ids + completion_ids:
+                raise ValueError('Frozen label completion changes the chat-prefix token boundary: ' + label)
+            token_ids[label] = completion_ids[0]
+            decodes[label] = self.tokenizer.decode(completion_ids, skip_special_tokens=False,
+                                                   clean_up_tokenization_spaces=False)
+        if len(set(token_ids.values())) != len(labels):
+            raise ValueError('Frozen label completions must have distinct token IDs')
+        return {'input_tokens': len(prefix_ids), 'label_token_ids': token_ids,
+                'label_decodes': decodes, 'prefix_alignment_verified': True}
+
+    def score_labels(self, messages, labels):
+        """One full-prefix dense forward, with no generated text or KV cache."""
+        validation = self.validate_labels(messages, labels)
+        if validation['input_tokens'] > DEFAULT_PROTOCOL['max_input_tokens']:
+            raise RuntimeError('Input token guard changed; truncation is forbidden')
+        self._ensure_model()
+        import torch
+        encoded = self.tokenizer.apply_chat_template(messages, tokenize=True,
+            add_generation_prompt=True, return_tensors='pt').to('cuda:0')
+        if encoded.shape != (1, validation['input_tokens']):
+            raise RuntimeError('Dense label input shape changed after tokenizer validation')
+        started = time.monotonic()
+        with torch.inference_mode():
+            output = self.model(encoded, attention_mask=torch.ones_like(encoded),
+                                logits_to_keep=1, use_cache=False)
+            if output.logits.shape[:2] != (1, 1):
+                raise RuntimeError('Label scorer must retain exactly one next-token logit vector')
+            next_logits = output.logits[0, -1]
+            # Float64 avoids a rounded normalizer below the joint label mass.
+            full_lse = float(torch.logsumexp(next_logits.double(), dim=-1).item())
+            label_logits = {label: float(next_logits[token_id].item())
+                            for label, token_id in validation['label_token_ids'].items()}
+        return {**validation, 'label_logits': label_logits, 'full_vocab_logsumexp': full_lse,
+                'output_tokens': 0, 'actual_forward_passes': 1,
+                'seconds': time.monotonic() - started, 'resource_admission': self.admission}
+
+    def __call__(self, messages, *, max_new_tokens):
+        if type(max_new_tokens) is not int or max_new_tokens not in {
+                DEFAULT_PROTOCOL['proposer_max_new_tokens'], DEFAULT_PROTOCOL['observation_max_new_tokens']}:
+            raise ValueError('HF generation budget must be one of the frozen protocol limits')
+        self._ensure_model()
+        import torch
         encoded = self.tokenizer.apply_chat_template(messages, tokenize=True,
             add_generation_prompt=True, return_tensors='pt').to('cuda:0')
         if encoded.shape[-1] > DEFAULT_PROTOCOL['max_input_tokens']:
