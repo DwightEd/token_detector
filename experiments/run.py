@@ -141,6 +141,13 @@ def parser() -> argparse.ArgumentParser:
     nli_eval = transfers.add_parser('evaluate-nli', help='validate frozen NLI pairs on CPU before exploratory native-unit evaluation')
     for option in ['inputs', 'observations', 'natural-panel', 'controls-panel', 'model', 'protocol', 'output']:
         nli_eval.add_argument('--' + option, type=Path, required=True)
+    designed = transfers.add_parser('qualify-designed-focus', help='seal fixed48 balanced relation and response-burden whole/target controls')
+    for option in ['inputs', 'protocol', 'model', 'model-identity', 'output']:
+        designed.add_argument('--' + option, type=Path, required=True)
+    designed.add_argument('--admit-resources', action='store_true')
+    designed_eval = transfers.add_parser('evaluate-designed-focus', help='audit frozen designed controls before construction-label release on CPU')
+    for option in ['inputs', 'design', 'construction', 'observations', 'output', 'protocol']:
+        designed_eval.add_argument('--' + option, type=Path, required=True)
     fusion_cache = transfers.add_parser('prepare-fusion', help='export verified historical R4/V3 caches without labels')
     fusion_cache.add_argument('--scores', type=Path, required=True)
     fusion_cache.add_argument('--native', type=Path, required=True)
@@ -370,6 +377,20 @@ def main() -> None:
 
             evaluate(args.inputs, args.observations, args.natural_panel,
                      args.controls_panel, args.model, args.output, args.protocol)
+        elif args.transfer_stage == 'qualify-designed-focus':
+            if not args.admit_resources:
+                command.error('qualify-designed-focus requires explicit --admit-resources before HF loading')
+            from .designed_focus_qualification import qualify
+            from .semantic_qualification import HFGenerator
+
+            identity = data.read_json(args.model_identity)
+            qualify(args.inputs, args.protocol, args.output,
+                    HFGenerator(args.model, identity, admit_resources=True), identity)
+        elif args.transfer_stage == 'evaluate-designed-focus':
+            from .designed_focus_evaluation import evaluate
+
+            evaluate(args.inputs, args.design, args.construction, args.observations,
+                     args.output, args.protocol)
         elif args.transfer_stage == 'prepare-fusion':
             from .fusion_cache import export
 
