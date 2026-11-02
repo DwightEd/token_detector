@@ -123,6 +123,17 @@ def main():
             add('llama_relational_archive',method,task,'0'+auc,'0'+ap,
                 'experiments/EXPERIMENTS.md',status='rejected_historical_candidate'
                 if method.startswith('Relational') else 'matched_historical_control')
+    strata_path=OUT/'hallurag_strata_evidence.json'
+    strata=json.loads(strata_path.read_text(encoding='utf-8'))
+    task_names={'all':'HalluRAG','answerable_target_available':'HalluRAG_available',
+                'unanswerable_target_unavailable':'HalluRAG_unavailable'}
+    for r in strata['r4']['metrics']:
+        add('llama_hallurag_r4_historical','R4',task_names[r['stratum']],
+            r['auroc_printed'],r['ap_printed'],'r4_hallurag_history_record_5299')
+    for r in strata['v3']['rows']:
+        if r['observer'].startswith('Qwen') and r['view']!='pooled':
+            task='HalluRAG_available' if r['view']=='target_available' else 'HalluRAG_unavailable'
+            add('qwen_dense','V3 witness',task,r['auroc'],r['ap'],'paper_table_28')
     for r in records:
         r['observer'] = 'Qwen2.5-3B-Instruct' if r['group'].startswith('qwen') else 'Llama-3.1-8B-Instruct'
         r['label_type'] = ('financial_silver' if r['task'] in ['FinQA','TATQA'] else
@@ -134,13 +145,14 @@ def main():
                       ('qwen_dense',r['method'].split(' / ')[0],r['task']))
             assert all(abs(float(r[k])-float(base[k])) <= .00055 for k in ['auroc','ap'])
 
-    precision={2:4,3:3,26:3,35:4,38:4,41:3,37:4,17:4}
+    precision={2:4,3:3,26:3,28:4,35:4,38:4,41:3,37:4,17:4}
     for r in records:
         if r['source'].startswith('paper_table_'):
             digits=precision[int(r['source'].removeprefix('paper_table_'))]
             assert all(len(r[k].split('.')[1])==digits for k in ['auroc','ap']),r
     packed={'schema':1,'as_of':evidence['as_of'],'new_experiments':False,
             'evidence_sha256':hashlib.sha256(evidence_path.read_bytes()).hexdigest(),
+            'hallurag_strata_evidence_sha256':hashlib.sha256(strata_path.read_bytes()).hexdigest(),
             'ledger_sha256':hashlib.sha256((ROOT/'experiments/EXPERIMENTS.md').read_bytes()).hexdigest(),
             'records':records}
     (OUT/'comparison.json').write_text(json.dumps(packed,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
@@ -170,17 +182,18 @@ def main():
 
 单元格为 **AUROC / AP**，越大越好；AP 是 average precision。这里只整理已有结果，没有新运行、重算指标或据标签挑选新方法。— 表示该运行体系中未恢复到结果，不能跨观察模型补数。
 历史任务已被查看，只能作为探索证据。金融是 silver 编辑标签；HalluRAG 是句标签投影；它们不能等同人类自然 token 错误标注。
+这些现成标注可以直接用于评价；标签来源与历史开发暴露只是解释其证据范围，不是禁止使用。按用户指定，HalluRAG包含答案的891答为与RAGTruth对照的主组；全部及不含答案组继续单列。[R4/V3主表、错例与0.8目标](source-reading/PERFORMANCE_REVIEW.md)。
 
 ## 1. Llama：R4、V1、V2、V3 与控制
 
 前三列为 RAGTruth 三任务完整 TEST；金融为 FRED 发布的 FinQA 162答 / TATQA 130答 silver 测试人群，不是原始 FinQA/TATQA 整个基准。原生成问题和提示未恢复，统一采用 source-only completion prompt，不能宣称复现原金融问答系统。前五列来自论文第6页表2，概率基线来自第21页表17。
-HalluRAG 来自第29页表35的另一次匹配 SDPA 采集，独立列示。V3 span permutation 为实验账本的固定段内置换消融，保留六位打印值。R4 使用额外 local/route 观测和无标签参考校准，预算与 full-gap 方法不同。
+HalluRAG的V3来自第29页表35的新匹配SDPA采集；R4完整TEST及分层来自本次恢复的历史报告。两者人口/token计数一致，但采集后端不同，不能当同观测配对实验。V3 span permutation 为实验账本的固定段内置换消融，保留六位打印值。R4 使用额外 local/route 观测和无标签参考校准，预算与 full-gap 方法不同。
 旧 RAG 观测生产者身份未全部恢复，不宣称全链路独立复现。
 
 """
     methods=['R4','Raw gap','V1 shared','V2 persistent','V3 witness','V3 c=0','Fixed clipping','V3 span permutation',
              'Matched local','Symmetric local','Fixed HMM','Partial','Source NLL','Source entropy']
-    text=intro+matrix(['llama_historical','llama_hallurag'],TASKS,methods)
+    text=intro+matrix(['llama_historical','llama_hallurag','llama_hallurag_r4_historical'],TASKS,methods)
     text+="""\nV3 相对 V1 的 AUROC 增量约为：QA +0.0020、Summary +0.0368、Data2txt +0.0561、FinQA +0.0744、TATQA +0.0742（由表内四位数相减，非置信区间）。
 R4 仍在 QA / Data2txt 更强；QA 上 V2 的 AUROC/AP 也高于 V3。V3 比简单 clipping 的金融增益配对区间跨零，未建立稳定优越性。
 金融 V3 AUROC 的历史95%区间约为 FinQA [0.7690, 0.8350]、TATQA [0.7927, 0.8919]，都跨0.8。
@@ -225,7 +238,11 @@ ClaimDB 只进入解析资格检查；HaluEval / RAGognize 只准备了数据，
 来自第29页表35。Available / Unavailable 各891答；是发布的检索可用性元数据，不是新的语义审计。不能把分层当两份独立复现。
 
 """
-    text+=matrix(['llama_hallurag'],['HalluRAG','HalluRAG_available','HalluRAG_unavailable'])
+    text+=matrix(['llama_hallurag','llama_hallurag_r4_historical'],['HalluRAG','HalluRAG_available','HalluRAG_unavailable'])
+    text+="""\n恢复的R4完整TEST为全部0.576780/0.262574、包含答案0.807066/0.518830、不含答案0.401882/0.199319。此前账本0.472617/0.287484属于VAL DEV132答/6文章，不能替代这组完整TEST。
+Qwen dense V3的第27页表28分层：包含答案0.7134/0.3773，不含答案0.4072/0.1531，各891答；不是cached存档。
+RAGTruth没有当前适配器统一读取的等价answerability标志，本次保留原split/task，不能把“与Hallu含答案对照”写成RAGTruth每条已单独审查证据充分。
+"""
     text+="""\n## 5. 分辨率删除诊断：不能晋升为新有效方法
 
 密集 Qwen 第30页表38。Original 是原分数；Span mean 抹掉片段内差异；Span centered 去掉片段均值。

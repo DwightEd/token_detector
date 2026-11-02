@@ -1,0 +1,460 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>R4/V3漏报与误报的完整机制审查</title><link rel="stylesheet" href="assets/guide.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
+<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
+<style>@media print{body[data-article="EXPERIMENT_PLAN"]{font-size:14px;line-height:1.65}}</style></head><body data-article="FNFP_MECHANISM">
+<header><div class="eyebrow">TOKEN DETECTOR / 本地离线阅读</div><h1>R4/V3漏报与误报的完整机制审查</h1>
+<nav><a href="FNFP_MECHANISM.html">FN/FP机制审查</a><a href="FNFP_CASES.html">逐例核对来源</a><a href="HALLURAG_FNFP.html">HalluRAG FN/FP</a><a href="PERFORMANCE_REVIEW.html">R4/V3、错例与0.8目标</a><a href="UNLABELLED_LIMITS.html">无标注边界</a><a href="METHOD_V3.html">V3方法</a><a href="RESULTS_CURRENT.html">全数据集对照</a><a href="INTEGRATED_DESIGN.html">受限关系候选</a><a href="EXPERIMENT_PLAN.html">模块计划</a><a href="VISUAL_GUIDE.html">交互演示</a><a href="THEORY.html">完整公式</a><a href="READING.html">逐行代码</a><a href="CPU_FUSION_REVIEW.html">未采用基线记录</a></nav>
+<p>公式已在浏览器排版；可用浏览器“打印 → 保存为PDF”。本页不需要联网。</p></header>
+<main><article class="article"><h1 id="r4v3">R4与V3为什么漏报、为什么误报</h1>
+<p>当前证据指向几类不同问题：有些错误关系没有表现为强原始对比；有些局部视角根本没有进入检测器；还有些已有信号在片段聚合、route组合或上下文推断之后改变了全局名次。与此同时，这些操作也救回了大量原始对比未排到前面的正token。需要按输入、读出、关系归属和评价粒度分别解释。</p>
+<p>本页只分析<strong>五项完整TEST</strong>：RAGTruth三任务各900答，FRED FinQA162答、TATQA130答，共2992答、448202个有标签token。HalluRAG的V3完整缓存已恢复，但仍缺少R4原始预测；V3单独审计见<a href="HALLURAG_FNFP.html">HalluRAG FN/FP</a>，不混入这里的R4/V3配对机制计数。所有分数来自已经冻结并完成评价的缓存；没有新观测、训练、权重/阈值拟合或新方法选择。已暴露人口继续是探索证据。逐例来源核对见<a href="FNFP_CASES.html">FN/FP案例</a>，机读统计见<a href="../results/fnfp_mechanism_summary.json">诊断JSON</a>。</p>
+<h2 id="fnfp">如何定义这次FN和FP</h2>
+<p>每个任务、每个被检查的通道或阶段，分别按分数降序取 <code>ceil(0.05*N)</code> 个告警，同分保持原token顺序。五组均无unknown，因此原评分人口与此次有标签评价人口一致。TP/FP/FN按已发布的正字符跨度映射到原token；RAGTruth为人工跨度，FRED为合成编辑跨度，两类现成标注都可用于评价，含义分别保留。预算属于完整任务，不能在一个案例内重新排序，也不沿用旧48答DEV的top10%计数。</p>
+<p>下表单元格为<strong>TP / FP / FN</strong>。FP表示未与发布正跨度相交，不自动等于独立人工确认的正确事实；FN也可能是一个错误引用/关系跨度中本身受来源支持的词。</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>回答</th>
+<th>token</th>
+<th>正token</th>
+<th>告警预算</th>
+<th>R4 TP/FP/FN</th>
+<th>V3 TP/FP/FN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QA</td>
+<td>900</td>
+<td>124817</td>
+<td>6751</td>
+<td>6241</td>
+<td>2608/3633/4143</td>
+<td>1765/4476/4986</td>
+</tr>
+<tr>
+<td>Summary</td>
+<td>900</td>
+<td>121248</td>
+<td>3485</td>
+<td>6063</td>
+<td>922/5141/2563</td>
+<td>921/5142/2564</td>
+</tr>
+<tr>
+<td>Data2txt</td>
+<td>900</td>
+<td>178343</td>
+<td>7407</td>
+<td>8918</td>
+<td>2088/6830/5319</td>
+<td>1720/7198/5687</td>
+</tr>
+<tr>
+<td>FinQA</td>
+<td>162</td>
+<td>16047</td>
+<td>1420</td>
+<td>803</td>
+<td>133/670/1287</td>
+<td>373/430/1047</td>
+</tr>
+<tr>
+<td>TATQA</td>
+<td>130</td>
+<td>7747</td>
+<td>828</td>
+<td>388</td>
+<td>101/287/727</td>
+<td>256/132/572</td>
+</tr>
+</tbody>
+</table>
+<p>预算本身给出了不可避免的漏报下界：正token数为P、预算为K时，最少FN为 <code>max(0,P-K)</code>，最高token召回为 <code>min(1,K/P)</code>。这只是理想排序的容量界。它不使现有误报合理，也不能解释AUROC未达标；AUROC没有这个固定阈值限制。</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>理想排序仍至少FN</th>
+<th>预算允许的最高token召回</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QA</td>
+<td>510</td>
+<td>92.45%</td>
+</tr>
+<tr>
+<td>Summary</td>
+<td>0</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>Data2txt</td>
+<td>0</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>FinQA</td>
+<td>617</td>
+<td>56.55%</td>
+</tr>
+<tr>
+<td>TATQA</td>
+<td>440</td>
+<td>46.86%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_1">原始信息不足与关系归属错误</h2>
+<p>下面统计两方法共同漏掉的正token。<code>full≤0且local≤0</code>表示在各自历史对比条件下，来源存在没有降低这些已生成词的预测概率；它不证明回答受来源支持，也不证明该词本身是假事实。需要区分语义关系判断和词的可预测性。</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>共同FN</th>
+<th>两个原始视角均未入top5%</th>
+<th>full≤0且local≤0</th>
+<th>占共同FN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QA</td>
+<td>3363</td>
+<td>3148</td>
+<td>1793</td>
+<td>53.3%</td>
+</tr>
+<tr>
+<td>Summary</td>
+<td>2376</td>
+<td>2186</td>
+<td>1582</td>
+<td>66.6%</td>
+</tr>
+<tr>
+<td>Data2txt</td>
+<td>4779</td>
+<td>4409</td>
+<td>2823</td>
+<td>59.1%</td>
+</tr>
+<tr>
+<td>FinQA</td>
+<td>986</td>
+<td>874</td>
+<td>463</td>
+<td>47.0%</td>
+</tr>
+<tr>
+<td>TATQA</td>
+<td>535</td>
+<td>468</td>
+<td>264</td>
+<td>49.3%</td>
+</tr>
+</tbody>
+</table>
+<p>引用错配、实体—事件绑定、时间范围、条件或作用域错误，可以由一串来源中确实出现过的词组成。一个广泛标正的错误跨度也会覆盖这些词。例如QA12297的 <code>able</code> 所在文字在来源Passage3中存在，问题涉及回答对段落的归属；不能把其负gap解释成“模型没有识别一个本身错误的单词”。同样，混有结构化字段和用户评论的Data2txt来源可能含有互相冲突或不同时间的陈述，不能只因词出现在一条评论里就宣称整句成立。</p>
+<p>上表是<strong>原始对比与发布标签之间的诊断</strong>，不是对所有共同FN重新完成了语义裁决；这些数量不能作为某一种语义错误的总体发生率。</p>
+<h2 id="_2">输入视角缺失与读出后的名次下降</h2>
+<p>R4的QA、Data2txt及两金融任务先取local/full平均形成实际输入point；Summary只使用full。V3只使用full。分别对原始视角做top5%排序，与对实际输入或最终分数排序，是不同的排序问题。</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>R4实际输入</th>
+<th>R4实际point已top5%仍FN</th>
+<th>某原始视角top5%但point未入</th>
+<th>V3 full已top5%仍FN</th>
+<th>V3 local-only top5%未使用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QA</td>
+<td>pair</td>
+<td>316</td>
+<td>210</td>
+<td>134</td>
+<td>257</td>
+</tr>
+<tr>
+<td>Summary</td>
+<td>full</td>
+<td>171</td>
+<td>129</td>
+<td>68</td>
+<td>134</td>
+</tr>
+<tr>
+<td>Data2txt</td>
+<td>pair</td>
+<td>415</td>
+<td>284</td>
+<td>211</td>
+<td>239</td>
+</tr>
+<tr>
+<td>FinQA</td>
+<td>pair</td>
+<td>169</td>
+<td>92</td>
+<td>48</td>
+<td>74</td>
+</tr>
+<tr>
+<td>TATQA</td>
+<td>pair</td>
+<td>128</td>
+<td>42</td>
+<td>34</td>
+<td>40</td>
+</tr>
+</tbody>
+</table>
+<p>Summary有129个R4 FN仅在local视角进入top5%，其full没有进入；这是现行full-only配方未使用的观测，不能说成R4已经接收后又压掉。其余pair配方也必须先检查平均后的实际point，不能把“任一单独视角很高”直接算作后端抑制。</p>
+<p>实际输入到最终读出之间，也同时有正token的进入和退出。下表“丢失/救回”是两个固定预算告警集合的差集；“新增FP”指原始实际输入未告警、最终告警的负token。这不是干预实验，更不把各阶段当成相互独立的原因。</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>R4正token 丢失/救回</th>
+<th>V3正token 丢失/救回</th>
+<th>R4从point未告警新增FP</th>
+<th>V3从full未告警新增FP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QA</td>
+<td>316 / 2310</td>
+<td>134 / 1242</td>
+<td>3142</td>
+<td>2164</td>
+</tr>
+<tr>
+<td>Summary</td>
+<td>171 / 718</td>
+<td>68 / 614</td>
+<td>4256</td>
+<td>2368</td>
+</tr>
+<tr>
+<td>Data2txt</td>
+<td>415 / 1671</td>
+<td>211 / 957</td>
+<td>5869</td>
+<td>3635</td>
+</tr>
+<tr>
+<td>FinQA</td>
+<td>169 / 103</td>
+<td>48 / 211</td>
+<td>617</td>
+<td>217</td>
+</tr>
+<tr>
+<td>TATQA</td>
+<td>128 / 75</td>
+<td>34 / 132</td>
+<td>268</td>
+<td>56</td>
+</tr>
+</tbody>
+</table>
+<p>因此，局部“强信号掉出预算”是真实存在的，但它不能推出整段共享或上下文推断整体无益。V3的cached score可以写成现有 <code>witness_emissions(full)</code> 加上差值项，用来追踪自身证据与上下文分数；差值不是独立观测，也不是已经实施了删除上下文的反事实实验。V1/shared、V2/persistent、V3/witness是不同读出，不能把它们之间的比较写成连续执行的三个阶段。</p>
+<h2 id="r4route">R4金融迁移：route组合处发生了什么</h2>
+<p>当前金融R4沿用QA冻结参考数组和QA配方，<code>base = 0.75*source + 0.25*calibrated_route</code>。参考数组的哈希已与历史score plan核对。source是原始片段prior经无标签参考CDF变换的量；它不是错误概率。下面比较同一缓存中source与base的任务告警集合。</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>source阶段TP</th>
+<th>base阶段TP</th>
+<th>正token退出</th>
+<th>正token进入</th>
+<th>负token进入</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QA</td>
+<td>2202</td>
+<td>2528</td>
+<td>457</td>
+<td>783</td>
+<td>1566</td>
+</tr>
+<tr>
+<td>FinQA</td>
+<td>291</td>
+<td>160</td>
+<td>135</td>
+<td>4</td>
+<td>248</td>
+</tr>
+<tr>
+<td>TATQA</td>
+<td>249</td>
+<td>103</td>
+<td>148</td>
+<td>2</td>
+<td>187</td>
+</tr>
+</tbody>
+</table>
+<p>同一组合在QA增加了预算内正token，在两金融任务却明显减少。Summary/Data2txt的route权重原本为0，source与base相同。可以确认<strong>这一步的排序变化与金融退化相伴</strong>；原因可能涉及route信号所表达的量、参考分布迁移或金融表格/推导文本与自然QA的差别，需要分别检查。目前没有按这些标签拟合新权重，也没有把source阶段晋升为新检测器。</p>
+<p>R4其他阶段也有双向变化：point到片段prior、base到带窗口创新的unary、unary到最终连续性分数都会改变全局名次。完整的退出/进入计数保留在JSON中。不能仅选择一个最终漏报案例，把某个阶段所有作用都解释成有害平滑。</p>
+<h2 id="_3">具体错误关系怎样落到分数上</h2>
+<p>以下来自当前TEST，已对照原来源和回答。排名1表示任务内最高风险，是否告警按前述完整任务预算判断。</p>
+<table>
+<thead>
+<tr>
+<th>任务/ID</th>
+<th>来源</th>
+<th>回答</th>
+<th>定位token</th>
+<th>full/local/R4 point排名</th>
+<th>R4/V3最终排名</th>
+<th>预算</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QA 15716</td>
+<td>Aristotle Meteorologica: over 300 years BC</td>
+<td>around 300 years ago</td>
+<td>ago</td>
+<td>1165 / 3975 / 1492</td>
+<td>114453 / 20219</td>
+<td>6241</td>
+</tr>
+<tr>
+<td>Summary 410</td>
+<td>First robot completed around two-thirds of planned route; second collected all 11 points</td>
+<td>Second robot collected all 11 points and completed around two-thirds of planned route</td>
+<td>completed</td>
+<td>81947 / 844 / 81947</td>
+<td>116959 / 90401</td>
+<td>6063</td>
+</tr>
+<tr>
+<td>Data2txt 8937</td>
+<td>RestaurantsReservations=False</td>
+<td>takes reservations</td>
+<td>reservations</td>
+<td>7962 / 17616 / 12232</td>
+<td>87425 / 101511</td>
+<td>8918</td>
+</tr>
+</tbody>
+</table>
+<p><strong>QA 15716来源短引</strong>：</p>
+<blockquote>
+<p>over 300 years BC</p>
+</blockquote>
+<p><strong>Summary 410来源短引</strong>：</p>
+<blockquote>
+<p>after the first one broke down</p>
+<p>completing around two-thirds of the originally planned route</p>
+<p>The second robot was sent in on April 15 and collected data from all 11 points, as scheduled.</p>
+</blockquote>
+<p><strong>Data2txt 8937来源短引</strong>：</p>
+<blockquote>
+<p>'RestaurantsReservations': False</p>
+</blockquote>
+<p>QA15716把公元前的时间改成“几百年前”；两个原始视角及R4实际point排名1492都在预算6241内，片段prior排名却变成116867，最终为114453；V3自身发射量约2.6324、上下文差值约−2.2830，最终排名20219。这里确有实际输入到后续读出的名次下降。</p>
+<p>Summary410把第一台机器人的路径进度归给第二台；local排名844在预算6063内，而full/R4实际point排名81947本来就不在。当前R4 Summary和V3都只读full，因此这个token首先暴露视角未被使用及实体—事件绑定问题，不能说local信号被R4后端压掉。</p>
+<p>Data2txt8937的来源显式不接受预约，回答却说接受。full单独排名7962在预算8918内，但R4实际pair-point排名12232<strong>在prior之前已不在预算内</strong>；prior排名85483、最终87425仍低，不能把最初掉出预算归因于prior。V3确实读取full：自身发射量约0.9702，加上−2.0498的上下文差值后最终排名101511。两个方法的失败链不同。数值链说明名次怎样变化，来源核对说明错误是什么；两者不可相互代替。</p>
+<h2 id="_4">捕获一个词与捕获完整错误短语</h2>
+<p>对每个发布正字符跨度，任意相交的已评分token中命中至少一个记为“任意命中”；所有这些token均告警才记为“完整命中”。不可观察跨度另列，五组此次均为0。下表不替代官方token指标，重叠跨度也不能视为独立样本。</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>可观察正跨度</th>
+<th>R4任意/完整命中</th>
+<th>V3任意/完整命中</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QA</td>
+<td>235</td>
+<td>119（50.6%） / 28（11.9%）</td>
+<td>162（68.9%） / 34（14.5%）</td>
+</tr>
+<tr>
+<td>Summary</td>
+<td>244</td>
+<td>88（36.1%） / 27（11.1%）</td>
+<td>144（59.0%） / 39（16.0%）</td>
+</tr>
+<tr>
+<td>Data2txt</td>
+<td>1054</td>
+<td>340（32.3%） / 168（15.9%）</td>
+<td>483（45.8%） / 125（11.9%）</td>
+</tr>
+<tr>
+<td>FinQA</td>
+<td>229</td>
+<td>19（8.3%） / 2（0.9%）</td>
+<td>85（37.1%） / 11（4.8%）</td>
+</tr>
+<tr>
+<td>TATQA</td>
+<td>156</td>
+<td>16（10.3%） / 5（3.2%）</td>
+<td>61（39.1%） / 12（7.7%）</td>
+</tr>
+</tbody>
+</table>
+<p>V3在三项RAG任务触及更多不同错误跨度；这不必伴随更多正token命中或更高AUROC。比如长错误段中的很多token被同一次告警集中覆盖，与更多短错误段各找到一处，是两种定位行为。金融中的错误账户名、年份或频率也可能只找到首子词；“整个错误没发现”和“错误短语只发现一部分”应分开报告。FP同样可能落在正确推导、来源支持的实体词，或一段真假混合陈述的正确部分，需逐例查证。</p>
+<h2 id="_5">下一步模块必须先通过哪些检查</h2>
+<p>这些是下一轮需冻结的验证条件，尚未实现、采集或据最终标签挑选模块。允许模块组合和任务专用配置；继续坚持无监督，冻结模型、提示、输入单元、参数、评分人口及完整分数后才读取新的最终真值。当前五组继续作探索证据，不能重新命名为未接触确认集。旧RAG原始观测生产者身份仍有历史缺口，本轮也没有重做后端匹配的LM观测；可复核缓存运算与阶段哈希，不等于已经消除了所有观测混淆。</p>
+<table>
+<thead>
+<tr>
+<th>待检验问题</th>
+<th>冻结的模块/观测合同</th>
+<th>必须比较和报告</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>词都可预测，却属于错误引用、实体或时间</td>
+<td>核验声明及其来源归属；固定基础模型、提示、句子/声明边界，输出来源引用、归属关系、支持/冲突/unknown，先覆盖所有单元</td>
+<td>核验器单独与原R4/V3分开评价；逐例核对引用、实体—事件、时间与条件；引用存在不等于蕴含，模型意见不当gold</td>
+</tr>
+<tr>
+<td>某个局部观测可用，实际读出没有读取</td>
+<td>固定local/full的含义、后端、原token轴与成本；先确认差异是否来自前缀条件或执行方式</td>
+<td>分开报告未输入的视角、平均形成point的变化和point之后的变化；原分数与预算同时保留，不按最终标签扫权重</td>
+</tr>
+<tr>
+<td>个体信号与片段/上下文存在冲突</td>
+<td>保留同一声明内每个token的自身证据和区域证据；先检查已知计算身份与可复现缓存</td>
+<td>对强信号FN、被抬高的FP同时报告，并保留总体进入/退出；任何新读出须单独冻结完整规则，不能由单例修复宣称改进</td>
+</tr>
+<tr>
+<td>route在金融中改变了错误排序</td>
+<td>记录route定义、无标签参考源、模型/后端/资源哈希和文本结构；对来源、单位、推导、表格绑定分别作固定检查</td>
+<td>先解释为何同一操作在QA与金融不同；若新增模块，单列成本和控制；本轮不从已暴露标签拟合经验权重</td>
+</tr>
+<tr>
+<td>固定预算与跨度长度掩盖定位差异</td>
+<td>保留主AUROC/AP、固定top5% token预算，同时声明跨度任意/完整命中等次指标</td>
+<td>给出预算理论界和不可观察范围；不通过改预算提高AUROC，也不把误报压到一个案例内比较</td>
+</tr>
+</tbody>
+</table>
+<p>核验器或新观测若没有提供超出原信号的可复现信息，就不能把组合本身当成贡献。当前数值链与案例核对只回答失败发生在哪里、哪些解释仍待验证；没有建立新的效能结论。</p>
+<p>证据JSON SHA256：<code>bc73e89cecbd43bffd314fd6e331258781867a5db23a0a23e265437ffcdfa723</code>。生成命令：<code>python tools/render_fnfp_mechanism.py</code>。
+原始诊断命令、完整缓存绑定及120条按规则选取的案例保存在本地 <code>outputs/fnfp-mechanism-20261102/</code>；公开JSON保留聚合计数与来源收据哈希，未复制私人历史。</p></article></main></body></html>

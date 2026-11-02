@@ -1,0 +1,604 @@
+{
+  "schema": "cpu-fusion-evidence-v1",
+  "status": "COMPLETED_REJECTED_FIXED_BASELINE",
+  "completed_utc": "2026-11-02T08:53:38.256369+00:00",
+  "method": "r4_v3_equal_rank_v1",
+  "method_role": "fixed cached CPU baseline; not a new proposed detector",
+  "r4_weight": 0.5,
+  "ranking_scope": "every original scored token within each complete task; separate empirical mid-CDF per channel",
+  "observer": "historical Llama-3.1-8B-Instruct cache; no new LM calls",
+  "all_scores_sealed_before_labels": true,
+  "selection_or_weight_search": false,
+  "target_auroc": 0.8,
+  "point_passes": {
+    "r4": 1,
+    "witness": 3,
+    "fusion": 1
+  },
+  "overall_target_achieved": false,
+  "retained_finance_candidate": "V3 / witness",
+  "api_default_unchanged": "V1 / shared",
+  "cache_recovery": {
+    "canonical_local_root": "D:/projects/research/outputs/fusion-cache-20261102",
+    "responses": 2992,
+    "tokens": 448202,
+    "score_and_native_record_sha256_verified": true
+  },
+  "provenance": {
+    "run": "outputs/rank-fusion-cpu-20261102",
+    "evaluation_summary_sha256": "c5c5c3425f87b1c9d06fa4cda4afe67faf4f4c55b028be5d861f6741acace2bd",
+    "evaluation_protocol_sha256": "87655a280e263a4bf91f0fbf5ba376007f57e702138403472c54cbb700827a5c",
+    "score_receipt_sha256": "96fa7c3875c3aabe722294fae80764ff6811ad5c0fa066baf1aac05a2a3d9f83",
+    "frozen_inputs_receipt_sha256": "fca67b5a5d256dd9dd6d7d7d579f958a42d5b870f5142435a2d98bf2b89adefd",
+    "score_sealed_utc": "2026-11-02T08:52:12.036714+00:00",
+    "protocol_frozen_utc": "2026-11-02T08:51:39.888369+00:00",
+    "source_roster_sha256": "3372ff097c3364b31ac516606dada96c901b75f90d7d1968deedd394e98ee74b",
+    "source_module_count": 92,
+    "source_files_sha256": {
+      "experiments/fusion_cache.py": "fc5aaba8e9143005ae2c3ab530402e5d3e0f03f470a3077e2317afe87d677e85",
+      "experiments/rank_fusion.py": "9d6fae533664bed04addaf5cb3fbad56db76a8a94ddc27a6e67acbc8cfd9699d",
+      "experiments/fusion_evaluation.py": "6a270dba72f235f8381407091a50d48f75e9d9b3ad26f876bd09da37879f9790",
+      "experiments/evaluate.py": "285a9225533249386d1a547b5f3f5901cb174bd69e015a37476827c1e5f6fdf6",
+      "experiments/run.py": "771fbb38f29eed691fb8a27074cb2cc6c3d8d3ee54e44512218d0bde1c5ec87c",
+      "experiments/research/score_fusion.py": "16ebd3e3087e5e5bcc057d27544beb8260b9f2a314fa5afb8881870c38eae9d1"
+    }
+  },
+  "tasks": {
+    "QA": {
+      "seconds": 19.231548399897292,
+      "population": {
+        "responses_scored": 900,
+        "responses_evaluated": 900,
+        "tokens_scored": 124817,
+        "tokens_evaluated": 124817,
+        "unknown_tokens_excluded": 0,
+        "sources_evaluated": 150
+      },
+      "methods": {
+        "r4": {
+          "tokens": 124817,
+          "errors": 6751,
+          "auroc": 0.892891121057715,
+          "ap": 0.3527357670863039,
+          "top5pct": {
+            "tp": 2608,
+            "fp": 3633,
+            "fn": 4143
+          }
+        },
+        "witness": {
+          "tokens": 124817,
+          "errors": 6751,
+          "auroc": 0.846975285030153,
+          "ap": 0.21483304781661408,
+          "top5pct": {
+            "tp": 1765,
+            "fp": 4476,
+            "fn": 4986
+          }
+        },
+        "fusion": {
+          "tokens": 124817,
+          "errors": 6751,
+          "auroc": 0.8881328186314315,
+          "ap": 0.3413330075192905,
+          "top5pct": {
+            "tp": 2496,
+            "fp": 3745,
+            "fn": 4255
+          }
+        }
+      },
+      "paired_differences": {
+        "fusion_minus_r4": {
+          "point": {
+            "auroc": -0.0047583024262835005,
+            "ap": -0.011402759567013365
+          },
+          "bootstrap": {
+            "seed": 17,
+            "repetitions": 1000,
+            "unit": "source_id",
+            "auroc": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                -0.013904303578552032,
+                0.006590959809021429
+              ]
+            },
+            "ap": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                -0.09139555544114171,
+                0.056228751913366765
+              ]
+            }
+          }
+        },
+        "fusion_minus_witness": {
+          "point": {
+            "auroc": 0.041157533601278495,
+            "ap": 0.12649995970267644
+          },
+          "bootstrap": {
+            "seed": 17,
+            "repetitions": 1000,
+            "unit": "source_id",
+            "auroc": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                0.027732582679600503,
+                0.05181632089179024
+              ]
+            },
+            "ap": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                0.09120643814197929,
+                0.16010762747138857
+              ]
+            }
+          }
+        }
+      },
+      "evaluation_sha256": "58ca73c0b7d29db98f9d98f25abbe0116c5cf987247eca03b5272b1ee3bf33f2",
+      "bootstrap_type": "source",
+      "source_grouping": "official source_id",
+      "label_provenance": "ragtruth",
+      "evaluation_path": "outputs/rank-fusion-cpu-20261102/evaluation/QA/evaluation.json",
+      "evaluation_seal_sha256": "652631c0f4e3a597765a8e3396edbc3ecdcc1cf5f81b8f0829a314427297a9b1",
+      "score_seal_sha256": "8fc0043225439538a0410dd1ce91a9d41ff726d39d96b7bc1a066739d6ad53f4"
+    },
+    "Summary": {
+      "seconds": 19.631202100077644,
+      "population": {
+        "responses_scored": 900,
+        "responses_evaluated": 900,
+        "tokens_scored": 121248,
+        "tokens_evaluated": 121248,
+        "unknown_tokens_excluded": 0,
+        "sources_evaluated": 150
+      },
+      "methods": {
+        "r4": {
+          "tokens": 121248,
+          "errors": 3485,
+          "auroc": 0.7620629674333992,
+          "ap": 0.09657602574718241,
+          "top5pct": {
+            "tp": 922,
+            "fp": 5141,
+            "fn": 2563
+          }
+        },
+        "witness": {
+          "tokens": 121248,
+          "errors": 3485,
+          "auroc": 0.7623369510810512,
+          "ap": 0.1045624457376539,
+          "top5pct": {
+            "tp": 921,
+            "fp": 5142,
+            "fn": 2564
+          }
+        },
+        "fusion": {
+          "tokens": 121248,
+          "errors": 3485,
+          "auroc": 0.7693804280272036,
+          "ap": 0.12415579910935685,
+          "top5pct": {
+            "tp": 1002,
+            "fp": 5061,
+            "fn": 2483
+          }
+        }
+      },
+      "paired_differences": {
+        "fusion_minus_r4": {
+          "point": {
+            "auroc": 0.007317460593804448,
+            "ap": 0.027579773362174445
+          },
+          "bootstrap": {
+            "seed": 17,
+            "repetitions": 1000,
+            "unit": "source_id",
+            "auroc": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                0.0004957088897091234,
+                0.016966208477181544
+              ]
+            },
+            "ap": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                0.01840571253340699,
+                0.04100406574870837
+              ]
+            }
+          }
+        },
+        "fusion_minus_witness": {
+          "point": {
+            "auroc": 0.007043476946152483,
+            "ap": 0.019593353371702954
+          },
+          "bootstrap": {
+            "seed": 17,
+            "repetitions": 1000,
+            "unit": "source_id",
+            "auroc": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                -0.0012287127514156115,
+                0.012952116219997306
+              ]
+            },
+            "ap": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                0.012368517325699468,
+                0.03073041749832337
+              ]
+            }
+          }
+        }
+      },
+      "evaluation_sha256": "8665dfdba54cc9fc9685fffe0885aab172a883ffae877f58d74c78a2c870e0d3",
+      "bootstrap_type": "source",
+      "source_grouping": "official source_id",
+      "label_provenance": "ragtruth",
+      "evaluation_path": "outputs/rank-fusion-cpu-20261102/evaluation/Summary/evaluation.json",
+      "evaluation_seal_sha256": "0a75e07254919edadeb52962b2d0e6cd4259736a96d329825df642d6b8ab1b59",
+      "score_seal_sha256": "850c9c4da300bea7066bfa4bf573af8b676d848ceb1ec1c09d0373cea1891737"
+    },
+    "Data2txt": {
+      "seconds": 43.39163850003388,
+      "population": {
+        "responses_scored": 900,
+        "responses_evaluated": 900,
+        "tokens_scored": 178343,
+        "tokens_evaluated": 178343,
+        "unknown_tokens_excluded": 0,
+        "sources_evaluated": 150
+      },
+      "methods": {
+        "r4": {
+          "tokens": 178343,
+          "errors": 7407,
+          "auroc": 0.7983175341726212,
+          "ap": 0.19039233281639545,
+          "top5pct": {
+            "tp": 2088,
+            "fp": 6830,
+            "fn": 5319
+          }
+        },
+        "witness": {
+          "tokens": 178343,
+          "errors": 7407,
+          "auroc": 0.7557158856401491,
+          "ap": 0.14520939411036432,
+          "top5pct": {
+            "tp": 1720,
+            "fp": 7198,
+            "fn": 5687
+          }
+        },
+        "fusion": {
+          "tokens": 178343,
+          "errors": 7407,
+          "auroc": 0.7946187298877747,
+          "ap": 0.1995858712241221,
+          "top5pct": {
+            "tp": 2188,
+            "fp": 6730,
+            "fn": 5219
+          }
+        }
+      },
+      "paired_differences": {
+        "fusion_minus_r4": {
+          "point": {
+            "auroc": -0.0036988042848464797,
+            "ap": 0.009193538407726659
+          },
+          "bootstrap": {
+            "seed": 17,
+            "repetitions": 1000,
+            "unit": "source_id",
+            "auroc": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                -0.010024265171679739,
+                0.00314786328967122
+              ]
+            },
+            "ap": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                -0.002720296093607477,
+                0.020314007845094382
+              ]
+            }
+          }
+        },
+        "fusion_minus_witness": {
+          "point": {
+            "auroc": 0.03890284424762558,
+            "ap": 0.05437647711375779
+          },
+          "bootstrap": {
+            "seed": 17,
+            "repetitions": 1000,
+            "unit": "source_id",
+            "auroc": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                0.0322143355114454,
+                0.04483698116421233
+              ]
+            },
+            "ap": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                0.04178916488216158,
+                0.06833035236072357
+              ]
+            }
+          }
+        }
+      },
+      "evaluation_sha256": "edf9f0aef80a50c990042bb5e55cd4541b430bc990e26ff67e0fcdd5e4afb409",
+      "bootstrap_type": "source",
+      "source_grouping": "official source_id",
+      "label_provenance": "ragtruth",
+      "evaluation_path": "outputs/rank-fusion-cpu-20261102/evaluation/Data2txt/evaluation.json",
+      "evaluation_seal_sha256": "4a0d9298d45364be2e4eaa792e171082a83a94d80aeb241d7a9fc276223d974a",
+      "score_seal_sha256": "672e87e29d7ff5172d2041e26d4aea4d7c165edf7d9127c20784f577749f56f3"
+    },
+    "FinQA": {
+      "seconds": 8.686783700017259,
+      "population": {
+        "responses_scored": 162,
+        "responses_evaluated": 162,
+        "tokens_scored": 16047,
+        "tokens_evaluated": 16047,
+        "unknown_tokens_excluded": 0,
+        "sources_evaluated": 142
+      },
+      "methods": {
+        "r4": {
+          "tokens": 16047,
+          "errors": 1420,
+          "auroc": 0.6616713544409961,
+          "ap": 0.14523095263723632,
+          "top5pct": {
+            "tp": 133,
+            "fp": 670,
+            "fn": 1287
+          }
+        },
+        "witness": {
+          "tokens": 16047,
+          "errors": 1420,
+          "auroc": 0.8026560951818795,
+          "ap": 0.32503333438396675,
+          "top5pct": {
+            "tp": 373,
+            "fp": 430,
+            "fn": 1047
+          }
+        },
+        "fusion": {
+          "tokens": 16047,
+          "errors": 1420,
+          "auroc": 0.751483317076177,
+          "ap": 0.25263457350050245,
+          "top5pct": {
+            "tp": 305,
+            "fp": 498,
+            "fn": 1115
+          }
+        }
+      },
+      "paired_differences": {
+        "fusion_minus_r4": {
+          "point": {
+            "auroc": 0.08981196263518088,
+            "ap": 0.10740362086326613
+          },
+          "bootstrap": {
+            "seed": 17,
+            "repetitions": 1000,
+            "unit": "source_id",
+            "auroc": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                0.0697945968480086,
+                0.11048243673432372
+              ]
+            },
+            "ap": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                0.06073947986251903,
+                0.17335057721170138
+              ]
+            }
+          }
+        },
+        "fusion_minus_witness": {
+          "point": {
+            "auroc": -0.05117277810570253,
+            "ap": -0.07239876088346431
+          },
+          "bootstrap": {
+            "seed": 17,
+            "repetitions": 1000,
+            "unit": "source_id",
+            "auroc": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                -0.07455490259348886,
+                -0.03020159669707064
+              ]
+            },
+            "ap": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                -0.1274490994465319,
+                -0.008282837851145398
+              ]
+            }
+          }
+        }
+      },
+      "evaluation_sha256": "ae49f59e3177f0460b9b56e2363ad060843846f17befc608aa76f5908da1955a",
+      "bootstrap_type": "reference_text",
+      "source_grouping": "SHA256 of exact released reference text; company/filing identity unavailable",
+      "label_provenance": "fred",
+      "evaluation_path": "outputs/rank-fusion-cpu-20261102/evaluation/FinQA/evaluation.json",
+      "evaluation_seal_sha256": "8649abac87d03837e968ec5b5d68445edce71c189202b0dc7dfdaa72890cac75",
+      "score_seal_sha256": "382e7133ba8e9c1eafcdc0a3ac558ced53689a37e0e7864703759699655e77a2"
+    },
+    "TATQA": {
+      "seconds": 7.496996399946511,
+      "population": {
+        "responses_scored": 130,
+        "responses_evaluated": 130,
+        "tokens_scored": 7747,
+        "tokens_evaluated": 7747,
+        "unknown_tokens_excluded": 0,
+        "sources_evaluated": 110
+      },
+      "methods": {
+        "r4": {
+          "tokens": 7747,
+          "errors": 828,
+          "auroc": 0.7110491100260921,
+          "ap": 0.2209407203172758,
+          "top5pct": {
+            "tp": 101,
+            "fp": 287,
+            "fn": 727
+          }
+        },
+        "witness": {
+          "tokens": 7747,
+          "errors": 828,
+          "auroc": 0.842991503477437,
+          "ap": 0.4657224398505556,
+          "top5pct": {
+            "tp": 256,
+            "fp": 132,
+            "fn": 572
+          }
+        },
+        "fusion": {
+          "tokens": 7747,
+          "errors": 828,
+          "auroc": 0.7928889712777181,
+          "ap": 0.3393361359822229,
+          "top5pct": {
+            "tp": 168,
+            "fp": 220,
+            "fn": 660
+          }
+        }
+      },
+      "paired_differences": {
+        "fusion_minus_r4": {
+          "point": {
+            "auroc": 0.08183986125162601,
+            "ap": 0.1183954156649471
+          },
+          "bootstrap": {
+            "seed": 17,
+            "repetitions": 1000,
+            "unit": "source_id",
+            "auroc": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                0.05960241918097556,
+                0.1033217125315032
+              ]
+            },
+            "ap": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                0.043780574660763544,
+                0.19884180187175515
+              ]
+            }
+          }
+        },
+        "fusion_minus_witness": {
+          "point": {
+            "auroc": -0.05010253219971894,
+            "ap": -0.12638630386833272
+          },
+          "bootstrap": {
+            "seed": 17,
+            "repetitions": 1000,
+            "unit": "source_id",
+            "auroc": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                -0.07469205154265049,
+                -0.027058156678445817
+              ]
+            },
+            "ap": {
+              "defined": 1000,
+              "degenerate": 0,
+              "interval95": [
+                -0.2038568657107913,
+                -0.035087622765559406
+              ]
+            }
+          }
+        }
+      },
+      "evaluation_sha256": "8ee8999b14f1dc78a5434620cc4a7c52b74f6291d2c27fa2a95deaf594b93e5b",
+      "bootstrap_type": "reference_text",
+      "source_grouping": "SHA256 of exact released reference text; company/filing identity unavailable",
+      "label_provenance": "fred",
+      "evaluation_path": "outputs/rank-fusion-cpu-20261102/evaluation/TATQA/evaluation.json",
+      "evaluation_seal_sha256": "cf0ece02dade6eeaa761319fc17cdc4ec02eaab58f04413e7a5b87adb239f27e",
+      "score_seal_sha256": "cb900afa5404594d6fc49017457afc8ee49dbfd7968df5bf1b9203b54c445378"
+    }
+  },
+  "pending": {
+    "HalluRAG": "complete paired R4 cache missing; no fusion evaluated; answerable891 remains a primary task",
+    "semantic_verifier": "PROPOSED_NOT_RUN; no model calls, score vectors or evaluation results",
+    "priority": "source-grounded FN/FP mechanism audit before another method design"
+  },
+  "interpretation": {
+    "Summary": "AUROC gain versus V3 unresolved (95% interval crosses zero); AP gain positive; AUROC remains below 0.8",
+    "finance": "fusion AUROC and AP lower than V3 on both tasks, paired intervals wholly negative",
+    "scope": "previously exposed exploratory populations; nominal paired source bootstrap, no multiplicity correction",
+    "modularity_claim": "one fixed fusion baseline cannot establish or refute general module complementarity"
+  }
+}

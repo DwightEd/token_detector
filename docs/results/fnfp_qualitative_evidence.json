@@ -1,0 +1,668 @@
+{
+  "schema": "fnfp-qualitative-evidence-v1",
+  "created_utc": "2026-11-02T09:13:07.179852+00:00",
+  "scope": "post-final-evaluation descriptive source/label/score audit of five fixed financial cases; not a new detector",
+  "labels": "released synthetic/silver edit character spans; not human natural-error annotations",
+  "score_population": "full task original-token population; stable descending ranks; FinQA16047/budget803, TATQA7747/budget388",
+  "interpretation": "raw contrast and latent witness scores are predictive quantities, not calibrated factuality probabilities",
+  "production_functions": [
+    "myproject.sequence.witness_emissions",
+    "myproject.sequence.persistent_scores(witness=True)"
+  ],
+  "production_source_sha256": "57c839c77eb93081bbde6d4f127497f62bc6586b41ac4b80fea8160d02953114",
+  "cases": [
+    {
+      "id": "fred:tatqa:test:54",
+      "task": "TATQA",
+      "native_component": "tatqa",
+      "native_row": 54,
+      "prepared_folder": "test_tatqa",
+      "source_id": "e98205960126eb1a6b436dc0426e59de84e46b51b75a22bd1565951b9d2eeb8e",
+      "source_sha256": "e98205960126eb1a6b436dc0426e59de84e46b51b75a22bd1565951b9d2eeb8e",
+      "response": "The two main items measured in this table are Accrued expenses and Deferred tax liabilities.",
+      "response_sha256": "198298b6e10b3f6783aead9924b36969e4bf2cd2361f7642c0d337285ef92c53",
+      "source_quotes": [
+        {
+          "start": 95,
+          "end": 148,
+          "text": "[\"Deferred tax assets\", \"S$ Mil\", \"S$ Mil\", \"S$ Mil\"]"
+        },
+        {
+          "start": 521,
+          "end": 573,
+          "text": "[\"Deferred tax liabilities\", \"\", \"S$ Mil\", \"S$ Mil\"]"
+        }
+      ],
+      "positive_spans": [
+        {
+          "start": 46,
+          "end": 62,
+          "label": 1,
+          "error_type": "entity",
+          "text": "Accrued expenses"
+        }
+      ],
+      "semantic_finding": "The first main table item is deferred tax assets, not accrued expenses; the second item remains deferred tax liabilities.",
+      "annotation_scope": "One entity edit [46,62) overlaps four original subtokens; these are not four independent semantic mistakes.",
+      "cause": "positive first-token evidence suppressed by context; other edited subtokens also have weak or opposite primitive evidence",
+      "task_tokens": 7747,
+      "top5_budget": 388,
+      "tokens": [
+        {
+          "text": " Acc",
+          "token_index": 9,
+          "start": 45,
+          "end": 49,
+          "raw_full_gap": 2.6506977081298824,
+          "own_emission": 2.025771575182732,
+          "context_log_odds": -2.1679578531810724,
+          "v3_score": -0.1421862779983405,
+          "raw_global_rank": 173,
+          "v3_global_rank": 2866,
+          "raw_top5": true,
+          "v3_top5": false,
+          "released_label": true
+        },
+        {
+          "text": "ru",
+          "token_index": 10,
+          "start": 49,
+          "end": 51,
+          "raw_full_gap": -4.731762737035751,
+          "own_emission": -0.6843748442628053,
+          "context_log_odds": -0.4991479058519006,
+          "v3_score": -1.1835227501147059,
+          "raw_global_rank": 7065,
+          "v3_global_rank": 4651,
+          "raw_top5": false,
+          "v3_top5": false,
+          "released_label": true
+        },
+        {
+          "text": "ed",
+          "token_index": 11,
+          "start": 51,
+          "end": 53,
+          "raw_full_gap": 0.0006570112891495228,
+          "own_emission": 0.00032855960255306904,
+          "context_log_odds": -1.1801184709306132,
+          "v3_score": -1.17978991132806,
+          "raw_global_rank": 1672,
+          "v3_global_rank": 4645,
+          "raw_top5": false,
+          "v3_top5": false,
+          "released_label": true
+        },
+        {
+          "text": " expenses",
+          "token_index": 12,
+          "start": 53,
+          "end": 62,
+          "raw_full_gap": -0.4112281799316406,
+          "own_emission": -0.184622801499844,
+          "context_log_odds": -1.1163063582268418,
+          "v3_score": -1.3009291597266857,
+          "raw_global_rank": 4959,
+          "v3_global_rank": 4855,
+          "raw_top5": false,
+          "v3_top5": false,
+          "released_label": true
+        }
+      ],
+      "original_unit_replays": {
+        "0": {
+          "start": 0,
+          "stop": 18,
+          "tokens": 18,
+          "text": "The two main items measured in this table are Accrued expenses and Deferred tax liabilities.",
+          "replay_max_abs_error": 4.440892098500626e-16
+        }
+      },
+      "bindings": {
+        "prepared_manifest_sha256": "6b78c61485eae13e40e66acb259cb2de187fd6e6c4e732f8cf66fa31bb1a5761",
+        "prepared_inputs_sha256": "17e9ffd2caaf8033ae374a7c293039883cdd4ff541372e94a34eaf557b1c4831",
+        "input_record_exact_line_sha256": "bffe42b579d90a47061182d0fe544284bf4a8ef4cba75dbb255200b6917024b1",
+        "prepared_annotations_sha256": "8c315a5788d9e65f27c5c5ed64cd6d36d891e72d7dbae5935ed3f5c1774f4ebc",
+        "annotation_record_exact_line_sha256": "42e1bd99ee2c629548def8a991e27b12bd5bd07f09fa84eb97264545dafb555e",
+        "frozen_protocol_sha256": "c90c3bf43d30590b6305a3ff27a237cfa2e5f410c3611bd762ee5b9883d97be5",
+        "score_npz_sha256": "4f730f316230a7d84102d3fc9d13a4466024bfa980ec53bae6506a2f8ccc3f2f",
+        "native_npz_sha256": "7aa0a772761406f01f5812cea0abfbfa6ff5f47420cbd6333ae21770c0132992"
+      }
+    },
+    {
+      "id": "fred:tatqa:test:51",
+      "task": "TATQA",
+      "native_component": "tatqa",
+      "native_row": 51,
+      "prepared_folder": "test_tatqa",
+      "source_id": "57ccf64d0d3c5969719031a65296224216e1bbe147637d42c8ea7160f7b7922b",
+      "source_sha256": "57ccf64d0d3c5969719031a65296224216e1bbe147637d42c8ea7160f7b7922b",
+      "response": "Multi-year agreement customers are generally invoiced annually at the beginning of each monthly coverage period.",
+      "response_sha256": "e718194c8b9439da8ee5cbfda1264cda69c032953114d4a740d6a384b87289a1",
+      "source_quotes": [
+        {
+          "start": 540,
+          "end": 655,
+          "text": "For multi-year agreements, we generally invoice customers annually at the beginning of each annual coverage period."
+        }
+      ],
+      "positive_spans": [
+        {
+          "start": 88,
+          "end": 95,
+          "label": 1,
+          "error_type": "relation",
+          "text": "monthly"
+        }
+      ],
+      "semantic_finding": "Annual coverage was changed to monthly coverage; invoicing is still annually in both source and response.",
+      "annotation_scope": "The relation edit is coverage-period duration [88,95), not monthly billing.",
+      "cause": "strong primitive warning lost through original contextual readout",
+      "task_tokens": 7747,
+      "top5_budget": 388,
+      "tokens": [
+        {
+          "text": " monthly",
+          "token_index": 14,
+          "start": 87,
+          "end": 95,
+          "raw_full_gap": 3.914544105529785,
+          "own_emission": 3.2411501799727622,
+          "context_log_odds": -2.3617890254749683,
+          "v3_score": 0.879361154497794,
+          "raw_global_rank": 92,
+          "v3_global_rank": 1068,
+          "raw_top5": true,
+          "v3_top5": false,
+          "released_label": true
+        }
+      ],
+      "original_unit_replays": {
+        "0": {
+          "start": 0,
+          "stop": 18,
+          "tokens": 18,
+          "text": "Multi-year agreement customers are generally invoiced annually at the beginning of each monthly coverage period.",
+          "replay_max_abs_error": 4.440892098500626e-16
+        }
+      },
+      "bindings": {
+        "prepared_manifest_sha256": "6b78c61485eae13e40e66acb259cb2de187fd6e6c4e732f8cf66fa31bb1a5761",
+        "prepared_inputs_sha256": "17e9ffd2caaf8033ae374a7c293039883cdd4ff541372e94a34eaf557b1c4831",
+        "input_record_exact_line_sha256": "4174cf3b6f7be01ecbd1538393511ac049e6b226769f00c6f76d7b219edff021",
+        "prepared_annotations_sha256": "8c315a5788d9e65f27c5c5ed64cd6d36d891e72d7dbae5935ed3f5c1774f4ebc",
+        "annotation_record_exact_line_sha256": "beebd0dc9d77bf74d4e88f809c07bdd88db5ad7d93d8207d7a684b48f80269ad",
+        "frozen_protocol_sha256": "c90c3bf43d30590b6305a3ff27a237cfa2e5f410c3611bd762ee5b9883d97be5",
+        "score_npz_sha256": "09eb16a6c8e89bfe91103a5ccfa2bfdc54267758ad891725ba0ca63aa2fab643",
+        "native_npz_sha256": "9d1833eb6ba686b24816836a347ccd76cdc84180fe1603d483a67cfce1b598d2"
+      }
+    },
+    {
+      "id": "fred:finqa:test:53",
+      "task": "FinQA",
+      "native_component": "finqa",
+      "native_row": 53,
+      "prepared_folder": "test_finqa",
+      "source_id": "49d907f61fd8bf05c43f6c55ce6d46144c0cdd04c63be4ab914e4f25c3d43dd5",
+      "source_sha256": "49d907f61fd8bf05c43f6c55ce6d46144c0cdd04c63be4ab914e4f25c3d43dd5",
+      "response": "The net change in net revenue during 2015 for Entergy Corporation was a decrease of $8 million ($5829 million - $5735 million).",
+      "response_sha256": "6737b9b4612272448a6b1fe8aa64f3995ade54ee1d2bb836edb0f3ba4b164a97",
+      "source_quotes": [
+        {
+          "start": 2591,
+          "end": 2621,
+          "text": "[\"2014 net revenue\", \"$ 5735\"]"
+        },
+        {
+          "start": 2879,
+          "end": 2909,
+          "text": "[\"2015 net revenue\", \"$ 5829\"]"
+        }
+      ],
+      "positive_spans": [
+        {
+          "start": 84,
+          "end": 94,
+          "label": 1,
+          "error_type": "numerical",
+          "text": "$8 million"
+        }
+      ],
+      "semantic_finding": "Released table implies 5829 - 5735 = +94 million; response claims a decrease of 8 million.",
+      "annotation_scope": "Only $8 million [84,94) is labeled as the synthetic numerical edit. The semantically wrong word decrease is outside the positive span; unmarked does not establish semantic correctness.",
+      "cause": "primitive signal already outside the fixed alarm budget; contextual readout further weakens token 8",
+      "task_tokens": 16047,
+      "top5_budget": 803,
+      "tokens": [
+        {
+          "text": " $",
+          "token_index": 18,
+          "start": 83,
+          "end": 85,
+          "raw_full_gap": -0.3334237337112427,
+          "own_emission": -0.15287934068795817,
+          "context_log_odds": 0.3222650159751915,
+          "v3_score": 0.16938567528723336,
+          "raw_global_rank": 11602,
+          "v3_global_rank": 5345,
+          "raw_top5": false,
+          "v3_top5": false,
+          "released_label": true
+        },
+        {
+          "text": "8",
+          "token_index": 19,
+          "start": 85,
+          "end": 86,
+          "raw_full_gap": 0.3684234619140625,
+          "own_emission": 0.20108361188262946,
+          "context_log_odds": -0.10622575699828019,
+          "v3_score": 0.09485785488434928,
+          "raw_global_rank": 1690,
+          "v3_global_rank": 5810,
+          "raw_top5": false,
+          "v3_top5": false,
+          "released_label": true
+        },
+        {
+          "text": " million",
+          "token_index": 20,
+          "start": 86,
+          "end": 94,
+          "raw_full_gap": -0.3095308393239975,
+          "own_emission": -0.14283675846028165,
+          "context_log_odds": -0.15721656666746275,
+          "v3_score": -0.3000533251277444,
+          "raw_global_rank": 11491,
+          "v3_global_rank": 8223,
+          "raw_top5": false,
+          "v3_top5": false,
+          "released_label": true
+        }
+      ],
+      "original_unit_replays": {
+        "0": {
+          "start": 0,
+          "stop": 31,
+          "tokens": 31,
+          "text": "The net change in net revenue during 2015 for Entergy Corporation was a decrease of $8 million ($5829 million - $5735 million).",
+          "replay_max_abs_error": 8.881784197001252e-16
+        }
+      },
+      "bindings": {
+        "prepared_manifest_sha256": "0a08e37bb76251780ae959147bd518c6d16488664080661b0231b9838e497238",
+        "prepared_inputs_sha256": "12b7437d19eb1b138e1d66e499a64defd4e914c774e7542e860c298181833e5c",
+        "input_record_exact_line_sha256": "6904714905d171deca845145f347c5a8bc0a02efdeef47c7efcee36271011908",
+        "prepared_annotations_sha256": "b611d6e36999dad3f8a977e25a79a43ca3d79e85bd71b7df0ae58ba4c7bef9fd",
+        "annotation_record_exact_line_sha256": "90f40753210491751af8e5b535493c1d0182f97daf8e5c8588033e15c93cbaab",
+        "frozen_protocol_sha256": "0df7fe82db0d6ca0a6fb574932b886d6c17e793705edf2d50efe719e33aeb30a",
+        "score_npz_sha256": "cd3bcf5b38d8f8693582fb7666d2bd65b4f680e3d6b8c228a6783b3f8a7e1483",
+        "native_npz_sha256": "0ea0c90da5311e6c987e8b4f539e49f3c5a16747625078ff485bd482f07a2e05"
+      }
+    },
+    {
+      "id": "fred:finqa:test:59",
+      "task": "FinQA",
+      "native_component": "finqa",
+      "native_row": 59,
+      "prepared_folder": "test_finqa",
+      "source_id": "50eb82e757598f13b3b68df1cdb9ea1fae4fb3c0ff95e0c3690e3c07e35ff57c",
+      "source_sha256": "50eb82e757598f13b3b68df1cdb9ea1fae4fb3c0ff95e0c3690e3c07e35ff57c",
+      "response": "In 2014, the net change in revenue recognition was an increase of $17,290. This can be calculated by subtracting the decrease in prior period measurement of tax positions ($36,528) from the increase in current period tax positions ($53,818): $53,818 - $36,528 = $17,290.",
+      "response_sha256": "e2cbd432d38657468d1fc648b25b47cd59352697ef464bb136cab6c490cbdc0e",
+      "source_quotes": [
+        {
+          "start": 3047,
+          "end": 3194,
+          "text": "the following table summarizes the changes in the company 2019s gross liability , excluding interest and penalties , for unrecognized tax benefits:"
+        },
+        {
+          "start": 3376,
+          "end": 3419,
+          "text": "[\"balance at december 31 2013\", \"$ 177947\"]"
+        },
+        {
+          "start": 3421,
+          "end": 3475,
+          "text": "[\"increases in current period tax positions\", \"53818\"]"
+        },
+        {
+          "start": 3477,
+          "end": 3555,
+          "text": "[\"decreases in prior period measurement of tax positions\", \"-36528 ( 36528 )\"]"
+        },
+        {
+          "start": 3557,
+          "end": 3600,
+          "text": "[\"balance at december 31 2014\", \"$ 195237\"]"
+        }
+      ],
+      "positive_spans": [
+        {
+          "start": 27,
+          "end": 46,
+          "label": 1,
+          "error_type": "entity",
+          "text": "revenue recognition"
+        }
+      ],
+      "semantic_finding": "53818 - 36528 = 17290 and 195237 - 177947 = 17290. The account is unrecognized tax benefits, not revenue recognition; displayed excerpt does not independently establish the dollar scale.",
+      "annotation_scope": "Entity phrase [27,46): revenue is detected but recognition is missed. Correct arithmetic does not fix the wrong account.",
+      "cause": "partial-phrase detection; recognition has wrong-direction primitive evidence and is improved, rather than suppressed, by context",
+      "task_tokens": 16047,
+      "top5_budget": 803,
+      "tokens": [
+        {
+          "text": " revenue",
+          "token_index": 9,
+          "start": 26,
+          "end": 34,
+          "raw_full_gap": 4.133605003356934,
+          "own_emission": 3.4563557822527224,
+          "context_log_odds": -1.8364358620186074,
+          "v3_score": 1.619919920234115,
+          "raw_global_rank": 127,
+          "v3_global_rank": 785,
+          "raw_top5": true,
+          "v3_top5": true,
+          "released_label": true
+        },
+        {
+          "text": " recognition",
+          "token_index": 10,
+          "start": 34,
+          "end": 46,
+          "raw_full_gap": -4.9472492933273315,
+          "own_emission": -0.6860693673472027,
+          "context_log_odds": 0.4725529880003303,
+          "v3_score": -0.2135163793468724,
+          "raw_global_rank": 15243,
+          "v3_global_rank": 7810,
+          "raw_top5": false,
+          "v3_top5": false,
+          "released_label": true
+        }
+      ],
+      "original_unit_replays": {
+        "0": {
+          "start": 0,
+          "stop": 20,
+          "tokens": 20,
+          "text": "In 2014, the net change in revenue recognition was an increase of $17,290.",
+          "replay_max_abs_error": 4.440892098500626e-16
+        }
+      },
+      "bindings": {
+        "prepared_manifest_sha256": "0a08e37bb76251780ae959147bd518c6d16488664080661b0231b9838e497238",
+        "prepared_inputs_sha256": "12b7437d19eb1b138e1d66e499a64defd4e914c774e7542e860c298181833e5c",
+        "input_record_exact_line_sha256": "44718a014618472c1df13fd5580aa3bccadd8702bae3ac60fee6aaa71e979416",
+        "prepared_annotations_sha256": "b611d6e36999dad3f8a977e25a79a43ca3d79e85bd71b7df0ae58ba4c7bef9fd",
+        "annotation_record_exact_line_sha256": "c490a6cfb547686e28dd06b005c588eb878a059940cdb4a46d96fa651bc16653",
+        "frozen_protocol_sha256": "0df7fe82db0d6ca0a6fb574932b886d6c17e793705edf2d50efe719e33aeb30a",
+        "score_npz_sha256": "aaaf6e29034612268dd6d0d758142623b256db60fdf9c2e3f9af20088329aa31",
+        "native_npz_sha256": "f48a7eb5ef754c6bb7b7fcfc818743039fc47b837ce135b85ba7938605fa3979"
+      }
+    },
+    {
+      "id": "fred:tatqa:test:3",
+      "task": "TATQA",
+      "native_component": "tatqa",
+      "native_row": 3,
+      "prepared_folder": "test_tatqa",
+      "source_id": "5cf2202a00c0c91cb5efd1e353db7c6e3dac981153d1a98ce516ff4c8d1dce2e",
+      "source_sha256": "5cf2202a00c0c91cb5efd1e353db7c6e3dac981153d1a98ce516ff4c8d1dce2e",
+      "response": "In 2019, the Net profit/(loss) for the year excluding impairment was 46.0 USDm and in 2018 it was -34.8 USDm. \n\nTo calculate the change, we subtract the 2018 figure from the 2019 figure:\n\n46.0 - (-34.8) = 80.8\n\nTherefore, the change in Net profit/(loss) for the year excluding impairment in 2019 from 2018 was an increase of 80.8 USD million.",
+      "response_sha256": "adc5ab2d8bf1c9b09056c6b132117f1ed4c3431262539025945ca865a1da28a0",
+      "source_quotes": [
+        {
+          "start": 34,
+          "end": 66,
+          "text": "[\"USDm\", \"2019\", \"2018\", \"2017\"]"
+        },
+        {
+          "start": 269,
+          "end": 348,
+          "text": "[\"Net profit/(loss) for the year excluding impairment\", \"46.0\", \"-34.8\", \"2.4\"]"
+        }
+      ],
+      "positive_spans": [],
+      "semantic_finding": "46.0 - (-34.8) = +80.8 in USD millions. The derivation and USDm-to-million wording are supported even though 80.8 is not a literal table cell.",
+      "annotation_scope": "Released spans are empty; source arithmetic and units independently support this negative example.",
+      "cause": "high primitive risk for a valid unit wording plus positive context spreading alarms to supported neighboring tokens",
+      "task_tokens": 7747,
+      "top5_budget": 388,
+      "tokens": [
+        {
+          "text": "Therefore",
+          "token_index": 72,
+          "start": 211,
+          "end": 220,
+          "raw_full_gap": 0.6393005847930908,
+          "own_emission": 0.36989144042954136,
+          "context_log_odds": 1.3093000983549623,
+          "v3_score": 1.6791915387845036,
+          "raw_global_rank": 610,
+          "v3_global_rank": 374,
+          "released_label": false,
+          "raw_top5": false,
+          "v3_top5": true
+        },
+        {
+          "text": " the",
+          "token_index": 74,
+          "start": 221,
+          "end": 225,
+          "raw_full_gap": 0.17997366189956665,
+          "own_emission": 0.09403019329185869,
+          "context_log_odds": 1.5885635949799783,
+          "v3_score": 1.682593788271837,
+          "raw_global_rank": 1003,
+          "v3_global_rank": 372,
+          "released_label": false,
+          "raw_top5": false,
+          "v3_top5": true
+        },
+        {
+          "text": " change",
+          "token_index": 75,
+          "start": 225,
+          "end": 232,
+          "raw_full_gap": 1.4332423210144043,
+          "own_emission": 0.9540237744702579,
+          "context_log_odds": 1.0810533776438236,
+          "v3_score": 2.0350771521140816,
+          "raw_global_rank": 338,
+          "v3_global_rank": 262,
+          "released_label": false,
+          "raw_top5": true,
+          "v3_top5": true
+        },
+        {
+          "text": " impairment",
+          "token_index": 86,
+          "start": 276,
+          "end": 287,
+          "raw_full_gap": -0.0005316735268934281,
+          "own_emission": -0.00026580142885468394,
+          "context_log_odds": 1.8989016786236927,
+          "v3_score": 1.8986358771948382,
+          "raw_global_rank": 2134,
+          "v3_global_rank": 302,
+          "released_label": false,
+          "raw_top5": false,
+          "v3_top5": true
+        },
+        {
+          "text": " in",
+          "token_index": 87,
+          "start": 287,
+          "end": 290,
+          "raw_full_gap": 2.72841739654541,
+          "own_emission": 2.0985478684930228,
+          "context_log_odds": 1.0971503757737673,
+          "v3_score": 3.19569824426679,
+          "raw_global_rank": 167,
+          "v3_global_rank": 106,
+          "released_label": false,
+          "raw_top5": true,
+          "v3_top5": true
+        },
+        {
+          "text": " ",
+          "token_index": 88,
+          "start": 290,
+          "end": 291,
+          "raw_full_gap": -0.03938556369394064,
+          "own_emission": -0.01949889155000717,
+          "context_log_odds": 1.9907945470540755,
+          "v3_score": 1.9712956555040684,
+          "raw_global_rank": 3645,
+          "v3_global_rank": 277,
+          "released_label": false,
+          "raw_top5": false,
+          "v3_top5": true
+        },
+        {
+          "text": "201",
+          "token_index": 89,
+          "start": 291,
+          "end": 294,
+          "raw_full_gap": 0.0006099741440266371,
+          "own_emission": 0.00030503358056976904,
+          "context_log_odds": 1.8054274788951123,
+          "v3_score": 1.8057325124756822,
+          "raw_global_rank": 1678,
+          "v3_global_rank": 328,
+          "released_label": false,
+          "raw_top5": false,
+          "v3_top5": true
+        },
+        {
+          "text": "9",
+          "token_index": 90,
+          "start": 294,
+          "end": 295,
+          "raw_full_gap": -0.0016866911901161075,
+          "own_emission": -0.0008429899792038453,
+          "context_log_odds": 1.8365521132452765,
+          "v3_score": 1.8357091232660725,
+          "raw_global_rank": 2438,
+          "v3_global_rank": 323,
+          "released_label": false,
+          "raw_top5": false,
+          "v3_top5": true
+        },
+        {
+          "text": " from",
+          "token_index": 91,
+          "start": 295,
+          "end": 300,
+          "raw_full_gap": 1.4399018287658691,
+          "own_emission": 0.9594041444817406,
+          "context_log_odds": 1.3188533372742857,
+          "v3_score": 2.278257481756026,
+          "raw_global_rank": 335,
+          "v3_global_rank": 203,
+          "released_label": false,
+          "raw_top5": true,
+          "v3_top5": true
+        },
+        {
+          "text": " ",
+          "token_index": 92,
+          "start": 300,
+          "end": 301,
+          "raw_full_gap": 0.009950440376996994,
+          "own_emission": 0.004987596545402262,
+          "context_log_odds": 1.7236159793535917,
+          "v3_score": 1.728603575898994,
+          "raw_global_rank": 1501,
+          "v3_global_rank": 354,
+          "released_label": false,
+          "raw_top5": false,
+          "v3_top5": true
+        },
+        {
+          "text": "8",
+          "token_index": 102,
+          "start": 328,
+          "end": 329,
+          "raw_full_gap": -0.0002207758770964574,
+          "own_emission": -0.00011038184579970078,
+          "context_log_odds": 1.7149952497603653,
+          "v3_score": 1.7148848679145656,
+          "raw_global_rank": 1966,
+          "v3_global_rank": 358,
+          "released_label": false,
+          "raw_top5": false,
+          "v3_top5": true
+        },
+        {
+          "text": " USD",
+          "token_index": 103,
+          "start": 329,
+          "end": 333,
+          "raw_full_gap": -0.28779555950313807,
+          "own_emission": -0.1335800283551971,
+          "context_log_odds": 2.0962575588543166,
+          "v3_score": 1.9626775304991195,
+          "raw_global_rank": 4741,
+          "v3_global_rank": 283,
+          "released_label": false,
+          "raw_top5": false,
+          "v3_top5": true
+        },
+        {
+          "text": " million",
+          "token_index": 104,
+          "start": 333,
+          "end": 341,
+          "raw_full_gap": 5.424751281738281,
+          "own_emission": 4.73600058438561,
+          "context_log_odds": 1.0008458083794798,
+          "v3_score": 5.73684639276509,
+          "raw_global_rank": 45,
+          "v3_global_rank": 28,
+          "released_label": false,
+          "raw_top5": true,
+          "v3_top5": true
+        },
+        {
+          "text": ".",
+          "token_index": 105,
+          "start": 341,
+          "end": 342,
+          "raw_full_gap": 0.6590985655784607,
+          "own_emission": 0.3828953265979834,
+          "context_log_odds": 2.006551059943835,
+          "v3_score": 2.3894463865418185,
+          "raw_global_rank": 598,
+          "v3_global_rank": 184,
+          "released_label": false,
+          "raw_top5": false,
+          "v3_top5": true
+        }
+      ],
+      "original_unit_replays": {
+        "3": {
+          "start": 72,
+          "stop": 106,
+          "tokens": 34,
+          "text": "Therefore, the change in Net profit/(loss) for the year excluding impairment in 2019 from 2018 was an increase of 80.8 USD million.",
+          "replay_max_abs_error": 8.881784197001252e-16
+        }
+      },
+      "bindings": {
+        "prepared_manifest_sha256": "6b78c61485eae13e40e66acb259cb2de187fd6e6c4e732f8cf66fa31bb1a5761",
+        "prepared_inputs_sha256": "17e9ffd2caaf8033ae374a7c293039883cdd4ff541372e94a34eaf557b1c4831",
+        "input_record_exact_line_sha256": "01aa7f32f6bb0cee5a0cdd54b9dd2d1bd6212495ffb2790b3f46701e86a7a3cc",
+        "prepared_annotations_sha256": "8c315a5788d9e65f27c5c5ed64cd6d36d891e72d7dbae5935ed3f5c1774f4ebc",
+        "annotation_record_exact_line_sha256": "c95360c8ef3b50592ca4583b3f4a5df28ec84c555983a2b91c868a85c70c212f",
+        "frozen_protocol_sha256": "c90c3bf43d30590b6305a3ff27a237cfa2e5f410c3611bd762ee5b9883d97be5",
+        "score_npz_sha256": "4acef780438a2d7233d4117fbba3ac433dcf5632f960778eb05763a68395e145",
+        "native_npz_sha256": "d37c02f91d55b110b6df0ec92a74bcb0a45ff0349f26ed07e731a0fdfe177d99"
+      },
+      "response_v3_top5_false_positives": 14
+    }
+  ]
+}

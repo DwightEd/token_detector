@@ -21,12 +21,17 @@ from experiments.local_evaluation import auc_pair_decomposition
 
 DIRECTORY = ROOT / 'docs/source-reading'
 ARTICLES = {
+    'FNFP_MECHANISM': (DIRECTORY/'FNFP_MECHANISM.md', 'R4/V3漏报与误报的完整机制审查'),
+    'FNFP_CASES': (DIRECTORY/'FNFP_CASES.md', '逐例核对：来源事实、原始证据与模块错误'),
+    'HALLURAG_FNFP': (DIRECTORY/'HALLURAG_FNFP.md', 'HalluRAG：含答案样本的漏报、误报与标注粒度'),
     'THEORY': (DIRECTORY/'THEORY.md', '完整公式与证明'),
     'METHOD': (DIRECTORY/'METHOD.md', '整个方法与调用路径'),
     'PAPER_STORY': (DIRECTORY/'PAPER_STORY.md', '怎样组织论文主张'),
     'VALIDATION': (DIRECTORY/'VALIDATION.md', '验证结果与边界'),
     'METHOD_V3': (DIRECTORY/'METHOD_V3.md', 'V3：模型、优化与代码'),
     'RESULTS_CURRENT': (ROOT/'docs/RESULTS_CURRENT.md', '全数据集方法对照'),
+    'PERFORMANCE_REVIEW': (DIRECTORY/'PERFORMANCE_REVIEW.md', 'R4/V3表现、真实错例与优化'),
+    'CPU_FUSION_REVIEW': (DIRECTORY/'CPU_FUSION_REVIEW.md', '固定CPU融合：未采用的基线记录'),
     'UNLABELLED_LIMITS': (DIRECTORY/'UNLABELLED_LIMITS.md', '无标注识别边界与当前决策'),
     'INTEGRATED_DESIGN': (DIRECTORY/'INTEGRATED_DESIGN.md', '组合设计与验证'),
     'EXPERIMENT_PLAN': (ROOT/'refine-logs/EXPERIMENT_PLAN.md', '组合方法实验计划'),
@@ -80,7 +85,7 @@ def render_article(name):
 <script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
 <style>@media print{body[data-article="EXPERIMENT_PLAN"]{font-size:14px;line-height:1.65}}</style></head><body data-article="__ARTICLE__">
 <header><div class="eyebrow">TOKEN DETECTOR / 本地离线阅读</div><h1>__TITLE__</h1>
-<nav><a href="UNLABELLED_LIMITS.html">无标注边界与决策</a><a href="METHOD_V3.html">V3方法</a><a href="RESULTS_CURRENT.html">全数据集对照</a><a href="INTEGRATED_DESIGN.html">受限关系候选</a><a href="EXPERIMENT_PLAN.html">当前计划</a><a href="VISUAL_GUIDE.html">交互演示</a><a href="THEORY.html">完整公式</a><a href="READING.html">逐行代码</a></nav>
+<nav><a href="FNFP_MECHANISM.html">FN/FP机制审查</a><a href="FNFP_CASES.html">逐例核对来源</a><a href="HALLURAG_FNFP.html">HalluRAG FN/FP</a><a href="PERFORMANCE_REVIEW.html">R4/V3、错例与0.8目标</a><a href="UNLABELLED_LIMITS.html">无标注边界</a><a href="METHOD_V3.html">V3方法</a><a href="RESULTS_CURRENT.html">全数据集对照</a><a href="INTEGRATED_DESIGN.html">受限关系候选</a><a href="EXPERIMENT_PLAN.html">模块计划</a><a href="VISUAL_GUIDE.html">交互演示</a><a href="THEORY.html">完整公式</a><a href="READING.html">逐行代码</a><a href="CPU_FUSION_REVIEW.html">未采用基线记录</a></nav>
 <p>公式已在浏览器排版；可用浏览器“打印 → 保存为PDF”。本页不需要联网。</p></header>
 <main><article class="article">__BODY__</article></main></body></html>'''
     (DIRECTORY / f'{name}.html').write_text(

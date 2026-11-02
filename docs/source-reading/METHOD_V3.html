@@ -5,10 +5,11 @@
 <script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
 <style>@media print{body[data-article="EXPERIMENT_PLAN"]{font-size:14px;line-height:1.65}}</style></head><body data-article="METHOD_V3">
 <header><div class="eyebrow">TOKEN DETECTOR / 本地离线阅读</div><h1>V3：模型、优化与代码</h1>
-<nav><a href="UNLABELLED_LIMITS.html">无标注边界与决策</a><a href="METHOD_V3.html">V3方法</a><a href="RESULTS_CURRENT.html">全数据集对照</a><a href="INTEGRATED_DESIGN.html">受限关系候选</a><a href="EXPERIMENT_PLAN.html">当前计划</a><a href="VISUAL_GUIDE.html">交互演示</a><a href="THEORY.html">完整公式</a><a href="READING.html">逐行代码</a></nav>
+<nav><a href="FNFP_MECHANISM.html">FN/FP机制审查</a><a href="FNFP_CASES.html">逐例核对来源</a><a href="HALLURAG_FNFP.html">HalluRAG FN/FP</a><a href="PERFORMANCE_REVIEW.html">R4/V3、错例与0.8目标</a><a href="UNLABELLED_LIMITS.html">无标注边界</a><a href="METHOD_V3.html">V3方法</a><a href="RESULTS_CURRENT.html">全数据集对照</a><a href="INTEGRATED_DESIGN.html">受限关系候选</a><a href="EXPERIMENT_PLAN.html">模块计划</a><a href="VISUAL_GUIDE.html">交互演示</a><a href="THEORY.html">完整公式</a><a href="READING.html">逐行代码</a><a href="CPU_FUSION_REVIEW.html">未采用基线记录</a></nav>
 <p>公式已在浏览器排版；可用浏览器“打印 → 保存为PDF”。本页不需要联网。</p></header>
 <main><article class="article"><h1 id="v3-witness">V3 / witness：当前保留的研究方法</h1>
 <p><strong>当前要研究和解释的是 V3，不是旧 R4。</strong> V3 在旧 Llama 金融两组有正向证据，后续替代候选尚未胜出；公开接口默认仍为 V1 / shared。二者是研究状态与软件默认值的区别。完整数字见<a href="RESULTS_CURRENT.html">六组结果及所有已恢复主对照</a>。</p>
+<p>最新用户指示允许多模块组合，优化不再限定于V3或统一模型。新恢复结果显示R4在HalluRAG含答案组更强，见<a href="PERFORMANCE_REVIEW.html">完整对照、错例与0.8目标</a>。V3保留为基线和可复用模块，没有宣称新融合已有效。</p>
 <h2 id="r4-v1-v2-v3">R4 → V1 → V2 → V3，各自改变了什么</h2>
 <table>
 <thead>

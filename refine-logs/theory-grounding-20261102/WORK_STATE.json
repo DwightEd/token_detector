@@ -1,5 +1,5 @@
 {
-  "user_objective": "Organize source; explain method steps and code line by line; iteratively strengthen theory, novelty and empirical support toward top-conference quality.",
+  "user_objective": "Complete source explanation and improve unsupervised detection toward AUROC >= 0.8 on each of six declared primary tasks; modular hybrids and task-specific configurations are allowed, with truth used only after final method/score freezing.",
   "base_revision": "1210120748b3a05bd271bc79debcbed4fdc0c964",
   "status": "in_progress",
   "source_explanation": {
@@ -7,32 +7,35 @@
     "source_lines": 2421,
     "functions": 128,
     "baseline_files": 98,
-    "additional_files": 5,
-    "full_scope_complete": false
+    "additional_files": 15,
+    "full_scope_complete": false,
+    "modified_baseline_files": 3,
+    "new_runtime_and_test_explanation": "pending; implementation tests do not count as line explanation"
   },
   "method_refinement": {
-    "phase": "evidence_pending",
+    "phase": "posthoc_source_grounded_fn_fp_mechanism_audit",
     "round": 3,
     "max_rounds": 5,
     "venue_readiness": "unestablished",
     "reviewer_status": "passed_narrow_scope_round_3",
-    "natural_data_validation": "not_run",
+    "natural_data_validation": "five_task_cached_score_experiment_completed; equal_rank_baseline_rejected",
     "learning_regime": "unsupervised",
-    "ground_truth_usage": "final_evaluation_only"
+    "ground_truth_usage": "final_evaluation_only",
+    "current_review_scope": "Cache adapter/evaluation guards independently reviewed; 57 synthetic installed tests; actual source-grounded error audit"
   },
   "constraints": [
     "Preserve original artifacts and frozen R4 comparison",
     "No claim that polished exposition or a numerical model guarantees factuality",
-    "No new GPU/model dataset execution yet",
     "Primary-source citations and traceable review required",
-    "User-confirmed unsupervised detection; ground truth is final-evaluation-only, never for training, tuning, method selection or risk calibration"
+    "User-confirmed unsupervised detection; ground truth is final-evaluation-only, never for training, tuning, method selection or risk calibration",
+    "No new LM/GPU observations; recovered real-data CPU score/evaluation and posthoc error diagnostics are complete"
   ],
   "previous_task": {
     "desktop_folder": "D:\\Desktop\\myproject_研究资料_20261102",
     "github_main": "1210120748b3a05bd271bc79debcbed4fdc0c964",
     "status": "complete"
   },
-  "phase": "evidence_pending",
+  "phase": "posthoc_source_grounded_fn_fp_mechanism_audit",
   "round": 3,
   "max_rounds": 5,
   "anchor_sha256": "d765c81ab166084130ab402f76bee9ef5c0216f111cb5061a88e255f4539bff1",
@@ -49,12 +52,11 @@
   "detector_improvement": "unestablished",
   "venue_readiness": "unestablished",
   "remaining_gates": [
-    "remaining source explanations",
-    "independent natural source-support annotations",
-    "frozen primary estimand and coverage",
-    "per-run observation provenance",
-    "budget-matched baseline comparisons",
-    "confirmed novelty"
+    "Remaining source line explanations, including post-recovery experimental utilities",
+    "Design new evidence or readout changes from validated error mechanisms; no blind weighting or test-label parameter search",
+    "Validate proposed modules with frozen ablations and retained external or untouched confirmation data",
+    "Meet AUROC >= 0.8 on every declared primary task; this is still not achieved",
+    "New method novelty, theoretical relevance to factual errors and venue readiness remain unestablished"
   ],
   "user_confirmation": {
     "confirmed_date_beijing": "2026-11-02",
@@ -63,7 +65,14 @@
     "ground_truth_usage": "final_evaluation_only",
     "label_based_training": false,
     "label_based_hyperparameter_or_method_selection": false,
-    "label_based_risk_calibration": false
+    "label_based_risk_calibration": false,
+    "performance_target": "AUROC >= 0.8 on every declared primary task",
+    "modular_hybrids_allowed": true,
+    "task_specific_configuration_allowed": true,
+    "single_probability_model_required": false,
+    "existing_annotated_evaluation_sources_allowed": true,
+    "hallurag_primary": "released answerable/target-available metadata; retain pooled and unavailable strata",
+    "latest_method_steering": "Reject blind method weighting as a research design; first explain actual FN/FP through source facts and module-level evidence"
   },
   "last_visualization": {
     "date_beijing": "2026-11-02",
@@ -77,16 +86,113 @@
     "date": "2026-11-02",
     "retained_historical_candidate": "V3 / witness",
     "api_default": "V1 / shared",
-    "recovered_metric_records": 266,
+    "recovered_metric_records": 271,
     "comparison": "docs/RESULTS_CURRENT.md",
     "integrated_candidate": "docs/source-reading/INTEGRATED_DESIGN.md",
     "experiment_plan": "refine-logs/EXPERIMENT_PLAN.md",
     "candidate_implemented": false,
-    "new_detector_results": false,
-    "source_comparison_review": "same-family provisional; previous266 records unchanged",
+    "new_detector_results": true,
+    "source_comparison_review": "same-family read-only review; 271 rows and 2/3/4 point-pass summaries checked; no new efficacy result",
     "integrated_candidate_status": "DEFERRED_RELATION_ASSUMPTION_UNRESOLVED",
-    "current_priority": "Operational source/history prediction diagnostics; no new detector selected",
+    "current_priority": "Explain source-grounded R4/V3 FN/FP and test concrete mechanisms before designing a replacement",
     "decision_note": "docs/source-reading/UNLABELLED_LIMITS.md",
-    "current_decision_review": "unsupervised_observation_review; no remaining local blockers"
+    "current_decision_review": "Adapter and evaluator reviewed; numerical diagnostics require source-grounded interpretation",
+    "performance_review": "docs/source-reading/FNFP_MECHANISM.md",
+    "task_summary": "docs/results/r4_v3_task_summary.json",
+    "experiment_tracker": "refine-logs/EXPERIMENT_TRACKER.md",
+    "candidate_implemented_scope": "CPU equal-rank baseline implemented and evaluated but rejected; no detector API default changed",
+    "primary_task_point_passes": {
+      "r4": 2,
+      "v3": 3,
+      "descriptive_envelope": 4,
+      "total_tasks": 6,
+      "envelope_is_a_detector": false
+    },
+    "primary_task_metrics": [
+      {
+        "task": "QA",
+        "r4_auroc": "0.8929",
+        "r4_ap": "0.3527",
+        "v3_auroc": "0.8470",
+        "v3_ap": "0.2148"
+      },
+      {
+        "task": "Summary",
+        "r4_auroc": "0.7621",
+        "r4_ap": "0.0966",
+        "v3_auroc": "0.7623",
+        "v3_ap": "0.1046"
+      },
+      {
+        "task": "Data2txt",
+        "r4_auroc": "0.7983",
+        "r4_ap": "0.1904",
+        "v3_auroc": "0.7557",
+        "v3_ap": "0.1452"
+      },
+      {
+        "task": "FinQA",
+        "r4_auroc": "0.6617",
+        "r4_ap": "0.1452",
+        "v3_auroc": "0.8027",
+        "v3_ap": "0.3250"
+      },
+      {
+        "task": "TATQA",
+        "r4_auroc": "0.7110",
+        "r4_ap": "0.2209",
+        "v3_auroc": "0.8430",
+        "v3_ap": "0.4657"
+      },
+      {
+        "task": "HalluRAG_available",
+        "r4_auroc": "0.807066370",
+        "r4_ap": "0.518829518",
+        "v3_auroc": "0.7669",
+        "v3_ap": "0.4561"
+      }
+    ],
+    "rank_fusion": {
+      "status": "completed_rejected_not_mainline",
+      "cli": "r4-experiment transfer fuse-ranks",
+      "runtime_modules": [
+        "experiments/rank_fusion.py",
+        "experiments/research/score_fusion.py"
+      ],
+      "tests": "tests/test_rank_fusion.py",
+      "test_command": ".venv/Scripts/python.exe -m pytest tests/test_rank_fusion.py -q -p no:cacheprovider",
+      "test_log": "outputs/r4-v3-strata-20261102/rank-fusion-tests.log",
+      "synthetic_tests_passed": 21,
+      "test_seconds": 10.42,
+      "installed_wheel_validation": "92 exact module/resources; 57 synthetic tests outside checkout",
+      "real_fusion_metrics": {
+        "QA": 0.8881328186314315,
+        "Summary": 0.7693804280272036,
+        "Data2txt": 0.7946187298877747,
+        "FinQA": 0.751483317076177,
+        "TATQA": 0.7928889712777181
+      },
+      "annotation_reads_during_scoring": 0,
+      "original_88_file_receipt_covers_new_files": false,
+      "interpretation": "Only a fixed cached-score control; finance regressed and all-task target was not met",
+      "implementation_modules": [
+        "experiments/rank_fusion.py",
+        "experiments/fusion_cache.py",
+        "experiments/fusion_evaluation.py",
+        "experiments/research/score_fusion.py"
+      ]
+    },
+    "source_grounded_cases": "docs/source-reading/FNFP_CASES.md"
+  },
+  "local_resources": {
+    "gpu_hardware": "NVIDIA RTX5060 Laptop 8GB",
+    "active_torch_build": "CPU-only",
+    "cache_recovery": "complete for five paired R4/V3 tasks and full V3 HalluRAG; old R4 HalluRAG arrays deleted upstream",
+    "new_model_observations": "not_run",
+    "canonical_cache": "D:/projects/research/outputs/fusion-cache-20261102",
+    "paired_responses": 2992,
+    "paired_tokens": 448202,
+    "hallurag_v3_responses": 1782,
+    "hallurag_v3_tokens": 69483
   }
 }

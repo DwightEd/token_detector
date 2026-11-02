@@ -1,0 +1,2328 @@
+{
+  "schema": 1,
+  "as_of": "2026-11-02",
+  "scope": "Post-evaluation diagnosis on all five original complete TEST populations; R4 and V3 separately; previously exposed exploratory data",
+  "no_new_detector": true,
+  "no_new_model_observations": true,
+  "no_weight_or_threshold_fit": true,
+  "truth_use": "Only after original frozen predictions and completed evaluation; no scores changed",
+  "budget_rule": "For each task and each channel/stage independently, ceil(0.05*N) descending alarms with stable original-order tie breaks. All five populations contain zero unknown tokens.",
+  "source_receipts": [
+    {
+      "task": "QA",
+      "frozen_input_seal_sha256": "9b1a3cf467b8ae453f5672017971e18eb9897dcb7ab075aa7941a7a1a274f756",
+      "native_collection_seal_sha256": "7537baa6d28ca723e6e1697f20cbfccde04a8c72e126b2ddc24324bf6be67d48",
+      "historical_score_seal_sha256": "7a0034462d35588c0b7883802288b074727ed2bc28bf3a0a78c887c9ebada88d",
+      "prepared_manifest_sha256": "b32c4c8d3383ff031c117f5f80feff09d4abddb064484284b51bcd6030f6eecd",
+      "prepared_inputs_sha256": "99f37fd701645e9db14ac123dbdd4ff19e674f535feccd920f9464f2e322ecdd",
+      "prepared_annotations_sha256": "022ab8de9509fd0a48a4b89528a5555b69f57fa469317d5c8cfafa749c1c1fc1",
+      "completed_evaluation_seal_sha256": "652631c0f4e3a597765a8e3396edbc3ecdcc1cf5f81b8f0829a314427297a9b1"
+    },
+    {
+      "task": "Summary",
+      "frozen_input_seal_sha256": "dfaacc18a2bbd537f35129f0e2cea9eb3f56ac97c80613401e0022b6e9703037",
+      "native_collection_seal_sha256": "37ee390824a437d980e01c3b3db13b4ba047704a64bcd7ad1194c6a2fc987ffc",
+      "historical_score_seal_sha256": "aac94c4e9c6077260a9f473155b90792da81a64afc3c44910bfc55fd99b91809",
+      "prepared_manifest_sha256": "e75b8ec563015001939d7870650b26d50046199f41bc1aae01a5663759a663ec",
+      "prepared_inputs_sha256": "50d7ad8ee0c18cc24b83c430bc58bfd23897db6a5485336a30d975f1a576b4fd",
+      "prepared_annotations_sha256": "86b3df9c5adb47e8f55eb42f8d6342baab05ebb4779c2218f998d8f6cea4315c",
+      "completed_evaluation_seal_sha256": "0a75e07254919edadeb52962b2d0e6cd4259736a96d329825df642d6b8ab1b59"
+    },
+    {
+      "task": "Data2txt",
+      "frozen_input_seal_sha256": "74681ea12ee4aa1f025bdbb2838942554be8f2bde792f65d3113f9fbb6d8e08e",
+      "native_collection_seal_sha256": "2e6c73f6bbca746e1383ef5cdbf97d002701f7790583a046111c35c2072eb3e8",
+      "historical_score_seal_sha256": "ea96bf0378120f00f1d22617e65d9a0f430973ef19a6f143a3936c869edbf3e1",
+      "prepared_manifest_sha256": "d1f0ba0658222556e2542e145da84538d14a9fa5b230dd9bb8fa34b830944b80",
+      "prepared_inputs_sha256": "050c79f2711aa292845f27ed4f3ae8b68f0d263bc9d29678486f7e8fb6477521",
+      "prepared_annotations_sha256": "d6b2f44d12d68b520e5a28dd4d642b03a94854a2ec5b208a3ceee3f73be2b9d2",
+      "completed_evaluation_seal_sha256": "4a0d9298d45364be2e4eaa792e171082a83a94d80aeb241d7a9fc276223d974a"
+    },
+    {
+      "task": "FinQA",
+      "frozen_input_seal_sha256": "2c48a5187dbfbd7de8c483912de1142515e76d79ef78f61933a93a365ac4ece7",
+      "native_collection_seal_sha256": "96b34c7b7cfccd6c3cf50dac8026438757529078f31b275d183b73cc4298ba61",
+      "historical_score_seal_sha256": "8ea91e6907cdc1ac63697aad3f6b459dd6acfc9db521bd7681667fa883553bc8",
+      "prepared_manifest_sha256": "0a08e37bb76251780ae959147bd518c6d16488664080661b0231b9838e497238",
+      "prepared_inputs_sha256": "12b7437d19eb1b138e1d66e499a64defd4e914c774e7542e860c298181833e5c",
+      "prepared_annotations_sha256": "b611d6e36999dad3f8a977e25a79a43ca3d79e85bd71b7df0ae58ba4c7bef9fd",
+      "completed_evaluation_seal_sha256": "8649abac87d03837e968ec5b5d68445edce71c189202b0dc7dfdaa72890cac75"
+    },
+    {
+      "task": "TATQA",
+      "frozen_input_seal_sha256": "368ac79fad495cb0adde31d48b825b85bf667a6a569bc85bf3ca73e9fd910927",
+      "native_collection_seal_sha256": "96b34c7b7cfccd6c3cf50dac8026438757529078f31b275d183b73cc4298ba61",
+      "historical_score_seal_sha256": "8ea91e6907cdc1ac63697aad3f6b459dd6acfc9db521bd7681667fa883553bc8",
+      "prepared_manifest_sha256": "6b78c61485eae13e40e66acb259cb2de187fd6e6c4e732f8cf66fa31bb1a5761",
+      "prepared_inputs_sha256": "17e9ffd2caaf8033ae374a7c293039883cdd4ff541372e94a34eaf557b1c4831",
+      "prepared_annotations_sha256": "8c315a5788d9e65f27c5c5ed64cd6d36d891e72d7dbae5935ed3f5c1774f4ebc",
+      "completed_evaluation_seal_sha256": "cf0ece02dade6eeaa761319fc17cdc4ec02eaab58f04413e7a5b87adb239f27e"
+    }
+  ],
+  "diagnostic_artifacts": {
+    "numeric_summary": "outputs/fnfp-mechanism-20261102/numeric_summary.json",
+    "numeric_summary_sha256": "2848b7fe411d108b937451f3a865e763ce0b30674d11e1624927aa891549b8d2",
+    "active_input_supplement": "outputs/fnfp-mechanism-20261102/active_input_supplement.json",
+    "active_input_supplement_sha256": "ba2b9e641efb6dab996cd6679aa82e6f29eaf47525cdef4664a8da1e1f3afee4",
+    "numeric_script_sha256": "fbfaa9f8f818d3fa1ad6ad452b2c39f525e9ea5e6023bff6a92e79d6e450922c",
+    "active_input_script_sha256": "6adcaa515944e65b7e8e7d6f7a7edb98727fa120862c0ee1b838667dd5a08c46"
+  },
+  "code_provenance": {
+    "runtime_source_map_sha256": "4e90d03e06b36df9fc36c0efec57ebb4b62f9c12d73d0d2d2d82e8915751860c",
+    "critical_source_sha256": {
+      "experiments/evaluate.py": "285a9225533249386d1a547b5f3f5901cb174bd69e015a37476827c1e5f6fdf6",
+      "experiments/fusion_evaluation.py": "6a270dba72f235f8381407091a50d48f75e9d9b3ad26f876bd09da37879f9790",
+      "experiments/transfer_diagnostics.py": "bdb8f79fc83b79fe283f367ae1843ffb83d2c1cdf4293f451f7cca3ef8d3779a",
+      "experiments/datasets.py": "f54fae13437e031461b159d43c3db5f68d71280147d30572646e09379bc4f644",
+      "myproject/detector.py": "776fa683830223f1f9393291fa5aa446e6194cb7ab36d5e42f48365e6172ce88",
+      "myproject/sequence.py": "57c839c77eb93081bbde6d4f127497f62bc6586b41ac4b80fea8160d02953114"
+    }
+  },
+  "representative_selection": {
+    "case_entries": 120,
+    "unique_task_response_target_entries": 101,
+    "rule": "Within each task and diagnostic category, sort largest ordinal-rank flip (or worst common-FN rank), stable original-order ties; select up to three distinct source IDs. Categories overlap and are not prevalence estimates.",
+    "source_excerpts": "Automatic lexical windows; full source remains in bound prepared inference inputs; windows are not entailment proofs.",
+    "qualitative_page": "docs/source-reading/FNFP_CASES.md"
+  },
+  "active_input_interpretation": [
+    "Either raw channel top5 is available primitive-view information, not necessarily an input to the detector.",
+    "For Summary the R4 full-only recipe omits local, so local-only high ranks are view omission, not downstream R4 suppression.",
+    "For pair-view R4, two separate raw-view ranks and the average point rank use different complete-task orderings; a loss before point is a view-combination/global-ranking observation, not an independent causal experiment.",
+    "Active-input top5 to final below top5 is a descriptive rank loss at fixed budget; intermediates also recover other positives.",
+    "Released positive character spans may contain individually supported words attached to a wrong citation, entity/event, time or scope relation; do not equate every labeled token with an independently false statement."
+  ],
+  "source_grounded_examples": [
+    {
+      "task": "QA",
+      "sample_id": "15716",
+      "token": " ago",
+      "target": 60,
+      "global_ranks": {
+        "raw_full": 1165,
+        "raw_local": 3975,
+        "r4_point": 1492,
+        "r4_prior": 116867,
+        "r4": 114453,
+        "v3": 20219
+      },
+      "cached_values": {
+        "raw_full": 3.2889499664306636,
+        "raw_local": 2.862773895263672,
+        "r4_prior": -1.6742057096292031,
+        "r4": -1.1117516917467245,
+        "v3": 0.3493939088012379,
+        "v3_own_emission": 2.632417209189137,
+        "v3_context_difference": -2.283023300387899
+      },
+      "error_relation": "time reference: BC replaced by years ago",
+      "source_fact": "Aristotle Meteorologica: over 300 years BC",
+      "response_fact": "around 300 years ago",
+      "review_scope": "post-result source/context check, not a new independent annotation set",
+      "source_quotes": [
+        {
+          "start": 226,
+          "end": 243,
+          "text": "over 300 years BC"
+        }
+      ],
+      "source_sha256": "485cc2e00a43df28446cbed4a383f6c63bd8aa7066f6e3fc538acd258fedc186",
+      "response_sha256": "12f93c29a5fc62a1eef76f02a731eac9489204a3534a0b748c47d9fcb88eadc4",
+      "task_top5_budget": 6241
+    },
+    {
+      "task": "Summary",
+      "sample_id": "410",
+      "token": " completed",
+      "target": 157,
+      "global_ranks": {
+        "raw_full": 81947,
+        "raw_local": 844,
+        "r4_point": 81947,
+        "r4_prior": 116387,
+        "r4": 116959,
+        "v3": 90401
+      },
+      "cached_values": {
+        "raw_full": -1.2880744934082031,
+        "raw_local": 8.312164306640625,
+        "r4_prior": -1.7295660096515841,
+        "r4": -1.490369064711673,
+        "v3": -2.320677732986074,
+        "v3_own_emission": -0.44957270570747193,
+        "v3_context_difference": -1.871105027278602
+      },
+      "error_relation": "entity-event binding: first robot route completion assigned to second",
+      "source_fact": "First robot completed around two-thirds of planned route; second collected all 11 points",
+      "response_fact": "Second robot collected all 11 points and completed around two-thirds of planned route",
+      "review_scope": "post-result source/context check, not a new independent annotation set",
+      "source_quotes": [
+        {
+          "start": 217,
+          "end": 247,
+          "text": "after the first one broke down"
+        },
+        {
+          "start": 1420,
+          "end": 1480,
+          "text": "completing around two-thirds of the originally planned route"
+        },
+        {
+          "start": 1482,
+          "end": 1575,
+          "text": "The second robot was sent in on April 15 and collected data from all 11 points, as scheduled."
+        }
+      ],
+      "source_sha256": "bef852eaa0bc0b9742fb4460d16a98cea4ab0b3968fad22d3231b1c049601f63",
+      "response_sha256": "167cefee4e541bb7a4ecf33c030c30b18dc4696be0b7f8038ee2b759fb7c088e",
+      "task_top5_budget": 6063
+    },
+    {
+      "task": "Data2txt",
+      "sample_id": "8937",
+      "token": " reservations",
+      "target": 116,
+      "global_ranks": {
+        "raw_full": 7962,
+        "raw_local": 17616,
+        "r4_point": 12232,
+        "r4_prior": 85483,
+        "r4": 87425,
+        "v3": 101511
+      },
+      "cached_values": {
+        "raw_full": 1.453287601470947,
+        "raw_local": 1.4140548706054688,
+        "r4_prior": -0.6001744045779218,
+        "r4": 0.019971477483885766,
+        "v3": -1.0795081824381119,
+        "v3_own_emission": 0.9702395672935508,
+        "v3_context_difference": -2.0497477497316625
+      },
+      "error_relation": "explicit attribute contradiction",
+      "source_fact": "RestaurantsReservations=False",
+      "response_fact": "takes reservations",
+      "review_scope": "post-result source/context check, not a new independent annotation set",
+      "source_quotes": [
+        {
+          "start": 497,
+          "end": 529,
+          "text": "'RestaurantsReservations': False"
+        }
+      ],
+      "source_sha256": "c72de29ba2f3ccd4f6f3303b64169152cdfa9d43eba2ffe13fe5fe29be5fe160",
+      "response_sha256": "65539bab1e889b73dab240bc8725e775fee71d4e347cf95e7d55d40ff958732a",
+      "task_top5_budget": 8918,
+      "stage_interpretation": "Full-gap rank7962 is inside8918; actual R4 pair-point rank12232 is already outside before prior rank85483/final87425. V3 really uses full and its negative context difference gives final rank101511."
+    }
+  ],
+  "tasks": {
+    "QA": {
+      "task": "QA",
+      "scope": "post-evaluation diagnostic; original complete TEST; no new detector or tuning",
+      "population": {
+        "responses": 900,
+        "tokens": 124817,
+        "positive_tokens": 6751,
+        "negative_tokens": 118066,
+        "unknown_tokens": 0,
+        "sources": 150
+      },
+      "fixed_alarm_budget": {
+        "fraction": 0.05,
+        "ceil_tokens": 6241,
+        "unavoidable_minimum_fn": 510,
+        "maximum_token_recall_at_budget": 0.9244556362020442,
+        "fn_above_budget_minimum": {
+          "r4": 3633,
+          "v3": 4476
+        }
+      },
+      "recipe": {
+        "task": "QA",
+        "view": "pair",
+        "tau": 0.1,
+        "radius": 2,
+        "innovation_weight": 0.1,
+        "route_weight": 0.25
+      },
+      "metrics_diagnostic_only": {
+        "raw_full": {
+          "tokens": 124817,
+          "errors": 6751,
+          "auroc": 0.6839107440773425,
+          "ap": 0.09561752735360292,
+          "top5pct": {
+            "tp": 657,
+            "fp": 5584,
+            "fn": 6094
+          }
+        },
+        "raw_local": {
+          "tokens": 124817,
+          "errors": 6751,
+          "auroc": 0.6609866037961645,
+          "ap": 0.0864774441787349,
+          "top5pct": {
+            "tp": 522,
+            "fp": 5719,
+            "fn": 6229
+          }
+        },
+        "r4_point": {
+          "tokens": 124817,
+          "errors": 6751,
+          "auroc": 0.6793502922450729,
+          "ap": 0.0925115454978917,
+          "top5pct": {
+            "tp": 614,
+            "fp": 5627,
+            "fn": 6137
+          }
+        },
+        "raw_route": {
+          "tokens": 124817,
+          "errors": 6751,
+          "auroc": 0.8144200038620257,
+          "ap": 0.25589656944963685,
+          "top5pct": {
+            "tp": 1752,
+            "fp": 4489,
+            "fn": 4999
+          }
+        },
+        "calibrated_route": {
+          "tokens": 124817,
+          "errors": 6751,
+          "auroc": 0.8144197567048247,
+          "ap": 0.2556434740787789,
+          "top5pct": {
+            "tp": 1754,
+            "fp": 4487,
+            "fn": 4997
+          }
+        },
+        "r4_prior": {
+          "tokens": 124817,
+          "errors": 6751,
+          "auroc": 0.8754660854740411,
+          "ap": 0.2605830730047412,
+          "top5pct": {
+            "tp": 2202,
+            "fp": 4039,
+            "fn": 4549
+          }
+        },
+        "r4_source": {
+          "tokens": 124817,
+          "errors": 6751,
+          "auroc": 0.8754642355588487,
+          "ap": 0.26055132325527125,
+          "top5pct": {
+            "tp": 2202,
+            "fp": 4039,
+            "fn": 4549
+          }
+        },
+        "r4_base": {
+          "tokens": 124817,
+          "errors": 6751,
+          "auroc": 0.8912535001003922,
+          "ap": 0.34536617498564287,
+          "top5pct": {
+            "tp": 2528,
+            "fp": 3713,
+            "fn": 4223
+          }
+        },
+        "r4_unary": {
+          "tokens": 124817,
+          "errors": 6751,
+          "auroc": 0.8917822095007164,
+          "ap": 0.3418274431337703,
+          "top5pct": {
+            "tp": 2531,
+            "fp": 3710,
+            "fn": 4220
+          }
+        },
+        "shared": {
+          "tokens": 124817,
+          "errors": 6751,
+          "auroc": 0.8450102378660224,
+          "ap": 0.2174769185777766,
+          "top5pct": {
+            "tp": 1684,
+            "fp": 4557,
+            "fn": 5067
+          }
+        },
+        "persistent": {
+          "tokens": 124817,
+          "errors": 6751,
+          "auroc": 0.8481332805017461,
+          "ap": 0.22920346702089409,
+          "top5pct": {
+            "tp": 1782,
+            "fp": 4459,
+            "fn": 4969
+          }
+        },
+        "r4": {
+          "tokens": 124817,
+          "errors": 6751,
+          "auroc": 0.892891121057715,
+          "ap": 0.3527357670863039,
+          "top5pct": {
+            "tp": 2608,
+            "fp": 3633,
+            "fn": 4143
+          }
+        },
+        "v3": {
+          "tokens": 124817,
+          "errors": 6751,
+          "auroc": 0.846975285030153,
+          "ap": 0.21483304781661408,
+          "top5pct": {
+            "tp": 1765,
+            "fp": 4476,
+            "fn": 4986
+          }
+        },
+        "v3_own_emission": {
+          "tokens": 124817,
+          "errors": 6751,
+          "auroc": 0.68391074345004,
+          "ap": 0.09561752258323467,
+          "top5pct": {
+            "tp": 657,
+            "fp": 5584,
+            "fn": 6094
+          }
+        }
+      },
+      "positive_overlap": {
+        "both_TP": 985,
+        "R4_only_TP": 1623,
+        "V3_only_TP": 780,
+        "both_FN": 3363
+      },
+      "negative_overlap": {
+        "both_FP": 961,
+        "R4_only_FP": 2672,
+        "V3_only_FP": 3515,
+        "both_TN": 110918
+      },
+      "common_FN_primitives": {
+        "raw_top5_quadrants": {
+          "both_raw_top5": 28,
+          "full_only_top5": 79,
+          "local_only_top5": 108,
+          "neither_raw_top5": 3148
+        },
+        "both_raw_gaps_nonpositive": 1793,
+        "neither_raw_top5_and_both_nonpositive": 1793
+      },
+      "per_method": {
+        "r4": {
+          "fn": 4143,
+          "fp": 3633,
+          "FN_raw_top5_quadrants": {
+            "both_raw_top5": 121,
+            "full_only_top5": 275,
+            "local_only_top5": 129,
+            "neither_raw_top5": 3618
+          },
+          "FP_raw_top5_quadrants": {
+            "both_raw_top5": 130,
+            "full_only_top5": 222,
+            "local_only_top5": 376,
+            "neither_raw_top5": 2905
+          },
+          "FN_with_raw_full_top5_signal": 396,
+          "FN_with_raw_local_top5_signal": 250,
+          "FN_with_either_raw_top5_signal": 525,
+          "FP_promoted_from_raw_full_below_top5": 3281,
+          "FP_promoted_from_both_raw_below_top5": 2905
+        },
+        "v3": {
+          "fn": 4986,
+          "fp": 4476,
+          "FN_raw_top5_quadrants": {
+            "both_raw_top5": 38,
+            "full_only_top5": 96,
+            "local_only_top5": 257,
+            "neither_raw_top5": 4595
+          },
+          "FP_raw_top5_quadrants": {
+            "both_raw_top5": 1127,
+            "full_only_top5": 1185,
+            "local_only_top5": 90,
+            "neither_raw_top5": 2074
+          },
+          "FN_with_raw_full_top5_signal": 134,
+          "FN_with_raw_local_top5_signal": 295,
+          "FN_with_either_raw_top5_signal": 391,
+          "FP_promoted_from_raw_full_below_top5": 2164,
+          "FP_promoted_from_both_raw_below_top5": 2074
+        }
+      },
+      "r4_stage_transitions": {
+        "r4_point_to_r4_prior": {
+          "positive_retained": 320,
+          "positive_lost": 294,
+          "positive_recovered": 1882,
+          "positive_missed_both": 4255,
+          "negative_retained": 703,
+          "negative_removed": 4924,
+          "negative_promoted": 3336
+        },
+        "r4_prior_to_r4_source": {
+          "positive_retained": 2202,
+          "positive_lost": 0,
+          "positive_recovered": 0,
+          "positive_missed_both": 4549,
+          "negative_retained": 4039,
+          "negative_removed": 0,
+          "negative_promoted": 0
+        },
+        "r4_source_to_r4_base": {
+          "positive_retained": 1745,
+          "positive_lost": 457,
+          "positive_recovered": 783,
+          "positive_missed_both": 3766,
+          "negative_retained": 2147,
+          "negative_removed": 1892,
+          "negative_promoted": 1566
+        },
+        "r4_base_to_r4_unary": {
+          "positive_retained": 2341,
+          "positive_lost": 187,
+          "positive_recovered": 190,
+          "positive_missed_both": 4033,
+          "negative_retained": 3239,
+          "negative_removed": 474,
+          "negative_promoted": 471
+        },
+        "r4_unary_to_r4": {
+          "positive_retained": 2458,
+          "positive_lost": 73,
+          "positive_recovered": 150,
+          "positive_missed_both": 4070,
+          "negative_retained": 3422,
+          "negative_removed": 288,
+          "negative_promoted": 211
+        }
+      },
+      "v3_alternative_readout_contrasts": {
+        "raw_full_to_shared": {
+          "positive_retained": 572,
+          "positive_lost": 85,
+          "positive_recovered": 1112,
+          "positive_missed_both": 4982,
+          "negative_retained": 2800,
+          "negative_removed": 2784,
+          "negative_promoted": 1757
+        },
+        "raw_full_to_persistent": {
+          "positive_retained": 550,
+          "positive_lost": 107,
+          "positive_recovered": 1232,
+          "positive_missed_both": 4862,
+          "negative_retained": 2299,
+          "negative_removed": 3285,
+          "negative_promoted": 2160
+        },
+        "raw_full_to_v3": {
+          "positive_retained": 523,
+          "positive_lost": 134,
+          "positive_recovered": 1242,
+          "positive_missed_both": 4852,
+          "negative_retained": 2312,
+          "negative_removed": 3272,
+          "negative_promoted": 2164
+        },
+        "shared_to_v3": {
+          "positive_retained": 1294,
+          "positive_lost": 390,
+          "positive_recovered": 471,
+          "positive_missed_both": 4596,
+          "negative_retained": 3227,
+          "negative_removed": 1330,
+          "negative_promoted": 1249
+        },
+        "persistent_to_v3": {
+          "positive_retained": 1475,
+          "positive_lost": 307,
+          "positive_recovered": 290,
+          "positive_missed_both": 4679,
+          "negative_retained": 3532,
+          "negative_removed": 927,
+          "negative_promoted": 944
+        }
+      },
+      "span_hit_diagnostics": {
+        "r4": {
+          "positive_spans": 235,
+          "observable_spans": 235,
+          "unobservable_spans": 0,
+          "any_hit": 119,
+          "complete_hit": 28,
+          "partial_hit": 91,
+          "zero_hit": 116,
+          "error_responses": 160,
+          "responses_any_hit": 84,
+          "responses_all_positive_tokens_hit": 7,
+          "any_hit_rate": 0.5063829787234042,
+          "complete_hit_rate": 0.11914893617021277
+        },
+        "v3": {
+          "positive_spans": 235,
+          "observable_spans": 235,
+          "unobservable_spans": 0,
+          "any_hit": 162,
+          "complete_hit": 34,
+          "partial_hit": 128,
+          "zero_hit": 73,
+          "error_responses": 160,
+          "responses_any_hit": 126,
+          "responses_all_positive_tokens_hit": 16,
+          "any_hit_rate": 0.6893617021276596,
+          "complete_hit_rate": 0.14468085106382977
+        }
+      },
+      "interpretation_limits": [
+        "Top5 membership is a fixed-budget relative rank, not a semantic support test; rank losses are not automatically causal harm.",
+        "Raw-stage and final-stage alarms each use their own task-wide top5 budget, not a shared numeric threshold.",
+        "V1 shared, V2 persistent and V3 witness are alternative readouts; their pairwise transitions are not sequential causal stages.",
+        "R4 prior/source calibration can introduce ties; CDF and route/innovation/stitching stages are dependent, not independent causes.",
+        "A benchmark FP is outside released positive spans, not necessarily independently verified semantic correctness; silver edit labels can miss pre-existing errors.",
+        "Span any-hit/complete-hit are added diagnostics over observable released positive spans; they do not replace official token metrics.",
+        "All populations were previously exposed and are exploratory; no new method, threshold, fitting or selection is performed."
+      ],
+      "R4_final_FN_last_top5_stage": {
+        "r4_point": 226,
+        "r4_prior": 0,
+        "r4_source": 396,
+        "r4_base": 113,
+        "r4_unary": 73,
+        "never_top5_in_any_R4_stage": 3335
+      },
+      "V3_context_algebra": {
+        "definition": "cached witness_score minus production witness_emissions(raw_full); no new inference",
+        "raw_full_top5_FN_context_negative": 91,
+        "raw_full_top5_FN_context_nonnegative": 43,
+        "raw_full_below_top5_FP_context_positive": 2164,
+        "raw_full_below_top5_FP_context_nonpositive": 0
+      },
+      "active_input_diagnostics": {
+        "r4_actual_input_view": "pair",
+        "r4_FN_total": 4143,
+        "r4_FN_active_point_top5": 316,
+        "r4_FN_either_separate_raw_view_top5": 525,
+        "r4_FN_available_raw_top5_but_active_point_below_top5": 210,
+        "r4_FN_active_point_top5_but_both_separate_views_below_top5": 1,
+        "r4_FP_active_point_below_top5": 3142,
+        "r4_FN_local_only_top5_omitted_by_full_only_recipe": 0,
+        "v3_actual_input_view": "full",
+        "v3_FN_total": 4986,
+        "v3_FN_active_full_top5": 134,
+        "v3_FN_local_only_top5_not_an_input": 257,
+        "r4_active_point_to_final": {
+          "positive_lost": 316,
+          "positive_recovered": 2310,
+          "negative_promoted": 3142,
+          "negative_removed": 5136
+        }
+      }
+    },
+    "Summary": {
+      "task": "Summary",
+      "scope": "post-evaluation diagnostic; original complete TEST; no new detector or tuning",
+      "population": {
+        "responses": 900,
+        "tokens": 121248,
+        "positive_tokens": 3485,
+        "negative_tokens": 117763,
+        "unknown_tokens": 0,
+        "sources": 150
+      },
+      "fixed_alarm_budget": {
+        "fraction": 0.05,
+        "ceil_tokens": 6063,
+        "unavoidable_minimum_fn": 0,
+        "maximum_token_recall_at_budget": 1.0,
+        "fn_above_budget_minimum": {
+          "r4": 2563,
+          "v3": 2564
+        }
+      },
+      "recipe": {
+        "task": "Summary",
+        "view": "full",
+        "tau": 0.25,
+        "radius": 4,
+        "innovation_weight": 0.25,
+        "route_weight": 0.0
+      },
+      "metrics_diagnostic_only": {
+        "raw_full": {
+          "tokens": 121248,
+          "errors": 3485,
+          "auroc": 0.6260422707080708,
+          "ap": 0.047909125669458104,
+          "top5pct": {
+            "tp": 375,
+            "fp": 5688,
+            "fn": 3110
+          }
+        },
+        "raw_local": {
+          "tokens": 121248,
+          "errors": 3485,
+          "auroc": 0.5852694328276069,
+          "ap": 0.03971971088657055,
+          "top5pct": {
+            "tp": 311,
+            "fp": 5752,
+            "fn": 3174
+          }
+        },
+        "r4_point": {
+          "tokens": 121248,
+          "errors": 3485,
+          "auroc": 0.6260422707080708,
+          "ap": 0.047909125669458104,
+          "top5pct": {
+            "tp": 375,
+            "fp": 5688,
+            "fn": 3110
+          }
+        },
+        "raw_route": {
+          "tokens": 121248,
+          "errors": 3485,
+          "auroc": 0.6787502136157013,
+          "ap": 0.07472833817821967,
+          "top5pct": {
+            "tp": 608,
+            "fp": 5455,
+            "fn": 2877
+          }
+        },
+        "calibrated_route": {
+          "tokens": 121248,
+          "errors": 3485,
+          "auroc": 0.6787500771648077,
+          "ap": 0.07478392290608399,
+          "top5pct": {
+            "tp": 608,
+            "fp": 5455,
+            "fn": 2877
+          }
+        },
+        "r4_prior": {
+          "tokens": 121248,
+          "errors": 3485,
+          "auroc": 0.7587613882128919,
+          "ap": 0.11168439884434822,
+          "top5pct": {
+            "tp": 915,
+            "fp": 5148,
+            "fn": 2570
+          }
+        },
+        "r4_source": {
+          "tokens": 121248,
+          "errors": 3485,
+          "auroc": 0.7587647202949785,
+          "ap": 0.11114525288682077,
+          "top5pct": {
+            "tp": 912,
+            "fp": 5151,
+            "fn": 2573
+          }
+        },
+        "r4_base": {
+          "tokens": 121248,
+          "errors": 3485,
+          "auroc": 0.7587647202949785,
+          "ap": 0.11114525288682077,
+          "top5pct": {
+            "tp": 912,
+            "fp": 5151,
+            "fn": 2573
+          }
+        },
+        "r4_unary": {
+          "tokens": 121248,
+          "errors": 3485,
+          "auroc": 0.7613693631755173,
+          "ap": 0.09382785569239101,
+          "top5pct": {
+            "tp": 936,
+            "fp": 5127,
+            "fn": 2549
+          }
+        },
+        "shared": {
+          "tokens": 121248,
+          "errors": 3485,
+          "auroc": 0.7254660483313207,
+          "ap": 0.08954908543628105,
+          "top5pct": {
+            "tp": 808,
+            "fp": 5255,
+            "fn": 2677
+          }
+        },
+        "persistent": {
+          "tokens": 121248,
+          "errors": 3485,
+          "auroc": 0.7350700372587693,
+          "ap": 0.1025136210347973,
+          "top5pct": {
+            "tp": 902,
+            "fp": 5161,
+            "fn": 2583
+          }
+        },
+        "r4": {
+          "tokens": 121248,
+          "errors": 3485,
+          "auroc": 0.7620629674333992,
+          "ap": 0.09657602574718241,
+          "top5pct": {
+            "tp": 922,
+            "fp": 5141,
+            "fn": 2563
+          }
+        },
+        "v3": {
+          "tokens": 121248,
+          "errors": 3485,
+          "auroc": 0.7623369510810512,
+          "ap": 0.1045624457376539,
+          "top5pct": {
+            "tp": 921,
+            "fp": 5142,
+            "fn": 2564
+          }
+        },
+        "v3_own_emission": {
+          "tokens": 121248,
+          "errors": 3485,
+          "auroc": 0.6260422707080708,
+          "ap": 0.047909125669458104,
+          "top5pct": {
+            "tp": 375,
+            "fp": 5688,
+            "fn": 3110
+          }
+        }
+      },
+      "positive_overlap": {
+        "both_TP": 734,
+        "R4_only_TP": 188,
+        "V3_only_TP": 187,
+        "both_FN": 2376
+      },
+      "negative_overlap": {
+        "both_FP": 2572,
+        "R4_only_FP": 2569,
+        "V3_only_FP": 2570,
+        "both_TN": 110052
+      },
+      "common_FN_primitives": {
+        "raw_top5_quadrants": {
+          "both_raw_top5": 16,
+          "full_only_top5": 50,
+          "local_only_top5": 124,
+          "neither_raw_top5": 2186
+        },
+        "both_raw_gaps_nonpositive": 1582,
+        "neither_raw_top5_and_both_nonpositive": 1582
+      },
+      "per_method": {
+        "r4": {
+          "fn": 2563,
+          "fp": 5141,
+          "FN_raw_top5_quadrants": {
+            "both_raw_top5": 58,
+            "full_only_top5": 113,
+            "local_only_top5": 129,
+            "neither_raw_top5": 2263
+          },
+          "FP_raw_top5_quadrants": {
+            "both_raw_top5": 335,
+            "full_only_top5": 550,
+            "local_only_top5": 176,
+            "neither_raw_top5": 4080
+          },
+          "FN_with_raw_full_top5_signal": 171,
+          "FN_with_raw_local_top5_signal": 187,
+          "FN_with_either_raw_top5_signal": 300,
+          "FP_promoted_from_raw_full_below_top5": 4256,
+          "FP_promoted_from_both_raw_below_top5": 4080
+        },
+        "v3": {
+          "fn": 2564,
+          "fp": 5142,
+          "FN_raw_top5_quadrants": {
+            "both_raw_top5": 16,
+            "full_only_top5": 52,
+            "local_only_top5": 134,
+            "neither_raw_top5": 2362
+          },
+          "FP_raw_top5_quadrants": {
+            "both_raw_top5": 1182,
+            "full_only_top5": 1592,
+            "local_only_top5": 143,
+            "neither_raw_top5": 2225
+          },
+          "FN_with_raw_full_top5_signal": 68,
+          "FN_with_raw_local_top5_signal": 150,
+          "FN_with_either_raw_top5_signal": 202,
+          "FP_promoted_from_raw_full_below_top5": 2368,
+          "FP_promoted_from_both_raw_below_top5": 2225
+        }
+      },
+      "r4_stage_transitions": {
+        "r4_point_to_r4_prior": {
+          "positive_retained": 186,
+          "positive_lost": 189,
+          "positive_recovered": 729,
+          "positive_missed_both": 2381,
+          "negative_retained": 781,
+          "negative_removed": 4907,
+          "negative_promoted": 4367
+        },
+        "r4_prior_to_r4_source": {
+          "positive_retained": 912,
+          "positive_lost": 3,
+          "positive_recovered": 0,
+          "positive_missed_both": 2570,
+          "negative_retained": 5146,
+          "negative_removed": 2,
+          "negative_promoted": 5
+        },
+        "r4_source_to_r4_base": {
+          "positive_retained": 912,
+          "positive_lost": 0,
+          "positive_recovered": 0,
+          "positive_missed_both": 2573,
+          "negative_retained": 5151,
+          "negative_removed": 0,
+          "negative_promoted": 0
+        },
+        "r4_base_to_r4_unary": {
+          "positive_retained": 819,
+          "positive_lost": 93,
+          "positive_recovered": 117,
+          "positive_missed_both": 2456,
+          "negative_retained": 3584,
+          "negative_removed": 1567,
+          "negative_promoted": 1543
+        },
+        "r4_unary_to_r4": {
+          "positive_retained": 883,
+          "positive_lost": 53,
+          "positive_recovered": 39,
+          "positive_missed_both": 2510,
+          "negative_retained": 4584,
+          "negative_removed": 543,
+          "negative_promoted": 557
+        }
+      },
+      "v3_alternative_readout_contrasts": {
+        "raw_full_to_shared": {
+          "positive_retained": 332,
+          "positive_lost": 43,
+          "positive_recovered": 476,
+          "positive_missed_both": 2634,
+          "negative_retained": 3792,
+          "negative_removed": 1896,
+          "negative_promoted": 1463
+        },
+        "raw_full_to_persistent": {
+          "positive_retained": 317,
+          "positive_lost": 58,
+          "positive_recovered": 585,
+          "positive_missed_both": 2525,
+          "negative_retained": 3006,
+          "negative_removed": 2682,
+          "negative_promoted": 2155
+        },
+        "raw_full_to_v3": {
+          "positive_retained": 307,
+          "positive_lost": 68,
+          "positive_recovered": 614,
+          "positive_missed_both": 2496,
+          "negative_retained": 2774,
+          "negative_removed": 2914,
+          "negative_promoted": 2368
+        },
+        "shared_to_v3": {
+          "positive_retained": 688,
+          "positive_lost": 120,
+          "positive_recovered": 233,
+          "positive_missed_both": 2444,
+          "negative_retained": 3774,
+          "negative_removed": 1481,
+          "negative_promoted": 1368
+        },
+        "persistent_to_v3": {
+          "positive_retained": 788,
+          "positive_lost": 114,
+          "positive_recovered": 133,
+          "positive_missed_both": 2450,
+          "negative_retained": 4247,
+          "negative_removed": 914,
+          "negative_promoted": 895
+        }
+      },
+      "span_hit_diagnostics": {
+        "r4": {
+          "positive_spans": 244,
+          "observable_spans": 244,
+          "unobservable_spans": 0,
+          "any_hit": 88,
+          "complete_hit": 27,
+          "partial_hit": 61,
+          "zero_hit": 156,
+          "error_responses": 204,
+          "responses_any_hit": 79,
+          "responses_all_positive_tokens_hit": 19,
+          "any_hit_rate": 0.36065573770491804,
+          "complete_hit_rate": 0.11065573770491803
+        },
+        "v3": {
+          "positive_spans": 244,
+          "observable_spans": 244,
+          "unobservable_spans": 0,
+          "any_hit": 144,
+          "complete_hit": 39,
+          "partial_hit": 105,
+          "zero_hit": 100,
+          "error_responses": 204,
+          "responses_any_hit": 132,
+          "responses_all_positive_tokens_hit": 30,
+          "any_hit_rate": 0.5901639344262295,
+          "complete_hit_rate": 0.1598360655737705
+        }
+      },
+      "interpretation_limits": [
+        "Top5 membership is a fixed-budget relative rank, not a semantic support test; rank losses are not automatically causal harm.",
+        "Raw-stage and final-stage alarms each use their own task-wide top5 budget, not a shared numeric threshold.",
+        "V1 shared, V2 persistent and V3 witness are alternative readouts; their pairwise transitions are not sequential causal stages.",
+        "R4 prior/source calibration can introduce ties; CDF and route/innovation/stitching stages are dependent, not independent causes.",
+        "A benchmark FP is outside released positive spans, not necessarily independently verified semantic correctness; silver edit labels can miss pre-existing errors.",
+        "Span any-hit/complete-hit are added diagnostics over observable released positive spans; they do not replace official token metrics.",
+        "All populations were previously exposed and are exploratory; no new method, threshold, fitting or selection is performed."
+      ],
+      "R4_final_FN_last_top5_stage": {
+        "r4_point": 163,
+        "r4_prior": 0,
+        "r4_source": 0,
+        "r4_base": 71,
+        "r4_unary": 53,
+        "never_top5_in_any_R4_stage": 2276
+      },
+      "V3_context_algebra": {
+        "definition": "cached witness_score minus production witness_emissions(raw_full); no new inference",
+        "raw_full_top5_FN_context_negative": 68,
+        "raw_full_top5_FN_context_nonnegative": 0,
+        "raw_full_below_top5_FP_context_positive": 2368,
+        "raw_full_below_top5_FP_context_nonpositive": 0
+      },
+      "active_input_diagnostics": {
+        "r4_actual_input_view": "full",
+        "r4_FN_total": 2563,
+        "r4_FN_active_point_top5": 171,
+        "r4_FN_either_separate_raw_view_top5": 300,
+        "r4_FN_available_raw_top5_but_active_point_below_top5": 129,
+        "r4_FN_active_point_top5_but_both_separate_views_below_top5": 0,
+        "r4_FP_active_point_below_top5": 4256,
+        "r4_FN_local_only_top5_omitted_by_full_only_recipe": 129,
+        "v3_actual_input_view": "full",
+        "v3_FN_total": 2564,
+        "v3_FN_active_full_top5": 68,
+        "v3_FN_local_only_top5_not_an_input": 134,
+        "r4_active_point_to_final": {
+          "positive_lost": 171,
+          "positive_recovered": 718,
+          "negative_promoted": 4256,
+          "negative_removed": 4803
+        }
+      }
+    },
+    "Data2txt": {
+      "task": "Data2txt",
+      "scope": "post-evaluation diagnostic; original complete TEST; no new detector or tuning",
+      "population": {
+        "responses": 900,
+        "tokens": 178343,
+        "positive_tokens": 7407,
+        "negative_tokens": 170936,
+        "unknown_tokens": 0,
+        "sources": 150
+      },
+      "fixed_alarm_budget": {
+        "fraction": 0.05,
+        "ceil_tokens": 8918,
+        "unavoidable_minimum_fn": 0,
+        "maximum_token_recall_at_budget": 1.0,
+        "fn_above_budget_minimum": {
+          "r4": 5319,
+          "v3": 5687
+        }
+      },
+      "recipe": {
+        "task": "Data2txt",
+        "view": "pair",
+        "tau": 0.1,
+        "radius": 4,
+        "innovation_weight": 0.25,
+        "route_weight": 0.0
+      },
+      "metrics_diagnostic_only": {
+        "raw_full": {
+          "tokens": 178343,
+          "errors": 7407,
+          "auroc": 0.6126710619017355,
+          "ap": 0.08005006430291654,
+          "top5pct": {
+            "tp": 974,
+            "fp": 7944,
+            "fn": 6433
+          }
+        },
+        "raw_local": {
+          "tokens": 178343,
+          "errors": 7407,
+          "auroc": 0.6129604346671697,
+          "ap": 0.05910196806005512,
+          "top5pct": {
+            "tp": 683,
+            "fp": 8235,
+            "fn": 6724
+          }
+        },
+        "r4_point": {
+          "tokens": 178343,
+          "errors": 7407,
+          "auroc": 0.6185746267871148,
+          "ap": 0.06850256736735517,
+          "top5pct": {
+            "tp": 832,
+            "fp": 8086,
+            "fn": 6575
+          }
+        },
+        "raw_route": {
+          "tokens": 178343,
+          "errors": 7407,
+          "auroc": 0.5382560429249685,
+          "ap": 0.041042527326702605,
+          "top5pct": {
+            "tp": 108,
+            "fp": 8810,
+            "fn": 7299
+          }
+        },
+        "calibrated_route": {
+          "tokens": 178343,
+          "errors": 7407,
+          "auroc": 0.5382552404752553,
+          "ap": 0.04104441374736264,
+          "top5pct": {
+            "tp": 108,
+            "fp": 8810,
+            "fn": 7299
+          }
+        },
+        "r4_prior": {
+          "tokens": 178343,
+          "errors": 7407,
+          "auroc": 0.7922681394531736,
+          "ap": 0.17380206215651,
+          "top5pct": {
+            "tp": 1837,
+            "fp": 7081,
+            "fn": 5570
+          }
+        },
+        "r4_source": {
+          "tokens": 178343,
+          "errors": 7407,
+          "auroc": 0.792264816316196,
+          "ap": 0.17331364865137358,
+          "top5pct": {
+            "tp": 1837,
+            "fp": 7081,
+            "fn": 5570
+          }
+        },
+        "r4_base": {
+          "tokens": 178343,
+          "errors": 7407,
+          "auroc": 0.792264816316196,
+          "ap": 0.17331364865137358,
+          "top5pct": {
+            "tp": 1837,
+            "fp": 7081,
+            "fn": 5570
+          }
+        },
+        "r4_unary": {
+          "tokens": 178343,
+          "errors": 7407,
+          "auroc": 0.7968181813672706,
+          "ap": 0.1804695415574292,
+          "top5pct": {
+            "tp": 2044,
+            "fp": 6874,
+            "fn": 5363
+          }
+        },
+        "shared": {
+          "tokens": 178343,
+          "errors": 7407,
+          "auroc": 0.6996171316543672,
+          "ap": 0.11256541576003871,
+          "top5pct": {
+            "tp": 1319,
+            "fp": 7599,
+            "fn": 6088
+          }
+        },
+        "persistent": {
+          "tokens": 178343,
+          "errors": 7407,
+          "auroc": 0.7138943572361683,
+          "ap": 0.12474609586026811,
+          "top5pct": {
+            "tp": 1491,
+            "fp": 7427,
+            "fn": 5916
+          }
+        },
+        "r4": {
+          "tokens": 178343,
+          "errors": 7407,
+          "auroc": 0.7983175341726212,
+          "ap": 0.19039233281639545,
+          "top5pct": {
+            "tp": 2088,
+            "fp": 6830,
+            "fn": 5319
+          }
+        },
+        "v3": {
+          "tokens": 178343,
+          "errors": 7407,
+          "auroc": 0.7557158856401491,
+          "ap": 0.14520939411036432,
+          "top5pct": {
+            "tp": 1720,
+            "fp": 7198,
+            "fn": 5687
+          }
+        },
+        "v3_own_emission": {
+          "tokens": 178343,
+          "errors": 7407,
+          "auroc": 0.6126710615068292,
+          "ap": 0.08005006424294654,
+          "top5pct": {
+            "tp": 974,
+            "fp": 7944,
+            "fn": 6433
+          }
+        }
+      },
+      "positive_overlap": {
+        "both_TP": 1180,
+        "R4_only_TP": 908,
+        "V3_only_TP": 540,
+        "both_FN": 4779
+      },
+      "negative_overlap": {
+        "both_FP": 2534,
+        "R4_only_FP": 4296,
+        "V3_only_FP": 4664,
+        "both_TN": 159442
+      },
+      "common_FN_primitives": {
+        "raw_top5_quadrants": {
+          "both_raw_top5": 32,
+          "full_only_top5": 162,
+          "local_only_top5": 176,
+          "neither_raw_top5": 4409
+        },
+        "both_raw_gaps_nonpositive": 2823,
+        "neither_raw_top5_and_both_nonpositive": 2823
+      },
+      "per_method": {
+        "r4": {
+          "fn": 5319,
+          "fp": 6830,
+          "FN_raw_top5_quadrants": {
+            "both_raw_top5": 168,
+            "full_only_top5": 340,
+            "local_only_top5": 185,
+            "neither_raw_top5": 4626
+          },
+          "FP_raw_top5_quadrants": {
+            "both_raw_top5": 293,
+            "full_only_top5": 622,
+            "local_only_top5": 538,
+            "neither_raw_top5": 5377
+          },
+          "FN_with_raw_full_top5_signal": 508,
+          "FN_with_raw_local_top5_signal": 353,
+          "FN_with_either_raw_top5_signal": 693,
+          "FP_promoted_from_raw_full_below_top5": 5915,
+          "FP_promoted_from_both_raw_below_top5": 5377
+        },
+        "v3": {
+          "fn": 5687,
+          "fp": 7198,
+          "FN_raw_top5_quadrants": {
+            "both_raw_top5": 41,
+            "full_only_top5": 170,
+            "local_only_top5": 239,
+            "neither_raw_top5": 5237
+          },
+          "FP_raw_top5_quadrants": {
+            "both_raw_top5": 1043,
+            "full_only_top5": 2520,
+            "local_only_top5": 181,
+            "neither_raw_top5": 3454
+          },
+          "FN_with_raw_full_top5_signal": 211,
+          "FN_with_raw_local_top5_signal": 280,
+          "FN_with_either_raw_top5_signal": 450,
+          "FP_promoted_from_raw_full_below_top5": 3635,
+          "FP_promoted_from_both_raw_below_top5": 3454
+        }
+      },
+      "r4_stage_transitions": {
+        "r4_point_to_r4_prior": {
+          "positive_retained": 327,
+          "positive_lost": 505,
+          "positive_recovered": 1510,
+          "positive_missed_both": 5065,
+          "negative_retained": 857,
+          "negative_removed": 7229,
+          "negative_promoted": 6224
+        },
+        "r4_prior_to_r4_source": {
+          "positive_retained": 1837,
+          "positive_lost": 0,
+          "positive_recovered": 0,
+          "positive_missed_both": 5570,
+          "negative_retained": 7081,
+          "negative_removed": 0,
+          "negative_promoted": 0
+        },
+        "r4_source_to_r4_base": {
+          "positive_retained": 1837,
+          "positive_lost": 0,
+          "positive_recovered": 0,
+          "positive_missed_both": 5570,
+          "negative_retained": 7081,
+          "negative_removed": 0,
+          "negative_promoted": 0
+        },
+        "r4_base_to_r4_unary": {
+          "positive_retained": 1563,
+          "positive_lost": 274,
+          "positive_recovered": 481,
+          "positive_missed_both": 5089,
+          "negative_retained": 4998,
+          "negative_removed": 2083,
+          "negative_promoted": 1876
+        },
+        "r4_unary_to_r4": {
+          "positive_retained": 1949,
+          "positive_lost": 95,
+          "positive_recovered": 139,
+          "positive_missed_both": 5224,
+          "negative_retained": 6081,
+          "negative_removed": 793,
+          "negative_promoted": 749
+        }
+      },
+      "v3_alternative_readout_contrasts": {
+        "raw_full_to_shared": {
+          "positive_retained": 834,
+          "positive_lost": 140,
+          "positive_recovered": 485,
+          "positive_missed_both": 5948,
+          "negative_retained": 4561,
+          "negative_removed": 3383,
+          "negative_promoted": 3038
+        },
+        "raw_full_to_persistent": {
+          "positive_retained": 759,
+          "positive_lost": 215,
+          "positive_recovered": 732,
+          "positive_missed_both": 5701,
+          "negative_retained": 3557,
+          "negative_removed": 4387,
+          "negative_promoted": 3870
+        },
+        "raw_full_to_v3": {
+          "positive_retained": 763,
+          "positive_lost": 211,
+          "positive_recovered": 957,
+          "positive_missed_both": 5476,
+          "negative_retained": 3563,
+          "negative_removed": 4381,
+          "negative_promoted": 3635
+        },
+        "shared_to_v3": {
+          "positive_retained": 1149,
+          "positive_lost": 170,
+          "positive_recovered": 571,
+          "positive_missed_both": 5517,
+          "negative_retained": 5294,
+          "negative_removed": 2305,
+          "negative_promoted": 1904
+        },
+        "persistent_to_v3": {
+          "positive_retained": 1355,
+          "positive_lost": 136,
+          "positive_recovered": 365,
+          "positive_missed_both": 5551,
+          "negative_retained": 5799,
+          "negative_removed": 1628,
+          "negative_promoted": 1399
+        }
+      },
+      "span_hit_diagnostics": {
+        "r4": {
+          "positive_spans": 1054,
+          "observable_spans": 1054,
+          "unobservable_spans": 0,
+          "any_hit": 340,
+          "complete_hit": 168,
+          "partial_hit": 172,
+          "zero_hit": 714,
+          "error_responses": 579,
+          "responses_any_hit": 261,
+          "responses_all_positive_tokens_hit": 53,
+          "any_hit_rate": 0.3225806451612903,
+          "complete_hit_rate": 0.15939278937381404
+        },
+        "v3": {
+          "positive_spans": 1054,
+          "observable_spans": 1054,
+          "unobservable_spans": 0,
+          "any_hit": 483,
+          "complete_hit": 125,
+          "partial_hit": 358,
+          "zero_hit": 571,
+          "error_responses": 579,
+          "responses_any_hit": 351,
+          "responses_all_positive_tokens_hit": 46,
+          "any_hit_rate": 0.45825426944971537,
+          "complete_hit_rate": 0.11859582542694497
+        }
+      },
+      "interpretation_limits": [
+        "Top5 membership is a fixed-budget relative rank, not a semantic support test; rank losses are not automatically causal harm.",
+        "Raw-stage and final-stage alarms each use their own task-wide top5 budget, not a shared numeric threshold.",
+        "V1 shared, V2 persistent and V3 witness are alternative readouts; their pairwise transitions are not sequential causal stages.",
+        "R4 prior/source calibration can introduce ties; CDF and route/innovation/stitching stages are dependent, not independent causes.",
+        "A benchmark FP is outside released positive spans, not necessarily independently verified semantic correctness; silver edit labels can miss pre-existing errors.",
+        "Span any-hit/complete-hit are added diagnostics over observable released positive spans; they do not replace official token metrics.",
+        "All populations were previously exposed and are exploratory; no new method, threshold, fitting or selection is performed."
+      ],
+      "R4_final_FN_last_top5_stage": {
+        "r4_point": 383,
+        "r4_prior": 0,
+        "r4_source": 0,
+        "r4_base": 220,
+        "r4_unary": 95,
+        "never_top5_in_any_R4_stage": 4621
+      },
+      "V3_context_algebra": {
+        "definition": "cached witness_score minus production witness_emissions(raw_full); no new inference",
+        "raw_full_top5_FN_context_negative": 181,
+        "raw_full_top5_FN_context_nonnegative": 30,
+        "raw_full_below_top5_FP_context_positive": 3635,
+        "raw_full_below_top5_FP_context_nonpositive": 0
+      },
+      "active_input_diagnostics": {
+        "r4_actual_input_view": "pair",
+        "r4_FN_total": 5319,
+        "r4_FN_active_point_top5": 415,
+        "r4_FN_either_separate_raw_view_top5": 693,
+        "r4_FN_available_raw_top5_but_active_point_below_top5": 284,
+        "r4_FN_active_point_top5_but_both_separate_views_below_top5": 6,
+        "r4_FP_active_point_below_top5": 5869,
+        "r4_FN_local_only_top5_omitted_by_full_only_recipe": 0,
+        "v3_actual_input_view": "full",
+        "v3_FN_total": 5687,
+        "v3_FN_active_full_top5": 211,
+        "v3_FN_local_only_top5_not_an_input": 239,
+        "r4_active_point_to_final": {
+          "positive_lost": 415,
+          "positive_recovered": 1671,
+          "negative_promoted": 5869,
+          "negative_removed": 7125
+        }
+      }
+    },
+    "FinQA": {
+      "task": "FinQA",
+      "scope": "post-evaluation diagnostic; original complete TEST; no new detector or tuning",
+      "population": {
+        "responses": 162,
+        "tokens": 16047,
+        "positive_tokens": 1420,
+        "negative_tokens": 14627,
+        "unknown_tokens": 0,
+        "sources": 142
+      },
+      "fixed_alarm_budget": {
+        "fraction": 0.05,
+        "ceil_tokens": 803,
+        "unavoidable_minimum_fn": 617,
+        "maximum_token_recall_at_budget": 0.5654929577464789,
+        "fn_above_budget_minimum": {
+          "r4": 670,
+          "v3": 430
+        }
+      },
+      "recipe": {
+        "task": "QA",
+        "view": "pair",
+        "tau": 0.1,
+        "radius": 2,
+        "innovation_weight": 0.1,
+        "route_weight": 0.25
+      },
+      "metrics_diagnostic_only": {
+        "raw_full": {
+          "tokens": 16047,
+          "errors": 1420,
+          "auroc": 0.6374805130777831,
+          "ap": 0.1937324465880599,
+          "top5pct": {
+            "tp": 210,
+            "fp": 593,
+            "fn": 1210
+          }
+        },
+        "raw_local": {
+          "tokens": 16047,
+          "errors": 1420,
+          "auroc": 0.5720168519147978,
+          "ap": 0.15026010409822432,
+          "top5pct": {
+            "tp": 188,
+            "fp": 615,
+            "fn": 1232
+          }
+        },
+        "r4_point": {
+          "tokens": 16047,
+          "errors": 1420,
+          "auroc": 0.5930504267142473,
+          "ap": 0.1652052590576042,
+          "top5pct": {
+            "tp": 199,
+            "fp": 604,
+            "fn": 1221
+          }
+        },
+        "raw_route": {
+          "tokens": 16047,
+          "errors": 1420,
+          "auroc": 0.44267026923969466,
+          "ap": 0.07142398925225377,
+          "top5pct": {
+            "tp": 13,
+            "fp": 790,
+            "fn": 1407
+          }
+        },
+        "calibrated_route": {
+          "tokens": 16047,
+          "errors": 1420,
+          "auroc": 0.44272727360264685,
+          "ap": 0.07141084410106119,
+          "top5pct": {
+            "tp": 12,
+            "fp": 791,
+            "fn": 1408
+          }
+        },
+        "r4_prior": {
+          "tokens": 16047,
+          "errors": 1420,
+          "auroc": 0.7228554997173855,
+          "ap": 0.2854704726384154,
+          "top5pct": {
+            "tp": 291,
+            "fp": 512,
+            "fn": 1129
+          }
+        },
+        "r4_source": {
+          "tokens": 16047,
+          "errors": 1420,
+          "auroc": 0.7228307528909013,
+          "ap": 0.28506575998088624,
+          "top5pct": {
+            "tp": 291,
+            "fp": 512,
+            "fn": 1129
+          }
+        },
+        "r4_base": {
+          "tokens": 16047,
+          "errors": 1420,
+          "auroc": 0.6619917632547181,
+          "ap": 0.14927956079293345,
+          "top5pct": {
+            "tp": 160,
+            "fp": 643,
+            "fn": 1260
+          }
+        },
+        "r4_unary": {
+          "tokens": 16047,
+          "errors": 1420,
+          "auroc": 0.6663867563073114,
+          "ap": 0.15060924216170785,
+          "top5pct": {
+            "tp": 148,
+            "fp": 655,
+            "fn": 1272
+          }
+        },
+        "shared": {
+          "tokens": 16047,
+          "errors": 1420,
+          "auroc": 0.7282753195181204,
+          "ap": 0.2571519682552837,
+          "top5pct": {
+            "tp": 314,
+            "fp": 489,
+            "fn": 1106
+          }
+        },
+        "persistent": {
+          "tokens": 16047,
+          "errors": 1420,
+          "auroc": 0.7355890659469224,
+          "ap": 0.2790194575850415,
+          "top5pct": {
+            "tp": 341,
+            "fp": 462,
+            "fn": 1079
+          }
+        },
+        "r4": {
+          "tokens": 16047,
+          "errors": 1420,
+          "auroc": 0.6616713544409961,
+          "ap": 0.14523095263723632,
+          "top5pct": {
+            "tp": 133,
+            "fp": 670,
+            "fn": 1287
+          }
+        },
+        "v3": {
+          "tokens": 16047,
+          "errors": 1420,
+          "auroc": 0.8026560951818795,
+          "ap": 0.32503333438396675,
+          "top5pct": {
+            "tp": 373,
+            "fp": 430,
+            "fn": 1047
+          }
+        },
+        "v3_own_emission": {
+          "tokens": 16047,
+          "errors": 1420,
+          "auroc": 0.6374805130777831,
+          "ap": 0.1937324465880599,
+          "top5pct": {
+            "tp": 210,
+            "fp": 593,
+            "fn": 1210
+          }
+        }
+      },
+      "positive_overlap": {
+        "both_TP": 72,
+        "R4_only_TP": 61,
+        "V3_only_TP": 301,
+        "both_FN": 986
+      },
+      "negative_overlap": {
+        "both_FP": 50,
+        "R4_only_FP": 620,
+        "V3_only_FP": 380,
+        "both_TN": 13577
+      },
+      "common_FN_primitives": {
+        "raw_top5_quadrants": {
+          "both_raw_top5": 18,
+          "full_only_top5": 29,
+          "local_only_top5": 65,
+          "neither_raw_top5": 874
+        },
+        "both_raw_gaps_nonpositive": 463,
+        "neither_raw_top5_and_both_nonpositive": 463
+      },
+      "per_method": {
+        "r4": {
+          "fn": 1287,
+          "fp": 670,
+          "FN_raw_top5_quadrants": {
+            "both_raw_top5": 88,
+            "full_only_top5": 98,
+            "local_only_top5": 74,
+            "neither_raw_top5": 1027
+          },
+          "FP_raw_top5_quadrants": {
+            "both_raw_top5": 10,
+            "full_only_top5": 17,
+            "local_only_top5": 49,
+            "neither_raw_top5": 594
+          },
+          "FN_with_raw_full_top5_signal": 186,
+          "FN_with_raw_local_top5_signal": 162,
+          "FN_with_either_raw_top5_signal": 260,
+          "FP_promoted_from_raw_full_below_top5": 643,
+          "FP_promoted_from_both_raw_below_top5": 594
+        },
+        "v3": {
+          "fn": 1047,
+          "fp": 430,
+          "FN_raw_top5_quadrants": {
+            "both_raw_top5": 19,
+            "full_only_top5": 29,
+            "local_only_top5": 74,
+            "neither_raw_top5": 925
+          },
+          "FP_raw_top5_quadrants": {
+            "both_raw_top5": 114,
+            "full_only_top5": 99,
+            "local_only_top5": 9,
+            "neither_raw_top5": 208
+          },
+          "FN_with_raw_full_top5_signal": 48,
+          "FN_with_raw_local_top5_signal": 93,
+          "FN_with_either_raw_top5_signal": 122,
+          "FP_promoted_from_raw_full_below_top5": 217,
+          "FP_promoted_from_both_raw_below_top5": 208
+        }
+      },
+      "r4_stage_transitions": {
+        "r4_point_to_r4_prior": {
+          "positive_retained": 62,
+          "positive_lost": 137,
+          "positive_recovered": 229,
+          "positive_missed_both": 992,
+          "negative_retained": 54,
+          "negative_removed": 550,
+          "negative_promoted": 458
+        },
+        "r4_prior_to_r4_source": {
+          "positive_retained": 291,
+          "positive_lost": 0,
+          "positive_recovered": 0,
+          "positive_missed_both": 1129,
+          "negative_retained": 512,
+          "negative_removed": 0,
+          "negative_promoted": 0
+        },
+        "r4_source_to_r4_base": {
+          "positive_retained": 156,
+          "positive_lost": 135,
+          "positive_recovered": 4,
+          "positive_missed_both": 1125,
+          "negative_retained": 395,
+          "negative_removed": 117,
+          "negative_promoted": 248
+        },
+        "r4_base_to_r4_unary": {
+          "positive_retained": 136,
+          "positive_lost": 24,
+          "positive_recovered": 12,
+          "positive_missed_both": 1248,
+          "negative_retained": 576,
+          "negative_removed": 67,
+          "negative_promoted": 79
+        },
+        "r4_unary_to_r4": {
+          "positive_retained": 127,
+          "positive_lost": 21,
+          "positive_recovered": 6,
+          "positive_missed_both": 1266,
+          "negative_retained": 631,
+          "negative_removed": 24,
+          "negative_promoted": 39
+        }
+      },
+      "v3_alternative_readout_contrasts": {
+        "raw_full_to_shared": {
+          "positive_retained": 166,
+          "positive_lost": 44,
+          "positive_recovered": 148,
+          "positive_missed_both": 1062,
+          "negative_retained": 260,
+          "negative_removed": 333,
+          "negative_promoted": 229
+        },
+        "raw_full_to_persistent": {
+          "positive_retained": 152,
+          "positive_lost": 58,
+          "positive_recovered": 189,
+          "positive_missed_both": 1021,
+          "negative_retained": 206,
+          "negative_removed": 387,
+          "negative_promoted": 256
+        },
+        "raw_full_to_v3": {
+          "positive_retained": 162,
+          "positive_lost": 48,
+          "positive_recovered": 211,
+          "positive_missed_both": 999,
+          "negative_retained": 213,
+          "negative_removed": 380,
+          "negative_promoted": 217
+        },
+        "shared_to_v3": {
+          "positive_retained": 263,
+          "positive_lost": 51,
+          "positive_recovered": 110,
+          "positive_missed_both": 996,
+          "negative_retained": 339,
+          "negative_removed": 150,
+          "negative_promoted": 91
+        },
+        "persistent_to_v3": {
+          "positive_retained": 293,
+          "positive_lost": 48,
+          "positive_recovered": 80,
+          "positive_missed_both": 999,
+          "negative_retained": 341,
+          "negative_removed": 121,
+          "negative_promoted": 89
+        }
+      },
+      "span_hit_diagnostics": {
+        "r4": {
+          "positive_spans": 229,
+          "observable_spans": 229,
+          "unobservable_spans": 0,
+          "any_hit": 19,
+          "complete_hit": 2,
+          "partial_hit": 17,
+          "zero_hit": 210,
+          "error_responses": 105,
+          "responses_any_hit": 18,
+          "responses_all_positive_tokens_hit": 0,
+          "any_hit_rate": 0.08296943231441048,
+          "complete_hit_rate": 0.008733624454148471
+        },
+        "v3": {
+          "positive_spans": 229,
+          "observable_spans": 229,
+          "unobservable_spans": 0,
+          "any_hit": 85,
+          "complete_hit": 11,
+          "partial_hit": 74,
+          "zero_hit": 144,
+          "error_responses": 105,
+          "responses_any_hit": 69,
+          "responses_all_positive_tokens_hit": 3,
+          "any_hit_rate": 0.37117903930131,
+          "complete_hit_rate": 0.048034934497816595
+        }
+      },
+      "interpretation_limits": [
+        "Top5 membership is a fixed-budget relative rank, not a semantic support test; rank losses are not automatically causal harm.",
+        "Raw-stage and final-stage alarms each use their own task-wide top5 budget, not a shared numeric threshold.",
+        "V1 shared, V2 persistent and V3 witness are alternative readouts; their pairwise transitions are not sequential causal stages.",
+        "R4 prior/source calibration can introduce ties; CDF and route/innovation/stitching stages are dependent, not independent causes.",
+        "A benchmark FP is outside released positive spans, not necessarily independently verified semantic correctness; silver edit labels can miss pre-existing errors.",
+        "Span any-hit/complete-hit are added diagnostics over observable released positive spans; they do not replace official token metrics.",
+        "All populations were previously exposed and are exploratory; no new method, threshold, fitting or selection is performed."
+      ],
+      "R4_final_FN_last_top5_stage": {
+        "r4_point": 135,
+        "r4_prior": 0,
+        "r4_source": 129,
+        "r4_base": 20,
+        "r4_unary": 21,
+        "never_top5_in_any_R4_stage": 982
+      },
+      "V3_context_algebra": {
+        "definition": "cached witness_score minus production witness_emissions(raw_full); no new inference",
+        "raw_full_top5_FN_context_negative": 37,
+        "raw_full_top5_FN_context_nonnegative": 11,
+        "raw_full_below_top5_FP_context_positive": 217,
+        "raw_full_below_top5_FP_context_nonpositive": 0
+      },
+      "active_input_diagnostics": {
+        "r4_actual_input_view": "pair",
+        "r4_FN_total": 1287,
+        "r4_FN_active_point_top5": 169,
+        "r4_FN_either_separate_raw_view_top5": 260,
+        "r4_FN_available_raw_top5_but_active_point_below_top5": 92,
+        "r4_FN_active_point_top5_but_both_separate_views_below_top5": 1,
+        "r4_FP_active_point_below_top5": 617,
+        "r4_FN_local_only_top5_omitted_by_full_only_recipe": 0,
+        "v3_actual_input_view": "full",
+        "v3_FN_total": 1047,
+        "v3_FN_active_full_top5": 48,
+        "v3_FN_local_only_top5_not_an_input": 74,
+        "r4_active_point_to_final": {
+          "positive_lost": 169,
+          "positive_recovered": 103,
+          "negative_promoted": 617,
+          "negative_removed": 551
+        }
+      }
+    },
+    "TATQA": {
+      "task": "TATQA",
+      "scope": "post-evaluation diagnostic; original complete TEST; no new detector or tuning",
+      "population": {
+        "responses": 130,
+        "tokens": 7747,
+        "positive_tokens": 828,
+        "negative_tokens": 6919,
+        "unknown_tokens": 0,
+        "sources": 110
+      },
+      "fixed_alarm_budget": {
+        "fraction": 0.05,
+        "ceil_tokens": 388,
+        "unavoidable_minimum_fn": 440,
+        "maximum_token_recall_at_budget": 0.46859903381642515,
+        "fn_above_budget_minimum": {
+          "r4": 287,
+          "v3": 132
+        }
+      },
+      "recipe": {
+        "task": "QA",
+        "view": "pair",
+        "tau": 0.1,
+        "radius": 2,
+        "innovation_weight": 0.1,
+        "route_weight": 0.25
+      },
+      "metrics_diagnostic_only": {
+        "raw_full": {
+          "tokens": 7747,
+          "errors": 828,
+          "auroc": 0.6869264637806837,
+          "ap": 0.2811216710280864,
+          "top5pct": {
+            "tp": 158,
+            "fp": 230,
+            "fn": 670
+          }
+        },
+        "raw_local": {
+          "tokens": 7747,
+          "errors": 828,
+          "auroc": 0.629103644448913,
+          "ap": 0.24559982109460726,
+          "top5pct": {
+            "tp": 143,
+            "fp": 245,
+            "fn": 685
+          }
+        },
+        "r4_point": {
+          "tokens": 7747,
+          "errors": 828,
+          "auroc": 0.649406206950964,
+          "ap": 0.2602814886771031,
+          "top5pct": {
+            "tp": 154,
+            "fp": 234,
+            "fn": 674
+          }
+        },
+        "raw_route": {
+          "tokens": 7747,
+          "errors": 828,
+          "auroc": 0.5370100395675844,
+          "ap": 0.10367344016305786,
+          "top5pct": {
+            "tp": 13,
+            "fp": 375,
+            "fn": 815
+          }
+        },
+        "calibrated_route": {
+          "tokens": 7747,
+          "errors": 828,
+          "auroc": 0.536912202832919,
+          "ap": 0.10363488116882996,
+          "top5pct": {
+            "tp": 13,
+            "fp": 375,
+            "fn": 815
+          }
+        },
+        "r4_prior": {
+          "tokens": 7747,
+          "errors": 828,
+          "auroc": 0.748063600685084,
+          "ap": 0.43863257563087416,
+          "top5pct": {
+            "tp": 249,
+            "fp": 139,
+            "fn": 579
+          }
+        },
+        "r4_source": {
+          "tokens": 7747,
+          "errors": 828,
+          "auroc": 0.7480457963194536,
+          "ap": 0.43865789653173837,
+          "top5pct": {
+            "tp": 249,
+            "fp": 139,
+            "fn": 579
+          }
+        },
+        "r4_base": {
+          "tokens": 7747,
+          "errors": 828,
+          "auroc": 0.7062321563600336,
+          "ap": 0.23243475670351055,
+          "top5pct": {
+            "tp": 103,
+            "fp": 285,
+            "fn": 725
+          }
+        },
+        "r4_unary": {
+          "tokens": 7747,
+          "errors": 828,
+          "auroc": 0.7160148697872484,
+          "ap": 0.23161247899989185,
+          "top5pct": {
+            "tp": 108,
+            "fp": 280,
+            "fn": 720
+          }
+        },
+        "shared": {
+          "tokens": 7747,
+          "errors": 828,
+          "auroc": 0.7687692924265813,
+          "ap": 0.3558645756663416,
+          "top5pct": {
+            "tp": 205,
+            "fp": 183,
+            "fn": 623
+          }
+        },
+        "persistent": {
+          "tokens": 7747,
+          "errors": 828,
+          "auroc": 0.7897869969481223,
+          "ap": 0.38379839582295966,
+          "top5pct": {
+            "tp": 212,
+            "fp": 176,
+            "fn": 616
+          }
+        },
+        "r4": {
+          "tokens": 7747,
+          "errors": 828,
+          "auroc": 0.7110491100260921,
+          "ap": 0.2209407203172758,
+          "top5pct": {
+            "tp": 101,
+            "fp": 287,
+            "fn": 727
+          }
+        },
+        "v3": {
+          "tokens": 7747,
+          "errors": 828,
+          "auroc": 0.842991503477437,
+          "ap": 0.4657224398505556,
+          "top5pct": {
+            "tp": 256,
+            "fp": 132,
+            "fn": 572
+          }
+        },
+        "v3_own_emission": {
+          "tokens": 7747,
+          "errors": 828,
+          "auroc": 0.6869264637806837,
+          "ap": 0.2811216710280864,
+          "top5pct": {
+            "tp": 158,
+            "fp": 230,
+            "fn": 670
+          }
+        }
+      },
+      "positive_overlap": {
+        "both_TP": 64,
+        "R4_only_TP": 37,
+        "V3_only_TP": 192,
+        "both_FN": 535
+      },
+      "negative_overlap": {
+        "both_FP": 23,
+        "R4_only_FP": 264,
+        "V3_only_FP": 109,
+        "both_TN": 6523
+      },
+      "common_FN_primitives": {
+        "raw_top5_quadrants": {
+          "both_raw_top5": 16,
+          "full_only_top5": 17,
+          "local_only_top5": 34,
+          "neither_raw_top5": 468
+        },
+        "both_raw_gaps_nonpositive": 264,
+        "neither_raw_top5_and_both_nonpositive": 264
+      },
+      "per_method": {
+        "r4": {
+          "fn": 727,
+          "fp": 287,
+          "FN_raw_top5_quadrants": {
+            "both_raw_top5": 85,
+            "full_only_top5": 49,
+            "local_only_top5": 35,
+            "neither_raw_top5": 558
+          },
+          "FP_raw_top5_quadrants": {
+            "both_raw_top5": 2,
+            "full_only_top5": 5,
+            "local_only_top5": 24,
+            "neither_raw_top5": 256
+          },
+          "FN_with_raw_full_top5_signal": 134,
+          "FN_with_raw_local_top5_signal": 120,
+          "FN_with_either_raw_top5_signal": 169,
+          "FP_promoted_from_raw_full_below_top5": 280,
+          "FP_promoted_from_both_raw_below_top5": 256
+        },
+        "v3": {
+          "fn": 572,
+          "fp": 132,
+          "FN_raw_top5_quadrants": {
+            "both_raw_top5": 16,
+            "full_only_top5": 18,
+            "local_only_top5": 40,
+            "neither_raw_top5": 498
+          },
+          "FP_raw_top5_quadrants": {
+            "both_raw_top5": 37,
+            "full_only_top5": 39,
+            "local_only_top5": 2,
+            "neither_raw_top5": 54
+          },
+          "FN_with_raw_full_top5_signal": 34,
+          "FN_with_raw_local_top5_signal": 56,
+          "FN_with_either_raw_top5_signal": 74,
+          "FP_promoted_from_raw_full_below_top5": 56,
+          "FP_promoted_from_both_raw_below_top5": 54
+        }
+      },
+      "r4_stage_transitions": {
+        "r4_point_to_r4_prior": {
+          "positive_retained": 58,
+          "positive_lost": 96,
+          "positive_recovered": 191,
+          "positive_missed_both": 483,
+          "negative_retained": 16,
+          "negative_removed": 218,
+          "negative_promoted": 123
+        },
+        "r4_prior_to_r4_source": {
+          "positive_retained": 249,
+          "positive_lost": 0,
+          "positive_recovered": 0,
+          "positive_missed_both": 579,
+          "negative_retained": 139,
+          "negative_removed": 0,
+          "negative_promoted": 0
+        },
+        "r4_source_to_r4_base": {
+          "positive_retained": 101,
+          "positive_lost": 148,
+          "positive_recovered": 2,
+          "positive_missed_both": 577,
+          "negative_retained": 98,
+          "negative_removed": 41,
+          "negative_promoted": 187
+        },
+        "r4_base_to_r4_unary": {
+          "positive_retained": 88,
+          "positive_lost": 15,
+          "positive_recovered": 20,
+          "positive_missed_both": 705,
+          "negative_retained": 248,
+          "negative_removed": 37,
+          "negative_promoted": 32
+        },
+        "r4_unary_to_r4": {
+          "positive_retained": 97,
+          "positive_lost": 11,
+          "positive_recovered": 4,
+          "positive_missed_both": 716,
+          "negative_retained": 273,
+          "negative_removed": 7,
+          "negative_promoted": 14
+        }
+      },
+      "v3_alternative_readout_contrasts": {
+        "raw_full_to_shared": {
+          "positive_retained": 128,
+          "positive_lost": 30,
+          "positive_recovered": 77,
+          "positive_missed_both": 593,
+          "negative_retained": 93,
+          "negative_removed": 137,
+          "negative_promoted": 90
+        },
+        "raw_full_to_persistent": {
+          "positive_retained": 120,
+          "positive_lost": 38,
+          "positive_recovered": 92,
+          "positive_missed_both": 578,
+          "negative_retained": 82,
+          "negative_removed": 148,
+          "negative_promoted": 94
+        },
+        "raw_full_to_v3": {
+          "positive_retained": 124,
+          "positive_lost": 34,
+          "positive_recovered": 132,
+          "positive_missed_both": 538,
+          "negative_retained": 76,
+          "negative_removed": 154,
+          "negative_promoted": 56
+        },
+        "shared_to_v3": {
+          "positive_retained": 185,
+          "positive_lost": 20,
+          "positive_recovered": 71,
+          "positive_missed_both": 552,
+          "negative_retained": 94,
+          "negative_removed": 89,
+          "negative_promoted": 38
+        },
+        "persistent_to_v3": {
+          "positive_retained": 198,
+          "positive_lost": 14,
+          "positive_recovered": 58,
+          "positive_missed_both": 558,
+          "negative_retained": 116,
+          "negative_removed": 60,
+          "negative_promoted": 16
+        }
+      },
+      "span_hit_diagnostics": {
+        "r4": {
+          "positive_spans": 156,
+          "observable_spans": 156,
+          "unobservable_spans": 0,
+          "any_hit": 16,
+          "complete_hit": 5,
+          "partial_hit": 11,
+          "zero_hit": 140,
+          "error_responses": 78,
+          "responses_any_hit": 15,
+          "responses_all_positive_tokens_hit": 1,
+          "any_hit_rate": 0.10256410256410256,
+          "complete_hit_rate": 0.03205128205128205
+        },
+        "v3": {
+          "positive_spans": 156,
+          "observable_spans": 156,
+          "unobservable_spans": 0,
+          "any_hit": 61,
+          "complete_hit": 12,
+          "partial_hit": 49,
+          "zero_hit": 95,
+          "error_responses": 78,
+          "responses_any_hit": 55,
+          "responses_all_positive_tokens_hit": 5,
+          "any_hit_rate": 0.391025641025641,
+          "complete_hit_rate": 0.07692307692307693
+        }
+      },
+      "interpretation_limits": [
+        "Top5 membership is a fixed-budget relative rank, not a semantic support test; rank losses are not automatically causal harm.",
+        "Raw-stage and final-stage alarms each use their own task-wide top5 budget, not a shared numeric threshold.",
+        "V1 shared, V2 persistent and V3 witness are alternative readouts; their pairwise transitions are not sequential causal stages.",
+        "R4 prior/source calibration can introduce ties; CDF and route/innovation/stitching stages are dependent, not independent causes.",
+        "A benchmark FP is outside released positive spans, not necessarily independently verified semantic correctness; silver edit labels can miss pre-existing errors.",
+        "Span any-hit/complete-hit are added diagnostics over observable released positive spans; they do not replace official token metrics.",
+        "All populations were previously exposed and are exploratory; no new method, threshold, fitting or selection is performed."
+      ],
+      "R4_final_FN_last_top5_stage": {
+        "r4_point": 95,
+        "r4_prior": 0,
+        "r4_source": 127,
+        "r4_base": 13,
+        "r4_unary": 11,
+        "never_top5_in_any_R4_stage": 481
+      },
+      "V3_context_algebra": {
+        "definition": "cached witness_score minus production witness_emissions(raw_full); no new inference",
+        "raw_full_top5_FN_context_negative": 30,
+        "raw_full_top5_FN_context_nonnegative": 4,
+        "raw_full_below_top5_FP_context_positive": 56,
+        "raw_full_below_top5_FP_context_nonpositive": 0
+      },
+      "active_input_diagnostics": {
+        "r4_actual_input_view": "pair",
+        "r4_FN_total": 727,
+        "r4_FN_active_point_top5": 128,
+        "r4_FN_either_separate_raw_view_top5": 169,
+        "r4_FN_available_raw_top5_but_active_point_below_top5": 42,
+        "r4_FN_active_point_top5_but_both_separate_views_below_top5": 1,
+        "r4_FP_active_point_below_top5": 268,
+        "r4_FN_local_only_top5_omitted_by_full_only_recipe": 0,
+        "v3_actual_input_view": "full",
+        "v3_FN_total": 572,
+        "v3_FN_active_full_top5": 34,
+        "v3_FN_local_only_top5_not_an_input": 40,
+        "r4_active_point_to_final": {
+          "positive_lost": 128,
+          "positive_recovered": 75,
+          "negative_promoted": 268,
+          "negative_removed": 215
+        }
+      }
+    }
+  },
+  "unperformed_checks": [
+    "No causal source intervention or new LM measurement",
+    "No retuned route/calibration/mixture parameters",
+    "No empirical choice of a new module or detector",
+    "No untouched confirmation evaluation for a revised method"
+  ],
+  "source_grounded_examples_note": "Source quotes are exact substring offsets in the bound original prepared source; stage/rank comparisons are descriptive, not new causal interventions."
+}

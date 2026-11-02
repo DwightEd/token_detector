@@ -265,3 +265,8 @@ llama_relational_archive,Llama-3.1-8B-Instruct,Relational world_shared,FinQA,0.6
 llama_relational_archive,Llama-3.1-8B-Instruct,Relational world_shared,TATQA,0.674423,0.305032,financial_silver,rejected_historical_candidate,experiments/EXPERIMENTS.md,
 llama_relational_archive,Llama-3.1-8B-Instruct,Same-run SDPA shared control,FinQA,0.729517,0.260282,financial_silver,matched_historical_control,experiments/EXPERIMENTS.md,
 llama_relational_archive,Llama-3.1-8B-Instruct,Same-run SDPA shared control,TATQA,0.768258,0.355036,financial_silver,matched_historical_control,experiments/EXPERIMENTS.md,
+llama_hallurag_r4_historical,Llama-3.1-8B-Instruct,R4,HalluRAG,0.576779953,0.262574463,sentence_derived_automatic,historical_reported,r4_hallurag_history_record_5299,
+llama_hallurag_r4_historical,Llama-3.1-8B-Instruct,R4,HalluRAG_available,0.807066370,0.518829518,sentence_derived_automatic,historical_reported,r4_hallurag_history_record_5299,
+llama_hallurag_r4_historical,Llama-3.1-8B-Instruct,R4,HalluRAG_unavailable,0.401881862,0.199318810,sentence_derived_automatic,historical_reported,r4_hallurag_history_record_5299,
+qwen_dense,Qwen2.5-3B-Instruct,V3 witness,HalluRAG_available,0.7134,0.3773,sentence_derived_automatic,historical_reported,paper_table_28,
+qwen_dense,Qwen2.5-3B-Instruct,V3 witness,HalluRAG_unavailable,0.4072,0.1531,sentence_derived_automatic,historical_reported,paper_table_28,

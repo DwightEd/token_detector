@@ -1,0 +1,288 @@
+{
+  "schema": 1,
+  "created_on": "2026-11-02",
+  "scope": "posthoc descriptive audit of frozen historical V3 witness/full_gap scores; no method change, tuning or model execution",
+  "primary_population": "released answerable=True and answer_chunk_index available; known labels only for evaluation",
+  "population": {
+    "all_scored_responses": 1782,
+    "all_scored_tokens": 69483,
+    "all_known_tokens": 62649,
+    "all_unknown_tokens": 6834,
+    "primary_responses": 891,
+    "primary_known_tokens": 28844,
+    "primary_positive_tokens": 6311,
+    "primary_negative_tokens": 22533,
+    "primary_unknown_tokens": 994,
+    "primary_sources": 81
+  },
+  "alarm_rule": "global top ceil(0.05*N) within the declared primary known-token population; descending score, ties in prepared-input/token-index order",
+  "witness_top5pct": {
+    "budget": 1443,
+    "tp": 752,
+    "fp": 691,
+    "fn": 5559,
+    "tn": 21842,
+    "precision": 0.5211365211365211,
+    "recall": 0.11915702741245444,
+    "score_cutoff_last_selected": 1.741597890887987,
+    "cutoff_ties_total": 1,
+    "cutoff_ties_selected": 1
+  },
+  "full_gap_top5pct": {
+    "budget": 1443,
+    "tp": 486,
+    "fp": 957,
+    "fn": 5825,
+    "tn": 21576,
+    "precision": 0.3367983367983368,
+    "recall": 0.07700839803517667,
+    "score_cutoff_last_selected": 1.2507266998291016,
+    "cutoff_ties_total": 1,
+    "cutoff_ties_selected": 1
+  },
+  "budget_ceiling": {
+    "maximum_possible_tp": 1443,
+    "minimum_possible_fn": 4868,
+    "maximum_possible_recall": 0.2286483916970369,
+    "witness_fn_above_budget_minimum": 691
+  },
+  "position_stage_counts": {
+    "fp_total": 691,
+    "fp_token_index_zero": 204,
+    "fp_token_index_less_than_5": 396,
+    "fp_exact_text_space_I": 75,
+    "fp_generator_counts": {
+      "meta-llama/Llama-2-13b-chat-hf (float8)": 113,
+      "meta-llama/Llama-2-13b-chat-hf (int4)": 86,
+      "meta-llama/Llama-2-13b-chat-hf (int8)": 108,
+      "meta-llama/Llama-2-7b-chat-hf (float8)": 71,
+      "meta-llama/Llama-2-7b-chat-hf (int4)": 121,
+      "meta-llama/Llama-2-7b-chat-hf (int8)": 84,
+      "meta-llama/Llama-2-7b-chat-hf": 80,
+      "mistralai/Mistral-7B-Instruct-v0.1 (float8)": 6,
+      "mistralai/Mistral-7B-Instruct-v0.1 (int4)": 8,
+      "mistralai/Mistral-7B-Instruct-v0.1 (int8)": 7,
+      "mistralai/Mistral-7B-Instruct-v0.1": 7
+    },
+    "fn_total": 5559,
+    "fn_raw_d_negative": 3642
+  },
+  "alarm_transitions": {
+    "raw_alarm_final_not_positive": 123,
+    "raw_alarm_final_not_negative": 421,
+    "raw_not_final_alarm_positive": 389,
+    "raw_not_final_alarm_negative": 155
+  },
+  "gold_scope": "native sentence judgments broadcast by existing datasets.sentence_token_labels; no fine character truth is available",
+  "decomposition": "cached final witness score minus existing sequence.witness_emissions(cached full_gap d); algebraic contextual contribution, not an intervention or factual probability",
+  "case_selection": {
+    "FP": "descending final score, stable original order; first token from each new source until five sources",
+    "FN": "ascending final score, stable original order; first token from each new source until five sources",
+    "minimum_distinct_sources_per_error_type": 5,
+    "cases_per_error_type": 5
+  },
+  "published_subset": {
+    "case_ids": [
+      "FP3",
+      "FP4",
+      "FN3",
+      "FN5"
+    ],
+    "reason": "source-grounded illustrations of normal opening, misplaced alarm, false absence claim, and unsupported cross-chunk entity-event attribution; qualitative subset of the ten deterministic extreme cases"
+  },
+  "examples": [
+    {
+      "case_id": "FP3",
+      "error_type": "FP",
+      "id": "hallurag:test_meta-llama_Llama-2-7b-chat-hf (int4).pickle:33",
+      "source_id": "475",
+      "generator": "meta-llama/Llama-2-7b-chat-hf (int4)",
+      "official_answerable": true,
+      "gold_broadcast_label": false,
+      "source_contrast_d": 18.68701934814453,
+      "witness_emission": 17.993872175246384,
+      "context_term": 0.6200961332283264,
+      "final_score": 18.61396830847471,
+      "primary_raw_percentile": 0.9998093190958258,
+      "primary_final_percentile": 0.9998093190958258,
+      "raw_alarm": true,
+      "final_alarm": true,
+      "native_sentence_gold": [
+        {
+          "start": 0,
+          "end": 137,
+          "label": 0,
+          "native_label": "non-hallucinated",
+          "sentence_index": 0,
+          "text": " I'm just an AI, I don't have personal opinions or beliefs, but I can provide you with factual information based on the context provided."
+        }
+      ],
+      "selected_token": {
+        "text": " I",
+        "token_index": 0,
+        "start": 0,
+        "end": 2
+      },
+      "source_quotes": [
+        "Early concerns for OWCS included the lack of well-defined prize pools, the lack of a clear roadmap, and challenges in maintaining consistent viewership, compared to that of the Overwatch League."
+      ],
+      "answer_quotes": [
+        "lack of a well-defined prize pool, the lack of a clear roadmap, and challenges in maintaining consistent viewership compared to the Overwatch League"
+      ],
+      "fact_assessment": "回答关于 OWCS 奖金、路线图、观众保持的三个担忧与来源对应；被选中的误报仍是前置『I'm just an AI』中的首 token，原生句标为 non-hallucinated。",
+      "mechanism": "原始 contrast 18.6870，context 加 0.6201；极高分在原始对比阶段已存在。来源事实是否被正确复述没有成为首 token 风险的决定条件。",
+      "fact_level": "有明确来源支持的回答内容，与高分礼貌开头应分别查看。"
+    },
+    {
+      "case_id": "FP4",
+      "error_type": "FP",
+      "id": "hallurag:test_meta-llama_Llama-2-7b-chat-hf (int4).pickle:123",
+      "source_id": "520",
+      "generator": "meta-llama/Llama-2-7b-chat-hf (int4)",
+      "official_answerable": true,
+      "gold_broadcast_label": false,
+      "source_contrast_d": 18.062332153320312,
+      "witness_emission": 17.369184987070014,
+      "context_term": 1.2212864053375974,
+      "final_score": 18.59047139240761,
+      "primary_raw_percentile": 0.9997746498405214,
+      "primary_final_percentile": 0.9997746498405214,
+      "raw_alarm": true,
+      "final_alarm": true,
+      "native_sentence_gold": [
+        {
+          "start": 0,
+          "end": 19,
+          "label": 0,
+          "native_label": "non-hallucinated",
+          "sentence_index": 0,
+          "text": " I'm happy to help!"
+        }
+      ],
+      "selected_token": {
+        "text": " I",
+        "token_index": 0,
+        "start": 0,
+        "end": 2
+      },
+      "source_quotes": [
+        "\"Two Night Stands\" will be released on April 1, 2024, as Morgan's second single to country radio."
+      ],
+      "answer_quotes": [
+        "Kylie Morgan's second single to country radio is not mentioned in any of the chunks provided"
+      ],
+      "fact_assessment": "来源明确给出第二首乡村电台单曲 Two Night Stands 及日期；回答后文却称未提及，相关原生句标为 hallucinated。当前 FP 落在另一句『I'm happy to help!』的首 token，该句标签为 non-hallucinated。",
+      "mechanism": "原始 contrast 18.0623 加 context 1.2213，把有限告警预算花在正常开头；实际可核对的错误是后文『未提及』这一否定断言。",
+      "fact_level": "该回答存在来源可反驳的错误；所选 FP 展示的是错误定位偏移。"
+    },
+    {
+      "case_id": "FN3",
+      "error_type": "FN",
+      "id": "hallurag:test_meta-llama_Llama-2-7b-chat-hf (int4).pickle:119",
+      "source_id": "518",
+      "generator": "meta-llama/Llama-2-7b-chat-hf (int4)",
+      "official_answerable": true,
+      "gold_broadcast_label": true,
+      "source_contrast_d": -8.115316390991211,
+      "witness_emission": -0.6928482997924722,
+      "context_term": -2.984620894267503,
+      "final_score": -3.6774691940599755,
+      "primary_raw_percentile": 0.024493828872555818,
+      "primary_final_percentile": 0.0025135210095687146,
+      "raw_alarm": false,
+      "final_alarm": false,
+      "native_sentence_gold": [
+        {
+          "start": 160,
+          "end": 415,
+          "label": 1,
+          "native_label": "hallucinated",
+          "sentence_index": 2,
+          "text": " The chunks provide information about the 2024 Shangla bombing, Richard Heyn, and the 2024-25 CONCACAF Nations League A, but they do not provide any information about the actions taken by Pakistani police on April 1 in connection with the Shangla bombing."
+        }
+      ],
+      "selected_token": {
+        "text": " Hey",
+        "token_index": 46,
+        "start": 231,
+        "end": 235
+      },
+      "source_quotes": [
+        "On 1 April, Pakistani police said that they had arrested 12 people in connection with the attack."
+      ],
+      "answer_quotes": [
+        "they do not provide any information about the actions taken by Pakistani police on April 1 in connection with the Shangla bombing"
+      ],
+      "fact_assessment": "来源给出四月一日逮捕十二人的行动，回答却称没有相关信息，构成当前文本可直接反驳的否定断言。所选 token『 Hey』来自回答列举的无关标题 Richard Heyn，并不是这项错误事实的承载词。",
+      "mechanism": "标题词在检索文本中出现，contrast -8.1153；context 再减 2.9846，最终 -3.6775。低分反映来源可预测性；整句标签把后面错误的否定断言传播到了前面的正确标题词。",
+      "fact_level": "明确事实漏检句中的来源支持 token；没有细字符真值时不能把该 token 当成最小错误跨度。"
+    },
+    {
+      "case_id": "FN5",
+      "error_type": "FN",
+      "id": "hallurag:test_meta-llama_Llama-2-13b-chat-hf (float8).pickle:45",
+      "source_id": "481",
+      "generator": "meta-llama/Llama-2-13b-chat-hf (float8)",
+      "official_answerable": true,
+      "gold_broadcast_label": true,
+      "source_contrast_d": -8.055270195007324,
+      "witness_emission": -0.6928298063116118,
+      "context_term": -2.380909679136935,
+      "final_score": -3.073739485448547,
+      "primary_raw_percentile": 0.024979198446817362,
+      "primary_final_percentile": 0.0290355013174317,
+      "raw_alarm": false,
+      "final_alarm": false,
+      "native_sentence_gold": [
+        {
+          "start": 167,
+          "end": 378,
+          "label": 1,
+          "native_label": "hallucinated",
+          "sentence_index": 3,
+          "text": "\n\nAccording to Chunk 3, Mohammad Nauman Khan was the person who was detained after driving towards protesters and pepper spraying them during the 2024 Portland State University pro-Palestinian campus occupation."
+        }
+      ],
+      "selected_token": {
+        "text": " Portland",
+        "token_index": 61,
+        "start": 317,
+        "end": 326
+      },
+      "source_quotes": [
+        "One man was detained after he drove towards protesters in a car and pepper sprayed several of them.",
+        "In 2010, Nauman acted as head coach of Pakistan Army."
+      ],
+      "answer_quotes": [
+        "Mohammad Nauman Khan was the person who was detained after driving towards protesters and pepper spraying them"
+      ],
+      "fact_assessment": "Portland 报道只说 one man 被拘留，没有给出姓名；Nauman 出现在另一段足球经历中。回答把这个名字绑定到拘留事件，当前来源未支持这种跨段人物—事件关系。所选『 Portland』本身是正确的事件地点。",
+      "mechanism": "地点词来自相应来源，contrast -8.0553，context -2.3809，最终 -3.0737。复制了正确地点和动作不等于建立了正确人物关系；句级标签同时覆盖这些正常词。",
+      "fact_level": "无证据的跨 chunk 实体—事件归属；来源没有证明被拘留者必定是另一个人，因此表述为缺少支持，而非已证实身份矛盾。"
+    }
+  ],
+  "verification": {
+    "all_prediction_seals_verified_before_gold_read_utc": "2026-11-02T09:08:35.378991+00:00",
+    "witness_and_fullgap_all_token_identity_exact": true,
+    "known_unit_scores_equal_full_prediction_vectors_exactly": true,
+    "gold_projection_matches_original_sealed_labels_exactly": true,
+    "official_metadata_response_source_hash_join_exact": true
+  },
+  "r4": {
+    "current_case_claims": false,
+    "original_full_prediction_cache": "confirmed absent after historical cleanup; no current R4 cases inferred from V3",
+    "legacy_aggregate_evidence": "hallurag_strata_evidence.json"
+  },
+  "interpretation_limits": [
+    "Native sentence positives broadcast to all overlapping tokens; no fine character-level factual-error span is supplied.",
+    "The five highest-score source-diverse FP examples all come from one int4 generator; source diversity is not generator diversity.",
+    "One of the full ten extreme cases has a released positive sentence nearly repeated from its supplied source; its label is preserved and the tension is documented, not used to relabel or retune.",
+    "The contextual term is an algebraic decomposition, not a causal intervention or a factual-error probability."
+  ],
+  "provenance_sha256": {
+    "audit_summary": "d398efac31ef5de67d5dd18c21a9ce923025e741e81846bd56e42b5d60df15d9",
+    "full_cases": "7fd89adf0423b078558b86b8c0278e4c822a69f4d1c5a6498d29c8467c965735",
+    "case_explanations": "b14a265129746b8fdb12bdc13cc1c8ef7d249bc084cb16eeab05382ab6614d7c",
+    "diagnostic_seal": "7e6380e3f288813f860f6b07252ec476ed320b475310daf949feaa8db0185a61"
+  }
+}

@@ -1,5 +1,10 @@
 # 代码讲解导航与真实进度
 
+最新入口：[完整 TEST 的 FN/FP 机制审查](FNFP_MECHANISM.html) → [原始来源与逐例分数](FNFP_CASES.html)。先确认为什么出错，再设计与验证模块；等权对照已拒绝，属于历史实验记录。
+
+
+最新入口：[R4/V3逐任务对照、真实FN/FP、0.8目标与模块优化](PERFORMANCE_REVIEW.html)。本页旧覆盖统计保持原身份，新增模块只是方案，没有新效能宣称。
+
 当前研究阅读顺序：[无标注识别边界与决策](UNLABELLED_LIMITS.html) → [V3方法](METHOD_V3.html) → [全数据集方法对照](RESULTS_CURRENT.html) → [当前诊断计划](EXPERIMENT_PLAN.html)。[此前关系组合](INTEGRATED_DESIGN.html)因语义确认前提未解而退出默认主线。交互指南里的共享示例是V1，不能将其保序结论套到V3。默认API仍为V1是软件接口状态；R4是历史对照。
 
 建议先打开[公式与机制交互指南](VISUAL_GUIDE.html)，拖动滑条理解观测与共享，再读[完整公式与证明](THEORY.html)和[论文主张](PAPER_STORY.html)。[整个方法](METHOD.html)与[逐行阅读器](READING.html)也有浏览器版。下载后打开HTML即可离线排版，不再需要直接打开Markdown看LaTeX。

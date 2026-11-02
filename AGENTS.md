@@ -12,6 +12,22 @@
   historical proposals and the immutable anchor; this confirmed user choice
   supersedes their previously pending supervised/calibration alternatives.
 
+## Confirmed performance priorities (2026-11-02)
+
+- Target AUROC >= 0.8 on each declared primary task. Modular hybrids and
+  task-specific configurations are allowed; do not impose a single probability
+  model or restrict improvement to V3. The unsupervised/final-truth rule above
+  remains active.
+- Use released HalluRAG answerable/target-available metadata for the primary
+  comparison requested by the user; retain pooled and unavailable results.
+  Existing annotated datasets are valid evaluation sources.
+- Keep actual runs, recovered results, proposed modules and unresolved resource
+  needs explicit. Do not call a per-task best-result envelope a tested detector.
+- The user rejected blind score weighting as a method-design direction. Prioritize
+  concrete source-grounded FN/FP explanations and module-level diagnostics before
+  proposing new combinations. The equal-rank CPU control is a rejected experiment,
+  not the mainline. Error labels in posthoc evaluation must not become tuning inputs.
+
 ## Implementation
 
 - This repository is the canonical token-detector workspace. Develop from its root;

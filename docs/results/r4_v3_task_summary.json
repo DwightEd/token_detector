@@ -1,0 +1,84 @@
+{
+  "new_experiment": false,
+  "selection": "original RAGTruth TEST; released answerable metadata for HalluRAG primary group; no label-based filtering",
+  "observer": "Llama-3.1-8B-Instruct",
+  "target_auroc": "0.8",
+  "r4_point_passes": 2,
+  "v3_point_passes": 3,
+  "descriptive_envelope_passes": 4,
+  "envelope_is_not_a_detector": true,
+  "tasks": [
+    {
+      "task": "QA",
+      "r4_auroc": "0.8929",
+      "r4_ap": "0.3527",
+      "v3_auroc": "0.8470",
+      "v3_ap": "0.2148",
+      "delta_v3_minus_r4_auroc": "-0.0459",
+      "r4_point_ge_0_8": true,
+      "v3_point_ge_0_8": true,
+      "descriptive_envelope_gap": "0",
+      "comparison_kind": "descriptive; observation budgets/executions differ"
+    },
+    {
+      "task": "Summary",
+      "r4_auroc": "0.7621",
+      "r4_ap": "0.0966",
+      "v3_auroc": "0.7623",
+      "v3_ap": "0.1046",
+      "delta_v3_minus_r4_auroc": "0.0002",
+      "r4_point_ge_0_8": false,
+      "v3_point_ge_0_8": false,
+      "descriptive_envelope_gap": "0.0377",
+      "comparison_kind": "descriptive; observation budgets/executions differ"
+    },
+    {
+      "task": "Data2txt",
+      "r4_auroc": "0.7983",
+      "r4_ap": "0.1904",
+      "v3_auroc": "0.7557",
+      "v3_ap": "0.1452",
+      "delta_v3_minus_r4_auroc": "-0.0426",
+      "r4_point_ge_0_8": false,
+      "v3_point_ge_0_8": false,
+      "descriptive_envelope_gap": "0.0017",
+      "comparison_kind": "descriptive; observation budgets/executions differ"
+    },
+    {
+      "task": "FinQA",
+      "r4_auroc": "0.6617",
+      "r4_ap": "0.1452",
+      "v3_auroc": "0.8027",
+      "v3_ap": "0.3250",
+      "delta_v3_minus_r4_auroc": "0.1410",
+      "r4_point_ge_0_8": false,
+      "v3_point_ge_0_8": true,
+      "descriptive_envelope_gap": "0",
+      "comparison_kind": "descriptive; observation budgets/executions differ"
+    },
+    {
+      "task": "TATQA",
+      "r4_auroc": "0.7110",
+      "r4_ap": "0.2209",
+      "v3_auroc": "0.8430",
+      "v3_ap": "0.4657",
+      "delta_v3_minus_r4_auroc": "0.1320",
+      "r4_point_ge_0_8": false,
+      "v3_point_ge_0_8": true,
+      "descriptive_envelope_gap": "0",
+      "comparison_kind": "descriptive; observation budgets/executions differ"
+    },
+    {
+      "task": "HalluRAG_available",
+      "r4_auroc": "0.807066370",
+      "r4_ap": "0.518829518",
+      "v3_auroc": "0.7669",
+      "v3_ap": "0.4561",
+      "delta_v3_minus_r4_auroc": "-0.040166370",
+      "r4_point_ge_0_8": true,
+      "v3_point_ge_0_8": false,
+      "descriptive_envelope_gap": "0",
+      "comparison_kind": "descriptive; observation budgets/executions differ"
+    }
+  ]
+}

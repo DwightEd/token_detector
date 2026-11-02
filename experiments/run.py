@@ -78,6 +78,25 @@ def parser() -> argparse.ArgumentParser:
 
     transfer = stages.add_parser("transfer", help="cache native observations, FIT/score, then evaluate")
     transfers = transfer.add_subparsers(dest="transfer_stage", required=True)
+    fusion_cache = transfers.add_parser('prepare-fusion', help='export verified historical R4/V3 caches without labels')
+    fusion_cache.add_argument('--scores', type=Path, required=True)
+    fusion_cache.add_argument('--native', type=Path, required=True)
+    fusion_cache.add_argument('--prepared', nargs='+', type=Path, required=True,
+                              help='all relocated prepared folders in native-plan group order')
+    fusion_cache.add_argument('--group', type=int, required=True, help='native TEST group index')
+    fusion_cache.add_argument('--task', required=True, help='declared output task name')
+    fusion_cache.add_argument('--output', type=Path, required=True)
+    fusion = transfers.add_parser('fuse-ranks', help='seal fixed R4/V3 batch rank fusion on CPU, without labels')
+    fusion.add_argument('--r4', type=Path, required=True)
+    fusion.add_argument('--witness', type=Path, required=True)
+    fusion.add_argument('--protocol', type=Path, required=True)
+    fusion.add_argument('--output', type=Path, required=True)
+    fusion_eval = transfers.add_parser('evaluate-fusion', help='evaluate sealed R4/V3/fusion scores against released annotations')
+    fusion_eval.add_argument('--scores', type=Path, required=True)
+    fusion_eval.add_argument('--prepared', type=Path, required=True)
+    fusion_eval.add_argument('--output', type=Path, required=True)
+    fusion_eval.add_argument('--repetitions', type=int, default=1000)
+    fusion_eval.add_argument('--seed', type=int, default=17)
     collect = transfers.add_parser("collect", help="measure prepared FIT/test inputs without reading labels")
     collect.add_argument("--fit", nargs="+", type=Path, default=[])
     collect.add_argument("--test", nargs="+", type=Path, required=True)
@@ -222,7 +241,19 @@ def main() -> None:
     if args.stage == "transfer":
         from . import native_dataset
 
-        if args.transfer_stage == 'collect-span-resolution':
+        if args.transfer_stage == 'prepare-fusion':
+            from .fusion_cache import export
+
+            export(args.scores, args.native, args.prepared, args.group, args.output, args.task)
+        elif args.transfer_stage == 'fuse-ranks':
+            from .rank_fusion import score
+
+            score(args.r4, args.witness, args.protocol, args.output)
+        elif args.transfer_stage == 'evaluate-fusion':
+            from .fusion_evaluation import evaluate
+
+            evaluate(args.scores, args.prepared, args.output, args.repetitions, args.seed)
+        elif args.transfer_stage == 'collect-span-resolution':
             from .span_resolution import collect
 
             collect(args.native, args.reference_scores, args.external_collection, args.protocol, args.output)

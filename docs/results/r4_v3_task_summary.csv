@@ -1,0 +1,7 @@
+﻿task,r4_auroc,r4_ap,v3_auroc,v3_ap,delta_v3_minus_r4_auroc,r4_point_ge_0_8,v3_point_ge_0_8,descriptive_envelope_gap,comparison_kind
+QA,0.8929,0.3527,0.8470,0.2148,-0.0459,True,True,0,descriptive; observation budgets/executions differ
+Summary,0.7621,0.0966,0.7623,0.1046,0.0002,False,False,0.0377,descriptive; observation budgets/executions differ
+Data2txt,0.7983,0.1904,0.7557,0.1452,-0.0426,False,False,0.0017,descriptive; observation budgets/executions differ
+FinQA,0.6617,0.1452,0.8027,0.3250,0.1410,False,True,0,descriptive; observation budgets/executions differ
+TATQA,0.7110,0.2209,0.8430,0.4657,0.1320,False,True,0,descriptive; observation budgets/executions differ
+HalluRAG_available,0.807066370,0.518829518,0.7669,0.4561,-0.040166370,True,False,0,descriptive; observation budgets/executions differ

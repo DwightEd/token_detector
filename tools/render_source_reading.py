@@ -77,7 +77,7 @@ p{overflow-wrap:anywhere}a{color:#1658ab}</style><h1>token_detector：真实源�
 <p>固定源码基线 1210120748b3a05bd271bc79debcbed4fdc0c964。展开文件查看源码与中文说明。
 只展示已经逐行阅读并有具体说明的文件；全项目待讲解范围保存在 SOURCE_INVENTORY.json，未展示不代表不存在。</p>
 <p><strong><a href="METHOD_V3.html">先看：V3当前研究方法、优化与公式 →</a></strong> · <a href="VISUAL_GUIDE.html">V1构造例与指标交互</a></p>
-<p><a href="UNLABELLED_LIMITS.html">无标注边界与当前决策</a> · <a href="METHOD_V3.html">V3研究方法</a> · <a href="RESULTS_CURRENT.html">全数据集对照</a> · <a href="INTEGRATED_DESIGN.html">受限关系分支</a> · <a href="EXPERIMENT_PLAN.html">当前计划</a> · <a href="METHOD.html">库调用路径</a> · <a href="THEORY.html">完整公式</a> · <a href="VALIDATION.html">实际验证</a></p>
+<p><a href="FNFP_MECHANISM.html">FN/FP机制审查</a> - <a href="FNFP_CASES.html">逐例核对来源</a> - <a href="HALLURAG_FNFP.html">HalluRAG FN/FP</a><a href="PERFORMANCE_REVIEW.html">R4/V3、FN/FP与0.8目标</a> · <a href="UNLABELLED_LIMITS.html">无标注边界</a> · <a href="METHOD_V3.html">V3研究方法</a> · <a href="RESULTS_CURRENT.html">全数据集对照</a> · <a href="INTEGRATED_DESIGN.html">受限关系分支</a> · <a href="EXPERIMENT_PLAN.html">模块计划</a> · <a href="METHOD.html">库调用路径</a> · <a href="THEORY.html">完整公式</a> · <a href="VALIDATION.html">实际验证</a></p>
 '''
 (directory / 'READING.html').write_text(page + ''.join(sections) + '</html>', encoding='utf-8')
 print(json.dumps({'files': len(annotations), 'source_lines': sum(by_path[path]['line_count'] for path in annotations),

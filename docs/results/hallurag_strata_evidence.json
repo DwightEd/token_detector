@@ -1,0 +1,182 @@
+{
+  "schema": 1,
+  "recovered_on": "2026-11-02",
+  "new_detector_run": false,
+  "r4": {
+    "schema": 1,
+    "recovered_on": "2026-11-02",
+    "new_detector_run": false,
+    "source_kind": "Recovered historical tool-output report; original prediction arrays not locally restored",
+    "source_report": "pipeline_comparison_20261019/token_diagnostics/REPORT_ZH.md",
+    "source_zero_based_record": 5299,
+    "source_call_zero_based_record": 5297,
+    "source_timestamp": "2026-10-18T16:40:54.618Z",
+    "corroborating_zero_based_record": 5021,
+    "corroborating_call_zero_based_record": 5019,
+    "observer": "Meta-Llama-3.1-8B-Instruct",
+    "method": "Frozen R4 QA recipe with RAGTruth reference arrays",
+    "backend": "Historical source-present full eager; other likelihood paths SDPA",
+    "label_protocol": "Released HalluRAG sentence labels broadcast onto original observer tokens; unknown excluded only labeled metrics",
+    "split": "Complete official TEST export",
+    "population": {
+      "responses_scored": 1782,
+      "generator_quantization_configurations": 11,
+      "target_article_clusters": 81,
+      "tokens_scored": 69483,
+      "known_tokens": 62649,
+      "positive_known_tokens": 12313,
+      "unknown_tokens": 6834
+    },
+    "reported_table_lines": [
+      "| 全部 | 62649 | 12313 | 0.576779953 | 0.262574463 |",
+      "| 有答案 | 28844 | 6311 | 0.807066370 | 0.518829518 |",
+      "| 无答案 | 33805 | 6002 | 0.401881862 | 0.199318810 |"
+    ],
+    "metrics": [
+      {
+        "stratum": "all",
+        "responses_scored": 1782,
+        "known_tokens": 62649,
+        "positive_tokens": 12313,
+        "auroc_printed": "0.576779953",
+        "ap_printed": "0.262574463",
+        "pooled_additional_precision_from_record5021": {
+          "auroc": "0.5767799528",
+          "ap": "0.2625744630",
+          "article_bootstrap_repetitions": 2000,
+          "auroc_interval95": [
+            0.510803,
+            0.64314
+          ],
+          "ap_interval95": [
+            0.191991,
+            0.34863
+          ]
+        }
+      },
+      {
+        "stratum": "answerable_target_available",
+        "responses_scored": 891,
+        "known_tokens": 28844,
+        "positive_tokens": 6311,
+        "auroc_printed": "0.807066370",
+        "ap_printed": "0.518829518"
+      },
+      {
+        "stratum": "unanswerable_target_unavailable",
+        "responses_scored": 891,
+        "known_tokens": 33805,
+        "positive_tokens": 6002,
+        "auroc_printed": "0.401881862",
+        "ap_printed": "0.199318810"
+      }
+    ],
+    "comparison_limit": "Same reported release, complete TEST population and original observer token counts as later Llama V3 replay, but old R4 and V3 use different observation executions. Do not call paired same-observation evidence or infer a confidence interval for their difference.",
+    "separate_dev_result": {
+      "source_record": 6677,
+      "source_call_record": 6675,
+      "timestamp": "2026-10-18T17:37:14.742Z",
+      "split": "Official VAL, metadata-selected DEV subset",
+      "responses_scored": 132,
+      "responses_evaluated": 131,
+      "article_clusters": 6,
+      "known_tokens": 5091,
+      "positive_tokens": 1499,
+      "unknown_tokens": 174,
+      "auroc": "0.4726173239472195",
+      "ap": "0.287483625912209",
+      "note": "Not comparable to later full TEST V31782 or its891-answer strata"
+    },
+    "source_session_sha256": "e138bd304ab7dfa7b4b1d6fd8dfe2d74d3bcb0d50810482e4ce030923c5f7a3d",
+    "corroborating_timestamp": "2026-10-18T16:31:49.723Z"
+  },
+  "v3": {
+    "kind": "recovered_paper_descriptive_metrics_not_new_evaluation",
+    "strata": "released target availability metadata; answerable equivalence checked on1782responseIDs, paperp19AppendixJ",
+    "rows": [
+      {
+        "observer": "Llama-3.1-8B-Instruct",
+        "view": "pooled",
+        "method": "V3 witness",
+        "auroc": "0.6378",
+        "ap": "0.3219",
+        "responses_scored": 1782,
+        "known_tokens": 62649,
+        "positive_tokens": 12313,
+        "unknown_tokens": 6834,
+        "source_page": 29,
+        "source_table": 35
+      },
+      {
+        "observer": "Llama-3.1-8B-Instruct",
+        "view": "target_available",
+        "method": "V3 witness",
+        "auroc": "0.7669",
+        "ap": "0.4561",
+        "responses_scored": 891,
+        "known_tokens": 28844,
+        "positive_tokens": 6311,
+        "unknown_tokens": 994,
+        "source_page": 29,
+        "source_table": 35
+      },
+      {
+        "observer": "Llama-3.1-8B-Instruct",
+        "view": "target_unavailable",
+        "method": "V3 witness",
+        "auroc": "0.5374",
+        "ap": "0.2574",
+        "responses_scored": 891,
+        "known_tokens": 33805,
+        "positive_tokens": 6002,
+        "unknown_tokens": 5840,
+        "source_page": 29,
+        "source_table": 35
+      },
+      {
+        "observer": "Qwen2.5-3B-Instruct dense",
+        "view": "pooled",
+        "method": "V3 witness",
+        "auroc": "0.5438",
+        "ap": "0.2212",
+        "responses_scored": 1782,
+        "known_tokens": 64269,
+        "positive_tokens": 12606,
+        "unknown_tokens": 6941,
+        "source_page": 27,
+        "source_table": 28
+      },
+      {
+        "observer": "Qwen2.5-3B-Instruct dense",
+        "view": "target_available",
+        "method": "V3 witness",
+        "auroc": "0.7134",
+        "ap": "0.3773",
+        "responses_scored": 891,
+        "known_tokens": 29957,
+        "positive_tokens": 6397,
+        "unknown_tokens": 1030,
+        "source_page": 27,
+        "source_table": 28
+      },
+      {
+        "observer": "Qwen2.5-3B-Instruct dense",
+        "view": "target_unavailable",
+        "method": "V3 witness",
+        "auroc": "0.4072",
+        "ap": "0.1531",
+        "responses_scored": 891,
+        "known_tokens": 34312,
+        "positive_tokens": 6209,
+        "unknown_tokens": 5911,
+        "source_page": 27,
+        "source_table": 28
+      }
+    ],
+    "qwen_table28_excerpt": "Table 28. Qwen HalluRAG retrieval strata for LUMINA and components. Both 891-response metadata strata remain in the pooled1454\n        population; labels are automatic sentence-derived tokens. Known/unknown coverage is observer-speciﬁc and identical across methods.\n1455      TP/FP/FN use each view’s own known-token top 5% budget, not the pooled alarm set.\n1456\n1457                   View             Readout      AUROC/AP  Known  Unknown     TP/FP/FN\n1458                     Pooled             Integrated V3  0.5438/0.2212   64269      6941  729/2485/11877\n1459                     Pooled        LUMINA     0.5478/0.2444   64269      6941  1059/2155/11547\n1460                     Pooled          IPR only      0.5769/0.2520   64269      6941  1046/2168/11560\n1461                     Pooled       −MMD only  0.4407/0.1711   64269      6941  505/2709/12101\n                             Target available     Integrated V3  0.7134/0.3773   29957      1030    621/877/5776\n1462\n                             Target available   LUMINA     0.6198/0.3081   29957      1030    566/932/5831\n1463                       Target available    IPR only      0.6155/0.2939   29957      1030    522/976/5875\n1464                       Target available  −MMD only  0.5015/0.2041   29957      1030   246/1252/6151\n1465                       Target unavailable  Integrated V3  0.4072/0.1531   34312      5911   243/1473/5966\n1466                       Target unavailable LUMINA     0.4969/0.2137   34312      5911   532/1184/5677\n                             Target unavailable  IPR only      0.5511/0.2283   34312      5911   535/1181/5674\n1467\n                             Target unavailable −MMD only  0.3913/0.1475   34312      5911   266/1450/5943\n1468\n1469\n1470\n1471\n1472  ",
+    "llama_population_source": "paper page22Table18",
+    "qwen_positive_counts_note": "derived from Table28 TP+FN, not from selecting positive samples",
+    "ragtruth_filter_note": "official task/split preserved; no equivalent answerability flag in currentadapter",
+    "paper_sha256": "12d1616adb62a41c94292b97dbee8c08ca355af1b29200a99c19a6c6618513fe"
+  }
+}

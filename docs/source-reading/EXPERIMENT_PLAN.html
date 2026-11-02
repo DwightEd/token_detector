@@ -5,73 +5,80 @@
 <script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
 <style>@media print{body[data-article="EXPERIMENT_PLAN"]{font-size:14px;line-height:1.65}}</style></head><body data-article="EXPERIMENT_PLAN">
 <header><div class="eyebrow">TOKEN DETECTOR / 本地离线阅读</div><h1>组合方法实验计划</h1>
-<nav><a href="UNLABELLED_LIMITS.html">无标注边界与决策</a><a href="METHOD_V3.html">V3方法</a><a href="RESULTS_CURRENT.html">全数据集对照</a><a href="INTEGRATED_DESIGN.html">受限关系候选</a><a href="EXPERIMENT_PLAN.html">当前计划</a><a href="VISUAL_GUIDE.html">交互演示</a><a href="THEORY.html">完整公式</a><a href="READING.html">逐行代码</a></nav>
+<nav><a href="FNFP_MECHANISM.html">FN/FP机制审查</a><a href="FNFP_CASES.html">逐例核对来源</a><a href="HALLURAG_FNFP.html">HalluRAG FN/FP</a><a href="PERFORMANCE_REVIEW.html">R4/V3、错例与0.8目标</a><a href="UNLABELLED_LIMITS.html">无标注边界</a><a href="METHOD_V3.html">V3方法</a><a href="RESULTS_CURRENT.html">全数据集对照</a><a href="INTEGRATED_DESIGN.html">受限关系候选</a><a href="EXPERIMENT_PLAN.html">模块计划</a><a href="VISUAL_GUIDE.html">交互演示</a><a href="THEORY.html">完整公式</a><a href="READING.html">逐行代码</a><a href="CPU_FUSION_REVIEW.html">未采用基线记录</a></nav>
 <p>公式已在浏览器排版；可用浏览器“打印 → 保存为PDF”。本页不需要联网。</p></header>
-<main><article class="article"><h1 id="_1">当前计划：先检查可操作的预测瓶颈</h1>
-<p><strong>日期</strong>：2026-11-02。<strong>状态</strong>：DIAGNOSTIC_PROPOSAL_NOT_RUN。
-<strong>研究基础</strong>：V3 / witness；没有选定新的检测器或主张其有效。
-<strong>用户约束</strong>：无监督，真实任务标注只在方法与分数冻结后的最终评价打开；不用于训练、调参、选方法或语义资格准入。</p>
-<p>用户指出：无标注时，很难确认自然来源的关系变换具有预期语义。对此收回“优先关系观测”的建议；更严格的软件检查不能解决自然语义效度。<a href="UNLABELLED_LIMITS.html">完整论证及公式</a>。</p>
-<p><a href="../../refine-logs/EXPERIMENT_PLAN_20261102_144407.md">旧关系组合计划</a>完整保留，状态为DEFERRED_RELATION_ASSUMPTION_UNRESOLVED。其中8配置消融、K=8D家族和预算是旧候选的条件协议，不是当前已冻结的新方法实验。闭合结构化来源的关系分支降为可选诊断，不承担通用无监督方法前提。</p>
-<h2 id="_2">当前主张与限制</h2>
+<main><article class="article"><h1 id="_1">性能优先的模块组合计划</h1>
+<p>更新 2026-11-02 17:25：缓存恢复与固定CPU对照已完成，等权方案已拒绝。当前优先完成的是<a href="FNFP_MECHANISM.html">原始事实与FN/FP机制审查</a>，不将组合本身作为方法贡献。后续新观测和模块必须分别验证关系归属、个体信号保留、正常推导误报、route迁移及Hallu开头效应；尚未实施。旧计划条目的未运行状态继续保留。</p>
+<p>日期2026-11-02。状态：FIXED_BASELINE_COMPLETED_REJECTED_SOURCE_AUDIT_NEXT。五任务完整缓存已恢复，固定等权秩融合已冻结并完成CPU评价，但损害金融表现，未采用；逐任务0.8目标尚未完成。</p>
+<p>用户最新要求先把真实FN/FP为什么出错解释清楚，不把直接加权包装为新方法。当前优先级是来源、原回答、发布标注与各读出阶段的机制审计。<a href="CPU_FUSION_REVIEW.html">失败基线记录</a>仅作执行归档；以下核验器仍是PROPOSED，未采集、未评分、未评价。</p>
+<p>用户目标是各主任务AUROC≥0.8，允许增加或组合多个模块，不要求一个统一概率模型。无监督、真值仅用于冻结后的最终评价保持生效。现成标注数据可用，不要求先自建标签。</p>
+<h2 id="_2">已恢复基线与主任务</h2>
+<p>主观察模型为Llama-3.1-8B。主任务：RAGTruth QA／Summary／Data2txt、FRED FinQA／TATQA、HalluRAG包含答案组891答；其余Hallu分层完整报告，Qwen作为跨观察模型验证。</p>
+<p>R4单独2/6项点值达0.8，V3单独3/6。两方法最好点值包络4/6，不能当新方法。Summary约需增加0.0377、Data2txt约0.0017；其余任务必须保住当前优势，而不是只补这两项后牺牲金融。真实数据表与案例见<a href="PERFORMANCE_REVIEW.html">性能复盘</a>。</p>
+<h2 id="_3">两个待验证主张</h2>
 <table>
 <thead>
 <tr>
-<th>对象</th>
-<th>允许的结论</th>
-<th>不允许的推断</th>
+<th>主张</th>
+<th>需要的证据</th>
+<th>失败时怎样解释</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>来源有/无 × 历史full/local</td>
-<td>明确输入操作下的预测响应</td>
-<td>交互量自动等于事实支持性或错误概率</td>
+<td>R4与V3的逐token信号有可利用的互补</td>
+<td>固定融合相对两个单独读出，逐任务AUROC/AP与固定预算FN/FP；同轴覆盖</td>
+<td>各自总体分数高低不证明互补，融合可能无益</td>
 </tr>
 <tr>
-<td>数值、对齐与重复性</td>
-<td>当前观测在精度和实现上可信</td>
-<td>计算正确自动证明检测有效</td>
-</tr>
-<tr>
-<td>V3与历史对照</td>
-<td>有明确证据范围的探索结果</td>
-<td>已暴露六组成为新的独立确认</td>
+<td>独立的冻结基础模型核验能补共同语义漏报</td>
+<td>核验器单独、融合＋核验器、去核验模块；全部句子覆盖</td>
+<td>若只有核验器有效，则不把其能力归给融合；若仍失败，保留负结果</td>
 </tr>
 </tbody>
 </table>
-<p>当前没有稳定的新方法论点，暂不展开新一轮大型消融。先得到能决定是否需要改方法的观测证据，避免用另一组未经验证的隐变量或门控替换关系模块。</p>
-<h2 id="_3">必须先做的三个块</h2>
-<h3 id="b1">B1 操作合同与重复误差</h3>
-<ul>
-<li>冻结原prompt/source/response、原token轴、offsets、span与历史截取规则；不更改已有回答。</li>
-<li>明确四条件S/full、A/full、S/local、A/local各自的可见token、query位置、KV重置与position IDs。</li>
-<li>所有条件匹配后端与dtype；同路径重复测量，报告误差、ties、截断、覆盖和成本。默认混合后端的旧Observer缓存不能直接当作匹配采集。</li>
-<li>成功只指操作与数值合同正确；没有接触任务错误标注。</li>
-<li>实现应复用中央实验入口及现有观测函数；新合同审定前不增设独立评分脚本。</li>
-</ul>
-<h3 id="b2">B2 无标签预测诊断</h3>
-<ul>
-<li>冻结来源样本选择、历史规则与统计量；允许复用已有暴露数据的无标签输入，但明确探索身份，不把其当新确认。</li>
-<li>对原token计算d_full、d_local与I=d_full−d_local；报告来源/位置分布、局部变化、重复误差和跨模型稳定性。</li>
-<li>控制使用预定位置/哈希选择的等长历史片段替换、受控position变化和原路径重复。记录所有编辑；不将所选片段称“非关键”“语义无关”或声称保持语义。</li>
-<li>如涉及“第一错误/后续错误”或自然支持性分层，必须等到冻结后的最终评价才能用标签标记，不能用于本阶段筛样本。</li>
-<li>对I只作预测交互解释；长度、位置或数值误差足以解释现象时，撤销语义/机制解释。</li>
-<li>该块不按无标签似然、一致性大小选择风险模块；这些量未被证明是正确率代理。</li>
-</ul>
-<h3 id="b3">B3 是否形成方法的决策</h3>
-<ul>
-<li>若只有四条件数值差异，没有支持具体评分改动的可检验预测，保留V3并报告不确定；不将诊断本身包装成新检测器。</li>
-<li>若出现可复现的预测瓶颈，再提出一个最小无监督候选及明确识别假设。不得直接把I当风险分数，或先加入full/local专家混合、证据门控、额外latent模块。</li>
-<li>候选成立后才写固定主张、因子消融与强对照；新颖性须对照已有的来源信息传播研究。</li>
-<li>进入真实效用验证前，冻结算法、参数/阈值规则、观察模型、分段、所有比较、主指标、排除规则和完整分数，再一次性打开新的来源级人工支持性标注。</li>
-<li>计算机制和语义效用分别报告；消融可能否定模块。若根据最终结果改方法，该批结果转为探索，下一版需另一份未接触确认数据。</li>
-</ul>
-<h2 id="_4">执行顺序与资源</h2>
+<h2 id="_4">固定比较集合</h2>
 <ol>
-<li>U001：文档/源码操作审计，可本地CPU完成，尚未执行。</li>
-<li>U002：四条件匹配观测的小规模pilot，待GPU可用；先测实际时间、处理token和显存，不预报捏造GPU小时。</li>
-<li>U003：锁定的无标签诊断，复用中央管线；需要核对原始观测资源是否齐全，旧远端完整缓存尚未恢复。</li>
-<li>U004：依据操作证据决定是否形成新方法协议；未到新方法阶段，不承诺晋升。</li>
+<li>R4原配方，独立记录local／route／无标签参考成本。</li>
+<li>V3原读出。</li>
+<li>固定等权秩融合；先在无标签分数上定义标准化作用范围，不按任务标签扫权重。</li>
+<li>冻结基础模型核验器单独。</li>
+<li>融合＋核验器。</li>
 </ol>
-<p>当前无新的GPU/LM调用或真实检测结果。历史266条结果、原V3分数与公开API默认值均不受这次研究决策更新影响。</p></article></main></body></html>
+<p>新增local或显式算术诊断只有在主集合之外明确登记，并做删除对照。任务专用配置可以存在，但配置和选择规则在最终标签之前冻结。现成监督NLI只作单列对照；本方案默认使用冻结基础模型，不引入目标标签训练。</p>
+<h2 id="_5">实验块与顺序</h2>
+<h3 id="b1">B1：恢复同轴缓存，先核实可比性</h3>
+<ul>
+<li>取同response_id、原token_id／offset、source_id／article、方法／模型／版本身份的完整分数或观测。</li>
+<li>核对token数、标签覆盖、unknown、原prompt与source；Hallu按发布元数据筛answerable，不能按标签/模型分数挑样本。</li>
+<li>旧R4混合后端、新V3matched SDPA的历史差异保留。重新采集时明确概率观测的匹配后端，route若另作eager提取则单独计预算；不得悄悄改旧R4后仍称旧分数逐位复现。</li>
+<li>已恢复RAGTruth三任务与金融两任务：2992答、448202原始有效token，所有score/native记录hash与原token轴核验通过。本地规范路径为<code>D:/projects/research/outputs/fusion-cache-20261102/</code>。HalluRAG旧R4完整配对分数仍缺失。</li>
+</ul>
+<h3 id="b2">B2：低成本固定融合</h3>
+<ul>
+<li>融合定义冻结后在同一批无标签分数上一次性评分、封存全部方法；已有rank只是序尺度，不称事实后验。</li>
+<li>秩标准化是批式transductive基线；预先声明批人群和范围，不能把单条API评分冒充与全任务秩融合完全一致。若改用独立无标签参考CDF，定义参考源隔离并另命名。</li>
+<li>全部主任务分别报告，不以平均值替代0.8目标，不从最终表格挑任务赢家。</li>
+<li>本块已完成一次固定基线验证，未搜索权重；五任务融合只有QA点值达到0.8。Summary对V3的AUROC差值区间跨0，金融两任务的AUROC/AP差值区间相对V3均为负；未替换V3，不再把加权本身当作主线设计。</li>
+</ul>
+<h3 id="b3proposed">B3：新增语义观测（PROPOSED，未执行）</h3>
+<p>先完成原始FN/FP来源审计，确认究竟是来源事实／标注范围、原始测量还是上下文传播的问题，再决定是否需要此模块。以下是待验证合同，不是已实现或已有效的方法。</p>
+<ul>
+<li>确定性句子单元，完整来源＋原回答，固定提示、输出格式、模型与解码；输出支持性软判断、引用和目标字符范围，允许unknown。</li>
+<li>引用存在和offset合法只能证明格式／文本对应，不证明蕴含。程序校验不能变成语义正确性oracle。</li>
+<li>初始覆盖所有句子，不能只看两个旧方法的分歧，否则Summary预算→奖金、错误金额等共同FN可能漏掉。</li>
+<li>保留原token变化；句级意见广播的粒度效应单列。不直接抹掉所有局部差异来追整体指标。</li>
+<li>显式算术可用已有有限语法函数作辅助；未知语法不硬判。等式正确、数值在源中出现都不能单独证明整句话受来源支持。</li>
+<li>记录每答调用、处理token、墙钟和显存；GPU/API资源到位后再执行，不虚报时间。</li>
+</ul>
+<h3 id="b4">B4：冻结后的真实效果与消融</h3>
+<ul>
+<li>先锁定主集合、可选模块、权重、标准化范围、种子、分段、指标、排除规则与完整分数，再读新的最终标签。</li>
+<li>同时报告逐任务AUROC、AP、top5%预算的TP/FP/FN、局部／原生句级指标及coverage。</li>
+<li>固定等权基线已冻结并完成五任务三路评价，采用1000次seed17按source_id配对bootstrap，名义95%区间未做多重校正；金融按发布referenceText的精确SHA256聚类，不当作独立公司。核验器尚未冻结或执行，旧关系方案K=8D不是其既定比较家族。</li>
+<li>已暴露的旧六组保留开发证据身份。现成而尚未用于开发的标注数据或保留测试部分可用于确认，不强制新建人工标注。</li>
+<li>按最终结果修改方案时，当前评价转探索；下一版另用未接触的确认数据。</li>
+</ul>
+<h2 id="_6">最先执行的工作</h2>
+<p>P001五任务成对缓存／身份已恢复；P002固定融合CPU基线已完成且拒绝晋升；P004五任务三路最终评价已完成，Hallu及新模块消融仍未完成。P003冻结基础模型核验器仅PROPOSED_NOT_RUN；当前先做来源支撑的FN/FP审计，不新增启发式分数。U001四条件操作诊断可辅助审计，关系扰动仍是受限可选分支。</p>
+<p>本次通过文件存储下载完成缓存恢复，不依赖SSH或新GPU推理；CPU基线已真实运行并保留负结果。原观察模型权重／新核验器资源尚未部署，不妨碍当前原始错例审计。新模块若获定义，仍须进入中央实验管线，先冻结再评价；不在临时脚本复制检测器。</p></article></main></body></html>

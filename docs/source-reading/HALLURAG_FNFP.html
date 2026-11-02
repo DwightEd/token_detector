@@ -1,0 +1,63 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HalluRAG：含答案样本的漏报、误报与标注粒度</title><link rel="stylesheet" href="assets/guide.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
+<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
+<style>@media print{body[data-article="EXPERIMENT_PLAN"]{font-size:14px;line-height:1.65}}</style></head><body data-article="HALLURAG_FNFP">
+<header><div class="eyebrow">TOKEN DETECTOR / 本地离线阅读</div><h1>HalluRAG：含答案样本的漏报、误报与标注粒度</h1>
+<nav><a href="FNFP_MECHANISM.html">FN/FP机制审查</a><a href="FNFP_CASES.html">逐例核对来源</a><a href="HALLURAG_FNFP.html">HalluRAG FN/FP</a><a href="PERFORMANCE_REVIEW.html">R4/V3、错例与0.8目标</a><a href="UNLABELLED_LIMITS.html">无标注边界</a><a href="METHOD_V3.html">V3方法</a><a href="RESULTS_CURRENT.html">全数据集对照</a><a href="INTEGRATED_DESIGN.html">受限关系候选</a><a href="EXPERIMENT_PLAN.html">模块计划</a><a href="VISUAL_GUIDE.html">交互演示</a><a href="THEORY.html">完整公式</a><a href="READING.html">逐行代码</a><a href="CPU_FUSION_REVIEW.html">未采用基线记录</a></nav>
+<p>公式已在浏览器排版；可用浏览器“打印 → 保存为PDF”。本页不需要联网。</p></header>
+<main><article class="article"><h1 id="hallurag-fn-fp">HalluRAG：实际 FN / FP 为什么出现</h1>
+<p><a href="FNFP_MECHANISM.html">五任务机制诊断</a> · <a href="FNFP_CASES.html">逐例事实核验</a> · <a href="../results/hallurag_fnfp_evidence.json">本页统计与来源证据 JSON</a></p>
+<p>这里分析已冻结的 V3 witness 与原始 full_gap 缓存。主要组按发布的 answerable / target-available 元数据确定：<strong>891 个回答、28,844 个已知标签 token，其中 6,311 个正 token</strong>。全部 1,782 个回答的 69,483 个分数均已恢复；主要组 994 个 unknown 只在评价时排除。R4 原始预测缓存被历史清理删除，<a href="../results/hallurag_strata_evidence.json">历史聚合结果</a>仍保留，本页没有新恢复的 R4 案例。</p>
+<h2 id="_1">先看告警预算与标签范围</h2>
+<p>global top 5% 使用 <code>ceil(0.05 × 28844) = 1443</code> 个告警，同分按原始回答和 token 顺序稳定处理。</p>
+<table>
+<thead>
+<tr>
+<th>冻结分数</th>
+<th style="text-align: right;">TP</th>
+<th style="text-align: right;">FP</th>
+<th style="text-align: right;">FN</th>
+<th style="text-align: right;">token precision</th>
+<th style="text-align: right;">token recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V3 witness</td>
+<td style="text-align: right;">752</td>
+<td style="text-align: right;">691</td>
+<td style="text-align: right;">5,559</td>
+<td style="text-align: right;">52.11%</td>
+<td style="text-align: right;">11.92%</td>
+</tr>
+<tr>
+<td>原始 full_gap</td>
+<td style="text-align: right;">486</td>
+<td style="text-align: right;">957</td>
+<td style="text-align: right;">5,825</td>
+<td style="text-align: right;">33.68%</td>
+<td style="text-align: right;">7.70%</td>
+</tr>
+</tbody>
+</table>
+<p>即使排序完美，1,443 个告警最多覆盖 6,311 个正 token 中的 <strong>22.86%</strong>，至少留下 <strong>4,868 个 FN</strong>。V3 的 5,559 个 FN 比这个预算下限多 691 个。大量 FN 的数量不能直接等同于大量独立事实被漏掉。</p>
+<p>原生标注是<strong>句级判断</strong>：现有 <code>sentence_token_labels</code> 将正句广播到每个相交 token。名字片段、地点、功能词和标点都可能继承正标签；资料没有最小错误字符跨度。</p>
+<h2 id="fp">FP：正常开头已获得极高的原始分数</h2>
+<p>691 个 FP 中，<strong>204 个在首 token，396 个在前五个 token</strong>。按 final 从高到低、每个新 source 取第一例得到的五个极端 FP，全是开头的 <code>" I"</code>，来自同一个 Llama-2-7b-chat-hf int4 生成器。下面保留两个有来源证据的例子。</p>
+<ul>
+<li><strong>FP3，source 475：</strong> 来源列出 OWCS 的奖金池、路线图和观众保持问题；回答也复述了这三点。误报却落在前置句 “I'm just an AI…” 的首 token，该原生句标为 <code>non-hallucinated</code>。原始 <code>d=18.6870</code> 已极高，context 仅增加 <code>0.6201</code>，final 为 <code>18.6140</code>。观察到的信号主要是开头措辞对上下文的预测变化。</li>
+<li><strong>FP4，source 520：</strong> 来源明确写道 <strong>“Two Night Stands” 将于 April 1, 2024 作为 Morgan 的第二首乡村电台单曲发布</strong>。回答后文却说来源未提及第二首单曲，相关句标为 <code>hallucinated</code>；当前 FP 选中的另一句是正常的 “I'm happy to help!”。首 token 的 <code>d=18.0623</code>、context <code>+1.2213</code>、final <code>18.5905</code>。这个案例展示了 token 告警位置与真正错误命题的偏移。</li>
+</ul>
+<p>这五例提供了 source 多样性，尚未提供生成器多样性。它们不能代表所有生成器的极端误报模式。</p>
+<h2 id="fn">FN：来源支持的词落在含错误命题的句子里</h2>
+<p>按 final 从低到高、每个新 source 取第一例得到五个极端 FN。以下两例可以直接对照来源中的事实。</p>
+<ul>
+<li><strong>FN3，source 518：</strong> 来源写明 “On 1 April, Pakistani police said that they had arrested <strong>12 people</strong> …”。回答却说没有关于警方四月一日行动的信息，形成来源可直接反驳的否定断言。所选 FN token <code>" Hey"</code> 来自句子前半部的标题 <strong>Richard Heyn</strong>，这个名字确实在另一段来源中。它的 <code>d=-8.1153</code>、context <code>-2.9846</code>、final <code>-3.6775</code>。句级正标签把后面错误的否定断言同时传播到了前面有来源支持的名字词。</li>
+<li><strong>FN5，source 481：</strong> Portland 来源只说 <strong>one man</strong> 开车冲向示威者、喷辣椒水后被拘留；另一段才出现足球人物 Nauman。回答把 <strong>Mohammad Nauman Khan</strong> 绑定到这起拘留事件，来源没有支持这项跨段人物—事件关系。所选 FN token <code>" Portland"</code> 本身却是正确地点：<code>d=-8.0553</code>、context <code>-2.3809</code>、final <code>-3.0737</code>。正确地点和动作的复制，并未核实人物关系。</li>
+</ul>
+<p>5,559 个 FN 中有 <strong>3,642 个 <code>d&lt;0</code></strong>，表示该 token 在有来源条件下更可预测。上述案例说明，局部可预测性可以与句内否定、信息范围或实体归属错误共存。另一个极端案例的来源与发布正标签存在明显张力；审计保留原标签，没有据此重标或调参。</p>
+<h2 id="_2">阶段量与核验</h2>
+<p>这里的 <code>d</code> 是冻结的 <code>log p(token|无来源) − log p(token|有来源)</code>；emission 使用现有 <code>witness_emissions(d)</code>，context 定义为 <strong>冻结 final − emission</strong>。这是代数分解，没有重跑推理或进行因果干预。</p>
+<p>完整 witness / full_gap 的 69,483 个 token 身份、回答哈希、原始序号和字符偏移精确对应；已知标签单位中的分数与完整预测缓存逐项相等。answerability 元数据按回答 ID、source ID 和回答哈希连接，句标签投影也与原始封存结果完全一致。所有案例均为事后诊断，未改变方法、分数、预算或阈值。</p></article></main></body></html>

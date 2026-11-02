@@ -3,7 +3,8 @@
   "as_of": "2026-10-31",
   "new_experiments": false,
   "evidence_sha256": "757d0e26a6cd13f800323b325f65ba98ff014bc29d2106c51ab951c729cecbd1",
-  "ledger_sha256": "7875f56fb95ea4dda2d358a881fce28ea62ac7890580984700948403a95c27c2",
+  "hallurag_strata_evidence_sha256": "bea982bb268aa603080ac52c43eb166b1bc2e916e26cfa92d11555f3db9e4b4d",
+  "ledger_sha256": "cc2b564fb043903c963a4ca1873fb8bf1aabafb22a8c261c31632051c9b4d4c7",
   "records": [
     {
       "group": "llama_historical",
@@ -2966,6 +2967,61 @@
       "status": "matched_historical_control",
       "observer": "Llama-3.1-8B-Instruct",
       "label_type": "financial_silver"
+    },
+    {
+      "group": "llama_hallurag_r4_historical",
+      "method": "R4",
+      "task": "HalluRAG",
+      "auroc": "0.576779953",
+      "ap": "0.262574463",
+      "source": "r4_hallurag_history_record_5299",
+      "status": "historical_reported",
+      "observer": "Llama-3.1-8B-Instruct",
+      "label_type": "sentence_derived_automatic"
+    },
+    {
+      "group": "llama_hallurag_r4_historical",
+      "method": "R4",
+      "task": "HalluRAG_available",
+      "auroc": "0.807066370",
+      "ap": "0.518829518",
+      "source": "r4_hallurag_history_record_5299",
+      "status": "historical_reported",
+      "observer": "Llama-3.1-8B-Instruct",
+      "label_type": "sentence_derived_automatic"
+    },
+    {
+      "group": "llama_hallurag_r4_historical",
+      "method": "R4",
+      "task": "HalluRAG_unavailable",
+      "auroc": "0.401881862",
+      "ap": "0.199318810",
+      "source": "r4_hallurag_history_record_5299",
+      "status": "historical_reported",
+      "observer": "Llama-3.1-8B-Instruct",
+      "label_type": "sentence_derived_automatic"
+    },
+    {
+      "group": "qwen_dense",
+      "method": "V3 witness",
+      "task": "HalluRAG_available",
+      "auroc": "0.7134",
+      "ap": "0.3773",
+      "source": "paper_table_28",
+      "status": "historical_reported",
+      "observer": "Qwen2.5-3B-Instruct",
+      "label_type": "sentence_derived_automatic"
+    },
+    {
+      "group": "qwen_dense",
+      "method": "V3 witness",
+      "task": "HalluRAG_unavailable",
+      "auroc": "0.4072",
+      "ap": "0.1531",
+      "source": "paper_table_28",
+      "status": "historical_reported",
+      "observer": "Qwen2.5-3B-Instruct",
+      "label_type": "sentence_derived_automatic"
     }
   ]
 }

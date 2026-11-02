@@ -1,0 +1,350 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>固定CPU融合：未采用的基线记录</title><link rel="stylesheet" href="assets/guide.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
+<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
+<style>@media print{body[data-article="EXPERIMENT_PLAN"]{font-size:14px;line-height:1.65}}</style></head><body data-article="CPU_FUSION_REVIEW">
+<header><div class="eyebrow">TOKEN DETECTOR / 本地离线阅读</div><h1>固定CPU融合：未采用的基线记录</h1>
+<nav><a href="FNFP_MECHANISM.html">FN/FP机制审查</a><a href="FNFP_CASES.html">逐例核对来源</a><a href="HALLURAG_FNFP.html">HalluRAG FN/FP</a><a href="PERFORMANCE_REVIEW.html">R4/V3、错例与0.8目标</a><a href="UNLABELLED_LIMITS.html">无标注边界</a><a href="METHOD_V3.html">V3方法</a><a href="RESULTS_CURRENT.html">全数据集对照</a><a href="INTEGRATED_DESIGN.html">受限关系候选</a><a href="EXPERIMENT_PLAN.html">模块计划</a><a href="VISUAL_GUIDE.html">交互演示</a><a href="THEORY.html">完整公式</a><a href="READING.html">逐行代码</a><a href="CPU_FUSION_REVIEW.html">未采用基线记录</a></nav>
+<p>公式已在浏览器排版；可用浏览器“打印 → 保存为PDF”。本页不需要联网。</p></header>
+<main><article class="article"><h1 id="cpu">固定等权秩融合：已完成但未采用的CPU基线</h1>
+<p>这是一次已归档的低成本基线检查，不是新的主线方法。五任务全部评分封存后才读取最终标签；没有搜索权重或按标签选择任务配置。<strong>金融两任务均弱于V3，未采用该基线；它没有完成逐任务AUROC≥0.8目标。</strong> 下一步先解释原始FN/FP的来源与机制。</p>
+<p>完成时间：<code>2026-11-02T08:53:38.256369+00:00</code>。复用完整历史缓存，共2992答、448202个原始有效token；本轮没有调用语言模型。本地恢复目录：<code>D:/projects/research/outputs/fusion-cache-20261102</code>。原文件及原token轴已核对SHA256。</p>
+<h2 id="_1">实际做了什么</h2>
+<p>R4和V3各自的最终风险分数先在完整任务人群内转换成经验中位秩，再各取一半。高分仍表示高风险。这只统一两路分数的排序尺度，没有新增语义观测、关系验证或训练。它是依赖整个任务批次的transductive基线，不能直接当作逐条API方法。</p>
+<div class="math-block">\[
+r_m(i)=\frac{1}{N}\left(\sum_{j=1}^{N}\mathbf{1}[s_m(j)&lt;s_m(i)]+\frac12\sum_{j=1}^{N}\mathbf{1}[s_m(j)=s_m(i)]\right),\quad m\in\{R4,V3\}.
+\]</div>
+
+<div class="math-block">\[
+s_{\mathrm{fusion}}(i)=\tfrac12r_{R4}(i)+\tfrac12r_{V3}(i).
+\]</div>
+
+<p>两边的0.5在查看本轮标签前固定。秩变换保留各路内部次序，但平均后的整体次序可以变好或变坏，没有AUROC必然提高的保证。所有原始评分token均保留；unknown只允许在最终评价中排除。本轮五任务实际unknown为0。</p>
+<h2 id="_2">完整人群与三路结果</h2>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th style="text-align: right;">回答数</th>
+<th style="text-align: right;">token数</th>
+<th style="text-align: right;">正例token数</th>
+<th style="text-align: right;">聚类数</th>
+<th>聚类依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QA</td>
+<td style="text-align: right;">900</td>
+<td style="text-align: right;">124817</td>
+<td style="text-align: right;">6751</td>
+<td style="text-align: right;">150</td>
+<td>source</td>
+</tr>
+<tr>
+<td>Summary</td>
+<td style="text-align: right;">900</td>
+<td style="text-align: right;">121248</td>
+<td style="text-align: right;">3485</td>
+<td style="text-align: right;">150</td>
+<td>source</td>
+</tr>
+<tr>
+<td>Data2txt</td>
+<td style="text-align: right;">900</td>
+<td style="text-align: right;">178343</td>
+<td style="text-align: right;">7407</td>
+<td style="text-align: right;">150</td>
+<td>source</td>
+</tr>
+<tr>
+<td>FinQA</td>
+<td style="text-align: right;">162</td>
+<td style="text-align: right;">16047</td>
+<td style="text-align: right;">1420</td>
+<td style="text-align: right;">142</td>
+<td>reference_text</td>
+</tr>
+<tr>
+<td>TATQA</td>
+<td style="text-align: right;">130</td>
+<td style="text-align: right;">7747</td>
+<td style="text-align: right;">828</td>
+<td style="text-align: right;">110</td>
+<td>reference_text</td>
+</tr>
+</tbody>
+</table>
+<p>RAGTruth使用人工字符跨度及官方source_id聚类。FRED金融任务使用发布的合成编辑跨度，按完整referenceText的SHA256聚类；142／110表示不同来源文本，不表示142／110家公司或独立财报。</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>方法</th>
+<th style="text-align: right;">AUROC</th>
+<th style="text-align: right;">AP</th>
+<th style="text-align: right;">top5% TP</th>
+<th style="text-align: right;">FP</th>
+<th style="text-align: right;">FN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QA</td>
+<td>R4</td>
+<td style="text-align: right;">0.892891</td>
+<td style="text-align: right;">0.352736</td>
+<td style="text-align: right;">2608</td>
+<td style="text-align: right;">3633</td>
+<td style="text-align: right;">4143</td>
+</tr>
+<tr>
+<td>QA</td>
+<td>V3 / witness</td>
+<td style="text-align: right;">0.846975</td>
+<td style="text-align: right;">0.214833</td>
+<td style="text-align: right;">1765</td>
+<td style="text-align: right;">4476</td>
+<td style="text-align: right;">4986</td>
+</tr>
+<tr>
+<td>QA</td>
+<td>固定等权秩融合</td>
+<td style="text-align: right;">0.888133</td>
+<td style="text-align: right;">0.341333</td>
+<td style="text-align: right;">2496</td>
+<td style="text-align: right;">3745</td>
+<td style="text-align: right;">4255</td>
+</tr>
+<tr>
+<td>Summary</td>
+<td>R4</td>
+<td style="text-align: right;">0.762063</td>
+<td style="text-align: right;">0.096576</td>
+<td style="text-align: right;">922</td>
+<td style="text-align: right;">5141</td>
+<td style="text-align: right;">2563</td>
+</tr>
+<tr>
+<td>Summary</td>
+<td>V3 / witness</td>
+<td style="text-align: right;">0.762337</td>
+<td style="text-align: right;">0.104562</td>
+<td style="text-align: right;">921</td>
+<td style="text-align: right;">5142</td>
+<td style="text-align: right;">2564</td>
+</tr>
+<tr>
+<td>Summary</td>
+<td>固定等权秩融合</td>
+<td style="text-align: right;">0.769380</td>
+<td style="text-align: right;">0.124156</td>
+<td style="text-align: right;">1002</td>
+<td style="text-align: right;">5061</td>
+<td style="text-align: right;">2483</td>
+</tr>
+<tr>
+<td>Data2txt</td>
+<td>R4</td>
+<td style="text-align: right;">0.798318</td>
+<td style="text-align: right;">0.190392</td>
+<td style="text-align: right;">2088</td>
+<td style="text-align: right;">6830</td>
+<td style="text-align: right;">5319</td>
+</tr>
+<tr>
+<td>Data2txt</td>
+<td>V3 / witness</td>
+<td style="text-align: right;">0.755716</td>
+<td style="text-align: right;">0.145209</td>
+<td style="text-align: right;">1720</td>
+<td style="text-align: right;">7198</td>
+<td style="text-align: right;">5687</td>
+</tr>
+<tr>
+<td>Data2txt</td>
+<td>固定等权秩融合</td>
+<td style="text-align: right;">0.794619</td>
+<td style="text-align: right;">0.199586</td>
+<td style="text-align: right;">2188</td>
+<td style="text-align: right;">6730</td>
+<td style="text-align: right;">5219</td>
+</tr>
+<tr>
+<td>FinQA</td>
+<td>R4</td>
+<td style="text-align: right;">0.661671</td>
+<td style="text-align: right;">0.145231</td>
+<td style="text-align: right;">133</td>
+<td style="text-align: right;">670</td>
+<td style="text-align: right;">1287</td>
+</tr>
+<tr>
+<td>FinQA</td>
+<td>V3 / witness</td>
+<td style="text-align: right;">0.802656</td>
+<td style="text-align: right;">0.325033</td>
+<td style="text-align: right;">373</td>
+<td style="text-align: right;">430</td>
+<td style="text-align: right;">1047</td>
+</tr>
+<tr>
+<td>FinQA</td>
+<td>固定等权秩融合</td>
+<td style="text-align: right;">0.751483</td>
+<td style="text-align: right;">0.252635</td>
+<td style="text-align: right;">305</td>
+<td style="text-align: right;">498</td>
+<td style="text-align: right;">1115</td>
+</tr>
+<tr>
+<td>TATQA</td>
+<td>R4</td>
+<td style="text-align: right;">0.711049</td>
+<td style="text-align: right;">0.220941</td>
+<td style="text-align: right;">101</td>
+<td style="text-align: right;">287</td>
+<td style="text-align: right;">727</td>
+</tr>
+<tr>
+<td>TATQA</td>
+<td>V3 / witness</td>
+<td style="text-align: right;">0.842992</td>
+<td style="text-align: right;">0.465722</td>
+<td style="text-align: right;">256</td>
+<td style="text-align: right;">132</td>
+<td style="text-align: right;">572</td>
+</tr>
+<tr>
+<td>TATQA</td>
+<td>固定等权秩融合</td>
+<td style="text-align: right;">0.792889</td>
+<td style="text-align: right;">0.339336</td>
+<td style="text-align: right;">168</td>
+<td style="text-align: right;">220</td>
+<td style="text-align: right;">660</td>
+</tr>
+</tbody>
+</table>
+<p>top5%在每个完整任务上按最终分数排序，同分按原始顺序稳定打破。它不是score&gt;0阈值；改变告警预算不改变AUROC。五个已评任务中，R4、V3、融合分别有1、3、1项点值达到0.8。HalluRAG仍未完成融合评价，不能从总体目标中移除。</p>
+<h2 id="_3">配对差值与解释</h2>
+<p>下表均为“融合−对照”。按source_id整体重采样1000次，seed=17；所有区间均为名义95%配对bootstrap区间，每项1000次有定义、0次退化，未做多重比较校正。这些已暴露人群仍是探索证据。</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>对照</th>
+<th style="text-align: right;">ΔAUROC［95%区间］</th>
+<th style="text-align: right;">ΔAP［95%区间］</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QA</td>
+<td>R4</td>
+<td style="text-align: right;">-0.004758 [-0.013904, +0.006591]</td>
+<td style="text-align: right;">-0.011403 [-0.091396, +0.056229]</td>
+</tr>
+<tr>
+<td>QA</td>
+<td>V3 / witness</td>
+<td style="text-align: right;">+0.041158 [+0.027733, +0.051816]</td>
+<td style="text-align: right;">+0.126500 [+0.091206, +0.160108]</td>
+</tr>
+<tr>
+<td>Summary</td>
+<td>R4</td>
+<td style="text-align: right;">+0.007317 [+0.000496, +0.016966]</td>
+<td style="text-align: right;">+0.027580 [+0.018406, +0.041004]</td>
+</tr>
+<tr>
+<td>Summary</td>
+<td>V3 / witness</td>
+<td style="text-align: right;">+0.007043 [-0.001229, +0.012952]</td>
+<td style="text-align: right;">+0.019593 [+0.012369, +0.030730]</td>
+</tr>
+<tr>
+<td>Data2txt</td>
+<td>R4</td>
+<td style="text-align: right;">-0.003699 [-0.010024, +0.003148]</td>
+<td style="text-align: right;">+0.009194 [-0.002720, +0.020314]</td>
+</tr>
+<tr>
+<td>Data2txt</td>
+<td>V3 / witness</td>
+<td style="text-align: right;">+0.038903 [+0.032214, +0.044837]</td>
+<td style="text-align: right;">+0.054376 [+0.041789, +0.068330]</td>
+</tr>
+<tr>
+<td>FinQA</td>
+<td>R4</td>
+<td style="text-align: right;">+0.089812 [+0.069795, +0.110482]</td>
+<td style="text-align: right;">+0.107404 [+0.060739, +0.173351]</td>
+</tr>
+<tr>
+<td>FinQA</td>
+<td>V3 / witness</td>
+<td style="text-align: right;">-0.051173 [-0.074555, -0.030202]</td>
+<td style="text-align: right;">-0.072399 [-0.127449, -0.008283]</td>
+</tr>
+<tr>
+<td>TATQA</td>
+<td>R4</td>
+<td style="text-align: right;">+0.081840 [+0.059602, +0.103322]</td>
+<td style="text-align: right;">+0.118395 [+0.043781, +0.198842]</td>
+</tr>
+<tr>
+<td>TATQA</td>
+<td>V3 / witness</td>
+<td style="text-align: right;">-0.050103 [-0.074692, -0.027058]</td>
+<td style="text-align: right;">-0.126386 [-0.203857, -0.035088]</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Summary的AUROC从V3的0.762337升到0.769380，但差值区间［−0.001229，0.012952］跨0；AP从0.104562升到0.124156，差值区间［0.012369，0.030730］为正。它仍未达到0.8。</li>
+<li>FinQA／TATQA融合AUROC为0.751483／0.792889，低于V3的0.802656／0.842992；两任务的AUROC和AP差值区间相对V3均完全为负。固定融合损害了现有金融优势。</li>
+<li>QA没有超过R4的点值；Data2txt的AUROC没有超过R4，AP点值增加但相对R4的差值区间跨0。</li>
+</ul>
+<p>因此未晋升这个基线，金融研究候选仍保留V3，软件默认shared／V1也未改变。这一次负结果既不能证明所有模块组合无效，也不能支持一般性的“R4与V3已经实现有效互补”。不宣称新SOTA或顶会方法。</p>
+<p>HalluRAG旧R4完整配对分数仍缺失，现有统计表不能代替token数组计算融合或配对区间。冻结语言模型的语义核验器仅为PROPOSED：未采集、未评分、未评价。当前优先做来源、回答、标注和各阶段分数对应的FN/FP机制审计，不另造启发式评分。</p>
+<h2 id="_4">可追溯记录</h2>
+<p>实际运行：<code>outputs/rank-fusion-cpu-20261102</code>。公开<a href="../results/cpu_fusion_evidence.json">汇总证据JSON</a>保留三路指标、人群、配对区间和各评价seal/hash。</p>
+<p>评价协议SHA256：<code>87655a280e263a4bf91f0fbf5ba376007f57e702138403472c54cbb700827a5c</code>。</p>
+<p>92项运行源码／资源hash清单的规范JSON摘要：<code>3372ff097c3364b31ac516606dada96c901b75f90d7d1968deedd394e98ee74b</code>。此处绑定当前CPU评分／评价实现，不据此补造历史GPU生产者的源码或权重认证。</p>
+<table>
+<thead>
+<tr>
+<th>本轮关键实现</th>
+<th>运行时SHA256</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>experiments/fusion_cache.py</code></td>
+<td><code>fc5aaba8e9143005ae2c3ab530402e5d3e0f03f470a3077e2317afe87d677e85</code></td>
+</tr>
+<tr>
+<td><code>experiments/rank_fusion.py</code></td>
+<td><code>9d6fae533664bed04addaf5cb3fbad56db76a8a94ddc27a6e67acbc8cfd9699d</code></td>
+</tr>
+<tr>
+<td><code>experiments/fusion_evaluation.py</code></td>
+<td><code>6a270dba72f235f8381407091a50d48f75e9d9b3ad26f876bd09da37879f9790</code></td>
+</tr>
+<tr>
+<td><code>experiments/evaluate.py</code></td>
+<td><code>285a9225533249386d1a547b5f3f5901cb174bd69e015a37476827c1e5f6fdf6</code></td>
+</tr>
+<tr>
+<td><code>experiments/run.py</code></td>
+<td><code>771fbb38f29eed691fb8a27074cb2cc6c3d8d3ee54e44512218d0bde1c5ec87c</code></td>
+</tr>
+<tr>
+<td><code>experiments/research/score_fusion.py</code></td>
+<td><code>16ebd3e3087e5e5bcc057d27544beb8260b9f2a314fa5afb8881870c38eae9d1</code></td>
+</tr>
+</tbody>
+</table>
+<p><a href="PERFORMANCE_REVIEW.html">历史R4/V3与错例</a> · <a href="../../refine-logs/EXPERIMENT_TRACKER.md">当前任务表</a></p></article></main></body></html>

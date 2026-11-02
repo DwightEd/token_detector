@@ -5265,44 +5265,157 @@
   "completed_source_lines": 2421,
   "current_additions": [
     {
-      "path": "tests/test_pooling_theory.py",
-      "sha256": "c7a015373c26891a439ef93787b3149c694c3b3e5cc49a752d3402ee5061e113",
-      "line_count": 114,
+      "path": "experiments/fusion_cache.py",
+      "sha256": "fc5aaba8e9143005ae2c3ab530402e5d3e0f03f470a3077e2317afe87d677e85",
+      "line_count": 235,
       "functions": 6,
       "status": "pending_line_explanation",
-      "validation": "see VALIDATION.md"
+      "validation": "Separate test/build receipts do not count as line explanation"
+    },
+    {
+      "path": "experiments/fusion_evaluation.py",
+      "sha256": "6a270dba72f235f8381407091a50d48f75e9d9b3ad26f876bd09da37879f9790",
+      "line_count": 239,
+      "functions": 5,
+      "status": "pending_line_explanation",
+      "validation": "Separate test/build receipts do not count as line explanation"
+    },
+    {
+      "path": "experiments/rank_fusion.py",
+      "sha256": "9d6fae533664bed04addaf5cb3fbad56db76a8a94ddc27a6e67acbc8cfd9699d",
+      "line_count": 132,
+      "functions": 5,
+      "status": "pending_line_explanation",
+      "validation": "Separate test/build receipts do not count as line explanation"
+    },
+    {
+      "path": "experiments/research/score_fusion.py",
+      "sha256": "16ebd3e3087e5e5bcc057d27544beb8260b9f2a314fa5afb8881870c38eae9d1",
+      "line_count": 24,
+      "functions": 1,
+      "status": "pending_line_explanation",
+      "validation": "Separate test/build receipts do not count as line explanation"
     },
     {
       "path": "tests/test_auc_decomposition.py",
       "sha256": "eaaa15cb28dd09cdc2fb764215cffba0959b4aad3aed916b333c93e22d7195ed",
       "line_count": 144,
-      "functions": 18,
+      "functions": 8,
       "status": "pending_line_explanation",
-      "validation": "see VALIDATION.md"
+      "validation": "Separate test/build receipts do not count as line explanation"
     },
     {
-      "path": "tools/render_source_reading.py",
-      "sha256": "3fed41d1ab2e68c74d5f65c3e2149dc87a8eb98ea7a48461280d9c7d88316edb",
-      "line_count": 85,
-      "functions": 0,
+      "path": "tests/test_fusion_cache.py",
+      "sha256": "30bdef680da0e9a9b3d0bc4173f54a2657172432f30ef7890d88eda458603c76",
+      "line_count": 212,
+      "functions": 16,
       "status": "pending_line_explanation",
-      "validation": "../results/VALIDATION.md"
+      "validation": "Separate test/build receipts do not count as line explanation"
+    },
+    {
+      "path": "tests/test_fusion_evaluation.py",
+      "sha256": "6ff28b9981d480dda8ee3aa4210cb79bf09ef7eb28f883b3dd28d92b8d295675",
+      "line_count": 325,
+      "functions": 25,
+      "status": "pending_line_explanation",
+      "validation": "Separate test/build receipts do not count as line explanation"
+    },
+    {
+      "path": "tests/test_pooling_theory.py",
+      "sha256": "c7a015373c26891a439ef93787b3149c694c3b3e5cc49a752d3402ee5061e113",
+      "line_count": 114,
+      "functions": 6,
+      "status": "pending_line_explanation",
+      "validation": "Separate test/build receipts do not count as line explanation"
+    },
+    {
+      "path": "tests/test_rank_fusion.py",
+      "sha256": "2aa102b0656401b6da5da11ddde9996a639030d298f9a00e5df140e0e0504df0",
+      "line_count": 183,
+      "functions": 15,
+      "status": "pending_line_explanation",
+      "validation": "Separate test/build receipts do not count as line explanation"
+    },
+    {
+      "path": "tools/render_cpu_fusion_review.py",
+      "sha256": "21733716d96f7cafb8ebd1019632f22d7f1e72f79c210200d96ed7fee9036ec5",
+      "line_count": 136,
+      "functions": 2,
+      "status": "pending_line_explanation",
+      "validation": "Separate test/build receipts do not count as line explanation"
+    },
+    {
+      "path": "tools/render_fnfp_mechanism.py",
+      "sha256": "bd3ebefc4db59f8d061941b62a3662b387d80207f0a191e99b18c6c53155d31c",
+      "line_count": 201,
+      "functions": 2,
+      "status": "pending_line_explanation",
+      "validation": "Separate test/build receipts do not count as line explanation"
     },
     {
       "path": "tools/render_math_guide.py",
-      "sha256": "232fdf4e702ade0aea4c7ec49d6ecdbb31087311602b6f4ea848cc48a373586b",
-      "line_count": 143,
+      "sha256": "05c2fa6a37df09448f661f5d1aa7fbc2f70cb5e2b4926ce5ee536eef5679df84",
+      "line_count": 148,
       "functions": 6,
       "status": "pending_line_explanation",
-      "validation": "../results/VALIDATION.md"
+      "validation": "Separate test/build receipts do not count as line explanation"
     },
     {
       "path": "tools/render_method_comparison.py",
-      "sha256": "9fa382c0cf15f1b6e4ca530171e1e22aaf7796901c557747f99f16de7294450b",
-      "line_count": 269,
+      "sha256": "38370b5af67373bcb6dc24ed7ed0c507cd109fbfb07f0dd03a44a2043790d85d",
+      "line_count": 286,
       "functions": 4,
       "status": "pending_line_explanation",
-      "validation": "../results/VALIDATION.md"
+      "validation": "Separate test/build receipts do not count as line explanation"
+    },
+    {
+      "path": "tools/render_performance_review.py",
+      "sha256": "8571a653c503a555b41d066f97c0d6ffa1c844c8aa4ddbeed3f329b2d5f2da11",
+      "line_count": 75,
+      "functions": 2,
+      "status": "pending_line_explanation",
+      "validation": "Separate test/build receipts do not count as line explanation"
+    },
+    {
+      "path": "tools/render_source_reading.py",
+      "sha256": "c07dfa248c1c962f1495cecbe6f1dca1df8a3d067b725e43db0d810e10b3976f",
+      "line_count": 85,
+      "functions": 0,
+      "status": "pending_line_explanation",
+      "validation": "Separate test/build receipts do not count as line explanation"
     }
-  ]
+  ],
+  "current_modifications": [
+    {
+      "path": "experiments/fullgap_dataset.py",
+      "sha256": "b3ba6cf32116219bb012bc2a4f0ce0e1e81fbdc0464b23ddc274d2804753fff8",
+      "line_count": 859,
+      "functions": 24,
+      "status": "pending_line_explanation",
+      "baseline_sha256": "0e89cbc9025503c69690dac0c909ae4c1dcb3527b4d3a939b69f96b79eef9e30",
+      "role": "Post-baseline modification; original inventory retained"
+    },
+    {
+      "path": "experiments/local_evaluation.py",
+      "sha256": "75150108aaa541b0dbb4825f7af3023de36e0686852e2d4fd7e9825ff65f3e88",
+      "line_count": 108,
+      "functions": 4,
+      "status": "pending_line_explanation",
+      "baseline_sha256": "1aea91af94cd39a2a971625d458909d5e82e97eb813352ff3a09da09cbfdd549",
+      "role": "Post-baseline modification; original inventory retained"
+    },
+    {
+      "path": "experiments/run.py",
+      "sha256": "771fbb38f29eed691fb8a27074cb2cc6c3d8d3ee54e44512218d0bde1c5ec87c",
+      "line_count": 405,
+      "functions": 2,
+      "status": "pending_line_explanation",
+      "baseline_sha256": "e504d9d54adbe1cd436bfdc954fa616d5b3f1338e90b4ac919358c220f4e8b5c",
+      "role": "Post-baseline modification; original inventory retained"
+    }
+  ],
+  "latest_update_date_beijing": "2026-11-02",
+  "current_addition_count": 15,
+  "current_file_count": 113,
+  "coverage_note": "The baseline 21-file/2421-line/128-definition explanation remains unchanged. Current additions and modifications listed here require line explanation; hashes or passing tests do not complete it. Post-recovery files are outside the original 88-file receipt."
 }

@@ -5,9 +5,10 @@
 <script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
 <style>@media print{body[data-article="EXPERIMENT_PLAN"]{font-size:14px;line-height:1.65}}</style></head><body data-article="INTEGRATED_DESIGN">
 <header><div class="eyebrow">TOKEN DETECTOR / 本地离线阅读</div><h1>组合设计与验证</h1>
-<nav><a href="UNLABELLED_LIMITS.html">无标注边界与决策</a><a href="METHOD_V3.html">V3方法</a><a href="RESULTS_CURRENT.html">全数据集对照</a><a href="INTEGRATED_DESIGN.html">受限关系候选</a><a href="EXPERIMENT_PLAN.html">当前计划</a><a href="VISUAL_GUIDE.html">交互演示</a><a href="THEORY.html">完整公式</a><a href="READING.html">逐行代码</a></nav>
+<nav><a href="FNFP_MECHANISM.html">FN/FP机制审查</a><a href="FNFP_CASES.html">逐例核对来源</a><a href="HALLURAG_FNFP.html">HalluRAG FN/FP</a><a href="PERFORMANCE_REVIEW.html">R4/V3、错例与0.8目标</a><a href="UNLABELLED_LIMITS.html">无标注边界</a><a href="METHOD_V3.html">V3方法</a><a href="RESULTS_CURRENT.html">全数据集对照</a><a href="INTEGRATED_DESIGN.html">受限关系候选</a><a href="EXPERIMENT_PLAN.html">模块计划</a><a href="VISUAL_GUIDE.html">交互演示</a><a href="THEORY.html">完整公式</a><a href="READING.html">逐行代码</a><a href="CPU_FUSION_REVIEW.html">未采用基线记录</a></nav>
 <p>公式已在浏览器排版；可用浏览器“打印 → 保存为PDF”。本页不需要联网。</p></header>
 <main><article class="article"><h1 id="_1">怎样把已有优点组合成一个可验证的方法</h1>
+<p><strong>最新偏好：允许多个模块，不要求服从一个统一概率模型。</strong> 当前性能目标和模块方案见<a href="PERFORMANCE_REVIEW.html">逐任务0.8、R4/V3与FN/FP</a>。下方仍是此前关系组合的受限历史候选，不作为“统一结构”的强制规范。</p>
 <p><strong>当前决策更新：关系扰动退出默认主线。</strong> 用户指出自然关系的语义确认在无标注条件下难以完成；单元格/类型检查不能解决这一前提。保留V3，先做来源有/无×历史full/local的预测诊断，不马上增加评分模块。完整说明见<a href="UNLABELLED_LIMITS.html">无标注的识别边界与当前决策</a>。</p>
 <p>以下保留此前尚未执行的关系组合候选，状态为 <strong>DEFERRED_RELATION_ASSUMPTION_UNRESOLVED</strong>。它仅能在来源自带可信语义合同的结构化范围内考虑为可选分支，不能读作当前通用方法推荐。已有混合代数、推断正确性和误差界仍成立，但没有补上语义资格或效用保证。</p>
 <h2 id="v3">归档候选：关系观测与V3组合</h2>

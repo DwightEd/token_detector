@@ -1,0 +1,543 @@
+{
+  "scope": "Recovered, already-exposed diagnostic examples; no new scoring or model selection",
+  "finance_observer": "Meta-Llama-3.1-8B-Instruct",
+  "finance_label_source": "Released FRED silver edit spans",
+  "finance_alarm_policy": {
+    "description": "Stable descending scores, task-wide top5 percent; cases are never reranked separately",
+    "FinQA": {
+      "known_tokens": 16047,
+      "positive_tokens": 1420,
+      "alarm_budget": 803
+    },
+    "TATQA": {
+      "known_tokens": 7747,
+      "positive_tokens": 828,
+      "alarm_budget": 388
+    }
+  },
+  "paper_source": {
+    "name": "Recovered main.pdf, unsubmitted working manuscript",
+    "sha256": "12d1616adb62a41c94292b97dbee8c08ca355af1b29200a99c19a6c6618513fe",
+    "note": "Tables10-16 are V3/Matched/Symmetric, not R4. R4 stage percentiles below are separately sourced from experiments/EXPERIMENTS.md:460."
+  },
+  "cases": [
+    {
+      "id": "fred:finqa:test:53",
+      "task": "FinQA",
+      "type": "FN: wrong numeric magnitude; additional unmarked direction error",
+      "source_facts": "2014 net revenue $5735 million; 2015 net revenue $5829 million",
+      "response": "The net change in net revenue during 2015 for Entergy Corporation was a decrease of $8 million ($5829 million - $5735 million).",
+      "interpretation": "The displayed difference is +94 million. Released positive span marks the edited $8 million phrase, not every semantic error in the answer.",
+      "v3_task_top5_counts": {
+        "tp": 0,
+        "fp": 4,
+        "fn": 3
+      },
+      "tokens": [
+        {
+          "target": 18,
+          "chars": [
+            83,
+            85
+          ],
+          "text": " $",
+          "label": 1,
+          "raw_gap": -0.3334,
+          "v3_score": 0.1694,
+          "v3_alarm": false
+        },
+        {
+          "target": 19,
+          "chars": [
+            85,
+            86
+          ],
+          "text": "8",
+          "label": 1,
+          "raw_gap": 0.3684,
+          "v3_score": 0.0949,
+          "v3_alarm": false
+        },
+        {
+          "target": 20,
+          "chars": [
+            86,
+            94
+          ],
+          "text": " million",
+          "label": 1,
+          "raw_gap": -0.3095,
+          "v3_score": -0.3001,
+          "v3_alarm": false
+        }
+      ],
+      "r4_scores": null,
+      "failure_layer": "Weak/incorrect own observation plus global ranking; changing context alone is not established to supply numeric support information",
+      "evidence": [
+        "paper p14-15 source/response",
+        "paper p18 Tables10-11"
+      ]
+    },
+    {
+      "id": "fred:finqa:test:59",
+      "task": "FinQA",
+      "type": "Partial FN: wrong account name despite correct arithmetic",
+      "source_facts": "Increases in current period tax positions 53818; decreases in prior period measurement of tax positions -36528; allowance/tax account context",
+      "response": "In 2014, the net change in revenue recognition was an increase of $17,290. This can be calculated by subtracting the decrease in prior period measurement of tax positions ($36,528) from the increase in current period tax positions ($53,818): $53,818 - $36,528 = $17,290.",
+      "v3_task_top5_counts": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1
+      },
+      "tokens": [
+        {
+          "target": 9,
+          "chars": [
+            26,
+            34
+          ],
+          "text": " revenue",
+          "label": 1,
+          "raw_gap": 4.1336,
+          "v3_score": 1.6199,
+          "v3_alarm": true
+        },
+        {
+          "target": 10,
+          "chars": [
+            34,
+            46
+          ],
+          "text": " recognition",
+          "label": 1,
+          "raw_gap": -4.9472,
+          "v3_score": -0.2135,
+          "v3_alarm": false
+        }
+      ],
+      "r4_stage_risk_percentiles": {
+        "token": " revenue",
+        "raw_full_gap": 99.2,
+        "span_pooled": 25.0,
+        "final": 15.9
+      },
+      "failure_layer": "Entity/account binding observation differs sharply between subtokens; V3 partially recovers first token but cannot identify entire phrase",
+      "evidence": [
+        "paper p15 source/response",
+        "paper p18 Table10",
+        "paper p19 Table12",
+        "experiments/EXPERIMENTS.md:460"
+      ]
+    },
+    {
+      "id": "fred:tatqa:test:3",
+      "task": "TATQA",
+      "type": "FP: supported arithmetic and its surrounding explanation",
+      "source_facts": "Net profit excluding impairment: 2019 46.0 USDm; 2018 -34.8 USDm",
+      "response_pdf_normalized": "In 2019, the Net profit/(loss) for the year excluding impairment was 46.0 USDm and in 2018 it was -34.8 USDm. To calculate the change, we subtract the 2018 figure from the 2019 figure: 46.0 - (-34.8) = 80.8 Therefore, the change in Net profit/(loss) for the year excluding impairment in 2019 from 2018 was an increase of 80.8 USD million.",
+      "response_text_note": "PDF transcription normalizes original whitespace; original offsets below index the archived response, not this transcription. The other five finance responses match their listed token offsets exactly.",
+      "interpretation": "46.0 - (-34.8) = 80.8 is supported by source values; lack of a verbatim 80.8 source cell does not make it unsupported. Entire response is released negative.",
+      "v3_task_top5_counts": {
+        "tp": 0,
+        "fp": 14,
+        "fn": 0
+      },
+      "matched_local_task_top5_counts": {
+        "tp": 0,
+        "fp": 6,
+        "fn": 0
+      },
+      "symmetric_local_task_top5_counts": {
+        "tp": 0,
+        "fp": 4,
+        "fn": 0
+      },
+      "tokens": [
+        {
+          "target": 72,
+          "chars": [
+            211,
+            220
+          ],
+          "text": "Therefore",
+          "label": 0,
+          "raw_gap": 0.6393,
+          "v3_score": 1.6792,
+          "v3_alarm": true
+        },
+        {
+          "target": 86,
+          "chars": [
+            276,
+            287
+          ],
+          "text": " impairment",
+          "label": 0,
+          "raw_gap": -0.0005,
+          "v3_score": 1.8986,
+          "v3_alarm": true
+        },
+        {
+          "target": 104,
+          "chars": [
+            333,
+            341
+          ],
+          "text": " million",
+          "label": 0,
+          "raw_gap": 5.4248,
+          "v3_score": 5.7368,
+          "v3_alarm": true
+        }
+      ],
+      "r4_scores": null,
+      "failure_layer": "Derived arithmetic/unit expression can have high own risk gap; shared inference also lifts surrounding correct words. Local-prior controls reduce this case's FP but lose complete-task performance, so this case does not justify promoting them.",
+      "evidence": [
+        "paper p15 source/response",
+        "paper p17 supported arithmetic discussion",
+        "paper p18 Table10",
+        "paper p19 Table13"
+      ]
+    },
+    {
+      "id": "fred:tatqa:test:50",
+      "task": "TATQA",
+      "type": "Partial FN: wrong year split into subtokens",
+      "source_facts": "Current deferred income: 2019 53.2 million; 2018 55.2 million",
+      "response": "The change in Current deferred income was a decrease of $2.0 million ($55.2 million in 2018 to $53.2 million in 2020).",
+      "v3_task_top5_counts": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1
+      },
+      "tokens": [
+        {
+          "target": 32,
+          "chars": [
+            112,
+            115
+          ],
+          "text": "202",
+          "label": 1,
+          "raw_gap": 5.9899,
+          "v3_score": 3.7382,
+          "v3_alarm": true
+        },
+        {
+          "target": 33,
+          "chars": [
+            115,
+            116
+          ],
+          "text": "0",
+          "label": 1,
+          "raw_gap": -0.0611,
+          "v3_score": 1.1141,
+          "v3_alarm": false
+        }
+      ],
+      "r4_stage_risk_percentiles": {
+        "token": "202",
+        "raw_full_gap": 99.5,
+        "span_pooled": 36.8,
+        "final": 51.5
+      },
+      "failure_layer": "Subtoken evidence is uneven. V3 catches first part but leaves wrong final digit below task-wide alarm budget; R4 earlier stages suppress even strong first-subtoken risk.",
+      "evidence": [
+        "paper p15-16 source/response",
+        "paper p18 Table10",
+        "paper p20 Table14",
+        "experiments/EXPERIMENTS.md:460"
+      ]
+    },
+    {
+      "id": "fred:tatqa:test:51",
+      "task": "TATQA",
+      "type": "FN: coverage-period relation annual versus monthly; invoicing remains annually",
+      "source_facts": "For multi-year agreements, we generally invoice customers annually at the beginning of each annual coverage period.",
+      "response": "Multi-year agreement customers are generally invoiced annually at the beginning of each monthly coverage period.",
+      "v3_task_top5_counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1
+      },
+      "tokens": [
+        {
+          "target": 14,
+          "chars": [
+            87,
+            95
+          ],
+          "text": " monthly",
+          "label": 1,
+          "raw_gap": 3.9145,
+          "v3_score": 0.8794,
+          "v3_alarm": false
+        }
+      ],
+      "r4_stage_risk_percentiles": {
+        "token": " monthly",
+        "raw_full_gap": 98.8,
+        "span_pooled": 6.9,
+        "final": 9.4
+      },
+      "failure_layer": "Strong own gap is diluted by contextual inference/global ranking. Symmetric local catches this one token but has worse complete-task metrics.",
+      "evidence": [
+        "paper p16 source/response",
+        "paper p18 Table10",
+        "paper p20 Table15",
+        "experiments/EXPERIMENTS.md:460"
+      ]
+    },
+    {
+      "id": "fred:tatqa:test:54",
+      "task": "TATQA",
+      "type": "FN: wrong account type; contextual score reversal",
+      "source_facts": "The table concerns Deferred tax assets and Deferred tax liabilities.",
+      "response": "The two main items measured in this table are Accrued expenses and Deferred tax liabilities.",
+      "v3_task_top5_counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 4
+      },
+      "tokens": [
+        {
+          "target": 9,
+          "chars": [
+            45,
+            49
+          ],
+          "text": " Acc",
+          "label": 1,
+          "raw_gap": 2.6507,
+          "v3_score": -0.1422,
+          "v3_alarm": false,
+          "raw_gap_global_rank": 173,
+          "v3_global_rank": 2866
+        },
+        {
+          "target": 10,
+          "chars": [
+            49,
+            51
+          ],
+          "text": "ru",
+          "label": 1,
+          "raw_gap": -4.7318,
+          "v3_score": -1.1835,
+          "v3_alarm": false
+        },
+        {
+          "target": 11,
+          "chars": [
+            51,
+            53
+          ],
+          "text": "ed",
+          "label": 1,
+          "raw_gap": 0.0007,
+          "v3_score": -1.1798,
+          "v3_alarm": false
+        },
+        {
+          "target": 12,
+          "chars": [
+            53,
+            62
+          ],
+          "text": " expenses",
+          "label": 1,
+          "raw_gap": -0.4112,
+          "v3_score": -1.3009,
+          "v3_alarm": false
+        }
+      ],
+      "r4_stage_risk_percentiles": {
+        "token": " Acc",
+        "raw_full_gap": 97.8,
+        "span_pooled": 24.6,
+        "final": 19.0
+      },
+      "failure_layer": "First subtoken's positive evidence is reversed and global rank drops outside388/7747 budget; other subtokens already have weak or incorrect observation. Matched/symmetric sign repair still does not reach global budget.",
+      "evidence": [
+        "paper p16-17 source/response",
+        "paper p7 Figure1",
+        "paper p18 Table10",
+        "paper p21 Table16",
+        "experiments/EXPERIMENTS.md:460"
+      ]
+    },
+    {
+      "id": "ragtruth:10988",
+      "source_id": "14938",
+      "task": "Data2txt",
+      "response_generator": "not recovered in this excerpt",
+      "native_score_source": "Historical native_support_ragtruth_all cache, replayed by case_audit.py in2026-10-28; original LM observation not rerun here",
+      "type": "FN: missing attributes converted into categorical negation",
+      "label_source": "RAGTruth human character span; Evident Baseless Info; due_to_null=true",
+      "source_facts": "RestaurantsReservations, OutdoorSeating, WiFi, RestaurantsTakeOut, RestaurantsGoodForGroups, Music, Ambience are all null/unknown.",
+      "response_fragment": "does not offer online reservations, outdoor seating, WiFi, takeout options, group dining, music, or ambiance.",
+      "human_positive_span": {
+        "start": 325,
+        "end": 434
+      },
+      "token": " does",
+      "target": 60,
+      "raw_local_gap": 11.995737,
+      "raw_full_gap": -2.193166,
+      "r4_pair_point": 4.901285,
+      "r4_span_prior": -1.584061,
+      "r4_source_percentile": 0.10419,
+      "r4_unary": 0.144336,
+      "r4_final_log_odds": -1.120075,
+      "old_v1_beta_score": -3.637162,
+      "v3_score": null,
+      "population_scope": "Historical exposed DEV; FN definition uses fixed top10 percent historical budget, not finance top5 percent",
+      "failure_layer": "Local branch already has positive risk evidence, but full-history observation reverses it; R4 span aggregation/window/limited innovation suppresses the paired point. Full-gap-only V3 has discarded this local observation, but its actual score for this case was not recovered.",
+      "evidence": [
+        "recovered session record118225: native human labels and stage token output",
+        "record124621: executed FN_FP_REVIEW_20261028.md",
+        "record124172: generating source script"
+      ]
+    },
+    {
+      "id": "ragtruth:3182",
+      "source_id": "11997",
+      "task": "Summary",
+      "response_generator": "Mistral (reported in recovered audit; exact checkpoint not recovered in this excerpt)",
+      "native_score_source": "Historical native_support_ragtruth_all cache, replayed by case_audit.py in2026-10-28; original LM observation not rerun here",
+      "type": "FN: budget versus prizes binding",
+      "label_source": "RAGTruth human character span; Evident Conflict",
+      "source_facts": "The event boasts an $8 million budget.",
+      "response_fragment": "where they will compete for $8 million in prizes.",
+      "human_positive_span": {
+        "start": 132,
+        "end": 153,
+        "text": "$8 million in prizes."
+      },
+      "token": " prizes",
+      "target": 31,
+      "raw_full_gap": -1.369917780160904,
+      "raw_local_gap": -1.369913101196289,
+      "present_to_absent_probability_ratio": 3.9350271448708263,
+      "r4_unit_token_count": 33,
+      "r4_unit_percentile": 0.050594940505949405,
+      "r4_weighted_innovation": 0.012499507624995083,
+      "r4_unary": 0.06309444813094449,
+      "r4_final_log_odds": -1.298949419408817,
+      "v3_score": null,
+      "population_scope": "Posthoc exposed historical DEV case; historical FN budget top10 percent, not finance top5 percent; not completeTEST efficacy",
+      "failure_layer": "Source makes the wrong relation's wording more predictable; R4's window/rank/centering gives too little individual correction. This does not establish that the budget token causally produced prizes.",
+      "evidence": [
+        "recovered session record118225: released human annotation",
+        "record119671: audit.py selects cohort ragtruth_Summary and Summary.npz",
+        "record119682: executed audit output",
+        "record119700: source/result report",
+        "experiments/EXPERIMENTS.md:152"
+      ]
+    }
+  ],
+  "additional_r4_fp_diagnostic": {
+    "id": "ragtruth:2390",
+    "source_id": "11863",
+    "task": "Summary",
+    "response_generator": "not recovered in this excerpt",
+    "native_score_source": "Historical native_support_ragtruth_all cache, replayed by case_audit.py in2026-10-28; original LM observation not rerun here",
+    "source_facts": "Kathmandu earthquake and Tanka Maya Sitoula rescue report",
+    "response_title": "Kathmandu Earthquake Survivor Story:",
+    "label_scope": "Title has no human positive span; whole response has an unrelated unsupported return-to-apartment narrative at characters425:600",
+    "tokens": [
+      {
+        "text": "Earth",
+        "target": 4,
+        "raw_local_gap": 12.537612,
+        "raw_full_gap": 12.410375,
+        "r4_span_prior": 4.316279,
+        "r4_source_percentile": 0.9998,
+        "r4_unary": 0.91347,
+        "r4_final": 1.365564,
+        "old_v1_beta_score": 10.536444
+      },
+      {
+        "text": "Story",
+        "target": 7,
+        "raw_local_gap": -1.511398,
+        "raw_full_gap": -1.514269,
+        "r4_span_prior": 4.316279,
+        "r4_source_percentile": 0.9998,
+        "r4_unary": 1.1091,
+        "r4_final": 1.831157,
+        "old_v1_beta_score": -2.570538
+      }
+    ],
+    "earth_share_of_lme_weight": 0.840549,
+    "lme_after_arithmetic_only_removal_of_earth": -2.556652,
+    "v3_scores": null,
+    "population_scope": "Historical exposed DEV; FP classification uses old fixed task-wide top10 percent budget. Whole-response correctness is not claimed.",
+    "interpretation": "One extreme raw observation dominates shared R4 span score and broadcasts risk to a normal title word. V1 reduces Story score on this selected case, but does not repair Earth. No detector text was deleted or new LM run; sign changes alone do not prove a new global FP reduction.",
+    "evidence": "recovered session record124621: executed FN_FP_REVIEW_20261028.md"
+  },
+  "historical_r4_rag_dev_top10_counts": {
+    "population_note": "48answers perRAGtask=144; old combinedDEV276 also included132HalluVALanswers. Do not compare these counts to current900answerperRAGtaskTEST.",
+    "QA": {
+      "tp": 360,
+      "fp": 304,
+      "fn": 420
+    },
+    "Summary": {
+      "tp": 84,
+      "fp": 604,
+      "fn": 137
+    },
+    "Data2txt": {
+      "tp": 177,
+      "fp": 857,
+      "fn": 249
+    },
+    "evidence": "recovered session record124621"
+  },
+  "label_caveat_not_a_confirmed_detector_fp": {
+    "id": "fred:finqa:test:0",
+    "response_calculation": "(57 - 41)/41 * 100 = 16.12%",
+    "actual_displayed_calculation_result": 39.02439024390244,
+    "released_positive_spans": 0,
+    "detector_score_or_alarm_restored": false,
+    "interpretation": "An alarm on an unmarked error can count as benchmarkFP; this single case establishes a label limitation, not its population prevalence. It must not be used to relabel or tune scores.",
+    "evidence": "paper p17 lines925-933"
+  },
+  "complete_task_v3_top5_counts": {
+    "QA": {
+      "tp": 1765,
+      "fp": 4476,
+      "fn": 4986
+    },
+    "Summary": {
+      "tp": 921,
+      "fp": 5142,
+      "fn": 2564
+    },
+    "Data2txt": {
+      "tp": 1720,
+      "fp": 7198,
+      "fn": 5687
+    },
+    "FinQA": {
+      "tp": 373,
+      "fp": 430,
+      "fn": 1047
+    },
+    "TATQA": {
+      "tp": 256,
+      "fp": 132,
+      "fn": 572
+    }
+  },
+  "limitations": [
+    "The six finance cases were fixed historically and are not a new representative sample.",
+    "Finance cases use full TEST task-wide top5 percent budgets (FinQA803/TATQA388); historical RAG R4 cases use each48-response DEV task top10 percent, not main900-response TEST. AUROC is threshold-free.",
+    "Paper decimals are rounded published values; no original scoreNPZ arrays were locally restored or rescored here.",
+    "Historical RAG native producer/checkpoint identity is not independently established by these recovered report snippets; explicit generator fields are reported only where recovered.",
+    "R4 stage percentages are risk percentiles from an earlier R4 audit, not V1 shared scores or calibrated error probabilities.",
+    "No label-driven fitting, candidate selection, GPU experiment, or detection improvement was performed."
+  ]
+}
