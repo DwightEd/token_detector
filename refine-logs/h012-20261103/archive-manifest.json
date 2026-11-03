@@ -1,0 +1,25 @@
+{
+  "schema": "exact-research-evidence-archive-v1",
+  "files": [
+    {
+      "source": "outputs/h012-natural-masked-20261103/DESIGN.md",
+      "archived": "refine-logs/h012-20261103/DESIGN.md",
+      "sha256": "0a0a4005c502010eb5aae97df79fcb9242db8f0af541491e01d1e6c5f03bae7f"
+    },
+    {
+      "source": "outputs/h012-natural-masked-20261103/kernel-review.md",
+      "archived": "refine-logs/h012-20261103/kernel-review.md",
+      "sha256": "5beea5dc4f73cb96be3b45c86a77fcf00e942d30f4d1a9b450f93d668ed70105"
+    },
+    {
+      "source": "outputs/h012-natural-masked-20261103/outer-review.md",
+      "archived": "refine-logs/h012-20261103/outer-review.md",
+      "sha256": "c7b8efa9163c9c664db60c720e3f226df5a1e41dda21aae82ebeb9e94e265d7f"
+    },
+    {
+      "source": "outputs/h012-natural-masked-20261103/post-stage-binding-v1.json",
+      "archived": "refine-logs/h012-20261103/post-stage-binding-v1.json",
+      "sha256": "7be6ee3a9d5852b6f7802ab40d324c02d513172b9372b7f2e0cdcb82119f0d58"
+    }
+  ]
+}

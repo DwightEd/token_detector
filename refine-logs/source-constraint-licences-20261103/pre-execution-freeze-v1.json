@@ -1,0 +1,27 @@
+{
+  "schema": "source-only-constraint-freeze-v1",
+  "state": "frozen_before_source_value_extraction",
+  "inventory_metadata": "D:\\projects\\research\\token_detector\\outputs\\full-input-inventory-20261103\\inventory.json",
+  "inputs": "D:\\projects\\research\\token_detector\\outputs\\full-input-inventory-20261103\\RAGTruth_Data2txt\\inputs.jsonl",
+  "file_sha256": {
+    "D:\\projects\\research\\token_detector\\outputs\\source-constraint-licences-20261103\\DESIGN.md": "5255767f7c1358064d9e0ed4c35ee7e6f3d0b4e1c83cc8b2f0f1d99166d52b19",
+    "D:\\projects\\research\\token_detector\\outputs\\source-constraint-licences-20261103\\inventory_sources.py": "523d6df2963cc1d15154e30a173aec04dbca942202e953bed335055d1831bb5a",
+    "D:\\projects\\research\\token_detector\\outputs\\full-input-inventory-20261103\\inventory.json": "80d20b26623fc45f9070dc68865e161b5f7c1f2bb64a8399c8556771c80eb210",
+    "D:\\projects\\research\\token_detector\\outputs\\full-input-inventory-20261103\\RAGTruth_Data2txt\\inputs.jsonl": "050c79f2711aa292845f27ed4f3ae8b68f0d263bc9d29678486f7e8fb6477521",
+    "D:\\projects\\research\\token_detector\\experiments\\research\\typed_source.py": "7540cf07833555036e83131fa21bed94b58f96726c7162619d7b151dbe1483c8",
+    "D:\\projects\\research\\token_detector\\outputs\\full-input-inventory-20261103\\inspect_hallurag_axis_sample.py": "56b657e75e43e9e924f79a6026cdf95188bdf215b96a07c85143a4c2e58ca778",
+    "D:\\projects\\research\\token_detector\\research-state\\prior_experiments.json": "43d20b4e67e806915dd4876e0d0e7d5cec00a7176c1d2d29d1d15a5292d555e3",
+    "D:\\projects\\research\\token_detector\\myproject\\proofs.py": "191727f0f2e073b3ab53ffea7ba4d2e946514a771f6afd4d9d026c70d63de7b9"
+  },
+  "inputs_sha256": "050c79f2711aa292845f27ed4f3ae8b68f0d263bc9d29678486f7e8fb6477521",
+  "responses": 900,
+  "distinct_source_ids": 150,
+  "ordered_id_sha256": "9af52b4c0f307ba74776739250912ba089449249750cafe9d327efedb2fb8b04",
+  "decoded_input_fields": [
+    "id",
+    "source_id",
+    "source"
+  ],
+  "response_gold_prediction_values_decoded": false,
+  "model_calls": 0
+}

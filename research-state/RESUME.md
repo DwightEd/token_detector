@@ -1,27 +1,38 @@
-# 当前恢复：H011擦值QA桥失败，推进H012自然工程库存
+# 当前恢复：H012/H014 完成；H013 数值失败；H015 工程资格待实测
 
-用户持续要求继续迭代不要停。六任务同AUROC≥.8尚未达成；旧goal工具blocked不覆盖继续授权。目标gold只在方法/预测/评价冻结后用于评价与事后诊断，禁止标签训练/参数/模板/任务赢家/经验权重选择。每结论更新facts/decisions，本入口不堆回旧日志。
+持续目标是机制驱动、无目标标签训练的幻觉检测，争取六项主任务各 AUROC≥0.8；尚未实现。用户授权继续研究、实验、桌面归档和 push。旧 goal 工具 blocked 状态不覆盖用户的继续授权，也不能重建/假称完成。真值仅在方法、配置、预测及评价轴冻结后用于评价和事后诊断；不得选任务赢家、阈值、权重、prompt 或层。既有暴露面板不能重新算未见确认。
 
-## 本轮实际结论
+恢复先读 facts F029–F034、decisions D027 和 prior_experiments P002/P003/P005。不要再次验证已知现象或重跑旧神经请求。
 
-H011/F026已全部完成：同3B固定模板、48旧答/96槽/48Q96完整姓名+EOS，96forward12.3813288秒，32816input/516forcedtarget/0generated，0unknown。b0/4/12正确9/16、8/16、10/16；sourceflip3/8、2/8、4/8；eventflip1/8、0/8、2/8；全48答AUC.6371527778/AP.6798580339。最短也失败，不能归因suffix。封存raw选择显示每8来源有7/8、8/8、6/8两个角色选同名，双反向均0；不是新分数或attention因果证明，toy锚在逻辑上仍充分，不能说擦除必然信息丢失。
+## 本轮新完成
 
-观察954488248f0417aebefd288d07c8976b502860d1c397579b04af2fc5d7126283，CPU5c162fe8ade0a235a221a9c0ad309bb1f98a3a8cb79ba9a06e3887192f7ba3fb；全sealed/registry完成，worker36792/parent60036已退出，勿重跑。docs/results/h011_masked_reconstruction.{md,json}、图、refine-logs/h011-20261103角色审计与两轮独立review。Observer117wheel60cc608fbc408cde8f09845c71a4c978e6306c5c728585b11da1ad8b1617e5df/codeb6a7995；CPU118wheelb5ece3c5b43f149d33d909e7725cd63d84eaee9898a78ef48605e874594af461/code5690007，均已push。19kernel、11sharedcollector、3完整integration、27旧默认CPUregression、6newCPU及6outsideinstalled已过；tests不是效果。
+- **H012/F030**：18 自然例、719 来源/136 回答 NER occurrences、148 来源池。130 擦值 artifacts、6 重叠跨度 unknown；QA 准入0，潜在680 completion pairs 尚未评分；无新模型/tokenizer/NER调用。所有语义状态和未提案区域未知。报告 docs/results/h012_natural_inventory.{md,json}，run1daab8c5696195e0e46eb394441d5f84528bc9adf62ac5442da925b85bf1c4e9。
+- **H014/F031**：固定 H009 kernel 复用全部24个 H011矩阵/96 raw，0新forward。独立→联合问句正确27/48→42/48；burden0/4/12分别9/8/10→16/12/14 of16；完整映射3/24→21/24；21个同名塌缩18恢复、3仍错。构造原答 pooled AUC .6371527778→.9565972222。不是自然/全任务/原token轴效果，也未证LLM必要：toy parser可直接解题。报告 docs/results/h014_cached_role_assignment.{md,json,png,pdf}，run383639f77106c62f795c25f5524ffec7e4073a30bd3c2bde76e237cc5834adba。
+- **来源约束/F032**：Data2txt900记录/150不同来源，均是Python-literal嵌套对象，9顶层键；review_info每个来源3行。完整path查值唯一150/150，但typed scalar单射0/150，非空string leaf单射23/150，127重复值、140null。没有自然语义双射或R全覆盖许可。公开小汇总 docs/results/source_constraint_licences.{md,json}，完整6.2MB inventory在outputs/source-constraint-licences-20261103和桌面。
+- **文献/F034**：docs/research/20261103_entity_binding_review.{md,html}；独立四篇审查20261103_binding_representation_audit.{md,html}。ICLR2024 binding-ID、EMNLP2024 OI/PCA、ICLR2026 P/L/R、2026rebinding、GLiREL、RefChecker、DEPTH及LegibleFailures。Dai§4.7主要是次序而非关系存在；普通cosine和高attention不认证绑定/事实；LegibleFailures是监督probe+验证集选层、合成任务。新设计仍未执行，不把文献当本模型因果证据。
 
-H008/F023仍16/16来源定义QA、两flip各8/8，32forward4.1325464秒；stricttoyparser可直接解域，未证自然覆盖。H009/F024复用32raw、0新模型，4臂均16/16，结构不变性成立但无准确率增益，不能加强bias造优势。H007/F021焦点抗负担失败I−.057753；删suffix288requests严格等96旧b0，最简也仅5/8，不能再包装改进。H004/H005/H006负/混合结果复用旧facts与报告。
+## 当前主要问题和下一步
 
-## 当前下一问题，不能越走越偏
+**H013/F029原始attempt已终止工程失败，不可当运行中恢复。** 全32 raw/16Q完成4.1566765s且childseals齐，但1个互斥候选pool mass1.000516违反原1e−9门，root无成功complete/seal，未开构造refs。首分支normalizers不同本身可只是共同logitshift，不能定位causal-mask等bug。不得放宽门、clamp、重算旧32或补成功。其原子化语义表现未知。run4269632b575f604767b82e0180fd1646295dde897cdf8a1f9c3a88ec8d7a1b90，worker52632/parent29072已退出；小失败证据在refine-logs/h013-20261103。
 
-H012由lead设计、nli_tests可写纯kernel：outputs/h012-natural-masked-20261103/DESIGN.md。只reuseH010已封存18答/36字段719S/136R NER occurrence，做全部136自然cloze artifact与S独立同nativeNERlabel候选、重复sourceprovenance/exactliteral擦除/overlap等unknown；不生成QA messages、不跑模型、不声称语义覆盖。semantic anchor/candidate completeness/alias/arithmetic/nonassertion全部unknown_not_assessed；无person不同或双射假设；无/单候选不判矛盾；Rmembership只readout诊断不得反选候选；未提案tokens继续unknown不填0risk。H011否定directcloze迁移必须写入前提，不能换7B/prompt救分。
+**H015是新的观测仪器合同，不是新检测效果。** 每个唯一causal prefix只forward一次，拿一个完整FP16词表向量供所有子边共用；完整候选+EOS前缀树给出互斥叶的submass。exact arithmetic树归纳成立，不保证任何有限精度门必过。纯kernel27检查通过；backend23 CPUfake检查和fresh静审通过，CUDA测量错误已改为失败保留raw。backend source SHA f2dcd6aad9cb3ce9122d3db6c2f0ceb4a2ab993ac3f357eec749585facab5b85；尚未做真实CUDA工程probe。设计/审核在 outputs/h015-prefix-trie-20261103。当前未armed GPU；待新包身份、独立bounded synthetic≤32nodes/4096合同冻结后才能自动执行，不能复用旧H013 run namespace。
 
-root提出下一待prior/混杂审查入口（未登记/未实现/未运行）：对原复合句只取目标对应单个谓词conjunct并保留event锚，H011所有system/template/numeric合同不变，只maskedstatement原子化，16Q32complete并保留全部48/96slot映射；严格cacheaudit先查是否等旧请求。H005/H007sentence级仍含两谓词，可能是新结构差异，但须lead审查P026/P025/旧scope是否重复，不能先说因果/新颖性/自然有效。另一入口S定义问题再R匹配也尚无自动可靠实现。不要盲跑自然3883或重访已知现象。
+文献建议的下一科学切入口是来源角色/关系条件读出：词汇、顺序、对应交换、无关系/未知、合法多对一分别控制。内部绑定强也可能是自洽幻觉，仍需来源独立证据。不能强行把自然回答槽作来源值排列，也不能给R4/V3或新旧模块直接加经验权重。P002是全向量锚点residual/cosine失败；P003是删token依赖指纹失败；P005是post-token方向/whitening旧路。新的局部activation interchange必须提出不同的可预言输出和payload控制，非改距离再试。
 
-FRED原Q恢复/F027首完整exact路线封存负结果：162Fin+130TAT、252distinctS，官方pinnedRagBench三列49666rows rawdoc0匹配0。官方三脚本未找到可证明normalize变换，不fuzzy/读R/labels消歧。outputs/fred-original-question-recovery-20261103/attempt-v2为16membersealed38.2MB三列projection；README/completion/review已完成，Git只小证据refine-logs/fred-question-recovery-20261103。此结论不证明所有Q恢复不可能。HTTP/footer可接收未选列字节/stats，仅三列materialized，不能夸大字节级隔离。
+H013失败raw的独立posthoc finite-energy排序审查虽有条件概念通过（decision-review.md），**尚未实现**，不得混作qualified probability或已经得到原子化性能。主线仍先完成H015工程。
 
-## 资源和同步
+## 应复用的既有结论
 
-无GPU job armed。7B公共9assets完整；旧7GiB门waiter0forward已软停。显式v2较小6GiBallocator/6.5GiBfree在确认H011退出后通过2synthetic(short+512)；peakreserved5953814528bytes，helper23348/parent33324退出。runtime-readiness-v2.json，F028/独立review只证明工程、非4096/检测效果/模型选择。禁止重下weights、关闭用户应用、改旧env或自动重试；尚无7B科学实验。
+H011 fixed fullR maskedQA三层9/16、8/16、10/16，全48caseAUC.6371527778；同名塌缩7/8、8/8、6/8。最短也错，不能归因suffix。H008 S定义QA16/16、两flip各8/8；H009全部4臂16/16，只有代数不变性、无准确率增益。H014是后来对失败H011的必要缓存对照，不能倒写H009有收益。H007焦点抗burden失败，删suffix288逻辑requests严格等96已缓存b0请求，0新calls，禁止重跑。H004/5/6负或混合结果均不撤回。
 
-全任务3883输入、五组2992答/448202历史token轴见F022；Hallu891仅小样本可恢复原serializedordinal/full_index未知，V3full_gap不是R4，不换字符/新tokenizer冒充原轴。源码batch只新增2files/296lines/12defs，累计23/2717/140、145文件待讲；H011新文件也未讲，不能称全项目逐行完成。
+六任务原始 R4/V3 AUROC：QA .8929/.8470；Summary .7621/.7623；Data .7983/.7557；Fin .6617/.8027；TAT .7110/.8430；Hallu answerable .807066/.7669。逐任务最好包络不是一个实测检测器。全输入3883；五组2992答448202原token；Hallu891原serializedordinal仅小样可行，full_index未知，不能换字符/新tokenizer代替原轴。
 
-Git核心最新5690007已push；本轮H011结果、FRED/7B小证据/state待统一commitpush。桌面D:/Desktop/myproject_研究资料_20261102此前dccbb2d，exportagent完成H008–H011/batch严格扩展，正追加FRED sealedprojection和7B小receipt；root commit后运行export_checkpoint.py并验证offline MathJax/links。实际commit ZIP应等HEAD且cache不写不删。旧冻结targets/wheels/design/rawrecords均不可修改。
+FRED原Q首次exact回连292答/252不同S，对49666官方上游行0匹配，未证官方normalize变换，不fuzzy或用R/gold消歧。7B社区NF4/BF16仅short/512两次工程通过，peakreserved5953814528B，非4096或检测资格。不得再下载旧weights、改env、关用户应用或无条件重试。
+
+## 文件与交付
+
+canonical repo D:/projects/research/token_detector；PowerShell login:false、显式workdir；CPU .venv，GPU D:/projects/research/envs/token-detector-cu128，系统绘图Python D:/Apps/Research/Tools/anaconda3/python.exe。3B weights已齐9assets，3GiB allocator；当前core已push d9ce98f，H015待独立release。用户已授权public模型、隔离env、实验和push，无需重复许可。
+
+桌面主入口 D:/Desktop/myproject_研究资料_20261102/12_Mechanism_Research/START.html，实际导出d9ce98f成功：68HTML/332localrefs、0broken；H007 archive origin href已修。offline MathJax headless实测旧3页6/1/3containers、0merror。新绑定文献入口为13_Entity_Binding_Research_20261103/docs/research/20261103_entity_binding_review.html；5页/18localrefs已校验。新页面还需实际浏览器公式验证。源码ZIP按commit捕获，旧cache未改未删。后续commit后再同步版本身份；不要把旧主入口宣称包含新H012/H014专页。
+
+新核心尚未逐行讲解。原source batch仅累计23文件/2717行/140defs，最初snapshot145文件待讲；不能称整个项目逐行完成。持久state每得新结论必须更新，旧失败与unknown完整保留。

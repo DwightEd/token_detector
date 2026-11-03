@@ -1,0 +1,13 @@
+# 来源路径明确，不等于语义角色一一对应
+
+完整 source-only 库存覆盖 Data2txt 的 900 条记录、150 个不同来源，每个来源对应六条记录；没有解码回答或目标评价标签，也没有模型调用。
+
+150 个来源均为 Python-literal 嵌套对象，完整原生路径可唯一查值。150/150 含多值容器、127/150 含重复非空字符串叶值，140/150 含 null；完整 typed scalar 映射为单射的来源为 0，完整非空 string leaf 映射为单射的来源为 23。字符串唯一性不代表语义角色双射。
+
+全部来源都有 name、address、city、state、categories、hours、attributes、business_stars、review_info 九个顶层键；review_info 各有三个评论对象。商家总评分 business_stars 和某条评论的 review_stars 必须按字段、行索引和归属范围区分。未提供某个字段不许可补出否定，回答也不必提及来源的全部字段。
+
+因此，H009/H014 的“两角色、两实体、显式一一对应”前提不能直接施加到这些自然数据。该库存只说明原生来源的机械性质，未获得语义关系或自然回答对齐资格，也未重新验证 H004 的检测效果。
+
+[公开汇总与完整库存哈希](source_constraint_licences.json)保留原库存的所有总体计数、运行成本、freeze 和成员哈希。完整 6.2 MB 逐来源库存保留在本地 outputs/source-constraint-licences-20261103/inventory.json 及桌面资料中；本公开汇总不重复复制评论正文。
+
+实际 CPU 运行耗时 2.238462600042112 秒。完整库存 SHA256 为 b4a5e455e6ec9aac74c66a77900b64f07e1ad8eab9b33f5e0c0886edf328dbf1。只有选定来源字段被解码；物理读取及哈希仍会经过 JSONL 的其他字段字节，不宣称字节级隔离。

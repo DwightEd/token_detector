@@ -1,0 +1,439 @@
+{
+  "schema": "unlabelled-H013-retained-raw-audit-v1",
+  "raw_completions": 32,
+  "query_count": 16,
+  "forward_seconds": 4.156676500104368,
+  "original_observation_root_sealed": false,
+  "original_completion_gate_failed": true,
+  "model_calls": 0,
+  "reference_material_accessed": false,
+  "numeric_mass_violations": [
+    {
+      "query_key": "f5f5d7b5ab731dd5597cc75e9fb69de401a2050202d5207a3c0bf0acf8584de5",
+      "log_candidate_mass": 0.0005158500900119788,
+      "candidate_joint_logprobs": [
+        [
+          "Oren Pellford",
+          -4.603949603070436
+        ],
+        [
+          "Mira Tanswick",
+          -0.00954160681116889
+        ]
+      ],
+      "framing_candidate_tokens": [
+        4,
+        5
+      ],
+      "first_branch_token_index": 0,
+      "branch_context_equal": true,
+      "branch_full_vocab_logsumexp": [
+        41.82256565447535,
+        41.85320877922228
+      ],
+      "candidate_mass_gate_passed": false
+    }
+  ],
+  "all_queries": [
+    {
+      "query_key": "06d07c77bd17d6e51d2097783c5c3bf42cfdaadf18d50f37f3519d685d3908e8",
+      "log_candidate_mass": -0.00010546430754687641,
+      "candidate_joint_logprobs": [
+        [
+          "Tomas Brindle",
+          -0.00010546431942515255
+        ],
+        [
+          "Lena Cresswell",
+          -25.156418687689104
+        ]
+      ],
+      "framing_candidate_tokens": [
+        4,
+        5
+      ],
+      "first_branch_token_index": 0,
+      "branch_context_equal": true,
+      "branch_full_vocab_logsumexp": [
+        43.593766378450105,
+        43.593766378450105
+      ],
+      "candidate_mass_gate_passed": true
+    },
+    {
+      "query_key": "6800c110339ba5aa3dc017334960c75d02c52225162c5f14190013f9e96271e9",
+      "log_candidate_mass": -0.00010054018471823155,
+      "candidate_joint_logprobs": [
+        [
+          "Evan Calderby",
+          -0.00010174925342454344
+        ],
+        [
+          "Sana Whitmere",
+          -13.625761303602069
+        ]
+      ],
+      "framing_candidate_tokens": [
+        4,
+        4
+      ],
+      "first_branch_token_index": 0,
+      "branch_context_equal": true,
+      "branch_full_vocab_logsumexp": [
+        42.96875905820041,
+        42.96875905820041
+      ],
+      "candidate_mass_gate_passed": true
+    },
+    {
+      "query_key": "ee8171638455903a41ab2ea798867f4816c29b6f7f725e999ef132fd546bdf65",
+      "log_candidate_mass": -0.00014271371910945518,
+      "candidate_joint_logprobs": [
+        [
+          "Hugo Valecrest",
+          -0.00014271372609186983
+        ],
+        [
+          "Nadia Fennbrook",
+          -25.687760848680405
+        ]
+      ],
+      "framing_candidate_tokens": [
+        4,
+        5
+      ],
+      "first_branch_token_index": 0,
+      "branch_context_equal": true,
+      "branch_full_vocab_logsumexp": [
+        45.34375249334954,
+        45.34375249334954
+      ],
+      "candidate_mass_gate_passed": true
+    },
+    {
+      "query_key": "23d151b278cb2dc3045fb17ace6a6a963b77414c8c0886f94631e9cca095f79f",
+      "log_candidate_mass": -0.0008325586993737359,
+      "candidate_joint_logprobs": [
+        [
+          "Evan Calderby",
+          -14.890729186582341
+        ],
+        [
+          "Sana Whitmere",
+          -0.0008329002067846147
+        ]
+      ],
+      "framing_candidate_tokens": [
+        4,
+        4
+      ],
+      "first_branch_token_index": 0,
+      "branch_context_equal": true,
+      "branch_full_vocab_logsumexp": [
+        45.00000035406409,
+        45.00000035406409
+      ],
+      "candidate_mass_gate_passed": true
+    },
+    {
+      "query_key": "fe09e4fd61e31871119820771aab7452284f5e3706103097478a7b8092823087",
+      "log_candidate_mass": -9.989847214538633e-05,
+      "candidate_joint_logprobs": [
+        [
+          "Tomas Brindle",
+          -4.2335002659674785
+        ],
+        [
+          "Lena Cresswell",
+          -0.014709085983657388
+        ]
+      ],
+      "framing_candidate_tokens": [
+        4,
+        5
+      ],
+      "first_branch_token_index": 0,
+      "branch_context_equal": true,
+      "branch_full_vocab_logsumexp": [
+        40.60838585391127,
+        40.60838585391127
+      ],
+      "candidate_mass_gate_passed": true
+    },
+    {
+      "query_key": "5eb755086e42d53855cbb55ac4883431af7fa20215bf8d71ecc709cd1667a12d",
+      "log_candidate_mass": -0.0002223852237259029,
+      "candidate_joint_logprobs": [
+        [
+          "Mira Tanswick",
+          -7.656865550516397
+        ],
+        [
+          "Oren Pellford",
+          -0.0006953892427610242
+        ]
+      ],
+      "framing_candidate_tokens": [
+        5,
+        4
+      ],
+      "first_branch_token_index": 0,
+      "branch_context_equal": true,
+      "branch_full_vocab_logsumexp": [
+        41.625519411523605,
+        41.625519411523605
+      ],
+      "candidate_mass_gate_passed": true
+    },
+    {
+      "query_key": "eaf5b5bfb1f199b811e5e45dc5f3fb97654e9501f0d35a3b2d805511c69eb78d",
+      "log_candidate_mass": -0.0001350369459240806,
+      "candidate_joint_logprobs": [
+        [
+          "Mira Tanswick",
+          -10.437619429131669
+        ],
+        [
+          "Oren Pellford",
+          -0.0001643502308112943
+        ]
+      ],
+      "framing_candidate_tokens": [
+        5,
+        4
+      ],
+      "first_branch_token_index": 0,
+      "branch_context_equal": true,
+      "branch_full_vocab_logsumexp": [
+        40.68753515339939,
+        40.687533087729804
+      ],
+      "candidate_mass_gate_passed": true
+    },
+    {
+      "query_key": "880bf0305c7c7a526ca9bf1e92012e91d39e56e79865d2ead8981300394369a5",
+      "log_candidate_mass": -8.403237776453791e-05,
+      "candidate_joint_logprobs": [
+        [
+          "Oren Pellford",
+          -13.437628812332864
+        ],
+        [
+          "Mira Tanswick",
+          -8.549169183069694e-05
+        ]
+      ],
+      "framing_candidate_tokens": [
+        4,
+        5
+      ],
+      "first_branch_token_index": 0,
+      "branch_context_equal": true,
+      "branch_full_vocab_logsumexp": [
+        45.406251526305454,
+        45.406251526305454
+      ],
+      "candidate_mass_gate_passed": true
+    },
+    {
+      "query_key": "fd3cfd6e17b6d5c1726b2e118343184291c88c1ac46d78f29ff0792221606be5",
+      "log_candidate_mass": -0.0001381157826103599,
+      "candidate_joint_logprobs": [
+        [
+          "Hugo Valecrest",
+          -21.01573842441758
+        ],
+        [
+          "Nadia Fennbrook",
+          -0.00013811652912920636
+        ]
+      ],
+      "framing_candidate_tokens": [
+        4,
+        5
+      ],
+      "first_branch_token_index": 0,
+      "branch_context_equal": true,
+      "branch_full_vocab_logsumexp": [
+        44.37500037562451,
+        44.34375035891778
+      ],
+      "candidate_mass_gate_passed": true
+    },
+    {
+      "query_key": "f4e28e29766c207b2778f27a3940ff7aa481a72c8416a84e296841b8626055aa",
+      "log_candidate_mass": -0.00012631715058058742,
+      "candidate_joint_logprobs": [
+        [
+          "Tomas Brindle",
+          -15.688009295894815
+        ],
+        [
+          "Lena Cresswell",
+          -0.00012647090904138736
+        ]
+      ],
+      "framing_candidate_tokens": [
+        4,
+        5
+      ],
+      "first_branch_token_index": 0,
+      "branch_context_equal": true,
+      "branch_full_vocab_logsumexp": [
+        43.15629748369623,
+        43.15629748369623
+      ],
+      "candidate_mass_gate_passed": true
+    },
+    {
+      "query_key": "592fe7dde09cd5c6c1bb2d171df482d91f0a5221efef722c390306bbaba80986",
+      "log_candidate_mass": -0.010416867164359366,
+      "candidate_joint_logprobs": [
+        [
+          "Nadia Fennbrook",
+          -0.010556891175905747
+        ],
+        [
+          "Hugo Valecrest",
+          -8.884183517368303
+        ]
+      ],
+      "framing_candidate_tokens": [
+        5,
+        4
+      ],
+      "first_branch_token_index": 0,
+      "branch_context_equal": true,
+      "branch_full_vocab_logsumexp": [
+        42.07152836799937,
+        42.07152836799938
+      ],
+      "candidate_mass_gate_passed": true
+    },
+    {
+      "query_key": "bf21b85a8bf13c95973b7b5af322e79fbf3bc20261c3a6d7c771858f9ef409ea",
+      "log_candidate_mass": -0.005208931376444323,
+      "candidate_joint_logprobs": [
+        [
+          "Tomas Brindle",
+          -0.007078249928611058
+        ],
+        [
+          "Lena Cresswell",
+          -6.28832477018987
+        ]
+      ],
+      "framing_candidate_tokens": [
+        4,
+        5
+      ],
+      "first_branch_token_index": 0,
+      "branch_context_equal": true,
+      "branch_full_vocab_logsumexp": [
+        40.56947591845656,
+        40.56947591845656
+      ],
+      "candidate_mass_gate_passed": true
+    },
+    {
+      "query_key": "983dcfcacd182e6eca9c1853df5105a0360cedfd493ad7b27325cad5d07de264",
+      "log_candidate_mass": -0.00011368221145646035,
+      "candidate_joint_logprobs": [
+        [
+          "Evan Calderby",
+          -0.01664603534445419
+        ],
+        [
+          "Sana Whitmere",
+          -4.110804492512205
+        ]
+      ],
+      "framing_candidate_tokens": [
+        4,
+        4
+      ],
+      "first_branch_token_index": 0,
+      "branch_context_equal": true,
+      "branch_full_vocab_logsumexp": [
+        41.95405284404107,
+        41.95405284404107
+      ],
+      "candidate_mass_gate_passed": true
+    },
+    {
+      "query_key": "f5f5d7b5ab731dd5597cc75e9fb69de401a2050202d5207a3c0bf0acf8584de5",
+      "log_candidate_mass": 0.0005158500900119788,
+      "candidate_joint_logprobs": [
+        [
+          "Oren Pellford",
+          -4.603949603070436
+        ],
+        [
+          "Mira Tanswick",
+          -0.00954160681116889
+        ]
+      ],
+      "framing_candidate_tokens": [
+        4,
+        5
+      ],
+      "first_branch_token_index": 0,
+      "branch_context_equal": true,
+      "branch_full_vocab_logsumexp": [
+        41.82256565447535,
+        41.85320877922228
+      ],
+      "candidate_mass_gate_passed": false
+    },
+    {
+      "query_key": "21b336fb3e5702da5edd8218d9459d9a92c3f74047bbaf54574b11e4e0f0ba2b",
+      "log_candidate_mass": -0.00012885773798783614,
+      "candidate_joint_logprobs": [
+        [
+          "Hugo Valecrest",
+          -0.0003083950646320943
+        ],
+        [
+          "Nadia Fennbrook",
+          -8.625346048833425
+        ]
+      ],
+      "framing_candidate_tokens": [
+        4,
+        5
+      ],
+      "first_branch_token_index": 0,
+      "branch_context_equal": true,
+      "branch_full_vocab_logsumexp": [
+        42.15645861467769,
+        42.18770595657625
+      ],
+      "candidate_mass_gate_passed": true
+    },
+    {
+      "query_key": "64fb2c4fa9b88546cdbb28baecd8bf889b6e4c47a38d7aebfc1fde315f7fc623",
+      "log_candidate_mass": -0.0001103011721970833,
+      "candidate_joint_logprobs": [
+        [
+          "Evan Calderby",
+          -0.00011923329112661918
+        ],
+        [
+          "Sana Whitmere",
+          -11.625971676298633
+        ]
+      ],
+      "framing_candidate_tokens": [
+        4,
+        4
+      ],
+      "first_branch_token_index": 0,
+      "branch_context_equal": true,
+      "branch_full_vocab_logsumexp": [
+        42.31251770203349,
+        42.31251770203349
+      ],
+      "candidate_mass_gate_passed": true
+    }
+  ]
+}

@@ -825,6 +825,82 @@
           "sha256": "e067ade72f6916c0ae66abf084483f16e8afd0da89db7404c9e049a2b9d0f974"
         }
       ]
+    },
+    {
+      "id": "F029",
+      "certainty": "unlabelled_observer_numeric_gate_failure",
+      "claim": "H013 computed32 complete-candidate raws/16Q in4.1566765s and all childseals pass, but1 query log poolmass=.00051585009 violates the unchanged1e-9 gate. Branch context equal, K4/K5, firstbranch normalizers41.82256565/41.85320878. Root has no successfulcomplete/seal and no references released.",
+      "does_not_imply": "Not a semantic/capacity failure or atomicmethod efficacy. Normalizer shift alone is not proof of noncausality; excess disjoint eventmass contradicts exact common probabilitykernel. Do not loosen gate/clamp/rescore originalevents under the same protocol.",
+      "evidence": [
+        {
+          "path": "outputs/h013-atomic-20261103/unlabelled-raw-audit.json",
+          "sha256": "1f4605ccd8187e31e43ad5c43b24ef665ff63cb505b964b5be22d68048c836a9"
+        },
+        {
+          "path": "refine-logs/h013-20261103/unlabelled-raw-audit.json",
+          "sha256": "1f4605ccd8187e31e43ad5c43b24ef665ff63cb505b964b5be22d68048c836a9"
+        }
+      ]
+    },
+    {
+      "id": "F030",
+      "certainty": "natural_inventory_complete_not_semantic_QA",
+      "claim": "H012 sealed all18inputs/719S/136Roccurrences,148pools:130cloze artifacts and6overlapunknown. QAadmitted0,680hypotheticalcompletionpairs,0newmodel/tokenizer/NLPcalls.",
+      "does_not_imply": "Artifact counts are not semantic coverage, factuality, valid questions or completed inference; all semantic and unproposed regions remain unknown.",
+      "evidence": [
+        {
+          "path": "docs/results/h012_natural_inventory.json",
+          "sha256": "64bae712cc264ae231dcc416a729455d9cd1a4f5b3f12663a75f19e9c3029ea2"
+        }
+      ]
+    },
+    {
+      "id": "F031",
+      "certainty": "exposed_toy_cached_assignment_positive_with_remaining_errors",
+      "claim": "H014 fixed H009kernel on all24H011matrices/96cachedraws:48QA27to42correct; burden0/4/12 independent9/8/10tojoint16/12/14 of16;21same-namecollapses18recovered3wrong;0newforwards. Pooled48caseAUC.6371527778to.9565972222.",
+      "does_not_imply": "Known toy bijection only,8sources repeated3burdens; parser can solve directly. Not natural/fulltask/tokenAUROC, uniquebias/attentioncause, calibratedtruth or LLMnecessity.",
+      "evidence": [
+        {
+          "path": "docs/results/h014_cached_role_assignment.json",
+          "sha256": "02be8beaeca2de2fd07154203ec49c70c755c0d746e6a3f9080014c559520fc8"
+        }
+      ]
+    },
+    {
+      "id": "F032",
+      "certainty": "source900_native_path_licences_not_semantic_bijections",
+      "claim": "Source-only Data2txt900records/150distinctS:allPythonliteralnestedobjects,9topkeys,3reviewrows each;150fullpathunique,0typedscalarinjective,23nonemptystringleafinjective,127duplicateleaf,140null.0modelcalls.",
+      "does_not_imply": "No R/gold values decoded; native path uniqueness does not license global semantic assignment, Rfactcompleteness or natural detector coverage.",
+      "evidence": [
+        {
+          "path": "docs/results/source_constraint_licences.json",
+          "sha256": "592115eadcb1063e7bbcb097f75e3f7abfdbfe4cfec9b5bdfc21dd01637cd1ed"
+        }
+      ]
+    },
+    {
+      "id": "F033",
+      "certainty": "H015_pure_prefix_tree_engineering_only",
+      "claim": "H015 pure completion trie27synthetic checks passed; one fullvocabularydistribution per causalprefix and terminalEOS prefixfree leaves give retainedleafsubmass<=1 in exactarithmetic.",
+      "does_not_imply": "Backend engineering probe not run; not H013 probability repair, finiteprecision gate guarantee, semantic performance or natural method.",
+      "evidence": [
+        {
+          "path": "outputs/h015-prefix-trie-20261103/pure-kernel-review.md",
+          "sha256": "bc6d680f2dc5ca4f21aa04f0a2271bcbfc1f566787ae50ad75becdc31c18210d"
+        }
+      ]
+    },
+    {
+      "id": "F034",
+      "certainty": "primary_literature_review_not_new_empirical_finding",
+      "claim": "Binding-ID/subspace/QK literature supports relation-conditioned observations, not rawcosine guarantee. DaiOI primarilyordering; ICLR2026 P/L/R retrieval mixtures; LegibleFailures supervisedprobe/val-layer selection, synthetic setting. P002cosine andP003deletion distinct knownfailures.",
+      "does_not_imply": "Prior published methods/preprints are not current-observer mechanism evidence, no targetgold training or candidate-module efficacy claimed. New source/order/null/many-to-one controls proposed, not run.",
+      "evidence": [
+        {
+          "path": "docs/research/20261103_entity_binding_review.md",
+          "sha256": "fabb3552398e946056fe1597080105bc910c77b139f56c84d8aca9d5c20c662c"
+        }
+      ]
     }
   ],
   "rule": "New interventions need different predictions under competing explanations; known counts/cases are reused."

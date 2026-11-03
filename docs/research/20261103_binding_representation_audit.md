@@ -1,0 +1,87 @@
+# A–甲关系识别：独立 primary-literature 审查
+
+核查日期：2026-11-03。只使用下列论文、会议原页和作者指定代码入口；未使用二手综述作为证据，未写核心代码、运行模型或读取新的任务真值。本文给出仪器假设，不登记自然检测效果或新方法。
+
+**结论：A 对应甲可以表现为某个绑定子空间中的兼容、查询到来源地址的定向匹配或可被干预的检索通道，但不要求二者的原始 hidden-state cosine 更高。** 当前最值得检验的是绑定特定成分是否在排除词汇和位置后仍能因果地改变配对，而不是再给整个向量换一个距离公式。内部绑定正确也不自动证明外部事实正确：模型可以稳定地绑定一条错误原答。
+
+## 一、版本、状态与原始证据
+
+| 论文 | 本次固定版本及状态 | Primary 入口 |
+|---|---|---|
+| Feng & Steinhardt, *How do Language Models Bind Entities in Context?* | ICLR 2024；arXiv v1 2023-10-26，v2 2024-05-06 | [ICLR 正式页](https://proceedings.iclr.cc/paper_files/paper/2024/hash/9d1b7fc578c0d2d6431fc26d736ecaf3-Abstract-Conference.html)，[v2 全文](https://arxiv.org/html/2310.17191v2)，[作者代码](https://github.com/jiahai-feng/binding-iclr) |
+| Dai, Heinzerling & Inui, *Representational Analysis of Binding in Language Models* | EMNLP 2024，November；arXiv v1 2024-09-09，当前 v3 2024-10-25 | [ACL 正式页/PDF/software](https://aclanthology.org/2024.emnlp-main.967/)，[v3 全文](https://arxiv.org/html/2409.05448v3)，[作者代码入口](https://github.com/cl-tohoku/OI-Subspace) |
+| Gur-Arieh, Geva & Geiger, *Mixing Mechanisms: How Language Models Retrieve Bound Entities In-Context* | ICLR 2026；arXiv v1 2025-10-07，v2 2026-05-28 | [正式会议 PDF](https://openreview.net/pdf/e6ab1ab84f3554cb14b33d8c1855cf8944d69822.pdf)，[v2 全文](https://arxiv.org/html/2510.06182v2)，[官方代码](https://github.com/yoavgur/mixing-mechs) |
+| Oh & Demberg, *A retrieval conditioned rebinding circuit for dynamic entity tracking in large language models* | arXiv 预印本；v1 2026-06-07，v2 2026-09-11；所查 primary 页面未提供已接收 venue | [版本页](https://arxiv.org/abs/2606.08644)，[v2 全文](https://arxiv.org/html/2606.08644v2)，[文中指定代码 URL](https://github.com/sori424/dynamicET) |
+
+下面四段是各论文的限量证据摘要；后面的反例、可实施边界和实验均为本项目的独立推理/提议。
+
+**Feng & Steinhardt。** §3–5 用 activation interchange、mean-vector 干预及位置控制支持 binding-ID 表示；实体/属性的内容与绑定成分可区分，部分任务可迁移。重点模型是 LLaMA-30B，并检查 Pythia/LLaMA 系列；§5/Appendix E 也保留替代的 direct-binding 机制。它没有推出整向量 cosine 必须更近，文中实体侧和属性侧绑定向量本来就可不同。其“位置独立”针对指定表征/位置干预，不是任意文本重排不影响模型。作者实现基于 TransformerLens，主要实验使用 4×A100，不能把硬件需求或向量坐标直接移植到现有量化 3B。[原文 §3–5、Appendix C/E](https://arxiv.org/html/2310.17191v2)，[官方实现说明](https://github.com/jiahai-feng/binding-iclr)。
+
+**Dai 等。** v3 将重点明确为 Ordering ID：在 query 的实体激活上做 PCA，干预低维方向会改变属性检索。§4.5 区分出现次序与绝对 token position；§4.7 中语义关系被移除后，OI 相关性仍很强，作者认为它主要编码次序，非关系存在性。§4.6 的距离分类还使用开发集最优阈值，不能原样当无目标标签检测器。模型包括 Llama2/3、Qwen1.5、Pythia、Float；限制包括合成数据、仅 query 激活和主要属性预测方向。ACL 摘要仍用 BI 表述，不能忽略 v3 的 OI 限定。GitHub README 指向 ACL software 附件，不是完整分析代码已在仓库中的证明。[原文 §2、§4.5–4.7、Limitations](https://arxiv.org/html/2409.05448v3)，[官方代码说明](https://github.com/cl-tohoku/OI-Subspace)。
+
+**Mixing Mechanisms。** §3 让三种检索机制在同一干预下预测不同实体：按 group 次序、按 query 的词汇身份查组、以及回指目标实体的 pointer。长列表中部的次序信号会变弱，目标在组内的位置也改变机制混合。实验涉及 9 个 Gemma/Qwen2.5/Llama 模型、10 个模板任务，另有开放文本与实体组交错的扩展；不能等同自然幻觉检测。§3.4 用“counterfactual answer 不在 recipient source 中”的控制区分 pointer 与直接答案复制。约 95% 是拟合 causal model 对 LM 分布的 agreement，不是真值准确率，也不是无拟合 detector。官方仓库注明代码仍在完善。[原文 §3–5、Appendix A](https://arxiv.org/html/2510.06182v2)，[官方代码](https://github.com/yoavgur/mixing-mechs)。
+
+**Rebinding v2。** 动态换箱任务中，作者用 mediation、path/attention patching 区分地址路由与 payload 检索；§5–6 中 Gemma 更符合 Q/K 配对，Llama 更偏 key-side，Q+K 抵消在 Llama 不成立，不能预设通用对称机制。4 个 instruction models 为 Gemma2-9B、Gemma3-12B、Llama3.2-3B、Llama3.1-8B；主任务为受控状态更新，Appendix A 扩到 5 箱。Llama-3B 主结果不是全对，另有仅正确回答子集的附录，不应只引用该子集。没有据此确认现有 Qwen/NF4 仪器。文中代码 URL 本次访问返回 404，故不声称代码已复现。[原文 §3–6、Appendix A/E](https://arxiv.org/html/2606.08644v2)。
+
+## 二、为什么“绑定”不等于原始 cosine 接近
+
+以下为数学反例，不是从论文数据拟合的结果。即使假设同一绑定共享一个加性成分，也可以有
+
+\[
+h_A=(M,1),\qquad h_{\text{甲}}=(-M,1),\qquad h_{\text{乙}}=(M,-1),\quad M\gg1.
+\]
+
+A 和甲共享第二维的绑定标记；其词汇成分却让 cosine 趋近 −1，而 A 与未绑定乙的 cosine 趋近 +1。一个只读取第二维的模块仍可识别正确配对。实际向量还含词汇、句法、位置、任务和答案载荷等成分，所以“关系近”必须先说明在哪个坐标、哪种条件下、由哪个读出使用。
+
+可核查的三类量也不同：
+
+| 量 | 其直接含义 | 不能直接推出 |
+|---|---|---|
+| 原始 residual/embedding cosine | 指定 token、层和上下文中的整向量几何 | 关系存在、方向、真假 |
+| 固定投影后的距离/兼容度 | 某个低维成分在固定坐标下的相似性 | 该成分必为绑定；PC1 可能主要是次序 |
+| 指定 head 的 Q/K compatibility 及 causal patch effect | query 在该计算路径上是否选择某个来源地址，干预是否改变输出 | 高 attention 等于正确事实；不同模型共享同一 head/方向 |
+
+对 column-vector 约定，带 RoPE 的某个 head 的相容分数可写为
+
+\[
+s_{\ell,h}(t,s)=
+\frac{(R_tW_Qh_t)^\top(R_sW_Kh_s)}{\sqrt{d_h}}.
+\]
+
+它是**有方向、依赖层/head/位置的双线性匹配**，并非两个原始实体向量的欧氏邻近关系。还必须区分注意力选址、value payload 和输出行为。自回归模型中，早于甲出现的 A-token 不能直接读取未来甲的内容；因此比较哪个 occurrence、是否在完整来源后的 query、取哪一段 token 是科学合同的一部分。
+
+## 三、能否不使用目标真值提取
+
+可以提取候选信号，但不能先称它是自然事实检测器：
+
+- 冻结模型上可直接读取选定层 residual 或真实 Q/K，不训练模型权重；PCA、SVD 或 paired mean differences 可仅由程序生成的来源角色交换得到。这里使用的是来源自监督的仪器校验信息，仍有“哪个程序角色被交换”的构造信息，不能宣传成从无结构 S 自动发现了语义。
+- 使用同一字面实体、相同词袋、反向绑定与词序配平的 paired differences，能减少词汇/绝对位置混杂。未经干预验证的低维成分只能叫 candidate binding component，不能因 PC1 好看而命名为 truth/binding axis。
+- query→source 的 Q/K 分数无需 benchmark gold 就可观察。hook 必须固定 layer/head、pre/post norm、pre/post RoPE、GQA 的 Q/K-head 映射、全部实体 token 与后继位置规则。不能事后选“最像正确答案”的 head。
+- 层、rank、方向、阈值或 head 若根据 RAGTruth/FRED/HalluRAG 错误标签选择，就违反当前无目标标签约束。来源构造集可用于工程发现与独立资格，但应与后续自然评价分离，并披露选择步骤。
+- 跨模型的行为趋势不等于向量坐标可迁移。论文未给出本项目当前权重、NF4 量化、attention 实现和 cache 政策的共同资格；这些都必须作为新仪器身份固定。PCA basis 不能直接从另一模型搬来。长列表或交错开放文本控制也不等于已覆盖自然别名、跨句指代、算术和缺失信息。
+
+特别是：即便成功识别模型“把 A 绑定给甲”，还需要来源独立的角色合同，才知道这是否符合来源。仅看到 R 内部形成了强绑定，无法区分正确与自洽的幻觉。source900 已说明 native path lookup 不许可 R 全覆盖或全局双射；自然端点尚未解决。
+
+## 四、与旧工作的严格区别
+
+本项目 prior 索引的身份需要纠正清楚：
+
+- **P002_CONTEXTUAL_ANCHOR_RESIDUAL** 是 lexical-anchor displacement/cosine 观测；旧控制显示方向与重排不稳。重新中心化、扫层、翻符号或换距离仍是旧路。
+- **P003_DELETION_DEPENDENCY_FINGERPRINTS** 是物理 token-deletion 的 signed dependency 矩阵，再做 identity alignment/Hellinger/MSE；不是 binding-subspace patching。其四个 family gates 全败，不能再换 divergence 把影响强度说成真值。
+- **P005_POST_TOKEN_DIRECTION** 已试 source/absent 状态方向与 whitening，不能把同样标量换成“绑定强度”。
+
+真正不同的观测必须是：**在同一 recipient forward 的指定内部成分上进行角色定向干预，保持其余路径合同固定，观察可预言的配对改变及补偿/内容控制**。这不同于删除来源 token、比较两个世界的全向量距离，也不同于给旧 energy 增添一层名字。但论文中的 subspace/patching 本身不是新算法；对现有量化模型进行资格验证也不是自然性能贡献。
+
+## 五、只建议一个最小判别实验：配对成分 interchange 资格
+
+这是未执行的候选仪器实验，不是请求启动 GPU，也不是自然检测器实验。其单一问题是：**在词汇与词序控制后，来源角色交换得到的候选低维成分是否携带可干预的绑定地址，而非仅出现次序或已算出的答案内容？**
+
+1. **固定小型 source-derived 构造集合。** 用明确、可机械解析的四组映射；无 R、benchmark 标签、人工错误 span 或自由 offset。示意 recipient 为 A→甲、B→乙、C→丙、D→丁，query D；counterfactual 为 B→甲、A→丙、C→乙、D→丁，query A。词袋相同，所有配对身份由生成器给出。全四组都保留，不只挑模型答对的例子。
+2. **预先列出不同机制的输出预测。** 若将 counterfactual query 表示中的相关成分移入 recipient，纯位置模型指向乙，词汇 query 模型指向甲，回指模型指向丙，未发生作用则仍为丁。四者可区分；只有两个候选时无法让三个机制与 null 各自给出不同答案。同步循环排列两份来源的 group order，并做预定的一一词汇重命名，以检验的是程序角色而非固定名字/绝对位置。本设计是对现有 causal-abstraction 方法的复用，不宣称新颖。
+3. **只固定一个候选成分政策。** 在不含正式测试 tuples 的来源构造校准集，对词汇/词序配平的 paired activation differences 做固定 rank-1 SVD；层固定为模型中间层、site 固定为完整来源后的 query 末 token。basis、符号、token-alignment、词表及缺失处理在 held-out 构造 tuples 前冻结，不扫层/rank/prompt 选优。rank-1 失败只否定这个局部仪器，不否定全模型存在 binding。
+4. **相同预算保留必要对照。** 同 site 的原值回填/no-op、候选子空间 interchange、匹配范数的固定随机正交方向、whole-vector interchange 全保留；不以 whole-vector 改答案就宣布 ID 被定位。再固定一个“counterfactual payload 不在 recipient source”的内容控制：若照抄不存在的答案，不能称为可解引用地址。原始 cosine 只记录为已知基线，不作为重开的主方法。
+5. **只看预注册因果结果。** 保存所有候选的同一 causal prefix 下 next-token logits/合格完整 completion、对应 Q/K/attention 路径及干预幅度；报告四个预定预测方向、词序/词汇下的保留与失败、内容控制和 unknown。若使用完整姓名概率，必须等待合法 shared-prefix 仪器资格，不把 H013 separate-forward 原 attempt 补成功。禁止自然 AUROC/标签阈值选择，也不把某个预测机制事后挑成唯一解释。
+
+最小 stop/go：候选成分必须在未用于取 basis 的 tuples 上产生角色特定、跨预定词序/词汇的改变，且不能被 no-op/正交方向或直接 payload 复制解释，才有资格称“局部绑定信号”。否则保留失败，不能改 PC 数、选层或扩大模型救分。即使通过，仍只获得该模型/量化/短构造上下文的局部因果证据；Q/K 配对是否对称、三机制在长上下文如何混合、自然 R 如何可靠对齐来源角色均未解决。
+
+这项资格与 source QA 的区别是测**内部定向干预的行为预测**，不是再次测 parser 已知的四个映射是否能回答。自然任务的下一步仍需可核 predicate/role alignment；不能把一个有资格的内部 pointer 自动当成事实裁判。

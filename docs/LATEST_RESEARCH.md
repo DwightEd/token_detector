@@ -1,4 +1,6 @@
-# Research status through 2026-10-31
+# Research status through 2026-11-03
+
+2026-11-03 最新：[关系绑定文献与下一轮判别设计](research/20261103_entity_binding_review.md)、[H012自然库存](results/h012_natural_inventory.md)、[H014缓存toy读出恢复及全部失败](results/h014_cached_role_assignment.md)。H014不是全任务提升；H013概率工具失败保留，H015真实工程资格待完成。六任务各0.8仍未达成。
 
 2026-11-02 最新：已直接下载并校验五任务 2,992 答/448,202 token 的配对缓存，以及 HalluRAG V3 1,782 答/69,483 token。当前工作转向[完整 FN/FP 机制统计](source-reading/FNFP_MECHANISM.md)及[来源逐例核验](source-reading/FNFP_CASES.md)。固定等权实验失败，未采用为主线；目标 AUROC≥0.8 仍未完成。
 

@@ -1,0 +1,26 @@
+{
+  "schema": "natural-masked-inventory-v1",
+  "expected_original_cases": 18,
+  "expected_source_occurrences": 719,
+  "expected_response_occurrences": 136,
+  "original_inputs_sha256": "1bf9a26ad06ac350988302999776e7288f9da570d35316fd6b27ca21e36e8baf",
+  "h010_seal_schema": "h010-engineering-inventory-seal-v1",
+  "compiler_contract": "natural-masked-cloze-inventory-v1",
+  "max_payload_bytes": 16777216,
+  "max_seal_bytes": 65536,
+  "inference_fields": [
+    "id",
+    "source",
+    "response"
+  ],
+  "artifact_only": true,
+  "model_calls_allowed": false,
+  "tokenizer_calls_allowed": false,
+  "nlp_calls_allowed": false,
+  "qa_admitted": false,
+  "scoring_performed": false,
+  "target_selection_allowed": false,
+  "unproposed_regions": "unknown_unscored_no_default_zero",
+  "hypothesis_id": "H012_NATURAL_MASKED_ARTIFACT_INVENTORY",
+  "notes": "All136 frozenNER occurrences retained. String artifact only, no question/messages/QA, risk or semantics asserted. H011cloze failure remains."
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "exact-research-evidence-archive-v1",
+  "files": [
+    {
+      "source": "outputs/h013-atomic-20261103/DESIGN.md",
+      "archived": "refine-logs/h013-20261103/DESIGN.md",
+      "sha256": "3e59346a2b10b01dc99b130e437b1ecd49de5850488dd2526e5bd71390116cc3"
+    },
+    {
+      "source": "outputs/h013-atomic-20261103/autostart-failure.json",
+      "archived": "refine-logs/h013-20261103/autostart-failure.json",
+      "sha256": "0b7fe0528d9338798d43071b2ee9b3c3e360d03d65ada28a7252b5ad8fb9e5dd"
+    },
+    {
+      "source": "outputs/h013-atomic-20261103/unlabelled-raw-audit.json",
+      "archived": "refine-logs/h013-20261103/unlabelled-raw-audit.json",
+      "sha256": "1f4605ccd8187e31e43ad5c43b24ef665ff63cb505b964b5be22d68048c836a9"
+    },
+    {
+      "source": "outputs/h013-atomic-20261103/probability-coherence-review.md",
+      "archived": "refine-logs/h013-20261103/probability-coherence-review.md",
+      "sha256": "038f2b6fe2eec806d937c75b5bcd2f432fe427e7f8e24ae7c1e16c228fe85d2a"
+    },
+    {
+      "source": "outputs/h013-atomic-20261103/decision-review.md",
+      "archived": "refine-logs/h013-20261103/decision-review.md",
+      "sha256": "bfcc23bd62d48e559dde2027ce7b67a3fc073f6c1277c8447f68b0aa3544be1d"
+    }
+  ]
+}

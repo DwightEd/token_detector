@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "run_id": "1daab8c5696195e0e46eb394441d5f84528bc9adf62ac5442da925b85bf1c4e9",
+  "completed_utc": "2026-11-03T01:24:04.768779+00:00",
+  "outcome": "inconclusive",
+  "conclusion": "Complete frozen artifact-only inventory; no QA or semantic coverage.",
+  "artifacts": [
+    {
+      "path": "outputs/h012-natural-masked-20261103/natural_inventory_v1/artifact.json",
+      "sha256": "999790a30b5aeeaad58ea0658fabd04d6b7415381e1191db36e7b936413db232"
+    },
+    {
+      "path": "outputs/h012-natural-masked-20261103/natural_inventory_v1/complete.json",
+      "sha256": "f501ce36c026fbedfe047e759be2114c9df39a65db4fa778a55e93f2ab995408"
+    },
+    {
+      "path": "outputs/h012-natural-masked-20261103/natural_inventory_v1/counts.json",
+      "sha256": "2f141c72d309c694f299612ca9a1d43955950a736947b962402c3e8f42851aa3"
+    },
+    {
+      "path": "outputs/h012-natural-masked-20261103/natural_inventory_v1/freeze.json",
+      "sha256": "d8e7ee56e1a590b2ecd17b1e0bc5001d7046d68d93ed8d9b3cfc362711b06820"
+    },
+    {
+      "path": "outputs/h012-natural-masked-20261103/natural_inventory_v1/plan.json",
+      "sha256": "3c646780d19ec6f0ef778379dc3bb720c97a6a9a06305bb2b2195642e8594a76"
+    },
+    {
+      "path": "outputs/h012-natural-masked-20261103/natural_inventory_v1/protocol.json",
+      "sha256": "42b6b7dff2c684637fb4924bb6922158cb3f1fa2ba1620d1e9898f0a747e3b0d"
+    },
+    {
+      "path": "outputs/h012-natural-masked-20261103/natural_inventory_v1/seal.json",
+      "sha256": "93fb4087aa429ad7162fd7b3abcc146d75e0e630e3e6a6e574fd42b44b7c4cc7"
+    },
+    {
+      "path": "outputs/h012-natural-masked-20261103/natural_inventory_v1/source_identity.json",
+      "sha256": "33e4da0a93a292781b4797c9c4b610b4319a936984405be1121b244ef5c0f455"
+    },
+    {
+      "path": "outputs/h012-natural-masked-20261103/natural_inventory_v1/summary.json",
+      "sha256": "b8a74f49df3f4b7f1ec5c8c830c94ba3639b5bec82bef86d3c52b03f100f61ca"
+    },
+    {
+      "path": "outputs/h012-natural-masked-20261103/admission-v1.json",
+      "sha256": "d997436517b7aed55984852fd286ab28ea1c59aceea65bd2bf6deedeaf7ebef7"
+    },
+    {
+      "path": "outputs/h012-natural-masked-20261103/post-stage-binding-v1.json",
+      "sha256": "7be6ee3a9d5852b6f7802ab40d324c02d513172b9372b7f2e0cdcb82119f0d58"
+    }
+  ]
+}

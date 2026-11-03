@@ -1,0 +1,22 @@
+{
+  "schema": "standalone-h014-figure-runtime-v1",
+  "python": "D:\\Apps\\Research\\Tools\\anaconda3\\python.exe",
+  "python_version": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+  "matplotlib": "3.10.6",
+  "numpy": "2.3.5",
+  "invocation": [
+    "outputs/h014-cached-role-assignment-20261103/plot_result.py"
+  ],
+  "elapsed_seconds": 4.288836700026877,
+  "source_publication_sha256": "02be8beaeca2de2fd07154203ec49c70c755c0d746e6a3f9080014c559520fc8",
+  "sealed_result_initial_seal_sha256": "450ca629b658321ae1a5e3e4032e98888650902d3ad32618a202723418bea74f",
+  "source_script_sha256": "ebb8c3abcf56ccdfd6f5edf4731855cda97b3ee279ec159cbe0279e450caf379",
+  "output_sha256": {
+    "docs\\results\\h014_cached_role_assignment.png": "3cfeb517ddacb352adbe15329fd4c85a09f56d8f3b43cb78ffe2a6a5979fb008",
+    "docs\\results\\h014_cached_role_assignment.pdf": "f8c6a6322e8100362f274734c6bb346ffed58e947749e100b86448577641ed8f"
+  },
+  "model_calls": 0,
+  "new_scores_computed": false,
+  "all_burdens_and_fixed_readouts_plotted": true,
+  "natural_performance_claim": false
+}

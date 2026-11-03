@@ -1,0 +1,25 @@
+{
+  "schema": "exact-research-evidence-archive-v1",
+  "files": [
+    {
+      "source": "outputs/h014-cached-role-assignment-20261103/DESIGN.md",
+      "archived": "refine-logs/h014-20261103/DESIGN.md",
+      "sha256": "760329ed422f3bb76bac9c4134d37e05756431cb8c8220a80a09cafd866a5c0e"
+    },
+    {
+      "source": "outputs/h014-cached-role-assignment-20261103/targeted-validation.md",
+      "archived": "refine-logs/h014-20261103/targeted-validation.md",
+      "sha256": "b207d097576051d4aaf8cf5c13e012385cbe38d5341a086bd397b659b47dd65d"
+    },
+    {
+      "source": "outputs/h014-cached-role-assignment-20261103/post-stage-binding-v1.json",
+      "archived": "refine-logs/h014-20261103/post-stage-binding-v1.json",
+      "sha256": "2f5fb37a31c38b7a65bac76abf676bf7f5af67f3e534445419a1d5fc689c9516"
+    },
+    {
+      "source": "outputs/h014-cached-role-assignment-20261103/plot-runtime.json",
+      "archived": "refine-logs/h014-20261103/plot-runtime.json",
+      "sha256": "a2a03ec9d03e26703a077db7d849a231f13081c9527d64f48f90d6cf87fc9f1e"
+    }
+  ]
+}

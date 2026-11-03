@@ -3,9 +3,9 @@
   "objective": "Mechanism-driven unsupervised hallucination detection improvement toward AUROC >= 0.8 on each of six primary tasks",
   "canonical_project": "D:/projects/research/token_detector",
   "goal_status": "not_achieved",
-  "phase": "H011_negative_H012_natural_artifact_inventory_preparing",
-  "active_hypothesis": "H012_NATURAL_MASKED_ARTIFACT_INVENTORY",
-  "next_question": "Compile all136 natural NER occurrences with source-only candidates, exact erasure provenance and semanticunknown; no QA yet. Audit whether single-predicate compilation/source-defined query alignment is a genuinely new next intervention.",
+  "phase": "H012_H014_complete_H013_numeric_failure_H015_backend_engineering_pending",
+  "active_hypothesis": "H015_SHARED_PREFIX_PROBABILITY_KERNEL",
+  "next_question": "Qualify one full-vocabulary distribution per shared causal prefix with a frozen bounded synthetic engineering probe. New binding literature identifies relation/order/lexical/null controls; do not rerun P002/P003 or infer natural bijection.",
   "known_fact_ids": [
     "F001",
     "F002",
@@ -34,7 +34,13 @@
     "F025",
     "F026",
     "F027",
-    "F028"
+    "F028",
+    "F029",
+    "F030",
+    "F031",
+    "F032",
+    "F033",
+    "F034"
   ],
   "do_not_repeat": [
     "Describing known FN/FP counts again without a new discriminating intervention",
@@ -65,23 +71,23 @@
   "checkpoint_policy": "Update at every conclusion, completed run or structural pivot; record the next discriminating question before continuation",
   "pipeline_helpers": "External ARIS run_state/watchdog helpers were not found; no background watchdog is claimed. Repository state and exact-run reservation are implemented locally.",
   "case_panel": "research-state/case_panel_v1.json",
-  "resource_status": "All GPU workers exited;3B research backend and community7B short/512 runtime qualified separately. Do not assume4096 readiness or automatic model experiment.",
+  "resource_status": "No scientific GPU job armed. H01332raw computed then original numeric gate failed; worker exited. 7Bshort/512 only engineering complete.",
   "user_resource_choice": "local_idle_automatic_run",
   "experiment_plan": "refine-logs/EXPERIMENT_PLAN.md",
-  "run_reservation_status": "H011_observation_and_CPU_complete_no_GPU_job_armed",
-  "frozen_observation_run_spec": "research-state/protocols/H011_masked_observation_run_spec_v1.json",
-  "live_execution_state": "outputs/h011-masked-20261103/autostart-state.json",
+  "run_reservation_status": "H013_terminal_engineering_failure32raw_retained_no_retry",
+  "frozen_observation_run_spec": "research-state/protocols/H013_atomic_observation_run_spec_v1.json",
+  "live_execution_state": "outputs/h013-atomic-20261103/autostart-state.json",
   "local_idle_job": {
-    "pid": 36792,
-    "parent_pid": 60036,
-    "started_utc": "2026-11-02T20:30:31.575166+00:00",
-    "state": "outputs/h011-masked-20261103/autostart-state.json",
+    "pid": 52632,
+    "parent_pid": 29072,
+    "started_utc": "2026-11-02T20:59:24.600895+00:00",
+    "state": "outputs/h013-atomic-20261103/autostart-state.json",
     "armed": false,
     "automatic_retries": false,
-    "status": "H011_observations_and_CPU_completed_no_retry"
+    "status": "terminal_engineering_failure32raw_retained"
   },
-  "active_variant": "source_only_reconstruction_qualified_natural_question_compiler_pending",
-  "live_progress_command": "Inspect current H009 sealed results, H010 completion and NATURAL_CONTRACT_NEXT before defining H011; do not repeat prior neural requests.",
+  "active_variant": "shared_prefix_probability_instrument_before_new_semantic_observations",
+  "live_progress_command": "Read RESUME, F029-F034 and current H015 design/review; no GPU experiment armed yet.",
   "superseded_local_job": {
     "pid": 31576,
     "status": "cancelled_before_launch",
@@ -132,6 +138,12 @@
       "commit": "5690007",
       "wheel_sha256": "b5ece3c5b43f149d33d909e7725cd63d84eaee9898a78ef48605e874594af461",
       "immutable_target": "outputs/h011-masked-20261103/evaluator_installed"
+    },
+    "h013_coherent_release": {
+      "files": 122,
+      "wheel_sha256": "38f76be982a3f72bb86be53b9fb082334afd5ff86cd5b96c39794b3508dd1d9f",
+      "immutable_target": "outputs/h013-atomic-20261103/installed",
+      "excluded_unfinished_module": "experiments/natural_masked_inventory.py"
     }
   },
   "last_completed_run": "5c162fe8ade0a235a221a9c0ad309bb1f98a3a8cb79ba9a06e3887192f7ba3fb",
@@ -141,8 +153,8 @@
   "goal_control_note": "Legacy tool status remains blocked; user explicitly resumed research. Continue authorized work without asking for confirmation or treating legacy control status as a scientific/resource blocker.",
   "work_status": "continuing_under_user_explicit_resume_do_not_stop",
   "next_design": "outputs/h012-natural-masked-20261103/DESIGN.md",
-  "frozen_observation_run_id": "954488248f0417aebefd288d07c8976b502860d1c397579b04af2fc5d7126283",
-  "last_updated_utc": "2026-11-02T20:46:18.231155+00:00",
+  "frozen_observation_run_id": "4269632b575f604767b82e0180fd1646295dde897cdf8a1f9c3a88ec8d7a1b90",
+  "last_updated_utc": "2026-11-03T01:17:54.094623+00:00",
   "completed_H003": {
     "natural_observer_run": "fa101d666cce73beefcb12cd5979b04fb51e2771a61f48e78f9232caecff968c",
     "natural_cpu_run": "29e82c69db9558ec05c7b868f10cfa58f06cc497864a0ecfebcefa6217a72b47",
@@ -349,5 +361,47 @@
       8,
       6
     ]
-  }
+  },
+  "completed_H013_raw": {
+    "run_id": "4269632b575f604767b82e0180fd1646295dde897cdf8a1f9c3a88ec8d7a1b90",
+    "state": "original_completion_gate_failed",
+    "raw_completions": 32,
+    "raw_queries": 16,
+    "all_children_sealed": true,
+    "root_sealed": false,
+    "construction_reference_accessed": false,
+    "new_scientific_performance": null,
+    "forward_seconds": 4.156676500104368,
+    "numeric_violations": [
+      {
+        "query_key": "f5f5d7b5ab731dd5597cc75e9fb69de401a2050202d5207a3c0bf0acf8584de5",
+        "log_candidate_mass": 0.0005158500900119788,
+        "candidate_joint_logprobs": [
+          [
+            "Oren Pellford",
+            -4.603949603070436
+          ],
+          [
+            "Mira Tanswick",
+            -0.00954160681116889
+          ]
+        ],
+        "framing_candidate_tokens": [
+          4,
+          5
+        ],
+        "first_branch_token_index": 0,
+        "branch_context_equal": true,
+        "branch_full_vocab_logsumexp": [
+          41.82256565447535,
+          41.85320877922228
+        ],
+        "candidate_mass_gate_passed": false
+      }
+    ]
+  },
+  "completed_h012": "docs/results/h012_natural_inventory.json",
+  "completed_h014": "docs/results/h014_cached_role_assignment.json",
+  "source_licences": "docs/results/source_constraint_licences.json",
+  "binding_literature": "docs/research/20261103_entity_binding_review.md"
 }

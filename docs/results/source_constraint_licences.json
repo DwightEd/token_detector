@@ -1,0 +1,116 @@
+{
+  "schema": "source-only-constraint-licences-v1",
+  "created_utc": "2026-11-03T01:33:45.649172+00:00",
+  "freeze_sha256": "d8082055ff10e0a7c24c284a6e50be74ac842bcd8327074d079fa46dbf2f413e",
+  "all_original_records_retained": true,
+  "source_only_value_projection": [
+    "id",
+    "source",
+    "source_id"
+  ],
+  "response_or_gold_values_decoded": false,
+  "source_parse_is_not_new_H004_eligibility_evidence": true,
+  "distinct_exact_sources": 150,
+  "summary_distinct_sources": {
+    "status": {
+      "parsed_structural_only": 150
+    },
+    "syntax": {
+      "python_literal": 150
+    },
+    "licence_true": {
+      "structural_path_lookup": 150,
+      "full_typed_scalar_map_injective": 0,
+      "nonempty_string_leaf_map_injective": 23,
+      "all_nonempty_strings_single_decoded_leaf_occurrence": 6,
+      "all_nonempty_strings_single_raw_occurrence": 3,
+      "semantic_bijection_admitted": 0
+    },
+    "sources_with": {
+      "multi_value_lists_or_tuples": 150,
+      "null_leaves": 140,
+      "empty_string_leaves": 7,
+      "empty_containers": 0,
+      "whitespace_only_string_leaves": 0,
+      "sentinel_like_strings": 0,
+      "lexical_delimiter_strings": 150,
+      "exact_repeated_typed_value_groups": 150,
+      "exact_repeated_nonempty_string_groups": 127,
+      "repeated_bare_field_names": 150,
+      "multivalued_array_erased_patterns": 150,
+      "differing_value_array_erased_patterns": 150
+    },
+    "totals": {
+      "string": 2620,
+      "boolean": 2176,
+      "decimal": 600,
+      "null": 410
+    },
+    "leaf_count": 5806
+  },
+  "summary_original_record_weighted": {
+    "status": {
+      "parsed_structural_only": 900
+    },
+    "syntax": {
+      "python_literal": 900
+    },
+    "licence_true": {
+      "structural_path_lookup": 900,
+      "full_typed_scalar_map_injective": 0,
+      "nonempty_string_leaf_map_injective": 138,
+      "all_nonempty_strings_single_decoded_leaf_occurrence": 36,
+      "all_nonempty_strings_single_raw_occurrence": 18,
+      "semantic_bijection_admitted": 0
+    },
+    "sources_with": {
+      "multi_value_lists_or_tuples": 900,
+      "null_leaves": 840,
+      "empty_string_leaves": 42,
+      "empty_containers": 0,
+      "whitespace_only_string_leaves": 0,
+      "sentinel_like_strings": 0,
+      "lexical_delimiter_strings": 900,
+      "exact_repeated_typed_value_groups": 900,
+      "exact_repeated_nonempty_string_groups": 762,
+      "repeated_bare_field_names": 900,
+      "multivalued_array_erased_patterns": 900,
+      "differing_value_array_erased_patterns": 900
+    },
+    "totals": {
+      "string": 15720,
+      "boolean": 13056,
+      "decimal": 3600,
+      "null": 2460
+    },
+    "leaf_count": 34836
+  },
+  "semantic_bijection_licence": "not_established_from_source_structure",
+  "source_response_completeness": "not_assessed_response_not_read",
+  "calls": {
+    "model": 0,
+    "gpu": 0,
+    "tokenizer": 0,
+    "ner": 0,
+    "qa": 0
+  },
+  "runtime": {
+    "python": "D:\\projects\\research\\token_detector\\.venv\\Scripts\\python.exe",
+    "python_version": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+    "command": [
+      "outputs/source-constraint-licences-20261103/inventory_sources.py"
+    ],
+    "elapsed_seconds": 2.238462600042112
+  },
+  "publication_scope": "aggregate_only_complete_inventory_retained_locally",
+  "original_inventory_sha256": "b4a5e455e6ec9aac74c66a77900b64f07e1ad8eab9b33f5e0c0886edf328dbf1",
+  "original_member_hashes": {
+    "DESIGN.md": "5255767f7c1358064d9e0ed4c35ee7e6f3d0b4e1c83cc8b2f0f1d99166d52b19",
+    "freeze.json": "d8082055ff10e0a7c24c284a6e50be74ac842bcd8327074d079fa46dbf2f413e",
+    "inventory.json": "b4a5e455e6ec9aac74c66a77900b64f07e1ad8eab9b33f5e0c0886edf328dbf1",
+    "inventory_sources.py": "ffe552cea1ce9378cd0390167d0b37dc130d799badd68b258435063f46e6481f",
+    "pre-execution-freeze-v1.json": "f34f08140cca7530bfac8b8aaaf4b24a29a9b41f7a6cd0c0c84f08462bb60c03",
+    "README.md": "06805a1a2fbbb6304c61a468598f11b9ace935f5b44462632068d90af4b85ebe"
+  },
+  "original_records": 900
+}

@@ -1,0 +1,9 @@
+{
+  "output_seal_sha256": "450ca629b658321ae1a5e3e4032e98888650902d3ad32618a202723418bea74f",
+  "obtained_after_complete_stage": true,
+  "model_calls": 0,
+  "method_promoted": false,
+  "reference_cpu_run_id": "5c162fe8ade0a235a221a9c0ad309bb1f98a3a8cb79ba9a06e3887192f7ba3fb",
+  "reference_cpu_seal_sha256": "3949813ad8a04511a892a41ebf19278a2d0b024f48dcc3881159fbb76f769551",
+  "donor_observation_seal_sha256": "545d732daa0edc8ac0f82036f6e687e6e2067052d7bc02ab4a0cce21c937c0a7"
+}

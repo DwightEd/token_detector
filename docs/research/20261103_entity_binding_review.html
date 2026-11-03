@@ -1,0 +1,201 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A 对应甲：怎样识别关系绑定，以及现有研究能支持什么</title><style>body{font:17px/1.8 system-ui,'Microsoft YaHei',sans-serif;color:#173046;background:#f7f9fc;max-width:1060px;margin:35px auto;padding:0 22px}a{color:#175ccc}h1,h2{line-height:1.45}table{border-collapse:collapse;display:block;overflow:auto;font-size:15px}td,th{border:1px solid #bacbdf;padding:10px;min-width:95px;text-align:left}pre{overflow:auto}mjx-container{overflow-x:auto;overflow-y:hidden}.demo{border:1px solid #c5d5ea;border-radius:14px;background:white;padding:18px;margin:22px 0}button{padding:8px 14px;margin:4px;border:1px solid #6989b4;border-radius:7px;background:white;color:#173046;cursor:pointer}button[aria-pressed=true]{background:#174d86;color:white}.notice{background:#fff3d5;padding:14px;border-left:4px solid #d6a238}</style><script>window.MathJax={"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]]}, "svg": {"fontCache": "local"}, "options": {"enableMenu": false}};</script><script defer src="../source-reading/assets/mathjax-3.2.2/tex-svg-full.js"></script></head><body><p class="notice">2026-11-03 文献调研。双击本 HTML 即可离线阅读公式；论文链接需要联网。演示与研究结果分别标注。</p><div class="demo"><p><b>切换来源，观察对应关系</b></p>
+<p>逻辑演示：依据下方手工写出的明确来源画边；没有自动分析向量，不是模型实测结果。</p>
+<p><button data-mode="base">原始绑定</button> <button data-mode="order">只换句序</button>
+<button data-mode="swap">交换绑定</button> <button data-mode="none">仅共现</button>
+<button data-mode="many">合法多对一</button></p><p id="source" aria-live="polite"></p>
+<svg viewBox="0 0 650 220" role="img" aria-label="来源关系示意图" style="max-width:650px;width:100%">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1764b9"/></marker></defs>
+<g id="edges" stroke="#1764b9" stroke-width="3" marker-end="url(#arrow)"></g>
+<g fill="#e6effc" stroke="#375c8c"><rect x="45" y="30" width="115" height="50" rx="9"/><rect x="45" y="145" width="115" height="50" rx="9"/>
+<rect x="490" y="30" width="115" height="50" rx="9"/><rect x="490" y="145" width="115" height="50" rx="9"/></g>
+<g text-anchor="middle" fill="#10283d" font-size="24"><text x="102" y="63">A</text><text x="102" y="178">B</text><text x="547" y="63">甲</text><text x="547" y="178">乙</text></g></svg>
+<p id="explanation" aria-live="polite"></p></div>
+<script>(()=>{const modes={
+base:['A 负责甲项目；B 负责乙项目。',[[55,55],[170,170]],'有方向、带“负责”谓词的两条边。'],
+order:['B 负责乙项目；A 负责甲项目。',[[55,55],[170,170]],'句序变了，事实和对应边都没变。内部位置编号可以更新。'],
+swap:['A 负责乙项目；B 负责甲项目。',[[55,170],[170,55]],'名字和项目完全相同，但对应边交换了。只比较词袋无法区分。'],
+none:['记录提到 A、B、甲项目和乙项目，没有说明负责关系。',[],'四个名字都出现，负责关系仍是未知；不能由共现补出边。'],
+many:['A 和 B 共同负责甲项目；记录未说明乙项目由谁负责。',[[55,55],[170,55]],'合法多对一。强制一一匹配会凭空把一个人分到乙项目。']};
+function set(mode){const [text,edges,note]=modes[mode];document.getElementById('source').textContent='来源：'+text;
+document.getElementById('explanation').textContent=note;document.getElementById('edges').innerHTML=edges.map(([a,b])=>`<line x1="165" y1="${a}" x2="482" y2="${b}"/>`).join('');
+document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));}
+document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>set(b.dataset.mode)));set('base');})();</script><h1>A 对应甲：怎样识别关系绑定，以及现有研究能支持什么</h1>
+<p>调研日期：2026-11-03。本文区分已发表研究、预印本、项目已完成诊断和待检验设计。没有运行新模型，也没有使用目标数据集的评价标签选择方法。</p>
+<p>“A 对应甲，所以二者应当更近”可以发展成研究假设，但需要先定义<strong>什么关系、什么上下文、在哪个表示空间、与哪个竞争配对相比</strong>。普通词向量、同句共现、注意力权重、删除一个词造成的概率变化，都不能单独认证这种对应。</p>
+<p>例如来源写着“A 收购了甲公司，B 起诉了甲公司”。A 和 B 都与甲有关，但关系和角色不同。只判断实体接近，会丢失“谁做了什么”；即使存在一条关系，也未必支持回答里的那条关系。实体对的方向、谓词、否定、时间和归属范围应当一起保留。</p>
+<h2>可以直接操作的识别单位</h2>
+<p>把待验证内容表示为带证据位置的记录：</p>
+<p>\[
+c=(\text{主体},\text{关系},\text{客体},\text{时间/范围},\text{极性},\text{来源位置}).
+\]</p>
+<p>其中“来源位置”是文本的原始字符区间，或结构化来源的完整字段/行路径。跨行的同值、同名和同字段不能合并成一个事实。别名解析、共指、算术推导和引语归属不能默认已经解决。</p>
+<p>对候选配对使用关系条件下的兼容分数：</p>
+<p>\[
+s_r(a,b\mid S)=\operatorname{compatibility}(a,r,b;S).
+\]</p>
+<p>这里的 compatibility 是待资格检验的读出接口，不是已证明可靠的概率。可落地的两条途径是：</p>
+<ol>
+<li><strong>冻结的关系抽取器</strong>：输入来源全文、准确实体跨度及预先固定的关系描述，输出有方向的实体对与关系分数。GLiREL 属于这类现成模型。其模型训练使用外部监督/合成数据；在本项目中可以不使用目标幻觉标签，但必须披露外部监督。</li>
+<li><strong>白盒绑定诊断</strong>：在当前 observer 中定位关系相关的隐状态子空间或注意力头 Q/K 读出，检查其能否随绑定变化。投影和读出必须在独立的来源控制集上确定并冻结；直接对目标错误标签训练探针或挑层不符合当前设定。</li>
+</ol>
+<p>前者更适合先建立可复核的来源边与证据；后者用于判断“模型没有表示这条绑定”还是“表示存在但没有被输出读出”。二者分别检验，不直接加权合成一个检测分数。</p>
+<h2>主要文献与边界</h2>
+<table>
+<thead>
+<tr>
+<th>研究</th>
+<th>实际研究对象与发现</th>
+<th>对本项目的用处及限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arxiv.org/abs/2310.17191">How do Language Models Bind Entities in Context?</a>，Feng &amp; Steinhardt，ICLR 2024</td>
+<td>通过激活干预研究实体与属性的 binding ID，发现相关连续子空间。</td>
+<td>支持研究专门的绑定表示；没有推出原始完整隐状态的 cosine 就是关系真假。Pythia/LLaMA 上的结论需要在当前 Qwen observer 单独验证。</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/html/2409.05448v3">Representational Analysis of Binding in Language Models</a>，Dai 等，EMNLP 2024</td>
+<td>PCA 定位与 ordering ID 相关的低秩方向，编辑会改变绑定行为。尤其 §4.7：去除语义关系、保留叙述顺序后，相关信号仍强。</td>
+<td><strong>不能把 PCA 得到的接近直接称为语义关系。</strong> §4.6 距离分类在开发集搜索阈值，也不能直接搬作无需标签的检测器。</td>
+</tr>
+<tr>
+<td><a href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/2eeff35664016c7f0f8aa704f0d9a83e-Abstract-Conference.html">Mixing Mechanisms: How Language Models Retrieve Bound Entities In-Context</a>，Gur-Arieh 等，ICLR 2026</td>
+<td>研究 positional、lexical、reflexive 三种检索机制；实体组增加时，位置机制在中间位置变得不可靠，其他机制参与补偿。</td>
+<td>为顺序、词汇和负担对照提供具体竞争解释。论文的机制模型拟合结果不是幻觉检测 AUROC，也不是我们错例的因果证明。</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2606.08644v2">A retrieval conditioned rebinding circuit for dynamic entity tracking in large language models</a>，Oh &amp; Demberg，2026-09 修订预印本</td>
+<td>动态状态更新中的 rebinding circuit；Gemma 的签名明显位于 Q/K 子空间，Llama 主要在 K。</td>
+<td>提醒读出具有模型家族差异，更新前后的关系也必须区别。未核实正式录用，不能写成顶会定论。</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/html/2609.11216v1">Legible Failures: Detecting and Repairing In-Context Binding Errors</a>，Ravulapalli 等，2026-09 预印本</td>
+<td>受控实体—任务绑定中，答错时探针有时仍读出正确绑定；内部读出与输出的分歧能帮助发现错误。</td>
+<td>直接支持“表示失败”与“读出失败”分开检验。它训练有监督逻辑回归探针、用验证集选层；单 token 合成任务和未固定 checkpoint revision 等限制都应保留。不是天然无监督方案。</td>
+</tr>
+<tr>
+<td><a href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/2b6d7285306fe896fca9b2e9a02ff6ec-Abstract-Conference.html">Linearity of Relation Decoding in Transformer Language Models</a>，Hernandez 等，ICLR 2024</td>
+<td>部分关系的解码能用主体表示的线性变换近似，但也有正确关系不满足线性近似。</td>
+<td>“关系变换后接近”比原始词距离有根据；主要研究模型参数中的关系知识，不能直接等同上下文临时绑定。</td>
+</tr>
+<tr>
+<td><a href="https://aclanthology.org/2025.naacl-long.418/">GLiREL — Generalist Model for Zero-Shot Relation Extraction</a>，Boylan 等，NAACL 2025</td>
+<td>联合编码文本和关系标签，构造有序实体对表示，与关系标签表示匹配。</td>
+<td>是可固定使用的关系兼容基线。需要已有实体跨度；zero-shot 指未见关系类型，不等于训练无监督，也不自动解决证据不足、否定、长文或域外数值。</td>
+</tr>
+<tr>
+<td><a href="https://aclanthology.org/2024.emnlp-main.395/">Knowledge-Centric Hallucination Detection / RefChecker</a>，Hu 等，EMNLP 2024</td>
+<td>把回答拆成 claim-triplets，再对照参考内容检查。</td>
+<td>三元组级幻觉检测已有直接先例，不能把“实体＋关系＋核验”本身当成新贡献。抽取器仍会丢失或错误归属事实。</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/html/2508.14391v2">DEPTH</a>，Yang 等，2026-02 修订预印本</td>
+<td>以最短依存路径简化局部关系上下文，再做整体修正，强调 NO-RELATION 错误；另有训练 reward model 和 RLHF 的组成。</td>
+<td>局部关系片段＋整体约束也已有近邻工作。其训练方案不能直接当作我们的目标无监督方法；最短路径不自动保证否定/限定语完整。</td>
+</tr>
+<tr>
+<td><a href="https://aclanthology.org/2025.emnlp-demos.10/">GLiNER2</a>，Zaratiana 等，EMNLP 2025 System Demonstrations</td>
+<td>schema 驱动的 NER、分类和层级结构抽取，使用微调编码器。</td>
+<td>对来源层级范围有参考价值；本论文属于系统演示，不应冒称主会关系推理论文。关系抽取的具体架构依据以上 GLiREL。</td>
+</tr>
+</tbody>
+</table>
+<p>另一个需要排除误用的近邻是 <a href="https://arxiv.org/html/2409.11283v4">GCA</a>：通过图表示比较多次采样回答的一致性，并做三元组逆向核验。其 Appendix C 描述按数据集最终指标选择阈值，不能原样复制到当前“目标真值仅最终评价”的协议。多次回答一致也不等于受给定来源支持。</p>
+<h2>对“更近”的三种解释分别如何测量</h2>
+<p><strong>语义相似</strong>回答的是“A 和甲谈论的内容是否相近”。它能检索相关片段，却可能把同类但不同角色的实体都拉近。不能把这个检索分数直接写成绑定置信度。</p>
+<p><strong>关系匹配</strong>回答的是“给定来源，(A, 收购, 甲) 是否有支持”。以 GLiREL 为例，其核心匹配是在“有序实体对的表示”与“关系标签的表示”之间做，而不是仅比较两个实体名字。来源里能抽取到一条候选边，也不等于该边已被证实；应保留原文证据与未确定状态。<a href="https://arxiv.org/html/2501.03172v1">模型方法正文</a></p>
+<p><strong>模型内部绑定</strong>回答的是“当前 observer 是否有能跟随 A—甲 对应变化的表示”。一个候选投影写为</p>
+<p>\[
+b_a=P h_a,\qquad b_b=P h_b.
+\]</p>
+<p>测量它们的距离只是诊断的起点。PCA 最大化方差，不以找出关系真假为优化目标；投影可能编码顺序、实体类型或词汇。必须用独立的反事实控制决定该信号有没有资格被称为绑定，而不能先把它命名为 binding space，再用名称代替验证。</p>
+<p>注意力头的 \(q^T k\) 也只能先解释为某条计算路径的匹配。只有在替换相关激活、保留无关信息时输出按预期改变，并且通过位置/词汇/随机方向控制，才能加强局部机制解释。仅画高亮热图不够。</p>
+<p>自回归模型里，若 A 出现在甲之前，A 当时的激活读不到未来的甲。因此必须固定具体 occurrence、完整来源后的查询位置、层、head 和 token 聚合政策。不能随意比较两个不同时间点的向量。</p>
+<p>还要区分<strong>读出模型内部绑定</strong>与<strong>判定来源支持</strong>：模型可能把一条错误回答绑定得很牢。内部表示可解码，只说明它在表示什么；来源独立的证据核验才回答这个绑定是否符合来源。</p>
+<h2>现有项目证据：已知什么，不再重复什么</h2>
+<ul>
+<li>P002 的上下文锚点 residual/cosine 已做过 104 个控制样本，八类均未过资格门，且读出随重排翻转。不能换 cosine 符号、换距离或挑层后重新包装。</li>
+<li>P003 是<strong>删除 token 的依赖指纹</strong>，不是白盒绑定探针。四类均未通过；不能把删除影响或 attention 强度命名为事实关系来重试同一路线。<a href="../../research-state/prior_experiments.json">历史索引</a></li>
+<li>H008 在已知 toy grammar 的来源问题上为 16/16；H011 把完整回答遮住实体后提问，三层为 9/16、8/16、10/16，并经常把两个角色选成同一个名字。这说明正确的来源信息和提问能力，不保证任意读出都能保留角色。<a href="../results/h011_masked_reconstruction.md">H011 结果</a></li>
+<li>H014 对既有 H011 分数使用预先固定的源内双射读出，三层变为 16/16、12/16、14/16，新增模型调用为零。21 个同名塌缩矩阵中恢复 18 个，另 3 个仍错。这是<strong>固定构造域的读出诊断</strong>；toy parser 本身可直接解题，不能证明自然数据有效或 LLM 必要。<a href="../results/h014_cached_role_assignment.html">完整结果及所有失败</a></li>
+<li>H013 的独立候选概率工具出现 1.000516 的互斥事件总质量，原数值门失败、32 条 raw 保留；尚未发布其语义表现。共享前缀概率树 H015 在修正这个仪器前提，不是已经成功的新检测模块。</li>
+<li>自然 H012 保留全部 18 条输入、136 个回答实体 occurrence：130 可生成遮罩 artifact，6 因重叠跨度保留 unknown；<strong>尚无自然关系 QA 准入或语义覆盖结论</strong>。<a href="../results/h012_natural_inventory.html">库存</a></li>
+</ul>
+<h2>有条件成立的数学性质</h2>
+<p>假设来源已经明确许可两个角色与两个实体的一一对应，令四个兼容 energies 为 \(s_{ij}\)。比较两种完整映射：</p>
+<p>\[
+\Delta=s_{A,\text{甲}}+s_{B,\text{乙}}
+       -s_{A,\text{乙}}-s_{B,\text{甲}}.
+\]</p>
+<p>若分数含有只依赖角色和只依赖实体的加性项，</p>
+<p>\[
+s_{ij}=u_i+v_j+\rho_{ij},
+\]</p>
+<p>则</p>
+<p>\[
+\Delta=\rho_{A,\text{甲}}+\rho_{B,\text{乙}}
+       -\rho_{A,\text{乙}}-\rho_{B,\text{甲}}.
+\]</p>
+<p>因此该比较<strong>消除这两类加性偏置</strong>。这是精确的代数性质，已经用于 H009/H014；不是新贡献声明。它不保证剩余交互就是正确语义，也不保证乘性偏置被消除。</p>
+<p>只有当 source 许可对应约束时，正负号才可以用于两种映射的相对选择。两个人可能合法地对应同一机构；同一对象也可能有多个属性，不能普遍强制双射。对完整映射 energies 做 softmax 得到的是给定假设域的条件能量权重，不是自动校准的事实后验。</p>
+<p>当前 Data2txt 的来源审计覆盖 900 条记录、150 个不同来源，均有多值结构，包含 business_stars 与三个 review_info 行内的 review_stars。全局双射没有得到许可。应先确定“商家总评分”或“第几条评论评分”的来源路径，重复数值不能靠最近实体或一一配对消歧。<a href="../results/source_constraint_licences.html">来源约束审计</a></p>
+<h2>下一轮可证伪的验证设计</h2>
+<p>先检验一条核心主张：<strong>新读出能跟随来源中的关系变化，同时对保义重排稳定，并能在没有证据时保留未知。</strong> 不同时改模型、提示词、候选集和融合权重。</p>
+<table>
+<thead>
+<tr>
+<th>对照干预</th>
+<th>保持不变</th>
+<th>应发生的变化</th>
+<th>能排除的解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>只交换 A—甲 / B—乙 的对应</td>
+<td>实体词表、候选、关系类型、总体负担</td>
+<td>正确边/检索结果随绑定交换</td>
+<td>只记名字、类型或词频</td>
+</tr>
+<tr>
+<td>只重排两个完整事实的叙述顺序</td>
+<td>所有事实和语义关系</td>
+<td>语义配对保持不变；内部 ID 坐标可以随重排更新</td>
+<td>固定绝对位置或最近邻配对捷径；不排除正确更新并解引用的 ordering-ID 机制</td>
+</tr>
+<tr>
+<td>保持名字顺序，删掉/否定特定关系</td>
+<td>实体都仍出现</td>
+<td>不能继续把同现当成正关系；未提及与显式否定分开</td>
+<td>共现被误当关系</td>
+</tr>
+<tr>
+<td>增加同类型干扰实体</td>
+<td>原有支持与证据位置可追踪</td>
+<td>原支持边不应因候选更拥挤而变成别人的边</td>
+<td>词汇竞争/负担脆弱性</td>
+</tr>
+<tr>
+<td>合法多对一、多个关系类型或时间更新</td>
+<td>每条事实均有来源证据</td>
+<td>保留多对一和作用域，不强制全局排列</td>
+<td>错误结构约束制造假阳性</td>
+</tr>
+<tr>
+<td>激活中替换候选绑定分量，并配随机方向/等范数控制</td>
+<td>词汇、来源、无关表示</td>
+<td>仅在合格路径上改变对应检索</td>
+<td>把可解码相关性误称内部因果机制</td>
+</tr>
+</tbody>
+</table>
+<p>这些控制集的绑定由构造规则或明确原生字段给出，不使用目标幻觉标签。若据此拟合投影/探针，应明确称为<strong>构造绑定上的自监督校准或监督诊断</strong>，不能称训练完全无监督。当前更直接的目标无监督基线是使用固定外部关系模型，公开其训练来源及全部配置。</p>
+<p>执行顺序：</p>
+<ol>
+<li>先固定新的观测接口及上述控制，说明与 P002/P003 旧观测的实质差别。旧缓存可满足的部分不重跑。</li>
+<li>对当前 observer 检验来源角色读出；同时固定一个外部关系抽取基线用于对照，不把二者直接加权。先报告覆盖、错误边、NO-RELATION/unknown、完整候选与成本，再谈检测分数。</li>
+<li>只有新信号通过位置、词汇、空关系和合法多对一控制，才检验自然回答中支持/矛盾/未知的来源对齐；全部原始记录、token 和 unknown 保留。未提及不能自动判假，字段路径唯一不能替代语义对齐。</li>
+<li>冻结方法、配置、预测和评价轴后再开目标真值；分数据集报告完整 AUROC/AP、覆盖及典型 FN/FP。已暴露面板属于探索，不能重新称为未见确认集。</li>
+</ol>
+<p>可争取的研究贡献需要落在经验证的机制差异与稳健性上，例如“何时绑定仍可恢复，何时来源边并未被确定；为什么局部读出在不同数据契约下失败”。单独加入三元组、PCA、依存路径或图匹配，都已有直接先例，也尚不能承诺达到顶会或六任务 0.8。</p></body></html>

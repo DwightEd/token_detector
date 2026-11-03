@@ -1,0 +1,549 @@
+{
+  "schema": 1,
+  "run_id": "4269632b575f604767b82e0180fd1646295dde897cdf8a1f9c3a88ec8d7a1b90",
+  "completed_utc": "2026-11-02T21:00:28.127212+00:00",
+  "outcome": "engineering_failure",
+  "conclusion": "Engineering failure or explicit cancellation; no automatic retry or scientific refutation.",
+  "artifacts": [
+    {
+      "path": "outputs/h013-atomic-20261103/autostart-failure.json",
+      "sha256": "0b7fe0528d9338798d43071b2ee9b3c3e360d03d65ada28a7252b5ad8fb9e5dd"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/freeze.json",
+      "sha256": "dc9e9d529b6b42ee6bf0b3e10ba09c7291a0070f361baffec3a797ab97cf687e"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/model_identity.json",
+      "sha256": "a11213f6ccbcba9db89e24092cb6ee0de18ce48bd3646641121a6c3357c8f6f2"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/plan.json",
+      "sha256": "22118d880fb142a04f810ba4e46fe0086582ec48d7085f3085afefceed442234"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/protocol.json",
+      "sha256": "2feece11d12a99cbba35e578fae80f7f34a96ae0876dfc70434e3829e024955d"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/source_identity.json",
+      "sha256": "aa2e3e0aa100b0aeb77bd178f4a42e3328c623bdd2b447144c641526e739ca4f"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/0691320256c3a513c09ee115229d98acef2695c63703749e6493c4202a75c3f6/backend_raw.json",
+      "sha256": "60b663dfe0489620a37239789b684830bf320ef4cc4507a7db8121b8cdca25ae"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/0691320256c3a513c09ee115229d98acef2695c63703749e6493c4202a75c3f6/request.json",
+      "sha256": "77c0cbac30fddcd222085524e560b16f6b9b9751e99753005439ca0a16c2d1df"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/0691320256c3a513c09ee115229d98acef2695c63703749e6493c4202a75c3f6/response.json",
+      "sha256": "96347fea84819180f8249b67e7741d8e6900c7c4018054dd8a4b6ee50ea5b01c"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/0691320256c3a513c09ee115229d98acef2695c63703749e6493c4202a75c3f6/seal.json",
+      "sha256": "ff9d09cbce099ef5dc982da530e1aa43c39049ad184dd6b69df4b9faf80a8cb3"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/075efad04b32c57b149a908ff9792dfe134a23773d693cf43600f2f83c2ed379/backend_raw.json",
+      "sha256": "e677399c0fc31d3842be9d7a2a9e2565ebc3822344279d516a9cf310ade91ef9"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/075efad04b32c57b149a908ff9792dfe134a23773d693cf43600f2f83c2ed379/request.json",
+      "sha256": "922a714db63406c511e3a97e2a3b738319afad99255492381b7a7ac938a15f2c"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/075efad04b32c57b149a908ff9792dfe134a23773d693cf43600f2f83c2ed379/response.json",
+      "sha256": "d472ac5da325c339e54c87afe8a17e3310bdc65608b9f5182a1fa9ddc0098ea4"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/075efad04b32c57b149a908ff9792dfe134a23773d693cf43600f2f83c2ed379/seal.json",
+      "sha256": "802fe3fe3b393d36d9f60158a44a0d307e363d7761f48c097772d5ea3870dd48"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/094d679571dc7017a915bb862bc2a7a4ece55f352d386b581205e62ddc7d88f4/backend_raw.json",
+      "sha256": "ed7ea70df00ec34604737708b5fd47df95d32221062f15c138ef7b5fe6aba1a1"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/094d679571dc7017a915bb862bc2a7a4ece55f352d386b581205e62ddc7d88f4/request.json",
+      "sha256": "5b8e9b29604017296f5128d221b980729c2a3932a7144e8a30b2fe2602e011c7"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/094d679571dc7017a915bb862bc2a7a4ece55f352d386b581205e62ddc7d88f4/response.json",
+      "sha256": "6edb943401bbd53aab884c92fa652ae74615fd9bd39b00ddb94590de298016b9"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/094d679571dc7017a915bb862bc2a7a4ece55f352d386b581205e62ddc7d88f4/seal.json",
+      "sha256": "e45f1c55ab8b0cb6050898a19f5756a6eb0b35a9101513e5a2d7f7b7933685a8"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/0aa74308256e5041a7d38bb6f21d68ebdc5be8f443385a7117af6a1ed8c61871/backend_raw.json",
+      "sha256": "daf39d890c2e330742aaed131d16652c77395589f061385ca6f421d5b87d8542"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/0aa74308256e5041a7d38bb6f21d68ebdc5be8f443385a7117af6a1ed8c61871/request.json",
+      "sha256": "14441d27a7e735873f18b0e385d0f4e4228e7980c85c6b23caabb3e170b0de99"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/0aa74308256e5041a7d38bb6f21d68ebdc5be8f443385a7117af6a1ed8c61871/response.json",
+      "sha256": "19727ec0b7ef387db71bd3b2f7bd5e1361502e4a8f11b05bd009a63c5fa4841a"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/0aa74308256e5041a7d38bb6f21d68ebdc5be8f443385a7117af6a1ed8c61871/seal.json",
+      "sha256": "db949c6c8d23c0eb666c92cc3be2fc9f88eab73d6ae49a491bd7749617d14632"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/1d9177d2151b7b83017a379aadcbc5f4cfbde7f23eb765fee7758b62896f9aa0/backend_raw.json",
+      "sha256": "3925b1e5b906dd89e462ea693e3b3e2088816906cc038a23697da3325a6029e9"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/1d9177d2151b7b83017a379aadcbc5f4cfbde7f23eb765fee7758b62896f9aa0/request.json",
+      "sha256": "7af67d4bf4dc03e7209175349f80467f9189435b68eadbe7afd802cae170a823"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/1d9177d2151b7b83017a379aadcbc5f4cfbde7f23eb765fee7758b62896f9aa0/response.json",
+      "sha256": "9313a409cccc62f4a8cd203ee16b8aa2283ec63b233954ac16eba94b15abe248"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/1d9177d2151b7b83017a379aadcbc5f4cfbde7f23eb765fee7758b62896f9aa0/seal.json",
+      "sha256": "ca25937c4718845f776a561410c4f92d16a715669df5d70e2c05fb0ccd7cfd7a"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/3b275e925d38b55c98b65b8201202561663473d3123ec8d486d76817562e7b47/backend_raw.json",
+      "sha256": "a5f4cdcba743c4ee403ae66ceeb0578e6108a2ba19c17b6bf76894780df30fbf"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/3b275e925d38b55c98b65b8201202561663473d3123ec8d486d76817562e7b47/request.json",
+      "sha256": "0205ed4b9bc85e6b0a28d2e005802b1db92d2aed6c5c6e3f1d6bfd840d8bc3a0"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/3b275e925d38b55c98b65b8201202561663473d3123ec8d486d76817562e7b47/response.json",
+      "sha256": "4e98991093061029a66599915a23ee9128d0919b35c278d016f93acafbedafd3"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/3b275e925d38b55c98b65b8201202561663473d3123ec8d486d76817562e7b47/seal.json",
+      "sha256": "b975706852e1d7a0b528e45bcf70dcd36b932e4a9c2de4c4f32af79fbe6e293a"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/3caff6b9a4e85beb928e65d9337c3eb7f6853545ac1e81b7ee9719374c191122/backend_raw.json",
+      "sha256": "74a9c7f6f56a8015750a421469bef61c8de8e9880209323ef1ab9dac6811d06b"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/3caff6b9a4e85beb928e65d9337c3eb7f6853545ac1e81b7ee9719374c191122/request.json",
+      "sha256": "af23fed81dc3f94ba00f421c3aad22e89fd884b898fda8db4a56fe140f7736ae"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/3caff6b9a4e85beb928e65d9337c3eb7f6853545ac1e81b7ee9719374c191122/response.json",
+      "sha256": "39000ca5c026bb38ba9c2f2a2528d66fe5290af1cb6eaacab3d32bf868d6b101"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/3caff6b9a4e85beb928e65d9337c3eb7f6853545ac1e81b7ee9719374c191122/seal.json",
+      "sha256": "92bce54157ddc39516a4e0f069769240b05f21a2e4061c813340ca328b35bfe9"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/3d294df2c0bd6126640a6ee53d6d85c4b574a8f38e7e46d0a5dedc21098e850e/backend_raw.json",
+      "sha256": "fbb617cf6412c6462256bf40fbf178de1f8b8e5b37968c434f285dcba115852b"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/3d294df2c0bd6126640a6ee53d6d85c4b574a8f38e7e46d0a5dedc21098e850e/request.json",
+      "sha256": "5c5e9b056b64457e8e9737043fdef8261c394a69dbb2b3952c4ed1cfc192e315"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/3d294df2c0bd6126640a6ee53d6d85c4b574a8f38e7e46d0a5dedc21098e850e/response.json",
+      "sha256": "3eec36bd0ac5b935a3854afd89ba9f4c74261e4558ff864173d6c0701af79860"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/3d294df2c0bd6126640a6ee53d6d85c4b574a8f38e7e46d0a5dedc21098e850e/seal.json",
+      "sha256": "bd9034fa0147dd1a575054374fd6a760403706b186670683098fe6336060e070"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/3e8fdc232a3972ab73eb331c2610b09f4cae3091a849a1804c848cb80dc59beb/backend_raw.json",
+      "sha256": "53d9a792a1fd28a7e9966d4ec614fe70e3263a03d5643d494ce72e7cab99c3c7"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/3e8fdc232a3972ab73eb331c2610b09f4cae3091a849a1804c848cb80dc59beb/request.json",
+      "sha256": "0f1c8449aa9a5a255c240afe1b20bdcbea95b66bb8fabf6c58ec6957ff2dfeb0"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/3e8fdc232a3972ab73eb331c2610b09f4cae3091a849a1804c848cb80dc59beb/response.json",
+      "sha256": "4f88f199cd5f9b666af3f0b97537316304bc636e9be97e87e1b5a1354e94d42c"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/3e8fdc232a3972ab73eb331c2610b09f4cae3091a849a1804c848cb80dc59beb/seal.json",
+      "sha256": "6b115b52344b26d5d67f86d28d8da87c459917063a7ceb977f66872f797704a2"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/435ac2dbdac403c3d124ff85a5a6ce683d48c8ff5b40487c96b8aa5f7935d77b/backend_raw.json",
+      "sha256": "3105a5f32e36311d8e085fcd61cc5ebb94b12108062b04b33e0a13996e25afd2"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/435ac2dbdac403c3d124ff85a5a6ce683d48c8ff5b40487c96b8aa5f7935d77b/request.json",
+      "sha256": "a0fdffae50975837b59671ef2d9673dedc6c6b27c264d4830f2e785835b4cfd1"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/435ac2dbdac403c3d124ff85a5a6ce683d48c8ff5b40487c96b8aa5f7935d77b/response.json",
+      "sha256": "3d283497da1d688e59909ae4ef24cff9bd8a026c57e85389b600f98ca26cc885"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/435ac2dbdac403c3d124ff85a5a6ce683d48c8ff5b40487c96b8aa5f7935d77b/seal.json",
+      "sha256": "50c5ef1e55e7ae126d6e0fffcc2f7915524282e789dfda4b5c18290129452238"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/44baf1ed92ce47528954ffc2bf8b1287b516bc6175fb73a1ad6b6825fb984582/backend_raw.json",
+      "sha256": "7b3c21b85fa6be23ce7b7fce1ce25d12c3ff41f3eb7a8301630d82ff1daf096b"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/44baf1ed92ce47528954ffc2bf8b1287b516bc6175fb73a1ad6b6825fb984582/request.json",
+      "sha256": "2ae4171a726381c6528b6c2aef969ae160db0b4a060a093d95e8d5c357d76241"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/44baf1ed92ce47528954ffc2bf8b1287b516bc6175fb73a1ad6b6825fb984582/response.json",
+      "sha256": "583cb695a7676d7e7a395b7fd6cd98c9ba0e671520be0789844f4b3fd27e64fc"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/44baf1ed92ce47528954ffc2bf8b1287b516bc6175fb73a1ad6b6825fb984582/seal.json",
+      "sha256": "698cc4b33e30c2f8611e0024368328d415d4fb33e1246e19a18f5d47b55e0db0"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/4b768a1be69ec76bf5cdb54ed8308a9732f90d64e30eaa3043c2ecf800fcf112/backend_raw.json",
+      "sha256": "19d12712fc82829e9623f2717e2fa59129ea785c8f4a539f4e1ae09a2530f9ad"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/4b768a1be69ec76bf5cdb54ed8308a9732f90d64e30eaa3043c2ecf800fcf112/request.json",
+      "sha256": "3b214d3b27f8908fdc84c81a4b163e6e8a0b44d8848eee863b1409ba85e8b83f"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/4b768a1be69ec76bf5cdb54ed8308a9732f90d64e30eaa3043c2ecf800fcf112/response.json",
+      "sha256": "5dc07508f02a7f2badba095bc23689eb09cea8e3114d98ce3e7831e245dfbb4c"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/4b768a1be69ec76bf5cdb54ed8308a9732f90d64e30eaa3043c2ecf800fcf112/seal.json",
+      "sha256": "cf665e28bd49b58d260ac2c00e15e1a38cc992cd1001397bbfcb29abdc5be19d"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/555bef512fbd5a12b10a0e288e8372b494c9a5761972f337504b40a118a82a68/backend_raw.json",
+      "sha256": "e2366b21aa5c365369f3c07d19fe00c10b95d52b902d66f403ca9217c8b4b0fe"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/555bef512fbd5a12b10a0e288e8372b494c9a5761972f337504b40a118a82a68/request.json",
+      "sha256": "7c8db77af2444ad5aae3d86e517c38b9b323dcd5d37bc2c2c3eaca6ab7739c14"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/555bef512fbd5a12b10a0e288e8372b494c9a5761972f337504b40a118a82a68/response.json",
+      "sha256": "c2f0159059f3c4783da3531fc549b0ac1996fef1d43b39eaab630ce99fa0d532"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/555bef512fbd5a12b10a0e288e8372b494c9a5761972f337504b40a118a82a68/seal.json",
+      "sha256": "1686dd74876bae9df466fca890d884190382afa7346c7bc69622f52c511ac422"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/6765546a0f701c83411315f74563fac4cf6f4d3819f144e6d6665a7d317f5c8e/backend_raw.json",
+      "sha256": "63e481b3b30fd5308e2211a90044d7019e042982f41c8e9e45380f606b87c479"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/6765546a0f701c83411315f74563fac4cf6f4d3819f144e6d6665a7d317f5c8e/request.json",
+      "sha256": "d74aa740398fa5695e823f54e63f88b55db17b28b3cdb2a63bef659576412ace"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/6765546a0f701c83411315f74563fac4cf6f4d3819f144e6d6665a7d317f5c8e/response.json",
+      "sha256": "44ae0d98834de8314bc57c0e48a98e9ca449f0bfbea9bd29202f4ed6a769aed7"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/6765546a0f701c83411315f74563fac4cf6f4d3819f144e6d6665a7d317f5c8e/seal.json",
+      "sha256": "2fda594cb09014ffd5cc11bb6742f5737e280780988ad0f33daad866352abde1"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/6d7dfdc201d07786ad9ec00dd75f4487214cac7bf7dd76099bb89731670ce4eb/backend_raw.json",
+      "sha256": "6cfe1fb6df7ba95e8fa282f753ea9cf8f0708973aade61d390e9f94730c079fe"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/6d7dfdc201d07786ad9ec00dd75f4487214cac7bf7dd76099bb89731670ce4eb/request.json",
+      "sha256": "503336ab8927e130fd50b8006567f2c08e3adb0ff2720a311ca90833317a58d1"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/6d7dfdc201d07786ad9ec00dd75f4487214cac7bf7dd76099bb89731670ce4eb/response.json",
+      "sha256": "5346c9bea0ff8c3812c108bce671b454909492c764d2f2fafac33cf96cf9a9c1"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/6d7dfdc201d07786ad9ec00dd75f4487214cac7bf7dd76099bb89731670ce4eb/seal.json",
+      "sha256": "d119b5935afb3f223653d2f10e51be83bc409f3c185db93d85165e0c3eb16f17"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/7ca33a3db23ccc8d0bd5a151b53976a52b2998562e4568381525166e03001f6a/backend_raw.json",
+      "sha256": "b9d8951d2abb6e6bb06c5276743bf26f355bf9460b488dc5bee0fb6b2ced3bea"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/7ca33a3db23ccc8d0bd5a151b53976a52b2998562e4568381525166e03001f6a/request.json",
+      "sha256": "593601d86631d84f0c89f6cb23466e5b54a916a6f3438db80bc82d7ebb3fe2c2"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/7ca33a3db23ccc8d0bd5a151b53976a52b2998562e4568381525166e03001f6a/response.json",
+      "sha256": "78f1c3596de501bac1244aff221caae774d2a03f6bb1db4f55cc77334bdcd09a"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/7ca33a3db23ccc8d0bd5a151b53976a52b2998562e4568381525166e03001f6a/seal.json",
+      "sha256": "a45d13112144dde5649c18f1fba14e564c2d30df02f66ef02534f83a3a92bfdc"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/93294136a85256e030042ce98c3548b211b6862f7fd55c650060acf2f42a153d/backend_raw.json",
+      "sha256": "827e38a73a93d0f14fe4dc6ee41f72ad39fb1914103aac9263d98640d70fb138"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/93294136a85256e030042ce98c3548b211b6862f7fd55c650060acf2f42a153d/request.json",
+      "sha256": "a9bfa05e114b99c22c6b5271a3a8c1526eb9f14a0e84033d3da021ae40afa015"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/93294136a85256e030042ce98c3548b211b6862f7fd55c650060acf2f42a153d/response.json",
+      "sha256": "8b234292f841abfc357303be825d2643a8d657667752f68806531b555612726e"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/93294136a85256e030042ce98c3548b211b6862f7fd55c650060acf2f42a153d/seal.json",
+      "sha256": "03a061acd92aac43be54c9e11661d829382d3f58265379566fe36644991fae63"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/abb4d11849a5a239c95a7ed3fd54deaa6a71cf6b11d060796b50bc9697d62dbe/backend_raw.json",
+      "sha256": "d1d68c91b44dd9ce15c94d630f5009f932aceeb08ef46f08001ca2cc5f1bd041"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/abb4d11849a5a239c95a7ed3fd54deaa6a71cf6b11d060796b50bc9697d62dbe/request.json",
+      "sha256": "11df0826eae11d304fd5548c7bc1a2d2f629500beab38711fecdb9ab6ca3d7f6"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/abb4d11849a5a239c95a7ed3fd54deaa6a71cf6b11d060796b50bc9697d62dbe/response.json",
+      "sha256": "3b66271bd9ead72f0624d66442b9b510490edbcae9de50d541c5ed74ac3738c5"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/abb4d11849a5a239c95a7ed3fd54deaa6a71cf6b11d060796b50bc9697d62dbe/seal.json",
+      "sha256": "0239746aae010d4b0e667d635d0c5de55856b486642c1c0b946622881690571d"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/ad6b1ae7f72f67998233ef600905c001b1628a4b90920b6a8bddc3f47cf9bf31/backend_raw.json",
+      "sha256": "6eb8e298a3db6d3bf616a222fbd225024df390735ba0729a8a0126fc92c818cc"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/ad6b1ae7f72f67998233ef600905c001b1628a4b90920b6a8bddc3f47cf9bf31/request.json",
+      "sha256": "fb2848c1fdcaa0fe91146930901a72ba303747091301220b5603bb940f24ed13"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/ad6b1ae7f72f67998233ef600905c001b1628a4b90920b6a8bddc3f47cf9bf31/response.json",
+      "sha256": "75de7d4bf8bade4c0ce46c3c7cb2ec34c4bca2916d48ca283eea25d7c3ccb2c2"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/ad6b1ae7f72f67998233ef600905c001b1628a4b90920b6a8bddc3f47cf9bf31/seal.json",
+      "sha256": "7dc46d33d837506b7ab83dd1556033dd1eee2af3bc2f42e13b7a6eb37ac64872"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/b6ac48d9c6e1194b5f9ae0273b1b45c7df088779251417d12fe4f417dce1ce98/backend_raw.json",
+      "sha256": "267405a23f88c0fb8856d215ea3f4d84b9dd26c1975415f1166ad95684c92713"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/b6ac48d9c6e1194b5f9ae0273b1b45c7df088779251417d12fe4f417dce1ce98/request.json",
+      "sha256": "4c8a4d146039bba08c740d8746a9c8c8072fd8930a96b40501048c52d2bce14a"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/b6ac48d9c6e1194b5f9ae0273b1b45c7df088779251417d12fe4f417dce1ce98/response.json",
+      "sha256": "a1d66dd9d04caae8f1a0351a984943cce19db81965b3e2ea93b39154d4768dee"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/b6ac48d9c6e1194b5f9ae0273b1b45c7df088779251417d12fe4f417dce1ce98/seal.json",
+      "sha256": "fe7cc48cf1ac1acb2144953eed78b9dea5ef1a7a38c1c5059060b61b9e0e38bf"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/bb28939b7d159069a6a5cd778e14bd5cfb0c8b4bac103ad8729144de57e5b4df/backend_raw.json",
+      "sha256": "5947cb7ed30e43d908b3481808ad34a995986630a2749244a438b7efde8dd339"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/bb28939b7d159069a6a5cd778e14bd5cfb0c8b4bac103ad8729144de57e5b4df/request.json",
+      "sha256": "d2c738f4cb2c3d2e4252e4f316764ce12e481b61362f8c952ecc0aa9a668b3bc"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/bb28939b7d159069a6a5cd778e14bd5cfb0c8b4bac103ad8729144de57e5b4df/response.json",
+      "sha256": "a5ec33dc610abcd57e60524b5f95a8608ac9b5692aab7fafc0a394bd4ba5a71a"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/bb28939b7d159069a6a5cd778e14bd5cfb0c8b4bac103ad8729144de57e5b4df/seal.json",
+      "sha256": "83c1854f4ae1e72b892141b85e509c16d6cf677f4ccd85888943c528175054ef"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/bba48a6f9acae1bc0f5bccd7c58b70bb95c959ff43b01092ee647a1b64a9d5db/backend_raw.json",
+      "sha256": "142a8002267d5c6ad23f66299f3b1e194dc035eba5d1e3635bbff2504796ec67"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/bba48a6f9acae1bc0f5bccd7c58b70bb95c959ff43b01092ee647a1b64a9d5db/request.json",
+      "sha256": "3a9f2fbe8a63fa7d96096c4302135cf53ae19af79f4a6db5465fadf41e1ba4a6"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/bba48a6f9acae1bc0f5bccd7c58b70bb95c959ff43b01092ee647a1b64a9d5db/response.json",
+      "sha256": "67e0c7915efe1d92127afc128c519f3e3ed335dfefc4369875cf7bee009eb1a6"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/bba48a6f9acae1bc0f5bccd7c58b70bb95c959ff43b01092ee647a1b64a9d5db/seal.json",
+      "sha256": "ccfa77b4e853f28966677da26a8259c83d7d0f28d197bd583a85d80fad4bd399"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/d9a19e5a54ab31d4201db166e6d4340669f4a64f3704a907e57df2f4979041f5/backend_raw.json",
+      "sha256": "dc9a572603c61fefeb2d42d1ce2add8060fb0f210189c67eb7d549e6820ea68b"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/d9a19e5a54ab31d4201db166e6d4340669f4a64f3704a907e57df2f4979041f5/request.json",
+      "sha256": "79f8527a04e1980967f77ddd180ab49b0c09a1008ceb0c1b51d8ee0585bd2edb"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/d9a19e5a54ab31d4201db166e6d4340669f4a64f3704a907e57df2f4979041f5/response.json",
+      "sha256": "45b18facc790d5f17a78e0eeea28c2f29bc6f730b29fd9d8841e4b1540d300be"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/d9a19e5a54ab31d4201db166e6d4340669f4a64f3704a907e57df2f4979041f5/seal.json",
+      "sha256": "45b94351b4ecc0ce76d93039491649785f69ab1061998f8596ca6a918ef9b015"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/e1806dccfc21d738345568f71d30f89597efcc6574f062cd7dd26c8f70fa9749/backend_raw.json",
+      "sha256": "bb5f63f7b1dcf9645dc72063124dce062e95dd39c2d8b15f919a1457ed20c9c2"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/e1806dccfc21d738345568f71d30f89597efcc6574f062cd7dd26c8f70fa9749/request.json",
+      "sha256": "35ab8c9bd1036dd5d8ee123052456f58e1489bd7e1fb8e9cd9d316271cddf6f2"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/e1806dccfc21d738345568f71d30f89597efcc6574f062cd7dd26c8f70fa9749/response.json",
+      "sha256": "a226d501bc8bca6c872f622ad2202208e4a210399e6a3a1ad23d606c15797d60"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/e1806dccfc21d738345568f71d30f89597efcc6574f062cd7dd26c8f70fa9749/seal.json",
+      "sha256": "6e04cc96e7357243caecbc966cbf552154c2930592696337f746d1b70c127f5d"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/e19bf835f9fd46dd993fcec9cd4dcf304a2becfb4c730b8ccd446e160a7692b0/backend_raw.json",
+      "sha256": "972dd9154c7641c29972d8e459b0ae8b14786dc2fdb31b1d218ff1c76fd94c24"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/e19bf835f9fd46dd993fcec9cd4dcf304a2becfb4c730b8ccd446e160a7692b0/request.json",
+      "sha256": "6285b9fcbfca11004c3b64e075ad66620be276be9ef2248f3d50e0dc3e83a628"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/e19bf835f9fd46dd993fcec9cd4dcf304a2becfb4c730b8ccd446e160a7692b0/response.json",
+      "sha256": "e30704902bbc1fd9cb4b3264c761de472a672620803c4a476da75b8cc4414a82"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/e19bf835f9fd46dd993fcec9cd4dcf304a2becfb4c730b8ccd446e160a7692b0/seal.json",
+      "sha256": "4e977e89564362cab29de91b7c4509396aa868a45da69d9b9ffcc7d8cc147f11"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/e61145ad04c7605b5dc088de8c0fc5cb287433b44b0bd31c0ca4668c6ea06c2d/backend_raw.json",
+      "sha256": "fabcb89b4b7ad01491649181987f44a384738f7331cf47b1580d7e24d367557d"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/e61145ad04c7605b5dc088de8c0fc5cb287433b44b0bd31c0ca4668c6ea06c2d/request.json",
+      "sha256": "03b422936039cfd6ab7f7979c4b0e8ff4d31074a0c8ccf66802b0c0c3071a6d1"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/e61145ad04c7605b5dc088de8c0fc5cb287433b44b0bd31c0ca4668c6ea06c2d/response.json",
+      "sha256": "810b2ffaae38fcf1d2fd2d8128bfd16eb0fabc23b8d4a02cbd537b0fe8b7c8fd"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/e61145ad04c7605b5dc088de8c0fc5cb287433b44b0bd31c0ca4668c6ea06c2d/seal.json",
+      "sha256": "052e5de19afc8f15ed09637b4abfdcff4f7bfe3474cc6a7117e9123de2cd6262"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/eac5742151f191a979daabc30ac622d1e4682c568b470698e1c94ae9534f3f07/backend_raw.json",
+      "sha256": "ec11989b3b138a2bbeb1035c3653d6da528e9404edaf4b3c803bab819662ae3a"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/eac5742151f191a979daabc30ac622d1e4682c568b470698e1c94ae9534f3f07/request.json",
+      "sha256": "c99f5eea9bdc633572d26bfa7c7a2b4e640adf99ffb7169e815e89534b2c6828"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/eac5742151f191a979daabc30ac622d1e4682c568b470698e1c94ae9534f3f07/response.json",
+      "sha256": "289550624ed7c66490a9e81e0a8ce71b76d5fa891958b804b3253a676cb8d969"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/eac5742151f191a979daabc30ac622d1e4682c568b470698e1c94ae9534f3f07/seal.json",
+      "sha256": "5b5563601c4f2a9567986360a40aca9cc288be3d4069e4b1bcc972ad164163d3"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f482e7e8c9f237d668ea9aa2a2fb7478afc353e0786e7955efac103bee243a6f/backend_raw.json",
+      "sha256": "9851f8a729c6bca49d89109286bb0ed6d6e8415a4067a56147cceb847ed886bd"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f482e7e8c9f237d668ea9aa2a2fb7478afc353e0786e7955efac103bee243a6f/request.json",
+      "sha256": "ddd4e6d9b10b497c3ccdcac3181206b1c900231515de1b75f85b11bb951f604c"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f482e7e8c9f237d668ea9aa2a2fb7478afc353e0786e7955efac103bee243a6f/response.json",
+      "sha256": "6b898fc204270fefb1acb71549a189b86f0c4d2944b0d16a949b95fa896b10fc"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f482e7e8c9f237d668ea9aa2a2fb7478afc353e0786e7955efac103bee243a6f/seal.json",
+      "sha256": "2629b59647c4d877f79ffd2858c9925c3a943c2ca4ff3096ac9fb242a650d59a"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f6c8e6f73add444099190ea2ccc1d7f8262e4c4b9e09d780e0908e96eb0b20f5/backend_raw.json",
+      "sha256": "2aaf684b95d24a94771d88b0463628dc4523ba2694bdb2bfe16f94b02826d8af"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f6c8e6f73add444099190ea2ccc1d7f8262e4c4b9e09d780e0908e96eb0b20f5/request.json",
+      "sha256": "fe92c426265b6254294b363f2935d66293472274c3f6b51c758db75e1bc7a361"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f6c8e6f73add444099190ea2ccc1d7f8262e4c4b9e09d780e0908e96eb0b20f5/response.json",
+      "sha256": "c39d4c8b55c2494afc177a8f0bd94a90cc215c3fa4a2b9d643300f91d19e803a"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f6c8e6f73add444099190ea2ccc1d7f8262e4c4b9e09d780e0908e96eb0b20f5/seal.json",
+      "sha256": "1ff28dd7fb357599976ff8465ba8b827dd9578f3c8bafc550dd4cc81f24ee510"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f6d6619686f427fe46086d3bfa098d7c28c1883979266703edab34d71d674cb0/backend_raw.json",
+      "sha256": "9319bcc5d014829c792b10567a837c312aec40aa515f6afb9733fe3f2f50bc16"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f6d6619686f427fe46086d3bfa098d7c28c1883979266703edab34d71d674cb0/request.json",
+      "sha256": "72a6a5070218b34147b7b27dd1b47a568802ef81d9182771e8ab1ec3de9a14e5"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f6d6619686f427fe46086d3bfa098d7c28c1883979266703edab34d71d674cb0/response.json",
+      "sha256": "c4d8f3376fe3846d6ba90b873c6b71d68af3cbc7ba8b3f8d7a9e8aeb438339f8"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f6d6619686f427fe46086d3bfa098d7c28c1883979266703edab34d71d674cb0/seal.json",
+      "sha256": "f5ae5d0e66a992ce1e4969c9a7985541e8bd6254fd21efc5cd223e0fe1971594"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f723ce950136964e3fa5f6b02369aabc5c05072068ec053d9b5e5cd394b12ae3/backend_raw.json",
+      "sha256": "82cb5bea057e1494dcce75564b89b848945bfad1c4a20ce92108a4198c75b6ba"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f723ce950136964e3fa5f6b02369aabc5c05072068ec053d9b5e5cd394b12ae3/request.json",
+      "sha256": "ff54aaf9f7b35e28524b962b37d39043b18f8f5e291e4c57422269d11945e053"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f723ce950136964e3fa5f6b02369aabc5c05072068ec053d9b5e5cd394b12ae3/response.json",
+      "sha256": "e7a9b763f1832959dfed4413c85433abdfa14c10c57f7cf79589e82d7cb8f864"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f723ce950136964e3fa5f6b02369aabc5c05072068ec053d9b5e5cd394b12ae3/seal.json",
+      "sha256": "8e7b3c58cf1938f7fe18f4460a7c0827f5923452ff0944dd3356b43db7d516ce"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f89e9124939c555178b0995a326e71fd4c1b1b88b982908834ae8d303bd1676e/backend_raw.json",
+      "sha256": "c18c2daaeb15f22bbb3610ed73eb70831244c3b0c592cd6a687978b38d4f4cc4"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f89e9124939c555178b0995a326e71fd4c1b1b88b982908834ae8d303bd1676e/request.json",
+      "sha256": "6fdc4323952b76b38912026fbc57aa3f351bd6ce5f7facf010146aa8542f35df"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f89e9124939c555178b0995a326e71fd4c1b1b88b982908834ae8d303bd1676e/response.json",
+      "sha256": "1ce739444a0084cb704aa02b16db64e2a3a921b10714f4c5f3fd442f8e1dc214"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction_v1/requests/f89e9124939c555178b0995a326e71fd4c1b1b88b982908834ae8d303bd1676e/seal.json",
+      "sha256": "4911422f0bdc4a064314fec3b4825c839674e873a27199d1f36c3b95c09f2c26"
+    },
+    {
+      "path": "outputs/h013-atomic-20261103/atomic_reconstruction.log",
+      "sha256": "5aef0a3d609c2178ded29036d1816fca01f2a16ff1dc50d9654fe239016f18e6"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "run_id": "383639f77106c62f795c25f5524ffec7e4073a30bd3c2bde76e237cc5834adba",
+  "completed_utc": "2026-11-03T01:24:57.356189+00:00",
+  "outcome": "inconclusive",
+  "conclusion": "Complete fixed finite-energy role-readout diagnostic; allreadouts/burdens retained. No new forwards, natural efficacy or exact-LM probability claim.",
+  "artifacts": [
+    {
+      "path": "outputs/h014-cached-role-assignment-20261103/assignment_review_v1/cases.json",
+      "sha256": "505cbbb736db82aee3a9ce0d7362ac7565fca4ddd93e309481783664abd88fd2"
+    },
+    {
+      "path": "outputs/h014-cached-role-assignment-20261103/assignment_review_v1/complete.json",
+      "sha256": "eeabdd043deae44a689897ba99ea1a95155d71b49668db51ff8e14b2eb4228a6"
+    },
+    {
+      "path": "outputs/h014-cached-role-assignment-20261103/assignment_review_v1/freeze.json",
+      "sha256": "91680c7d559f784d7c2b3d0925602de49aaa2bff997bd46ec8fde9ba75333425"
+    },
+    {
+      "path": "outputs/h014-cached-role-assignment-20261103/assignment_review_v1/h011-reference.json",
+      "sha256": "46d38bbf828c238337912d876d849bf61c86348cf353a67c21395d47f5be1847"
+    },
+    {
+      "path": "outputs/h014-cached-role-assignment-20261103/assignment_review_v1/matrices.json",
+      "sha256": "431b063eebe68c964cc0238ab6876d1b93c846af674c196e3804c71e117ff9a4"
+    },
+    {
+      "path": "outputs/h014-cached-role-assignment-20261103/assignment_review_v1/plan.json",
+      "sha256": "c0956040f41d5c0a6c020a7cb1403284100ad158ca3c9598d2a3b4e8d464e62d"
+    },
+    {
+      "path": "outputs/h014-cached-role-assignment-20261103/assignment_review_v1/protocol.json",
+      "sha256": "351511350706fe2768064eecee3d56a560c3a5eeebc4a901ae4896779953ef39"
+    },
+    {
+      "path": "outputs/h014-cached-role-assignment-20261103/assignment_review_v1/queries.json",
+      "sha256": "7b0b43298e6eb48e8da58efc9fba7452ac767a3b7195c2031c042541b4da0549"
+    },
+    {
+      "path": "outputs/h014-cached-role-assignment-20261103/assignment_review_v1/reference-release.json",
+      "sha256": "68c9feb5bca1379e5e1c8d6216cec16dc9c9ba0900955a90306dda5350f622d7"
+    },
+    {
+      "path": "outputs/h014-cached-role-assignment-20261103/assignment_review_v1/scores.json",
+      "sha256": "57b5b6ed6fbe812c21cd67d7f76f7d46291bf422eef48808dc431025277b0a23"
+    },
+    {
+      "path": "outputs/h014-cached-role-assignment-20261103/assignment_review_v1/seal.json",
+      "sha256": "450ca629b658321ae1a5e3e4032e98888650902d3ad32618a202723418bea74f"
+    },
+    {
+      "path": "outputs/h014-cached-role-assignment-20261103/assignment_review_v1/source_identity.json",
+      "sha256": "fef8b0e686fb360fe581bc5709d08475e52a5752561e665e13e7b2fe5492604a"
+    },
+    {
+      "path": "outputs/h014-cached-role-assignment-20261103/assignment_review_v1/summary.json",
+      "sha256": "72ebccfe4e646321d516de5e4c26c49ce7bbac91f3f6fce7557cb67f52451a13"
+    },
+    {
+      "path": "outputs/h014-cached-role-assignment-20261103/admission-v1.json",
+      "sha256": "2e63a890759e99dc62ee6381b8ecf2db74e7e4be6339a90d3a00f5bf29073146"
+    },
+    {
+      "path": "outputs/h014-cached-role-assignment-20261103/post-stage-binding-v1.json",
+      "sha256": "2f5fb37a31c38b7a65bac76abf676bf7f5af67f3e534445419a1d5fc689c9516"
+    }
+  ]
+}

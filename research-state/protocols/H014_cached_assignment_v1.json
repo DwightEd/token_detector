@@ -1,0 +1,37 @@
+{
+  "schema": "masked-cached-assignment-v1",
+  "purpose": "exposed_toy_H011_fixed_bijection_readout",
+  "required_sources": 8,
+  "required_burdens": [
+    0,
+    4,
+    12
+  ],
+  "required_matrices": 24,
+  "required_queries": 48,
+  "required_completions": 96,
+  "required_cases": 48,
+  "required_slots": 96,
+  "model_calls_allowed": false,
+  "tokenizer_only_validation": true,
+  "readouts": [
+    "independent_rows_max_slot",
+    "bijection_joint_assignment_mass"
+  ],
+  "canonical_order": "sorted_complete_source_event_and_person_strings",
+  "burden_rule": "exact_original_response_suffix_after_original_first_unit",
+  "source_bijection_must_be_explicitly_admitted": true,
+  "assignment_contract": "two-by-two-admitted-bijection-v1",
+  "score": "original_full_candidate_plus_eos_joint_log_probability",
+  "temperature": 1.0,
+  "length_normalization": false,
+  "synthetic_offsets_allowed": false,
+  "target_label_selection_allowed": false,
+  "threshold_search_allowed": false,
+  "fitted_calibration_allowed": false,
+  "posthoc_exposed_diagnostic": true,
+  "natural_task_performance_claim": false,
+  "method_promoted": false,
+  "hypothesis_id": "H014_CACHED_H011_ROLE_ASSIGNMENT",
+  "notes": "SameH009kernel, no offsets or fitting, all24 matrices and allburden/readouts retained. Posthoc finite-energy diagnostic; not exact common LM probability kernel or natural efficacy."
+}

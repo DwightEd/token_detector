@@ -167,6 +167,55 @@
       "result": "docs/results/h011_masked_reconstruction.json",
       "cpu_run_id": "5c162fe8ade0a235a221a9c0ad309bb1f98a3a8cb79ba9a06e3887192f7ba3fb",
       "next": "No prompt/model rescue. Natural artifact inventory only; inspect structurally new atomic-predicate/source-query compilation after prior/cache audit."
+    },
+    {
+      "id": "H013_SINGLE_AFFIRMATIVE_CONJUNCT_BRIDGE",
+      "status": "engineering_terminal_raw_complete_subdistribution_gate_failed",
+      "design": "outputs/h013-atomic-20261103/DESIGN.md",
+      "admission": "Prior/core/CPU independently reviewed,31installedchecks, actual32tokenframedrequests differ from all128 H008/H011 cached events, same3B numeric identity. All48/96slots map16Q32C. H014 cached control predeclared.",
+      "hypothesis": "Does one known affirmative conjunct under the unchanged H011template restore role-specific sourceQA?",
+      "limitations": "Bundle removesotherperson/conjunct/constraint and shortensprefix; danglingOTHER retained. No uniqueattention cause, naturalcoverage or novelty. Suffix invariance byconstruction.",
+      "observation_run_id": "4269632b575f604767b82e0180fd1646295dde897cdf8a1f9c3a88ec8d7a1b90",
+      "primary_control": "H011_burden0_only",
+      "evidence": [
+        "F023",
+        "F026"
+      ],
+      "evaluation_references_released": false,
+      "scientific_effect_unknown": true,
+      "numeric_gate_not_weakened": true,
+      "no_automatic_model_retry": true,
+      "raw_completions": 32,
+      "audit": "outputs/h013-atomic-20261103/unlabelled-raw-audit.json"
+    },
+    {
+      "id": "H012_NATURAL_MASKED_INVENTORY",
+      "status": "complete_unscored_artifact_inventory_only",
+      "run_id": "1daab8c5696195e0e46eb394441d5f84528bc9adf62ac5442da925b85bf1c4e9",
+      "result": "docs/results/h012_natural_inventory.json",
+      "evidence": [
+        "F030"
+      ]
+    },
+    {
+      "id": "H014_CACHED_ROLE_ASSIGNMENT",
+      "status": "complete_toy_readout_positive_not_promoted",
+      "run_id": "383639f77106c62f795c25f5524ffec7e4073a30bd3c2bde76e237cc5834adba",
+      "result": "docs/results/h014_cached_role_assignment.json",
+      "evidence": [
+        "F031",
+        "F032"
+      ]
+    },
+    {
+      "id": "H015_SHARED_PREFIX_PROBABILITY_KERNEL",
+      "status": "pure_and_fake_checks_backend_engineering_pending",
+      "design": "outputs/h015-prefix-trie-20261103/DESIGN.md",
+      "evidence": [
+        "F029",
+        "F033"
+      ],
+      "scientific_effect_unknown": true
     }
   ]
 }

@@ -1,0 +1,25 @@
+{
+  "schema": "exact-research-evidence-archive-v1",
+  "files": [
+    {
+      "source": "outputs/source-constraint-licences-20261103/DESIGN.md",
+      "archived": "refine-logs/source-constraint-licences-20261103/DESIGN.md",
+      "sha256": "5255767f7c1358064d9e0ed4c35ee7e6f3d0b4e1c83cc8b2f0f1d99166d52b19"
+    },
+    {
+      "source": "outputs/source-constraint-licences-20261103/freeze.json",
+      "archived": "refine-logs/source-constraint-licences-20261103/freeze.json",
+      "sha256": "d8082055ff10e0a7c24c284a6e50be74ac842bcd8327074d079fa46dbf2f413e"
+    },
+    {
+      "source": "outputs/source-constraint-licences-20261103/pre-execution-freeze-v1.json",
+      "archived": "refine-logs/source-constraint-licences-20261103/pre-execution-freeze-v1.json",
+      "sha256": "f34f08140cca7530bfac8b8aaaf4b24a29a9b41f7a6cd0c0c84f08462bb60c03"
+    },
+    {
+      "source": "outputs/source-constraint-licences-20261103/seal.json",
+      "archived": "refine-logs/source-constraint-licences-20261103/seal.json",
+      "sha256": "41e0c11434ca0a63d0c3e843df4072da756d3d077addefc0af6fb4fc46808b65"
+    }
+  ]
+}
