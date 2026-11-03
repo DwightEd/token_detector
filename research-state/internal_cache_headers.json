@@ -1,0 +1,280 @@
+{
+  "schema": "internal-cache-header-inventory-v1",
+  "utc": "2026-11-03T06:33:52.001420+00:00",
+  "payload_arrays_read": false,
+  "labels_read": false,
+  "model_calls": 0,
+  "remote_live_access": false,
+  "tasks": {
+    "QA": {
+      "local_directory": "D:\\projects\\research\\outputs\\fusion-cache-20261102\\native_QA\\observations",
+      "files": 900,
+      "errors": [],
+      "schemas": [
+        {
+          "files": 900,
+          "arrays": [
+            {
+              "name": "answer_index",
+              "dtype": "int32",
+              "ndim": 1
+            },
+            {
+              "name": "delta",
+              "dtype": "float64",
+              "ndim": 2
+            },
+            {
+              "name": "full_token_id",
+              "dtype": "int64",
+              "ndim": 1
+            },
+            {
+              "name": "offsets",
+              "dtype": "int64",
+              "ndim": 2
+            },
+            {
+              "name": "route",
+              "dtype": "float64",
+              "ndim": 1
+            },
+            {
+              "name": "special_ids",
+              "dtype": "int64",
+              "ndim": 1
+            },
+            {
+              "name": "target",
+              "dtype": "int64",
+              "ndim": 1
+            },
+            {
+              "name": "token_id",
+              "dtype": "int64",
+              "ndim": 1
+            },
+            {
+              "name": "unit_index",
+              "dtype": "int32",
+              "ndim": 1
+            }
+          ]
+        }
+      ],
+      "trailing_dimensions": {
+        "answer_index": [
+          []
+        ],
+        "delta": [
+          [
+            2
+          ]
+        ],
+        "full_token_id": [
+          []
+        ],
+        "offsets": [
+          [
+            2
+          ]
+        ],
+        "route": [
+          []
+        ],
+        "special_ids": [
+          []
+        ],
+        "target": [
+          []
+        ],
+        "token_id": [
+          []
+        ],
+        "unit_index": [
+          []
+        ]
+      }
+    },
+    "Summary": {
+      "local_directory": "D:\\projects\\research\\outputs\\fusion-cache-20261102\\native_Summary\\observations",
+      "files": 900,
+      "errors": [],
+      "schemas": [
+        {
+          "files": 900,
+          "arrays": [
+            {
+              "name": "answer_index",
+              "dtype": "int32",
+              "ndim": 1
+            },
+            {
+              "name": "delta",
+              "dtype": "float64",
+              "ndim": 2
+            },
+            {
+              "name": "full_token_id",
+              "dtype": "int64",
+              "ndim": 1
+            },
+            {
+              "name": "offsets",
+              "dtype": "int64",
+              "ndim": 2
+            },
+            {
+              "name": "route",
+              "dtype": "float64",
+              "ndim": 1
+            },
+            {
+              "name": "special_ids",
+              "dtype": "int64",
+              "ndim": 1
+            },
+            {
+              "name": "target",
+              "dtype": "int64",
+              "ndim": 1
+            },
+            {
+              "name": "token_id",
+              "dtype": "int64",
+              "ndim": 1
+            },
+            {
+              "name": "unit_index",
+              "dtype": "int32",
+              "ndim": 1
+            }
+          ]
+        }
+      ],
+      "trailing_dimensions": {
+        "answer_index": [
+          []
+        ],
+        "delta": [
+          [
+            2
+          ]
+        ],
+        "full_token_id": [
+          []
+        ],
+        "offsets": [
+          [
+            2
+          ]
+        ],
+        "route": [
+          []
+        ],
+        "special_ids": [
+          []
+        ],
+        "target": [
+          []
+        ],
+        "token_id": [
+          []
+        ],
+        "unit_index": [
+          []
+        ]
+      }
+    },
+    "Data2txt": {
+      "local_directory": "D:\\projects\\research\\outputs\\fusion-cache-20261102\\native_Data2txt\\observations",
+      "files": 900,
+      "errors": [],
+      "schemas": [
+        {
+          "files": 900,
+          "arrays": [
+            {
+              "name": "answer_index",
+              "dtype": "int32",
+              "ndim": 1
+            },
+            {
+              "name": "delta",
+              "dtype": "float64",
+              "ndim": 2
+            },
+            {
+              "name": "full_token_id",
+              "dtype": "int64",
+              "ndim": 1
+            },
+            {
+              "name": "offsets",
+              "dtype": "int64",
+              "ndim": 2
+            },
+            {
+              "name": "route",
+              "dtype": "float64",
+              "ndim": 1
+            },
+            {
+              "name": "special_ids",
+              "dtype": "int64",
+              "ndim": 1
+            },
+            {
+              "name": "target",
+              "dtype": "int64",
+              "ndim": 1
+            },
+            {
+              "name": "token_id",
+              "dtype": "int64",
+              "ndim": 1
+            },
+            {
+              "name": "unit_index",
+              "dtype": "int32",
+              "ndim": 1
+            }
+          ]
+        }
+      ],
+      "trailing_dimensions": {
+        "answer_index": [
+          []
+        ],
+        "delta": [
+          [
+            2
+          ]
+        ],
+        "full_token_id": [
+          []
+        ],
+        "offsets": [
+          [
+            2
+          ]
+        ],
+        "route": [
+          []
+        ],
+        "special_ids": [
+          []
+        ],
+        "target": [
+          []
+        ],
+        "token_id": [
+          []
+        ],
+        "unit_index": [
+          []
+        ]
+      }
+    }
+  }
+}

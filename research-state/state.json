@@ -3,9 +3,9 @@
   "objective": "Mechanism-driven unsupervised hallucination detection improvement toward AUROC >= 0.8 on each of six primary tasks",
   "canonical_project": "D:/projects/research/token_detector",
   "goal_status": "not_achieved",
-  "phase": "original_response_hallucination_detection_anchor_restored_no_run",
+  "phase": "existing_internal_feature_archive_recovery_before_new_models",
   "active_hypothesis": null,
-  "next_question": "Design one label-free module with executable risk scores on existing natural responses and original token axes, using archived FN/FP and closed prior results. Freeze the complete detection protocol before any new observations. No standalone role-QA extension.",
+  "next_question": "Verify manifests and NPY/safetensors headers of delta_local/source_write and oldmyPorject fullroute/vector archives, map dataset/sample/model/layer/head coverage and originaltokenaxis; no model rerun or QA extension.",
   "known_fact_ids": [
     "F001",
     "F002",
@@ -44,7 +44,8 @@
     "F035",
     "F036",
     "F037",
-    "F038"
+    "F038",
+    "F039"
   ],
   "do_not_repeat": [
     "Describing known FN/FP counts again without a new discriminating intervention",
@@ -454,5 +455,6 @@
   "local_full_cpu_suite": "incomplete_180_second_handoff_limit",
   "primary_endpoint": "hallucination_detection_on_existing_response_original_evaluation_axis",
   "objective_contract": "research-state/DETECTION_OBJECTIVE.md",
-  "proxy_qa_branch": "H015_H016_closed_auxiliary_only_not_detector_improvement"
+  "proxy_qa_branch": "H015_H016_closed_auxiliary_only_not_detector_improvement",
+  "internal_feature_inventory": "research-state/INTERNAL_STATE_INVENTORY.md"
 }

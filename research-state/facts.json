@@ -957,6 +957,22 @@
           "sha256": "4dc281e06f478086041dbab85863fe53df19ccd6b9a8d619d3acaa217458ae58"
         }
       ]
+    },
+    {
+      "id": "F039",
+      "certainty": "actual_main_cache_headers_and_separate_historical_vector_archives",
+      "claim": "All2700restoredRAGnativeNPZheaders onlydelta/route/tokenaxes;356financeheaders same. IndependentP002/P005/P006historicaldirs+collectors support savedfinalhidden/writevectors on104synthetic/196RAGpanel;notfull2700. Hallu1782predictionJSON lacksinternals,originalNPZheadersnotrestored. OldmyPorject fullroute/vector dirs listed butcontents unverified.",
+      "does_not_imply": "No remote-live absence proof;notalllayers/heads/QKV;notbindingnodeorhallucinationdetectiongain. P006terminalactivationablationwasactuallydone andremainsnegative.",
+      "evidence": [
+        {
+          "path": "research-state/internal_cache_headers.json",
+          "sha256": "3a09d808004415994a913e8e7d60e545b4bbb969a35d8d9dd74280e71eb8a513"
+        },
+        {
+          "path": "research-state/INTERNAL_STATE_INVENTORY.md",
+          "sha256": "7d07d7f20f3843d660311c1a381d9af3d7235cd11ce975f591cab4e4ae0ddd6d"
+        }
+      ]
     }
   ],
   "rule": "New interventions need different predictions under competing explanations; known counts/cases are reused."

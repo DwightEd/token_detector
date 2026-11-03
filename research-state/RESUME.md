@@ -2,6 +2,8 @@
 
 **用户最新纠正/D032：需要的是幻觉检测效果。** 输入是原始来源/实际可用问题及已有回答，输出为该回答原评价轴上的风险分数。验证器的角色问答正确率不能代替检测效果。后续先读 [DETECTION_OBJECTIVE.md](DETECTION_OBJECTIVE.md)；QA/NLI可作为内部组件，但必须接入原回答评分并直接评价自然数据检测表现。
 
+**用户新增问题/F039/D033：远端哪些数据集保存了内部量？** 先读 [INTERNAL_STATE_INVENTORY.md](INTERNAL_STATE_INVENTORY.md)。已核2700RAG及356finance主缓存headers仅delta/route/原轴；另有P005/P006的196RAG小面板末层hidden/写入向量历史落盘。旧myPorject fullroute/vector目录仅查到父listing，字段未核；Hallu原NPZ未下载。先恢复和核对已有独立特征的manifest/header，不据本机缺文件就说远端没有，也不直接重跑模型。没有新评分或新QA实验。
+
 ## 当前状态
 
 - 没有新实验在运行，没有新run登记，active_hypothesis为空，所有H015/H016控制器已结束。不要自动重跑旧请求。
@@ -19,7 +21,7 @@
 
 ## 必须复用的记录
 
-- 检测问题：[FNFP_MECHANISM.md](../docs/source-reading/FNFP_MECHANISM.md)、[PERFORMANCE_REVIEW.md](../docs/source-reading/PERFORMANCE_REVIEW.md)；完整事实F001–F038和先前实验索引在本目录。
+- 检测问题：[FNFP_MECHANISM.md](../docs/source-reading/FNFP_MECHANISM.md)、[PERFORMANCE_REVIEW.md](../docs/source-reading/PERFORMANCE_REVIEW.md)；完整事实F001–F039和先前实验索引在本目录。
 - P002残差/cosine、P003删token依赖、P005方向/whitening、P021来源重连、P026repair/reset等旧方向不得换名重跑。原等权融合已拒绝。
 - H004/H005/H006自然面板结果负或混合；H012只有自然擦值库存，QA准入0。它们不能当作新方法已有效。
 - H007删suffix严格复用旧b0，0新调用；H011/H014与H016均保留为已完成记录。H013严格概率门失败未晋升成功；H015仅工程资格。
