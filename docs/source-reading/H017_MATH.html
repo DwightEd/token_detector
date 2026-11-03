@@ -1,0 +1,47 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>高注意力为何不等于正确关系</title><meta name="source-sha256" content="23e289b11f16d9b4008e49ae60af59b68ce066bbb1ba4d47a5f8dc6fc4ebba2d">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
+<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
+<style>body{max-width:1040px;margin:40px auto;padding:0 24px;color:#17253a;font:17px/1.8 system-ui,sans-serif;background:#fbfcff}nav{font-size:14px}a{color:#245bc7}h1,h2{line-height:1.35}img{max-width:100%;height:auto}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #d5ddeb;padding:10px;text-align:left}th{background:#edf2fb}pre{overflow:auto;padding:16px;background:#edf2f8}code{font-size:.88em}.equation{overflow-x:auto}.flow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:20px;background:#edf2fb;border-radius:12px}.flow span{background:white;padding:8px 12px;border:1px solid #cbd7eb}footer{font-size:13px;border-top:1px solid #d5ddeb;margin-top:40px;padding-top:16px}@media print{body{font-size:12px;margin:0}nav{display:none}}</style>
+</head><body><nav><a href="H017_PROGRESS.html">关系错绑：实验进展与证据</a> · <a href="H017_MATH.html">高注意力为何不等于正确关系</a> · <a href="H017_PROTOCOL.html">四来源与Q/K/V干预：冻结协议</a> · <a href="H017_NATURAL.html">自然时间错例：原词概率与全部层头</a> · <a href="H017_READOUT.html">旧R4/V3：单位告警在哪一步下降</a></nav><main><h1>为什么高注意力不等于正确关系：可验证的局部推导</h1>
+<p>这份推导说明Q/K/V分离实验的必要性，不是检测准确率、事实正确性或顶会新颖性的保证。没有从目标真值拟合参数，也没有把未运行的梯度实验写成结果。</p>
+<p>考虑一个固定预测位置、一个head，令Q/K已经按各自真实位置完成RoPE。标准<a href="https://arxiv.org/abs/1706.03762">缩放点积注意力</a>给出</p>
+<p><div class="equation">\[\ell_s=\frac{q^\mathsf T k_s}{\sqrt d},\qquad a_s=\frac{e^{\ell_s}}{\sum_j e^{\ell_j}},\qquad o=\sum_s a_s v_s.\]</div></p>
+<p>这里的求和仅覆盖该位置允许读取的key。来源、指令、回答历史的可见性必须遵守实际mask；不能先对全部未来token计算，再把结果解释成生成前证据。</p>
+<p>令最终读出目标为固定回答数值与备选数值的logit差：</p>
+<p><div class="equation">\[m=z_{200}-z_{100},\qquad g=\nabla_o m.\]</div></p>
+<p>向量<span class="equation">\(g\)</span>包含O投影、残差、后续层、最终归一化与head的作用。先固定当前head之外的输入。softmax的Jacobian是</p>
+<p><div class="equation">\[\frac{\partial a_i}{\partial\ell_s}=a_i(\mathbf1[i=s]-a_s).\]</div></p>
+<p>因此</p>
+<p><div class="equation">\[\frac{\partial o}{\partial\ell_s}=a_s(v_s-o),\qquad
+\frac{\partial m}{\partial\ell_s}=a_s\,g^\mathsf T(v_s-o),\]</div></p>
+<p>并有</p>
+<p><div class="equation">\[\boxed{\nabla_{k_s}m=\frac{a_s}{\sqrt d}\,q\,[g^\mathsf T(v_s-o)]},\qquad
+\boxed{\nabla_{v_s}m=a_s g},\]</div></p>
+<p><div class="equation">\[\nabla_qm=\frac1{\sqrt d}\sum_s a_s k_s\,[g^\mathsf T(v_s-o)].\]</div></p>
+<p>这说明一个数值位置即使<span class="equation">\(a_s\)</span>很大，它对最终数值选择的局部作用仍取决于<span class="equation">\(g^\mathsf T(v_s-o)\)</span>：该项可以很小、为零或为负。集中注意力只描述路由权重；它本身不能证明来源主体与回答主体一致，也不能证明该位置推动了最终输出。高概率和稳定关联同样没有在这些恒等式中获得事实正确性的保证。</p>
+<h2>自然错例中的后置条件：可达性与实际利用要分开</h2>
+<p>固定RAGTruth样本15716的来源说<code>over 300 years BC</code>，回答说<code>around 300 years ago</code>。数值300命中，而时间参照发生变化。来源许可先独立冻结，之后才检查这个固定回答；没有读取评价标注。</p>
+<p>对固定位置、因果mask与位置编码规则的解码器，逐token归一化、MLP和残差均不跨越未来位置。按层归纳可得</p>
+<p><div class="equation">\[ (k_s^{(\ell)},v_s^{(\ell)})=F_{\ell,s}(x_{\leq s}),\qquad
+\frac{\partial(k_s^{(\ell)},v_s^{(\ell)})}{\partial E(x_u)}=0\quad(u&gt;s). \]</div></p>
+<p>导数针对未来输入token的embedding；不改变序列长度、位置或全局配置。因而来源300位置的K/V不能依赖本次输入中随后出现的BC。它仍可能凭左文与参数先验预测时代，不能说它完全没有时代信息。BC及之后的来源状态具有读取300和BC的可达性，也不保证确实编码或被回答利用。回答query位于整段来源之后，可能已经从早层或其他来源位置获得BC；低BC attention不能证明模型没有识别该条件。</p>
+<p>这是因果架构的标准约束，不是新理论发现。新的实证问题是：在<strong>完整原始自然样本</strong>里，数值、后置时代条件、其后来源状态与回答各token的实际计算和最终概率是什么关系。M4只拟补齐缺失的全32层及完整head观测，不先把它定义成新的风险分数。后续若要解释原因，还需要独立的干预与同预算文本核验，而不能凭可达性直接宣称机制已经成立。</p>
+<p>Llama的GQA让一个KV head被多个Q head共享。对真实共享的<span class="equation">\(k_{s,r}\)</span>求导时，要把其对应Q head的上述贡献相加，不能把32个Q head当作32组独立K/V。若针对pre-RoPE坐标求导，还须乘相应旋转矩阵的转置；当前cache-K干预直接发生在post-RoPE坐标，Q干预则交给原生模块旋转。</p>
+<h2>有限干预能精确分开什么</h2>
+<p>在固定Q/V时，替换K的局部输出差是</p>
+<p><div class="equation">\[\Delta o_K=[a(Q,K&#x27;)-a(Q,K)]V.\]</div></p>
+<p>在固定Q/K时，替换V的局部输出差是</p>
+<p><div class="equation">\[\Delta o_V=a(Q,K)(V&#x27;-V).\]</div></p>
+<p>前者首先改变地址权重；后者在该层保持注意力分布不变。上下文化K/V仍可能同时编码主体、数值、顺序和其他信息，不能仅凭向量名字宣布“纯地址”或“纯内容”。应使用固定数值的主体交换、数值交换、完整事实换序和范数匹配随机扰动，检查具体反事实。</p>
+<p>上述有限差对<strong>局部head输出</strong>成立。最终<span class="equation">\(m\)</span>经过非线性后续网络，不能把局部<span class="equation">\(\Delta o\)</span>或一阶梯度直接冒充最终因果效应；H017会实际运行到完整head。若K干预没有选择性输出效应，只能拒绝这个位置/层/干预的输出介导假设，不能据此证明K完全不含关系信息。</p>
+<h2>对实验与检测设计的约束</h2>
+<ul>
+<li>在读入回答数值之前观测prechoice Q；condition-end另行保存。当前预算不含postvalue，不能声称已经检验回答回声或跨时刻稳定性。</li>
+<li>同一次前向把重放得到的AV与原生o_proj输入逐坐标核对，避免将RoPE/GQA/mask错误当作机制发现。</li>
+<li>V-only时Q/K/attention必须与baseline一致；同值Q/K/V替换必须使最终输出逐位不变。这些是仪器检查，不是模块消融收益。</li>
+<li>Q/K/V分离、固定来源许可和最终输出差异一起支持局部机制解释；自然回答检测仍需独立的原token/span风险接口、unknown覆盖政策，以及评分冻结后的评价。</li>
+<li>即使受控机制成立，也须与相同输入、事实候选和成本预算下的文本核验比较。当前JSON构造域本来就能用规则判定支持，不能据此证明内部观测更有价值。</li>
+</ul>
+<p>具体已审查设计见<a href="H017_PROTOCOL.html">四来源干预协议</a>，实际运行进展见<a href="H017_PROGRESS.html">实验报告</a>。相关绑定研究支持提出这些干预，但没有保证当前观察器的第15层会得到预期结果。</p></main><footer>H017本地离线阅读 · 原Markdown与GitHub公式是同一来源。打开本文件即可阅读，无需启动服务器。<br>源码SHA256：23e289b11f16d9b4008e49ae60af59b68ce066bbb1ba4d47a5f8dc6fc4ebba2d</footer></body></html>

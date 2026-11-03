@@ -1,6 +1,6 @@
 # 当前持续研究目标
 
-**最新切入口：关系错绑的内部计算。** 先读 [研究方向](research-state/RELATION_BINDING_DIRECTION.md)、[编码前准入](research-state/relation_misbinding_admission.json) 与 [当前实验计划](refine-logs/EXPERIMENT_PLAN.md)。高概率/强注意力/集中归因/稳定关联分别检验；不将其当正确性，不限制在V3，不复活角色问答。当前H017为设计，未运行新方法。
+**当前H017：M3负结果与M4自然观测均完成。** 自然源BC→Rago中，观察器偏向BC而强烈压低ago；旧独立BF16链本来已有ago告警，R4/V3共享读出后名次下降。先读[F050/F051恢复记录](research-state/RESUME.md)，不再围绕“未读BC/高概率错绑”重复观察或挑层救toy。新的关系特异风险接口尚未准入；禁止直接剪context/取max加权救单例。旧BF16分数与新FP32 trace跨精度检查失败，不作同运行因果桥。六任务0.8未达成、无新检测AUROC。
 
 本任务的持久状态位于 [research-state/RESUME.md](research-state/RESUME.md)。恢复时先读该短文件与其中指定的事实、先前实验索引，不从聊天摘要重新推测研究方向。
 

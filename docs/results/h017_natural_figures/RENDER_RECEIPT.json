@@ -1,0 +1,68 @@
+{
+  "schema": "h017-m4-sealed-figure-render-v1",
+  "created_utc": "2026-11-03T11:32:55.200719+00:00",
+  "renderer_sha256": "c636281362f1062a50e4a416510d0928bda9fa5caad49f4091a3da8bd0bb425f",
+  "inputs": {
+    "raw_run": {
+      "seal_sha256": "74185045b19b71418f1404a486f46650d76771bd50418fe6991f6d650ed7ba6c",
+      "members": 144
+    },
+    "supplement": {
+      "seal_sha256": "e70ad289b9404e504e6b2d985952be8db68b667665f435ba2b2d2111124539e9",
+      "members": 38
+    }
+  },
+  "files_used_sha256": {
+    "D:\\projects\\research\\token_detector\\outputs\\h017-relation-20261103\\m4-interpretation-supplement-v1\\audit.json": "676241bd7ed729c6e6f5a93d6e96b445706f07459774c514f145905047687c0c",
+    "D:\\projects\\research\\token_detector\\outputs\\h017-relation-20261103\\m4-interpretation-supplement-v1\\all32layers_all32heads_all77queries_profiles.npz": "22019c119a138851aae66eb37a3edbabff18552047e99e12f266d640769708a9",
+    "D:\\projects\\research\\token_detector\\outputs\\h017-relation-20261103\\m4-natural-observation\\plan.json": "a5e7bc31021b162b998d23b417bd52a24da307e270805b77559a873eab75b406",
+    "D:\\projects\\research\\token_detector\\outputs\\h017-relation-20261103\\m4-natural-observation\\output.npz": "028fa53430a5e6824eeadafe582a52d1afb250c3c4312b97bed615391acb9c36"
+  },
+  "runtime": {
+    "python": "D:\\Apps\\Research\\Tools\\anaconda3\\python.exe",
+    "python_executable_sha256": "7679e53fa969789309e81fdad0d52b8cda5f83c9abf7cb31a3c58bf24b31e264",
+    "python_version": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "backend": "Agg",
+    "mplconfigdir": "D:\\projects\\research\\token_detector\\outputs\\h017-relation-20261103\\plot-environment\\m4-mpl-cache",
+    "matplotlib_path": "D:\\Apps\\Research\\Tools\\anaconda3\\Lib\\site-packages\\matplotlib\\__init__.py",
+    "matplotlib_init_sha256": "c6c47d1ecf25d7934f38c8a55c3b8e116d41aa08d8ecfa82f6ae8af589216a3a",
+    "numpy_path": "D:\\Apps\\Research\\Tools\\anaconda3\\Lib\\site-packages\\numpy\\__init__.py",
+    "numpy_init_sha256": "93924ac4b793328947dfd9eb9355e54eccdfd26a92c8dd52188aed2e52c7eb38",
+    "dependencies": {
+      "matplotlib": "3.10.6",
+      "numpy": "2.3.5",
+      "Pillow": "12.0.0",
+      "fonttools": "4.60.1"
+    },
+    "existing_runtime_modified": false,
+    "model_calls": 0,
+    "annotation_reads": 0
+  },
+  "source_and_method_configs_modified": false,
+  "new_precision_decision": false,
+  "source_attention_color_scale": {
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "transform": "linear_shared"
+  },
+  "fixed_preago_query_row": 60,
+  "fixed_preago_absolute_position": 424,
+  "fixed_trace_query_rows": [
+    58,
+    59,
+    60,
+    61
+  ],
+  "fixed_trace_absolute_positions": [
+    422,
+    423,
+    424,
+    425
+  ],
+  "head_or_layer_selection": false,
+  "confidence_intervals": false,
+  "independent_samples_claim": false,
+  "fp32_producer_identity_passed": true,
+  "strict_fp64_reference_check": "inconclusive_preserved"
+}

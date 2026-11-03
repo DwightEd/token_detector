@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "run_id": "80913833f6fd73a6a5ed210f5d8607c377257755857798afd79d3bebffb5ca7f",
+  "completed_utc": "2026-11-03T09:23:15.449234+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Exact occurrence inventory completed for all2700answers/450sources;5806 Data2txt serializedfields. QA/Summary semanticownership remainsunknown. Engineeringplumbing only,no detectorresult.",
+  "artifacts": [
+    {
+      "path": "outputs/h017-relation-20261103/m0-inventory/summary.json",
+      "sha256": "49ca4c5ffe9fe0826cc471084cf3f9b52d8e959bb2066916fc9ddfc2cac2ebc7"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m0-inventory/seal.json",
+      "sha256": "0bb692422827e582e8b81bb20edf2c7596ed50d0e05b22f1c313e823841d573c"
+    }
+  ]
+}

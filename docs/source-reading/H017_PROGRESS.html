@@ -1,0 +1,253 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>关系错绑：实验进展与证据</title><meta name="source-sha256" content="dc449840caf907ecdde2a12162737cc33fcbfd6fe629c67f4e87f3b1c9c49406">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
+<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
+<style>body{max-width:1040px;margin:40px auto;padding:0 24px;color:#17253a;font:17px/1.8 system-ui,sans-serif;background:#fbfcff}nav{font-size:14px}a{color:#245bc7}h1,h2{line-height:1.35}img{max-width:100%;height:auto}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #d5ddeb;padding:10px;text-align:left}th{background:#edf2fb}pre{overflow:auto;padding:16px;background:#edf2f8}code{font-size:.88em}.equation{overflow-x:auto}.flow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:20px;background:#edf2fb;border-radius:12px}.flow span{background:white;padding:8px 12px;border:1px solid #cbd7eb}footer{font-size:13px;border-top:1px solid #d5ddeb;margin-top:40px;padding-top:16px}@media print{body{font-size:12px;margin:0}nav{display:none}}</style>
+</head><body><nav><a href="H017_PROGRESS.html">关系错绑：实验进展与证据</a> · <a href="H017_MATH.html">高注意力为何不等于正确关系</a> · <a href="H017_PROTOCOL.html">四来源与Q/K/V干预：冻结协议</a> · <a href="H017_NATURAL.html">自然时间错例：原词概率与全部层头</a> · <a href="H017_READOUT.html">旧R4/V3：单位告警在哪一步下降</a></nav><main><h1>H017：从数值命中到关系归属</h1>
+<p>研究对象是<strong>已有回答中的幻觉</strong>。例如来源“甲收入100、乙收入200”，回答“甲收入200”：找到“200”、对它有高注意力，并不说明找对了主体。当前研究检验检索地址、值传递与最终输出之间的关系，不再把改进限制在 V3 的概率差和平滑上。</p>
+<p><strong>本轮最明确的切口已转到关系证据的读出。</strong> 自然时间错例里，观察器已强烈偏向正确的BC；旧R4/V3的独立缓存里也本来就有ago告警，随后读出降低了其风险名次。不能继续把这例解释成模型完全漏读条件。新检测模块和AUROC提升仍未建立，下面保留两轮实际实验、严格失败检查和下一步边界。</p>
+<p>受控轮不采用第15层数值K交换作为关系检测依据：48次原模型完整前向、44次完整词表读出全部完成，耗时847.83秒；独立复核通过，属于科学负结果。K交换让3/4组的注意力地址向预期移动，但最终数值logit差在四组中都没有朝预期移动，且弱于范数匹配随机扰动。V的数值内容交换四组均产生预期方向的输出变化，但这还不是一个经过验证的检测模块。</p>
+<h2>自然轮：错误单位已被观察器反对</h2>
+<p>来源先独立许可，再检查原回答：<code>over 300 years BC</code>被写成<code>around 300 years ago</code>。完整441-token原Q/S/R保持不变，一次完整32层模型、一次76行词表head，67.24秒；保留全部32层×32头×77接收位置，所有原轴/旧native15及原生AV资格通过。</p>
+<table>
+<thead>
+<tr>
+<th>原回答词</th>
+<th style="text-align: right;">预测概率</th>
+<th>同一位置的首选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>300</td>
+<td style="text-align: right;">0.997988</td>
+<td>300</td>
+</tr>
+<tr>
+<td>years</td>
+<td style="text-align: right;">0.925592</td>
+<td>years</td>
+</tr>
+<tr>
+<td>ago</td>
+<td style="text-align: right;">0.000114724</td>
+<td>BC，概率0.982174</td>
+</tr>
+</tbody>
+</table>
+<p>预测ago前，全部1024个layer/head的BC平均attention质量0.054506，数字300为0.004149。它们不是独立投票，也不是事实正确性概率；该例不支持“高概率错误单位、只看数字而遗漏BC”。source-reading Q仍未采集，不能用本观察推断原Mistral生成器原因或某条路径的因果必要性。</p>
+<p><img alt="自然例的完整层头与固定位置概率" src="../results/h017_natural_figures/figure2_fixed_receiver_traces_and_probabilities.png" /></p>
+<p>查看<a href="../results/h017_natural_figures/figure1_preago_all_physical_heads.png">全部32层×32头原值热图</a>、<a href="../results/h017_all76_token_probabilities.csv">完整76个原词及首选概率</a>和<a href="H017_NATURAL.html">独立解释报告</a>。FP32生产概率逐位复现；独立FP64经验界在6/76行未过，仍记为inconclusive，未放宽。三词高低判断在两种精度一致，严格失败与全部raw logits保留。</p>
+<h2>旧方法：告警已出现，读出后名次下降</h2>
+<p>以下仅引用旧BF16系统的冻结记录，不由新FP32 trace反推因果。两者输入整数轴一致，但固定0.002跨运行logp容差44/76未通过，不能当作同次模型计算。</p>
+<table>
+<thead>
+<tr>
+<th>ago的旧阶段</th>
+<th style="text-align: right;">旧QA风险排名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原full gap，值+3.28895</td>
+<td style="text-align: right;">1165</td>
+</tr>
+<tr>
+<td>实际point</td>
+<td style="text-align: right;">1492</td>
+</tr>
+<tr>
+<td>R4整句共享prior</td>
+<td style="text-align: right;">116867</td>
+</tr>
+<tr>
+<td>R4最终</td>
+<td style="text-align: right;">114453</td>
+</tr>
+<tr>
+<td>V3自身witness</td>
+<td style="text-align: right;">1165</td>
+</tr>
+<tr>
+<td>V3最终</td>
+<td style="text-align: right;">20219</td>
+</tr>
+</tbody>
+</table>
+<p>旧QA告警预算为6241/124817。R4先在22-token整句prior处下降，其中19个contrast为负；V3的自身证据2.632417被−2.283023上下文差值抵消至0.349394。这是既有读出链的描述，不是新消融，也不证明共享推断整体无效。两处≤4.44e−16的严格primitive算术差异原样保留；实际native delta与full_gap输入逐位相等。完整身份与停止跨精度解释的依据见<a href="H017_READOUT.html">旧链审计</a>。</p>
+<p>下一设计必须引入可验证的<strong>关系特异证据/原子事实粒度</strong>，检验怎样保留这种条件矛盾而不误报合法改写、算术和范围未明确的回答；不能直接剪context、取max或再给方法任意权重。完整tuple许可、unknown、原轴输出、反例、对照与独立准入仍是先决条件，目前未准入新算法。</p>
+<h2>先看是否真的复现了所关心的错误</h2>
+<p>四组的回答始终固定为<code>Alpha revenue was 200.</code>，只测尚未读入200时，观察器给该原数值token的条件概率；不是整句判断正确率，也不是原GPT等生成器的抽样概率。</p>
+<table>
+<thead>
+<tr>
+<th>来源</th>
+<th>是否支持固定回答中的Alpha—200</th>
+<th style="text-align: right;">原p(100)</th>
+<th style="text-align: right;">原p(200)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S00：Alpha100 / Beta200</td>
+<td>否</td>
+<td style="text-align: right;">0.996614</td>
+<td style="text-align: right;">0.00000927</td>
+</tr>
+<tr>
+<td>S10：Beta100 / Alpha200</td>
+<td>是</td>
+<td style="text-align: right;">0.000675</td>
+<td style="text-align: right;">0.984020</td>
+</tr>
+<tr>
+<td>S01：Alpha200 / Beta100</td>
+<td>是</td>
+<td style="text-align: right;">0.000172</td>
+<td style="text-align: right;">0.962136</td>
+</tr>
+<tr>
+<td>S11：Beta200 / Alpha100</td>
+<td>否</td>
+<td style="text-align: right;">0.990337</td>
+<td style="text-align: right;">0.00025650</td>
+</tr>
+</tbody>
+</table>
+<p><strong>这个简例没有复现高置信关系错绑。</strong> 观察器在两个不支持回答的来源中已经强烈偏向100。因此不能用这组构造解释自然数据里的高置信漏报，更不能报告“检测全部正确”。它只提供正常检索中的受控路径检验。</p>
+<h2>K地址变化与最终输出并不同步</h2>
+<p>方向化效应的正号，表示最终<code>z200−z100</code>向预定反事实数值移动；它不是AUROC或概率增量。</p>
+<table>
+<thead>
+<tr>
+<th>组</th>
+<th style="text-align: right;">K-role方向化logit效应</th>
+<th style="text-align: right;">同范数随机K最大绝对效应</th>
+<th style="text-align: right;">V-value方向化logit效应</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S00</td>
+<td style="text-align: right;">−0.036252</td>
+<td style="text-align: right;">0.082509</td>
+<td style="text-align: right;">+0.230236</td>
+</tr>
+<tr>
+<td>S10</td>
+<td style="text-align: right;">−0.006172</td>
+<td style="text-align: right;">0.149956</td>
+<td style="text-align: right;">+0.176146</td>
+</tr>
+<tr>
+<td>S01</td>
+<td style="text-align: right;">−0.012218</td>
+<td style="text-align: right;">0.288387</td>
+<td style="text-align: right;">+0.980677</td>
+</tr>
+<tr>
+<td>S11</td>
+<td style="text-align: right;">−0.208561</td>
+<td style="text-align: right;">0.413872</td>
+<td style="text-align: right;">+0.378428</td>
+</tr>
+</tbody>
+</table>
+<p>K-role主门0/4通过；数值内容V-value对照4/4方向通过，且V-only臂的Q/K/attention与baseline逐位一致。完整事实换序的logit差为3.326567，超过所检验的K-role信号。同值替换、缓存独立性、全部32头的AV重放和预定调用数均通过，负结果不能归为仪器失败。</p>
+<p>这拒绝的是<strong>当前层、数字位置、特定干预的选择性输出介导</strong>。它不证明K不含主体信息，也不能证明V效应具有自然幻觉检测特异性。后续不挑head、换层、改prompt来救这组正常检索简例。</p>
+<p>M3受控轮没有观察postvalue，也没有保存来源读取阶段的完整query轨迹；“回答回声”“内部稳定关联”“回看整理节点”仍不能从该实验下结论。后续M4保存了原回答的post-token轨迹，仍未采集source-reading Q，也没有将稳定性当成正确性。</p>
+<p>自然轮使用既有冻结panel中的两个RAGTruth QA来源及原始缓存，先做source-only事实许可，再审查已有回答的关系/条件诊断合同。它们分别涉及神话人物亲属关系和旗帜处理的条件范围，并非两个公司两个数值的双射。源文不明确的事实保持unknown，不读取评价标注来补齐。两个来源完成了人工许可；其中时间参照例随后完成一次原模型观测，没有产生新的检测分数。</p>
+<p>来源事实先独立冻结，再查看固定Q/R后，<code>15716/source15540</code>出现时间参照问题。BC在来源数字之后，因果解码器的数字K/V不能依赖这次输入中未来BC，但可凭先验预测；回答query及其他后续来源状态也可能已经含有它。此后已实际完成上述M4全原轴观测，不再按两个主体交换数字来解释该自然例。</p>
+<h2>可直接查看的真实图与数据</h2>
+<p><img alt="完整词表概率质量：错误R在简例中已被拒绝" src="../results/h017_figures/true-candidate-probability-mass.png" /></p>
+<p><a href="../results/h017_figures/all32-head-condition-prevalue.png">全部32头在condition/prevalue的数值关注</a> · <a href="../results/h017_figures/baseline-patches-noise-margin.png">全部干预与噪声对照的logit差</a>。图中均明确标注科学门未通过，不能当作检测准确率。完整<a href="../results/h017_figures/all-endpoints.csv">44个读出端点</a>、<a href="../results/h017_figures/all32-head-all-receivers.csv">1536条物理head记录</a>、PDF/SVG及SHA来源在<a href="../results/h017_figures/FIGURE_MANIFEST.json">图目录</a>。</p>
+<p>本轮没有新的自然任务 AUROC，也没有达到六项任务各0.8的目标。下表中的通过率都是仪器资格，不能当作幻觉检测准确率。</p>
+<table>
+<thead>
+<tr>
+<th>实际完成的工作</th>
+<th>结果</th>
+<th>能支持什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原始来源库存</td>
+<td>2700回答、450来源全部保留；Data2txt识别5806个显式字段</td>
+<td>获得原始位置与结构路径；QA/Summary散文的事实语义仍未知</td>
+</tr>
+<tr>
+<td>QA物理head缓存重放</td>
+<td>900回答、150来源全部通过；5种错误实现各被900例拒绝</td>
+<td>在冻结误差预算下，RoPE、GQA、因果/来源屏蔽与历史attention一致</td>
+</tr>
+<tr>
+<td>原文与token轴</td>
+<td>900回答全部匹配；复用3例，再完成897例</td>
+<td>prompt/R分开编码、source mask、T+1位置与原字符轴一致；语义关系仍未评估</td>
+</tr>
+<tr>
+<td>原权重前缀复现</td>
+<td>原样本16465，完整252-token prompt；正常/阻断两次运行均通过，46.40秒</td>
+<td>第15层三处hidden与Q32/K8/V8前缀坐标可在本机复现；尚非最终输出因果证据</td>
+</tr>
+<tr>
+<td>完整head/cache/no-op</td>
+<td>4次完整模型、3次原生完整词表head，101.08秒；全部通过</td>
+<td>缓存查询与bulk输出一致；同值Q/K/V干预的hidden、logits、logp逐位不变</td>
+</tr>
+</tbody>
+</table>
+<p>缓存核验复用3例已封存结果，再完成其余897例，没有重新计算已通过的样本。local attention最大绝对误差0.00164831，group mass最大绝对误差0.00224179；全部坐标的误差/允许误差小于1，且没有precision unknown。原始模型四个BF16分片共16.06GB，哈希与历史捕获匹配；本机逐层加载，沿用原FP32算术，未用量化模型替代。</p>
+<p>完整证据位于<code>outputs/h017-relation-20261103/</code>：<code>M1_900_AGGREGATE.json</code>保存两次真实run及逐head汇总，<code>m3-prefix/</code>保存原模型前缀计划、坐标比较、资源记录与seal。下载文件统一位于数据根目录，未混入Git。</p>
+<p>完整输出门的bulk/cache最大hidden误差为0.00004721、完整128256词表logit误差为0.00005341、原回答首token的logp差为0.00001288，均在前向前冻结的预算内。同值干预误差为0；32层缓存独立、原缓存不变。GPU峰值实际分配3.36GB、保留4.23GB。该结果只使后续干预可解释，不表示原回答正确或新检测器有效。</p>
+<p>全900例对齐包含124817个回答token、125717个query位置；来源occurrence按回答映射为9384个完全包含、12个边界相交，边界相交原样保留。当前tokenizer与旧缓存的操作性一致，不代表已补齐历史tokenizer文件哈希，也不代表事实归属已解决。两次真实运行保存在<code>M2_900_AGGREGATE.json</code>。</p>
+<h2>真正需要区分的机制</h2>
+<p>单个head的输出为</p>
+<p><div class="equation">\[o_{t,h}=\sum_{s\leq t}\operatorname{softmax}_s\left(\widetilde q_{t,h}^{\mathsf T}\widetilde k_{s,h}/\sqrt{d_h}\right)v_{s,h}.\]</div></p>
+<p>Q/K决定如何寻找来源位置，V参与传递被取到的内容，后续层和最终读出决定说什么。这个分解本身不能证明某个head保存了纯粹的主体或数值。需要真实干预，并用最终原回答token的logit检验，而不能只看局部attention或hidden相似度。</p>
+<div class="flow"><span>来源主体／条件／值</span><b>→</b><span>Q/K检索与V传值</span><b>→</b><span>后续层与完整logits</span><b>→</b><span>已有回答的数值token</span></div>
+<p>完整head、prefix cache及同值Q/K/V干预先通过无变化验证。已完成的科学实验固定四组来源、相同回答和第15层全head干预，未根据目标标签选择head或阈值：</p>
+<table>
+<thead>
+<tr>
+<th>来源组</th>
+<th>第一条事实</th>
+<th>第二条事实</th>
+<th>相对原组的变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00</td>
+<td>甲100</td>
+<td>乙200</td>
+<td>原组</td>
+</tr>
+<tr>
+<td>10</td>
+<td>乙100</td>
+<td>甲200</td>
+<td>仅换主体，数值与位置不动</td>
+</tr>
+<tr>
+<td>01</td>
+<td>甲200</td>
+<td>乙100</td>
+<td>仅换数值</td>
+</tr>
+<tr>
+<td>11</td>
+<td>乙200</td>
+<td>甲100</td>
+<td>完整事实换序，与00含义一致</td>
+</tr>
+</tbody>
+</table>
+<p>回答始终固定为“甲收入200”。预先固定的主要终点是原数值token相对备选数值的最终logit变化，已测试Q、K、V、Q+K、同值和随机对照，保留全部预定结果。完整事实换序只提供保义对照，不能把跨位置坐标直接当作同位置干预。该受控实验只检验局部机制，不能替代真实回答的检测比较。</p>
+<p>本次已按预定规则拒绝这条选择性K介导读出，不事后挑head补救。下一阶段仍需先有可靠的原回答风险接口，才能在相同事实候选、覆盖和预算下与R4/V3及直接文本核验比较；评分冻结后才读取真值。外部监督文本对照的训练暴露与截断合同也须单列，不把它冒充新无监督机制。</p>
+<h2>文献定位</h2>
+<p><a href="https://arxiv.org/html/2310.17191v2">Binding IDs</a>提供表示交换的先例；<a href="https://aclanthology.org/2026.emnlp-main.1238/">EMNLP 2026重绑定研究</a>发现Llama与Gemma的绑定信号并不完全相同，不能预设通用Q/K机制。<a href="https://arxiv.org/html/2608.15804v1">输入侧证据对齐研究</a>也报告相矛盾片段可能高度相关。它们支持进行上述区分实验，没有证明当前自然错例已由该机制解释。</p>
+<p>完整文献审查、监督方式与近邻差异见<a href="../research/20261103_relation_misbinding_followup.md">本轮调研</a>。当前进度与下一问题以<a href="../../research-state/RESUME.md">恢复记录</a>为准；计划、已运行实验和检测效果分别记录，避免上下文压缩后重复实验或扩大结论。</p>
+<p>Q/K/V与最终读出之间的<a href="H017_MATH.html">逐步推导</a>区分了局部恒等式、最终输出因果和检测效果。精确冻结的<a href="H017_PROTOCOL.html">四来源协议</a>及其<a href="../research/h017_address_payload_review.md">独立科学审查</a>可直接在GitHub查看公式与实验门槛。</p></main><footer>H017本地离线阅读 · 原Markdown与GitHub公式是同一来源。打开本文件即可阅读，无需启动服务器。<br>源码SHA256：dc449840caf907ecdde2a12162737cc33fcbfd6fe629c67f4e87f3b1c9c49406</footer></body></html>

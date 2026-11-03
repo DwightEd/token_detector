@@ -1,5 +1,24 @@
 # 关系错绑机制实验 Tracker
 
+**2026-11-03实际更新（优先于下方历史PLAN）：** [结果与图表](../docs/results/h017_relation_binding.md)、[恢复记录](../research-state/RESUME.md)。新detector尚未准入，无新自然任务AUROC，六任务0.8未达成，当前无活动模型job。
+
+| 实际阶段 | run（前8位；完整身份见research-state/runs） | 状态与边界 |
+| --- | --- | --- |
+| M0三任务source结构库存 | 80913833 | supported_scope；2700答/450来源、5806显式字段；散文语义unknown |
+| M1 QA重放3+897 | 5f7cf0ad、48f5ce11 | supported_scope；900答资格通过，五坏实现各900拒绝；不是检测准确率 |
+| M2原文/token对齐3+897 | 7d065e2e、8d6662cb | supported_scope；900答、124817原R token；语义所属未自动许可 |
+| 原模型prefix与fullhead门 | 1fdf3766、7f222ddf | supported_scope；2 early-stop + 4 full model、3 head；不重复执行 |
+| M3四来源Q/K/V干预 | 24dd6e0b | refuted，限所测K选择性最终介导；48 full model/44 head，V内容对照方向正；简例未复现高置信错绑 |
+| M4自然时间观测（补充） | 31185253 | supported_scope，限1例描述；1 full model/1 head；ago低概率而首选BC，严格FP64附加界6/76 inconclusive保留 |
+| 旧R4/V3读出链审计 | 复用旧封存结果，非新模型run | ago旧gap已告警，后续读出名次下降；旧BF16与新FP32跨运行桥未通过，分开解释 |
+| 下方PLAN-RB-M4全人口检测评价 | 无 | 尚未准入/执行；不能将单例自然观测算为此阶段完成 |
+
+累计55 original model（2 early-stop/53 full）、48 full-vocabulary head，0新目标标签/新检测分数。下一问题是关系特异读出及其合法改写、运算、条件范围反例，不能直接剪context或取max救单例。原源文件/已完成run/失败收据均保留。
+
+---
+
+下方为16:05未执行时的计划快照，不是当前运行状态。
+
 时间：2026-11-03 16:05:41，Asia/Shanghai。对应 [实验计划](EXPERIMENT_PLAN_20261103_160541.md)。
 
 **全部条目为PLANNED，未申领，不是实际run ID。** 新增模型调用、目标标签读取和新检测分数均为0；尚无新检测器准入或有效性结果。下载/哈希/header恢复的实际任务另有收据，不能算作这里的机制或检测成绩。固定别名和root state由主代理在设计审查后同步，本tracker仍不构成run claim。

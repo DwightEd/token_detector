@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "run_id": "8d6662cb8bb5060ee975424b0fa12f4c1535a78047e6de39efd0a50a92033911",
+  "completed_utc": "2026-11-03T10:05:14.281441+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Sealed remaining897 original QA answers exactly match mainline prompt/response token IDs, source mask, T+1 query positions and source character offsets. Combined with the independently finished3canaries, the disjoint union covers900answers/150sources without rerunning either population. Semantic relations remain unknown; no labels, detector scores or model forwards.",
+  "artifacts": [
+    {
+      "path": "outputs/h017-relation-20261103/m2-alignment-remaining/summary.json",
+      "sha256": "d58dfb435876f683091b491b9fb8f8d53e2572abd69b70793442ac4e91623a34"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m2-alignment-remaining/seal.json",
+      "sha256": "712dafe97cdc0aafdfb414ede8aac23c865cd4fb46780d59a2dfc4d3f7725126"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/M2_900_VERIFICATION.json",
+      "sha256": "20f836f0e97465f7c172857448b0a255f22f35569bc7f91ea3af4b5173e4b541"
+    }
+  ]
+}

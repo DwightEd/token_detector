@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "run_id": "7f222ddfcf344a70236c452b9444815c1cfffdc8928483de8fe4107f6896cff5",
+  "completed_utc": "2026-11-03T10:03:00.113957+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Original observer full32layer finalhead qualified on unchanged252tokenprompt. Fourmodel/threeunchunkedheadcalls; bulk-vs-cached maxhidden4.72069e-5/maxfullvocablogit5.34058e-5/logp1.28746e-5 under frozenbudget; Q/K/Videntitynoop finalhidden/logits/logp bitwiseequal. All32layercacheclones independent/pristineunchanged. Engineeringonly,no targetlabels/detectorAUROC.",
+  "artifacts": [
+    {
+      "path": "outputs/h017-relation-20261103/m3-head/result.json",
+      "sha256": "dd19d016ff38c862386249be5b9dd1ccab429b24ec256548dc787b5b96276e63"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m3-head/plan.json",
+      "sha256": "f19da78c8663b6cf68000c1646f33b17f45623b28dcc6aa4155e1d38c51e1105"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m3-head/seal.json",
+      "sha256": "7114883f1f032f4fd072a66c6eec2cb0a043e794dcd18df97614912ccf925ce9"
+    }
+  ]
+}

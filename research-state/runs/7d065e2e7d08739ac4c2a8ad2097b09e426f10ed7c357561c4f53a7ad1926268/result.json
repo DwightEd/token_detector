@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "run_id": "7d065e2e7d08739ac4c2a8ad2097b09e426f10ed7c357561c4f53a7ad1926268",
+  "completed_utc": "2026-11-03T09:37:27.951944+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "All3prequalified original cases exactly reproduce fullprompt+answer tokenIDs,source mask andT+1querypositions using mainlineencoders/currentwitnessedtokenizer; sourcelexeme charactermapping nowoperational. No semanticownership,risk,labelsorLMforwards.",
+  "artifacts": [
+    {
+      "path": "outputs/h017-relation-20261103/m2-alignment-canary/summary.json",
+      "sha256": "5790129b79e3de597f008f5ac6701ca37f635b124081ee0c2cbdc418f50b48ba"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m2-alignment-canary/seal.json",
+      "sha256": "09c365b468c549ec4082042df05f1dfadc8f6e70d96dac5a467f06a22fb40900"
+    }
+  ]
+}

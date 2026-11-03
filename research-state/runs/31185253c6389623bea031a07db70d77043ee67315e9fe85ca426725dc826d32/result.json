@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "run_id": "31185253c6389623bea031a07db70d77043ee67315e9fe85ca426725dc826d32",
+  "completed_utc": "2026-11-03T11:30:00.813770+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "One unchanged441token naturalcase15716 nativefull32forward+one76rowhead completed67.235607s. Original15 allcoords and all32x32x77 nativeattention/AV gates qualified. ProducerFP32 logp/p exactlyreproduced; strictauxiliaryF64referenceaudit inconclusive6rows,retainedunchanged,noscientificthresholdrelaxation. Original300/years probabilities~.998/.926 butago~.0001147 rank5,top1BC~.982174; preago meanBCattention.054506 vs300.0041493. Doesnotsupporthighconfidencewrongunit/BCignoredinterpretation; descriptiveobservationonly,nocausalnecessity/novelty/detectorAUROC or originalMistralgeneratorclaim. Nextauditexistingreadoutcontracts separately,notmoretoylayers.",
+  "artifacts": [
+    {
+      "path": "outputs/h017-relation-20261103/m4-natural-observation/result.json",
+      "sha256": "3e7fe1277f8450f033ab0f86beb3363e8b354959d839c7cd5fb82950a79b9d16"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m4-natural-observation/native-archive-gate.json",
+      "sha256": "ec60ff5984de5554ad7f199c4c49c483c48802ad7a97fcaa961569b2f6089249"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m4-natural-observation/seal.json",
+      "sha256": "74185045b19b71418f1404a486f46650d76771bd50418fe6991f6d650ed7ba6c"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m4-interpretation-supplement-v1/audit.json",
+      "sha256": "676241bd7ed729c6e6f5a93d6e96b445706f07459774c514f145905047687c0c"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m4-interpretation-supplement-v1/seal.json",
+      "sha256": "e70ad289b9404e504e6b2d985952be8db68b667665f435ba2b2d2111124539e9"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/M4_POSTRUN_INTERPRETATION_REVIEW.md",
+      "sha256": "aa315c3c94b730a840085fdbde64a1d9247852efa90e295e6df96e95b3e3f281"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "source_seal_sha256": "28fed29bba0087eeca6bb573052385f755350b3aec9daf99456fb97bf58a6d1f",
+  "rows": 1536,
+  "heads": 32,
+  "receivers": 48,
+  "condition_receivers": 4,
+  "prevalue_receivers": 44,
+  "export_sha256": "d6ede286d0cf8964ec2045b25c789ece7e35cb2c8d04b86cafeba7b0e1a7453f",
+  "export_bytes": 181498,
+  "exporter_sha256": "48f41494bb0170d0ffd0cfe687113a1d673709fda2099c7c0d64db9615dbb84b",
+  "model_calls": 0,
+  "new_detector_scores": 0,
+  "target_annotations": 0
+}

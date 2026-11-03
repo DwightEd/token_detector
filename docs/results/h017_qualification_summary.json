@@ -1,0 +1,219 @@
+{
+  "scope": "engineering qualification only; no detector performance claim",
+  "cache_population": {
+    "cases": 900,
+    "unique_ids": 900,
+    "sources": 150,
+    "answers_per_source": 6,
+    "overlap_between_runs": 0,
+    "status_counts": {
+      "qualified": 900
+    },
+    "faithful_metrics": {
+      "local_attention": {
+        "elements": 64367104,
+        "eligible_elements": 64367104,
+        "precision_unknown_elements": 0,
+        "violations": 0,
+        "max_absolute_error": 0.0016483068466186523,
+        "max_tolerance": 0.04244147335573368,
+        "max_error_over_tolerance": 0.10802908692882976,
+        "maxima": {
+          "max_absolute_error": {
+            "answer_id": "14512",
+            "run_id": "48f5ce11c3cd40e5685a6da81e5e7cd404c5c4c294ff32a341a29d27a85769e4"
+          },
+          "max_tolerance": {
+            "answer_id": "12182",
+            "run_id": "48f5ce11c3cd40e5685a6da81e5e7cd404c5c4c294ff32a341a29d27a85769e4"
+          },
+          "max_error_over_tolerance": {
+            "answer_id": "12461",
+            "run_id": "48f5ce11c3cd40e5685a6da81e5e7cd404c5c4c294ff32a341a29d27a85769e4"
+          }
+        }
+      },
+      "group_mass": {
+        "elements": 40229440,
+        "eligible_elements": 40229440,
+        "precision_unknown_elements": 0,
+        "violations": 0,
+        "max_absolute_error": 0.002241790294647217,
+        "max_tolerance": 0.042441443145758616,
+        "max_error_over_tolerance": 0.1311758305755751,
+        "maxima": {
+          "max_absolute_error": {
+            "answer_id": "14753",
+            "run_id": "48f5ce11c3cd40e5685a6da81e5e7cd404c5c4c294ff32a341a29d27a85769e4"
+          },
+          "max_tolerance": {
+            "answer_id": "12182",
+            "run_id": "48f5ce11c3cd40e5685a6da81e5e7cd404c5c4c294ff32a341a29d27a85769e4"
+          },
+          "max_error_over_tolerance": {
+            "answer_id": "14052",
+            "run_id": "48f5ce11c3cd40e5685a6da81e5e7cd404c5c4c294ff32a341a29d27a85769e4"
+          }
+        }
+      }
+    }
+  },
+  "original_prefix": {
+    "schema": "h017-original-prefix-qualification-result-v1",
+    "all_qualified": true,
+    "model_calls": 2,
+    "full_model_completed": false,
+    "final_norm_or_head_calls": 0,
+    "labels_read": false,
+    "detector_effectiveness_evaluated": false,
+    "elapsed_seconds": 46.40185060002841,
+    "worlds": [
+      {
+        "world": "native",
+        "qualified": true
+      },
+      {
+        "world": "blocked",
+        "qualified": true
+      }
+    ]
+  },
+  "full_output": {
+    "qualified": true,
+    "bulk_vs_cached": {
+      "hidden": {
+        "elements": 4096,
+        "violations": 0,
+        "max_absolute_error": 4.7206878662109375e-05,
+        "max_error_over_tolerance": 0.018315312083760252,
+        "bitwise_equal": false
+      },
+      "logits": {
+        "elements": 128256,
+        "violations": 0,
+        "max_absolute_error": 5.340576171875e-05,
+        "max_error_over_tolerance": 0.01951928803675733,
+        "bitwise_equal": false
+      },
+      "logp": {
+        "absolute_error": 1.2874603271484375e-05,
+        "within_budget": true,
+        "bitwise_equal": false
+      },
+      "within_budget": true,
+      "bitwise_equal": false
+    },
+    "cached_vs_noop": {
+      "hidden": {
+        "elements": 4096,
+        "violations": 0,
+        "max_absolute_error": 0.0,
+        "max_error_over_tolerance": 0.0,
+        "bitwise_equal": true
+      },
+      "logits": {
+        "elements": 128256,
+        "violations": 0,
+        "max_absolute_error": 0.0,
+        "max_error_over_tolerance": 0.0,
+        "bitwise_equal": true
+      },
+      "logp": {
+        "absolute_error": 0.0,
+        "within_budget": true,
+        "bitwise_equal": true
+      },
+      "within_budget": true,
+      "bitwise_equal": true
+    },
+    "pristine_cache_unchanged": true,
+    "all_layer_clone_storage_independent": true,
+    "hook_and_residency_cleanup": true,
+    "counts": {
+      "model_calls": 4,
+      "head_calls": 3
+    },
+    "precision_flags": {
+      "grad_enabled": false,
+      "autocast_cpu": false,
+      "autocast_cuda": false,
+      "cuda_matmul_tf32": false,
+      "cudnn_tf32": false,
+      "weight_dtypes": [
+        "torch.bfloat16"
+      ],
+      "attention_backend": "sdpa"
+    },
+    "elapsed_seconds": 101.08233919995837,
+    "detector_effectiveness_evaluated": false,
+    "labels_read": false
+  },
+  "artifacts_root": "outputs/h017-relation-20261103",
+  "original_axes": {
+    "answers": 900,
+    "sources": 150,
+    "each_source_answers": 6,
+    "disjoint": true,
+    "matches_original_QA_roster": true,
+    "status_counts": {
+      "original_axes_matched": 900
+    },
+    "source_semantic_status_counts": {
+      "unknown_not_inferred": 900
+    },
+    "occurrence_status_counts": {
+      "contained": 9384,
+      "boundary_overlap": 12
+    },
+    "unique_source_occurrences": 1566,
+    "sum_answer_tokens": 124817,
+    "sum_query_rows": 125717,
+    "new_model_forwards": 0,
+    "annotation_reads": 0,
+    "detector_scores": 0,
+    "semantic_ownership_qualified": false,
+    "historical_tokenizer_body_identity_attested": false,
+    "runs": [
+      {
+        "run_id": "7d065e2e7d08739ac4c2a8ad2097b09e426f10ed7c357561c4f53a7ad1926268",
+        "output": "outputs\\h017-relation-20261103\\m2-alignment-canary",
+        "cases": 3,
+        "sources": 3,
+        "seal_sha256": "09c365b468c549ec4082042df05f1dfadc8f6e70d96dac5a467f06a22fb40900",
+        "summary_sha256": "5790129b79e3de597f008f5ac6701ca37f635b124081ee0c2cbdc418f50b48ba",
+        "plan_sha256": "88673e82e21238e4d8d472d9b3b6b7a06e0cd33dc5d41616b59bf3db2c30a454",
+        "source_file_count": 132,
+        "runtime_dependencies": {
+          "numpy": "2.4.6",
+          "scipy": "1.17.1",
+          "torch": "2.8.0+cpu",
+          "transformers": "4.57.1"
+        },
+        "elapsed_seconds": 9.023816299973987,
+        "sealed_members": 5,
+        "registry_outcome": "supported_scope",
+        "registry_result_sha256": "6cb414e99b57417758440ac19909719911972c7bd88616634b5217db8980d0fc"
+      },
+      {
+        "run_id": "8d6662cb8bb5060ee975424b0fa12f4c1535a78047e6de39efd0a50a92033911",
+        "output": "outputs\\h017-relation-20261103\\m2-alignment-remaining",
+        "cases": 897,
+        "sources": 150,
+        "seal_sha256": "712dafe97cdc0aafdfb414ede8aac23c865cd4fb46780d59a2dfc4d3f7725126",
+        "summary_sha256": "d58dfb435876f683091b491b9fb8f8d53e2572abd69b70793442ac4e91623a34",
+        "plan_sha256": "7949ec50721bedf0f2552c962e9bd981a874d0a0cdb8f0e04277b7a1fce4b16b",
+        "source_file_count": 134,
+        "runtime_dependencies": {
+          "numpy": "2.4.6",
+          "scipy": "1.17.1",
+          "torch": "2.8.0+cpu",
+          "transformers": "4.57.1"
+        },
+        "elapsed_seconds": 82.2867544000037,
+        "sealed_members": 899,
+        "registry_outcome": "supported_scope",
+        "registry_result_sha256": "7683071e01608a39c8ce5dcf876b3b2e47de1bf4239a4a26e17183c53acac736"
+      }
+    ]
+  }
+}

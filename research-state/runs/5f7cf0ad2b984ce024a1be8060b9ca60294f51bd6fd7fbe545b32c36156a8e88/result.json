@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "run_id": "5f7cf0ad2b984ce024a1be8060b9ca60294f51bd6fd7fbe545b32c36156a8e88",
+  "completed_utc": "2026-11-03T09:23:15.647890+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Three source-distinct QA caches faithfully replayed within preregistered FP16/FP32 intervals;allfive wrong-contractcontrols rejected. Maxgroupmasserror0.001761. No labels,modelforwards or hallucination-effectiveness evaluation.",
+  "artifacts": [
+    {
+      "path": "outputs/h017-relation-20261103/m1-canary/summary.json",
+      "sha256": "835fa684d1fdbb03715b1e2e735f6f469dca2b2a1f788cb3f43f259023e42231"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m1-canary/seal.json",
+      "sha256": "33b2fdf67608b856298d741bfa5b6419bbed53fb9cd9b558ab80120df6cae560"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m1-canary/answer-13378.json",
+      "sha256": "6d708abb6d6dd1d8c4cd7b9c6bd01b820525e5932edaf9748ea2d133269991f4"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m1-canary/answer-14009.json",
+      "sha256": "b6a1a4d46bee340d2fdf77313ddc54ebbe3b325c706cd2e66b92caec47221002"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m1-canary/answer-14198.json",
+      "sha256": "1e7efba40b37be1461ef78d0449972fe20b165ea750b641a153e4b7374597950"
+    }
+  ]
+}

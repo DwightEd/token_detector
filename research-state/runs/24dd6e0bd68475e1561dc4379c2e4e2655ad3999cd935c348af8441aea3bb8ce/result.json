@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "run_id": "24dd6e0bd68475e1561dc4379c2e4e2655ad3999cd935c348af8441aea3bb8ce",
+  "completed_utc": "2026-11-03T10:41:39.972649+00:00",
+  "outcome": "refuted",
+  "conclusion": "Completed48originalmodel/44fullheadcalls; independentauditpassed,so scientificallynegative notinstrumentfailure. Block15numericKrole addressshiftpositive3of4 but all4signed finalmarginchangesnegative and below normmatchedrandomcontrols; factreorder3.3266 dominates. Vvalueall4directionpositivewithQ/K/attentionbitwiseunchanged. BothunsupportedR p200<0.000257; quartetdoesnotinstantiatehighconfidencewrongbinding. RejectonlytestedselectiveKfinal-outputmediation,nogeneralclaimKcontainsnoroleinfo,no newdetectorAUROC. Proceedtonaturalpreviouslyfrozenexamples,nottoyhead/layerrescue.",
+  "artifacts": [
+    {
+      "path": "outputs/h017-relation-20261103/m3-intervention/result.json",
+      "sha256": "a9459e466d6fa1789762bdbb40b62023487982340ea199991957761ededa9960"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m3-intervention/seal.json",
+      "sha256": "28fed29bba0087eeca6bb573052385f755350b3aec9daf99456fb97bf58a6d1f"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m3-interpretation-audit-v1/audit.json",
+      "sha256": "4f20211217cbe1ded10c520d17659d81dca01ee2a61aa91833f4acda8a8ab6db"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m3-interpretation-audit-v1/seal.json",
+      "sha256": "8ecf0b13af2a6e29bd8ddd1daf8e4c3e53aa62a343a83ea68aa4f089033ec784"
+    }
+  ]
+}

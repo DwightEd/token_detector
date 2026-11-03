@@ -1,0 +1,124 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>旧R4/V3：单位告警在哪一步下降</title><meta name="source-sha256" content="aec42da321a0e98d40c2f0db83cd5638a596db0bab30c26ca3fbb7ff16de52d5">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
+<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
+<style>body{max-width:1040px;margin:40px auto;padding:0 24px;color:#17253a;font:17px/1.8 system-ui,sans-serif;background:#fbfcff}nav{font-size:14px}a{color:#245bc7}h1,h2{line-height:1.35}img{max-width:100%;height:auto}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #d5ddeb;padding:10px;text-align:left}th{background:#edf2fb}pre{overflow:auto;padding:16px;background:#edf2f8}code{font-size:.88em}.equation{overflow-x:auto}.flow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:20px;background:#edf2fb;border-radius:12px}.flow span{background:white;padding:8px 12px;border:1px solid #cbd7eb}footer{font-size:13px;border-top:1px solid #d5ddeb;margin-top:40px;padding-top:16px}@media print{body{font-size:12px;margin:0}nav{display:none}}</style>
+</head><body><nav><a href="H017_PROGRESS.html">关系错绑：实验进展与证据</a> · <a href="H017_MATH.html">高注意力为何不等于正确关系</a> · <a href="H017_PROTOCOL.html">四来源与Q/K/V干预：冻结协议</a> · <a href="H017_NATURAL.html">自然时间错例：原词概率与全部层头</a> · <a href="H017_READOUT.html">旧R4/V3：单位告警在哪一步下降</a></nav><main><h1>M4 existing readout-chain audit:15716</h1>
+<p><strong>The old unit warning was already present at "ago"; later R4/V3 readout lowered its global risk rank.</strong> This is a descriptive account within the OLD system, not a cause inferred from M4.</p>
+<p>Case15716/source15540; original generator <code>mistral-7B-instruct</code>, historical observer <code>Meta-Llama-3.1-8B-Instruct</code>. Gap=log p(absent source) - log p(present source), with original response history. Coordinates are half-open. The original QA budget was6241/124817 tokens; all ranks below are reused, not recomputed.</p>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th>Characters</th>
+<th>Text</th>
+<th>Old source p/full</th>
+<th>Old absent p/full</th>
+<th>Full/local gap</th>
+<th>R4/V3 final ranks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>56</td>
+<td>[266,273)</td>
+<td><code>around</code></td>
+<td>0.068413365</td>
+<td>0.064842992</td>
+<td>-0.053599/+2.314138</td>
+<td>115312/77574</td>
+</tr>
+<tr>
+<td>57</td>
+<td>[273,274)</td>
+<td><code></code></td>
+<td>0.99588261</td>
+<td>0.91355111</td>
+<td>-0.086290/-0.015751</td>
+<td>117909/75223</td>
+</tr>
+<tr>
+<td>58</td>
+<td>[274,277)</td>
+<td><code>300</code></td>
+<td>0.99798502</td>
+<td>0.011336294</td>
+<td>-4.477729/-4.969757</td>
+<td>117102/78404</td>
+</tr>
+<tr>
+<td>59</td>
+<td>[277,283)</td>
+<td><code>years</code></td>
+<td>0.92260135</td>
+<td>0.005819485</td>
+<td>-5.065985/-6.257875</td>
+<td>116900/63082</td>
+</tr>
+<tr>
+<td>60</td>
+<td>[283,287)</td>
+<td><code>ago</code></td>
+<td>0.000121027</td>
+<td>0.0032453017</td>
+<td>+3.288950/+2.862774</td>
+<td>114453/20219</td>
+</tr>
+</tbody>
+</table>
+<p>"300" and "years" are source-predictable components; the OLD "ago" already has low probability and a strong positive source-deletion gap. This does not support high-probability wrong temporal binding for the whole expression. These are observer probabilities, not original-generator probabilities or factuality probabilities.</p>
+<table>
+<thead>
+<tr>
+<th>Stored "ago" stage</th>
+<th>Value</th>
+<th>Old QA risk rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>full gap</td>
+<td>+3.288949966</td>
+<td>1165</td>
+</tr>
+<tr>
+<td>local gap</td>
+<td>+2.862773895</td>
+<td>3975</td>
+</tr>
+<tr>
+<td>R4 actual pair point</td>
+<td>+3.075861931</td>
+<td>1492</td>
+</tr>
+<tr>
+<td>R4 shared unit prior</td>
+<td>-1.67420571</td>
+<td>116867</td>
+</tr>
+<tr>
+<td>R4 final</td>
+<td>-1.111751692</td>
+<td>114453</td>
+</tr>
+<tr>
+<td>V3 own witness emission</td>
+<td>+2.632417209</td>
+<td>1165</td>
+</tr>
+<tr>
+<td>V3 final</td>
+<td>+0.3493939088</td>
+<td>20219</td>
+</tr>
+</tbody>
+</table>
+<p>The first R4 loss is at the <strong>shared sentence prior, before route combination</strong>: actual point rank1492 -&gt; prior116867. The22-token unit spans characters[178,288), the entire sentence beginning "The first known reference". Its stored shared prior is -1.6742057096;19/22 existing pair contrasts are negative. The frozen QA rule broadcasts log(mean(exp(0.1*point)))/0.1 over that unit. Thus the isolated unit warning is combined with many source-predictable words. This is not evidence that sharing is harmful overall.</p>
+<p>V3 stores own emission <strong>2.6324172092</strong>, context difference <strong>-2.2830233004</strong>, final <strong>0.3493939088</strong>, rank <strong>20219</strong>. The warning remains positive but falls outside the budget. The context difference is an algebraic decomposition, not a deletion intervention. No parameters or scoring rules were changed.</p>
+<p><strong>Cross-run causal bridge stopped.</strong> All365 prompt IDs,76 answer IDs, source-mask positions and answer offsets match M4 exactly, notwithstanding the <code>source_first_v1</code> directory name. But the predeclared absolute logp budget0.002 fails <strong>44/76</strong> values; max difference <strong>0.12790775299</strong>. At "ago", old logp -9.0194969177 vs M4 -9.0729827881 differs by0.05348587036. Old computation declares BF16; M4 uses BF16 stored weights/FP32 computation. The old weight/code identity is not authenticated by metadata equality. No tolerance widening or joint causal attribution is permitted.</p>
+<p>The separate sealed M4 observation is compatible with attending to BC and assigning low p to "ago"; that is not merged into the old score computation. Source deletion also recomputes positions, so even the old gap is a predictive contrast rather than isolated factual causality.</p>
+<p><strong>Strict arithmetic detail retained:</strong> native delta and witness full_gap agree bitwise. Primitive subtraction versus native delta differs in two full-channel cells by at most4.440892098500626e-16 (one FP64 ULP here). Exact primitive arithmetic identity did not pass these two cells; no stored values were changed, and the historical run is not declared failed. Its impact on the stated large gap/rank result is negligible. Exact signed differences are preserved in JSON.</p>
+<p>23 input hashes bind the old manifest, primitive source/response/probability records, native/witness plans/seals/632.npz, published case diagnostics and M4 endpoints. JSON preserves all76 cross-run differences, six neighboring tokens, historical model/config/code/protocol/reference contracts, and raw strict-check differences. Global ranks come from the already-published diagnostics. No annotations/evaluation-only files, new target labels, weights, models, scores, full-score recomputation, ranking recomputation or downloads were used.</p>
+<p>Native seal <code>7537baa6d28ca723e6e1697f20cbfccde04a8c72e126b2ddc24324bf6be67d48</code>; witness seal <code>7a0034462d35588c0b7883802288b074727ed2bc28bf3a0a78c887c9ebada88d</code>.</p>
+<p>JSON SHA256: <code>c05194562dcb75c1ee8c0265521e6cf4ac1b2f733912093537726fa0fd7b698c</code>.</p></main><footer>H017本地离线阅读 · 原Markdown与GitHub公式是同一来源。打开本文件即可阅读，无需启动服务器。<br>源码SHA256：aec42da321a0e98d40c2f0db83cd5638a596db0bab30c26ca3fbb7ff16de52d5</footer></body></html>

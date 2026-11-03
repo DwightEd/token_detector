@@ -1007,6 +1007,294 @@
           "role": "classifiedrootindex; finalized receipt and metadata links"
         }
       ]
+    },
+    {
+      "id": "F042",
+      "certainty": "completed_engineering_scope_not_detector_effectiveness",
+      "claim": "M0 exact source occurrence inventory preserves2700answers/450sources;Data2txt150sources5806serializedfields, QA/Summaryprose semanticownership remainsunknown. No scores/labels/models. Thisisposition plumbing,notanew semanticfrontend result.",
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "outputs/h017-relation-20261103/m0-inventory/summary.json",
+          "sha256": "49ca4c5ffe9fe0826cc471084cf3f9b52d8e959bb2066916fc9ddfc2cac2ebc7"
+        }
+      ]
+    },
+    {
+      "id": "F043",
+      "certainty": "completed_engineering_scope_not_detector_effectiveness",
+      "claim": "M1 three source-distinct realQA caches qualified faithful preRoPE/GQA/causal/world attentionreplay under preregisteredFP16intervals+fixedFP32budget;all5wrongcontractcontrolsrejected. Maxgroupmassabsoluteerror0.00176084. Notfactuality/causal/detection validation.",
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "outputs/h017-relation-20261103/m1-canary/summary.json",
+          "sha256": "835fa684d1fdbb03715b1e2e735f6f469dca2b2a1f788cb3f43f259023e42231"
+        }
+      ]
+    },
+    {
+      "id": "F044",
+      "certainty": "two_sealed_runs_full_QA_engineering_identity_not_detection",
+      "claim": "M1 sealed canary3 plus disjoint remaining897 exactly cover QA TEST900 unique answers/150sources (6answers/source), matching the original capture roster. All900 qualified, both faithful metrics have zero precision-unknown/violations, and each of5wrong-contract controls is rejected on all900. Maxlocal absoluteerror0.0016483068466186523; maxgroupmass0.002241790294647217; no cache replay in aggregation.",
+      "does_not_imply": "Not semantic ownership, original-generator causality, detector efficacy, AUROC or six-task0.8. M1 does not establish character offsets. Separate finished M2 run aligns only3canaries; no900character-alignment claim. Fixed FP32 backend allowance remains an engineering budget.",
+      "do_not_retest_phenomenon": true,
+      "true_run_ids": [
+        "5f7cf0ad2b984ce024a1be8060b9ca60294f51bd6fd7fbe545b32c36156a8e88",
+        "48f5ce11c3cd40e5685a6da81e5e7cd404c5c4c294ff32a341a29d27a85769e4"
+      ],
+      "related_M2": {
+        "run_id": "7d065e2e7d08739ac4c2a8ad2097b09e426f10ed7c357561c4f53a7ad1926268",
+        "cases": 3,
+        "sources": 3,
+        "exact_axes_matched": 3,
+        "full900_alignment": false,
+        "historical_tokenizer_body_hash_attested": false
+      },
+      "evidence": [
+        {
+          "path": "outputs/h017-relation-20261103/M1_900_AGGREGATE.json",
+          "sha256": "66fba0897ba7765d9189c289937dad45900741935783a15ac5910384453462e6"
+        },
+        {
+          "path": "research-state/runs/48f5ce11c3cd40e5685a6da81e5e7cd404c5c4c294ff32a341a29d27a85769e4/result.json",
+          "sha256": "1da7f72f6f34a65b02d340199b1e7704c9e017f0d040aba3bdafb9b0c457ffab"
+        },
+        {
+          "path": "research-state/runs/7d065e2e7d08739ac4c2a8ad2097b09e426f10ed7c357561c4f53a7ad1926268/result.json",
+          "sha256": "6cb414e99b57417758440ac19909719911972c7bd88616634b5217db8980d0fc"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/m2-alignment-canary/summary.json",
+          "sha256": "5790129b79e3de597f008f5ac6701ca37f635b124081ee0c2cbdc418f50b48ba"
+        }
+      ],
+      "later_scope_update": "F047 separately establishes full900 M2 alignment; the earlier three-case M2 statement is the historical checkpoint."
+    },
+    {
+      "id": "F045",
+      "certainty": "single_original_weight_prefix_engineering_qualified_not_full_output_or_causality",
+      "claim": "Finished run1fdf3766 used2 original-weight early-stop forwards on captured case16465/source12236: complete252-token prompt, prechoiceq251, executed0..15. Native and source-blocked worlds both pass frozen FP16-plus-FP32 coordinate budgets for3node sites,Q32,K8,V8 prefix; zero coordinate violations. Elapsed46.40185060002841s; zero finalnorm/head calls.",
+      "does_not_imply": "Not full-model/head/cache/no-op qualification; not a role intervention or original-generator cause; no source semantic ownership, risk score, AUROC or detector improvement. Actual full-head/cache/no-op next gate is proposed but not claimed/launched at this checkpoint.",
+      "do_not_retest_phenomenon": true,
+      "run_id": "1fdf37662387671a919a7eb942457bae29214391790fa92dce73af7442dbeb64",
+      "model_calls": 2,
+      "final_norm_or_head_calls": 0,
+      "evidence": [
+        {
+          "path": "outputs/h017-relation-20261103/m3-prefix/summary.json",
+          "sha256": "110ab6a48963d73a885b03ed2b0bfb47eb2e47ede53f5c6cd9cd1436e26e1f06"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/m3-prefix/seal.json",
+          "sha256": "c02b3d05e7904db8b014fb093c98fd66a27e1e1130a48a84b289f35911b176fe"
+        },
+        {
+          "path": "research-state/runs/1fdf37662387671a919a7eb942457bae29214391790fa92dce73af7442dbeb64/result.json",
+          "sha256": "87201d6cd4d7b2fb52bb2fd24cf2cd8b3277ffa327af6d50f525a265693f4033"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/PREFIX_MEMORY_VERIFICATION.json",
+          "sha256": "14780fdd3b6c408be086e818d84c9b90dec044b995ee8c18071be9d4f1761b4d"
+        }
+      ],
+      "later_scope_update": "F046 separately completes the previously pending full-head/cache/no-op gate; do not rerun either qualification."
+    },
+    {
+      "id": "F046",
+      "certainty": "sealed_original_observer_full_output_cache_noop_engineering_only",
+      "claim": "Finished original-weight run7f222ddf executes the unchanged252-token prompt of16465 through all32 layers/final norm and unchunked full128256-vocabulary head. Four model calls/three head calls,101.08233919995837s. Bulk-versus-pristine-cache query max hidden error4.7206878662109375e-5, max logit error5.340576171875e-5 and original-first-token logp error1.2874603271484375e-5 pass frozen budgets. IdentityQ/same-value sourceKV no-op hidden/logits/logp are bitwise equal; all32-layer branch caches are storage-independent, pristine cache unchanged and hooks/residency cleaned.",
+      "does_not_imply": "Engineering qualification on one observer input is not a scientific role intervention, original-generator cause, natural relation ownership, a detector score or AUROC improvement. The cross-backend allowance is an engineering budget. GPU allocated peak3358987776B and working-set peak2476904448B are measured; process commit accounting is a separate quantity.",
+      "run_id": "7f222ddfcf344a70236c452b9444815c1cfffdc8928483de8fe4107f6896cff5",
+      "model_calls": 4,
+      "full_model_calls": 4,
+      "final_norm_calls": 4,
+      "lm_head_calls": 3,
+      "H017_cumulative_original_model_calls": 6,
+      "H017_cumulative_lm_head_calls": 3,
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "outputs/h017-relation-20261103/m3-head/result.json",
+          "sha256": "dd19d016ff38c862386249be5b9dd1ccab429b24ec256548dc787b5b96276e63"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/m3-head/seal.json",
+          "sha256": "7114883f1f032f4fd072a66c6eec2cb0a043e794dcd18df97614912ccf925ce9"
+        },
+        {
+          "path": "research-state/runs/7f222ddfcf344a70236c452b9444815c1cfffdc8928483de8fe4107f6896cff5/result.json",
+          "sha256": "6c9998b033a681f09ff2acc464984efff15b760a05470cc6825101cdcdf8fbb6"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/FULL_HEAD_MEMORY_VERIFICATION.json",
+          "sha256": "0910d6191e4445a62b9514d00f2fd840bdce0cb9fe0f8de1e64b5643329594e3"
+        }
+      ]
+    },
+    {
+      "id": "F047",
+      "certainty": "two_sealed_alignment_runs_full_QA900_operational_axes_only",
+      "claim": "Finished3-canary run7d065e2e plus disjoint finished897 run8d6662cb exactly cover QA TEST900 unique answers/150 sources, six answers per source. All900 original prompt/response token IDs, source masks, T+1 positions and source character mappings match using the current witnessed tokenizer. Answer tokens124817, query rows125717; source occurrence mappings9384 contained plus12 boundary_overlap,1566 unique source occurrences. Both runs and this aggregation use zero model forwards, target annotations and detector scores.",
+      "does_not_imply": "All900 source semantic statuses remain unknown_not_inferred and relation semantics not_assessed. Boundary overlaps remain explicit. Historical tokenizer-body SHA, relation ownership, causal mechanism or detector effectiveness is not established. This is an aggregate of two true runs with132/134 code-resource identities, not a new900-example run.",
+      "true_run_ids": [
+        "7d065e2e7d08739ac4c2a8ad2097b09e426f10ed7c357561c4f53a7ad1926268",
+        "8d6662cb8bb5060ee975424b0fa12f4c1535a78047e6de39efd0a50a92033911"
+      ],
+      "answers": 900,
+      "sources": 150,
+      "all_original_axes_matched": true,
+      "semantic_unknown_cases": 900,
+      "historical_tokenizer_body_identity_attested": false,
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "outputs/h017-relation-20261103/M2_900_AGGREGATE.json",
+          "sha256": "706f6ad3c294c2f366cabc2f9d912727b6c0da09f7ededb9dd4690c3070782fd"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/M2_900_VERIFICATION.json",
+          "sha256": "20f836f0e97465f7c172857448b0a255f22f35569bc7f91ea3af4b5173e4b541"
+        },
+        {
+          "path": "research-state/runs/8d6662cb8bb5060ee975424b0fa12f4c1535a78047e6de39efd0a50a92033911/result.json",
+          "sha256": "7683071e01608a39c8ce5dcf876b3b2e47de1bf4239a4a26e17183c53acac736"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/m2-alignment-remaining/seal.json",
+          "sha256": "712dafe97cdc0aafdfb414ede8aac23c865cd4fb46780d59a2dfc4d3f7725126"
+        }
+      ]
+    },
+    {
+      "id": "F048",
+      "certainty": "sealed_single_quartet_scientific_negative_independently_verified",
+      "claim": "All48 original-model/44 complete-head calls completed. Instruments/no-op/V invariants passed. Block15 numeral K-role direction effects are negative in all4 worlds and smaller than each on-target norm-matched random maximum; address shifts are positive3/4. V-value direction effects are positive4/4 with unchanged Q/K/attention. Reorder margin difference3.3265667. Unsupported fixed R p200 is9.27073e-6/2.56495e-4, so this quartet does not reproduce high-confidence wrong binding. Original readouts do recognize the declared source facts.",
+      "does_not_imply": "Negative only for tested block15 numeral-K selective final-output mediation; not absence of encoded role information, V-only detector efficacy, original-generator causality, postvalue persistence or any natural AUROC improvement.",
+      "run_id": "24dd6e0bd68475e1561dc4379c2e4e2655ad3999cd935c348af8441aea3bb8ce",
+      "outcome": "refuted",
+      "new_model_calls": 48,
+      "new_head_calls": 44,
+      "postvalue_observed": false,
+      "target_annotations_read": false,
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "outputs/h017-relation-20261103/m3-intervention/result.json",
+          "sha256": "a9459e466d6fa1789762bdbb40b62023487982340ea199991957761ededa9960"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/m3-intervention/seal.json",
+          "sha256": "28fed29bba0087eeca6bb573052385f755350b3aec9daf99456fb97bf58a6d1f"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/m3-interpretation-audit-v1/audit.json",
+          "sha256": "4f20211217cbe1ded10c520d17659d81dca01ee2a61aa91833f4acda8a8ab6db"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/m3-interpretation-audit-v1/seal.json",
+          "sha256": "8ecf0b13af2a6e29bd8ddd1daf8e4c3e53aa62a343a83ea68aa4f089033ec784"
+        },
+        {
+          "path": "research-state/runs/24dd6e0bd68475e1561dc4379c2e4e2655ad3999cd935c348af8441aea3bb8ce/result.json",
+          "sha256": "c25cdf294e7dcc85cbe674951a434d019afe8d1e23ac3800ca4671d4420c1869"
+        }
+      ]
+    },
+    {
+      "id": "F049",
+      "certainty": "manual_source_only_licenses_independently_reviewed_non_exhaustive",
+      "claim": "Two already-exposed prescribed RAGTruth QA cases15716/source15540 and12297/source14366 join exactly to QA900.25source-stated tuples/86anchors were independently checked before root inspected their fixed Q/R; no evaluation-only file or annotation opened. The15716 source calendar-era over300yearsBC is expressed in R as around300yearsago. Othercase procedural scopes remain qualified/underspecified, not automatically contradictory.",
+      "does_not_imply": "Manual non-exhaustive research annotations are not automatic frontend coverage or a detector; neither source is a complete two-owner numeric swap. Pollux father remains unknown; whole/intact flag, temporal order and universal obligations cannot be supplied. No matched new full-depth probabilities have yet been observed.",
+      "model_calls": 0,
+      "target_annotation_reads": 0,
+      "new_scores": 0,
+      "evidence": [
+        {
+          "path": "outputs/h017-relation-20261103/RAGTRUTH_NATURAL_QA_SOURCE_LICENSE_REVIEW.json",
+          "sha256": "23e77b9ac9cb2703b14e49cd61b62a910f008ab865e3adce18e7e8e03f636f0a"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/RAGTRUTH_NATURAL_QA_SOURCE_LICENSE_INDEPENDENT_REVIEW.md",
+          "sha256": "ec8a97b5dce7e9c2c2f1c1a6caf735240083a633f99c81cd373f6dcfe0763229"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/M4_NATURAL_TEMPORAL_OBSERVATION_PRE_CODE_ADMISSION.md",
+          "sha256": "901c677ff845ba3a137f02a9ce0650c2a86d228392fd68c09e243af44423eb58"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/M4_NATURAL_TEMPORAL_OBSERVATION_INDEPENDENT_REVIEW.md",
+          "sha256": "8c5401483abdeef3fc12bce2948e50451833ce13e0e91676943dba4d15e7378c"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/M4_CAUSAL_CLOSURE_LITERATURE_REVIEW.md",
+          "sha256": "fd185bc7285f912734e87199d702481d58b4703436127b0a615150737c8e24cb"
+        }
+      ]
+    },
+    {
+      "id": "F050",
+      "certainty": "single_original_natural_observation_qualified_producer_reproduced_F64_aux_inconclusive",
+      "claim": "M4 one unchanged441-token case15716/source15540 completed full32layer model+one76row head in67.235607s. Allnative15 archival coordinates and all32x32x77 native phases/profiles qualified. Original300/years p=.997988/.925592, ago=.000114724 rank5; preferredBC p=.982174 and logit advantage9.05499649. Preago average BC attention .054506 exceeds300 .0041493;184of1024 heads have300>BC. Does not instantiate high-probability wrongago or numeral-only access missingBC.",
+      "does_not_imply": "One exposed natural case, not original Mistral generation mechanism, factuality probability, causal necessity, learned relation identity, automatic frontend coverage or detector AUROC. Raw p/logp exactly replay FP32 producer; strictFP64 auxiliary empirical tolerance failed6of76 and remains inconclusive (maxlogp6.045e-5/p2.518e-5/H1.157e-4), not silently widened.",
+      "run_id": "31185253c6389623bea031a07db70d77043ee67315e9fe85ca426725dc826d32",
+      "new_model_calls": 1,
+      "new_head_calls": 1,
+      "target_annotations_read": false,
+      "new_risk_scores": 0,
+      "source_reading_Q_observed": false,
+      "posttoken_trajectory_observed": true,
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "outputs/h017-relation-20261103/m4-natural-observation/result.json",
+          "sha256": "3e7fe1277f8450f033ab0f86beb3363e8b354959d839c7cd5fb82950a79b9d16"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/m4-natural-observation/seal.json",
+          "sha256": "74185045b19b71418f1404a486f46650d76771bd50418fe6991f6d650ed7ba6c"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/m4-interpretation-supplement-v1/audit.json",
+          "sha256": "676241bd7ed729c6e6f5a93d6e96b445706f07459774c514f145905047687c0c"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/m4-interpretation-supplement-v1/seal.json",
+          "sha256": "e70ad289b9404e504e6b2d985952be8db68b667665f435ba2b2d2111124539e9"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/M4_POSTRUN_INTERPRETATION_REVIEW.md",
+          "sha256": "aa315c3c94b730a840085fdbde64a1d9247852efa90e295e6df96e95b3e3f281"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/M4_INITIAL_STRICT_AUDIT_FAILURE.json",
+          "sha256": "1fc9b949c76a9adf7984780cb33a7874d34f337ee8611bbb5c79823db3515785"
+        }
+      ]
+    },
+    {
+      "id": "F051",
+      "certainty": "existing_historical_readout_reused_separate_precision_contract_no_joint_causal_bridge",
+      "claim": "Within old frozen BF16 QA15716, ago has sourcep.000121027/absentp.003245302 and fullgap3.28895(rank1165), local2.86277(rank3975), actualpairpoint3.07586(rank1492). R4sharedprior -1.67421(rank116867), finalrank114453. Its22-token sentence unit has19negative contrasts. V3ownemission2.632417 pluscontext -2.283023 givesfinal.349394(rank20219), outside old5percent budget6241of124817. The old unit warning existed before readout.",
+      "does_not_imply": "Not evidence all sharing is harmful or clipping/max-fusion is a valid method. Old365prompt/76answer IDs align withM4 but BF16 versus newFP32 logp comparison fails fixed .002 in44of76 (max.127908); no merged-causal interpretation/weight-identity proof. Native delta equals actualstored fullgap; primitive-minus-delta exact bit identity fails2cells by atmost4.44e-16 and is retained, not used to change old scores or declare oldrun failed.",
+      "new_model_calls": 0,
+      "new_scores": 0,
+      "new_ranking": false,
+      "target_annotations_read": false,
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "outputs/h017-relation-20261103/M4_EXISTING_READOUT_CHAIN_AUDIT.json",
+          "sha256": "c05194562dcb75c1ee8c0265521e6cf4ac1b2f733912093537726fa0fd7b698c"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/M4_EXISTING_READOUT_CHAIN_AUDIT.md",
+          "sha256": "aec42da321a0e98d40c2f0db83cd5638a596db0bab30c26ca3fbb7ff16de52d5"
+        },
+        {
+          "path": "outputs/h017-relation-20261103/M4_EXISTING_READOUT_CHAIN_RECEIPT.json",
+          "sha256": "42ba98203bafad2c05ea0ed99481c204ad25c6b29e3133b4a17ecf83f2cb7d98"
+        }
+      ]
     }
   ],
   "rule": "New interventions need different predictions under competing explanations; known counts/cases are reused."

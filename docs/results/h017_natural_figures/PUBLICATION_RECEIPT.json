@@ -1,0 +1,54 @@
+{
+  "source_figure_root_seal": "39152d19f4fe02948ce043ece176f46d47de3006e527ebec1cfbdfd436d96438",
+  "files": [
+    {
+      "name": "CAPTIONS.md",
+      "sha256": "036f72e2e492aed88e5d2bdafaec263707f391daaaeb6d196f3b6fd35dee4d7b"
+    },
+    {
+      "name": "figure1_all32layers_all32heads.csv",
+      "sha256": "c9bebb142ddbbad92c56f02ec61d03ae9855adc276d2a29b62b42414febd69f0"
+    },
+    {
+      "name": "figure1_preago_all_physical_heads.pdf",
+      "sha256": "208ca660838ce13c51653b4960fea4f8d299bff4cda1cdb744637c8c5263fd4e"
+    },
+    {
+      "name": "figure1_preago_all_physical_heads.png",
+      "sha256": "f29b4734408996e9d166820784dc944e96b4459e818dcc1fe3b0bbda66d47bac"
+    },
+    {
+      "name": "figure1_preago_all_physical_heads.svg",
+      "sha256": "989ecdc42a6414dd266b68bc2fd1ffa3ce04f1b221e26d5767079584b5e19806"
+    },
+    {
+      "name": "figure2_fixed_receiver_traces_and_probabilities.pdf",
+      "sha256": "c8350f842b0861e61e6a79e42d5fb6a1f66da1942e0177f990edc052831f2e2a"
+    },
+    {
+      "name": "figure2_fixed_receiver_traces_and_probabilities.png",
+      "sha256": "283ca9ca3509d03041ddbea54bd6d81fe53e4a27226adbc9efa4358b77172cf2"
+    },
+    {
+      "name": "figure2_fixed_receiver_traces_and_probabilities.svg",
+      "sha256": "bc883c3f86f2e4481ad32365acd08949bae207714dccf54310571655befd8a47"
+    },
+    {
+      "name": "figure2_four_receiver_traces.csv",
+      "sha256": "bd3e5673c3fc6547563d7f4241e7a0f8210ff55aed530f12a4183516ba1ef280"
+    },
+    {
+      "name": "figure2_full_vocab_probabilities.csv",
+      "sha256": "0afc3eec86d2082725ecd7a5c693c772b61a7d97afecf9e6b654e75ba6eeb1d0"
+    },
+    {
+      "name": "RENDER_RECEIPT.json",
+      "sha256": "3cbea07042539bb2adecc4cb04fb93ba6edea20494dc41ec2db340455642a3e6"
+    },
+    {
+      "name": "seal.json",
+      "sha256": "39152d19f4fe02948ce043ece176f46d47de3006e527ebec1cfbdfd436d96438"
+    }
+  ],
+  "scope": "Descriptive1naturalcase,no causalnecessity or detector evaluation"
+}

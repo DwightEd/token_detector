@@ -78,6 +78,61 @@ def parser() -> argparse.ArgumentParser:
 
     transfer = stages.add_parser("transfer", help="cache native observations, FIT/score, then evaluate")
     transfers = transfer.add_subparsers(dest="transfer_stage", required=True)
+    relation_inventory = transfers.add_parser('inventory-relation-source',
+        help='seal source-only exact occurrences; no semantic verdict or detector scores')
+    relation_inventory.add_argument('--prepared', nargs='+', type=Path, required=True)
+    relation_inventory.add_argument('--protocol', type=Path, required=True)
+    relation_inventory.add_argument('--output', type=Path, required=True)
+    relation_cache = transfers.add_parser('qualify-relation-cache',
+        help='qualify physical-head RoPE/GQA cache replay on CPU without model inference')
+    for option in ('capture-root', 'config', 'data-manifest', 'data-root', 'output'):
+        relation_cache.add_argument('--' + option, type=Path, required=True)
+    relation_cache.add_argument('--prepared-root', type=Path)
+    relation_selection = relation_cache.add_mutually_exclusive_group()
+    relation_selection.add_argument('--ids', type=Path)
+    relation_selection.add_argument('--all', action='store_true')
+    relation_selection.add_argument('--limit', type=int, default=3)
+    relation_cache.add_argument('--query-chunk', type=int, default=8)
+    relation_cache.add_argument('--max-memory-mb', type=int, default=512)
+    relation_alignment = transfers.add_parser('qualify-relation-alignment',
+        help='qualify exact original source character/token axes without model inference')
+    for option in ('capture-root', 'prepared', 'inventory-root', 'qualification-root',
+                   'tokenizer', 'asset-manifest', 'data-root', 'output'):
+        relation_alignment.add_argument('--' + option, type=Path, required=True)
+    relation_alignment.add_argument('--ids', type=Path)
+    streamed = transfers.add_parser('qualify-streamed-observer',
+        help='qualify two original observer prompt-prefix worlds without a final head')
+    for option in ('capture-root', 'model', 'asset-manifest', 'output'):
+        streamed.add_argument('--' + option, type=Path, required=True)
+    streamed.add_argument('--asset-verification', type=Path)
+    streamed.add_argument('--asset-state', type=Path)
+    streamed.add_argument('--device', default='cuda:0')
+    streamed.add_argument('--max-tokens', type=int, default=256)
+    streamed.add_argument('--id', default='16465')
+    streamed_head = transfers.add_parser('qualify-streamed-head',
+        help='qualify original observer final logits, prefix cache and Q/K/V no-op')
+    for option in ('capture-root', 'model', 'asset-manifest', 'prefix-qualification', 'output'):
+        streamed_head.add_argument('--' + option, type=Path, required=True)
+    streamed_head.add_argument('--asset-verification', type=Path)
+    streamed_head.add_argument('--asset-state', type=Path)
+    streamed_head.add_argument('--device', default='cuda:0')
+    streamed_head.add_argument('--max-tokens', type=int, default=256)
+    streamed_head.add_argument('--id', default='16465')
+    relation_paths = transfers.add_parser('observe-relation-paths',
+        help='run the frozen supplied-response role/value Q/K/V intervention assay')
+    for option in ('capture-root', 'model', 'asset-manifest', 'head-qualification', 'admission', 'output'):
+        relation_paths.add_argument('--' + option, type=Path, required=True)
+    relation_paths.add_argument('--asset-verification', type=Path)
+    relation_paths.add_argument('--asset-state', type=Path)
+    relation_paths.add_argument('--device', default='cuda:0')
+    natural_relation = transfers.add_parser('observe-natural-relation',
+        help='record matched all-layer original-response temporal evidence without risk scores')
+    for option in ('capture-root', 'prepared', 'model', 'asset-manifest', 'head-qualification',
+                   'alignment-root', 'source-license', 'admission', 'output'):
+        natural_relation.add_argument('--' + option, type=Path, required=True)
+    natural_relation.add_argument('--asset-verification', type=Path)
+    natural_relation.add_argument('--asset-state', type=Path)
+    natural_relation.add_argument('--device', default='cuda:0')
     semantic = transfers.add_parser('semantic-qualify', help='seal label-free source observations without scalar scores')
     semantic.add_argument('--inputs', type=Path, required=True)
     semantic.add_argument('--protocol', type=Path, required=True)
@@ -559,6 +614,48 @@ def main() -> None:
 
             stage = probe_native if args.transfer_stage == 'probe-native' else local_uncertainty
             stage(args.native, args.scores, args.protocol, args.output)
+        elif args.transfer_stage == 'observe-natural-relation':
+            from .natural_relation_observation import run
+
+            report = run(args)
+            print(f"Original natural relation observations: {report['actual_counts']}; no detector evaluation")
+        elif args.transfer_stage == 'observe-relation-paths':
+            from .relation_intervention import run
+
+            report = run(args)
+            print(f"Scoped relation-path gate={report['scoped_mechanism_gate']}; natural detection not evaluated")
+        elif args.transfer_stage == 'qualify-streamed-head':
+            from .streamed_head_qualification import run
+
+            report = run(args)
+            print(f"Original head/cache/no-op qualified={report['qualified']}; no detector evaluation")
+        elif args.transfer_stage == 'qualify-streamed-observer':
+            from .streamed_qualification import run
+
+            report = run(args)
+            print(f"Original prefix qualified={report['all_qualified']}; no detector evaluation")
+        elif args.transfer_stage == 'qualify-relation-alignment':
+            from .relation_alignment import run
+
+            report = run(args)
+            print(f"Original source/token alignment: {report['status_counts']}; no detector scores")
+        elif args.transfer_stage == 'inventory-relation-source':
+            from .relation_observation import inventory
+
+            report = inventory(args)
+            print(f"Inventoried {report['answers']} original answers / {report['sources']} sources; no scores")
+        elif args.transfer_stage == 'qualify-relation-cache':
+            from .relation_cache_qualification import run
+
+            if args.ids is not None:
+                selection = data.read_json(args.ids)
+                args.ids = selection.get('ids') if isinstance(selection, dict) else selection
+                if not isinstance(args.ids, list):
+                    command.error('--ids requires a JSON array or an object with an ids array')
+            elif args.all:
+                args.limit = None
+            report = run(args)
+            print(f"Qualified replay: {report['status_counts']}; detector effectiveness not evaluated")
         elif args.transfer_stage == "collect":
             native_dataset.collect(args.output, args.fit, args.test, args.model, args.task, args.protocol, args.method)
         elif args.transfer_stage == 'probe-repairs':

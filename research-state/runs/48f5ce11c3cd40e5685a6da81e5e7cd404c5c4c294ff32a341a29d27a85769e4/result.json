@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "run_id": "48f5ce11c3cd40e5685a6da81e5e7cd404c5c4c294ff32a341a29d27a85769e4",
+  "completed_utc": "2026-11-03T09:49:53.265821+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Remaining897 QA TEST caches completed and sealed: all qualified, zero faithful precision unknown or violations, all five wrong-contract controls rejected per case. Combined with previously completed3canaries gives900unique answers/150sources; two real runs retained, no canary replay. Full900 maxlocal error0.00164830684662 and maxgroupmass error0.00224179029465 under preregistered intervals. Engineering identity only; no new model forwards, labels or detector effectiveness.",
+  "artifacts": [
+    {
+      "path": "outputs/h017-relation-20261103/m1-remaining/summary.json",
+      "sha256": "f7bfd5d3c337d3494493faa1b040faf7c92bab44ef0397cd04027d22708921fb"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m1-remaining/seal.json",
+      "sha256": "cfb044ebc6c9915c56522871089516e919cdb837d001e3803331dbc9ee7ef7e8"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/M1_900_AGGREGATE.json",
+      "sha256": "66fba0897ba7765d9189c289937dad45900741935783a15ac5910384453462e6"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/M1_900_AGGREGATE.md",
+      "sha256": "614822833e76989dcf4d761128bbb02d3b2018ce474492d3f4fcf41082f5cd22"
+    }
+  ]
+}

@@ -957,3 +957,25 @@ immutable installed117 release and no-repeat rules.
 H011 independent CPU review completed5c162fe8ade0a235a221a9c0ad309bb1f98a3a8cb79ba9a06e3887192f7ba3fb. Fixedbridge failed: b0/4/12=9/8/10 of16, whole48AUC.63715; no promotion or prompt rescue. H012 now only prepares natural span/candidate artifacts; no new QA or semantic coverage claim. See docs/results/h011_masked_reconstruction.md.
 
 H015 two-input shared-prefix engineering passed16actualforwards. H016 common-prefix scope×readout paired diagnosis completed312forwards/86930input/0generated;compoundind/joint andatomicind/joint rolecorrect9/16,16/16,15/16,16/16. Eight exposed toy sources only, no natural promotion. See docs/results/h016_paired_scope.md and REMOTE_EXPERIMENT_HANDOFF.md. Local complete CPU suite hit180s handoff bound (incomplete);70 installed targeted checks passed; exact pushed HEAD LinuxCI remains required.
+
+
+## H017 relation ownership: actual engineering runs (2026-11-03)
+
+- M0 `80913833f6fd73a6a5ed210f5d8607c377257755857798afd79d3bebffb5ca7f`: source-only occurrence plumbing completed2700answers/450sources;5806Data2txtfields;QA/Summary semanticunknown retained. No detector result.
+- M1 canary `5f7cf0ad2b984ce024a1be8060b9ca60294f51bd6fd7fbe545b32c36156a8e88`: three real source-distinct QA archives faithfully replayed; all5 wrong-contract controls rejected. Maxgroupmasserror0.00176084;0labels/LMforwards. Seals in outputs/h017-relation-20261103/m1-canary.
+- Remaining897 `48f5ce11c3cd40e5685a6da81e5e7cd404c5c4c294ff32a341a29d27a85769e4` completed/sealed/finished from immutable130-file target; original3 reused. Together900uniqueQA/150sources, allqualified; fivebadcontrols each rejected900cases. M1_900_AGGREGATE.json retains both true run identities.
+- Source/character/token alignment completed3+897 in two sealed runs (`7d065e2e…`, `8d6662cb…`):900original_axes_matched,124817answer tokens. Semantic ownership remains unknown; boundary overlaps retained. No labels/modelcalls/scores.
+- Original observer assets independently verified9files/291BF16tensors. Exact252-token prompt16465 passed two-world early-stop prefix qualification (`1fdf3766…`,2model/0head) and native full32-layer/head/cache/no-op (`7f222ddf…`,4model/3head). Bulk/cache maxlogiterror5.34058e-5; same-value Q/K/V no-op bitwiseequal. Six engineering model calls total, no detection result.
+- Scientific role/value Q/K/V assay `24dd6e0bd68475e1561dc4379c2e4e2655ad3999cd935c348af8441aea3bb8ce` completed48model/44head,847.83s. K-role main gate failed4/4; V-value directional control passed4/4. No high-p wrongR in the quartet. Instruments passed; finish=refuted for selectiveK mediation only. All units retained; no layer/head/prompt rescue or detector promotion.
+- Natural temporal observation `31185253c6389623bea031a07db70d77043ee67315e9fe85ca426725dc826d32` completed1native full441-token original input+1head76rows,67.24s. All32layers/32heads/77receivers retained and AV/archival15 qualified. SourceBC becameRago, but observer prefersBC(.982174) overago(.000114724). FP32 producer metadata reproduced; strictauxiliaryF64 reference remainsinconclusive6/76, failure retained. Observation only, no new risk/AUROC.
+- Reused oldBF16 readout chain: ago rawfullgaprank1165/point1492 ->R4prior116867/final114453; V3witness1165 ->final20219. Fixedcrossprecision budget failed44/76 despite matching axes, so no joint-causal bridge with M4FP32. This prepares a new relation-specific readout question, not contextclipping/max-weight tuning.
+
+Use the shared transfer CLI: `inventory-relation-source`, `qualify-relation-cache`,
+`qualify-relation-alignment`, `qualify-streamed-observer`, `qualify-streamed-head`,
+then the separately claimed `observe-relation-paths` and `observe-natural-relation`. Each requires the exact
+asset manifest, completed head qualification and signed scientific admission; its
+`--help` lists path arguments. A completed engineering gate is reused, not rerun
+when downstream analysis changes. See [actual report](../docs/results/h017_relation_binding.md),
+[protocol](../docs/research/h017_address_payload_protocol.md),
+[derivation](../docs/research/h017_path_derivation.md) and
+[offline formula view](../docs/source-reading/H017_MATH.html).

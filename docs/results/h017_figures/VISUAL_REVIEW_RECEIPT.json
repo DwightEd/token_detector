@@ -1,0 +1,140 @@
+{
+  "schema": "h017-m3-figures-visual-review-v1",
+  "reviewed_utc": "2026-11-03T10:47:39.936662+00:00",
+  "source_run_id": "24dd6e0bd68475e1561dc4379c2e4e2655ad3999cd935c348af8441aea3bb8ce",
+  "source_root_seal_sha256": "28fed29bba0087eeca6bb573052385f755350b3aec9daf99456fb97bf58a6d1f",
+  "source_status": "complete48model44head; preregistered mechanism gate refuted",
+  "figures": 3,
+  "formats": [
+    "png",
+    "pdf",
+    "svg"
+  ],
+  "endpoint_rows": 44,
+  "all_head_receiver_rows": 1536,
+  "physical_heads": 32,
+  "raw_literal_basis": [
+    100,
+    200
+  ],
+  "source_receiver_positions": [
+    63,
+    66
+  ],
+  "natural_annotations_read": 0,
+  "new_model_calls": 0,
+  "new_scientific_scores": 0,
+  "visual_changes_only": [
+    "Added visible preregistered gateFAILED and constructed-scope captions before real rendering"
+  ],
+  "inspection": {
+    "png": "All three original PNGs inspected withview_image",
+    "svg": "All three SVGs parsed and rendered by isolated headlessEdge; browserPNG previews inspected withview_image; candidate plot additionally inspected using full-fit SVG wrapper",
+    "layout": "No clipped labels or missing negative/scope captions in fit previews; absolute margin scale intentionally retained, exact small effects remain inCSV",
+    "svg_preview_receipt_sha256": "929d35947a2bd0d00066368020d944c16c05fea589a528b1bb5ab5a1b275ac0f"
+  },
+  "plot_runtime": {
+    "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+    "executable": "D:\\Apps\\Research\\Tools\\anaconda3\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "backend": "Agg",
+    "dependencies": {
+      "matplotlib": "3.10.6",
+      "numpy": "2.3.5",
+      "contourpy": "1.3.3",
+      "Pillow": "12.0.0"
+    },
+    "scope": "plotting runtime, not detector/model runtime"
+  },
+  "files": [
+    {
+      "name": "all-endpoints.csv",
+      "bytes": 5579,
+      "sha256": "ec23f15ee3d7c15730d8b29b05c2eede80ca1189649696828160b17a50e1a091"
+    },
+    {
+      "name": "all32-head-all-receivers.csv",
+      "bytes": 181498,
+      "sha256": "d6ede286d0cf8964ec2045b25c789ece7e35cb2c8d04b86cafeba7b0e1a7453f"
+    },
+    {
+      "name": "all32-head-all-receivers.receipt.json",
+      "bytes": 492,
+      "sha256": "9369010b1d620de5a16005acb91e24c93f319d034f189ef78fd2ef02b139f6ef"
+    },
+    {
+      "name": "all32-head-condition-prevalue.pdf",
+      "bytes": 74290,
+      "sha256": "adc18e89c8758f8620845cef753fa0cd89069a7f7087584eab041a86d39052af"
+    },
+    {
+      "name": "all32-head-condition-prevalue.png",
+      "bytes": 366066,
+      "sha256": "29a5883a07660531fb91de57653bf9d58e01bee6b10c31e14a7a43673f160e0a",
+      "dimensions": [
+        4180,
+        2420
+      ]
+    },
+    {
+      "name": "all32-head-condition-prevalue.svg",
+      "bytes": 85530,
+      "sha256": "95544dd3de75c7f0919c4a492067d983b906b86238937d49a999a55971884fda"
+    },
+    {
+      "name": "all32-head-profiles.csv",
+      "bytes": 17576,
+      "sha256": "79c943b0894f98c9238ddf9f33dfb6134159a95c9c31af9e9d01a46b97e64a43"
+    },
+    {
+      "name": "baseline-patches-noise-margin.pdf",
+      "bytes": 16964,
+      "sha256": "366762bdfc510a1cc5d811ad10a21c6df60b8f4fb6c8e06eb4a3458477a05c97"
+    },
+    {
+      "name": "baseline-patches-noise-margin.png",
+      "bytes": 254523,
+      "sha256": "958c6791d218c7512bad54f02c70d0fc6072bfd456506207a33ceb126d9f315b",
+      "dimensions": [
+        3740,
+        2200
+      ]
+    },
+    {
+      "name": "baseline-patches-noise-margin.svg",
+      "bytes": 45631,
+      "sha256": "2636eeaf9973f32dea4196b5471d5fb573816a483a9ecc7d4d85456d6eb78845"
+    },
+    {
+      "name": "CAPTIONS.md",
+      "bytes": 2535,
+      "sha256": "de925424eff1beb1ee2c050b41093705db63f494526d251721e9e3af56b6011b"
+    },
+    {
+      "name": "FIGURE_MANIFEST.json",
+      "bytes": 14084,
+      "sha256": "a7b064b5771c607c1b30822c1b3db2e3abdf2d3806110c6486ba9137d348380b"
+    },
+    {
+      "name": "true-candidate-probability-mass.pdf",
+      "bytes": 18360,
+      "sha256": "3fd4fca3acad9f2c68bbb5f668415ece02ba35d06911b0c62011d88036a987d8"
+    },
+    {
+      "name": "true-candidate-probability-mass.png",
+      "bytes": 271014,
+      "sha256": "ca877e78c16a7cc61953e0020c3a57b12529cb70f824713374492ec9ecfe7416",
+      "dimensions": [
+        3740,
+        2200
+      ]
+    },
+    {
+      "name": "true-candidate-probability-mass.svg",
+      "bytes": 61624,
+      "sha256": "93348f930f06ee640f5bbd4d1934e43ed05afff47aa701d72aee708b080efce6"
+    }
+  ],
+  "top_level_bytes_before_review_receipt": 1415766,
+  "publication_scope": "Top-level plots/CSV/captions/manifests; svg-preview browser profile is verification scratch, not publication data."
+}

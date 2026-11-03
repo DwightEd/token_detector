@@ -1,0 +1,356 @@
+{
+  "scope": "One original natural observation, not detector performance or causality",
+  "run_id": "31185253c6389623bea031a07db70d77043ee67315e9fe85ca426725dc826d32",
+  "result": {
+    "actual_counts": {
+      "model_calls": 1,
+      "head_calls": 1
+    },
+    "archive_qualified": true,
+    "all_layers_AV_qualified": true,
+    "layers": 32,
+    "physical_heads_per_layer": [
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32
+    ],
+    "query_rows": 77,
+    "original_target_rows": 76,
+    "AV_policy": {
+      "absolute": 0.002,
+      "relative": 0.0001
+    },
+    "phase": [
+      {
+        "layer": 0,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 4.172325134277344e-07,
+        "av_max_error_over_tolerance": 0.00020731135737150908
+      },
+      {
+        "layer": 1,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 5.010515451431274e-07,
+        "av_max_error_over_tolerance": 0.0002501833369024098
+      },
+      {
+        "layer": 2,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 7.152557373046875e-07,
+        "av_max_error_over_tolerance": 0.00035203673178330064
+      },
+      {
+        "layer": 3,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 8.642673492431641e-07,
+        "av_max_error_over_tolerance": 0.00042565586045384407
+      },
+      {
+        "layer": 4,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 1.1362135410308838e-06,
+        "av_max_error_over_tolerance": 0.0005668638041242957
+      },
+      {
+        "layer": 5,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 9.238719940185547e-07,
+        "av_max_error_over_tolerance": 0.00045316110481508076
+      },
+      {
+        "layer": 6,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 1.0728836059570312e-06,
+        "av_max_error_over_tolerance": 0.000521708105225116
+      },
+      {
+        "layer": 7,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 1.3262033462524414e-06,
+        "av_max_error_over_tolerance": 0.0006572175770998001
+      },
+      {
+        "layer": 8,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 1.3113021850585938e-06,
+        "av_max_error_over_tolerance": 0.0006363621796481311
+      },
+      {
+        "layer": 9,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 1.430511474609375e-06,
+        "av_max_error_over_tolerance": 0.000709738174919039
+      },
+      {
+        "layer": 10,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 1.5683472156524658e-06,
+        "av_max_error_over_tolerance": 0.000782730639912188
+      },
+      {
+        "layer": 11,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 1.7285346984863281e-06,
+        "av_max_error_over_tolerance": 0.0008357882034033537
+      },
+      {
+        "layer": 12,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 1.3709068298339844e-06,
+        "av_max_error_over_tolerance": 0.0006821125862188637
+      },
+      {
+        "layer": 13,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 1.6689300537109375e-06,
+        "av_max_error_over_tolerance": 0.0007913462468422949
+      },
+      {
+        "layer": 14,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 2.1457672119140625e-06,
+        "av_max_error_over_tolerance": 0.0010430656839162111
+      },
+      {
+        "layer": 15,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 1.4901161193847656e-06,
+        "av_max_error_over_tolerance": 0.0007261710125021636
+      },
+      {
+        "layer": 16,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 1.6093254089355469e-06,
+        "av_max_error_over_tolerance": 0.0007818505982868373
+      },
+      {
+        "layer": 17,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 1.5497207641601562e-06,
+        "av_max_error_over_tolerance": 0.0007465581875294447
+      },
+      {
+        "layer": 18,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 1.6689300537109375e-06,
+        "av_max_error_over_tolerance": 0.0007905556121841073
+      },
+      {
+        "layer": 19,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 1.0728836059570312e-06,
+        "av_max_error_over_tolerance": 0.0005228734225966036
+      },
+      {
+        "layer": 20,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 1.7881393432617188e-06,
+        "av_max_error_over_tolerance": 0.0008504044380970299
+      },
+      {
+        "layer": 21,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 2.86102294921875e-06,
+        "av_max_error_over_tolerance": 0.001356599386781454
+      },
+      {
+        "layer": 22,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 1.430511474609375e-06,
+        "av_max_error_over_tolerance": 0.0006952116964384913
+      },
+      {
+        "layer": 23,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 1.7881393432617188e-06,
+        "av_max_error_over_tolerance": 0.0008490163017995656
+      },
+      {
+        "layer": 24,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 2.86102294921875e-06,
+        "av_max_error_over_tolerance": 0.0013019307516515255
+      },
+      {
+        "layer": 25,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 4.76837158203125e-06,
+        "av_max_error_over_tolerance": 0.002324518747627735
+      },
+      {
+        "layer": 26,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 2.0116567611694336e-06,
+        "av_max_error_over_tolerance": 0.0009939952287822962
+      },
+      {
+        "layer": 27,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 4.0531158447265625e-06,
+        "av_max_error_over_tolerance": 0.0019162988755851984
+      },
+      {
+        "layer": 28,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 3.0994415283203125e-06,
+        "av_max_error_over_tolerance": 0.0014894901541993022
+      },
+      {
+        "layer": 29,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 7.152557373046875e-06,
+        "av_max_error_over_tolerance": 0.0033286232501268387
+      },
+      {
+        "layer": 30,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 2.2649765014648438e-06,
+        "av_max_error_over_tolerance": 0.001072215149179101
+      },
+      {
+        "layer": 31,
+        "physical_heads": 32,
+        "receivers": 77,
+        "keys": 441,
+        "av_max_error": 3.5762786865234375e-06,
+        "av_max_error_over_tolerance": 0.0016849657986313105
+      }
+    ],
+    "hook_cleanup": true,
+    "resource_report": {
+      "module_loads": 35,
+      "tensor_bytes_transferred": 16060522496,
+      "max_planned_gpu_bytes": 3490574336,
+      "active_module": null,
+      "all_parameters_meta": true,
+      "index_historical_identity": false,
+      "precision": "original BF16 weights, FP32 Linear/embedding-output/native arithmetic",
+      "original_capture_qualified": false
+    },
+    "new_detector_scores": 0,
+    "auroc": null,
+    "target_annotation_reads": 0,
+    "original_generator_internal_states": false,
+    "source_reading_Q_observed": false,
+    "posttoken_trajectory_observed": true,
+    "causal_necessity_tested": false,
+    "schema": "h017-natural-temporal-observation-result-v1",
+    "id": "15716",
+    "source_id": "15540",
+    "after": {
+      "available_physical_ram_bytes": 2912722944,
+      "process_working_bytes": 1525903360,
+      "process_peak_working_bytes": 2521993216,
+      "process_private_bytes": 6454136832,
+      "process_peak_commit_bytes": 13074460672,
+      "gpu_free_bytes": 3028287488,
+      "gpu_total_bytes": 8546484224,
+      "gpu_allocated_bytes": 8520192,
+      "gpu_reserved_bytes": 4225761280,
+      "gpu_peak_allocated_bytes": 3325260288,
+      "gpu_peak_reserved_bytes": 4225761280
+    },
+    "elapsed_seconds": 67.23560699995141,
+    "manual_source_response_temporal_conflict_preidentified": true,
+    "direct_text_verifier_baseline_measured": false,
+    "internal_detection_localization_cost_advantage": "not_tested",
+    "automatic_retry": false
+  },
+  "audit_status": "producer_identity_and_all_native_phases_verified_strict_F64_reference_inconclusive",
+  "full_audit_sha256": "676241bd7ed729c6e6f5a93d6e96b445706f07459774c514f145905047687c0c",
+  "strict_F64_reference_check_passed": false,
+  "producer_identity_passed": true,
+  "input_result_sha256": "3e7fe1277f8450f033ab0f86beb3363e8b354959d839c7cd5fb82950a79b9d16",
+  "existing_readout_audit_sha256": "c05194562dcb75c1ee8c0265521e6cf4ac1b2f733912093537726fa0fd7b698c"
+}

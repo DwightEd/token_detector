@@ -1,0 +1,153 @@
+{
+  "scope": "One fixed constructed quartet; scientific negative; not natural detector evaluation",
+  "run_id": "24dd6e0bd68475e1561dc4379c2e4e2655ad3999cd935c348af8441aea3bb8ce",
+  "result": {
+    "rows": [
+      {
+        "id": "S00",
+        "role_effect": -0.03625202178955078,
+        "noise_max": 0.08250904083251953,
+        "off_target": 0.0005788803100585938,
+        "address_shift": 0.014871151186525822,
+        "role_pass": false,
+        "value_effect": 0.23023605346679688,
+        "value_pass": true
+      },
+      {
+        "id": "S10",
+        "role_effect": -0.00617218017578125,
+        "noise_max": 0.14995574951171875,
+        "off_target": 0.001468658447265625,
+        "address_shift": 0.012857900466769934,
+        "role_pass": false,
+        "value_effect": 0.1761455535888672,
+        "value_pass": true
+      },
+      {
+        "id": "S01",
+        "role_effect": -0.012218475341796875,
+        "noise_max": 0.2883872985839844,
+        "off_target": 0.00160980224609375,
+        "address_shift": -0.0006934553384780884,
+        "role_pass": false,
+        "value_effect": 0.9806766510009766,
+        "value_pass": true
+      },
+      {
+        "id": "S11",
+        "role_effect": -0.20856094360351562,
+        "noise_max": 0.41387176513671875,
+        "off_target": 0.0030269622802734375,
+        "address_shift": 0.011938042705878615,
+        "role_pass": false,
+        "value_effect": 0.37842750549316406,
+        "value_pass": true
+      }
+    ],
+    "reorder_difference": 3.326566696166992,
+    "reorder_pass": false,
+    "task_legible": true,
+    "scoped_mechanism_gate": false,
+    "negative_scope": "Rejects tested block15 numeric-K final-output mediation only; not absence of encoded role information",
+    "natural_detection_evaluated": false,
+    "auroc": null,
+    "population": "one_constructed_quartet",
+    "actual_counts": {
+      "model_calls": 48,
+      "head_calls": 44
+    },
+    "elapsed_seconds": 847.8279180000536,
+    "cache_identity_unchanged": true,
+    "all_physical_heads_retained": true,
+    "resource_report": {
+      "module_loads": 1676,
+      "tensor_bytes_transferred": 766702387200,
+      "max_planned_gpu_bytes": 3421377536,
+      "active_module": null,
+      "all_parameters_meta": true,
+      "index_historical_identity": false,
+      "precision": "original BF16 weights, FP32 Linear/embedding-output/native arithmetic",
+      "original_capture_qualified": false
+    },
+    "schema": "h017-role-value-intervention-result-v1",
+    "original_generator_internal_state": false,
+    "labels_read": false,
+    "after": {
+      "available_physical_ram_bytes": 4610117632,
+      "process_working_bytes": 106004480,
+      "process_peak_working_bytes": 2571505664,
+      "process_private_bytes": 2550398976,
+      "process_peak_commit_bytes": 13532340224,
+      "gpu_free_bytes": 7155482624,
+      "gpu_total_bytes": 8546484224,
+      "gpu_allocated_bytes": 8520192,
+      "gpu_reserved_bytes": 98566144,
+      "gpu_peak_allocated_bytes": 3247838720,
+      "gpu_peak_reserved_bytes": 3271557120
+    }
+  },
+  "independent_audit_status": "verified",
+  "baselines": [
+    {
+      "world": "S00",
+      "source_alpha_value": 100,
+      "source_supports_R": false,
+      "p100": 0.9966136813163757,
+      "p200": 9.27072687773034e-06,
+      "candidate_mass": 0.9966230538998536,
+      "rank100": 1,
+      "rank200": 13,
+      "margin": -11.585256576538086,
+      "top1_token_id": 1041,
+      "wrong_R_high_observer_probability": false
+    },
+    {
+      "world": "S10",
+      "source_alpha_value": 200,
+      "source_supports_R": true,
+      "p100": 0.0006750244065187871,
+      "p200": 0.984019935131073,
+      "candidate_mass": 0.9846950834049469,
+      "rank100": 5,
+      "rank200": 1,
+      "margin": 7.2846527099609375,
+      "top1_token_id": 1049,
+      "wrong_R_high_observer_probability": false
+    },
+    {
+      "world": "S01",
+      "source_alpha_value": 200,
+      "source_supports_R": true,
+      "p100": 0.00017158134141936898,
+      "p200": 0.9621356725692749,
+      "candidate_mass": 0.9623070671709923,
+      "rank100": 11,
+      "rank200": 1,
+      "margin": 8.631853103637695,
+      "top1_token_id": 1049,
+      "wrong_R_high_observer_probability": false
+    },
+    {
+      "world": "S11",
+      "source_alpha_value": 100,
+      "source_supports_R": false,
+      "p100": 0.9903366565704346,
+      "p200": 0.0002564953174442053,
+      "candidate_mass": 0.9905929250708262,
+      "rank100": 1,
+      "rank200": 8,
+      "margin": -8.258689880371094,
+      "top1_token_id": 1041,
+      "wrong_R_high_observer_probability": false
+    }
+  ],
+  "interpretation_limits": [
+    "One construction-licensed quartet, not an independent natural population.",
+    "Observer conditional probability, not original-generator sampling probability.",
+    "Negative K effect rejects this numeric-K output mediation, not role information in K.",
+    "Physical attention is not a correctness probability or unique semantic circuit.",
+    "Serialized data check values; runtime storage-alias assertions rely on sealed execution reports."
+  ],
+  "source_result_sha256": "a9459e466d6fa1789762bdbb40b62023487982340ea199991957761ededa9960",
+  "source_audit_sha256": "4f20211217cbe1ded10c520d17659d81dca01ee2a61aa91833f4acda8a8ab6db"
+}

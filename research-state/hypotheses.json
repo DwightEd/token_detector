@@ -236,7 +236,7 @@
     },
     {
       "id": "H017_RELATION_OWNERSHIP_COMPUTATION",
-      "status": "proposed_design_reviewed_not_claimed",
+      "status": "M3_selectiveK_refuted_M4_observed_no_highp_wrongunit_next_readout_admission",
       "question": "Which relation-conditioned internal computations expose source ownership incorrectly expressed in an existing response, beyond direct text verification?",
       "design": "refine-logs/EXPERIMENT_PLAN_20261103_161504.md",
       "admission": "research-state/relation_misbinding_admission.json",
@@ -256,11 +256,134 @@
         "value/readout failure despite apparently consistent retrieval",
         "post-token echo or lexical/position artifact"
       ],
-      "new_model_calls": 0,
+      "new_model_calls": 55,
       "new_detector_scores": false,
       "causal_result": false,
       "scope": "Frozen Llama observer handling existing responses, not original multi-generator causes.",
-      "next": "M0 source-only inventory and M1 numeric replay design, then concrete module/run admission; no new role-QA branch."
+      "next": "Root must inspect and independently review existing M4 run31185253 result/seal, then explicitly finish the existing claim. Output markers exist and no matching process remains; this checkpoint did not open the scientific result or finish it. Never relaunch, retry, modify source/R, or infer a detector/AUROC result from this status.",
+      "completed_engineering_runs": [
+        "80913833f6fd73a6a5ed210f5d8607c377257755857798afd79d3bebffb5ca7f",
+        "5f7cf0ad2b984ce024a1be8060b9ca60294f51bd6fd7fbe545b32c36156a8e88",
+        "48f5ce11c3cd40e5685a6da81e5e7cd404c5c4c294ff32a341a29d27a85769e4",
+        "7d065e2e7d08739ac4c2a8ad2097b09e426f10ed7c357561c4f53a7ad1926268",
+        "1fdf37662387671a919a7eb942457bae29214391790fa92dce73af7442dbeb64",
+        "7f222ddfcf344a70236c452b9444815c1cfffdc8928483de8fe4107f6896cff5",
+        "8d6662cb8bb5060ee975424b0fa12f4c1535a78047e6de39efd0a50a92033911"
+      ],
+      "active_run": "31185253c6389623bea031a07db70d77043ee67315e9fe85ca426725dc826d32",
+      "engineering_aggregate": "outputs/h017-relation-20261103/M1_900_AGGREGATE.json",
+      "new_full_model_or_head_calls": 101,
+      "new_full_model_calls": 53,
+      "new_head_calls": 48,
+      "new_full_model_or_head_calls_scope": "53full model+48head;2earlystop included separately in55models",
+      "M2_character_aligned_cases": 900,
+      "M2_semantic_unknown_cases": 900,
+      "M3_scientific_proposal": {
+        "status": "completed_refuted",
+        "run_id": "24dd6e0bd68475e1561dc4379c2e4e2655ad3999cd935c348af8441aea3bb8ce",
+        "actual_calls": 48,
+        "actual_head_calls": 44,
+        "scoped_mechanism_gate": false
+      },
+      "engineering_aggregates": {
+        "M1": "outputs/h017-relation-20261103/M1_900_AGGREGATE.json",
+        "M2": "outputs/h017-relation-20261103/M2_900_AGGREGATE.json"
+      },
+      "active_scientific_run": null,
+      "next_question": "Use F050/F051 rather than repeating confidence or FN counts. Seek new relation-specific information/readout that preserves a licensed local contradiction without flagging correct paraphrases or legal computation. Do not cap context or take arbitrary max/weights just to rescue15716. Consider separately reviewed source-semantic contrast only with complete tuple licenses, matched meaning-preserving controls and natural original-axis risk/unknown contract; no new algorithm/model job is admitted yet. Keep oldBF16 scores and FP32 physical trace separate.",
+      "M3_scientific_result": {
+        "schema": "h017-completed-scientific-checkpoint-v1",
+        "run_id": "24dd6e0bd68475e1561dc4379c2e4e2655ad3999cd935c348af8441aea3bb8ce",
+        "status": "completed_sealed_finished_refuted_selective_K_mediation",
+        "armed": false,
+        "pid": null,
+        "parent_pid": null,
+        "actual_counts": {
+          "model_calls": 48,
+          "head_calls": 44
+        },
+        "elapsed_seconds": 847.8279180000536,
+        "evidence": [
+          {
+            "path": "outputs/h017-relation-20261103/m3-intervention/result.json",
+            "sha256": "a9459e466d6fa1789762bdbb40b62023487982340ea199991957761ededa9960"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/m3-intervention/seal.json",
+            "sha256": "28fed29bba0087eeca6bb573052385f755350b3aec9daf99456fb97bf58a6d1f"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/m3-interpretation-audit-v1/audit.json",
+            "sha256": "4f20211217cbe1ded10c520d17659d81dca01ee2a61aa91833f4acda8a8ab6db"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/m3-interpretation-audit-v1/seal.json",
+            "sha256": "8ecf0b13af2a6e29bd8ddd1daf8e4c3e53aa62a343a83ea68aa4f089033ec784"
+          },
+          {
+            "path": "research-state/runs/24dd6e0bd68475e1561dc4379c2e4e2655ad3999cd935c348af8441aea3bb8ce/result.json",
+            "sha256": "c25cdf294e7dcc85cbe674951a434d019afe8d1e23ac3800ca4671d4420c1869"
+          }
+        ],
+        "next_question": "Review only source facts of the two previously frozen RAGTruth numeric-ID QA panel cases matching QA900 (not all task=QA across FRED/HalluRAG). Freeze complete subject/predicate/scope/polarity/occurrence licenses and unknown before linking the fixed original response. Then independently admit an original-axis natural-error diagnostic if it discriminates a new cause. Do not extend the normal-retrieval toy with head/layer/prompt rescue or turn V effects directly into risk. No new detector/target-label fitting or AUROC claim."
+      },
+      "M4_observation": {
+        "schema": "h017-M4-final-checkpoint-v1",
+        "run_id": "31185253c6389623bea031a07db70d77043ee67315e9fe85ca426725dc826d32",
+        "status": "completed_sealed_finished_supported_descriptive_scope",
+        "armed": false,
+        "pid": null,
+        "parent_pid": null,
+        "actual_counts": {
+          "model_calls": 1,
+          "head_calls": 1
+        },
+        "elapsed_seconds": 67.23560699995141,
+        "strict_F64_reference": "inconclusive_preserved",
+        "new_risk_scores": 0,
+        "evidence": [
+          {
+            "path": "outputs/h017-relation-20261103/m4-natural-observation/result.json",
+            "sha256": "3e7fe1277f8450f033ab0f86beb3363e8b354959d839c7cd5fb82950a79b9d16"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/m4-natural-observation/seal.json",
+            "sha256": "74185045b19b71418f1404a486f46650d76771bd50418fe6991f6d650ed7ba6c"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/m4-interpretation-supplement-v1/audit.json",
+            "sha256": "676241bd7ed729c6e6f5a93d6e96b445706f07459774c514f145905047687c0c"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/m4-interpretation-supplement-v1/seal.json",
+            "sha256": "e70ad289b9404e504e6b2d985952be8db68b667665f435ba2b2d2111124539e9"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/M4_POSTRUN_INTERPRETATION_REVIEW.md",
+            "sha256": "aa315c3c94b730a840085fdbde64a1d9247852efa90e295e6df96e95b3e3f281"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/M4_INITIAL_STRICT_AUDIT_FAILURE.json",
+            "sha256": "1fc9b949c76a9adf7984780cb33a7874d34f337ee8611bbb5c79823db3515785"
+          }
+        ],
+        "readout_evidence": [
+          {
+            "path": "outputs/h017-relation-20261103/M4_EXISTING_READOUT_CHAIN_AUDIT.json",
+            "sha256": "c05194562dcb75c1ee8c0265521e6cf4ac1b2f733912093537726fa0fd7b698c"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/M4_EXISTING_READOUT_CHAIN_AUDIT.md",
+            "sha256": "aec42da321a0e98d40c2f0db83cd5638a596db0bab30c26ca3fbb7ff16de52d5"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/M4_EXISTING_READOUT_CHAIN_RECEIPT.json",
+            "sha256": "42ba98203bafad2c05ea0ed99481c204ad25c6b29e3133b4a17ecf83f2cb7d98"
+          }
+        ],
+        "next_question": "Use F050/F051 rather than repeating confidence or FN counts. Seek new relation-specific information/readout that preserves a licensed local contradiction without flagging correct paraphrases or legal computation. Do not cap context or take arbitrary max/weights just to rescue15716. Consider separately reviewed source-semantic contrast only with complete tuple licenses, matched meaning-preserving controls and natural original-axis risk/unknown contract; no new algorithm/model job is admitted yet. Keep oldBF16 scores and FP32 physical trace separate."
+      },
+      "new_model_calls_scope": "54 completed pre-M4 original model calls; M4 attempted1model/1head separate, outcome not reviewed by checkpoint."
     }
   ]
 }

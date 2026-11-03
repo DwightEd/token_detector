@@ -1,0 +1,86 @@
+{
+  "original_assay_seal_sha256": "28fed29bba0087eeca6bb573052385f755350b3aec9daf99456fb97bf58a6d1f",
+  "files": [
+    {
+      "name": "all-endpoints.csv",
+      "sha256": "ec23f15ee3d7c15730d8b29b05c2eede80ca1189649696828160b17a50e1a091",
+      "bytes": 5579
+    },
+    {
+      "name": "all32-head-all-receivers.csv",
+      "sha256": "d6ede286d0cf8964ec2045b25c789ece7e35cb2c8d04b86cafeba7b0e1a7453f",
+      "bytes": 181498
+    },
+    {
+      "name": "all32-head-all-receivers.receipt.json",
+      "sha256": "9369010b1d620de5a16005acb91e24c93f319d034f189ef78fd2ef02b139f6ef",
+      "bytes": 492
+    },
+    {
+      "name": "all32-head-condition-prevalue.pdf",
+      "sha256": "adc18e89c8758f8620845cef753fa0cd89069a7f7087584eab041a86d39052af",
+      "bytes": 74290
+    },
+    {
+      "name": "all32-head-condition-prevalue.png",
+      "sha256": "29a5883a07660531fb91de57653bf9d58e01bee6b10c31e14a7a43673f160e0a",
+      "bytes": 366066
+    },
+    {
+      "name": "all32-head-condition-prevalue.svg",
+      "sha256": "95544dd3de75c7f0919c4a492067d983b906b86238937d49a999a55971884fda",
+      "bytes": 85530
+    },
+    {
+      "name": "all32-head-profiles.csv",
+      "sha256": "79c943b0894f98c9238ddf9f33dfb6134159a95c9c31af9e9d01a46b97e64a43",
+      "bytes": 17576
+    },
+    {
+      "name": "baseline-patches-noise-margin.pdf",
+      "sha256": "366762bdfc510a1cc5d811ad10a21c6df60b8f4fb6c8e06eb4a3458477a05c97",
+      "bytes": 16964
+    },
+    {
+      "name": "baseline-patches-noise-margin.png",
+      "sha256": "958c6791d218c7512bad54f02c70d0fc6072bfd456506207a33ceb126d9f315b",
+      "bytes": 254523
+    },
+    {
+      "name": "baseline-patches-noise-margin.svg",
+      "sha256": "2636eeaf9973f32dea4196b5471d5fb573816a483a9ecc7d4d85456d6eb78845",
+      "bytes": 45631
+    },
+    {
+      "name": "CAPTIONS.md",
+      "sha256": "de925424eff1beb1ee2c050b41093705db63f494526d251721e9e3af56b6011b",
+      "bytes": 2535
+    },
+    {
+      "name": "FIGURE_MANIFEST.json",
+      "sha256": "a7b064b5771c607c1b30822c1b3db2e3abdf2d3806110c6486ba9137d348380b",
+      "bytes": 14084
+    },
+    {
+      "name": "true-candidate-probability-mass.pdf",
+      "sha256": "3fd4fca3acad9f2c68bbb5f668415ece02ba35d06911b0c62011d88036a987d8",
+      "bytes": 18360
+    },
+    {
+      "name": "true-candidate-probability-mass.png",
+      "sha256": "ca877e78c16a7cc61953e0020c3a57b12529cb70f824713374492ec9ecfe7416",
+      "bytes": 271014
+    },
+    {
+      "name": "true-candidate-probability-mass.svg",
+      "sha256": "93348f930f06ee640f5bbd4d1934e43ed05afff47aa701d72aee708b080efce6",
+      "bytes": 61624
+    },
+    {
+      "name": "VISUAL_REVIEW_RECEIPT.json",
+      "sha256": "2490c2463ff3e52377479f24a09cdcd7d68e13ea4cca76fae87134642b6288ae",
+      "bytes": 4850
+    }
+  ],
+  "publication_scope": "All32heads and all44endpoints, negative single constructed quartet; no detector evaluation"
+}

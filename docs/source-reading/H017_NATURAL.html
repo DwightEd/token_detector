@@ -1,0 +1,115 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>自然时间错例：原词概率与全部层头</title><meta name="source-sha256" content="aa315c3c94b730a840085fdbde64a1d9247852efa90e295e6df96e95b3e3f281">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
+<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
+<style>body{max-width:1040px;margin:40px auto;padding:0 24px;color:#17253a;font:17px/1.8 system-ui,sans-serif;background:#fbfcff}nav{font-size:14px}a{color:#245bc7}h1,h2{line-height:1.35}img{max-width:100%;height:auto}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #d5ddeb;padding:10px;text-align:left}th{background:#edf2fb}pre{overflow:auto;padding:16px;background:#edf2f8}code{font-size:.88em}.equation{overflow-x:auto}.flow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:20px;background:#edf2fb;border-radius:12px}.flow span{background:white;padding:8px 12px;border:1px solid #cbd7eb}footer{font-size:13px;border-top:1px solid #d5ddeb;margin-top:40px;padding-top:16px}@media print{body{font-size:12px;margin:0}nav{display:none}}</style>
+</head><body><nav><a href="H017_PROGRESS.html">关系错绑：实验进展与证据</a> · <a href="H017_MATH.html">高注意力为何不等于正确关系</a> · <a href="H017_PROTOCOL.html">四来源与Q/K/V干预：冻结协议</a> · <a href="H017_NATURAL.html">自然时间错例：原词概率与全部层头</a> · <a href="H017_READOUT.html">旧R4/V3：单位告警在哪一步下降</a></nav><main><h1>H017 M4 独立解释：数字高概率，错误时间参照低概率</h1>
+<p>这条自然回答<strong>没有</strong>实例化“观察器高概率写出整个错误时间关系”。冻结 Llama3.1 观察器高概率预测原回答里的300和years，却给错误的ago很低概率，并将来源里的BC作为首选。不能据此归因原Mistral生成器为何出错，也没有产生新检测方法或AUROC结果。</p>
+<p>原run：<code>31185253c6389623bea031a07db70d77043ee67315e9fe85ca426725dc826d32</code>，15716/source15540；原样441tokens、1次native完整32层+1次76行完整词表head，67.235607秒。来源事实表先冻结，之后父任务才打开固定回答；没有读取发布标注。</p>
+<h2>原回答词概率与实际首选</h2>
+<p>下面概率均由保存的128256词表logits归一化。FP32为原生产元数据，FP64为独立参考。它们在这三个词上的高/低判断相同；p&gt;0.5仅描述原token预测概率，不是事实正确性或风险判定。</p>
+<table>
+<thead>
+<tr>
+<th>原回答目标</th>
+<th>原answer index / prechoice绝对位置</th>
+<th style="text-align: right;">FP32 p</th>
+<th style="text-align: right;">FP64 p</th>
+<th style="text-align: right;">rank</th>
+<th>实际top1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>300</td>
+<td>58 /422</td>
+<td style="text-align: right;">0.997988105</td>
+<td style="text-align: right;">0.997987195</td>
+<td style="text-align: right;">1</td>
+<td>300（ID3101）</td>
+</tr>
+<tr>
+<td>years</td>
+<td>59 /423</td>
+<td style="text-align: right;">0.925592422</td>
+<td style="text-align: right;">0.925592334</td>
+<td style="text-align: right;">1</td>
+<td>years（ID1667）</td>
+</tr>
+<tr>
+<td>ago</td>
+<td>60 /424</td>
+<td style="text-align: right;">0.000114723829</td>
+<td style="text-align: right;">0.000114723776</td>
+<td style="text-align: right;">5</td>
+<td>BC（ID18531）</td>
+</tr>
+</tbody>
+</table>
+<p>在预测ago的位置，top1的<code>BC</code>概率为0.982174022（FP64），比原ago高9.05499649 logit。目标ago的logp为−9.072982788/−9.072983265，预测分布entropy约0.095315；低entropy在这里反映分布集中于BC，不能误写成模型确信ago或整句错误事实。</p>
+<p>通过已匹配SHA的真实tokenizer元数据<strong>仅解码</strong>原76个target IDs及对应top1 IDs，确认18531的字面是前导空格加BC。完整结果在<code>m4-interpretation-supplement-v1/all76_decoded_original_and_top1.csv</code>，另有<code>M4_ALL76_TOP1_PROBABILITIES.csv</code>保存全部76位置的首选概率，未挑选其他高分词。没有重新tokenize、模型或head调用。</p>
+<p>仅这三个原token的条件概率乘积约0.000105974；它是给定此前原回答前缀的精确词序列概率，不是整条事实真假概率。将错误ago强制输入后，下个句号仍有约0.692684概率，这只表示错误前缀后的语法续写，不能证明错误关联被模型确认或自我强化。</p>
+<h2>全部层和头的来源轨迹</h2>
+<p>保留32层×32 physical heads×全部77原query行。下表是所有1024个layer/head的无条件attention质量均值，仅供描述；层/头相关且职能不同，不是1024个独立样本、投票或检测分数。全部head/layer原值在NPZ/CSV中，无最佳头、层或轨迹选择。</p>
+<table>
+<thead>
+<tr>
+<th>receiver与下一目标</th>
+<th style="text-align: right;">q</th>
+<th style="text-align: right;">source300</th>
+<th style="text-align: right;">source BC</th>
+<th style="text-align: right;">完整G03</th>
+<th style="text-align: right;">G03句号闭合位置</th>
+<th style="text-align: right;">所有source且位置≥BC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pre300</td>
+<td style="text-align: right;">422</td>
+<td style="text-align: right;">0.0239243</td>
+<td style="text-align: right;">0.0348090</td>
+<td style="text-align: right;">0.1092117</td>
+<td style="text-align: right;">0.0031707</td>
+<td style="text-align: right;">0.0838405</td>
+</tr>
+<tr>
+<td>post300 = preyears</td>
+<td style="text-align: right;">423</td>
+<td style="text-align: right;">0.0187383</td>
+<td style="text-align: right;">0.0320851</td>
+<td style="text-align: right;">0.0920403</td>
+<td style="text-align: right;">0.0047796</td>
+<td style="text-align: right;">0.0856861</td>
+</tr>
+<tr>
+<td>postyears = preago</td>
+<td style="text-align: right;">424</td>
+<td style="text-align: right;">0.0041493</td>
+<td style="text-align: right;">0.0545060</td>
+<td style="text-align: right;">0.0908501</td>
+<td style="text-align: right;">0.0029992</td>
+<td style="text-align: right;">0.0990934</td>
+</tr>
+<tr>
+<td>postago = pre句号</td>
+<td style="text-align: right;">425</td>
+<td style="text-align: right;">0.0029559</td>
+<td style="text-align: right;">0.0307154</td>
+<td style="text-align: right;">0.0590932</td>
+<td style="text-align: right;">0.0052611</td>
+<td style="text-align: right;">0.0850416</td>
+</tr>
+</tbody>
+</table>
+<p>预测ago前，BC位置的平均访问质量明显高于300；只有184/1024个layer/head的300质量大于BC。该位置无关G06数字30的均值为0.000230544；虽然300比该无关数字更受访问，但这不构成“只看数字并遗漏BC”的证据。全部source质量均值为0.1413355，era及以后source不能简化成BC单个token；其他prompt与此前R也可能携带条件。</p>
+<p>原source300在位置112、BC在114、G03闭合句号在115。source300 K/V不能因果依赖之后才观察到的BC，但可以从左上下文和先验预测BC；BC及以后状态可以访问该条件，不能据可用性直接宣称语义编码或利用。更关键的是，R query可在较早层已整合该信息；当前层某个head的低BC attention不证明条件缺失。</p>
+<p>G03、time_scope、BC和G06保留boundary_overlap。BC对应token含前导空白，不能把token attention精确拆成每个字符的归因；完整fact/profile又含300/BC等嵌套锚点，各质量不能相加作互斥partition。没有把边界交叠修补成精确语义前端。</p>
+<h2>独立资格与数值参考检查</h2>
+<p>独立核验通过：全部原输入/四轴/安装包源码身份、76个head target与receiver映射、old native block15全部77 Q/三个node site及全441 K/V逐坐标固定FP16预算、全部32层postRoPE/GQA/绝对因果mask/headAV，以及所有保存profile。future R attention全为零。独立重放attention最大差1.20206e−6，native headAV最大差7.39098e−6，均在原固定资格界内；没有更改原科学门限。</p>
+<p><strong>严格FP64参考检查仍保留为inconclusive。</strong> 首次冻结审计的经验数值界在76行中的26/36/40/41/63/64行未通过：最大logp差6.04508e−5、概率差2.51803e−5、entropy差1.15726e−4。没有放宽该界或把原失败改成通过。由保存logits重放同一FP32 Torch log_softmax，生产logp/p全部逐位复现，entropy差至多3.58e−7；所以producer identity通过，未发现目标错位或词表归一化遗漏。FP32近似对FP64参考的严格经验界未通过，与“原元数据是假的/原模型资格失败”是不同结论。这里只在两种精度结论一致的词上给出高/低描述。</p>
+<p>首次失败与门限原样记录于<code>M4_INITIAL_STRICT_AUDIT_FAILURE.json</code>（SHA256 <code>1fc9b949c76a9adf7984780cb33a7874d34f337ee8611bbb5c79823db3515785</code>）。补充审计<code>m4-interpretation-supplement-v1</code> seal SHA256 <code>e70ad289b9404e504e6b2d985952be8db68b667665f435ba2b2d2111124539e9</code>；其status明确保留strict F64 reference inconclusive。</p>
+<h2>可下的结论</h2>
+<p>该例展示的是<strong>已有回答含时间参照错误，而观察器在关键错误词前偏向来源许可的BC</strong>。它不支持高概率错误ago、来源条件不可访问、数字K/V已经完整表示未来单位、或观察器与原生成器相同错因的故事。数字词高概率不能外推成整条关系高置信。</p>
+<p>本轮确实补齐了all-layer匹配内部数据与post-token轨迹，但source-reading Q仍未采集，没有因果干预，也没有证明回看验证节点、自我强化、白盒相对文本核验的必要性/定位/成本优势。人工来源许可并非自动semantic frontend；原回答风险接口、自然覆盖、六任务AUROC仍未建立。不能从这一个原型例晋升新检测器或继续挑层/头救援。</p></main><footer>H017本地离线阅读 · 原Markdown与GitHub公式是同一来源。打开本文件即可阅读，无需启动服务器。<br>源码SHA256：aa315c3c94b730a840085fdbde64a1d9247852efa90e295e6df96e95b3e3f281</footer></body></html>

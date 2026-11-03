@@ -3,9 +3,9 @@
   "objective": "Mechanism-driven unsupervised hallucination detection improvement toward AUROC >= 0.8 on each of six primary tasks",
   "canonical_project": "D:/projects/research/token_detector",
   "goal_status": "not_achieved",
-  "phase": "relation_misbinding_design_ready_for_cached_qualification",
-  "active_hypothesis": null,
-  "next_question": "H017 remains design-only: implement source-only occurrence licensing and qualify faithful preRoPE/GQA cache replay before interpreting relationship ownership or admitting a detector. Data recovery is complete; do not redownload or revive role QA.",
+  "phase": "h017_M3_negative_M4_natural_observed_readout_gap_next_no_detector_admitted",
+  "active_hypothesis": "H017_RELATION_OWNERSHIP_COMPUTATION",
+  "next_question": "Use F050/F051 rather than repeating confidence or FN counts. Seek new relation-specific information/readout that preserves a licensed local contradiction without flagging correct paraphrases or legal computation. Do not cap context or take arbitrary max/weights just to rescue15716. Consider separately reviewed source-semantic contrast only with complete tuple licenses, matched meaning-preserving controls and natural original-axis risk/unknown contract; no new algorithm/model job is admitted yet. Keep oldBF16 scores and FP32 physical trace separate.",
   "known_fact_ids": [
     "F001",
     "F002",
@@ -47,7 +47,17 @@
     "F038",
     "F039",
     "F040",
-    "F041"
+    "F041",
+    "F042",
+    "F043",
+    "F044",
+    "F045",
+    "F046",
+    "F047",
+    "F048",
+    "F049",
+    "F050",
+    "F051"
   ],
   "do_not_repeat": [
     "Describing known FN/FP counts again without a new discriminating intervention",
@@ -56,10 +66,11 @@
     "Token-state/adaptive/persistence variants without a substantively changed hypothesis",
     "Treating zero-coverage finite certificates as a successful or failed natural-data detector",
     "Rerunning H004 typed serialization or H005 scope-only scoring on unchanged inputs under a new title",
-    "Using the posthoc gold-density unit oracle as detector scores or selecting methods/thresholds from pilot labels"
+    "Using the posthoc gold-density unit oracle as detector scores or selecting methods/thresholds from pilot labels",
+    "F048 completed exact48/44 toy quartet; no head/layer/prompt rescue of normal retrieval or renaming its K-role failure."
   ],
   "unresolved_assumptions": [
-    "Original RAGTruth weight shards and original GPU backend lack complete provenance",
+    "Original observer four BF16 shards now match captured SHA and prefix execution qualified; full historical backend identity beyond pinned hashes (cu126 versus current cu128) and earlier unrelated caches remains unresolved",
     "Whether target-slot-blind source reconstruction adds useful information beyond direct verification",
     "Whether natural claim/role proposal has enough reliable coverage without gold spans",
     "How to preserve legitimate arithmetic/units and handle missing original financial questions",
@@ -78,25 +89,15 @@
   "checkpoint_policy": "Update at every conclusion, completed run or structural pivot; record the next discriminating question before continuation",
   "pipeline_helpers": "External ARIS run_state/watchdog helpers were not found; no background watchdog is claimed. Repository state and exact-run reservation are implemented locally.",
   "case_panel": "research-state/case_panel_v1.json",
-  "resource_status": "H015 observer and resource controller exited successfully; no GPU job active. H016 implementation in progress.",
+  "resource_status": "No active model job. H01755model/48head completed; local137fullCPU180s incomplete,109relatedpass; exact finalcode LinuxCI required.",
   "user_resource_choice": "local_idle_automatic_run",
   "experiment_plan": "refine-logs/EXPERIMENT_PLAN.md",
-  "run_reservation_status": "H013_terminal_engineering_failure32raw_retained_no_retry",
-  "frozen_observation_run_spec": "research-state/protocols/H013_atomic_observation_run_spec_v1.json",
-  "live_execution_state": "outputs/h015-prefix-trie-20261103/idle-engineering-state-cleanup-v2.json",
-  "local_idle_job": {
-    "pid": 4864,
-    "parent_pid": 41308,
-    "started_utc": "2026-11-03T02:36:29.760555+00:00",
-    "armed": false,
-    "automatic_retries": false,
-    "state": "outputs/h015-prefix-trie-20261103/idle-engineering-state-cleanup-v2.json",
-    "status": "engineering_completed",
-    "registry_run_id": "09ff6aa35663cb66243e7be642d708921e90b669c4c7761275111e974825727e",
-    "actual_forward_passes": 16
-  },
-  "active_variant": "shared_prefix_probability_instrument_before_new_semantic_observations",
-  "live_progress_command": "Read RESUME, F029-F034 and current H015 design/review; no GPU experiment armed yet.",
+  "run_reservation_status": "M3_and_M4_finished_no_pending_original_model_claim",
+  "frozen_observation_run_spec": null,
+  "live_execution_state": "outputs/h017-relation-20261103/M4_FINAL_PROGRESS.json",
+  "local_idle_job": null,
+  "active_variant": "unmodified_natural_temporal_scope_original_axis_all_layers_observation",
+  "live_progress_command": null,
   "superseded_local_job": {
     "pid": 31576,
     "status": "cancelled_before_launch",
@@ -161,17 +162,30 @@
       "outside_installed_cpu_checks": 50,
       "synthetic_engineering_model_calls": 0,
       "prepared_manifest_sha256": "163346c87b2e344343a5ae0b028f8578e4a268ae0658f4dad60018488640b2a4"
+    },
+    "h017_M1_frozen_cpu": {
+      "files": 130,
+      "immutable_target": "D:/projects/research/outputs/h017-installed-20261103-172234/target",
+      "wheel_sha256": "06d67c13ea269679ff15daf7162e16550a94c4a29ef54b220be34667312aeb7e",
+      "scope": "M1remaining immutable source snapshot; later checkout additions do not change it"
+    },
+    "h017_M4_frozen_observer": {
+      "files": 137,
+      "immutable_target": "D:\\projects\\research\\outputs\\h017-qualified-20261103-191208\\target",
+      "wheel_sha256": "fe8d9103429addc19fa25291b781bbb1b0d73ab7569e6833a7efb9c32af6c2ef",
+      "snapshot_proof": "D:/projects/research/outputs/h017-qualified-20261103-191208/snapshot-proof.json",
+      "scope": "Actual M4 source identity; later checkout edits do not alter it."
     }
   },
-  "last_completed_run": "5c162fe8ade0a235a221a9c0ad309bb1f98a3a8cb79ba9a06e3887192f7ba3fb",
-  "last_result": "docs/results/h011_masked_reconstruction.json",
+  "last_completed_run": "31185253c6389623bea031a07db70d77043ee67315e9fe85ca426725dc826d32",
+  "last_result": "F050 qualified natural observer rejectsago;F051 oldunitwarning lostrankinreadout, separateprecisioncontracts",
   "previous_observation_run_id": "a5d336433cd1a04ce71962fb8500d4f9f0c8b0473a74f146e66302cbacb3e9a5",
   "goal_control_status": "blocked",
   "goal_control_note": "Legacy tool status remains blocked; user explicitly resumed research. Continue authorized work without asking for confirmation or treating legacy control status as a scientific/resource blocker.",
-  "work_status": "continuing_under_user_explicit_resume_do_not_stop",
-  "next_design": "outputs/h012-natural-masked-20261103/DESIGN.md",
-  "frozen_observation_run_id": "4269632b575f604767b82e0180fd1646295dde897cdf8a1f9c3a88ec8d7a1b90",
-  "last_updated_utc": "2026-11-03T01:17:54.094623+00:00",
+  "work_status": "research_round_complete_next_method_admission_pending_not_goal_achieved",
+  "next_design": "Independent review of relation-specific evidence versus background agreement; no parameter clipping",
+  "frozen_observation_run_id": null,
+  "last_updated_utc": "2026-11-03T11:38:51.790108+00:00",
   "completed_H003": {
     "natural_observer_run": "fa101d666cce73beefcb12cd5979b04fb51e2771a61f48e78f9232caecff968c",
     "natural_cpu_run": "29e82c69db9558ec05c7b868f10cfa58f06cc497864a0ecfebcefa6217a72b47",
@@ -434,27 +448,19 @@
     "external_targeted_checks": 70
   },
   "active_run_id": null,
-  "active_job": {
-    "controller_pid": 38472,
-    "child_pid": 38792,
-    "armed": false,
-    "state": "outputs/h016-paired-scope-20261103/launch-state-v1.json",
-    "stop": "outputs/h016-paired-scope-20261103/STOP_H016",
-    "wall_limit_seconds": 1800,
-    "registry_run_id": "a52676148c96453c234c569ec0abc403a09ef9c3180113d7d05e6427a6683f70",
-    "budget": {
-      "new_forward_passes": 312,
-      "input_tokens": 86930,
-      "maximum_context_tokens": 308
-    },
-    "automatic_retry": false,
-    "source_commit": "0cc3c40e3ed61f85002927391a8146e7c6913195",
-    "status": "completed_no_new_job",
-    "actual_forward_passes": 312
-  },
+  "active_job": null,
   "completed_h016": "docs/results/h016_paired_scope.json",
   "remote_handoff": "REMOTE_EXPERIMENT_HANDOFF.md",
-  "local_full_cpu_suite": "incomplete_180_second_handoff_limit",
+  "local_full_cpu_suite": {
+    "status": "incomplete_timeout",
+    "exit_code": null,
+    "elapsed_seconds": 180.01962889998686,
+    "timeout_seconds": 180,
+    "complete_suite_requested": true,
+    "complete_suite_passed": false,
+    "snapshot": "D:\\projects\\research\\outputs\\h017-qualified-20261103-191208\\snapshot-proof.json",
+    "log": "D:\\projects\\research\\outputs\\h017-qualified-20261103-191208\\cpu-suite.log"
+  },
   "primary_endpoint": "hallucination_detection_on_existing_response_original_evaluation_axis",
   "objective_contract": "research-state/DETECTION_OBJECTIVE.md",
   "proxy_qa_branch": "H015_H016_closed_auxiliary_only_not_detector_improvement",
@@ -537,5 +543,288 @@
     "skipped": 1,
     "subtests_passed": 9,
     "test_seconds": 190.96
+  },
+  "h017_execution": {
+    "M0_run": "80913833f6fd73a6a5ed210f5d8607c377257755857798afd79d3bebffb5ca7f",
+    "M0_status": "complete_source_occurrence_plumbing_not_semantic_frontend",
+    "M0_answers": 2700,
+    "M0_sources": 450,
+    "M0_structural_fields_Data2txt": 5806,
+    "M1_canary_run": "5f7cf0ad2b984ce024a1be8060b9ca60294f51bd6fd7fbe545b32c36156a8e88",
+    "M1_canary_status": "three_qualified_all_five_negative_controls_rejected",
+    "M1_remaining_run": "48f5ce11c3cd40e5685a6da81e5e7cd404c5c4c294ff32a341a29d27a85769e4",
+    "M1_remaining_status": "completed_sealed_897_qualified_registry_finished",
+    "M1_remaining_pid": null,
+    "M1_remaining_launcher_pid": null,
+    "M1_remaining_output": "outputs/h017-relation-20261103/m1-remaining",
+    "frozen_installed_target": "D:/projects/research/outputs/h017-installed-20261103-172234/target",
+    "source_snapshot_files": 130,
+    "canaries_reused": 3,
+    "model_asset_state": "outputs/h017-relation-20261103/model-acquisition/mirror-state-v1.json",
+    "model_asset_root": "C:/ResearchData/token-detector-remote-20261103/DATA04_models/Meta-Llama-3.1-8B-Instruct",
+    "model_asset_pid": null,
+    "model_asset_bytes": 16069722485,
+    "new_original_model_forwards": 55,
+    "target_label_reads": 0,
+    "new_detector_scores": 0,
+    "M1_aggregate": "outputs/h017-relation-20261103/M1_900_AGGREGATE.json",
+    "M1_aggregate_answers": 900,
+    "M1_aggregate_sources": 150,
+    "M1_aggregate_overlap": 0,
+    "M1_aggregate_max_local_error": 0.0016483068466186523,
+    "M1_aggregate_max_groupmass_error": 0.002241790294647217,
+    "M1_precision_unknown": 0,
+    "M1_faithful_violations": 0,
+    "M1_wrong_controls_rejected_cases_each": 900,
+    "M2_alignment_run": "7d065e2e7d08739ac4c2a8ad2097b09e426f10ed7c357561c4f53a7ad1926268",
+    "M2_alignment_status": "two_sealed_finished_runs_all900_original_axes_matched",
+    "M2_aligned_answers": 900,
+    "M2_aligned_sources": 150,
+    "M2_full900_alignment": true,
+    "model_asset_status": "mirror_reported_complete_9files_disarmed_no_scientific_qualification_implied",
+    "model_asset_completed_pid": 35512,
+    "new_original_model_forwards_note": "55completed=2earlystop+53full;48head invocations separately.",
+    "M1_new_model_forwards": 0,
+    "M2_new_model_forwards": 0,
+    "M3_prefix_run": "1fdf37662387671a919a7eb942457bae29214391790fa92dce73af7442dbeb64",
+    "M3_prefix_status": "completed_sealed_both_worlds_coordinate_qualified_registry_finished",
+    "M3_prefix_original_model_calls": 2,
+    "M3_prefix_final_norm_or_head_calls": 0,
+    "M3_prefix_elapsed_seconds": 46.40185060002841,
+    "M3_prefix_full_model_completed": false,
+    "next_engineering_gate": null,
+    "next_engineering_gate_status": "completed_full_head_cache_noop",
+    "next_gate_proposed_model_calls": null,
+    "next_gate_proposed_head_calls": null,
+    "M2_alignment_runs": [
+      "7d065e2e7d08739ac4c2a8ad2097b09e426f10ed7c357561c4f53a7ad1926268",
+      "8d6662cb8bb5060ee975424b0fa12f4c1535a78047e6de39efd0a50a92033911"
+    ],
+    "M2_remaining_run": "8d6662cb8bb5060ee975424b0fa12f4c1535a78047e6de39efd0a50a92033911",
+    "M2_remaining_status": "completed_sealed_897_registry_finished",
+    "M2_remaining_pid": null,
+    "M2_remaining_launcher_pid": null,
+    "M2_aggregate": "outputs/h017-relation-20261103/M2_900_AGGREGATE.json",
+    "M2_remaining_frozen_target": "D:/projects/research/outputs/h017-qualified-20261103-175903/target",
+    "M2_remaining_source_snapshot_files": 134,
+    "M2_semantic_unknown_cases": 900,
+    "new_original_full_model_calls": 53,
+    "new_original_lm_head_calls": 48,
+    "new_original_final_norm_calls": 53,
+    "M3_head_run": "7f222ddfcf344a70236c452b9444815c1cfffdc8928483de8fe4107f6896cff5",
+    "M3_head_status": "completed_sealed_qualified_registry_finished",
+    "M3_head_model_calls": 4,
+    "M3_head_lm_head_calls": 3,
+    "M3_head_final_norm_calls": 4,
+    "M3_head_elapsed_seconds": 101.08233919995837,
+    "next_scientific_gate": "relation_specific_readout_scientific_admission_required",
+    "next_scientific_gate_status": "not_admitted_no_model_budget",
+    "next_scientific_proposed_model_calls": null,
+    "next_scientific_proposed_head_calls": null,
+    "scientific_model_calls": 48,
+    "next_gate_proposal_scope": "Review only source facts of the two previously frozen RAGTruth numeric-ID QA panel cases matching QA900 (not all task=QA across FRED/HalluRAG). Freeze complete subject/predicate/scope/polarity/occurrence licenses and unknown before linking the fixed original response. Then independently admit an original-axis natural-error diagnostic if it discriminates a new cause. Do not extend the normal-retrieval toy with head/layer/prompt rescue or turn V effects directly into risk. No new detector/target-label fitting or AUROC claim.",
+    "M3_scientific_run": "24dd6e0bd68475e1561dc4379c2e4e2655ad3999cd935c348af8441aea3bb8ce",
+    "M3_scientific_status": "completed_sealed_finished_refuted_selective_K_mediation",
+    "M3_scientific_spec": "outputs/h017-relation-20261103/M3_INTERVENTION_SPEC.json",
+    "M3_scientific_output": "outputs/h017-relation-20261103/m3-intervention",
+    "M3_scientific_pid": null,
+    "M3_scientific_parent_pid": null,
+    "M3_scientific_started_utc": "2026-11-03T10:24:36.8571820Z",
+    "M3_scientific_progress": "outputs/h017-relation-20261103/M3_FINAL_PROGRESS.json",
+    "scientific_head_calls": 44,
+    "scientific_counter_scope": "Exact completed48/44; sealed and finished",
+    "completed_engineering_model_calls": 6,
+    "completed_engineering_lm_head_calls": 3,
+    "M4_status": "completed_sealed_finished_supported_descriptive_scope",
+    "M4_case": "15716",
+    "M4_source": "15540",
+    "M4_planned_model_calls": 1,
+    "M4_planned_head_calls": 1,
+    "M4_actual_model_calls": 1,
+    "M4_actual_head_calls": 1,
+    "M4_admission": [
+      {
+        "path": "outputs/h017-relation-20261103/M4_NATURAL_TEMPORAL_OBSERVATION_PRE_CODE_ADMISSION.md",
+        "sha256": "901c677ff845ba3a137f02a9ce0650c2a86d228392fd68c09e243af44423eb58"
+      },
+      {
+        "path": "outputs/h017-relation-20261103/M4_NATURAL_TEMPORAL_OBSERVATION_INDEPENDENT_REVIEW.md",
+        "sha256": "8c5401483abdeef3fc12bce2948e50451833ce13e0e91676943dba4d15e7378c"
+      },
+      {
+        "path": "outputs/h017-relation-20261103/M4_CAUSAL_CLOSURE_LITERATURE_REVIEW.md",
+        "sha256": "fd185bc7285f912734e87199d702481d58b4703436127b0a615150737c8e24cb"
+      }
+    ],
+    "M4_pid": null,
+    "M4_parent_pid": null,
+    "M4_progress": "outputs/h017-relation-20261103/M4_FINAL_PROGRESS.json",
+    "M4_result": "outputs/h017-relation-20261103/m4-natural-observation/result.json",
+    "M4_strict_F64_reference_check": "inconclusive_preserved"
+  },
+  "active_engineering_run": null,
+  "last_completed_engineering_run": {
+    "run_id": "8d6662cb8bb5060ee975424b0fa12f4c1535a78047e6de39efd0a50a92033911",
+    "status": "completed_sealed_supported_scope",
+    "output": "outputs/h017-relation-20261103/m2-alignment-remaining",
+    "answers": 897,
+    "canaries_reused_separately": 3,
+    "aggregate_answers": 900,
+    "model_calls": 0
+  },
+  "last_completed_model_engineering_run": {
+    "run_id": "7f222ddfcf344a70236c452b9444815c1cfffdc8928483de8fe4107f6896cff5",
+    "status": "completed_sealed_supported_scope",
+    "output": "outputs/h017-relation-20261103/m3-head",
+    "model_calls": 4,
+    "full_model_calls": 4,
+    "final_norm_calls": 4,
+    "lm_head_calls": 3,
+    "full_model_completed": true
+  },
+  "current_checkout_full_cpu_CI_status": "137installedfullsuite180s_incomplete109relatedpass_exactLinuxCI_pending_push",
+  "historical_frozen_observation_checkpoint": {
+    "run_id": "4269632b575f604767b82e0180fd1646295dde897cdf8a1f9c3a88ec8d7a1b90",
+    "spec": "research-state/protocols/H013_atomic_observation_run_spec_v1.json",
+    "scope": "Closed H013 historical pointer; preserved for audit, not the active H017 scientific proposal."
+  },
+  "historical_local_idle_execution_state": "outputs/h015-prefix-trie-20261103/idle-engineering-state-cleanup-v2.json",
+  "active_scientific_run": null,
+  "completed_h017_scientific": {
+    "schema": "h017-completed-scientific-checkpoint-v1",
+    "run_id": "24dd6e0bd68475e1561dc4379c2e4e2655ad3999cd935c348af8441aea3bb8ce",
+    "status": "completed_sealed_finished_refuted_selective_K_mediation",
+    "armed": false,
+    "pid": null,
+    "parent_pid": null,
+    "actual_counts": {
+      "model_calls": 48,
+      "head_calls": 44
+    },
+    "elapsed_seconds": 847.8279180000536,
+    "evidence": [
+      {
+        "path": "outputs/h017-relation-20261103/m3-intervention/result.json",
+        "sha256": "a9459e466d6fa1789762bdbb40b62023487982340ea199991957761ededa9960"
+      },
+      {
+        "path": "outputs/h017-relation-20261103/m3-intervention/seal.json",
+        "sha256": "28fed29bba0087eeca6bb573052385f755350b3aec9daf99456fb97bf58a6d1f"
+      },
+      {
+        "path": "outputs/h017-relation-20261103/m3-interpretation-audit-v1/audit.json",
+        "sha256": "4f20211217cbe1ded10c520d17659d81dca01ee2a61aa91833f4acda8a8ab6db"
+      },
+      {
+        "path": "outputs/h017-relation-20261103/m3-interpretation-audit-v1/seal.json",
+        "sha256": "8ecf0b13af2a6e29bd8ddd1daf8e4c3e53aa62a343a83ea68aa4f089033ec784"
+      },
+      {
+        "path": "research-state/runs/24dd6e0bd68475e1561dc4379c2e4e2655ad3999cd935c348af8441aea3bb8ce/result.json",
+        "sha256": "c25cdf294e7dcc85cbe674951a434d019afe8d1e23ac3800ca4671d4420c1869"
+      }
+    ],
+    "next_question": "Review only source facts of the two previously frozen RAGTruth numeric-ID QA panel cases matching QA900 (not all task=QA across FRED/HalluRAG). Freeze complete subject/predicate/scope/polarity/occurrence licenses and unknown before linking the fixed original response. Then independently admit an original-axis natural-error diagnostic if it discriminates a new cause. Do not extend the normal-retrieval toy with head/layer/prompt rescue or turn V effects directly into risk. No new detector/target-label fitting or AUROC claim."
+  },
+  "M4_observation": {
+    "schema": "h017-M4-claimed-output-pending-review-checkpoint-v1",
+    "run_id": "31185253c6389623bea031a07db70d77043ee67315e9fe85ca426725dc826d32",
+    "status": "claimed_launched_outputs_sealed_pending_root_outcome_review",
+    "armed": false,
+    "pid": 35556,
+    "parent_pid": 52928,
+    "started_utc": "2026-11-03T11:15:02.4307120Z",
+    "command_sha256": "e1d8509910b4b7a9ae934dbf2ab18bb3626b30b37bbda72aa315c39e90b9433d",
+    "process_identity_captured_utc": "2026-11-03T11:16:16.7177049Z",
+    "latest_process_check_utc": "2026-11-03T11:16:59.6110040Z",
+    "matching_process_count_latest": 0,
+    "exec_session": 90003,
+    "spec": "outputs/h017-relation-20261103/M4_NATURAL_SPEC.json",
+    "output": "outputs/h017-relation-20261103/m4-natural-observation",
+    "log": "outputs/h017-relation-20261103/m4-natural-observation-launch.log",
+    "process_identity": "outputs/h017-relation-20261103/M4_LIVE_PROCESS_IDENTITY.json",
+    "after_output_process_status": "outputs/h017-relation-20261103/M4_PROCESS_STATUS_AFTER_OUTPUT_MARKERS.json",
+    "progress": "outputs/h017-relation-20261103/M4_LIVE_PROGRESS.json",
+    "frozen_target": "D:\\projects\\research\\outputs\\h017-qualified-20261103-191208\\target",
+    "package_files": 137,
+    "wheel_sha256": "fe8d9103429addc19fa25291b781bbb1b0d73ab7569e6833a7efb9c32af6c2ef",
+    "snapshot_proof": "D:/projects/research/outputs/h017-qualified-20261103-191208/snapshot-proof.json",
+    "planned_model_calls": 1,
+    "planned_head_calls": 1,
+    "confirmed_attempt_counters": {
+      "model_calls": 1,
+      "head_calls": 1
+    },
+    "attempt_counters_are_scientific_acceptance": false,
+    "result_marker_exists": true,
+    "seal_marker_exists": true,
+    "failure_marker_exists": false,
+    "scientific_result_content_read": false,
+    "finished_by_this_checkpoint": false,
+    "automatic_retry": false,
+    "watchdog_installed": false,
+    "next_question": "Root must inspect and independently review existing M4 run31185253 result/seal, then explicitly finish the existing claim. Output markers exist and no matching process remains; this checkpoint did not open the scientific result or finish it. Never relaunch, retry, modify source/R, or infer a detector/AUROC result from this status."
+  },
+  "parallel_root_owned_validation": {
+    "exec_session": 62289,
+    "budget_seconds": 180,
+    "status": "running_as_parent_reported_not_inspected",
+    "full_installed_suite_pass_claimed_by_checkpoint": false
+  },
+  "completed_h017_M4": {
+    "schema": "h017-M4-final-checkpoint-v1",
+    "run_id": "31185253c6389623bea031a07db70d77043ee67315e9fe85ca426725dc826d32",
+    "status": "completed_sealed_finished_supported_descriptive_scope",
+    "armed": false,
+    "pid": null,
+    "parent_pid": null,
+    "actual_counts": {
+      "model_calls": 1,
+      "head_calls": 1
+    },
+    "elapsed_seconds": 67.23560699995141,
+    "strict_F64_reference": "inconclusive_preserved",
+    "new_risk_scores": 0,
+    "evidence": [
+      {
+        "path": "outputs/h017-relation-20261103/m4-natural-observation/result.json",
+        "sha256": "3e7fe1277f8450f033ab0f86beb3363e8b354959d839c7cd5fb82950a79b9d16"
+      },
+      {
+        "path": "outputs/h017-relation-20261103/m4-natural-observation/seal.json",
+        "sha256": "74185045b19b71418f1404a486f46650d76771bd50418fe6991f6d650ed7ba6c"
+      },
+      {
+        "path": "outputs/h017-relation-20261103/m4-interpretation-supplement-v1/audit.json",
+        "sha256": "676241bd7ed729c6e6f5a93d6e96b445706f07459774c514f145905047687c0c"
+      },
+      {
+        "path": "outputs/h017-relation-20261103/m4-interpretation-supplement-v1/seal.json",
+        "sha256": "e70ad289b9404e504e6b2d985952be8db68b667665f435ba2b2d2111124539e9"
+      },
+      {
+        "path": "outputs/h017-relation-20261103/M4_POSTRUN_INTERPRETATION_REVIEW.md",
+        "sha256": "aa315c3c94b730a840085fdbde64a1d9247852efa90e295e6df96e95b3e3f281"
+      },
+      {
+        "path": "outputs/h017-relation-20261103/M4_INITIAL_STRICT_AUDIT_FAILURE.json",
+        "sha256": "1fc9b949c76a9adf7984780cb33a7874d34f337ee8611bbb5c79823db3515785"
+      }
+    ],
+    "readout_evidence": [
+      {
+        "path": "outputs/h017-relation-20261103/M4_EXISTING_READOUT_CHAIN_AUDIT.json",
+        "sha256": "c05194562dcb75c1ee8c0265521e6cf4ac1b2f733912093537726fa0fd7b698c"
+      },
+      {
+        "path": "outputs/h017-relation-20261103/M4_EXISTING_READOUT_CHAIN_AUDIT.md",
+        "sha256": "aec42da321a0e98d40c2f0db83cd5638a596db0bab30c26ca3fbb7ff16de52d5"
+      },
+      {
+        "path": "outputs/h017-relation-20261103/M4_EXISTING_READOUT_CHAIN_RECEIPT.json",
+        "sha256": "42ba98203bafad2c05ea0ed99481c204ad25c6b29e3133b4a17ecf83f2cb7d98"
+      }
+    ],
+    "next_question": "Use F050/F051 rather than repeating confidence or FN counts. Seek new relation-specific information/readout that preserves a licensed local contradiction without flagging correct paraphrases or legal computation. Do not cap context or take arbitrary max/weights just to rescue15716. Consider separately reviewed source-semantic contrast only with complete tuple licenses, matched meaning-preserving controls and natural original-axis risk/unknown contract; no new algorithm/model job is admitted yet. Keep oldBF16 scores and FP32 physical trace separate."
   }
 }

@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "run_id": "1fdf37662387671a919a7eb942457bae29214391790fa92dce73af7442dbeb64",
+  "completed_utc": "2026-11-03T09:50:10.311032+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Original full prompt252 prechoiceq251 at archivedblock15 reproduced in native and blocked worlds; allnodes,Q32,K8,V8prefix coordinates passed frozenFP16plusFP32budget. Two early-stop originalweight forwards,zero finalnorm/headcalls,zero labels; doesnotqualify fullhead/cachecausality or detectoreffectiveness.",
+  "artifacts": [
+    {
+      "path": "outputs/h017-relation-20261103/m3-prefix/summary.json",
+      "sha256": "110ab6a48963d73a885b03ed2b0bfb47eb2e47ede53f5c6cd9cd1436e26e1f06"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m3-prefix/native.json",
+      "sha256": "e0c0d26908ab02ade8d9f479dfd935d590c06a06e418a3c722b54ffc128a9893"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m3-prefix/blocked.json",
+      "sha256": "ab02b012f9664fd82a4c03342b79cb66f85afb1b1c89fca537c6457267a4fa59"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m3-prefix/seal.json",
+      "sha256": "c02b3d05e7904db8b014fb093c98fd66a27e1e1130a48a84b289f35911b176fe"
+    }
+  ]
+}

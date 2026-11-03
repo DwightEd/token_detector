@@ -1,0 +1,9 @@
+# H017 M4 empirical figures
+
+Figure 1 shows both complete 32-block by 32-query-head source-attention maps at the fixed pre-ago query 424 (after original years), on the same fixed linear 0–1 color scale. No heads or layers are selected. The BC token includes leading whitespace; token boundaries retain the recorded overlap. The 1,024 correlated layer/head pairs are not independent samples or votes.
+
+Figure 2A reports unconditional attention mass averaged over all 1,024 pairs at the four predetermined queries 422–425, without inferential confidence intervals. Profiles overlap; full G03 includes its number and era-marker tokens. All source keys at/after BC are retained as a separate availability region, not equated with BC alone. Post-300 is pre-years; post-years is pre-ago. Post-ago is the teacher-forced state before the following period, not evidence of semantic confirmation.
+
+Figure 2B uses full-vocabulary next-token probabilities. Original 300, years and ago are predicted under their respective original prefixes at q422/q423/q424. BC is an ungenerated alternative under exactly the same q424 prefix as ago. Bars show FP64 reconstruction from saved logits; black marks show original FP32 producer probabilities for the three provided targets. Both values are exported without making a new precision or detection decision.
+
+The FP32 producer's logp/p are exactly reproducible. The pre-frozen strict FP64 reference check remains inconclusive for six of the 76 original rows; no tolerance was loosened. Phrase high/low conclusions agree in both precisions. These figures do not claim a new detector, original-generator mechanism, causal necessity, semantic encoding or an AUROC improvement. Source-reading queries are not observed; attention does not establish condition recognition or omission.

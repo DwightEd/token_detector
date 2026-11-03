@@ -1,0 +1,5 @@
+﻿kind,token,token_id,absolute_query_position,target_answer_index,fp32_producer_probability,fp64_saved_logits_probability,condition
+original_target,300,3101,422,58,0.9979881048202515,0.9979871951026071,Original Q/S and preceding original R tokens
+original_target,years,1667,423,59,0.9255924224853516,0.9255923338120073,Original Q/S and preceding original R tokens
+original_target,ago,4227,424,60,0.0001147238290286623,0.00011472377622134006,Original Q/S and preceding original R tokens
+alternative_at_preago_only, BC,18531,424,60,,0.9821740221882734,Same q424 prefix as original ago; no BC token substituted

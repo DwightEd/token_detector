@@ -1,0 +1,22 @@
+# M4 independent pre-code scientific review
+
+Decision: approved for the stated bounded descriptive-observation scope only. No runner, original-tokenizer probe, original-weight forward, annotation reading or new scoring was performed by this review.
+
+Reviewed admission: `M4_NATURAL_TEMPORAL_OBSERVATION_PRE_CODE_ADMISSION.md`, SHA256 `901c677ff845ba3a137f02a9ce0650c2a86d228392fd68c09e243af44423eb58`.
+Review timestamp UTC: 2026-11-03T11:01:46.365852+00:00.
+
+The source license was independently frozen before root inspected the existing Q/R. This is one previously exposed natural case, 15716/source15540: calendar-era wording `over 300 years BC` versus elapsed-time wording `around 300 years ago`. It is a temporal-reference/scope contrast, not a two-company value swap. Original source licenses remain immutable; Pollux's father remains unknown. The other flag case is not assigned a control outcome.
+
+The narrow new information is missing matched full-depth/full-vocabulary observations on the unmodified original sequence. It does not revive P005 source/absent state direction, whitening or selected-case rescoring; P021 source/null/shuffle worlds; or P026 repair, future interaction or prefix reset. Single-case all-layer records are neither a detector nor scientific novelty. A failed M3 block15 K-role intervention is not rescued by choosing a different toy layer/head or by this natural observation.
+
+The fixed budget and axes are coherent: one native full32-layer model attempt on P365/T76/N441; 77 query rows from P-1 through N-1; a single unchunked 128256-vocabulary head attempt on the first76 final hidden rows, predicting the original76 answer IDs. The last query row has no observed next answer token. All32 layers and physical heads are retained, with no head/layer selection. Root will claim the exact frozen executable before any original observation.
+
+All seven declared source spans were mechanically checked against the already frozen source string and matched exactly: G03[138,244), time[226,243), numeric300[231,234), BC[241,243), sentence punctuation[243,244), G06[550,593), numeric30[560,562). Spans are character positions, not token identities. Multi-token era boundaries, overlapping BPE tokens, unknown or out-of-order alignment must survive as unknown, rather than being silently repaired.
+
+The causal-frontier interpretation is correctly limited: source300 K/V cannot read future BC in a causal decoder. Any at/after-era source key may carry prior era information; the response query can already integrate era via earlier layers, other prompt/source keys or prior response. Numeric attention therefore does not imply an era-blind computation. Era attention does not establish semantic recognition, correct binding or causal necessity. The punctuation anchor is a complete-prefix availability point, not a claimed model algorithm for fact closure.
+
+Engineering requirements are explicit and must be verified in the fresh code review: mainline separate source/response encoding and four exact original axes; frozen layer15 producer with no early stop; unchanged archived-FP16 coordinate policy for all native15 Q/K/V and three node sites; official native-RoPE/GQA/causal replay against same-forward native AV at all32 layers; raw data retained before qualification/head; strict one-attempt counters and no adaptive fallback. Full head executes only if those fixed gates pass. A failed gate is preserved, not evidence for the scientific reading of that unqualified observation.
+
+Probability and rank are descriptive conditional likelihoods given the original teacher-forced history, including earlier response errors. p>0.5 is a literal probability description and cannot define hallucination risk. Profiles are overlapping diagnostic sets, not a partition or a score. No causal generator claim, original Mistral internal-state claim, automatic semantic frontend coverage, population efficacy, localization superiority, cost benefit or AUROC improvement is admitted. Direct BC/ago textual comparison already exposes the source/response conflict.
+
+No important unresolved pre-code issue was found. This review admits one finite observation and tiny CPU synthetic engineering checks, subject to final code review and root check/claim. It does not itself authorize expanding the model budget, scoring a population, or reopening closed repair/source-world experiments.
