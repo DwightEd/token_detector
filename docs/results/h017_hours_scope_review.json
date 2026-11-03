@@ -1,0 +1,606 @@
+{
+  "schema": "h017-M5-fixed-response-scope-review-v1",
+  "status": "KEEP_FOR_SCOPED_DESIGN_REVIEW_NOT_EXECUTION_ADMISSION",
+  "provenance": {
+    "source_only_review": {
+      "path": "D:\\projects\\research\\token_detector\\outputs\\h017-relation-20261103\\M5_DATA2TXT_HOURS_SOURCE_REVIEW.json",
+      "sha256": "71180505cefbf8c5197c9371f417f7c88f71e37de978f5d29df8550ef1ee664d",
+      "read_and_verified_before_original_response": true
+    },
+    "prepared_inference_inputs": {
+      "path": "C:\\ResearchData\\token-detector-remote-20261103\\01_current_project\\outputs\\ragtruth_full_shared_20261029\\test_Data2txt\\inputs.jsonl",
+      "sha256": "050c79f2711aa292845f27ed4f3ae8b68f0d263bc9d29678486f7e8fb6477521",
+      "line_read": 1
+    },
+    "prepared_manifest": {
+      "path": "C:\\ResearchData\\token-detector-remote-20261103\\01_current_project\\outputs\\ragtruth_full_shared_20261029\\test_Data2txt\\manifest.json",
+      "sha256": "d1f0ba0658222556e2542e145da84538d14a9fa5b230dd9bb8fa34b830944b80"
+    },
+    "saved_token_axis_response": {
+      "path": "C:\\ResearchData\\token-detector-remote-20261103\\05_graph_inputs\\outputs\\native_support_ragtruth_all\\source_first_v1\\responses\\000176\\response.json",
+      "sha256": "d91ac377f6df328b4c087c4fecfce3a84912d5c4296d0f0453be6e17c8e6f3e1"
+    },
+    "token_axis_manifest": {
+      "path": "C:\\ResearchData\\token-detector-remote-20261103\\05_graph_inputs\\outputs\\native_support_ragtruth_all\\source_first_v1\\manifest.json",
+      "sha256": "920d47042ca7bcb304dee56850227d12f0f67b9464c3b63efaff5926a64a11ee"
+    },
+    "closed_prior_registry": {
+      "path": "D:\\projects\\research\\token_detector\\research-state\\prior_experiments.json",
+      "sha256_at_review": "43d20b4e67e806915dd4876e0d0e7d5cec00a7176c1d2d29d1d15a5292d555e3",
+      "selected_record_canonical_sha256": {
+        "P021_RELATIONAL_NULL_SOURCE_WORLDS": "11bf28a94a43bf82424676aa40ee81c775f96a246ad2c48d5231dedc0b19648f",
+        "P026_RETROSPECTIVE_REPAIR_AND_PREFIX_RESET": "94859aa05ec51572a37738e96b8247d504402418e762fd54b892217e9cbf8f3c"
+      }
+    }
+  },
+  "scope": {
+    "models": 0,
+    "heads": 0,
+    "new_scores": 0,
+    "new_benchmark_labels": 0,
+    "annotation_or_evaluation_files_opened": 0,
+    "counterfactual_source_strings_created": false,
+    "counterfactual_token_arrays_created": false,
+    "new_candidate_code": false,
+    "source_state_changes": false,
+    "new_goal": false
+  },
+  "original": {
+    "case_id": "5670",
+    "source_id": "13601",
+    "task": "Data2txt",
+    "split": "test",
+    "generator": "gpt-4-0613",
+    "source_sha256": "f71690e1016bcb5c29096c1b98c232cd253d2ddab7360400791ff76af9ef8b60",
+    "response_sha256": "9f547386286ee2e59e130d4fb227b8e54120c6212cb3396a00292fc05fba61d8",
+    "response_characters": 842,
+    "response_answer_tokens": 185,
+    "response_unchanged": true,
+    "response_text": "Finch & Fork is a highly-rated restaurant located at 31 W Carrillo St, Santa Barbara, CA. It offers a variety of cuisines including Breakfast & Brunch, American (New), and Traditional American. The restaurant operates from Monday to Saturday from 17:00-21:00 and on Sunday from 9:00-14:00. The establishment offers a variety of amenities including free WiFi, garage and street parking, valet service, and take-out options. It also caters to groups and accepts reservations. However, it does not offer outdoor seating or live music. The ambiance is described as classy. Finch & Fork has garnered a 4.0-star rating, with customers praising its brunch menu, quality of food, and excellent service. Patrons particularly appreciate the \"mimosa madness\" and the restaurant's breakfast offerings. However, some customers feel the food is overpriced.",
+    "hours_components": [
+      {
+        "name": "hours_sentence",
+        "literal": "The restaurant operates from Monday to Saturday from 17:00-21:00 and on Sunday from 9:00-14:00.",
+        "response_character_span": [
+          194,
+          289
+        ],
+        "saved_answer_token_indices": [
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72
+        ]
+      },
+      {
+        "name": "day_range",
+        "literal": "Monday to Saturday",
+        "response_character_span": [
+          223,
+          241
+        ],
+        "saved_answer_token_indices": [
+          48,
+          49,
+          50
+        ]
+      },
+      {
+        "name": "working_day_interval",
+        "literal": "17:00-21:00",
+        "response_character_span": [
+          247,
+          258
+        ],
+        "saved_answer_token_indices": [
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59
+        ]
+      },
+      {
+        "name": "sunday",
+        "literal": "Sunday",
+        "response_character_span": [
+          266,
+          272
+        ],
+        "saved_answer_token_indices": [
+          62
+        ]
+      },
+      {
+        "name": "sunday_interval",
+        "literal": "9:00-14:00",
+        "response_character_span": [
+          278,
+          288
+        ],
+        "saved_answer_token_indices": [
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71
+        ]
+      }
+    ],
+    "hours_token_axis": [
+      {
+        "answer_index": 44,
+        "token_id": 578,
+        "character_span": [
+          193,
+          197
+        ],
+        "literal": " The"
+      },
+      {
+        "answer_index": 45,
+        "token_id": 10960,
+        "character_span": [
+          197,
+          208
+        ],
+        "literal": " restaurant"
+      },
+      {
+        "answer_index": 46,
+        "token_id": 27149,
+        "character_span": [
+          208,
+          217
+        ],
+        "literal": " operates"
+      },
+      {
+        "answer_index": 47,
+        "token_id": 505,
+        "character_span": [
+          217,
+          222
+        ],
+        "literal": " from"
+      },
+      {
+        "answer_index": 48,
+        "token_id": 7159,
+        "character_span": [
+          222,
+          229
+        ],
+        "literal": " Monday"
+      },
+      {
+        "answer_index": 49,
+        "token_id": 311,
+        "character_span": [
+          229,
+          232
+        ],
+        "literal": " to"
+      },
+      {
+        "answer_index": 50,
+        "token_id": 7884,
+        "character_span": [
+          232,
+          241
+        ],
+        "literal": " Saturday"
+      },
+      {
+        "answer_index": 51,
+        "token_id": 505,
+        "character_span": [
+          241,
+          246
+        ],
+        "literal": " from"
+      },
+      {
+        "answer_index": 52,
+        "token_id": 220,
+        "character_span": [
+          246,
+          247
+        ],
+        "literal": " "
+      },
+      {
+        "answer_index": 53,
+        "token_id": 1114,
+        "character_span": [
+          247,
+          249
+        ],
+        "literal": "17"
+      },
+      {
+        "answer_index": 54,
+        "token_id": 25,
+        "character_span": [
+          249,
+          250
+        ],
+        "literal": ":"
+      },
+      {
+        "answer_index": 55,
+        "token_id": 410,
+        "character_span": [
+          250,
+          252
+        ],
+        "literal": "00"
+      },
+      {
+        "answer_index": 56,
+        "token_id": 12,
+        "character_span": [
+          252,
+          253
+        ],
+        "literal": "-"
+      },
+      {
+        "answer_index": 57,
+        "token_id": 1691,
+        "character_span": [
+          253,
+          255
+        ],
+        "literal": "21"
+      },
+      {
+        "answer_index": 58,
+        "token_id": 25,
+        "character_span": [
+          255,
+          256
+        ],
+        "literal": ":"
+      },
+      {
+        "answer_index": 59,
+        "token_id": 410,
+        "character_span": [
+          256,
+          258
+        ],
+        "literal": "00"
+      },
+      {
+        "answer_index": 60,
+        "token_id": 323,
+        "character_span": [
+          258,
+          262
+        ],
+        "literal": " and"
+      },
+      {
+        "answer_index": 61,
+        "token_id": 389,
+        "character_span": [
+          262,
+          265
+        ],
+        "literal": " on"
+      },
+      {
+        "answer_index": 62,
+        "token_id": 7418,
+        "character_span": [
+          265,
+          272
+        ],
+        "literal": " Sunday"
+      },
+      {
+        "answer_index": 63,
+        "token_id": 505,
+        "character_span": [
+          272,
+          277
+        ],
+        "literal": " from"
+      },
+      {
+        "answer_index": 64,
+        "token_id": 220,
+        "character_span": [
+          277,
+          278
+        ],
+        "literal": " "
+      },
+      {
+        "answer_index": 65,
+        "token_id": 24,
+        "character_span": [
+          278,
+          279
+        ],
+        "literal": "9"
+      },
+      {
+        "answer_index": 66,
+        "token_id": 25,
+        "character_span": [
+          279,
+          280
+        ],
+        "literal": ":"
+      },
+      {
+        "answer_index": 67,
+        "token_id": 410,
+        "character_span": [
+          280,
+          282
+        ],
+        "literal": "00"
+      },
+      {
+        "answer_index": 68,
+        "token_id": 12,
+        "character_span": [
+          282,
+          283
+        ],
+        "literal": "-"
+      },
+      {
+        "answer_index": 69,
+        "token_id": 975,
+        "character_span": [
+          283,
+          285
+        ],
+        "literal": "14"
+      },
+      {
+        "answer_index": 70,
+        "token_id": 25,
+        "character_span": [
+          285,
+          286
+        ],
+        "literal": ":"
+      },
+      {
+        "answer_index": 71,
+        "token_id": 410,
+        "character_span": [
+          286,
+          288
+        ],
+        "literal": "00"
+      },
+      {
+        "answer_index": 72,
+        "token_id": 13,
+        "character_span": [
+          288,
+          289
+        ],
+        "literal": "."
+      }
+    ],
+    "hours_unit_saved": {
+      "start": 44,
+      "stop": 73,
+      "text_start": 44,
+      "text_stop": 73
+    }
+  },
+  "semantic_scope": {
+    "subject": "Finch & Fork in source13601",
+    "predicate": "source-reported operating-clock interval per named weekday",
+    "day_range_reading": "Monday through Saturday inclusive, each of six days assigned the same complete interval B",
+    "source_intervals": {
+      "A": {
+        "raw": "17:30-23:0",
+        "normalized": "17:30-23:00",
+        "start_clock": "17:30",
+        "end_clock": "23:00",
+        "start_minutes_after_midnight": 1050,
+        "end_minutes_after_midnight": 1380,
+        "arithmetic_clock_difference_minutes": 330,
+        "clock_difference_is_external_availability_claim": false,
+        "endpoint_inclusion": "not_stated",
+        "cross_midnight_wrap": "not_needed_for_these_literals"
+      },
+      "B": {
+        "raw": "17:0-21:0",
+        "normalized": "17:00-21:00",
+        "start_clock": "17:00",
+        "end_clock": "21:00",
+        "start_minutes_after_midnight": 1020,
+        "end_minutes_after_midnight": 1260,
+        "arithmetic_clock_difference_minutes": 240,
+        "clock_difference_is_external_availability_claim": false,
+        "endpoint_inclusion": "not_stated",
+        "cross_midnight_wrap": "not_needed_for_these_literals"
+      },
+      "C": {
+        "raw": "9:0-14:0",
+        "normalized": "09:00-14:00",
+        "start_clock": "09:00",
+        "end_clock": "14:00",
+        "start_minutes_after_midnight": 540,
+        "end_minutes_after_midnight": 840,
+        "arithmetic_clock_difference_minutes": 300,
+        "clock_difference_is_external_availability_claim": false,
+        "endpoint_inclusion": "not_stated",
+        "cross_midnight_wrap": "not_needed_for_these_literals"
+      }
+    },
+    "original_hours_only_comparison": {
+      "Mon_to_Sat_B": "one explicit exception: Monday is A",
+      "Sun_C": "matches explicit Sunday C"
+    },
+    "labels_scope": "Manual source/R semantic comparison only, never a new benchmark or evaluation label",
+    "unknowns": [
+      "calendar effective date",
+      "timezone",
+      "holiday/special-service exceptions",
+      "endpoint inclusivity",
+      "current external business operation",
+      "semantic status of other original response claims",
+      "consistency of edited hours with all other unchanged source text",
+      "whether model likelihood tracks support rather than local copying/position heuristics"
+    ]
+  },
+  "conceptual_pair_not_materialized": {
+    "unchanged_response": true,
+    "Sminus_assignment": {
+      "Monday": "A",
+      "Tuesday_through_Saturday": "B_each",
+      "Sunday": "B"
+    },
+    "Splus_assignment": {
+      "Monday": "B",
+      "Tuesday_through_Saturday": "B_each",
+      "Sunday": "A"
+    },
+    "both_global_complete_interval_counts": {
+      "A": 1,
+      "B": 6,
+      "C": 0
+    },
+    "Mon_to_Sat_B_support_changes": true,
+    "Sunday_C_support_in_both": "conflicts_with_explicit_hours_field",
+    "full_R_truth_flip": false,
+    "globally_meaning_preserving_source_transform": false,
+    "character_length_each_if_only_literal_payloads_replaced": 2751,
+    "BPE_token_count_positions_masks_and_KV_axes": "UNKNOWN_NOT_MATERIALIZED_OR_TOKENIZED"
+  },
+  "causal_endpoints": {
+    "strict_causal_scope": "Future original answer tokens do not affect earlier receiver; all source fields including Sunday are already available",
+    "first_time_token": {
+      "target_index": 53,
+      "target_id": 1114,
+      "receiver_index": 52,
+      "receiver_id": 220,
+      "literal": "17",
+      "diagnostic_limit": "common A/B start, cannot by itself distinguish intervals"
+    },
+    "first_divergent_content": {
+      "target_index": 55,
+      "target_id": 410,
+      "receiver_index": 54,
+      "receiver_id": 25,
+      "literal": "00",
+      "response_character_span": [
+        250,
+        252
+      ],
+      "prefix_ends_with": "Monday to Saturday from 17:",
+      "A_minute": "30",
+      "B_minute": "00"
+    },
+    "later_endhour": {
+      "target_index": 57,
+      "target_id": 1691,
+      "receiver_index": 56,
+      "receiver_id": 12,
+      "literal": "21",
+      "response_character_span": [
+        253,
+        255
+      ],
+      "limit": "conditioned on forced original minute00, not independent prechoice"
+    },
+    "original_complete_B_continuation_indices": [
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59
+    ],
+    "Sunday_answer_first_token_index": 62,
+    "no_answer_repair_or_prefix_reset": true
+  },
+  "competing_predictions": [
+    {
+      "explanation": "strict global interval-count-only",
+      "prediction": "same B compatibility across pair because A1/B6 identical",
+      "limit": "does not include positions, source-key proximity or repeated-token geometry"
+    },
+    {
+      "explanation": "weekday/scope-sensitive compatibility",
+      "prediction": "greater original Mon-Sat B compatibility in Splus than Sminus",
+      "limit": "also compatible with range-aware majority heuristics; not proof of universal binding"
+    },
+    {
+      "explanation": "last Sunday source-value copying",
+      "prediction": "can predict the opposite direction, because SundayB is in Sminus and SundayA in Splus",
+      "limit": "full actual attention/representation may mix several heuristics"
+    }
+  ],
+  "matched_controls_required_before_admission": [
+    "exact no-op reproduction and unchanged R axis",
+    "only two complete hours-value payload edits; all other bytes fixed",
+    "actual tokenizer/mask/absolute-position audit; wordbag does not imply matched physical execution",
+    "support-preserving relocation of the single A exception within the six claimed weekdays, retaining SundayB and A1/B6",
+    "frozen first-divergence and complete original B continuation endpoints, showing all coordinates not favorable-digit selection",
+    "separate original common-prefix17 and later already-conditioned endhour21",
+    "do not use future Sunday answer clause to infer earlier causal choice",
+    "full model/tokenizer/precision/resource/call/stop contract with fresh independent review and root claim"
+  ],
+  "closed_prior_review": {
+    "P021": {
+      "shared_family": "source-world perturbation is old",
+      "new_discriminating_condition": "independently frozen seven-field source license, exact fixed natural day-range subclaim, support-changing plus support-preserving contract before future Sunday",
+      "does_not_reopen": "coarse numeric bag shuffles or world-mixture detector",
+      "remaining_failure_risks": "semantic wordbag fallacy, position/recency effects, no broad automatic coverage or direct-verification advantage"
+    },
+    "P026": {
+      "difference": "entire original response/history unchanged; source assignments only",
+      "forbidden_return": "repair R, reset prefix or compare invented future response variants"
+    }
+  },
+  "interpretation_limits": [
+    "Predicted-direction effect rejects only strict global value-count-only explanation for this case",
+    "Not full-R support change or detector effect",
+    "Not original GPT-4 generator causality",
+    "Not proof of a universal binding algorithm or semantic content in a chosen KV",
+    "Null does not refute all relational representations",
+    "No automatic execution or algorithm admission from this audit"
+  ]
+}

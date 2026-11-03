@@ -1,0 +1,851 @@
+{
+  "schema": "h017-M5-data2txt-hours-source-only-preparation-v1",
+  "created_utc": "2026-11-03T12:00:16.406185+00:00",
+  "status": "manual_source_license_and_future_contrast_preparation_only_no_method_or_run_admitted",
+  "case_id": "5670",
+  "source_id": "13601",
+  "task": "Data2txt",
+  "prepared_line": 1,
+  "source_sha256": "f71690e1016bcb5c29096c1b98c232cd253d2ddab7360400791ff76af9ef8b60",
+  "source_characters": 2750,
+  "offset_contract": "Zero-based Unicode code-point character spans [start,end) in original decoded source; quotes belong to literal spans and are excluded only in separately checked payload spans.",
+  "reading_contract": {
+    "inference_row_fields_decoded": [
+      "id",
+      "source_id",
+      "task",
+      "source"
+    ],
+    "inference_row_fields_not_decoded": [
+      "prompt",
+      "response"
+    ],
+    "evaluation_annotations_read": false,
+    "other_Yelp_attributes_analyzed_or_reported": false,
+    "name_read_only_for_record_identity": true,
+    "native_source_mutated": false,
+    "counterfactual_source_strings_materialized": false,
+    "new_model_calls": 0,
+    "new_detector_scores": 0,
+    "new_experiment_claims": 0,
+    "new_goal_created": false,
+    "package_source_changes": false,
+    "state_memory_changes": false
+  },
+  "provenance": {
+    "prepared_inputs": {
+      "path": "C:\\ResearchData\\token-detector-remote-20261103\\01_current_project\\outputs\\ragtruth_full_shared_20261029\\test_Data2txt\\inputs.jsonl",
+      "sha256": "050c79f2711aa292845f27ed4f3ae8b68f0d263bc9d29678486f7e8fb6477521"
+    },
+    "prepared_manifest": {
+      "path": "C:\\ResearchData\\token-detector-remote-20261103\\01_current_project\\outputs\\ragtruth_full_shared_20261029\\test_Data2txt\\manifest.json",
+      "sha256": "d1f0ba0658222556e2542e145da84538d14a9fa5b230dd9bb8fa34b830944b80"
+    },
+    "M0_occurrences": {
+      "path": "outputs/h017-relation-20261103/m0-inventory/occurrences.jsonl",
+      "sha256": "3cf3905e02fe8dfdcf597b1f69f6f48c2e0b6deee1d1990c983e9625e28d2e3b"
+    },
+    "M0_plan": {
+      "path": "outputs/h017-relation-20261103/m0-inventory/plan.json",
+      "sha256": "2b88dab0dd2e8eaadc378d09889eae0657ef6f8941d024708a217f76802471d3"
+    },
+    "M0_seal": {
+      "path": "outputs/h017-relation-20261103/m0-inventory/seal.json",
+      "sha256": "0bb692422827e582e8b81bb20edf2c7596ed50d0e05b22f1c313e823841d573c"
+    },
+    "M0_original_semantic_status": "not_assessed",
+    "M0_original_status": "structural_fields_only",
+    "M0_status_not_rewritten": true,
+    "broader_review_references": [
+      {
+        "path": "outputs/h017-relation-20261103/M3_ADDRESS_PAYLOAD_INDEPENDENT_REVIEW.md",
+        "sha256": "3a95b37e9ce9e926e4bfdb88355b5462797e0180f82fd44e0f207f07c57eaa6a"
+      },
+      {
+        "path": "outputs/h017-relation-20261103/M4_NATURAL_TEMPORAL_OBSERVATION_INDEPENDENT_REVIEW.md",
+        "sha256": "8c5401483abdeef3fc12bce2948e50451833ce13e0e91676943dba4d15e7378c"
+      },
+      {
+        "path": "outputs/h017-relation-20261103/RAGTRUTH_NATURAL_QA_SOURCE_LICENSE_INDEPENDENT_REVIEW.md",
+        "sha256": "ec8a97b5dce7e9c2c2f1c1a6caf735240083a633f99c81cd373f6dcfe0763229"
+      }
+    ]
+  },
+  "closed_schema": {
+    "identity_name_literal": {
+      "start": 9,
+      "end": 23,
+      "text": "'Finch & Fork'"
+    },
+    "hours_dictionary_span": {
+      "start": 211,
+      "end": 380,
+      "text": "{'Monday': '17:30-23:0', 'Tuesday': '17:0-21:0', 'Wednesday': '17:0-21:0', 'Thursday': '17:0-21:0', 'Friday': '17:0-21:0', 'Saturday': '17:0-21:0', 'Sunday': '9:0-14:0'}"
+    },
+    "M0_hours_scope_path": [
+      "hours"
+    ],
+    "exactly_seven_distinct_explicit_keys": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "meaning": "Within this single source record, hours is manually read as the stated operating-clock interval for each named weekday. It is a closed seven-key field audit, not independently verified real/current business availability or automatic semantic coverage.",
+    "normalization": "Parse allfour integer clock components; pad hour/minute to two digits without changing values. Preserve each complete interval and its weekday path; 23:0 means the literal clock23:00 under this declared parsing convention, never23:30 or midnight.",
+    "closure_limits": [
+      "Closed only over the seven explicit weekday keys in this hours object.",
+      "No timezone, date range, holiday/special-service exception or endpoint inclusivity is supplied.",
+      "No meal service, booking rule, all-day closure or current real-world operating status is inferred.",
+      "Repeated identical complete intervals are legitimate many-days-to-one-value relations; no global bijection.",
+      "Original source business name/ID refer to the record; no external location identity resolution was attempted."
+    ]
+  },
+  "licensed_facts": [
+    {
+      "fact_id": "hours_Monday",
+      "license": "manual_closed_hours_field_reading_of_explicit_serialized_key_value",
+      "source_id": "13601",
+      "subject": {
+        "name": "Finch & Fork",
+        "source_name_span": {
+          "start": 9,
+          "end": 23,
+          "text": "'Finch & Fork'"
+        },
+        "M0_name_path": [
+          "name"
+        ],
+        "M0_name_occurrence_id": "b4bae5f6c4e0f898714d2ac4b471cdfdca396b3facf5e1e0f9b8b9f0275ea58b"
+      },
+      "predicate": "source-reported business hours for named weekday",
+      "time_scope": {
+        "weekday": "Monday",
+        "calendar_dates": null,
+        "timezone": null,
+        "effective_date": null,
+        "holiday_exceptions": "not_stated"
+      },
+      "polarity": "positive_as_reported",
+      "value": {
+        "raw": "17:30-23:0",
+        "normalized": "17:30-23:00",
+        "start_clock": "17:30",
+        "end_clock": "23:00",
+        "start_minutes_after_midnight": 1050,
+        "end_minutes_after_midnight": 1380,
+        "arithmetic_clock_difference_minutes": 330,
+        "clock_difference_is_external_availability_claim": false,
+        "endpoint_inclusion": "not_stated",
+        "cross_midnight_wrap": "not_needed_for_these_literals"
+      },
+      "M0": {
+        "occurrence_id": "517a07c578be5fdc80f510791e02739d173483aedac090f00fbce2e2bd13aca0",
+        "path": [
+          "hours",
+          "Monday"
+        ],
+        "owner_path": [
+          "hours"
+        ],
+        "predicate_segment": "Monday",
+        "scalar_type": "string",
+        "relation_license": "explicit_serialized_field",
+        "semantic_status": "not_assessed"
+      },
+      "source_spans": {
+        "weekday_key_literal": {
+          "start": 212,
+          "end": 220,
+          "text": "'Monday'"
+        },
+        "interval_value_literal": {
+          "start": 222,
+          "end": 234,
+          "text": "'17:30-23:0'"
+        },
+        "interval_payload": {
+          "start": 223,
+          "end": 233,
+          "text": "17:30-23:0"
+        },
+        "start_clock_payload": {
+          "start": 223,
+          "end": 228,
+          "text": "17:30"
+        },
+        "end_clock_payload": {
+          "start": 229,
+          "end": 233,
+          "text": "23:0"
+        }
+      }
+    },
+    {
+      "fact_id": "hours_Tuesday",
+      "license": "manual_closed_hours_field_reading_of_explicit_serialized_key_value",
+      "source_id": "13601",
+      "subject": {
+        "name": "Finch & Fork",
+        "source_name_span": {
+          "start": 9,
+          "end": 23,
+          "text": "'Finch & Fork'"
+        },
+        "M0_name_path": [
+          "name"
+        ],
+        "M0_name_occurrence_id": "b4bae5f6c4e0f898714d2ac4b471cdfdca396b3facf5e1e0f9b8b9f0275ea58b"
+      },
+      "predicate": "source-reported business hours for named weekday",
+      "time_scope": {
+        "weekday": "Tuesday",
+        "calendar_dates": null,
+        "timezone": null,
+        "effective_date": null,
+        "holiday_exceptions": "not_stated"
+      },
+      "polarity": "positive_as_reported",
+      "value": {
+        "raw": "17:0-21:0",
+        "normalized": "17:00-21:00",
+        "start_clock": "17:00",
+        "end_clock": "21:00",
+        "start_minutes_after_midnight": 1020,
+        "end_minutes_after_midnight": 1260,
+        "arithmetic_clock_difference_minutes": 240,
+        "clock_difference_is_external_availability_claim": false,
+        "endpoint_inclusion": "not_stated",
+        "cross_midnight_wrap": "not_needed_for_these_literals"
+      },
+      "M0": {
+        "occurrence_id": "417b67049099feb4c5a82cbafa4e526ee1e20a3ba6d7860f5f7da61644b63496",
+        "path": [
+          "hours",
+          "Tuesday"
+        ],
+        "owner_path": [
+          "hours"
+        ],
+        "predicate_segment": "Tuesday",
+        "scalar_type": "string",
+        "relation_license": "explicit_serialized_field",
+        "semantic_status": "not_assessed"
+      },
+      "source_spans": {
+        "weekday_key_literal": {
+          "start": 236,
+          "end": 245,
+          "text": "'Tuesday'"
+        },
+        "interval_value_literal": {
+          "start": 247,
+          "end": 258,
+          "text": "'17:0-21:0'"
+        },
+        "interval_payload": {
+          "start": 248,
+          "end": 257,
+          "text": "17:0-21:0"
+        },
+        "start_clock_payload": {
+          "start": 248,
+          "end": 252,
+          "text": "17:0"
+        },
+        "end_clock_payload": {
+          "start": 253,
+          "end": 257,
+          "text": "21:0"
+        }
+      }
+    },
+    {
+      "fact_id": "hours_Wednesday",
+      "license": "manual_closed_hours_field_reading_of_explicit_serialized_key_value",
+      "source_id": "13601",
+      "subject": {
+        "name": "Finch & Fork",
+        "source_name_span": {
+          "start": 9,
+          "end": 23,
+          "text": "'Finch & Fork'"
+        },
+        "M0_name_path": [
+          "name"
+        ],
+        "M0_name_occurrence_id": "b4bae5f6c4e0f898714d2ac4b471cdfdca396b3facf5e1e0f9b8b9f0275ea58b"
+      },
+      "predicate": "source-reported business hours for named weekday",
+      "time_scope": {
+        "weekday": "Wednesday",
+        "calendar_dates": null,
+        "timezone": null,
+        "effective_date": null,
+        "holiday_exceptions": "not_stated"
+      },
+      "polarity": "positive_as_reported",
+      "value": {
+        "raw": "17:0-21:0",
+        "normalized": "17:00-21:00",
+        "start_clock": "17:00",
+        "end_clock": "21:00",
+        "start_minutes_after_midnight": 1020,
+        "end_minutes_after_midnight": 1260,
+        "arithmetic_clock_difference_minutes": 240,
+        "clock_difference_is_external_availability_claim": false,
+        "endpoint_inclusion": "not_stated",
+        "cross_midnight_wrap": "not_needed_for_these_literals"
+      },
+      "M0": {
+        "occurrence_id": "94048883a7de2f74d49da5777af254a9f59c1529ebc8a2ca26b6139f42d24d10",
+        "path": [
+          "hours",
+          "Wednesday"
+        ],
+        "owner_path": [
+          "hours"
+        ],
+        "predicate_segment": "Wednesday",
+        "scalar_type": "string",
+        "relation_license": "explicit_serialized_field",
+        "semantic_status": "not_assessed"
+      },
+      "source_spans": {
+        "weekday_key_literal": {
+          "start": 260,
+          "end": 271,
+          "text": "'Wednesday'"
+        },
+        "interval_value_literal": {
+          "start": 273,
+          "end": 284,
+          "text": "'17:0-21:0'"
+        },
+        "interval_payload": {
+          "start": 274,
+          "end": 283,
+          "text": "17:0-21:0"
+        },
+        "start_clock_payload": {
+          "start": 274,
+          "end": 278,
+          "text": "17:0"
+        },
+        "end_clock_payload": {
+          "start": 279,
+          "end": 283,
+          "text": "21:0"
+        }
+      }
+    },
+    {
+      "fact_id": "hours_Thursday",
+      "license": "manual_closed_hours_field_reading_of_explicit_serialized_key_value",
+      "source_id": "13601",
+      "subject": {
+        "name": "Finch & Fork",
+        "source_name_span": {
+          "start": 9,
+          "end": 23,
+          "text": "'Finch & Fork'"
+        },
+        "M0_name_path": [
+          "name"
+        ],
+        "M0_name_occurrence_id": "b4bae5f6c4e0f898714d2ac4b471cdfdca396b3facf5e1e0f9b8b9f0275ea58b"
+      },
+      "predicate": "source-reported business hours for named weekday",
+      "time_scope": {
+        "weekday": "Thursday",
+        "calendar_dates": null,
+        "timezone": null,
+        "effective_date": null,
+        "holiday_exceptions": "not_stated"
+      },
+      "polarity": "positive_as_reported",
+      "value": {
+        "raw": "17:0-21:0",
+        "normalized": "17:00-21:00",
+        "start_clock": "17:00",
+        "end_clock": "21:00",
+        "start_minutes_after_midnight": 1020,
+        "end_minutes_after_midnight": 1260,
+        "arithmetic_clock_difference_minutes": 240,
+        "clock_difference_is_external_availability_claim": false,
+        "endpoint_inclusion": "not_stated",
+        "cross_midnight_wrap": "not_needed_for_these_literals"
+      },
+      "M0": {
+        "occurrence_id": "fb533073e6ad15463f46a86c85486d61f8a3fbd2b752ca06d8c10f5b7106baee",
+        "path": [
+          "hours",
+          "Thursday"
+        ],
+        "owner_path": [
+          "hours"
+        ],
+        "predicate_segment": "Thursday",
+        "scalar_type": "string",
+        "relation_license": "explicit_serialized_field",
+        "semantic_status": "not_assessed"
+      },
+      "source_spans": {
+        "weekday_key_literal": {
+          "start": 286,
+          "end": 296,
+          "text": "'Thursday'"
+        },
+        "interval_value_literal": {
+          "start": 298,
+          "end": 309,
+          "text": "'17:0-21:0'"
+        },
+        "interval_payload": {
+          "start": 299,
+          "end": 308,
+          "text": "17:0-21:0"
+        },
+        "start_clock_payload": {
+          "start": 299,
+          "end": 303,
+          "text": "17:0"
+        },
+        "end_clock_payload": {
+          "start": 304,
+          "end": 308,
+          "text": "21:0"
+        }
+      }
+    },
+    {
+      "fact_id": "hours_Friday",
+      "license": "manual_closed_hours_field_reading_of_explicit_serialized_key_value",
+      "source_id": "13601",
+      "subject": {
+        "name": "Finch & Fork",
+        "source_name_span": {
+          "start": 9,
+          "end": 23,
+          "text": "'Finch & Fork'"
+        },
+        "M0_name_path": [
+          "name"
+        ],
+        "M0_name_occurrence_id": "b4bae5f6c4e0f898714d2ac4b471cdfdca396b3facf5e1e0f9b8b9f0275ea58b"
+      },
+      "predicate": "source-reported business hours for named weekday",
+      "time_scope": {
+        "weekday": "Friday",
+        "calendar_dates": null,
+        "timezone": null,
+        "effective_date": null,
+        "holiday_exceptions": "not_stated"
+      },
+      "polarity": "positive_as_reported",
+      "value": {
+        "raw": "17:0-21:0",
+        "normalized": "17:00-21:00",
+        "start_clock": "17:00",
+        "end_clock": "21:00",
+        "start_minutes_after_midnight": 1020,
+        "end_minutes_after_midnight": 1260,
+        "arithmetic_clock_difference_minutes": 240,
+        "clock_difference_is_external_availability_claim": false,
+        "endpoint_inclusion": "not_stated",
+        "cross_midnight_wrap": "not_needed_for_these_literals"
+      },
+      "M0": {
+        "occurrence_id": "828c92881c4843a69ee24fa8bd807a1a4dbde382c3c8cd1dd3468a61c724a18e",
+        "path": [
+          "hours",
+          "Friday"
+        ],
+        "owner_path": [
+          "hours"
+        ],
+        "predicate_segment": "Friday",
+        "scalar_type": "string",
+        "relation_license": "explicit_serialized_field",
+        "semantic_status": "not_assessed"
+      },
+      "source_spans": {
+        "weekday_key_literal": {
+          "start": 311,
+          "end": 319,
+          "text": "'Friday'"
+        },
+        "interval_value_literal": {
+          "start": 321,
+          "end": 332,
+          "text": "'17:0-21:0'"
+        },
+        "interval_payload": {
+          "start": 322,
+          "end": 331,
+          "text": "17:0-21:0"
+        },
+        "start_clock_payload": {
+          "start": 322,
+          "end": 326,
+          "text": "17:0"
+        },
+        "end_clock_payload": {
+          "start": 327,
+          "end": 331,
+          "text": "21:0"
+        }
+      }
+    },
+    {
+      "fact_id": "hours_Saturday",
+      "license": "manual_closed_hours_field_reading_of_explicit_serialized_key_value",
+      "source_id": "13601",
+      "subject": {
+        "name": "Finch & Fork",
+        "source_name_span": {
+          "start": 9,
+          "end": 23,
+          "text": "'Finch & Fork'"
+        },
+        "M0_name_path": [
+          "name"
+        ],
+        "M0_name_occurrence_id": "b4bae5f6c4e0f898714d2ac4b471cdfdca396b3facf5e1e0f9b8b9f0275ea58b"
+      },
+      "predicate": "source-reported business hours for named weekday",
+      "time_scope": {
+        "weekday": "Saturday",
+        "calendar_dates": null,
+        "timezone": null,
+        "effective_date": null,
+        "holiday_exceptions": "not_stated"
+      },
+      "polarity": "positive_as_reported",
+      "value": {
+        "raw": "17:0-21:0",
+        "normalized": "17:00-21:00",
+        "start_clock": "17:00",
+        "end_clock": "21:00",
+        "start_minutes_after_midnight": 1020,
+        "end_minutes_after_midnight": 1260,
+        "arithmetic_clock_difference_minutes": 240,
+        "clock_difference_is_external_availability_claim": false,
+        "endpoint_inclusion": "not_stated",
+        "cross_midnight_wrap": "not_needed_for_these_literals"
+      },
+      "M0": {
+        "occurrence_id": "cc04d1386e09776c6b8d79ee74148bff43be2feecd24278d06d663ef8179ee32",
+        "path": [
+          "hours",
+          "Saturday"
+        ],
+        "owner_path": [
+          "hours"
+        ],
+        "predicate_segment": "Saturday",
+        "scalar_type": "string",
+        "relation_license": "explicit_serialized_field",
+        "semantic_status": "not_assessed"
+      },
+      "source_spans": {
+        "weekday_key_literal": {
+          "start": 334,
+          "end": 344,
+          "text": "'Saturday'"
+        },
+        "interval_value_literal": {
+          "start": 346,
+          "end": 357,
+          "text": "'17:0-21:0'"
+        },
+        "interval_payload": {
+          "start": 347,
+          "end": 356,
+          "text": "17:0-21:0"
+        },
+        "start_clock_payload": {
+          "start": 347,
+          "end": 351,
+          "text": "17:0"
+        },
+        "end_clock_payload": {
+          "start": 352,
+          "end": 356,
+          "text": "21:0"
+        }
+      }
+    },
+    {
+      "fact_id": "hours_Sunday",
+      "license": "manual_closed_hours_field_reading_of_explicit_serialized_key_value",
+      "source_id": "13601",
+      "subject": {
+        "name": "Finch & Fork",
+        "source_name_span": {
+          "start": 9,
+          "end": 23,
+          "text": "'Finch & Fork'"
+        },
+        "M0_name_path": [
+          "name"
+        ],
+        "M0_name_occurrence_id": "b4bae5f6c4e0f898714d2ac4b471cdfdca396b3facf5e1e0f9b8b9f0275ea58b"
+      },
+      "predicate": "source-reported business hours for named weekday",
+      "time_scope": {
+        "weekday": "Sunday",
+        "calendar_dates": null,
+        "timezone": null,
+        "effective_date": null,
+        "holiday_exceptions": "not_stated"
+      },
+      "polarity": "positive_as_reported",
+      "value": {
+        "raw": "9:0-14:0",
+        "normalized": "09:00-14:00",
+        "start_clock": "09:00",
+        "end_clock": "14:00",
+        "start_minutes_after_midnight": 540,
+        "end_minutes_after_midnight": 840,
+        "arithmetic_clock_difference_minutes": 300,
+        "clock_difference_is_external_availability_claim": false,
+        "endpoint_inclusion": "not_stated",
+        "cross_midnight_wrap": "not_needed_for_these_literals"
+      },
+      "M0": {
+        "occurrence_id": "0b3bbfb82240ae87bbf43ca6aad28e81a4ed4ce0dd4245e42b37620b95f1fc8d",
+        "path": [
+          "hours",
+          "Sunday"
+        ],
+        "owner_path": [
+          "hours"
+        ],
+        "predicate_segment": "Sunday",
+        "scalar_type": "string",
+        "relation_license": "explicit_serialized_field",
+        "semantic_status": "not_assessed"
+      },
+      "source_spans": {
+        "weekday_key_literal": {
+          "start": 359,
+          "end": 367,
+          "text": "'Sunday'"
+        },
+        "interval_value_literal": {
+          "start": 369,
+          "end": 379,
+          "text": "'9:0-14:0'"
+        },
+        "interval_payload": {
+          "start": 370,
+          "end": 378,
+          "text": "9:0-14:0"
+        },
+        "start_clock_payload": {
+          "start": 370,
+          "end": 373,
+          "text": "9:0"
+        },
+        "end_clock_payload": {
+          "start": 374,
+          "end": 378,
+          "text": "14:0"
+        }
+      }
+    }
+  ],
+  "native_complete_interval_frequencies_in_seven_hours_fields": {
+    "17:30-23:00": 1,
+    "17:00-21:00": 5,
+    "09:00-14:00": 1
+  },
+  "proposed_fact_intervention_families": [
+    {
+      "id": "POTENTIAL_1_MONDAY_TO_TUESDAY_INTERVAL",
+      "operations": [
+        {
+          "target_M0_path": [
+            "hours",
+            "Monday"
+          ],
+          "target_M0_occurrence_id": "517a07c578be5fdc80f510791e02739d173483aedac090f00fbce2e2bd13aca0",
+          "native_raw_interval": "17:30-23:0",
+          "native_normalized_interval": "17:30-23:00",
+          "proposed_replacement_raw_interval": "17:0-21:0",
+          "proposed_replacement_normalized_interval": "17:00-21:00",
+          "donor_native_M0_path": [
+            "hours",
+            "Tuesday"
+          ],
+          "native_target_value_literal_span": {
+            "start": 222,
+            "end": 234,
+            "text": "'17:30-23:0'"
+          },
+          "replacement_character_length_delta_if_only_payload_replaced": -1,
+          "logical_source_fact_changed": "Monday",
+          "other_source_facts_held_fixed_by_future_contract": true,
+          "response_compatibility": "unknown_response_unread",
+          "execution_status": "proposal_only_not_materialized"
+        }
+      ],
+      "purely_algebraic_hours_frequency_delta": {
+        "17:30-23:00": -1,
+        "17:00-21:00": 1,
+        "09:00-14:00": 0
+      },
+      "new_hours_frequencies_if_executed": {
+        "17:30-23:00": 0,
+        "17:00-21:00": 6,
+        "09:00-14:00": 1
+      },
+      "scope": "Would change Monday only. No statement about which original response claim becomes supported/unsupported is licensed."
+    },
+    {
+      "id": "POTENTIAL_2_SUNDAY_TO_TUESDAY_INTERVAL",
+      "operations": [
+        {
+          "target_M0_path": [
+            "hours",
+            "Sunday"
+          ],
+          "target_M0_occurrence_id": "0b3bbfb82240ae87bbf43ca6aad28e81a4ed4ce0dd4245e42b37620b95f1fc8d",
+          "native_raw_interval": "9:0-14:0",
+          "native_normalized_interval": "09:00-14:00",
+          "proposed_replacement_raw_interval": "17:0-21:0",
+          "proposed_replacement_normalized_interval": "17:00-21:00",
+          "donor_native_M0_path": [
+            "hours",
+            "Tuesday"
+          ],
+          "native_target_value_literal_span": {
+            "start": 369,
+            "end": 379,
+            "text": "'9:0-14:0'"
+          },
+          "replacement_character_length_delta_if_only_payload_replaced": 1,
+          "logical_source_fact_changed": "Sunday",
+          "other_source_facts_held_fixed_by_future_contract": true,
+          "response_compatibility": "unknown_response_unread",
+          "execution_status": "proposal_only_not_materialized"
+        }
+      ],
+      "purely_algebraic_hours_frequency_delta": {
+        "17:30-23:00": 0,
+        "17:00-21:00": 1,
+        "09:00-14:00": -1
+      },
+      "new_hours_frequencies_if_executed": {
+        "17:30-23:00": 1,
+        "17:00-21:00": 6,
+        "09:00-14:00": 0
+      },
+      "scope": "Would change Sunday only while Monday remains native. Compared with potential1, target17:00-21:00 frequency rises5 to6 in both; the removed interval and changed day differ, so the complete value multiset is not matched.",
+      "not_matched_vs_potential1": [
+        "Removed original complete interval differs.",
+        "Changed weekday and native time-of-day interval differ.",
+        "Native Monday replacement changes payload length by-1 character; native Sunday replacement changes it by+1 character.",
+        "Prompt token count, absolute answer positions/RoPE and contextual model effects are unknown; equal target-interval frequency alone does not match these."
+      ]
+    },
+    {
+      "id": "POTENTIAL_3_SATURDAY_VS_THURSDAY_TO_NATIVE_MONDAY_INTERVAL",
+      "variants": {
+        "Saturday_variant": {
+          "target_M0_path": [
+            "hours",
+            "Saturday"
+          ],
+          "target_M0_occurrence_id": "cc04d1386e09776c6b8d79ee74148bff43be2feecd24278d06d663ef8179ee32",
+          "native_raw_interval": "17:0-21:0",
+          "native_normalized_interval": "17:00-21:00",
+          "proposed_replacement_raw_interval": "17:30-23:0",
+          "proposed_replacement_normalized_interval": "17:30-23:00",
+          "donor_native_M0_path": [
+            "hours",
+            "Monday"
+          ],
+          "native_target_value_literal_span": {
+            "start": 346,
+            "end": 357,
+            "text": "'17:0-21:0'"
+          },
+          "replacement_character_length_delta_if_only_payload_replaced": 1,
+          "logical_source_fact_changed": "Saturday",
+          "other_source_facts_held_fixed_by_future_contract": true,
+          "response_compatibility": "unknown_response_unread",
+          "execution_status": "proposal_only_not_materialized"
+        },
+        "Thursday_variant": {
+          "target_M0_path": [
+            "hours",
+            "Thursday"
+          ],
+          "target_M0_occurrence_id": "fb533073e6ad15463f46a86c85486d61f8a3fbd2b752ca06d8c10f5b7106baee",
+          "native_raw_interval": "17:0-21:0",
+          "native_normalized_interval": "17:00-21:00",
+          "proposed_replacement_raw_interval": "17:30-23:0",
+          "proposed_replacement_normalized_interval": "17:30-23:00",
+          "donor_native_M0_path": [
+            "hours",
+            "Monday"
+          ],
+          "native_target_value_literal_span": {
+            "start": 298,
+            "end": 309,
+            "text": "'17:0-21:0'"
+          },
+          "replacement_character_length_delta_if_only_payload_replaced": 1,
+          "logical_source_fact_changed": "Thursday",
+          "other_source_facts_held_fixed_by_future_contract": true,
+          "response_compatibility": "unknown_response_unread",
+          "execution_status": "proposal_only_not_materialized"
+        }
+      },
+      "purely_algebraic_hours_frequency_delta_each": {
+        "17:30-23:00": 1,
+        "17:00-21:00": -1,
+        "09:00-14:00": 0
+      },
+      "new_hours_frequencies_each_if_executed": {
+        "17:30-23:00": 2,
+        "17:00-21:00": 4,
+        "09:00-14:00": 1
+      },
+      "matched_properties": "Both native recipients have the identical complete17:0-21:0 value; both proposed donors are the identical native Monday17:30-23:0 value. Whole-interval multiset, endpoint-character content and total character-length change match across the two hypothetical variants, with all other source text held fixed.",
+      "not_matched_or_not_yet_licensed": [
+        "Changed weekday/field position differs.",
+        "Tokenization, token count, absolute positions/RoPE and contextual language-model frequency effects are not yet qualified.",
+        "Neither edit preserves all source facts; whether one lies outside a fixed response day-range requires separately frozen independent R review.",
+        "No positive/negative control outcome, support status or causal effect is assigned from source alone."
+      ]
+    }
+  ],
+  "broader_review_scope_check": {
+    "contradiction_to_existing_review_limits": false,
+    "conditional_assessment_only": true,
+    "P021_boundary": "Equal token/number bags alone never establish semantic controls. Here only explicit hours field meanings are manually licensed; potential3 is equal complete-value multiset but truth-changing in different day slots. A claim-invariant control requires later independent fixed-R scope review, not frequency equality.",
+    "H004_H005_H012_boundary": "Reuses existing M0 structural occurrence paths; no new frontend execution, NER proximity owner, global assignment, source-scope-only detector or semantic coverage claim.",
+    "P026_boundary": "No R repair, prefix reset, alternative-answer generation or future-token interaction is run or admitted.",
+    "M3_M4_boundary": "No head/layer/prompt rescue, K-patch retry, BC/ago remeasurement or inference that attention equals correctness. No risk formula follows from this audit.",
+    "next_required_before_any_run": [
+      "Independently inspect the unchanged original R only after this source review is frozen; explicitly define any day-range/quantifier scope and its character/token projection.",
+      "Keep source unknowns and distinguish explicit contradictions from merely unasserted details.",
+      "Freeze a scientifically distinct question, support/claim-invariant controls, exact model/tokenization/resource budget and independent admission.",
+      "Demonstrate that the matched contrast addresses the intended relation rather than lexical/global-frequency or positional differences.",
+      "Compare eventual original-response detection to strong direct text verification; no detection/novelty/cost advantage is established by these simple fields."
+    ]
+  },
+  "conclusion": {
+    "seven_source_intervals_explicit_and_M0_paths_exact": true,
+    "normalization_is_value_preserving_only": true,
+    "source_only_response_truth_label": null,
+    "response_day_range": "unknown_response_not_decoded",
+    "algorithm_or_model_run_admitted": false
+  }
+}

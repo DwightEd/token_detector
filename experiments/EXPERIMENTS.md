@@ -1,5 +1,7 @@
 # 实验账本与实际结论
 
+2026-11-03当前研究：[H017结果与图表](../docs/results/h017_relation_binding.md)。M3选择性K路径负结果、M4自然ago低概率、M5营业时间错误分钟高条件概率分别保留；M5只复用旧缓存，没有新增forward、评分或AUROC。完整代码9dc6600的Linux CI1101pass/1skip/9subtests。主目标六任务0.8仍未达成；当前无活动模型job，新范围条件对照尚未准入，当前恢复见research-state/RESUME.md。
+
 当前状态更新：2026-10-29。默认主线是 `myproject/shared.py` 中的SharedDetector，冻结R4保留作历史对照。
 完整金融测试及RAGTruth三任务完整TEST的V1/V2/V3已评分、评价和数值审计。
 V3金融点值已超过.8，但置信区间跨.8；RAGTruth QA/Data2txt仍低于冻结R4。

@@ -1,0 +1,19 @@
+{
+  "schema": "h017-exact-commit-linux-ci-v1",
+  "sha": "9dc6600268be10e802418047a3b885ea2994b845",
+  "run_id": 41632218378,
+  "job_id": 125904359604,
+  "status": "completed",
+  "conclusion": "success",
+  "url": "https://github.com/DwightEd/token_detector/actions/runs/41632218378",
+  "updated_at": "2026-11-03T12:05:29Z",
+  "validation_scope": "Full CPU suite, installed package outside checkout, Python3.11 on Ubuntu; includes repository-tool tests",
+  "test_summary": "2026-11-03T12:05:23.6144486Z 1101 passed, 1 skipped, 9 subtests passed in 191.65s (0:03:11)",
+  "passed": 1101,
+  "skipped": 1,
+  "subtests_passed": 9,
+  "elapsed_seconds": 191.65,
+  "local_full_suite_status": "incomplete_limits_preserved",
+  "snapshot_wheel_sha256": "fe8d9103429addc19fa25291b781bbb1b0d73ab7569e6833a7efb9c32af6c2ef",
+  "models_or_scores_rerun": false
+}
