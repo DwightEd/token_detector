@@ -2,6 +2,13 @@
 
 ## Active persistent research goal
 
+- Read research-state/DETECTION_OBJECTIVE.md: the primary endpoint is hallucination
+  risk on the EXISTING response and its original evaluation axis. Auxiliary verifier
+  QA accuracy is not detector accuracy or task AUROC improvement. H015/H016 are
+  closed auxiliary records; do not extend or rerun their role-QA branch as mainline.
+  QA/NLI may be internal components only with an explicit original-response risk
+  interface and direct natural-data detection evaluation under frozen rules.
+
 - At the start of every research continuation, read RESEARCH_BRIEF.md and
   research-state/RESUME.md, then run `python tools/research_memory.py context`.
   Load only the relevant fact/prior-experiment records for the next question.

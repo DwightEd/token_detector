@@ -2,6 +2,8 @@
 
 更新：2026-11-03，Asia/Shanghai。代码仓库：<https://github.com/DwightEd/token_detector>。
 
+**续接目标已纠正：** 请先读 [检测目标与实验验收](research-state/DETECTION_OBJECTIVE.md)。H016角色问答属于已关闭的辅助诊断，不能当作新方法的幻觉检测成绩，也不要在另一台电脑继续扩展这条问答支线。
+
 **先下载下表的 prepared、native 和历史分数整目录。已有观测可复用；本轮 H016 已完成，不需要另一台电脑重跑。** 六任务各 AUROC ≥ 0.8 的目标尚未完成，当前没有可直接宣称达到该目标的新方法。
 
 ## 1. 存储入口和路径的含义

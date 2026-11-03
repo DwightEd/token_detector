@@ -221,7 +221,7 @@
     },
     {
       "id": "H016_PAIRED_SCOPE_SHARED_PREFIX",
-      "status": "complete_toy_conditional_scope_readout_not_promoted",
+      "status": "closed_auxiliary_role_diagnostic_no_detector_improvement_claim",
       "design": "outputs/h016-paired-scope-20261103/DESIGN_DRAFT.md",
       "question": "How do fixed scope and readout changes interact under one common-prefix instrument?",
       "gold": "after_four_arm_score_freeze",
@@ -230,7 +230,9 @@
         "F038"
       ],
       "result": "docs/results/h016_paired_scope.json",
-      "run_id": "a52676148c96453c234c569ec0abc403a09ef9c3180113d7d05e6427a6683f70"
+      "run_id": "a52676148c96453c234c569ec0abc403a09ef9c3180113d7d05e6427a6683f70",
+      "primary_detection_progress": false,
+      "extension_as_standalone_qa_stopped": true
     }
   ]
 }

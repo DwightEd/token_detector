@@ -3,9 +3,9 @@
   "objective": "Mechanism-driven unsupervised hallucination detection improvement toward AUROC >= 0.8 on each of six primary tasks",
   "canonical_project": "D:/projects/research/token_detector",
   "goal_status": "not_achieved",
-  "phase": "H016_complete_remote_data_handoff_push_pending_CI",
-  "active_hypothesis": "H016_PAIRED_SCOPE_SHARED_PREFIX",
-  "next_question": "Hand off confirmed cloud prepared/native/score/model paths and completed local sealed caches; freeze a discriminating natural relation-frontend protocol before any new fulltask call.",
+  "phase": "original_response_hallucination_detection_anchor_restored_no_run",
+  "active_hypothesis": null,
+  "next_question": "Design one label-free module with executable risk scores on existing natural responses and original token axes, using archived FN/FP and closed prior results. Freeze the complete detection protocol before any new observations. No standalone role-QA extension.",
   "known_fact_ids": [
     "F001",
     "F002",
@@ -419,14 +419,16 @@
   "source_licences": "docs/results/source_constraint_licences.json",
   "binding_literature": "docs/research/20261103_entity_binding_review.md",
   "successful_ci": {
-    "commit": "1b7bf83ee6c094505c8dd8f488a112c174bb27e1",
-    "run_id": 41565792344,
-    "job_id": 125686875120,
+    "commit": "69aead38079e5f4c52afa9123c96f9eaa376f2d5",
+    "run_id": 41578874802,
+    "job_id": 125728734403,
     "conclusion": "success",
-    "url": "https://github.com/DwightEd/token_detector/actions/runs/41565792344",
+    "url": "https://github.com/DwightEd/token_detector/actions/runs/41578874802",
     "summaries": [
-      "972 passed, 1 skipped, 9 subtests passed in 172.91s (0:02:52)"
-    ]
+      "2026-11-03T04:38:20.2465497Z 992 passed, 1 skipped, 9 subtests passed in 201.68s (0:03:21)"
+    ],
+    "local_full_suite": "incomplete_at_180s",
+    "external_targeted_checks": 70
   },
   "active_run_id": null,
   "active_job": {
@@ -444,10 +446,13 @@
     },
     "automatic_retry": false,
     "source_commit": "0cc3c40e3ed61f85002927391a8146e7c6913195",
-    "status": "completed",
+    "status": "completed_no_new_job",
     "actual_forward_passes": 312
   },
   "completed_h016": "docs/results/h016_paired_scope.json",
   "remote_handoff": "REMOTE_EXPERIMENT_HANDOFF.md",
-  "local_full_cpu_suite": "incomplete_180_second_handoff_limit"
+  "local_full_cpu_suite": "incomplete_180_second_handoff_limit",
+  "primary_endpoint": "hallucination_detection_on_existing_response_original_evaluation_axis",
+  "objective_contract": "research-state/DETECTION_OBJECTIVE.md",
+  "proxy_qa_branch": "H015_H016_closed_auxiliary_only_not_detector_improvement"
 }
