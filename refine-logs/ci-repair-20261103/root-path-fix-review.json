@@ -1,0 +1,18 @@
+{
+  "status": "static_pass_after_author_regressions",
+  "reviewer": "root",
+  "source_sha256": {
+    "tools/research_memory.py": "e001eced69f33b365ca59f487e6c39195a5062bd6d6f786245118b9a901dc475",
+    "tests/test_research_memory.py": "714b2a2cef79a29c53b635695e6253a77ddcc783adce132588b106256c73c9f3"
+  },
+  "comparison_keys_only": true,
+  "actual_resolved_paths_retained_for_io": true,
+  "dos_unc_aliases_only": true,
+  "device_namespace_not_collapsed": true,
+  "symlink_resolution_precedes_containment": true,
+  "fingerprints_unchanged": true,
+  "author_checks": "40passed0skipped0.90s_outsidecheckout",
+  "full_windows_suite": "incomplete600secondlimit",
+  "remote_linux_ci": "pending_fix_push",
+  "new_research_model_calls": 0
+}

@@ -1,0 +1,60 @@
+{
+  "schema": "exact-research-evidence-archive-v1",
+  "files": [
+    {
+      "source": "outputs/h015-prefix-trie-20261103/DESIGN.md",
+      "archived": "refine-logs/h015-instrument-20261103/DESIGN.md",
+      "sha256": "e069a83b1be1960ed022e81179b53c61d2ffa754f851012bb635f34e5698b0f6"
+    },
+    {
+      "source": "outputs/h015-prefix-trie-20261103/pure-kernel-review.md",
+      "archived": "refine-logs/h015-instrument-20261103/pure-kernel-review.md",
+      "sha256": "bc6d680f2dc5ca4f21aa04f0a2271bcbfc1f566787ae50ad75becdc31c18210d"
+    },
+    {
+      "source": "outputs/h015-prefix-trie-20261103/backend-review.md",
+      "archived": "refine-logs/h015-instrument-20261103/backend-review.md",
+      "sha256": "7632d880c2e1221b61f86b1ca71bd9039bf852d4a055925603744b637de52909"
+    },
+    {
+      "source": "outputs/h015-prefix-trie-20261103/backend-cpu-test-receipt.json",
+      "archived": "refine-logs/h015-instrument-20261103/backend-cpu-test-receipt.json",
+      "sha256": "75940564f66c0d3e597c7c909694b2060d19a432f4277ce8877a96c181b89f76"
+    },
+    {
+      "source": "outputs/h015-prefix-trie-20261103/ENGINEERING_DESIGN.md",
+      "archived": "refine-logs/h015-instrument-20261103/ENGINEERING_DESIGN.md",
+      "sha256": "7491ff72ad0b933ce2f7a4f6a233e4bf1a8357b6c6a28b2aef85e610c13cd947"
+    },
+    {
+      "source": "outputs/h015-prefix-trie-20261103/preparation-freeze.json",
+      "archived": "refine-logs/h015-instrument-20261103/preparation-freeze.json",
+      "sha256": "9a278753085d49bd0ef75598dfba48ce90e70a8b0c304e55e8fe810bbf050a2b"
+    },
+    {
+      "source": "outputs/h015-prefix-trie-20261103/engineering-manifest.json",
+      "archived": "refine-logs/h015-instrument-20261103/engineering-manifest.json",
+      "sha256": "163346c87b2e344343a5ae0b028f8578e4a268ae0658f4dad60018488640b2a4"
+    },
+    {
+      "source": "outputs/h015-prefix-trie-20261103/manifest-seal.json",
+      "archived": "refine-logs/h015-instrument-20261103/manifest-seal.json",
+      "sha256": "f6bbcf99958ecb180f20be0966cbe01a29219a960ee4202430b8b51ab64462dd"
+    },
+    {
+      "source": "outputs/h015-prefix-trie-20261103/tokenizer-preparation.json",
+      "archived": "refine-logs/h015-instrument-20261103/tokenizer-preparation.json",
+      "sha256": "82f5c9b45c952d3b41c72affee9b233050f7c2ec2eec799f227211e047b9c7fc"
+    },
+    {
+      "source": "outputs/h015-prefix-trie-20261103/engineering-run-spec-v1.json",
+      "archived": "refine-logs/h015-instrument-20261103/engineering-run-spec-v1.json",
+      "sha256": "fb013accdd42325803e5b97079df8cab7d4ab52379ea4637688b4021dad21aa0"
+    },
+    {
+      "source": "outputs/h015-prefix-trie-20261103/runner-preflight-static-v1.json",
+      "archived": "refine-logs/h015-instrument-20261103/runner-preflight-static-v1.json",
+      "sha256": "9d75057db8fd8d329fcab42dd28a7bead79ad9b5c6ab96ccd6b5e2aa82ed6a2a"
+    }
+  ]
+}

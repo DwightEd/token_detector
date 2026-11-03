@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 import hashlib
 import json
 import os
-from pathlib import Path, PurePosixPath
+from pathlib import Path, PurePosixPath, PureWindowsPath
 import re
 import uuid
 
@@ -75,12 +75,25 @@ def fingerprint(spec):
     return hashlib.sha256(encoded.encode('utf-8')).hexdigest()
 
 
+def _path_key(path):
+    """Compare resolved Windows aliases without changing any I/O path."""
+    if isinstance(path, PureWindowsPath):
+        text = str(path)
+        if text[:8].casefold() == '\\\\?\\unc\\':
+            ordinary = PureWindowsPath('\\\\' + text[8:])
+            if ordinary.is_absolute():
+                return ordinary
+        elif re.match(r'^\\\\\?\\[A-Za-z]:\\', text):
+            return PureWindowsPath(text[4:])
+    return path
+
+
 def _record_path(project, run_id):
     if re.fullmatch('[0-9a-f]{64}', run_id) is None:
         raise ValueError('Run ID must be its full experiment SHA256')
     project = Path(project).resolve()
-    path = project/'research-state'/'runs'/run_id
-    if not path.resolve().is_relative_to(project):
+    path = (project/'research-state'/'runs'/run_id).resolve()
+    if not _path_key(path).is_relative_to(_path_key(project)):
         raise ValueError('Experiment bookkeeping escapes the project')
     return path
 
@@ -101,9 +114,9 @@ def _artifact_path(project, relative):
         raise ValueError('Evidence paths must be contained, canonical project-relative paths')
     project = Path(project).resolve()
     path = (project/relative).resolve()
-    if not path.is_relative_to(project):
+    if not _path_key(path).is_relative_to(_path_key(project)):
         raise ValueError('Evidence escapes the project')
-    if path.relative_to(project).as_posix().startswith('research-state/runs/'):
+    if _path_key(path).relative_to(_path_key(project)).as_posix().startswith('research-state/runs/'):
         raise ValueError('Run bookkeeping cannot certify itself as scientific evidence')
     return path
 
@@ -175,9 +188,9 @@ def finish(project, run_id, outcome, conclusion, artifacts):
     records = []
     for artifact in artifacts:
         path = Path(artifact).resolve()
-        if not path.is_relative_to(project) or not path.is_file():
+        if not _path_key(path).is_relative_to(_path_key(project)) or not path.is_file():
             raise ValueError('Evidence must be a real file inside the project')
-        relative = path.relative_to(project).as_posix()
+        relative = _path_key(path).relative_to(_path_key(project)).as_posix()
         _artifact_path(project, relative)
         records.append({'path': relative, 'sha256': file_hash(path)})
     value = {'schema': 1, 'run_id': run_id, 'completed_utc': now(), 'outcome': outcome,

@@ -1,0 +1,25 @@
+{
+  "schema": "h015-tokenizer-only-preparation-receipt-v1",
+  "python": "D:\\projects\\research\\envs\\token-detector-cu128\\Scripts\\python.exe",
+  "python_version": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+  "transformers": "4.57.1",
+  "elapsed_seconds": 21.85833580000326,
+  "manifest_sha256": "163346c87b2e344343a5ae0b028f8578e4a268ae0658f4dad60018488640b2a4",
+  "model_weights_read_or_loaded": false,
+  "cuda_calls": 0,
+  "model_calls": 0,
+  "tokenization_only": true,
+  "budget": {
+    "probes": 2,
+    "actual_planned_unique_contexts": 16,
+    "maximum_language_forwards": 32,
+    "extra_language_warmups": 0,
+    "planned_language_forwards": 16,
+    "planned_input_tokens": 4320,
+    "retained_fp16_vector_bytes": 4861952,
+    "max_temporary_python_vector_bytes": 38895616,
+    "maximum_context_tokens": 512,
+    "backend_context_rejection_bound": 4096,
+    "generated_tokens": 0
+  }
+}

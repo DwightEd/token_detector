@@ -3,9 +3,9 @@
   "objective": "Mechanism-driven unsupervised hallucination detection improvement toward AUROC >= 0.8 on each of six primary tasks",
   "canonical_project": "D:/projects/research/token_detector",
   "goal_status": "not_achieved",
-  "phase": "H012_H014_complete_H013_numeric_failure_H015_backend_engineering_pending",
+  "phase": "CI_fix_targeted_checks_passed_full_Linux_confirmation_pending",
   "active_hypothesis": "H015_SHARED_PREFIX_PROBABILITY_KERNEL",
-  "next_question": "Qualify one full-vocabulary distribution per shared causal prefix with a frozen bounded synthetic engineering probe. New binding literature identifies relation/order/lexical/null controls; do not rerun P002/P003 or infer natural bijection.",
+  "next_question": "Verify the exact fix commit full GitHub Tests workflow. Local Windowsfullsuite600s incomplete,40memorychecks pass. After CIgreen, resume already-frozen H01516node/4320token syntheticengineering qualification; no old H013 retry.",
   "known_fact_ids": [
     "F001",
     "F002",
@@ -40,7 +40,8 @@
     "F031",
     "F032",
     "F033",
-    "F034"
+    "F034",
+    "F035"
   ],
   "do_not_repeat": [
     "Describing known FN/FP counts again without a new discriminating intervention",
@@ -71,7 +72,7 @@
   "checkpoint_policy": "Update at every conclusion, completed run or structural pivot; record the next discriminating question before continuation",
   "pipeline_helpers": "External ARIS run_state/watchdog helpers were not found; no background watchdog is claimed. Repository state and exact-run reservation are implemented locally.",
   "case_panel": "research-state/case_panel_v1.json",
-  "resource_status": "No scientific GPU job armed. H01332raw computed then original numeric gate failed; worker exited. 7Bshort/512 only engineering complete.",
+  "resource_status": "No GPU worker armed; CI repair takes priority. H015 synthetic manifest and runner ready, not launched.",
   "user_resource_choice": "local_idle_automatic_run",
   "experiment_plan": "refine-logs/EXPERIMENT_PLAN.md",
   "run_reservation_status": "H013_terminal_engineering_failure32raw_retained_no_retry",
@@ -144,6 +145,14 @@
       "wheel_sha256": "38f76be982a3f72bb86be53b9fb082334afd5ff86cd5b96c39794b3508dd1d9f",
       "immutable_target": "outputs/h013-atomic-20261103/installed",
       "excluded_unfinished_module": "experiments/natural_masked_inventory.py"
+    },
+    "prefix_instrument": {
+      "core_commit": "ef75d8adcfa204968902b2eb3921df5bca41996b",
+      "package_members": 126,
+      "wheel_sha256": "d0f94203b51b95a07c2ace568ace28d82ac721c51eedff6194d34356c8b8baca",
+      "outside_installed_cpu_checks": 50,
+      "synthetic_engineering_model_calls": 0,
+      "prepared_manifest_sha256": "163346c87b2e344343a5ae0b028f8578e4a268ae0658f4dad60018488640b2a4"
     }
   },
   "last_completed_run": "5c162fe8ade0a235a221a9c0ad309bb1f98a3a8cb79ba9a06e3887192f7ba3fb",

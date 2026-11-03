@@ -887,6 +887,10 @@
         {
           "path": "outputs/h015-prefix-trie-20261103/pure-kernel-review.md",
           "sha256": "bc6d680f2dc5ca4f21aa04f0a2271bcbfc1f566787ae50ad75becdc31c18210d"
+        },
+        {
+          "path": "refine-logs/h015-instrument-20261103/pure-kernel-review.md",
+          "sha256": "bc6d680f2dc5ca4f21aa04f0a2271bcbfc1f566787ae50ad75becdc31c18210d"
         }
       ]
     },
@@ -899,6 +903,22 @@
         {
           "path": "docs/research/20261103_entity_binding_review.md",
           "sha256": "fabb3552398e946056fe1597080105bc910c77b139f56c84d8aca9d5c20c662c"
+        }
+      ]
+    },
+    {
+      "id": "F035",
+      "certainty": "CI_import_fix_and_Windows_path_regressions_remote_pending",
+      "claim": "GitHub run41563596975 andolder41522551043 installedsuccess then failedcollection: unpackagedtools import. Explicitfileloader fixes isolation. Windowsmkdir race exposed extendedDOSanchor alias; comparison-only keys preserve physicalIO/escape guards;40passed0skip. LocalfullCPU600stimeout is incomplete.",
+      "does_not_imply": "Targeted40 andH01550 checks are not fullsuitepass. Must inspect the new exactcommit fullLinuxCI; no new scientific effects or model runs.",
+      "evidence": [
+        {
+          "path": "refine-logs/ci-repair-20261103/memory-path-fix-check.json",
+          "sha256": "2fb1ff02468ba9c2917351487ce54c94e65bef63a6cd3fba597c9253afffd1d9"
+        },
+        {
+          "path": "refine-logs/ci-repair-20261103/local-full-timeout.json",
+          "sha256": "7aefbf16036156a69671feb9ae71941b1d0777d97ab9a0c459e040463a1e8de8"
         }
       ]
     }

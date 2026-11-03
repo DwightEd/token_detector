@@ -1,0 +1,85 @@
+{
+  "schema": "h015-tokenizer-preparation-freeze-v1",
+  "state": "frozen_before_synthetic_tokenizer_preparation",
+  "created_utc": "2026-11-03T01:58:38.478887+00:00",
+  "model_path": "D:\\projects\\research\\models\\Qwen2.5-3B-Instruct",
+  "model_identity": {
+    "model_id": "Qwen/Qwen2.5-3B-Instruct",
+    "official_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "model_files_sha256": {
+      "config.json": "eed00b17e22553979d090fa492e587e92885e328914c8e0b0b78f0a0d3576b3b",
+      "generation_config.json": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9",
+      "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "model.safetensors.index.json": "bc8aaa0c87d4335177e01c765f1de0db81661c67c1a72fbfb0d521b09f5ddc56",
+      "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "model-00001-of-00002.safetensors": "67347b23fb4165b652eb6611f5e1f2a06dfcddba8e909df1b2b0b1857bee06c2",
+      "model-00002-of-00002.safetensors": "a40d941d0e7e0b966ad8b62bb6d6b7c88cce1299197b599d9d0a4ce59aabfc1d"
+    },
+    "runtime": {
+      "torch": "2.8.0+cu128",
+      "transformers": "4.57.1",
+      "accelerate": "1.10.1",
+      "bitsandbytes": "0.48.0"
+    },
+    "attention_implementation": "sdpa",
+    "weight_quantization": {
+      "load_in_4bit": true,
+      "quant_type": "nf4",
+      "double_quant": true,
+      "compute_dtype": "float16"
+    },
+    "loading_dtype": "float16",
+    "device": "cuda:0",
+    "cuda_allocator_limit_bytes": 3221225472,
+    "hardware": {
+      "device_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+      "capability": [
+        12,
+        0
+      ],
+      "cuda_runtime": "12.8",
+      "driver_version": "573.24"
+    },
+    "readout": {
+      "kind": "unique_prefix_only_full_fp16_vocabulary_vector",
+      "context_contract": "shared-context-completion-trie-v1",
+      "logits_to_keep": 1,
+      "use_cache": false,
+      "output_tokens": 0
+    }
+  },
+  "nonweight_model_checks": {
+    "config.json": "eed00b17e22553979d090fa492e587e92885e328914c8e0b0b78f0a0d3576b3b",
+    "generation_config.json": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9",
+    "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+    "model.safetensors.index.json": "bc8aaa0c87d4335177e01c765f1de0db81661c67c1a72fbfb0d521b09f5ddc56",
+    "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "file_sha256": {
+    "D:\\projects\\research\\token_detector\\outputs\\h015-prefix-trie-20261103\\ENGINEERING_DESIGN.md": "7491ff72ad0b933ce2f7a4f6a233e4bf1a8357b6c6a28b2aef85e610c13cd947",
+    "D:\\projects\\research\\token_detector\\outputs\\h015-prefix-trie-20261103\\prepare_engineering_manifest.py": "483a85a2e2279bd0a6a26f085fd5fa141e5b993c3a7d4ede9d1add5bf679ac2a",
+    "D:\\projects\\research\\token_detector\\research-state\\protocols\\H011_masked_model_identity_v1.json": "3c7d5c37dcb1a10cb904c4c0f05bd724890961e4cbfc15bcdf12a618f7ccf3af",
+    "D:\\projects\\research\\token_detector\\experiments\\answer_completion.py": "6567479da83c0c6f1453387431f8f99effbea375d57641402fd5f31a8b851f65",
+    "D:\\projects\\research\\token_detector\\experiments\\research\\completion_trie.py": "8b07e3da8476883dc062e49fd2df87485076976792f9443ba42f6bef76fd213b",
+    "D:\\projects\\research\\token_detector\\experiments\\prefix_completion.py": "f2dcd6aad9cb3ce9122d3db6c2f0ceb4a2ab993ac3f357eec749585facab5b85",
+    "D:\\projects\\research\\token_detector\\experiments\\semantic_qualification.py": "68955f6d11a83f7196e375eee5d0b6b89dab2d5028f7d1db933a5f4136bde95c"
+  },
+  "synthetic_candidate_literals": [
+    "Rina Vale",
+    "Rina Vale Hart",
+    "Milo Reed"
+  ],
+  "system": "This is a synthetic string-completion engineering probe.",
+  "short_user": "Return a synthetic name.",
+  "long_user_rule": "USER + \" Padding:\" + \" neutral\"*n; smallest n in0..512 giving maxnode512",
+  "total_node_cap": 32,
+  "per_probe_node_cap": 16,
+  "model_calls_allowed_in_preparation": false,
+  "model_calls": 0,
+  "cuda_calls": 0,
+  "evaluation_material_accessed": false
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "isolated-memory-path-fix-regression-v1",
+  "generated_utc": "2026-11-03T02:20:37.630484+00:00",
+  "status": "passed",
+  "argv": [
+    "D:\\projects\\research\\token_detector\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "--import-mode=importlib",
+    "D:\\projects\\research\\token_detector\\tests\\test_research_memory.py",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--color=no",
+    "-rs"
+  ],
+  "working_directory": "C:\\Users\\Lu Yuanshan\\AppData\\Local\\Temp\\h015-prefix-installed-20261103-pavkzhal\\working",
+  "python": "D:\\projects\\research\\token_detector\\.venv\\Scripts\\python.exe",
+  "source_sha256": {
+    "tools/research_memory.py": "e001eced69f33b365ca59f487e6c39195a5062bd6d6f786245118b9a901dc475",
+    "tests/test_research_memory.py": "714b2a2cef79a29c53b635695e6253a77ddcc783adce132588b106256c73c9f3",
+    ".github/workflows/tests.yml": "f715c6ce5633fdedc3fbc453de5ca3db3dffb78b87ffb02041630ebb95bd9e3f"
+  },
+  "fixed_python_sources_lf": true,
+  "installed_target": "C:\\Users\\Lu Yuanshan\\AppData\\Local\\Temp\\h015-prefix-installed-20261103-pavkzhal\\installed",
+  "installed_wheel_sha256": "d0f94203b51b95a07c2ace568ace28d82ac721c51eedff6194d34356c8b8baca",
+  "installed_package_members_verified": 126,
+  "no_repository_root_on_pythonpath": true,
+  "exit_code": 0,
+  "seconds": 1.5525101999519393,
+  "log_sha256": "3c24dee16160f83b61d887058b1cc62ec8e553cdb2b3b02db0ed23d281660669",
+  "log": "D:\\projects\\research\\token_detector\\outputs\\ci-repair-20261103\\memory-path-fix-check.log",
+  "full_suite_run": false,
+  "model_calls": 0,
+  "real_research_records_read": false
+}

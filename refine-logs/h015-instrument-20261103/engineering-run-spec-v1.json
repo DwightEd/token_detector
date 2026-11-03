@@ -1,0 +1,14 @@
+{
+  "schema": "h015-bounded-engineering-run-spec-v1",
+  "manifest_path": "D:\\projects\\research\\token_detector\\outputs\\h015-prefix-trie-20261103\\engineering-manifest.json",
+  "manifest_sha256": "163346c87b2e344343a5ae0b028f8578e4a268ae0658f4dad60018488640b2a4",
+  "manifest_seal_sha256": "f6bbcf99958ecb180f20be0966cbe01a29219a960ee4202430b8b51ab64462dd",
+  "package_receipt_path": "D:\\projects\\research\\token_detector\\outputs\\h015-prefix-wheel-20261103\\receipt.json",
+  "package_receipt_sha256": "078426fdda25825365aade7eca41ab25900a8e45c203646011370e050d510285",
+  "core_commit": "ef75d8adcfa204968902b2eb3921df5bca41996b",
+  "runner_sha256": "fd241fa9e9d9a9f3d36e01f041e0dd3ee9c8ccc0d051d8692dca7732e6c4a14e",
+  "python": "D:/projects/research/envs/token-detector-cu128/Scripts/python.exe",
+  "output": "D:\\projects\\research\\token_detector\\outputs\\h015-prefix-trie-20261103\\engineering_v1",
+  "installed_target": "C:\\Users\\Lu Yuanshan\\AppData\\Local\\Temp\\h015-prefix-installed-20261103-pavkzhal\\installed",
+  "wheel_sha256": "d0f94203b51b95a07c2ace568ace28d82ac721c51eedff6194d34356c8b8baca"
+}

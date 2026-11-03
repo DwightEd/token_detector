@@ -1,0 +1,20 @@
+{
+  "schema": "ci-full-local-incomplete-v1",
+  "status": "incomplete_timeout_not_a_test_pass",
+  "command": "python -m pytest --import-mode=importlib D:/projects/research/token_detector/tests -q -p no:cacheprovider --color=no",
+  "working_directory_outside_checkout": true,
+  "installed_wheel_sha256": "d0f94203b51b95a07c2ace568ace28d82ac721c51eedff6194d34356c8b8baca",
+  "installed_package_members": 126,
+  "modified_test_at_run_start_sha256": "3a6a1a7fe125c99f9b09ccda6a1033171f953a19e3ac8e2b809105d4fc3085f7",
+  "research_memory_at_run_start_sha256": "f363a189a261a05fe383cc243f5b785af2d02797126147702f0ff8e0f9687629",
+  "timeout_seconds": 600,
+  "exception": "subprocess.TimeoutExpired",
+  "observed_terminal_utc": "2026-11-03T02:17:02Z",
+  "full_suite_counts_available": false,
+  "partial_pytest_output_retained": false,
+  "partial_output_limitation": "The wrapper captured the process output in memory and did not persist TimeoutExpired.output before terminating; no partial case outcomes are inferred.",
+  "preceding_cli_smoke_checks": "both_exit_0",
+  "separate_memory_test_result": "21 passed, 1 failed: Windows extended-length anchor mismatch under concurrent mkdir",
+  "remote_linux_confirmation_required": true,
+  "scientific_model_observations_or_target_data_run": false
+}

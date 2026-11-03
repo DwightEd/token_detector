@@ -1,5 +1,11 @@
 # 当前恢复：H012/H014 完成；H013 数值失败；H015 工程资格待实测
 
+**当前优先处理 CI/F035/D028，未启动 GPU。** 用户指出邮箱反复收到 Tests failed。最新 GitHub run41563596975 和旧41522551043均在安装/CLI成功后因 tests/test_research_memory.py 导入未打包tools而收集失败。已改为显式fileloader，且修复本机Windows并发resolve的 C:/ 与 //?/C:/ anchor别名误判；40工具回归实际全过0skip。完整Windows suite超600秒未完成，不算pass。修复提交push后必须查其完整Linux Actions直到有结论，不能只拿40/50 targeted冒充全套。细节docs/CI_REPAIR_20261103.md及refine-logs/ci-repair-20261103。
+
+H015准备已有新126成员wheel、outside50fake通过，core ef75d8a、wheel d0f94203...。两树合计16nodes/4320input、最长512，全FP16raw预计4861952bytes；manifest163346c8...，runner与spec已有static/Git126byte preflight。spec绑定ef75对象，tools测试修复不改变126包成员。**未launch/armed**，待CI修复验证后，root fresh核runner current allocator/git-binding补丁和资源门再执行，无额外warmup/重试/H013旧请求。
+
+文献离线新入口：桌面13_Entity_Binding_Research_20261103/START.html，6页23localrefs无broken；actualEdge三页MathJax8/2/5containers、0merror，初始交互5buttons/2edges运行。主桌面12入口已按1a0b263成功同步，68页333refs0broken。下文此前“新页仍需浏览器核验”已由此更新，勿重复。
+
 持续目标是机制驱动、无目标标签训练的幻觉检测，争取六项主任务各 AUROC≥0.8；尚未实现。用户授权继续研究、实验、桌面归档和 push。旧 goal 工具 blocked 状态不覆盖用户的继续授权，也不能重建/假称完成。真值仅在方法、配置、预测及评价轴冻结后用于评价和事后诊断；不得选任务赢家、阈值、权重、prompt 或层。既有暴露面板不能重新算未见确认。
 
 恢复先读 facts F029–F034、decisions D027 和 prior_experiments P002/P003/P005。不要再次验证已知现象或重跑旧神经请求。

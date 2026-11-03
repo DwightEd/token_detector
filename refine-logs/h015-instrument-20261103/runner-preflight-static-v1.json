@@ -1,0 +1,520 @@
+{
+  "status": "passed_no_models",
+  "scope": "syntax_and_package_plus_git_exact_bytes_only",
+  "runner_sha256": "fd241fa9e9d9a9f3d36e01f041e0dd3ee9c8ccc0d051d8692dca7732e6c4a14e",
+  "package_members": 126,
+  "core_commit": "ef75d8adcfa204968902b2eb3921df5bca41996b",
+  "git_package_binding": {
+    "core_commit": "ef75d8adcfa204968902b2eb3921df5bca41996b",
+    "package_members": 126,
+    "exact_content_byte_binding": true,
+    "members": {
+      "experiments/__init__.py": {
+        "git_blob": "745c57b4ab34364f68647ac0831383cfa7cc290c",
+        "content_sha256": "d4274bbed0971192535bf0bbfdee498b4e54b5d257e89726614a0abba2026a97"
+      },
+      "experiments/__main__.py": {
+        "git_blob": "25aa588c1b2000246ee8b1cdb2b81b98c8d81728",
+        "content_sha256": "e6a5b8a9b0f5bc30f863a0f88db0d1acf6a56ac41415d9dfd346748a63a015be"
+      },
+      "experiments/answer_completion.py": {
+        "git_blob": "af761961d43b4a5590900f1298831f999cf312f4",
+        "content_sha256": "6567479da83c0c6f1453387431f8f99effbea375d57641402fd5f31a8b851f65"
+      },
+      "experiments/assertion_pilot.py": {
+        "git_blob": "595be40f37f08c8a9987030b39da6a8a28661fb5",
+        "content_sha256": "811ea8b1858eada3a517d5475abcbadb2a5b0aae0c5baee4fc1869e4649666a2"
+      },
+      "experiments/atomic_reconstruction_evaluation.py": {
+        "git_blob": "90c2db204ecb845ed25aa85fa13249518d17c0ba",
+        "content_sha256": "1582656cdc4bc878615eb48bbfe5397b76fc9262a7f4b3e52cbdd7dfbea8741e"
+      },
+      "experiments/atomic_reconstruction_qualification.py": {
+        "git_blob": "4e0edcaf81517bbc89b929d3d3e76354ea40435f",
+        "content_sha256": "dd9f3070588dfed1bb2f4984df6e7060ac1ab17f5b7e5d1a734eb287f6650d1c"
+      },
+      "experiments/binding_dependency_pilot.py": {
+        "git_blob": "4a4b1f146b1ad3873ed699e1b2fde013d267cf0d",
+        "content_sha256": "3909242aa0e0f973ea17afcde6c81fc9e52ab52ab979dea87bc42070e76bef01"
+      },
+      "experiments/binding_transfer.py": {
+        "git_blob": "cee26c538618b6accf632ae049fa67758e140332",
+        "content_sha256": "5f449c97ada34355aa54c3647e9d40a5a3a03beeda25a50c027517dbb795b4ae"
+      },
+      "experiments/case_audit.py": {
+        "git_blob": "561558624bd0e2c2dc05fc53b3c52bfa0f816f4a",
+        "content_sha256": "3733a82b7f0d2983717d42935ed2894e0cbc04df34f8ce58e3a9d063079d0608"
+      },
+      "experiments/conditional_dependencies.py": {
+        "git_blob": "4d75c09632e30a432a3ae966f3524e7118425919",
+        "content_sha256": "da499ce39780c658d3723a5b893834b740c7f1e0a28e71613174724780ac8ca8"
+      },
+      "experiments/constraint_pilot.py": {
+        "git_blob": "86d944d0bba15033258959d0ba05c86502309191",
+        "content_sha256": "ab88eab3179b856e8385d30182564dce09848384ff3627f51594d514bf35b667"
+      },
+      "experiments/contextual_probe.py": {
+        "git_blob": "6d8658ceabb4d96c5721b6ece39aeae599dfc402",
+        "content_sha256": "e4a03af1a486968e9565ffd7452bd1061a1d02a4eac901ea8bf0133815eb49bf"
+      },
+      "experiments/counterfactual_repairs.py": {
+        "git_blob": "47b32af243711aa6d8d1741ca173222d7c5841d2",
+        "content_sha256": "fb272fc9ff05a28e26f01349cb2c304c5379e2b6409af4ac44070c24f4c57275"
+      },
+      "experiments/data.py": {
+        "git_blob": "ebf78b31c75812da104a7c7b602d296eb3581690",
+        "content_sha256": "cc8bd3c878c267a5c372a3871824c3402e364c106b0c29c42b5cac2bfe976796"
+      },
+      "experiments/datasets.py": {
+        "git_blob": "14ddd9ac74b7e216e58261c650e0ce8450f46457",
+        "content_sha256": "f54fae13437e031461b159d43c3db5f68d71280147d30572646e09379bc4f644"
+      },
+      "experiments/delta_local_integrity_20261028.py": {
+        "git_blob": "7f1c423cbac9c96d42cfe414654e4bf220512dcd",
+        "content_sha256": "4af860dd4d164906c99a12d8d4e7a3519f7c591609625d60d44d1d1fc645d7dc"
+      },
+      "experiments/delta_local_run.py": {
+        "git_blob": "d712bd6bf23120a3188db1d1ab026e22f09e87bd",
+        "content_sha256": "7b11865f393e72440945101dd782e859779e437853e24fe37a28f762134c7bd1"
+      },
+      "experiments/delta_observe.py": {
+        "git_blob": "eb268755a026a5ec5d9f7a8182c4c91c083d4b14",
+        "content_sha256": "37b191d0b16cc644e3da736ba446ea20871e559c9a744286ccbf6fdd71a65b06"
+      },
+      "experiments/dependency_probe.py": {
+        "git_blob": "117b5e814ae6d7584e08ab7bcbe0fad3680f471e",
+        "content_sha256": "30340b3fef8ebc3dbcae355ea162145bad67aa74489f5be6cf04f3525ef105a2"
+      },
+      "experiments/designed_focus_evaluation.py": {
+        "git_blob": "fbba6a48f0e22bd8360d9abe531fc7ec9cb8fa72",
+        "content_sha256": "a8dfe8dc4d6a891e78948497c7a4d61f357976fba75a335d701045979ff2008a"
+      },
+      "experiments/designed_focus_qualification.py": {
+        "git_blob": "aaad9522e24ec02b1b7a63b58f922b6a39edff99",
+        "content_sha256": "db5e30a0c4a48897a6b1761618c77c91c8060cf94881ae50aea05abb38c59d91"
+      },
+      "experiments/evaluate.py": {
+        "git_blob": "f4e7454fa3c1d834189f7fb92830456c2ffeb917",
+        "content_sha256": "285a9225533249386d1a547b5f3f5901cb174bd69e015a37476827c1e5f6fdf6"
+      },
+      "experiments/export_hallurag.py": {
+        "git_blob": "175a032430028dc5ecf8fe986ed2a4be5be35256",
+        "content_sha256": "03751993c63ef530fda4d34dcde9b50fee22b07d8c8a08e1dad2504464908949"
+      },
+      "experiments/fit_ablation.py": {
+        "git_blob": "bd9b1dbec7c5ba30c9188078d63cbad29aca3403",
+        "content_sha256": "521051a496758eafa221e72b86ed1737b8f9831ff8b33e7c962dd33185f95911"
+      },
+      "experiments/focused_verdict_evaluation.py": {
+        "git_blob": "1f148529cc9027b2758890d6dfd35acee7fea135",
+        "content_sha256": "b773044c71e7e3cf9132f787a1a70b71af61bbeb45ba9d18c7ca4745fc46419d"
+      },
+      "experiments/focused_verdict_qualification.py": {
+        "git_blob": "9e22a5c2b07c295e50d15fb80f30eb9e897c97d9",
+        "content_sha256": "c58c2719c6f5f95dd1b9448f57f3e8c052e3bc4e76387086dda7944c5e69f12b"
+      },
+      "experiments/fullgap_dataset.py": {
+        "git_blob": "cb908f42d0e8a847773241d42bf2aca19bca8bf2",
+        "content_sha256": "b3ba6cf32116219bb012bc2a4f0ce0e1e81fbdc0464b23ddc274d2804753fff8"
+      },
+      "experiments/fusion_cache.py": {
+        "git_blob": "c37dfc2674adb7193d7e36fcbc46399ac1ce7882",
+        "content_sha256": "fc5aaba8e9143005ae2c3ab530402e5d3e0f03f470a3077e2317afe87d677e85"
+      },
+      "experiments/fusion_evaluation.py": {
+        "git_blob": "df8570f457185249bbf74857024425c946a3cf66",
+        "content_sha256": "6a270dba72f235f8381407091a50d48f75e9d9b3ad26f876bd09da37879f9790"
+      },
+      "experiments/hidden.py": {
+        "git_blob": "41de67c0954e8c01e24f3d6142e8f06f32ea4313",
+        "content_sha256": "dc23cc5c1dac858ea6d27f063aaf2965f9cf32aa3933da17fb2c9cab88b7d150"
+      },
+      "experiments/inputs.py": {
+        "git_blob": "62b1c2e1b574c1f005d5422941b44ea5f564d7cf",
+        "content_sha256": "7bafa7900acc70fb0051a95d8857cfdbab90e10b28c52e4c3c87f3407b54539d"
+      },
+      "experiments/local_evaluation.py": {
+        "git_blob": "0aa111ba6f4f6e0106b997dba5438dbe7f9ca5ad",
+        "content_sha256": "75150108aaa541b0dbb4825f7af3023de36e0686852e2d4fd7e9825ff65f3e88"
+      },
+      "experiments/loo_pooling.py": {
+        "git_blob": "32f66f1f8eeb96e318dcee16c986043000f1a3cb",
+        "content_sha256": "f94a7390906e3c9c2947f358792c5596b20a7e7def7611acbbc0193fdd2f86c7"
+      },
+      "experiments/lumina_dataset.py": {
+        "git_blob": "09ac01de207fbc173df2a6333e21350e9693f5ad",
+        "content_sha256": "b247152c6e473c403434cb796f21dc20a4d0a48cbac6e6be529ecff374e2c469"
+      },
+      "experiments/masked_assignment.py": {
+        "git_blob": "cd0047ed5b4b17770be2050092efa58f6aa8e6ce",
+        "content_sha256": "ae9f8bc5a9f48d6d09becb5653cc26ae92de6582d584f98385aa4971f6ba5fa3"
+      },
+      "experiments/masked_reconstruction_evaluation.py": {
+        "git_blob": "998faa7990eac9b7ab47b866a46e39b1e75ceeae",
+        "content_sha256": "e34ad7645fbff00336427c549e8770e6c64fc708fdf374e3b8d4be1ea14462cf"
+      },
+      "experiments/masked_reconstruction_qualification.py": {
+        "git_blob": "0ea547d2cba6f5bcd507d03ada63fc594f45a69e",
+        "content_sha256": "07de567e743e39c278ac54485eadf90bea9fbbe9ef702da874e89b22e8cc5685"
+      },
+      "experiments/measure.py": {
+        "git_blob": "b7c1d565e3f9b0418fb1c297f502ccec65a9c935",
+        "content_sha256": "ec60b104313bc57611e015f6256be373522a4fb5d201311ad155abffdd173b02"
+      },
+      "experiments/native_dataset.py": {
+        "git_blob": "371cf4e54dd7faff73b60eae18563f40ecec06c1",
+        "content_sha256": "c23c040fa77c5709876bcebc3fe0beb60238e2b568758274437f857b255d8bcb"
+      },
+      "experiments/native_response.py": {
+        "git_blob": "a96dc228f47ae51b29ad25ea325bbd07d9b2c8d5",
+        "content_sha256": "23f29f8f9b6e0bad2c64c28e59100e85beb5819a4faf6f1dc2230cf00562dba0"
+      },
+      "experiments/natural_masked_inventory.py": {
+        "git_blob": "ae01ef3cf071c80b31b2b6d055c73a2e9293921f",
+        "content_sha256": "d325d8ba894a7d7f846159a9889dedecb57ec3b55f09e0c8ce8d2c3b625498dd"
+      },
+      "experiments/nli_evaluation.py": {
+        "git_blob": "5ae8601b7ab9e12da08d5937833a7ba7c8036ba3",
+        "content_sha256": "d04b578e9af76ca8cea514e13fc5933fc9ceb6acfb010079dbc5a8a7c000fbe5"
+      },
+      "experiments/nli_qualification.py": {
+        "git_blob": "2fa14156ed759faf3d3b2ba87981102f55ac24c2",
+        "content_sha256": "866ee741ad0ca28a9d44361cc32fee481a3ef2a7a0e22cc7d0f03734de4e6d07"
+      },
+      "experiments/observation_reuse.py": {
+        "git_blob": "32af65ea24a7cb10a13057f06852b95fe56aaa86",
+        "content_sha256": "fbf9b7a4d86bda14af424e23be59dd388cf18d128cdea96e5a1d3bdd818cdb2e"
+      },
+      "experiments/pipeline.py": {
+        "git_blob": "01a475f82f6dad3811122c350606a32e38dc554d",
+        "content_sha256": "25a0192563ef4be00a385c7b6f7d3e7060eb53cb005d37c09cc31df38a2ad445"
+      },
+      "experiments/pooling_run.py": {
+        "git_blob": "6e9986c8082dff7a013ad3d8dd97be903d3829c2",
+        "content_sha256": "ebc045f2d95a666901e8b6f2f9861b1bb64945768e028239e0460b778c07adc6"
+      },
+      "experiments/prefix_completion.py": {
+        "git_blob": "14a7bc1761f3ea0ddfec10934b5df34afcd399f2",
+        "content_sha256": "f2dcd6aad9cb3ce9122d3db6c2f0ceb4a2ab993ac3f357eec749585facab5b85"
+      },
+      "experiments/prevalence_probe.py": {
+        "git_blob": "9cc3a8fafadff05bbf9425a230fea4d3d2b3ef01",
+        "content_sha256": "438cc709939be397fb42c9350bcda9355a069efc62a973e6e44d04bf3bc929e7"
+      },
+      "experiments/provenance.py": {
+        "git_blob": "6d89d5250555d888e1607a9f0df669f696ae642b",
+        "content_sha256": "196e7d1f5c8e218b6b6217a793df6eef7512029fc887f9edef83d1f648470515"
+      },
+      "experiments/rank_fusion.py": {
+        "git_blob": "995a4c7179ed9352d494115447dd09f0cb953a1d",
+        "content_sha256": "9d6fae533664bed04addaf5cb3fbad56db76a8a94ddc27a6e67acbc8cfd9699d"
+      },
+      "experiments/reconstruction_assignment.py": {
+        "git_blob": "1736054163810fdf56063b904b2ad6e1d5706667",
+        "content_sha256": "f8da072953ded028b3fd9ee42e0a8368b516fe15e8b235a3dfff61a9ca2499bc"
+      },
+      "experiments/reconstruction_evaluation.py": {
+        "git_blob": "9aa1c87f6c43ac137af65fd4f3f285f9b70a9fae",
+        "content_sha256": "c1fd365dc9f71229cbe3c1bbaad7dedefba57858c6fe14b0c0fcf442e6e7cdb4"
+      },
+      "experiments/reconstruction_qualification.py": {
+        "git_blob": "9870c11221fcd9b60054a2531e604ed2a7c52472",
+        "content_sha256": "bfdce5e08a4eab04e748708db8b2acac8c7df5aa46354f55537560a361c60822"
+      },
+      "experiments/relational_transfer.py": {
+        "git_blob": "36d4048ac1da0e1c6cb01b6f594d42a57068c337",
+        "content_sha256": "360c5e339b1021dca9e8a2a195bf16f85ef31a55ca98f4c57eab4b9c7c9ea004"
+      },
+      "experiments/research/__init__.py": {
+        "git_blob": "1403b360e9244bbc4a3a31a515c01d3f09b75074",
+        "content_sha256": "dc38805b2a984c6e89889af8e6242a59748a3c82987813a4d18c76e77ba44af7"
+      },
+      "experiments/research/__main__.py": {
+        "git_blob": "25aa588c1b2000246ee8b1cdb2b81b98c8d81728",
+        "content_sha256": "e6a5b8a9b0f5bc30f863a0f88db0d1acf6a56ac41415d9dfd346748a63a015be"
+      },
+      "experiments/research/assertions.py": {
+        "git_blob": "5dbd9b20e187dff899f4fae45506a383d37cce4a",
+        "content_sha256": "6d12088bc68ac7acc03b4da2c621ebd24d65211139f3494f664ec95251e8d864"
+      },
+      "experiments/research/atomic_reconstruction.py": {
+        "git_blob": "957b856cacf69f27facb2315166f76195eab01b0",
+        "content_sha256": "5707c7da1edf37e66f082bcd8c4c691ab1a68cf2e3a1aeaf41d8033575e2a58c"
+      },
+      "experiments/research/bijection_readout.py": {
+        "git_blob": "bb1b32b208b08405621e94c4b3ff2fad152ff675",
+        "content_sha256": "45a0a121005581259a9fa871d8f39585d7ac2e2b068a4033ccdc52bb96161a78"
+      },
+      "experiments/research/binding_dependency.py": {
+        "git_blob": "e5920f1daac68391ab49f18c0e642d94a3ce0718",
+        "content_sha256": "a01ec2b788ca4206f0d0e78796be2d5f2af235df5b700411450c715b06bc6355"
+      },
+      "experiments/research/binding_witnesses.py": {
+        "git_blob": "99c38128aca6f8fe7d9dcd9b5399246bcec30467",
+        "content_sha256": "613ba58843e481e33b6177be45eaa2db13cc68621857f6d838e033c797baf9c6"
+      },
+      "experiments/research/completion_trie.py": {
+        "git_blob": "65043c903f8f9e8ed3c0eedc67d32fb1ebfaec63",
+        "content_sha256": "8b07e3da8476883dc062e49fd2df87485076976792f9443ba42f6bef76fd213b"
+      },
+      "experiments/research/constraint_interaction.py": {
+        "git_blob": "1a54efaa2754b0f78bdf7e0cf2fe55442afb67ea",
+        "content_sha256": "be069ffbd941ada04c4f3ea3410d385794cdd348b08428bc24a3547f3bf66939"
+      },
+      "experiments/research/constraints.py": {
+        "git_blob": "4a72ce559ebf287eb0213a2ba8d06cd9d36a0448",
+        "content_sha256": "7e78582c1092fa0852222533a69e8aa52d2acecbc53ef1df7faa1bfdea562fbc"
+      },
+      "experiments/research/contextual_alignment.py": {
+        "git_blob": "06390c360872b700e6aa6d4e3d6f13f1234e4e12",
+        "content_sha256": "45766d0c657eed37dc66aa6652e4d85340fa96057cf3e31ace4a6701ad043697"
+      },
+      "experiments/research/delta_local.py": {
+        "git_blob": "c3b7511ce4b7b02d32f3726c5b1eab058cb3a17b",
+        "content_sha256": "b8cdcf1fccf17ed1f9f9d042370b08d0f05893591122c16d16e8fe0dba830182"
+      },
+      "experiments/research/dependence.py": {
+        "git_blob": "30db68828f38dd9a75a314af250a580d0374c697",
+        "content_sha256": "cb7827f26b83514ec393ca2b90c843c15c960544ab6e21d7365a3b835864873a"
+      },
+      "experiments/research/fingerprints.py": {
+        "git_blob": "84afaf3bcff5319312dbb71bd3bbedadb4859dc9",
+        "content_sha256": "c5596645cf91ac857a8dc58b1b369044fe845952f46cdb646cd3696b23b59258"
+      },
+      "experiments/research/focused_verdict.py": {
+        "git_blob": "c29825ba07ff6d97386da7ca371e31c83f8406cc",
+        "content_sha256": "3ea1faa1ff39a1783509cab05a0353ac898e518633aa7691490b7b0e3d899287"
+      },
+      "experiments/research/hierarchy.py": {
+        "git_blob": "cd006e3c5d49008e4fe3d912832ceac02b744808",
+        "content_sha256": "da67ea7e36e51e044634967db66c489d58bf656eab6f09056e185ca9d5d9df53"
+      },
+      "experiments/research/lumina.py": {
+        "git_blob": "4caf5aa46daf82b0d6b2f34298c708ea02d9123c",
+        "content_sha256": "fa9c4714589a940f804085b7a39c0118126dc1c0ece11d0658b7631aa262341f"
+      },
+      "experiments/research/masked_reconstruction.py": {
+        "git_blob": "2e06468309f49d5998f8c876537308380f03f995",
+        "content_sha256": "c78f49ceeff182f6f0432a4e67c13b7ad99cf07bf65f04927a1407a42457cf60"
+      },
+      "experiments/research/natural_masked_questions.py": {
+        "git_blob": "691ec66e63af1554e02833413899e533bb271bf3",
+        "content_sha256": "21fc3098a1cb63c0268f2dab3fe93f9c300ad921dbc110cfd350decc01f532eb"
+      },
+      "experiments/research/relational.py": {
+        "git_blob": "1465411651f4da132f6a5f8d81972ace27adc93b",
+        "content_sha256": "41b3e183b5e6c6ecfc47af079e91946643aa6a340c8322652fa42241a7b4a8c7"
+      },
+      "experiments/research/relational_shared.py": {
+        "git_blob": "622670b1494f7125890858537d89223609e2b273",
+        "content_sha256": "ae916729222fafdc654c2acfff2ac7e324230d11c7536846b039117a243d64a6"
+      },
+      "experiments/research/run.py": {
+        "git_blob": "525b344974477c749b377631fa51e9654fb17b83",
+        "content_sha256": "76300ae5b620b18f30457fc5378422e6610cd6de793555e7fe2769d48bc90134"
+      },
+      "experiments/research/score_fusion.py": {
+        "git_blob": "7bb0111997ed9e1d98b26036763d1fadfa6b48c6",
+        "content_sha256": "16ebd3e3087e5e5bcc057d27544beb8260b9f2a314fa5afb8881870c38eae9d1"
+      },
+      "experiments/research/semantic_probe.py": {
+        "git_blob": "7c0a397dfe9e5fcfd4777eaf6b61f49a3b51392c",
+        "content_sha256": "ae81b71e6f846c0aa91ba105adda7ce56e7a94f7ba70ca7d3b721df62898fff9"
+      },
+      "experiments/research/semantic_verdict.py": {
+        "git_blob": "3622b915a337c49981764734ab5c7bdc08ccab35",
+        "content_sha256": "631f91cefb36e8ff7c75f7ab39bbc778f2246cf45c7b10b64af7ba6504da4f24"
+      },
+      "experiments/research/sequence_controls.py": {
+        "git_blob": "7455797023cd9bce624d09d7e9d03e343438abf8",
+        "content_sha256": "d480959c71e4073651d4cbd447b06e256d08b53bd146eb1fbef94a09fa07c6a0"
+      },
+      "experiments/research/source_reconstruction.py": {
+        "git_blob": "52f7780029669bb0a2be699c322df8dcfc0d444d",
+        "content_sha256": "08ac925b1eb55e08de9cfd29b1838c8ef0c431717866fb222da683b4840dd705"
+      },
+      "experiments/research/spans.py": {
+        "git_blob": "a6bbd8d3f29f74baff21c0c18a8a0edb906025ee",
+        "content_sha256": "a830a414b0a86ff69d38ddb679a641c4872c4b65688bd26d46a81022c7c4811c"
+      },
+      "experiments/research/state.py": {
+        "git_blob": "7376a97530052089962ad58c9fdc4a9d8062fb04",
+        "content_sha256": "e2d4451d04b088154684706ce777a40a51afdee4bc8b670912e40928e4a54dc8"
+      },
+      "experiments/research/state_partition.py": {
+        "git_blob": "c285731cb04092d34bd08e20bb51a563fa061a49",
+        "content_sha256": "75ceddf65b434657087f7bb6a3b96aa0f74519c82f8fe0f724e5e70d2fa0889e"
+      },
+      "experiments/research/table_bindings.py": {
+        "git_blob": "c7a485b8355d497f5a5a85e10dadbc885d90a71d",
+        "content_sha256": "b59ba6fea81393849976c14b8b9f35edbb41fedd3d1ec4163d7932054ee0b481"
+      },
+      "experiments/research/typed_source.py": {
+        "git_blob": "a1e1a54054f8c9837a063446a6a29ea751151667",
+        "content_sha256": "7540cf07833555036e83131fa21bed94b58f96726c7162619d7b151dbe1483c8"
+      },
+      "experiments/run.py": {
+        "git_blob": "a1654d01e31f28e956405d7afb8cdf4f297e1e3b",
+        "content_sha256": "d9d9e652d216ef081f54eb5ff45d424183034daaa44edb2180126a2958a800f1"
+      },
+      "experiments/semantic_evaluation.py": {
+        "git_blob": "dcf2d0d85230253404b1c81e7d9fc11f8d1987fc",
+        "content_sha256": "7aea34e54ecb32ecc64c5ce06a4748841b5779892bdddb64ecf9a9b1aa43748f"
+      },
+      "experiments/semantic_qualification.py": {
+        "git_blob": "75628777e1642279d363612598a80edc19c05d14",
+        "content_sha256": "68955f6d11a83f7196e375eee5d0b6b89dab2d5028f7d1db933a5f4136bde95c"
+      },
+      "experiments/source_write_integrity_20261028.py": {
+        "git_blob": "47b2ade9220c48b1d3657d34bf1d9639d8b3ead0",
+        "content_sha256": "4e7bac8ea1a33849ee133d4bb578564db451b4807fe96bd2a9c39b485eb2c04f"
+      },
+      "experiments/source_write_observe.py": {
+        "git_blob": "c95a712337a20632c3353e406bc11b11958b2ed7",
+        "content_sha256": "45cc825e8cef8cfd26ca8e092d756924c1f2c4ae3b6541772351de1da274766c"
+      },
+      "experiments/source_write_run.py": {
+        "git_blob": "7ccbad25bff52561cc1ed1e89e8f2315e97340d2",
+        "content_sha256": "f2a2ba6910b98581c28e544b4f9afd92ea5f108777e8739fda1eda38901fb4b1"
+      },
+      "experiments/span_markup.py": {
+        "git_blob": "9c25f7ed4a0d0fbac75890cc432afac51c24d55d",
+        "content_sha256": "62b10a48f9cb9915498152083f219362ab7d83b2aab5cbc38ff6aab640ccb791"
+      },
+      "experiments/span_pilot.py": {
+        "git_blob": "644266bf23c19c01099a430f4f5f5de5f3636c30",
+        "content_sha256": "223f2a9a876593f78c9dae35469cd2505d73ed8f33e116a0d440042409f65333"
+      },
+      "experiments/span_resolution.py": {
+        "git_blob": "1ce88ce44d70201388b2abc00a385660ef56a068",
+        "content_sha256": "e1d289e1dc8e72131dcea9c48e8cf6cd3a1067ab11c5866f1809f48f63464762"
+      },
+      "experiments/transfer_diagnostics.py": {
+        "git_blob": "22ce347163546ea93c4b222336ab8e2d779e63c8",
+        "content_sha256": "bdb8f79fc83b79fe283f367ae1843ffb83d2c1cdf4293f451f7cca3ef8d3779a"
+      },
+      "experiments/typed_verdict_evaluation.py": {
+        "git_blob": "69a783ed564f21b2d97e1a2ea70879ba9077e0d9",
+        "content_sha256": "e4c886ee5d5755c84252869a4c05d69261b59d66ced73e6de227b251e0398c39"
+      },
+      "experiments/typed_verdict_qualification.py": {
+        "git_blob": "2ff5925c45b973a0fb3151608c006c28526e394c",
+        "content_sha256": "70b08e1b9c4bef87e277c2814fba816ab7ba543f1ee28439241431cd074fcce4"
+      },
+      "experiments/verdict_evaluation.py": {
+        "git_blob": "2efd4d0ee21d71d18675284beeec6f96c00f9dde",
+        "content_sha256": "2923e89c8ea956259eff8af8288e71e31e64b43711e672a65515b34b9dee577a"
+      },
+      "experiments/verdict_qualification.py": {
+        "git_blob": "b3b5cff7fcc3f41c2327629724504da7d535bf3c",
+        "content_sha256": "85301b158ef5f0e9a13a90554b101bc7b99bf9a452f480a5dcae70fd60336dc6"
+      },
+      "experiments/verify.py": {
+        "git_blob": "9641dde172d15cf9cb3125d33a8a9532b52605c0",
+        "content_sha256": "71a9234d7a26f3cccae2ac7a6d0cf22887fa03748292cb97bc99862ed0982c9e"
+      },
+      "experiments/write_competition_integrity_20261028.py": {
+        "git_blob": "de2ee5d858808a22c40a6aff77b1f423661d3f81",
+        "content_sha256": "c4499593e9c716f6e7241aeb65ee05b398a6941c3134b873d018e2aa4e768831"
+      },
+      "myproject/__init__.py": {
+        "git_blob": "8e904001882149caa4945a2dd046e9f5b646f2fe",
+        "content_sha256": "cde213e7a2883957788ba353947e57bcfbbe272a010d3cfd235191ffc4ec6f83"
+      },
+      "myproject/__main__.py": {
+        "git_blob": "25aa588c1b2000246ee8b1cdb2b81b98c8d81728",
+        "content_sha256": "e6a5b8a9b0f5bc30f863a0f88db0d1acf6a56ac41415d9dfd346748a63a015be"
+      },
+      "myproject/api.py": {
+        "git_blob": "44e05712c5fc373b6c2c3adad43532526795d39b",
+        "content_sha256": "35a052e8f28c461a0eb7978dbd6c38ed798c0144d8d14d8c3731d3182f1616fb"
+      },
+      "myproject/attention.py": {
+        "git_blob": "6874fb3058957feed26125fc46f04612feb15bd3",
+        "content_sha256": "4ec72d0ec9de72f6883fd9463df078b2e4c0c6cdf6cc9d531ceb1551d0e0c4b8"
+      },
+      "myproject/counterfactual.py": {
+        "git_blob": "60755fb7d605502e9f2f540efa0be50f0eb6a801",
+        "content_sha256": "2c1e0cc6f800a1308fd42689b3739dc03592902413f713fd36fc9ef8aa6430da"
+      },
+      "myproject/detector.py": {
+        "git_blob": "63c8a720bd499a64840e06cea1a1ced3e5fe8283",
+        "content_sha256": "776fa683830223f1f9393291fa5aa446e6194cb7ab36d5e42f48365e6172ce88"
+      },
+      "myproject/distribution.py": {
+        "git_blob": "a9de446dde49e8346bfdc8dd316ef4d2d7618c85",
+        "content_sha256": "891b83c1f5c48dbf9926ac211aaca1c5d5a57942a6b392b86de5ac95104d7bb2"
+      },
+      "myproject/graph.py": {
+        "git_blob": "8f94147cdb29aa8dd005700ed588a8b94667ac28",
+        "content_sha256": "4081fd8be3a8d662b5d6e02225ece2be3ad9f7ed4f2c9e8510aad1d418d6942d"
+      },
+      "myproject/inputs.py": {
+        "git_blob": "428ba4d441a2e0f23e770ac895869f995fd51e1f",
+        "content_sha256": "e0d7c60577905214ade564fa17faf9c724cbbb01ad90e89837e727886f4e68a5"
+      },
+      "myproject/measure.py": {
+        "git_blob": "02b5fbdd9db2cbd0ec945eb05de2680af2963483",
+        "content_sha256": "0778b233b07a42c1d1a5e6739027394ab5c0644b25cca3082e8b53998eedbbd3"
+      },
+      "myproject/model.py": {
+        "git_blob": "10fa6608f6684db7a5b419980571f76ff0a38d58",
+        "content_sha256": "1e7393ab159f4e9e9feab91c5fe073499a90f31cddb07f2aee8eec18385d2264"
+      },
+      "myproject/observer.py": {
+        "git_blob": "01414723c3bd767264f6679459e4ef5b17089796",
+        "content_sha256": "054d7baee1089872b5cbd081d03e6b146fe40309807854dca33dabc7f71da747"
+      },
+      "myproject/pooling.py": {
+        "git_blob": "54e9c02ef1e1612bb26f65c0349c415ed3ba0b17",
+        "content_sha256": "80e852b64e301cf6007893df3b61d058ef39a97c81c561416f2b2917c63bef49"
+      },
+      "myproject/proofs.py": {
+        "git_blob": "354ff60fba7c12dddd24186949663ba90803e63a",
+        "content_sha256": "191727f0f2e073b3ab53ffea7ba4d2e946514a771f6afd4d9d026c70d63de7b9"
+      },
+      "myproject/references/Data2txt.npz": {
+        "git_blob": "fccce3a44a1e3fa89c99bf13947364b80efeaa56",
+        "content_sha256": "06befb43ace17f05820e6f8676272975c6b3486e26919abad047b550bb97e396"
+      },
+      "myproject/references/QA.npz": {
+        "git_blob": "6b41f9b331c353b5ff5d3d99c9680f472eda5538",
+        "content_sha256": "f083f04173edcbdba82be91a0ac57dcc856c63fceadc1dbe8b302a2656894472"
+      },
+      "myproject/references/Summary.npz": {
+        "git_blob": "f8bda8254e3fd6bc8a76dd064077fb7ff602ddf4",
+        "content_sha256": "bf7473e7855bdd62bf71176000e137f5d865f09828e73b988b2f20eeaa0263a9"
+      },
+      "myproject/revision.py": {
+        "git_blob": "1efa6e7f6554d296742f77617b4ebd7a8c1934b7",
+        "content_sha256": "07b146366085dbb06dd27ce8406918f78035a666b6a0742ca4b84a26cc50890e"
+      },
+      "myproject/routing.py": {
+        "git_blob": "98030e6e0719014ee88e53ed237685e6e2b4009e",
+        "content_sha256": "dd12983cfaa1a5c888c29158e582dc1bdb4206868ceec5e694565e132b6f5fee"
+      },
+      "myproject/run.py": {
+        "git_blob": "1d9708a50b5af9ed3bcd6c2e52b8dbd016989c7b",
+        "content_sha256": "f7dd726881b201e0a1e02a962f38ee7b5e87066b38ececf9f4ef384fa799a578"
+      },
+      "myproject/segmentation.py": {
+        "git_blob": "ad634a92671b1152327bb7776e653975224cd722",
+        "content_sha256": "300032e312aefefbc9f1a3c9006c5c78024f9f14517f52ad17f047bec69fd62c"
+      },
+      "myproject/sequence.py": {
+        "git_blob": "80e3e7e66909977cf17c70ebd47355da336a3762",
+        "content_sha256": "57c839c77eb93081bbde6d4f127497f62bc6586b41ac4b80fea8160d02953114"
+      },
+      "myproject/shared.py": {
+        "git_blob": "80e44a449766b8d7a09258b26e0d9da94759715b",
+        "content_sha256": "180a4b1d02b94ea560aa12c9b661ed1439ae0f9416e0613c1d3b3573b82889f5"
+      },
+      "myproject/source.py": {
+        "git_blob": "ee936f9bb27df27cec986974f94c844300df4d6d",
+        "content_sha256": "838476d6af7889d22efc09925693245218663f04faf0f79bb9474ef923e1ecbc"
+      }
+    }
+  },
+  "model_calls": 0,
+  "cuda_calls": 0
+}

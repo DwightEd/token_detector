@@ -1,0 +1,35 @@
+{
+  "schema": "exact-research-evidence-archive-v1",
+  "files": [
+    {
+      "source": "outputs/ci-repair-20261103/import-fix-review.md",
+      "archived": "refine-logs/ci-repair-20261103/import-fix-review.md",
+      "sha256": "94737e3b6867bed3543ce7826037926370c79f1e5ee0f4b77379f477cf505ef7"
+    },
+    {
+      "source": "outputs/ci-repair-20261103/windows-resolve-diagnosis.md",
+      "archived": "refine-logs/ci-repair-20261103/windows-resolve-diagnosis.md",
+      "sha256": "a1b44502be80a3d8fb49e3c66b33ee96b24386c586ec5cafbb6c88331294ea47"
+    },
+    {
+      "source": "outputs/ci-repair-20261103/memory-path-fix-check.json",
+      "archived": "refine-logs/ci-repair-20261103/memory-path-fix-check.json",
+      "sha256": "2fb1ff02468ba9c2917351487ce54c94e65bef63a6cd3fba597c9253afffd1d9"
+    },
+    {
+      "source": "outputs/ci-repair-20261103/memory-path-fix-check.log",
+      "archived": "refine-logs/ci-repair-20261103/memory-path-fix-check.log",
+      "sha256": "3c24dee16160f83b61d887058b1cc62ec8e553cdb2b3b02db0ed23d281660669"
+    },
+    {
+      "source": "outputs/ci-repair-20261103/local-full-timeout.json",
+      "archived": "refine-logs/ci-repair-20261103/local-full-timeout.json",
+      "sha256": "7aefbf16036156a69671feb9ae71941b1d0777d97ab9a0c459e040463a1e8de8"
+    },
+    {
+      "source": "outputs/ci-repair-20261103/root-path-fix-review.json",
+      "archived": "refine-logs/ci-repair-20261103/root-path-fix-review.json",
+      "sha256": "74e1a6d7a32aad14e71193ac958b9ec16e7530bbf1e0e9935137eaa3e49f586f"
+    }
+  ]
+}

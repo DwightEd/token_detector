@@ -1,0 +1,40 @@
+{
+  "schema": "h015-prefix-backend-cpu-tests-v1",
+  "recorded_utc": "2026-11-03T01:55:35.472066+00:00",
+  "command_argv": [
+    "D:\\projects\\research\\token_detector\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "tests/test_prefix_completion.py",
+    "-q"
+  ],
+  "cwd": "D:\\projects\\research\\token_detector",
+  "exit_code": 0,
+  "pytest_summary": "23 passed in 6.05s",
+  "tests_passed": 23,
+  "tests_failed": 0,
+  "pytest_reported_seconds": 6.05,
+  "actual_cuda_calls": 0,
+  "actual_model_loads": 0,
+  "scope": "CPU tensors and fake model, fake CUDA proxy; no actual H013 inputs/raw/references/labels opened",
+  "test_output_capture": "Exact pytest result from completed exec tool transcript; this receipt was persisted afterwards without rerunning tests. No standalone stdout log was originally redirected.",
+  "files_sha256": {
+    "experiments/prefix_completion.py": "f2dcd6aad9cb3ce9122d3db6c2f0ceb4a2ab993ac3f357eec749585facab5b85",
+    "tests/test_prefix_completion.py": "0f553fb6189408dd603df181f47efa884cb0e7a00796e4ba3b816a16adbd075d"
+  },
+  "earlier_test_attempts_retained_in_tool_transcript": [
+    {
+      "summary": "1 failed, 19 passed in 5.96s",
+      "reason": "Success-path reason=None error-message concatenation, corrected."
+    },
+    {
+      "summary": "1 failed in 4.76s",
+      "scope": "Focused diagnosis of that same failure."
+    },
+    {
+      "summary": "20 passed in 5.87s",
+      "scope": "After success-path fix, before independent review resource-measurement fix."
+    }
+  ],
+  "rerun_to_create_receipt": false
+}

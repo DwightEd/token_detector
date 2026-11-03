@@ -69,6 +69,18 @@
   with real callers; do not hardcode machine paths in algorithm source.
 - Preserve public API and numerical contracts during refactors. Run relevant tests;
   verify an installed wheel outside the checkout for packaging/resource changes.
+- Before pushing code, run the complete CPU suite against the installed package
+  from outside the checkout, including repository-tool tests. Targeted checks
+  alone do not establish that the full CI suite passes. After pushing, inspect
+  the GitHub Actions run for that exact commit and fix failures before reporting
+  the push as validated. Repository-tool tests must load their explicit script
+  path without adding the checkout root to sys.path or masking installed imports.
+  If a local full run exceeds an explicit resource/time limit, record it as
+  incomplete, preserve the failure, and require the complete Linux CI run to pass
+  before claiming validation; never substitute selected passing tests for it.
+- Batch related source and checkpoint commits into one push when possible. A
+  local frozen source commit can establish provenance before a model run;
+  creating that commit does not require immediately triggering another CI run.
 - Build wheels from a clean generated build cache. Check that installed module and
   resource hashes match the checkout exactly, including no stale extra modules.
 - Request a fresh code review for substantial changes and fix verified important issues.
