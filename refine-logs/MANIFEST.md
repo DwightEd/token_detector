@@ -17,3 +17,8 @@
 | 2026-11-03 | h010-20261103/; docs/source-reading/batches/20261103-h008-core-v1 | Natural span inventory only;2newfiles/296lines explained with fullscope pending |
 | 2026-11-03 | h011-20261103; docs/results/h011_masked_reconstruction.* | Fixed bridge failed evenb0, observed role collapse; all arms retained |
 | 2026-11-03 | fred-question-recovery-20261103;7b-engineering-20261103 | Exact question recovery0/292; separate7Bshort/512 engineering only |
+| 2026-11-03 16:05:41 | EXPERIMENT_PLAN_20261103_160541.md | 关系错绑内部观测的暂定2主张/5阶段计划；PLANNED、未准入检测器、0新模型/标签/分数；固定别名未更新 |
+| 2026-11-03 16:05:41 | EXPERIMENT_TRACKER_20261103_160541.md | 同计划的待准入执行占位，不是run claim；包含已匹配配置metadata与仍未验证的数值/概率合同 |
+| 20261103_161504 | refine-logs/EXPERIMENT_PLAN_20261103_161504.md → EXPERIMENT_PLAN.md | 主代理审查的关系错绑设计；M0–M4计划，未claim/未生成方法分数 |
+| 20261103_161504 | refine-logs/EXPERIMENT_TRACKER_20261103_161504.md → EXPERIMENT_TRACKER.md | 主代理审查的关系错绑设计；M0–M4计划，未claim/未生成方法分数 |
+| 20261103_161504 | refine-logs/relation-binding-20261103/INDEPENDENT_REVIEW_20261103_161504.md | 独立设计审查与冻结采集合同纠错；不是机制结果 |

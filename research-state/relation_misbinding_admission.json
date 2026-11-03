@@ -1,0 +1,57 @@
+{
+  "schema": "pre-code-scientific-admission-v1",
+  "hypothesis_id": "H017_RELATION_OWNERSHIP_COMPUTATION",
+  "status": "design_reviewed_not_an_experiment_claim",
+  "user_anchor": "Expose a source relation incorrectly expressed in an existing response, and establish value beyond direct text verification in localization, detection or total cost.",
+  "direction": "research-state/RELATION_BINDING_DIRECTION.md",
+  "independent_review": "refine-logs/relation-binding-20261103/INDEPENDENT_REVIEW_20261103_161504.md",
+  "code_generated_for_new_method": false,
+  "new_model_calls": 0,
+  "new_detector_scores": false,
+  "proposed_modules": {
+    "experiment_orchestration": "experiments/relation_observation.py (proposed, not implemented)",
+    "candidate_diagnostics": "experiments/research/relation_observables.py (proposed, not implemented)",
+    "final_evaluation": "experiments/relation_evaluation.py (proposed, not implemented)",
+    "reuse": [
+      "SharedDetector/Detector baseline components",
+      "original answer token axis",
+      "existing provenance and score freeze",
+      "existing final evaluation"
+    ]
+  },
+  "distinct_new_information": "Condition receiver and pre-value receiver evidence over source fact ownership, plus separately controlled Q/K/V role interventions with fixed values and positions.",
+  "prior_exclusions": [
+    "P002 raw hidden cosine",
+    "P003 deletion effects",
+    "P005 post-token direction/whitening",
+    "P021 coarse source worlds",
+    "P026 repair/reset",
+    "H004/H005/H012 unlicensed relation frontends",
+    "H015/H016 standalone role QA"
+  ],
+  "competing_predictions_required": [
+    "condition retrieval failure",
+    "condition-to-value fact owner switch",
+    "value/readout failure despite apparently consistent retrieval",
+    "post-token echo or lexical/position artifact"
+  ],
+  "before_algorithm_codegen": [
+    "Record exact missing capability and mainline call sites; no copied parallel detector",
+    "Define relation occurrences and conditions with ambiguity/unknown, no global bijection",
+    "Distinguish pre-choice from post-token and observer from original generator",
+    "Pin RoPE/GQA/masking/precision and cache identities; qualify numerical replay",
+    "Specify a discriminating comparison and negative outcomes, not just a new score name",
+    "Record an independent design review and module-level scope"
+  ],
+  "before_any_run": [
+    "Complete and verify required payloads",
+    "Use implemented entrypoint and real source/data SHA bindings",
+    "Run research_memory.py check; reuse or recover existing evidence when indicated",
+    "Claim the exact approved run before launch; no model experiment on a plan-only record",
+    "Freeze method/config/population/score outputs before opening evaluation truth"
+  ],
+  "memory_scope": "check/claim/finish supervise identity, duplicates and evidence; they are not an automatic scientific novelty or semantic validity judge.",
+  "separate_authorized_cleanup": "Three unreachable current integrity audit scripts removed only after exact frozen H002 copies were verified; installed-wheel CPU checks track this code maintenance separately.",
+  "independent_review_sha256": "e9616f15abb4049b27de96deb5be899e228c3bbe0032c8ed04abfa287d3fb18d",
+  "reviewed_plan": "refine-logs/EXPERIMENT_PLAN_20261103_161504.md"
+}

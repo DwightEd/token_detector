@@ -1,5 +1,21 @@
 # 内部特征保存范围核对
 
+## 2026-11-03 下载恢复更新（所选读取范围已通过）
+
+本节更新下方恢复前的快照。远端在线列举与下载现已恢复；全部本轮数据统一放在 `C:/ResearchData/token-detector-remote-20261103/`，按当前项目、旧项目、原始数据和 graph 上游缓存分类。工具、不可变清单和收据在 `outputs/remote-complete-download-20261103/`；认证材料独立存放，不进入数据包或 Git。
+
+- 核心清单为 `manifest-RAG-core-v2.json`：16,824 文件、7,362,606,094 字节。该清单不代表 graph/extension 依赖已经闭合；全部所选范围51,812文件/30.82GB已收尾通过，最终见`acquisition-finisher-v2-final.json`，15个前缀/legacy联合目录/900×13数组头均核过。数值重放与检测效果未检验。
+- 原始 RAGTruth 4 文件（两个正式文件及远端检查点副本）、P002、P005 已核完整清单、逐文件哈希、封存引用及数组头；P006 现也通过 566 文件、4 个 seal 和 196 个 collection 引用的核验。只读头信息，不解码数组值或标签。
+- P006 的 196 个观察文件确实保存 8 类 `[T,4096]` 写入/残差向量；`source_gradient`、`source_projection` 是 `[T]` 标量，不能当作完整梯度张量。P002 仍是机制构造例，P005/P006 仍是已暴露小面板。
+- 旧 `full_qa_message_routes_20261009` 是未完成运行：主梯度、标量和 route 各覆盖 2,303 个回答，按 ROSTER 为 DEV 1,008 + FIT 1,295，当前 TEST 覆盖 0/900；PROGRESS 同样停在 2,303，根目录没有最终 FREEZE/CONFIG/scores。约 197 GB 的内部归档已从当前下载范围剔除，仅保留 7 个根运行元数据。不能用 SETTINGS 中计划的 5,934 个回答替代实际覆盖，也没有证据说明是后来删除所致。
+- 已将三项当前 TEST 的全部 2,700 个 ID 与 graph 原生 manifest 对齐：每任务 900、缺失 0，对应 450 份 source 引用。精确样本文件包已全部下载，并通过原文件清单、独立SHA和头信息核验；这不代表完整逐层QKV。
+- 另外找到 `graph/outputs/supervised_local_transport_20261008/capture/`，900个QA TEST实际文件对在线核齐并已传完，最终全量哈希/header审计已通过。冻结 Llama3.1 在 block15 保存回答T+1行 residual/attention/MLP-write、pre-RoPE Q、全输入pre-RoPE K/V、lag8局部回答历史attention；没有完整来源Q/hidden。来源阻断hook安装全部层，实际执行0–15；source query仍可因果读source，非source query禁读source key，不是仅15层干预。early-stop没有最终模型logp，不能用第15层logit lens补造。
+- 当前状态属于观察器teacher-force已有回答，R由其他生成器产生；它能支持观察器如何处理错关系的研究，不能直接证明原GPT/Mistral/Llama2的生成原因。精确observer配置/分词元数据56KB已补回并匹配采集MODEL_ENVIRONMENT SHA；数值RoPE/GQA重放与另一native概率缓存同合同尚未通过资格。
+
+没有新模型调用或新检测分数。完成文件恢复和实际覆盖核验后，才讨论需要哪些新增观测；不得再把文件名中的 full/native/vector 当作完整内部状态证据。
+
+## 恢复前核对快照
+
 2026-11-03，Asia/Shanghai。核对历史远端目录清单、观察代码、完成记录及已恢复 NPZ 的 header；本次没有联网列举整个云盘，没有读取数组数值或目标标签，没有模型调用。
 
 **结论：远端保存过独立的原向量观测；不能将所有数据概括成“只有分数”。但目前也没有证据表明六个数据集均保存了完整的逐层、逐头内部状态。**

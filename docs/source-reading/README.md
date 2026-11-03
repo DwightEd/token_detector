@@ -1,5 +1,7 @@
 # 代码讲解导航与真实进度
 
+2026-11-03清理说明：三个已完成、无当前CLI/导入调用的日期化独立数值核验脚本已移出当前 `experiments` 包。完整源码仍在 Git 提交 `5b43e0e2327d6d3370d60f32aed6035f2920173b` 与本机冻结目录 `outputs/h002-context-20261102/installed/experiments/`，三份SHA256逐一相同；H002冻结目标和历史核验记录均保留。下方行数与版本化覆盖仍按原阅读快照记载，不代表清理后的当前源码数量。
+
 新增版本化阅读：[H008 source-QA 与完整姓名+EOS 核心逐行讲解](batches/20261103-h008-core-v1/README.md)（[离线HTML](batches/20261103-h008-core-v1/README.html)、[机读覆盖](batches/20261103-h008-core-v1/coverage.json)、[全范围AST快照](batches/20261103-h008-core-v1/inventory.json)）。本批新增2文件/296行/12定义；当前四目录全范围为168文件/1734定义，其余145文件/1594定义仍待讲。下方21文件/2421行/128定义及98文件原范围统计属于保留的历史基线，旧行覆盖未被重写；新批次不把两个文件重新定义为整个阅读scope。
 
 最新入口：[完整 TEST 的 FN/FP 机制审查](FNFP_MECHANISM.html) → [原始来源与逐例分数](FNFP_CASES.html)。先确认为什么出错，再设计与验证模块；等权对照已拒绝，属于历史实验记录。
@@ -58,7 +60,7 @@ GitHub不直接运行HTML；在线可读[公式原文](THEORY.md)、[方法原�
 | `experiments/counterfactual_repairs.py` | 135 | 4 | 待讲解 |
 | `experiments/data.py` | 123 | 14 | 待讲解 |
 | `experiments/datasets.py` | 371 | 13 | 待讲解 |
-| `experiments/delta_local_integrity_20261028.py` | 452 | 18 | 待讲解 |
+| [experiments/delta_local_integrity_20261028.py](https://github.com/DwightEd/token_detector/blob/5b43e0e2327d6d3370d60f32aed6035f2920173b/experiments/delta_local_integrity_20261028.py) | 452 | 18 | 已归档：旧独立数值核验 |
 | `experiments/delta_local_run.py` | 356 | 10 | 待讲解 |
 | `experiments/delta_observe.py` | 33 | 1 | 待讲解 |
 | `experiments/dependency_probe.py` | 270 | 8 | 待讲解 |
@@ -101,7 +103,7 @@ GitHub不直接运行HTML；在线可读[公式原文](THEORY.md)、[方法原�
 | `experiments/research/state_partition.py` | 52 | 3 | 待讲解 |
 | `experiments/research/table_bindings.py` | 129 | 7 | 待讲解 |
 | `experiments/run.py` | 374 | 2 | 待讲解 |
-| `experiments/source_write_integrity_20261028.py` | 261 | 13 | 待讲解 |
+| [experiments/source_write_integrity_20261028.py](https://github.com/DwightEd/token_detector/blob/5b43e0e2327d6d3370d60f32aed6035f2920173b/experiments/source_write_integrity_20261028.py) | 261 | 13 | 已归档：旧独立数值核验 |
 | `experiments/source_write_observe.py` | 123 | 8 | 待讲解 |
 | `experiments/source_write_run.py` | 246 | 9 | 待讲解 |
 | `experiments/span_markup.py` | 61 | 3 | 待讲解 |
@@ -109,7 +111,7 @@ GitHub不直接运行HTML；在线可读[公式原文](THEORY.md)、[方法原�
 | `experiments/span_resolution.py` | 292 | 10 | 待讲解 |
 | `experiments/transfer_diagnostics.py` | 285 | 5 | 待讲解 |
 | `experiments/verify.py` | 79 | 3 | 待讲解 |
-| `experiments/write_competition_integrity_20261028.py` | 258 | 13 | 待讲解 |
+| [experiments/write_competition_integrity_20261028.py](https://github.com/DwightEd/token_detector/blob/5b43e0e2327d6d3370d60f32aed6035f2920173b/experiments/write_competition_integrity_20261028.py) | 258 | 13 | 已归档：旧独立数值核验 |
 | `tests/__init__.py` | 1 | 0 | 待讲解 |
 | `tests/test_api.py` | 169 | 11 | 待讲解 |
 | `tests/test_bootstrap.py` | 48 | 1 | 待讲解 |

@@ -4,9 +4,24 @@
 
 **续接目标已纠正：** 请先读 [检测目标与实验验收](research-state/DETECTION_OBJECTIVE.md)。H016角色问答属于已关闭的辅助诊断，不能当作新方法的幻觉检测成绩，也不要在另一台电脑继续扩展这条问答支线。
 
-**内部状态另存清单：** 见 [内部特征保存范围](research-state/INTERNAL_STATE_INVENTORY.md)。RAG三任务的小面板曾单独保存末层hidden与分区写入向量，不在下表的全量主评分缓存中；旧`myPorject/results/full_routes_*`等目录的字段仍需核实。勿因主缓存只有标量就重跑模型，也勿未经数组header核对就称已有完整逐层逐头状态。
+**本轮按用户指令优先 RAGTruth。** 本轮所选文件已全部下载并核验，含15个前缀及legacy联合目录复验、QA900的11,700个数组头检查。最终锁定范围为 30,817,905,041 字节（约30.82 GB）、51,812 文件，统一位于 `C:/ResearchData/token-detector-remote-20261103/`。`00_manifests` 保存分类说明、不可变清单、实际哈希与核验收据；不把传输中或未核文件计为已恢复。最终收据见 `outputs/remote-complete-download-20261103/acquisition-finisher-v2-final.json`；收尾器已退出，不需重启下载。数值RoPE重放和新检测实验仍未执行。
 
-**先下载下表的 prepared、native 和历史分数整目录。已有观测可复用；本轮 H016 已完成，不需要另一台电脑重跑。** 六任务各 AUROC ≥ 0.8 的目标尚未完成，当前没有可直接宣称达到该目标的新方法。
+**内部状态另存清单：** 见 [内部特征保存范围](research-state/INTERNAL_STATE_INVENTORY.md)。已找回并核验 P005/P006 小面板向量；另外在线确认 QA TEST900 的 block-15 坐标缓存。Summary/Data2txt 已确认的是原生标量和局部注意力扩展，尚未找到同范围原 QKV。旧197GB full-QA目录实际只有 DEV1008/FIT1295、TEST0，是未完成运行；本轮仅保留其根运行元数据，不能将其当成 TEST900 内部状态。勿因主缓存只有标量就重跑模型，也勿因目录名带 full 就宣称已有完整逐层逐头状态。
+
+**先恢复已有观测，不启动新模型实验。** 下方六任务清单保留作完整研究交接，本轮不扩大下载到其余数据集。H016 已完成，不需要另一台电脑重跑。六任务各 AUROC ≥ 0.8 的目标尚未完成，当前没有可直接宣称达到该目标的新方法。
+
+### 本轮 RAGTruth 内部观测的准确位置
+
+以下路径均相对于 `$BASE/research/`；存储对象路径去掉 `/share/home/` 挂载前缀。
+
+| 远端目录 | 本轮选择与字段 |
+|---|---|
+| `graph/outputs/native_support_ragtruth_all/source_first_v1/` | 根据其 manifest 与当前三任务 TEST ID 对齐，只选各900个完整 `responses/<index>/` 文件包、450份来源及必要参考；原生标量不等于 QKV |
+| `graph/outputs/supervised_local_transport_20261008/` | 当前 QA TEST900 的 `capture/<answerID>/arrays.npz`、`record.json`，及协议/冻结源码；block15回答T+1行的residual/write、pre-RoPE Q和全输入pre-RoPE K/V。阻断world的hook作用于执行的0–15层，非source query禁读source key，非15层单独消融；early-stop无最终logp。采集不拟合标签，目录名不代表原观测受监督训练 |
+| `myPorject/results/ragtruth_task_extension_20261011/` | Summary/Data2txt 当前TEST各900份 measurement NPZ/JSON及参考/协议；`attention[T,32,8]` 为第15层局部回答历史注意力，不等于直接来源attention，不含完整hidden/QKV |
+| `token_detector/outputs/delta_local_20261028/`、`source_write_20261028/` | 已暴露196回答小面板的末层hidden/分区写入向量；不是三任务全量TEST |
+
+精确采集清单与实际文件校验分开：在线文件存在、采集配置的计划人口、当前已下载文件、原封存引用吻合、头信息字段覆盖分别记录。模型权重暂不下载；真实标签只在方法和评分全部冻结后用于最终评价。
 
 ## 1. 存储入口和路径的含义
 
@@ -27,7 +42,7 @@ PROJECT=/share/home/tm902089733300000/a903202310/lys/research/token_detector
 tm902089733300000/a903202310/lys/research/token_detector/...
 ```
 
-这是存储对象的路径表示；`/share/home/` 是实例中的挂载前缀。控制台当前从哪一级显示目录，本次没有重新在线核实。若页面不能展开文件，按上述后缀定位并下载整个目录。这里的路径来自已恢复的 plan、manifest 和下载收据，不能据此保证文件今天仍存在。
+这是存储对象的路径表示；`/share/home/` 是实例中的挂载前缀。本轮已在线核实 RAGTruth 所选路径并逐文件传输；控制台目录不能展开时，可使用文件存储的下载接口，依据精确 manifest 和现有授权会话取得文件。不要凭目录名扩大到整个旧实验归档。下方其他数据集的历史路径保留，未纳入本轮下载。
 
 ## 2. 优先下载：继续六任务实验的最小材料
 

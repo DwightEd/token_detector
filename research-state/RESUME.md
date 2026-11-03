@@ -1,38 +1,13 @@
-# 当前恢复：回到已有回答的幻觉检测；角色问答支线已关闭
+# 当前恢复：关系错绑的内部计算设计；数据收尾并行
 
-**用户最新纠正/D032：需要的是幻觉检测效果。** 输入是原始来源/实际可用问题及已有回答，输出为该回答原评价轴上的风险分数。验证器的角色问答正确率不能代替检测效果。后续先读 [DETECTION_OBJECTIVE.md](DETECTION_OBJECTIVE.md)；QA/NLI可作为内部组件，但必须接入原回答评分并直接评价自然数据检测表现。
+**最新指令D036优先：先思考关系错绑如何检验，不把改进限定于V3。** 读 [RELATION_BINDING_DIRECTION.md](RELATION_BINDING_DIRECTION.md)、[编码前科学准入](relation_misbinding_admission.json)、[当前计划](../refine-logs/EXPERIMENT_PLAN.md)。H017仅为已审查设计，未claim、未产生新模型运行/分数；active_hypothesis仍为空。目标是原回答幻觉检测相对直接文本核验的定位/检测/成本价值；H015/H016问答支线不恢复。
 
-**用户新增问题/F039/D033：远端哪些数据集保存了内部量？** 先读 [INTERNAL_STATE_INVENTORY.md](INTERNAL_STATE_INVENTORY.md)。已核2700RAG及356finance主缓存headers仅delta/route/原轴；另有P005/P006的196RAG小面板末层hidden/写入向量历史落盘。旧myPorject fullroute/vector目录仅查到父listing，字段未核；Hallu原NPZ未下载。先恢复和核对已有独立特征的manifest/header，不据本机缺文件就说远端没有，也不直接重跑模型。没有新评分或新QA实验。
+四量分开：观察器条件概率、数值关注、事实主体/条件归属、持续性。先查条件接收位置到prevalue的事实所属主体，区分条件失败、检索切换、值/读出失败及post-token回声；不假定正确关系原向量距离更近。M0来源许可/unknown与M1RoPE/GQA/因果/精度资格先于解释。M2观测进入M3只需不同预测与对照spec，真实角色交叉与M3统一补采；最终机制门在联合结果后。旧错例只作研究动机，不按目标标签挑头/参数。
 
-## 当前状态
+**数据已收尾通过，勿重复下载：F041。** 所选51,812文件/30,817,905,041B（约30.82GB）均恢复；15前缀SHA/引用检查、最终legacy联合目录重验、QA900×13=11700数组头通过。收尾器 `outputs/remote-complete-download-20261103/acquisition-finisher-v2-state.json` 已disarmed，final为同目录 `acquisition-finisher-v2-final.json`。C根 `C:/ResearchData/token-detector-remote-20261103/`，00含索引/收据，另有56KB observer-config匹配原SHA。整远端全量目录快照/模型重算闭合不在该完成声明中；原D缓存保留。
 
-- 没有新实验在运行，没有新run登记，active_hypothesis为空，所有H015/H016控制器已结束。不要自动重跑旧请求。
-- H016/F038完整结束：8来源toy、312前向，四种角色正确数9/16、16/16、15/16、16/16；仅作辅助诊断，不是自然数据检测准确率或六任务提升。保留原观察/评价seal及失败记录，停止新增独立角色问答实验，不再把该支线作为主线。
-- 当前尚无优化后新检测器的六任务全量结果。六任务各AUROC≥.8仍未达成，不能用case排序或某任务最佳配置包络替代完整检测器。
-- 上次代码与数据交接已push：69aead38079e5f4c52afa9123c96f9eaa376f2d5。其GitHub完整CPU CI run41578874802实际成功：992passed/1skip/9subtests；201.68s。receipt在outputs/h016-paired-scope-20261103/github-ci-success.json。本机180秒全套超时仍是incomplete，不改写成pass。
-- 最新目标纠正是文档/状态更新，尚未产生算法或分数变化。未来需保持源码、预测和评价身份分开。
+**合同纠错必须保留：** Q/K是RoPE前，不能raw点积当attention。source阻断作用于实际执行0–15层，只保存15层；nodes/query仅回答T+1行，缺完整来源Q/hidden和early-stop最终logp。Llama观察器teacher-force已有R，不是GPT/Mistral/Llama2原生成器内部原因。Summary/Data的lag8量是局部回答历史attention，非同范围来源QKV。原公开交接中的“仅15层阻断”以此纠正，不能沿用。
 
-## 下一步准入
+实验代码在experiments，候选diagnostic在experiments/research，复用主线原轴/基线/封存/评价。memory负责身份去重和证据，不自动判科学创新；每个新模块编码前补科学准入/审查，真实入口与SHA齐后才check/claim，标签最终评价。三旧日期integrity脚本的当前副本已删，H002完整副本不动；干净wheel126文件/导入/CLI通过；本机完整CPU900秒上限为incomplete，源码清理的完整验证需查当前提交LinuxCI及outputs/relation-mechanism-design-20261103/github-ci-success.json，不能沿用旧69aead3的成功。
 
-1. 复用已有自然数据FN/FP机制审计与完整缓存；不要重数已知错例作为新研究进展。
-2. 围绕一个尚未解决的错误成因设计一个无标签模块和必要对照，先明确如何产生原回答的token/span风险分数、适用范围和unknown。
-3. 冻结方法、配置、人口、观察预算及全部分数后再打开目标真值。主结果是六个声明任务逐项AUROC/AP、原分母、coverage、成本，及固定规则下FN/FP/召回；面板结果明确只是面板。
-4. 若模块只能提升内部问答而不能形成可运行的原回答检测评分，停止追加其模型实验，补齐接口与论证。自然数据的重复值、合法多对一、null与作用域不得硬套双射。
-
-## 必须复用的记录
-
-- 检测问题：[FNFP_MECHANISM.md](../docs/source-reading/FNFP_MECHANISM.md)、[PERFORMANCE_REVIEW.md](../docs/source-reading/PERFORMANCE_REVIEW.md)；完整事实F001–F039和先前实验索引在本目录。
-- P002残差/cosine、P003删token依赖、P005方向/whitening、P021来源重连、P026repair/reset等旧方向不得换名重跑。原等权融合已拒绝。
-- H004/H005/H006自然面板结果负或混合；H012只有自然擦值库存，QA准入0。它们不能当作新方法已有效。
-- H007删suffix严格复用旧b0，0新调用；H011/H014与H016均保留为已完成记录。H013严格概率门失败未晋升成功；H015仅工程资格。
-- 六任务旧R4/V3 AUROC：QA .8929/.8470；Summary .7621/.7623；Data .7983/.7557；Fin .6617/.8027；TAT .7110/.8430；Hallu answerable .807066/.7669。未被H016更新。
-- 五组成对缓存2992答/448202原token；Hallu主要891答，旧R4原数组缺失、V3 full_index未全恢复。不得换新token轴或用full_gap冒充R4。
-- FRED原生成问题未恢复；已暴露人口继续是探索性。真值仅最终评价，不能由已知错例拟合权重/阈值/prompt。
-
-## 换机与制品
-
-远端输入/native/score/model清单见 [REMOTE_EXPERIMENT_HANDOFF.md](../REMOTE_EXPERIMENT_HANDOFF.md)。近期本地H006/H015/H016云端位置未确认。桌面15_H016_Paired_Scope_20261103/START.html含全部32原NPZ和181sealed文件，约105MB；这些原始材料保留，不需重复生成。
-
-主项目D:/projects/research/token_detector；CPU .venv，GPU独立env token-detector-cu128。用户允许正常关闭WPS，主窗口已退出；主VSCode/Codex、网络和系统进程保留。继续前核对实际状态，不根据旧PID或留存lock推断任务仍运行。
-
-持续目标未完成；用户授权的无监督检测、合理模块设计/验证和换机交接继续有效。旧goal工具blocked不代表当前研究已完成或获准改目标，不重建/假称complete。
+历史下载范围和旧执行快照另存 [归档](history/RESUME_20261103_161917_with_acquisition_history.md)。历史F001–F039与负实验见facts/prior_experiments；F040为合同纠错，F041为当前文件恢复完成，六任务0.8目标仍未完成。主项目D:/projects/research/token_detector；模型实验本轮未claim，旧goal工具blocked不表示任务完成。

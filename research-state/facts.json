@@ -973,6 +973,40 @@
           "sha256": "7d07d7f20f3843d660311c1a381d9af3d7235cd11ce975f591cab4e4ae0ddd6d"
         }
       ]
+    },
+    {
+      "id": "F040",
+      "certainty": "frozen_capture_source_contract_verified_not_effectiveness",
+      "claim": "QA_TEST900 block15 cache stores preRoPEQK, fullinputKV, answerT+1nodes/query only. Blockinghooks everylayer with execution0..15, nonSourcequeries cannotreadsourcekeys; storedcoordinates15 only. Earlystophasnofullmodellogp. ObserverLlama3.1teacherforcesothergeneratorsR; notoriginalgenerationcausality. Config/tokenizer metadata SHA matchcaptureMODEL_ENVIRONMENT.",
+      "does_not_imply": "No sourceQ/sourcehidden, no rawQKattention equivalence, no isolatedlayer15causalproof, no fullmodelprobability or numericreplayqualification, no detectorgain. Currentcached-readscope isdistinctfromallmodelinternals orrecomputeclosure.",
+      "evidence": [
+        {
+          "path": "research-state/RELATION_BINDING_DIRECTION.md",
+          "sha256": "bbdb37608189c7f701cd4aeae6cfd1139369c446b2ab861743588d25642b6e5e"
+        },
+        {
+          "path": "outputs/remote-complete-download-20261103/first-downloaded-QA-capture-header.json",
+          "note": "Header-only firstdownloaded sample receipt; actual file is in acquisition control directory, see source audit.",
+          "sha256": "31c32fcfbf227befdd61acb9e8b5fa2cdc33e872e322c936b6b3cf974f954b6a"
+        }
+      ],
+      "source_evidence": "CAPTURE_CODE frozen producer hooks, attention reconstruction, block_source_reads implementation; source lines linked in independent review and local00CAPTURE_READER_CONTRACT."
+    },
+    {
+      "id": "F041",
+      "certainty": "selected_RAG_cached_read_payloads_and_headers_verified",
+      "claim": "Selected51812files/30817905041B recoveredunderoneclassifiedCroot;corev2+TEST2700primitive+QA_TEST900block15+Summary/Data2txtTEST1800historyattention+TRAIN196parentlineage.15prefixSHA/inventoryproofs,legacyunionrehash and900x13NPYheaderchecks passed;noarrayvalueanalysis/labels/modelruns.",
+      "does_not_imply": "Notalllayers/alltaskQKV,notnativeRoPEnumericalreplayqualification,notsameoriginalgeneratorcausality,nodetectororAUROCresult.Notallremotefilesorstrictrecompute/modelweights. Capturewholearrayhashesbindcurrentdownloadreceipts;knownoriginalSHArefscheckedwhereprovided.",
+      "evidence": [
+        {
+          "path": "outputs/remote-complete-download-20261103/acquisition-finisher-v2-final.json",
+          "sha256": "b86528243637b91d64d11b1644680df008de90a36e9ce10da1e9b12f82dae415"
+        },
+        {
+          "path": "C:/ResearchData/token-detector-remote-20261103/00_manifests/DATA_README.md",
+          "role": "classifiedrootindex; finalized receipt and metadata links"
+        }
+      ]
     }
   ],
   "rule": "New interventions need different predictions under competing explanations; known counts/cases are reused."

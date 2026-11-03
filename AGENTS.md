@@ -1,5 +1,25 @@
 # Code organization
 
+## Confirmed relation-misbinding direction (2026-11-03)
+
+- Read research-state/RELATION_BINDING_DIRECTION.md and the current experiment plan.
+  Investigate internal computations that expose source relations incorrectly
+  expressed in the existing response, with localization/detection/cost value beyond
+  direct text verification. Do not restrict proposals to V3 probability/smoothing.
+- Separate observer probability, value attention, source fact ownership and temporal
+  persistence. High attention, confident output or stable hidden association does
+  not establish correct binding. Preserve duplicate values, conditions, legitimate
+  computation and unknown; do not impose a global bijection.
+- Before generating a new candidate module, record its scientific admission and
+  independent review: new information, closed-prior differences, competing
+  predictions, observation contract, stop criteria and mainline call sites.
+  research_memory check/claim/finish supervises identity and evidence, not novelty.
+  A proposed plan or a new fingerprint alone does not admit an experiment.
+- Put experiment orchestration in experiments/ and candidates in experiments/research/.
+  Reuse mainline axes, baselines, seals and evaluation. Do not treat existing pooled
+  post-token attention as physical-head pre-choice relation evidence. Keep cached
+  observer mechanisms distinct from original-generator causality.
+
 ## Active persistent research goal
 
 - Read research-state/DETECTION_OBJECTIVE.md: the primary endpoint is hallucination

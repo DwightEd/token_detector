@@ -233,6 +233,34 @@
       "run_id": "a52676148c96453c234c569ec0abc403a09ef9c3180113d7d05e6427a6683f70",
       "primary_detection_progress": false,
       "extension_as_standalone_qa_stopped": true
+    },
+    {
+      "id": "H017_RELATION_OWNERSHIP_COMPUTATION",
+      "status": "proposed_design_reviewed_not_claimed",
+      "question": "Which relation-conditioned internal computations expose source ownership incorrectly expressed in an existing response, beyond direct text verification?",
+      "design": "refine-logs/EXPERIMENT_PLAN_20261103_161504.md",
+      "admission": "research-state/relation_misbinding_admission.json",
+      "distinct_information": "Condition receiver and pre-value receiver evidence over source fact ownership, plus separately controlled Q/K/V role interventions with fixed values and positions.",
+      "prior_exclusions": [
+        "P002 raw hidden cosine",
+        "P003 deletion effects",
+        "P005 post-token direction/whitening",
+        "P021 coarse source worlds",
+        "P026 repair/reset",
+        "H004/H005/H012 unlicensed relation frontends",
+        "H015/H016 standalone role QA"
+      ],
+      "competing_explanations": [
+        "condition retrieval failure",
+        "condition-to-value fact owner switch",
+        "value/readout failure despite apparently consistent retrieval",
+        "post-token echo or lexical/position artifact"
+      ],
+      "new_model_calls": 0,
+      "new_detector_scores": false,
+      "causal_result": false,
+      "scope": "Frozen Llama observer handling existing responses, not original multi-generator causes.",
+      "next": "M0 source-only inventory and M1 numeric replay design, then concrete module/run admission; no new role-QA branch."
     }
   ]
 }
