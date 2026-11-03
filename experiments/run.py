@@ -161,6 +161,15 @@ def parser() -> argparse.ArgumentParser:
         help='rebuild all masked-question completions on CPU before construction/control release')
     for option in ['inputs', 'design', 'construction', 'observations', 'model', 'h008-review', 'output', 'protocol']:
         masked_reconstruction_eval.add_argument('--' + option, type=Path, required=True)
+    atomic_reconstruction = transfers.add_parser('qualify-atomic-reconstruction',
+        help='freeze same-template single affirmative-conjunct complete-name observations')
+    for option in ['inputs', 'protocol', 'model', 'model-identity', 'output']:
+        atomic_reconstruction.add_argument('--' + option, type=Path, required=True)
+    atomic_reconstruction.add_argument('--admit-resources', action='store_true')
+    atomic_reconstruction_eval = transfers.add_parser('evaluate-atomic-reconstruction',
+        help='reconstruct sealed one-conjunct observations on CPU before reference release')
+    for option in ['inputs', 'design', 'construction', 'observations', 'model', 'output', 'protocol']:
+        atomic_reconstruction_eval.add_argument('--' + option, type=Path, required=True)
     reconstruction_eval = transfers.add_parser('evaluate-reconstruction', help='rebuild sealed source completions on CPU before construction reference release')
     for option in ['inputs', 'design', 'construction', 'observations', 'model', 'output', 'protocol']:
         reconstruction_eval.add_argument('--' + option, type=Path, required=True)
@@ -428,6 +437,20 @@ def main() -> None:
             identity = data.read_json(args.model_identity)
             qualify(args.inputs, args.protocol, args.output,
                     HFAnswerCompletion(args.model, identity, admit_resources=True), identity)
+        elif args.transfer_stage == 'qualify-atomic-reconstruction':
+            if not args.admit_resources:
+                command.error('qualify-atomic-reconstruction requires explicit --admit-resources before HF loading')
+            from .atomic_reconstruction_qualification import qualify
+            from .answer_completion import HFAnswerCompletion
+
+            identity = data.read_json(args.model_identity)
+            qualify(args.inputs, args.protocol, args.output,
+                    HFAnswerCompletion(args.model, identity, admit_resources=True), identity)
+        elif args.transfer_stage == 'evaluate-atomic-reconstruction':
+            from .atomic_reconstruction_evaluation import evaluate
+
+            evaluate(args.inputs, args.design, args.construction, args.observations,
+                     args.model, args.output, args.protocol)
         elif args.transfer_stage == 'evaluate-masked-reconstruction':
             from .masked_reconstruction_evaluation import evaluate
 

@@ -367,16 +367,18 @@ def _analysis(prepared, executions, responses, complete, design, truth):
     return summary, queries, cases, raw
 
 
-def evaluate(inputs, design, construction, observations, model_path, output, protocol):
+def evaluate(inputs, design, construction, observations, model_path, output, protocol, *,
+             profile=observer, evaluation_protocol=DEFAULT_PROTOCOL, helpers=_HELPERS):
     paths = _paths(inputs, design, construction, observations, model_path, output, protocol)
     root, output = paths['root'], paths['output']
-    inventory = _inventory(root); _snapshot(root, inventory)
+    inventory = _inventory(root, profile=profile); _snapshot(root, inventory, profile=profile)
     frozen = data.read_json(paths['protocol'])
-    _require(isinstance(frozen, dict) and not set(frozen) - set(DEFAULT_PROTOCOL) - {'notes', 'hypothesis_id'}
-        and all(type(frozen.get(k)) is type(v) and frozen[k] == v for k, v in DEFAULT_PROTOCOL.items()),
+    _require(isinstance(frozen, dict) and not set(frozen) - set(evaluation_protocol) - {'notes', 'hypothesis_id'}
+        and all(type(frozen.get(k)) is type(v) and frozen[k] == v for k, v in evaluation_protocol.items()),
         'Prespecified source-reconstruction evaluation protocol required')
     protocol_hash, source = data.file_hash(paths['protocol']), research_identity()
-    prepared, executions, responses, complete, plan, model_guard = _validate(paths['inputs'], root, paths['model'], source)
+    prepared, executions, responses, complete, plan, model_guard = _validate(
+        paths['inputs'], root, paths['model'], source, profile=profile, helpers=helpers)
     cpu_plan = dict(schema='source-reconstruction-evaluation-plan-v1', state='frozen_before_reference_release',
         original_inputs_sha256=plan['original_inputs_sha256'], observation_root=str(root),
         observation_initial_seal_sha256=inventory[2], original_observation_protocol_sha256=plan['protocol_sha256'],
@@ -395,7 +397,7 @@ def evaluate(inputs, design, construction, observations, model_path, output, pro
                  'Previously written CPU reconstruction results changed')
         if cpu_seal_hash is not None:
             _require(data.file_hash(output / 'seal.json') == cpu_seal_hash, 'Initial CPU review seal changed')
-        _snapshot(root, inventory); completed_identity(source)
+        _snapshot(root, inventory, profile=profile); completed_identity(source)
         _require(data.file_hash(paths['inputs']) == plan['original_inputs_sha256']
             and data.file_hash(paths['protocol']) == protocol_hash, 'Original inputs/evaluator protocol changed')
         model_guard()
