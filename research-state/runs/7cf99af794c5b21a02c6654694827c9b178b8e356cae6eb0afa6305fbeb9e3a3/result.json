@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "run_id": "7cf99af794c5b21a02c6654694827c9b178b8e356cae6eb0afa6305fbeb9e3a3",
+  "completed_utc": "2026-11-03T19:47:37.949915+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Remaining3/3 completed, prior2/2 reused without recomputation. Independent audit reproduces all3 fixed logit contrasts and all32x32x13 phase/profile gates; rejects strict global interval-count-only equality in this finite hours-slot assay. Position/order/Sunday-review confounds remain; no detector AUROC or general binding claim.",
+  "artifacts": [
+    {
+      "path": "outputs/h017-relation-20261103/m5-scope-observation-v2/result.json",
+      "sha256": "66bb132305cfb9120bea0eea73f333c3d81542917d4d93855fcd61c45adbba58"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m5-scope-observation-v2/seal.json",
+      "sha256": "6dd7be2d24fda21cffe2a3e2f07508e95dead765d6d192fb1e5250285ce27d61"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m5-postrun-audit-v1/audit.json",
+      "sha256": "42cd1c32ffca2885697e568691f950b0a9e3b582832de10234147e998487a679"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m5-postrun-audit-v1/seal.json",
+      "sha256": "16884f709cdc348cdb4eb2508a6fcbf0b3004cf7fea979e10438ac2afce38f56"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m5-postrun-input-supplement-v1/supplement.json",
+      "sha256": "f621e5243cebd289d57f4023e51d58197bb46a08c40a39211135d126cb6c8d14"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m5-postrun-input-supplement-v1/seal.json",
+      "sha256": "b23c22e8a9ec489f3afa11ca4c524f9a87befbf930263912812ef4b40fae000d"
+    }
+  ]
+}

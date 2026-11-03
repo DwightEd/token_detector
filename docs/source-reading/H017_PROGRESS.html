@@ -1,13 +1,63 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>关系错绑：实验进展与证据</title><meta name="source-sha256" content="0107b9a4982691687fa27e8c0f1e814c94b7d2b08d2c53dc614700c683576d02">
+<title>关系错绑：实验进展与证据</title><meta name="source-sha256" content="d60d2ff986a385d511eddd07e6d104975064e428c543cd28c17a4c28b47c52fd">
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
 <script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
 <style>body{max-width:1040px;margin:40px auto;padding:0 24px;color:#17253a;font:17px/1.8 system-ui,sans-serif;background:#fbfcff}nav{font-size:14px}a{color:#245bc7}h1,h2{line-height:1.35}img{max-width:100%;height:auto}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #d5ddeb;padding:10px;text-align:left}th{background:#edf2fb}pre{overflow:auto;padding:16px;background:#edf2f8}code{font-size:.88em}.equation{overflow-x:auto}.flow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:20px;background:#edf2fb;border-radius:12px}.flow span{background:white;padding:8px 12px;border:1px solid #cbd7eb}footer{font-size:13px;border-top:1px solid #d5ddeb;margin-top:40px;padding-top:16px}@media print{body{font-size:12px;margin:0}nav{display:none}}</style>
-</head><body><nav><a href="H017_PROGRESS.html">关系错绑：实验进展与证据</a> · <a href="H017_MATH.html">高注意力为何不等于正确关系</a> · <a href="H017_PROTOCOL.html">四来源与Q/K/V干预：冻结协议</a> · <a href="H017_NATURAL.html">自然时间错例：原词概率与全部层头</a> · <a href="H017_READOUT.html">旧R4/V3：单位告警在哪一步下降</a></nav><main><h1>H017：从数值命中到关系归属</h1>
+</head><body><nav><a href="H017_PROGRESS.html">关系错绑：实验进展与证据</a> · <a href="H017_MATH.html">高注意力为何不等于正确关系</a> · <a href="H017_PROTOCOL.html">四来源与Q/K/V干预：冻结协议</a> · <a href="H017_NATURAL.html">自然时间错例：原词概率与全部层头</a> · <a href="H017_READOUT.html">旧R4/V3：单位告警在哪一步下降</a> · <a href="H017_SCOPE.html">范围内例外：五组实际实验</a> · <a href="H017_DETECTION.html">完整900回答：检测效果与成本</a> · <a href="H017_ERRORS.html">固定错例：关系、否定与排序</a></nav><main><h1>H017：从数值命中到关系归属</h1>
+<h2>2026-11-04：完整原回答检测评价</h2>
+<p>完整Data2txt900评价已完成：NLI外部监督对照AUROC/AP <strong>0.744306/0.097168</strong>，R4为<strong>0.798318/0.190392</strong>，V3为<strong>0.755716/0.145209</strong>。
+全部900回答、150来源、6生成器、8240句、178343原token保留，unknown0；全量评分seal并通过独立无标签审计后才读官方标注。不是角色QA准确率。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align: right;">AUROC</th>
+<th style="text-align: right;">AP</th>
+<th style="text-align: right;">TP</th>
+<th style="text-align: right;">FP</th>
+<th style="text-align: right;">FN</th>
+<th style="text-align: right;">Recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R4（历史冻结分数）</td>
+<td style="text-align: right;">0.798318</td>
+<td style="text-align: right;">0.190392</td>
+<td style="text-align: right;">2088</td>
+<td style="text-align: right;">6830</td>
+<td style="text-align: right;">5319</td>
+<td style="text-align: right;">28.1896%</td>
+</tr>
+<tr>
+<td>V3（历史冻结分数）</td>
+<td style="text-align: right;">0.755716</td>
+<td style="text-align: right;">0.145209</td>
+<td style="text-align: right;">1720</td>
+<td style="text-align: right;">7198</td>
+<td style="text-align: right;">5687</td>
+<td style="text-align: right;">23.2213%</td>
+</tr>
+<tr>
+<td>DeBERTa NLI（外部监督对照）</td>
+<td style="text-align: right;">0.744306</td>
+<td style="text-align: right;">0.097168</td>
+<td style="text-align: right;">1038</td>
+<td style="text-align: right;">7880</td>
+<td style="text-align: right;">6369</td>
+<td style="text-align: right;">14.0138%</td>
+</tr>
+</tbody>
+</table>
+<p>固定全局最高5%的8918个token报警。NLI减R4的AUROC差为−0.054011，按来源配对bootstrap95%CI [−0.079074, −0.029124]；相对V3的AUROC差置信区间跨0，不能宣称显著差异。AP均较低。本轮没有建立新无监督检测器，也没有完成六任务各0.8目标。</p>
+<p>文本对照的句级分数为 <span class="equation">\(s_t=1-\max_w P_{\mathrm{entail}}(S_w,R_{u(t)})\)</span>，再广播到原token；完整句分数不提供唯一错误token定位。原Llama机制实验、这份外部监督比较器及直接文本核验的效能边界分别报告。</p>
+<p><a href="H017_DETECTION.html">完整方法、成本、失败恢复与错例</a> · <a href="../results/h017_nli_detection_summary.json">机器结果与SHA索引</a> · <a href="H017_SCOPE.html">M5有限机制证据</a></p>
+<p>下文保留各阶段的历史观察和当时边界；恢复执行以F054/D050与RESUME为准，不重开已关闭的M5/角色QA/等权分支。</p>
 <p>研究对象是<strong>已有回答中的幻觉</strong>。例如来源“甲收入100、乙收入200”，回答“甲收入200”：找到“200”、对它有高注意力，并不说明找对了主体。当前研究检验检索地址、值传递与最终输出之间的关系，不再把改进限制在 V3 的概率差和平滑上。</p>
 <p><strong>本轮已分出两种不同失败。</strong> 时间单位例中，观察器反对错误的ago，旧读出削弱了已有告警；营业时间例中，来源内的多数时段被概括到例外星期，观察器对错误分钟仍给高概率。两类问题需要不同判别证据，不能把所有错误归结为没读条件或上下文平滑。新检测模块和AUROC提升仍未建立，下面保留实际实验、旧缓存新审查、严格失败检查和下一步边界。</p>
 <p>软件验证：代码提交<code>9dc6600268be10e802418047a3b885ea2994b845</code>的<a href="https://github.com/DwightEd/token_detector/actions/runs/41632218378">完整Linux CI</a>通过，1101 passed、1 skipped、9 subtests passed，191.65秒。测试的是已安装包并在checkout外执行；本机全套超时记录仍保留。这不代表新检测器有效。</p>
+<p><strong>M5阶段记录：</strong> <a href="H017_SCOPE.html">五世界实验</a>已完成5model/5head且0重复；三项冻结比较及独立全层头审计通过，仅排除严格全局区间频次解释。随后完整NLI对照也已评价，见本页开头。当前源码的完整Linux CI另按确切提交核验。</p>
 <h2>营业时间例：错误数值在原前缀下仍为高概率</h2>
 <p>继续审查原Data2txt首行<code>5670/source13601</code>，先独立冻结来源事实，再核对既有回答和旧概率缓存；没有新增模型、评分或评价标签。来源的周一为<code>17:30–23:00</code>，周二至周六为<code>17:00–21:00</code>，周日为<code>09:00–14:00</code>。回答却写成“Monday to Saturday from 17:00-21:00”。这是受限人工来源核验，不能当作新增benchmark gold或自动前端。</p>
 <table>
@@ -35,8 +85,8 @@
 </tbody>
 </table>
 <p>两个候选时段的开始小时同为17，仅测17是否出现或被关注不足以区分。<strong>不能称整个时段高置信：</strong> 原17的概率仅0.009706，连字符约0.095084；表中是原前缀下错误数值组件的条件概率。负full gap说明旧观察器在这些位置有来源时反而更支持原错误续写；这与ago的既有告警被聚合削弱是不同问题。</p>
-<p>这里仍只有旧BF16概率，没有同范围的Data2txt来源Q/K/V，不能推断它只看多数值、忽略周一、形成稳定错绑，或解释原GPT-4生成原因。原185个R IDs/offset匹配；native未另存独立prompt轴，原权重/producer身份仍有限制。native与primitive的gap严格比对8/370处失败，最大2 FP64 ULP，焦点53..59逐位一致，失败原样保留；未重新分词或重算排名。旧整体协议为offline，不能冒充在线因果检测器。<a href="../results/h017_hours_probability_audit.md">完整185词概率审计</a>保留全部数值、精度与输入边界。</p>
-<p>下一候选是<strong>固定原回答的范围条件对照</strong>：比较完整时段词袋相同、例外在范围内/外的来源，并加入范围内例外迁移、no-op和实际token/位置审查。它只能检验原Monday–Saturday子声明；两个改写来源都会破坏原回答后面的Sunday声明，不能称全回答真值翻转。反事实尚未构造，实验未准入；不能省掉保支持关系的控制后重跑旧P021来源扰动。详见<a href="../results/h017_hours_scope_review.md">范围与原轴审查</a>及<a href="../results/h017_hours_source_review.md">来源事实许可</a>。</p>
+<p>这份旧缓存审查只有BF16概率，没有同范围的Data2txt来源Q/K/V，不能推断它只看多数值、忽略周一、形成稳定错绑，或解释原GPT-4生成原因。原185个R IDs/offset匹配；native未另存独立prompt轴，原权重/producer身份仍有限制。native与primitive的gap严格比对8/370处失败，最大2 FP64 ULP，焦点53..59逐位一致，失败原样保留；未重新分词或重算排名。旧整体协议为offline，不能冒充在线因果检测器。<a href="../results/h017_hours_probability_audit.md">完整185词概率审计</a>保留全部数值、精度与输入边界。后续M5已补采匹配的FP32内部量，仍与这些旧BF16概率分开解释。</p>
+<p>随后进入<strong>固定原回答的范围条件对照</strong>：比较完整时段词袋相同、例外在范围内/外的来源，并加入范围内例外迁移和实际token/位置审查；只复用既有no-op资格，不声称本轮重测成对no-op。它只能检验原Monday–Saturday子声明；改写来源都会破坏原回答后面的Sunday声明，不能称全回答真值翻转。五组现已完成，<a href="H017_SCOPE.html">实际结果</a>保留全部预定组和语义限制，不把它作为旧P021来源扰动分数的重新命名。起始<a href="../results/h017_hours_scope_review.md">范围与原轴审查</a>及<a href="../results/h017_hours_source_review.md">来源事实许可</a>保留原版本。</p>
 <p><a href="https://arxiv.org/html/2108.13134v2">CoCo</a>、<a href="https://aclanthology.org/2023.findings-acl.322/">FIB</a>等已有来源条件似然/错误文本复制偏好的研究；反事实、原子化或条件概率差本身不构成新贡献。<a href="../research/h017_scope_literature.md">本次六项近邻审查</a>保留正文未获取等限制。需要检验的优势仍是原回答上的定位、检测或成本，而非给已知操作命名。</p>
 <p>受控轮不采用第15层数值K交换作为关系检测依据：48次原模型完整前向、44次完整词表读出全部完成，耗时847.83秒；独立复核通过，属于科学负结果。K交换让3/4组的注意力地址向预期移动，但最终数值logit差在四组中都没有朝预期移动，且弱于范数匹配随机扰动。V的数值内容交换四组均产生预期方向的输出变化，但这还不是一个经过验证的检测模块。</p>
 <h2>自然轮：错误单位已被观察器反对</h2>
@@ -193,7 +243,7 @@
 <h2>可直接查看的真实图与数据</h2>
 <p><img alt="完整词表概率质量：错误R在简例中已被拒绝" src="../results/h017_figures/true-candidate-probability-mass.png" /></p>
 <p><a href="../results/h017_figures/all32-head-condition-prevalue.png">全部32头在condition/prevalue的数值关注</a> · <a href="../results/h017_figures/baseline-patches-noise-margin.png">全部干预与噪声对照的logit差</a>。图中均明确标注科学门未通过，不能当作检测准确率。完整<a href="../results/h017_figures/all-endpoints.csv">44个读出端点</a>、<a href="../results/h017_figures/all32-head-all-receivers.csv">1536条物理head记录</a>、PDF/SVG及SHA来源在<a href="../results/h017_figures/FIGURE_MANIFEST.json">图目录</a>。</p>
-<p>本轮没有新的自然任务 AUROC，也没有达到六项任务各0.8的目标。下表中的通过率都是仪器资格，不能当作幻觉检测准确率。</p>
+<p>下述M0–M4机制资格本身不提供新检测AUROC；新NLI文本对照见页首。六任务各0.8的目标尚未完成。下表中的通过率都是仪器资格，不能当作幻觉检测准确率。</p>
 <table>
 <thead>
 <tr>
@@ -281,4 +331,4 @@
 <h2>文献定位</h2>
 <p><a href="https://arxiv.org/html/2310.17191v2">Binding IDs</a>提供表示交换的先例；<a href="https://aclanthology.org/2026.emnlp-main.1238/">EMNLP 2026重绑定研究</a>发现Llama与Gemma的绑定信号并不完全相同，不能预设通用Q/K机制。<a href="https://arxiv.org/html/2608.15804v1">输入侧证据对齐研究</a>也报告相矛盾片段可能高度相关。它们支持进行上述区分实验，没有证明当前自然错例已由该机制解释。</p>
 <p>完整文献审查、监督方式与近邻差异见<a href="../research/20261103_relation_misbinding_followup.md">本轮调研</a>。当前进度与下一问题以<a href="../../research-state/RESUME.md">恢复记录</a>为准；计划、已运行实验和检测效果分别记录，避免上下文压缩后重复实验或扩大结论。</p>
-<p>Q/K/V与最终读出之间的<a href="H017_MATH.html">逐步推导</a>区分了局部恒等式、最终输出因果和检测效果。精确冻结的<a href="H017_PROTOCOL.html">四来源协议</a>及其<a href="../research/h017_address_payload_review.md">独立科学审查</a>可直接在GitHub查看公式与实验门槛。</p></main><footer>H017本地离线阅读 · 原Markdown与GitHub公式是同一来源。打开本文件即可阅读，无需启动服务器。<br>源码SHA256：0107b9a4982691687fa27e8c0f1e814c94b7d2b08d2c53dc614700c683576d02</footer></body></html>
+<p>Q/K/V与最终读出之间的<a href="H017_MATH.html">逐步推导</a>区分了局部恒等式、最终输出因果和检测效果。精确冻结的<a href="H017_PROTOCOL.html">四来源协议</a>及其<a href="../research/h017_address_payload_review.md">独立科学审查</a>可直接在GitHub查看公式与实验门槛。</p></main><footer>H017本地离线阅读 · 原Markdown与GitHub公式是同一来源。打开本文件即可阅读，无需启动服务器。<br>源码SHA256：d60d2ff986a385d511eddd07e6d104975064e428c543cd28c17a4c28b47c52fd</footer></body></html>

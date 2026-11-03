@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "run_id": "7d56ec25d9d615ea952d09692418ab917f2fdfa1c78d560bb07f2ae332fcde25",
+  "completed_utc": "2026-11-03T21:33:10.496421+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Fixed full original-axis NLI/R4/V3 paired diagnostics completed using existing mainline metric and alarm kernels,2000 source draws seed17. No scoring/fusion/tuning/new model calls; labels from sealed central evaluator. Infer only exposed-population detection comparison, not causal attribution or new unsupervised module.",
+  "artifacts": [
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-diagnostics-v1/comparison.json",
+      "sha256": "a40403c416b33e42999d6b7ca78ed9e019972799868632eb4513531f0a14c42e"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-diagnostics-v1/examples.json",
+      "sha256": "5e67566255ff6d0c90e7ac8abf5250c425090bb8748909257ae3f89bf2fe6d35"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-diagnostics-v1/seal.json",
+      "sha256": "7cf47cf1734d64d600240e875035938a0c8bcb0feb682ab1beff59af059cde25"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/NLI_POSTSCORE_PROVENANCE_REUSE_REVIEW.md",
+      "sha256": "a2175316c1c99898e4220a509cd2b0208f30bf87a0a7dc296b1b2eb9b36521ef"
+    }
+  ]
+}

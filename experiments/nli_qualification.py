@@ -265,9 +265,12 @@ def qualify(inputs, protocol, output, backend, model_identity):
 
 class HFEntailment:
     """Tokenizer-only planning; explicitly admitted weights load at classify()."""
-    def __init__(self, model, identity, admit_resources=False):
+    def __init__(self, model, identity, admit_resources=False, execution_mode='legacy-pilot'):
+        if execution_mode not in {'legacy-pilot','dataset-fp32-batch1-v1'}:
+            raise ValueError('An explicit frozen NLI execution mode is required')
         self.model_path, self.model_identity = Path(model).resolve(), _identity(identity)
         self.admitted, self.tokenizer, self.model = admit_resources, None, None
+        self.execution_mode, self._precision_restore = execution_mode, None
 
     def verify_frozen_identity(self):
         files = self.model_identity['model_files_sha256']
@@ -297,37 +300,87 @@ class HFEntailment:
     def classify(self, pairs):
         if not self.admitted:
             raise RuntimeError('Explicit NLI resource admission required before weights/forwards')
-        if not 1 <= len(pairs) <= 8:
-            raise ValueError('Frozen NLI batches contain one through eight pairs')
+        dataset_mode = self.execution_mode == 'dataset-fp32-batch1-v1'
+        if not 1 <= len(pairs) <= (1 if dataset_mode else 8):
+            raise ValueError('Dataset NLI requires batch1' if dataset_mode else
+                             'Frozen NLI batches contain one through eight pairs')
         for pair in pairs:
             _valid_pair(pair)
         import torch
         from transformers import AutoModelForSequenceClassification
+        floor = 512 * 1024**2
+        if dataset_mode and (_available_ram() < floor
+                or not torch.cuda.is_available() or torch.cuda.mem_get_info(0)[0] < floor):
+            raise RuntimeError('Dataset NLI requires the frozen512MiB host/GPU floors')
         if self.model is None:
             if self.tokenizer is None:
                 raise RuntimeError('Freeze tokenizer-only pair planning before classification')
             self.verify_frozen_identity()
-            if (any(version(name) != pin for name, pin in HF_RUNTIME.items()) or _available_ram() < 2 * 1024**3
+            if (any(version(name) != pin for name, pin in HF_RUNTIME.items())
+                    or _available_ram() < (floor if dataset_mode else 2 * 1024**3)
                     or not torch.cuda.is_available() or torch.cuda.get_device_capability(0) != (12, 0)
                     or torch.cuda.mem_get_info(0)[0] < 5 * 1024**3 // 2):
-                raise RuntimeError('Pinned SM120 runtime / 2 GiB RAM / 2.5 GiB free GPU required')
+                raise RuntimeError('Pinned SM120 / 512MiB RAM / 2.5GiB free GPU required' if dataset_mode else
+                                   'Pinned SM120 runtime / 2 GiB RAM / 2.5 GiB free GPU required')
             free, total = torch.cuda.mem_get_info(0)
-            torch.cuda.set_per_process_memory_fraction(2 * 1024**3 / total, 0)
+            cap = (6 if dataset_mode else 2) * 1024**3
+            if dataset_mode:
+                self._precision_restore = (torch.backends.cuda.matmul.allow_tf32,
+                    torch.backends.cudnn.allow_tf32,torch.cuda.get_per_process_memory_fraction(0))
+                torch.backends.cuda.matmul.allow_tf32 = False
+                torch.backends.cudnn.allow_tf32 = False
+            torch.cuda.set_per_process_memory_fraction(cap / total, 0)
             self.admission = dict(available_ram_bytes=_available_ram(), free_cuda_bytes=free,
-                cuda_allocator_limit_bytes=2 * 1024**3, device='cuda:0')
-            self.model = AutoModelForSequenceClassification.from_pretrained(self.model_path,
-                local_files_only=True, trust_remote_code=False, use_safetensors=True,
-                torch_dtype=torch.float16, attn_implementation='eager').eval().to('cuda:0')
+                cuda_allocator_limit_bytes=cap, device='cuda:0')
+            if dataset_mode:
+                self.admission.update(execution_mode=self.execution_mode,host_floor_bytes=floor,
+                    gpu_floor_bytes=floor,weight_storage='float16',arithmetic='float32',
+                    loading='native safetensors meta device-map to CUDA; no full CPU FP32 copy')
+                self.model = AutoModelForSequenceClassification.from_pretrained(self.model_path,
+                    local_files_only=True,trust_remote_code=False,use_safetensors=True,
+                    torch_dtype=torch.float32,attn_implementation='eager',
+                    device_map={'':'cuda:0'},low_cpu_mem_usage=True).eval().requires_grad_(False)
+                if any(p.dtype!=torch.float32 or p.is_meta or p.device.type!='cuda'
+                       for p in self.model.parameters()):
+                    raise RuntimeError('Dataset NLI native FP32 CUDA placement changed')
+            else:
+                self.model = AutoModelForSequenceClassification.from_pretrained(self.model_path,
+                    local_files_only=True, trust_remote_code=False, use_safetensors=True,
+                    torch_dtype=torch.float16, attn_implementation='eager').eval().to('cuda:0')
+        if dataset_mode:
+            from .streamed_qualification import _resources
+            resources_before = _resources(torch.device('cuda:0'))
         encoded = self.tokenizer.pad(pairs, padding=True, return_tensors='pt').to('cuda:0')
         torch.cuda.synchronize(0)
         torch.cuda.reset_peak_memory_stats(0)
         started = time.monotonic()
         with torch.inference_mode():
+            if dataset_mode and (torch.is_autocast_enabled('cpu') or torch.is_autocast_enabled('cuda')
+                    or torch.backends.cuda.matmul.allow_tf32 or torch.backends.cudnn.allow_tf32
+                    or self.model.training):
+                raise RuntimeError('Dataset NLI inference precision context changed')
             logits = self.model(input_ids=encoded['input_ids'], attention_mask=encoded['attention_mask']).logits
         torch.cuda.synchronize(0)
-        if tuple(logits.shape) != (len(pairs), 3) or not bool(torch.isfinite(logits).all().item()):
+        if (tuple(logits.shape) != (len(pairs), 3) or not bool(torch.isfinite(logits).all().item())
+                or (dataset_mode and logits.dtype!=torch.float32)):
             raise ValueError('NLI model produced invalid batch shape/finiteness')
-        return dict(logits=logits.double().cpu().tolist(), actual_forward_passes=1,
+        result = dict(logits=logits.double().cpu().tolist(), actual_forward_passes=1,
             input_tokens=sum(len(pair['input_ids']) for pair in pairs), padded_input_tokens=encoded['input_ids'].numel(),
             seconds=time.monotonic() - started, peak_cuda_bytes=torch.cuda.max_memory_reserved(0),
             resource_admission=self.admission)
+        if dataset_mode:
+            result.update(resources_before=resources_before,resources_after=_resources(torch.device('cuda:0')))
+        return result
+
+    def close(self):
+        """Release this backend and restore the optional dataset-mode settings."""
+        self.model = None
+        self.admitted = False
+        if self._precision_restore is not None:
+            import torch
+            matmul,cudnn,fraction = self._precision_restore
+            torch.backends.cuda.matmul.allow_tf32 = matmul
+            torch.backends.cudnn.allow_tf32 = cudnn
+            torch.cuda.set_per_process_memory_fraction(fraction,0)
+            torch.cuda.empty_cache()
+            self._precision_restore = None

@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "run_id": "caba7e54f826a447875473da20a5d9b0036287a3b42b680f4dde09853a4e0178",
+  "completed_utc": "2026-11-03T20:52:14.405062+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Zero-model compatible planning passed: original140 source/runtime and unchanged numerical AST/dependencies; all16160 successful prefix results including partial802 retained, exactly2003 missing calls. Same units/protocol/model assets, no labels.",
+  "artifacts": [
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-plan-v2/plan.json",
+      "sha256": "7780bc65450fdb7a37a6db0dc619765cbcc36a5522949acaae8d0193cc6a0a27"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-plan-v2/seal.json",
+      "sha256": "6c9441f27a013f98b1f65a59d09284f4c503f45426912971d1cdb8cdded34167"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/NLI_CONTINUATION_FINAL_CODE_REVIEW.md",
+      "sha256": "c537a61a65dd87b0bec2cbdf704e780aa5247773ec75e458346556cfdd47dc3e"
+    }
+  ]
+}

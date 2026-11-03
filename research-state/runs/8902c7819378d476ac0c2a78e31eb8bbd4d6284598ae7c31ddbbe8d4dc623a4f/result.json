@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "run_id": "8902c7819378d476ac0c2a78e31eb8bbd4d6284598ae7c31ddbbe8d4dc623a4f",
+  "completed_utc": "2026-11-03T20:35:00.095816+00:00",
+  "outcome": "engineering_failure",
+  "conclusion": "Host RAM reserve refused request16161 before model execution. Retain16160 successful model results including partial802; no labels or partial metrics. Explicit reviewed continuation may execute only2003 remaining calls with unchanged scoring and floors.",
+  "artifacts": [
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-score-v1/failure.json",
+      "sha256": "c87151a1de76e9e08ca6a8b028520979883eb63e7cf70d9269d58bec47225bf8"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-score-v1/seal.json",
+      "sha256": "55d00ac080e61c465139d63570bd35e6fc5c070ea43645a5c40be4b939cbbe3a"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/NLI_PARTIAL_RESOURCE_RECEIPT.json",
+      "sha256": "8bfb60eeed539cb45ab58398fe644664171c3e5b0c5f47cdc3f285b1ad030db6"
+    }
+  ]
+}

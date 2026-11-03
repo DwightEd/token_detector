@@ -1,0 +1,1044 @@
+{
+  "schema": "h017-full900-external-text-comparator-final-detection-v1",
+  "created_utc": "2026-11-03T21:33:11.357078+00:00",
+  "scope": "External supervised comparator on exposed RAGTruth Data2txt TEST; not a new unsupervised detector",
+  "population": {
+    "responses": 900,
+    "sources": 150,
+    "generators": 6,
+    "sentences": 8240,
+    "original_tokens": 178343
+  },
+  "model_id": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+  "revision": "6f5cf0a2b59cabb106aca4c287eed12e357e90eb",
+  "observer_precision": "FP32/eager/CUDA/batch1",
+  "observation": {
+    "schema": "local-nli-dataset-observation-complete-v1",
+    "samples": 900,
+    "sentence_units": 8240,
+    "original_valid_targets": 178343,
+    "logical_pairs": 18162,
+    "costs": {
+      "actual_forward_passes": 18163,
+      "input_tokens": 7473887,
+      "padded_input_tokens": 7473887,
+      "seconds": 492.396478602197
+    },
+    "actual_forward_attempts": 18163,
+    "model_unknown_targets": 0,
+    "model_unknown_units": 0,
+    "model_unknown_cases": 0,
+    "unknown_risk": 0.5,
+    "canary_reused": true,
+    "annotation_reads": 0,
+    "auroc": null
+  },
+  "recovery": {
+    "completed": true,
+    "old_failed_seal_sha256": "55d00ac080e61c465139d63570bd35e6fc5c070ea43645a5c40be4b939cbbe3a",
+    "compatible_plan_seal_sha256": "6c9441f27a013f98b1f65a59d09284f4c503f45426912971d1cdb8cdded34167",
+    "output_seal_sha256": "a12c6a29a005d559dd61bac49f1dad7c280c3e112f87ee3040321c1d08ce194e",
+    "replayed_valid_model_results": 16160,
+    "new_successful_model_calls": 2003,
+    "current_proxy_interface_requests": 18163,
+    "previous_successful_model_calls": 16160,
+    "previous_guard_refusals": 1,
+    "previous_physical_interface_requests": 16161,
+    "new_physical_interface_requests": 2003,
+    "new_requests_without_returned_raw": 0,
+    "combined_successful_model_calls": 18163,
+    "combined_physical_interface_requests": 18164,
+    "predict_attempt_and_cost_scope": "merged canonical evidence, including replay; not current-process physical calls",
+    "cached_canaries_reuse_original_qualification": true,
+    "fresh_resident_canary_performed": false,
+    "automatic_retry": false,
+    "target_annotation_reads": 0
+  },
+  "comparison": {
+    "methods": {
+      "r4": {
+        "tokens": 178343,
+        "errors": 7407,
+        "auroc": 0.7983175341726212,
+        "ap": 0.19039233281639545,
+        "top5pct": {
+          "tp": 2088,
+          "fp": 6830,
+          "fn": 5319,
+          "tn": 164106,
+          "recall": 0.2818955042527339,
+          "precision": 0.23413321372505047
+        }
+      },
+      "witness": {
+        "tokens": 178343,
+        "errors": 7407,
+        "auroc": 0.7557158856401491,
+        "ap": 0.14520939411036432,
+        "top5pct": {
+          "tp": 1720,
+          "fp": 7198,
+          "fn": 5687,
+          "tn": 163738,
+          "recall": 0.23221277170244364,
+          "precision": 0.19286835613366227
+        }
+      },
+      "nli": {
+        "tokens": 178343,
+        "errors": 7407,
+        "auroc": 0.7443061639561843,
+        "ap": 0.09716828852534497,
+        "top5pct": {
+          "tp": 1038,
+          "fp": 7880,
+          "fn": 6369,
+          "tn": 163056,
+          "recall": 0.14013770757391655,
+          "precision": 0.1163938102713613
+        }
+      }
+    },
+    "nli_minus": {
+      "r4": {
+        "point": {
+          "auroc": -0.05401137021643687,
+          "ap": -0.09322404429105048
+        },
+        "bootstrap": {
+          "seed": 17,
+          "repetitions": 2000,
+          "unit": "source_id",
+          "auroc": {
+            "defined": 2000,
+            "degenerate": 0,
+            "interval95": [
+              -0.07907388299266993,
+              -0.0291244363775072
+            ]
+          },
+          "ap": {
+            "defined": 2000,
+            "degenerate": 0,
+            "interval95": [
+              -0.11936316200037513,
+              -0.06783771923853059
+            ]
+          }
+        }
+      },
+      "witness": {
+        "point": {
+          "auroc": -0.011409721683964813,
+          "ap": -0.04804110558501935
+        },
+        "bootstrap": {
+          "seed": 17,
+          "repetitions": 2000,
+          "unit": "source_id",
+          "auroc": {
+            "defined": 2000,
+            "degenerate": 0,
+            "interval95": [
+              -0.0369327598931804,
+              0.016237054215237093
+            ]
+          },
+          "ap": {
+            "defined": 2000,
+            "degenerate": 0,
+            "interval95": [
+              -0.06431088430941354,
+              -0.030842269639716608
+            ]
+          }
+        }
+      }
+    },
+    "global_alert_budget": 8918,
+    "bootstrap_repetitions": 2000,
+    "seed": 17,
+    "model_unknown_targets": 0,
+    "original_axis_preflight": {
+      "schema": "nli-old-baseline-axis-preflight-v1",
+      "samples": 900,
+      "sources": 150,
+      "targets": 178343,
+      "complete_axis_equal": true,
+      "labels_read": 0,
+      "score_fields_opened": 0,
+      "old_files_sha256": {
+        "seal.json": "74681ea12ee4aa1f025bdbb2838942554be8f2bde792f65d3113f9fbb6d8e08e",
+        "population.npz": "61136045b0c796319009fafdd8bea0760f8e02408377d93147d2d71c9a57983e",
+        "r4.npz": "019886dbf0015c3e1a27f099aca13b383b76cc9769fd7507a8dd00ee326cc36d",
+        "witness.npz": "cb9281ad9bbf3cce235576e2f543f73b016c50464ebbfde2f135827ba4fc16eb",
+        "protocol.json": "d55d2d760261b51ee34f6dafc4f57e5e61f5beb5c12eb8190b671bbc28629278",
+        "export.json": "3f74cf2d40b84a3322c10d2825b046de7c7ccaa1daee291e77bd405beeaa28f1"
+      },
+      "inventory_sha256": "709e4ad4e339b42e5badcbc9f7e7c4aa365cb8f1eff5f705e825c622977be0a1",
+      "input_sha256": "050c79f2711aa292845f27ed4f3ae8b68f0d263bc9d29678486f7e8fb6477521",
+      "annotation_hash_only": "d6b2f44d12d68b520e5a28dd4d642b03a94854a2ec5b208a3ceee3f73be2b9d2",
+      "fusion_or_model_computed": false
+    },
+    "diagnostic_kernel_sha256": {
+      "experiments/evaluate.py": "285a9225533249386d1a547b5f3f5901cb174bd69e015a37476827c1e5f6fdf6",
+      "experiments/data.py": "cc8bd3c878c267a5c372a3871824c3402e364c106b0c29c42b5cac2bfe976796",
+      "experiments/transfer_diagnostics.py": "bdb8f79fc83b79fe283f367ae1843ffb83d2c1cdf4293f451f7cca3ef8d3779a",
+      "experiments/datasets.py": "f54fae13437e031461b159d43c3db5f68d71280147d30572646e09379bc4f644",
+      "experiments/pipeline.py": "25a0192563ef4be00a385c7b6f7d3e7060eb53cb005d37c09cc31df38a2ad445",
+      "myproject/measure.py": "0778b233b07a42c1d1a5e6739027394ab5c0644b25cca3082e8b53998eedbbd3"
+    },
+    "orchestration_sha256": "e7c24be96aba8d9acb2737c78185bd2280bd3b9e8b8df2f2eb68e668050db283",
+    "recovery_provenance": {
+      "sidecar_sha256": "93c3d9f600962d4e356650a5abc98233e4e2268714f1f91bec9c0ca7e97fd033",
+      "receipt": {
+        "completed": true,
+        "old_failed_seal_sha256": "55d00ac080e61c465139d63570bd35e6fc5c070ea43645a5c40be4b939cbbe3a",
+        "compatible_plan_seal_sha256": "6c9441f27a013f98b1f65a59d09284f4c503f45426912971d1cdb8cdded34167",
+        "output_seal_sha256": "a12c6a29a005d559dd61bac49f1dad7c280c3e112f87ee3040321c1d08ce194e",
+        "replayed_valid_model_results": 16160,
+        "new_successful_model_calls": 2003,
+        "current_proxy_interface_requests": 18163,
+        "previous_successful_model_calls": 16160,
+        "previous_guard_refusals": 1,
+        "previous_physical_interface_requests": 16161,
+        "new_physical_interface_requests": 2003,
+        "new_requests_without_returned_raw": 0,
+        "combined_successful_model_calls": 18163,
+        "combined_physical_interface_requests": 18164,
+        "predict_attempt_and_cost_scope": "merged canonical evidence, including replay; not current-process physical calls",
+        "cached_canaries_reuse_original_qualification": true,
+        "fresh_resident_canary_performed": false,
+        "automatic_retry": false,
+        "target_annotation_reads": 0
+      },
+      "old801_prediction_bytes_identical": true
+    },
+    "nonlabel_audit_reuse": {
+      "audit_sha256": "0673c5621ad0256d38616c0be40fc22d5ea09b372f42ace20cf7d68d2df75f37",
+      "audit_seal_sha256": "7f92e69a2a44a073ebc1d776dddaa99f2b57ef84cf38c3b1c52784e2a76b89f3",
+      "root_release_sha256": "cc09b36bd3e6583a7fdaf4378eb3fe00c05f34342d6f97deda70c60fcbe6c7cd",
+      "audited_score_seal_sha256": "a12c6a29a005d559dd61bac49f1dad7c280c3e112f87ee3040321c1d08ce194e",
+      "all_raw_scan_reused_not_repeated": true,
+      "all900_prediction_bytes_rechecked": true
+    },
+    "benchmark_token_counts": {
+      "positive": 7407,
+      "no_released_positive_overlap": 170936
+    },
+    "unknown_label_cross_counts": {
+      "positive": 0,
+      "no_released_positive_overlap": 0
+    },
+    "historical_population": "exposed_exploratory",
+    "new_method_or_score": false,
+    "FP_caveat": "No released positive-span overlap; not independent proof of a correct fact",
+    "localization_caveat": "NLI sentence broadcast and stable input-order ties; no unique bad-token localization claim",
+    "input_bindings": {
+      "score_seal": "a12c6a29a005d559dd61bac49f1dad7c280c3e112f87ee3040321c1d08ce194e",
+      "evaluation_seal": "82bd740dfd61f2b726888888bcd230e58b5e95f7e46ac893d0dd59001bb30ac9"
+    }
+  },
+  "evaluation": {
+    "metrics": {
+      "errors": 7407,
+      "auroc": 0.7443061639561843,
+      "ap": 0.09716828852534497,
+      "top5pct": {
+        "tp": 1038,
+        "fp": 7880,
+        "fn": 6369
+      },
+      "units": 178343
+    },
+    "by_generator": {
+      "gpt-3.5-turbo-0613": {
+        "errors": 502,
+        "auroc": 0.8020726323236165,
+        "ap": 0.044995005113681964,
+        "top5pct": {
+          "tp": 69,
+          "fp": 1948,
+          "fn": 433
+        },
+        "units": 40335
+      },
+      "gpt-4-0613": {
+        "errors": 216,
+        "auroc": 0.6707183934557308,
+        "ap": 0.025129187617918648,
+        "top5pct": {
+          "tp": 29,
+          "fp": 1247,
+          "fn": 187
+        },
+        "units": 25507
+      },
+      "llama-2-13b-chat": {
+        "errors": 2173,
+        "auroc": 0.7387239232206464,
+        "ap": 0.152515970276846,
+        "top5pct": {
+          "tp": 292,
+          "fp": 1370,
+          "fn": 1881
+        },
+        "units": 33221
+      },
+      "llama-2-70b-chat": {
+        "errors": 1289,
+        "auroc": 0.6975594349112393,
+        "ap": 0.07974593829218458,
+        "top5pct": {
+          "tp": 116,
+          "fp": 1311,
+          "fn": 1173
+        },
+        "units": 28529
+      },
+      "llama-2-7b-chat": {
+        "errors": 1473,
+        "auroc": 0.7270554660903247,
+        "ap": 0.13379868708946482,
+        "top5pct": {
+          "tp": 218,
+          "fp": 1030,
+          "fn": 1255
+        },
+        "units": 24941
+      },
+      "mistral-7B-instruct": {
+        "errors": 1754,
+        "auroc": 0.7517052926485862,
+        "ap": 0.15345442070390455,
+        "top5pct": {
+          "tp": 205,
+          "fp": 1086,
+          "fn": 1549
+        },
+        "units": 25810
+      }
+    },
+    "bootstrap": {
+      "seed": 17,
+      "repetitions": 2000,
+      "unit": "source",
+      "auroc": {
+        "defined": 2000,
+        "degenerate": 0,
+        "interval95": [
+          0.7254222138820061,
+          0.7629105829904317
+        ]
+      },
+      "ap": {
+        "defined": 2000,
+        "degenerate": 0,
+        "interval95": [
+          0.08467694857198275,
+          0.11150730348395335
+        ]
+      }
+    }
+  },
+  "example_ids": {
+    "nli_FN": [
+      {
+        "id": "5670",
+        "source_id": "13601",
+        "target": 48
+      },
+      {
+        "id": "5684",
+        "source_id": "13603",
+        "target": 65
+      },
+      {
+        "id": "5690",
+        "source_id": "13604",
+        "target": 53
+      }
+    ],
+    "nli_FP": [
+      {
+        "id": "5671",
+        "source_id": "13601",
+        "target": 299
+      },
+      {
+        "id": "5682",
+        "source_id": "13603",
+        "target": 61
+      },
+      {
+        "id": "5691",
+        "source_id": "13604",
+        "target": 120
+      }
+    ],
+    "R4_FN_NLI_TP": [
+      {
+        "id": "5674",
+        "source_id": "13601",
+        "target": 104
+      },
+      {
+        "id": "5684",
+        "source_id": "13603",
+        "target": 44
+      },
+      {
+        "id": "5733",
+        "source_id": "13613",
+        "target": 135
+      }
+    ],
+    "V3_FN_NLI_TP": [
+      {
+        "id": "5674",
+        "source_id": "13601",
+        "target": 104
+      },
+      {
+        "id": "5684",
+        "source_id": "13603",
+        "target": 44
+      },
+      {
+        "id": "5733",
+        "source_id": "13613",
+        "target": 136
+      }
+    ],
+    "NLI_FN_R4_TP": [
+      {
+        "id": "5672",
+        "source_id": "13601",
+        "target": 101
+      },
+      {
+        "id": "5691",
+        "source_id": "13604",
+        "target": 74
+      },
+      {
+        "id": "5732",
+        "source_id": "13613",
+        "target": 74
+      }
+    ],
+    "NLI_FN_V3_TP": [
+      {
+        "id": "5672",
+        "source_id": "13601",
+        "target": 86
+      },
+      {
+        "id": "5684",
+        "source_id": "13603",
+        "target": 65
+      },
+      {
+        "id": "5690",
+        "source_id": "13604",
+        "target": 53
+      }
+    ]
+  },
+  "fixed_hours_case": [
+    {
+      "flat_index": 53,
+      "id": "5670",
+      "source_id": "13601",
+      "target": 53,
+      "token_id": 1114,
+      "characters": [
+        247,
+        249
+      ],
+      "benchmark_positive": true,
+      "sentence": {
+        "claim_index": 2,
+        "original_sentence_token_span": [
+          44,
+          73
+        ],
+        "original_measurement_unit_ids": [
+          2
+        ],
+        "character_span": [
+          193,
+          289
+        ],
+        "claim_text": " The restaurant operates from Monday to Saturday from 17:00-21:00 and on Sunday from 9:00-14:00.",
+        "claim_sha256": "7d7edad14e9b603b92926ab3661567cc65766b99405163f0cc766abe6caabe6d",
+        "target_indices": [
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72
+        ]
+      },
+      "model_unknown": false,
+      "score": {
+        "r4": 0.14763937274545447,
+        "witness": -1.984987785657288,
+        "nli": 0.9682756839388451
+      },
+      "alert": {
+        "r4": false,
+        "witness": false,
+        "nli": false
+      }
+    },
+    {
+      "flat_index": 54,
+      "id": "5670",
+      "source_id": "13601",
+      "target": 54,
+      "token_id": 25,
+      "characters": [
+        249,
+        250
+      ],
+      "benchmark_positive": true,
+      "sentence": {
+        "claim_index": 2,
+        "original_sentence_token_span": [
+          44,
+          73
+        ],
+        "original_measurement_unit_ids": [
+          2
+        ],
+        "character_span": [
+          193,
+          289
+        ],
+        "claim_text": " The restaurant operates from Monday to Saturday from 17:00-21:00 and on Sunday from 9:00-14:00.",
+        "claim_sha256": "7d7edad14e9b603b92926ab3661567cc65766b99405163f0cc766abe6caabe6d",
+        "target_indices": [
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72
+        ]
+      },
+      "model_unknown": false,
+      "score": {
+        "r4": 0.14058745049609286,
+        "witness": -1.6610422328085432,
+        "nli": 0.9682756839388451
+      },
+      "alert": {
+        "r4": false,
+        "witness": false,
+        "nli": false
+      }
+    },
+    {
+      "flat_index": 55,
+      "id": "5670",
+      "source_id": "13601",
+      "target": 55,
+      "token_id": 410,
+      "characters": [
+        250,
+        252
+      ],
+      "benchmark_positive": true,
+      "sentence": {
+        "claim_index": 2,
+        "original_sentence_token_span": [
+          44,
+          73
+        ],
+        "original_measurement_unit_ids": [
+          2
+        ],
+        "character_span": [
+          193,
+          289
+        ],
+        "claim_text": " The restaurant operates from Monday to Saturday from 17:00-21:00 and on Sunday from 9:00-14:00.",
+        "claim_sha256": "7d7edad14e9b603b92926ab3661567cc65766b99405163f0cc766abe6caabe6d",
+        "target_indices": [
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72
+        ]
+      },
+      "model_unknown": false,
+      "score": {
+        "r4": 0.1710755297838627,
+        "witness": -1.6643087906381968,
+        "nli": 0.9682756839388451
+      },
+      "alert": {
+        "r4": false,
+        "witness": false,
+        "nli": false
+      }
+    },
+    {
+      "flat_index": 56,
+      "id": "5670",
+      "source_id": "13601",
+      "target": 56,
+      "token_id": 12,
+      "characters": [
+        252,
+        253
+      ],
+      "benchmark_positive": true,
+      "sentence": {
+        "claim_index": 2,
+        "original_sentence_token_span": [
+          44,
+          73
+        ],
+        "original_measurement_unit_ids": [
+          2
+        ],
+        "character_span": [
+          193,
+          289
+        ],
+        "claim_text": " The restaurant operates from Monday to Saturday from 17:00-21:00 and on Sunday from 9:00-14:00.",
+        "claim_sha256": "7d7edad14e9b603b92926ab3661567cc65766b99405163f0cc766abe6caabe6d",
+        "target_indices": [
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72
+        ]
+      },
+      "model_unknown": false,
+      "score": {
+        "r4": 0.19745597984271124,
+        "witness": -1.7713694684896484,
+        "nli": 0.9682756839388451
+      },
+      "alert": {
+        "r4": false,
+        "witness": false,
+        "nli": false
+      }
+    },
+    {
+      "flat_index": 57,
+      "id": "5670",
+      "source_id": "13601",
+      "target": 57,
+      "token_id": 1691,
+      "characters": [
+        253,
+        255
+      ],
+      "benchmark_positive": true,
+      "sentence": {
+        "claim_index": 2,
+        "original_sentence_token_span": [
+          44,
+          73
+        ],
+        "original_measurement_unit_ids": [
+          2
+        ],
+        "character_span": [
+          193,
+          289
+        ],
+        "claim_text": " The restaurant operates from Monday to Saturday from 17:00-21:00 and on Sunday from 9:00-14:00.",
+        "claim_sha256": "7d7edad14e9b603b92926ab3661567cc65766b99405163f0cc766abe6caabe6d",
+        "target_indices": [
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72
+        ]
+      },
+      "model_unknown": false,
+      "score": {
+        "r4": 0.19282326448597947,
+        "witness": -1.7999688937389067,
+        "nli": 0.9682756839388451
+      },
+      "alert": {
+        "r4": false,
+        "witness": false,
+        "nli": false
+      }
+    },
+    {
+      "flat_index": 58,
+      "id": "5670",
+      "source_id": "13601",
+      "target": 58,
+      "token_id": 25,
+      "characters": [
+        255,
+        256
+      ],
+      "benchmark_positive": true,
+      "sentence": {
+        "claim_index": 2,
+        "original_sentence_token_span": [
+          44,
+          73
+        ],
+        "original_measurement_unit_ids": [
+          2
+        ],
+        "character_span": [
+          193,
+          289
+        ],
+        "claim_text": " The restaurant operates from Monday to Saturday from 17:00-21:00 and on Sunday from 9:00-14:00.",
+        "claim_sha256": "7d7edad14e9b603b92926ab3661567cc65766b99405163f0cc766abe6caabe6d",
+        "target_indices": [
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72
+        ]
+      },
+      "model_unknown": false,
+      "score": {
+        "r4": 0.2798855089158798,
+        "witness": -1.5931044530621716,
+        "nli": 0.9682756839388451
+      },
+      "alert": {
+        "r4": false,
+        "witness": false,
+        "nli": false
+      }
+    },
+    {
+      "flat_index": 59,
+      "id": "5670",
+      "source_id": "13601",
+      "target": 59,
+      "token_id": 410,
+      "characters": [
+        256,
+        258
+      ],
+      "benchmark_positive": true,
+      "sentence": {
+        "claim_index": 2,
+        "original_sentence_token_span": [
+          44,
+          73
+        ],
+        "original_measurement_unit_ids": [
+          2
+        ],
+        "character_span": [
+          193,
+          289
+        ],
+        "claim_text": " The restaurant operates from Monday to Saturday from 17:00-21:00 and on Sunday from 9:00-14:00.",
+        "claim_sha256": "7d7edad14e9b603b92926ab3661567cc65766b99405163f0cc766abe6caabe6d",
+        "target_indices": [
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72
+        ]
+      },
+      "model_unknown": false,
+      "score": {
+        "r4": 0.2953650907704418,
+        "witness": -1.6155060388238622,
+        "nli": 0.9682756839388451
+      },
+      "alert": {
+        "r4": false,
+        "witness": false,
+        "nli": false
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-score-v1/failure.json",
+      "sha256": "c87151a1de76e9e08ca6a8b028520979883eb63e7cf70d9269d58bec47225bf8"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-score-v1/seal.json",
+      "sha256": "55d00ac080e61c465139d63570bd35e6fc5c070ea43645a5c40be4b939cbbe3a"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/NLI_PARTIAL_RESOURCE_RECEIPT.json",
+      "sha256": "8bfb60eeed539cb45ab58398fe644664171c3e5b0c5f47cdc3f285b1ad030db6"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-plan-v2/plan.json",
+      "sha256": "7780bc65450fdb7a37a6db0dc619765cbcc36a5522949acaae8d0193cc6a0a27"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-plan-v2/seal.json",
+      "sha256": "6c9441f27a013f98b1f65a59d09284f4c503f45426912971d1cdb8cdded34167"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-score-v2/observation.json",
+      "sha256": "516138240493a0eaf6b7551f440cfe0cdffe20753e60fc5f2558c0deb333a756"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-score-v2/seal.json",
+      "sha256": "a12c6a29a005d559dd61bac49f1dad7c280c3e112f87ee3040321c1d08ce194e"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-score-v2.recovery.json",
+      "sha256": "93c3d9f600962d4e356650a5abc98233e4e2268714f1f91bec9c0ca7e97fd033"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-nonlabel-audit-v2/audit.json",
+      "sha256": "0673c5621ad0256d38616c0be40fc22d5ea09b372f42ace20cf7d68d2df75f37"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-nonlabel-audit-v2/seal.json",
+      "sha256": "7f92e69a2a44a073ebc1d776dddaa99f2b57ef84cf38c3b1c52784e2a76b89f3"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-eval-v1/evaluation.json",
+      "sha256": "d9ccce1d9005460a86e70bc0c1a6c985b096b106ea7366d0d637978fd43b27d5"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-eval-v1/seal.json",
+      "sha256": "82bd740dfd61f2b726888888bcd230e58b5e95f7e46ac893d0dd59001bb30ac9"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-diagnostics-v1/comparison.json",
+      "sha256": "a40403c416b33e42999d6b7ca78ed9e019972799868632eb4513531f0a14c42e"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-diagnostics-v1/examples.json",
+      "sha256": "5e67566255ff6d0c90e7ac8abf5250c425090bb8748909257ae3f89bf2fe6d35"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-diagnostics-v1/seal.json",
+      "sha256": "7cf47cf1734d64d600240e875035938a0c8bcb0feb682ab1beff59af059cde25"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/NLI_CONTINUATION_FINAL_CODE_REVIEW.md",
+      "sha256": "c537a61a65dd87b0bec2cbdf704e780aa5247773ec75e458346556cfdd47dc3e"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/NLI_EVALUATION_ORCHESTRATION_REVIEW.md",
+      "sha256": "62238e89c16fd0ce40ecb61b9ec71ef4164e010f0876ebb693a4625c78c7c248"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/NLI_EVALUATION_stderr.log",
+      "sha256": "7ce956c50764f287386996a0c15470d24219e98959dd88c488bb7349455c6cd4"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/NLI_EVALUATION_LAUNCH.json",
+      "sha256": "0e1d3e6ad3ca01a574fdb79a7226f8f4394c9edb098b5e8afc28078583da35bd"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/NLI_CPU_EVALUATION_LAUNCH.json",
+      "sha256": "6597093a07dbeeffe524dd1867844be589aac40427eac1b94f4c86f828e4d80f"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/NLI_FIXED_ERROR_ANALYSIS.json",
+      "sha256": "c43721b30ace6db7dbf06ca723b65ff88c064850de7617621a5fa9c298b11ca8"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/NLI_FIXED_ERROR_ANALYSIS.md",
+      "sha256": "a2ddb91a38a0cd3a328164010ec2775f7e0ba427d68e765c0b7a6020df37d46a"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/NLI_NEXT_QUESTION.md",
+      "sha256": "3f844b4ad3759a3244a72fdbd3dff4ea32f35b275bfa1ae02caedc4f9557ecaa"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/NLI_CPU_EVALUATION_ORCHESTRATION_REVIEW.md",
+      "sha256": "7e2119eb73018b03d940dc25b26246badc2282f6d24216fb037426324cedd81a"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/RELEASE_045716_cpu-suite-result.json",
+      "sha256": "88e668193d1c85b499d55daed1d8e4fd7ec777b38f74d75e9c003060d2229034"
+    }
+  ],
+  "original_Llama_forwards_separate": 60,
+  "new_unsupervised_detector": false
+}

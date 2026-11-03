@@ -22,3 +22,12 @@
 | 20261103_161504 | refine-logs/EXPERIMENT_PLAN_20261103_161504.md → EXPERIMENT_PLAN.md | 主代理审查的关系错绑设计；M0–M4计划，未claim/未生成方法分数 |
 | 20261103_161504 | refine-logs/EXPERIMENT_TRACKER_20261103_161504.md → EXPERIMENT_TRACKER.md | 主代理审查的关系错绑设计；M0–M4计划，未claim/未生成方法分数 |
 | 20261103_161504 | refine-logs/relation-binding-20261103/INDEPENDENT_REVIEW_20261103_161504.md | 独立设计审查与冻结采集合同纠错；不是机制结果 |
+| 2026-11-04 04:10:29 | EXPERIMENT_PLAN_20261104_041029_before_update.md / EXPERIMENT_TRACKER_20261104_041029_before_update.md | 更新前固定别名的完整原文保留；含既往计划和当时执行更新，不覆盖历史 |
+| 2026-11-04 04:10:29 | EXPERIMENT_PLAN_20261104_041029.md → EXPERIMENT_PLAN.md | M5完成5model/5head（2复用+3新）、三有限对照及独立审计；LOCAL全900直接文本对照评分LIVE，下一步全封存/审计/主线评价；没有新无监督方法准入或自然AUROC结论 |
+| 2026-11-04 04:10:29 | EXPERIMENT_TRACKER_20261104_041029.md → EXPERIMENT_TRACKER.md | Data2txt900规划900/8240/178343、K18162、unknown0已封存；score8902c781预算18163，04:10检查点247/900与5235calls，RUNNING而非DONE；不读取目标标签值 |
+| 2026-11-04 04:48:22 | EXPERIMENT_TRACKER_20261104_044822.md → EXPERIMENT_TRACKER.md | 原score-v1在801/900后被pre-forward资源门拒绝，16160成功raw含partial802完整保留；兼容计划caba7e54已真实启动、0model，剩余2003评分尚未启动；29工程测试与独立review通过，数值/门限/人口不变，无标签值或AUROC |
+| 2026-11-04 04:52:30 | EXPERIMENT_TRACKER_20261104_045230.md → EXPERIMENT_TRACKER.md | 兼容计划caba7e54已exit0/finish supported_scope/seal6c9441f2；SCORE续跑c6b4520f真实launch、ACTUAL RUNNING，16160旧结果回放+仅2003新模型预算。未完成、未最终审计/评价、labels0；原失败/门限/数值核心保留，sidecar区分合并18163模型证据和本进程物理调用 |
+| 2026-11-04 05:35:01 | EXPERIMENT_PLAN_20261104_053501.md → EXPERIMENT_PLAN.md | 完整900评分/恢复/nonlabel审计/CPU最终评价/同轴诊断已完成，NLI外部比较AUROC0.744306/AP0.097168低于R4点估计；R4差值CI不跨0、V3 AUROC差值跨0。新无监督方法NOT_ADMITTED，仅零模型证据能力门；新代码安装CPU300秒INCOMPLETE、精确CI PENDING |
+| 2026-11-04 05:35:01 | EXPERIMENT_TRACKER_20261104_053501.md → EXPERIMENT_TRACKER.md | c6b4520f评分完整900、audit0673c562通过后CPU542e6415评价/7d56ec25诊断DONE；18163成功model=16160复用+2003新，旧guard1，真值最终才开；统一8918报警预算NLI TP1038/FP7880/FN6369，不晋升外部模型或错例补丁，不重评分 |
+| 2026-11-04 05:42:47 | EXPERIMENT_PLAN_20261104_054247.md → EXPERIMENT_PLAN.md | 最终完整900效果保留，补F054/D050/RESUME/allactive_jobs=None与公开检测/错例报告链接；下一问题严格限两例source许可-闭合已有物理观测匹配，不重清点已知缺失、不启动新模型/方法 |
+| 2026-11-04 05:42:47 | EXPERIMENT_TRACKER_20261104_054247.md → EXPERIMENT_TRACKER.md | 全评分/审计/CPU评价/诊断DONE和外部NLI负结果不变；公开h017_nli_error_cases md/json已接入，fixed两例零模型证明与NOT_ADMITTED、全CPU INCOMPLETE/新CI PENDING明确 |

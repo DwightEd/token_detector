@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "run_id": "560445fca9273ceca5d833827fead2800df976128f677d4e20b36bcc59847cc5",
+  "completed_utc": "2026-11-03T21:26:29.656470+00:00",
+  "outcome": "engineering_failure",
+  "conclusion": "Final evaluator import failed because GPU inference env lacks scikit-learn. Failure precedes annotation reads and score evaluation. Preserve all frozen scores/parameters; use existing pinned CPU evaluator environment in a new explicit claim, no model rerun or environment mutation.",
+  "artifacts": [
+    {
+      "path": "outputs/h017-relation-20261103/NLI_EVALUATION_stderr.log",
+      "sha256": "7ce956c50764f287386996a0c15470d24219e98959dd88c488bb7349455c6cd4"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/NLI_EVALUATION_LAUNCH.json",
+      "sha256": "0e1d3e6ad3ca01a574fdb79a7226f8f4394c9edb098b5e8afc28078583da35bd"
+    }
+  ]
+}

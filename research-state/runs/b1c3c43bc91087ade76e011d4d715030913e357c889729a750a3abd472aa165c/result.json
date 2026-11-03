@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "run_id": "b1c3c43bc91087ade76e011d4d715030913e357c889729a750a3abd472aa165c",
+  "completed_utc": "2026-11-03T20:06:01.807912+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Full900 tokenizer-only plan sealed:8240existing sentence units,178343original targets,18162complete source-hypothesis pairs,0unknown units, longest512. No model or labels. Fixed scoring budget18163 includes2same-FP32canary calls with one reused pair.",
+  "artifacts": [
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-plan-v1/plan.json",
+      "sha256": "416726e348500e0850dadd3cfa83a927c5deb9d6d69a87b0ecf7d3a397c3d460"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-plan-v1/seal.json",
+      "sha256": "0348416380c782bc9f7be60cc5795f40b5267b1f3fcf06092264900b3c8e4def"
+    }
+  ]
+}

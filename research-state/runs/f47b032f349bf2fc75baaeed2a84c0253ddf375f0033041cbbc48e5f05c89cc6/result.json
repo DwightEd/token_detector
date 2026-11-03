@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "run_id": "f47b032f349bf2fc75baaeed2a84c0253ddf375f0033041cbbc48e5f05c89cc6",
+  "completed_utc": "2026-11-03T16:00:10.943239+00:00",
+  "outcome": "engineering_failure",
+  "conclusion": "Two qualified worlds completed2full/2head; immutable progress.json second-write failed. Preserve native and S_minus seals and resume only remaining three under a new explicit claim; no scientific primary decision yet.",
+  "artifacts": [
+    {
+      "path": "outputs/h017-relation-20261103/m5-scope-observation-v1/failure.json",
+      "sha256": "066108a1e769c384f3efd1dfedc2d43d3acf3d70011ff0ce19e728491b2c3e3e"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m5-scope-observation-v1/seal.json",
+      "sha256": "2f5d0810028341b48a5df4e0023c9e1bc3b891a1f84eadf555906559c699ddc5"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m5-scope-observation-v1/native/seal.json",
+      "sha256": "bcb44250bf0789f52af757773b3501adf577f189ff5e483d1a0d52904a4312c9"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/m5-scope-observation-v1/S_minus/seal.json",
+      "sha256": "c9e9c65e32e220342e091021764392f12742eb9fa3fcb1daaa7c880231d00ef9"
+    }
+  ]
+}

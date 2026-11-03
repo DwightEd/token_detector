@@ -1,0 +1,609 @@
+{
+  "schema": "nli-fixed-posthoc-error-source-analysis-v1",
+  "scope": "Fixed first3 distinct sources per FN and FP category; six responses but only three shared sources; exposed exploratory population",
+  "no_new_model_calls": true,
+  "no_new_detector_scores_or_variant_metrics": true,
+  "diagnostic_seal_sha256": "7cf47cf1734d64d600240e875035938a0c8bcb0feb682ab1beff59af059cde25",
+  "comparison_sha256": "a40403c416b33e42999d6b7ca78ed9e019972799868632eb4513531f0a14c42e",
+  "examples_sha256": "5e67566255ff6d0c90e7ac8abf5250c425090bb8748909257ae3f89bf2fe6d35",
+  "original_input_sha256": "050c79f2711aa292845f27ed4f3ae8b68f0d263bc9d29678486f7e8fb6477521",
+  "complete_score_seal_sha256": "a12c6a29a005d559dd61bac49f1dad7c280c3e112f87ee3040321c1d08ce194e",
+  "semantic_head_order": [
+    "entailment",
+    "contradiction",
+    "neutral"
+  ],
+  "selection_policy": "Window index descriptively identifies the maximum saved entailment used by the already frozen kernel; not a new score or a causal attribution",
+  "cases": [
+    {
+      "category": "nli_FN",
+      "id": "5670",
+      "source_id": "13601",
+      "claim_index": 2,
+      "selected_target": 48,
+      "selected_target_text": " Monday",
+      "target_characters": [
+        222,
+        229
+      ],
+      "claim_character_span": [
+        193,
+        289
+      ],
+      "original_R_quote": " The restaurant operates from Monday to Saturday from 17:00-21:00 and on Sunday from 9:00-14:00.",
+      "source_quotes": [
+        "'Monday': '17:30-23:0'",
+        "'Tuesday': '17:0-21:0'",
+        "'Saturday': '17:0-21:0'",
+        "'Sunday': '9:0-14:0'"
+      ],
+      "source_sha256": "f71690e1016bcb5c29096c1b98c232cd253d2ddab7360400791ff76af9ef8b60",
+      "unit_path": "D:\\projects\\research\\token_detector\\outputs\\h017-relation-20261103\\local-nli-datatxt900-score-v2\\units\\bd14620394b6083fbf735bbfc55773765de1d750ec053f281fe77d7764d7b36b\\00002.json",
+      "unit_sha256": "7f3ae983e4adcf095e4c16c87e510b69553df1f405223fe217a65081d0b9b679",
+      "stored_risk": 0.9682756839388451,
+      "unknown": false,
+      "selected_window_index_zero_based": 0,
+      "selected_source_token_range": [
+        0,
+        482
+      ],
+      "selected_saved_class_vector_E_C_N": [
+        0.03172431606115492,
+        0.3052221531892467,
+        0.6630535307495984
+      ],
+      "all_windows": [
+        {
+          "source_token_range": [
+            0,
+            482
+          ],
+          "saved_class_vector_E_C_N": [
+            0.03172431606115492,
+            0.3052221531892467,
+            0.6630535307495984
+          ]
+        },
+        {
+          "source_token_range": [
+            418,
+            870
+          ],
+          "saved_class_vector_E_C_N": [
+            0.0033081391317771234,
+            0.9802840648750418,
+            0.016407795993181075
+          ]
+        }
+      ],
+      "fixed5pct_alert": {
+        "r4": false,
+        "witness": false,
+        "nli": false
+      },
+      "selected_target_benchmark_positive": true,
+      "known": "A Monday exception is present in the selected fact window. The sentence is already high-risk but misses the fixed global5pct budget.",
+      "cannot_infer": "Not evidence that NLI failed to see the hours, nor that the maximum selected an irrelevant window. One minute token is not the only possible repair.",
+      "sentence_benchmark_token_counts": {
+        "no_released_positive_overlap": 17,
+        "positive": 12
+      }
+    },
+    {
+      "category": "nli_FN",
+      "id": "5684",
+      "source_id": "13603",
+      "claim_index": 3,
+      "selected_target": 65,
+      "selected_target_text": " or",
+      "target_characters": [
+        256,
+        259
+      ],
+      "claim_character_span": [
+        212,
+        300
+      ],
+      "original_R_quote": " Customers can park their cars on the street or lot, but valet parking is not available.",
+      "source_quotes": [
+        "'street': True, 'lot': False",
+        "'valet': False"
+      ],
+      "source_sha256": "9567bf5a5690e766050d88db2202b41ffe39a7a42f95d460d65ea5283d4cd7e6",
+      "unit_path": "D:\\projects\\research\\token_detector\\outputs\\h017-relation-20261103\\local-nli-datatxt900-score-v2\\units\\4ac48f96076672baf809e9f607381e233c336693186b1caeefda9655357084be\\00003.json",
+      "unit_sha256": "fcd707c19350b75c7feecae9cb051a5db67d8fd5bc38f9ebfe25644e089baf0b",
+      "stored_risk": 0.8088360277506577,
+      "unknown": false,
+      "selected_window_index_zero_based": 0,
+      "selected_source_token_range": [
+        0,
+        491
+      ],
+      "selected_saved_class_vector_E_C_N": [
+        0.19116397224934228,
+        0.6314324876143271,
+        0.1774035401363306
+      ],
+      "all_windows": [
+        {
+          "source_token_range": [
+            0,
+            491
+          ],
+          "saved_class_vector_E_C_N": [
+            0.19116397224934228,
+            0.6314324876143271,
+            0.1774035401363306
+          ]
+        },
+        {
+          "source_token_range": [
+            427,
+            776
+          ],
+          "saved_class_vector_E_C_N": [
+            0.050876681189379776,
+            0.5950282158593122,
+            0.35409510295130797
+          ]
+        }
+      ],
+      "fixed5pct_alert": {
+        "r4": false,
+        "witness": true,
+        "nli": false
+      },
+      "selected_target_benchmark_positive": true,
+      "known": "The source allows street, denies lot and denies valet. The sentence mixes supported and contradicted alternatives.",
+      "cannot_infer": "Natural-language street-or-lot lists options, while a weak inclusive disjunction has a different logical reading; no internal dilution mechanism is identified.",
+      "sentence_benchmark_token_counts": {
+        "no_released_positive_overlap": 17,
+        "positive": 2
+      }
+    },
+    {
+      "category": "nli_FN",
+      "id": "5690",
+      "source_id": "13604",
+      "claim_index": 2,
+      "selected_target": 53,
+      "selected_target_text": " catering",
+      "target_characters": [
+        290,
+        299
+      ],
+      "claim_character_span": [
+        222,
+        309
+      ],
+      "original_R_quote": " They also provide outdoor seating, free Wi-Fi, takeout options, and catering services.",
+      "source_quotes": [
+        "'OutdoorSeating': True",
+        "'WiFi': 'free'",
+        "'RestaurantsTakeOut': True",
+        "Event Planning & Services"
+      ],
+      "source_sha256": "e388d14fd681715c4cc0478267ef58bf977b48376e0fb679b719fa64ac6e246b",
+      "unit_path": "D:\\projects\\research\\token_detector\\outputs\\h017-relation-20261103\\local-nli-datatxt900-score-v2\\units\\f258849b08ca24e88daafc5d7a97c5ccfc683cef5a5873adb96000e954a3b8de\\00002.json",
+      "unit_sha256": "ce5de731fa212249a12c4847c246ea5e5214a0c5bfaa86e9ad6d3dda01af831c",
+      "stored_risk": 0.706277465669823,
+      "unknown": false,
+      "selected_window_index_zero_based": 0,
+      "selected_source_token_range": [
+        0,
+        491
+      ],
+      "selected_saved_class_vector_E_C_N": [
+        0.2937225343301771,
+        0.06640270010173933,
+        0.6398747655680836
+      ],
+      "all_windows": [
+        {
+          "source_token_range": [
+            0,
+            491
+          ],
+          "saved_class_vector_E_C_N": [
+            0.2937225343301771,
+            0.06640270010173933,
+            0.6398747655680836
+          ]
+        },
+        {
+          "source_token_range": [
+            427,
+            918
+          ],
+          "saved_class_vector_E_C_N": [
+            0.00724065259269865,
+            0.15807793395609032,
+            0.8346814134512109
+          ]
+        },
+        {
+          "source_token_range": [
+            854,
+            960
+          ],
+          "saved_class_vector_E_C_N": [
+            0.00030381187292061505,
+            0.0005387480009463632,
+            0.9991574401261331
+          ]
+        }
+      ],
+      "fixed5pct_alert": {
+        "r4": false,
+        "witness": true,
+        "nli": false
+      },
+      "selected_target_benchmark_positive": true,
+      "known": "Outdoor seating, freeWiFi and takeout are explicit. Catering has no explicit source license; related event categories do not entail catering.",
+      "cannot_infer": "Absence of a source catering statement is not proof the real business never caters. Mixture dilution or association is a hypothesis, not an identified mechanism.",
+      "sentence_benchmark_token_counts": {
+        "no_released_positive_overlap": 16,
+        "positive": 2
+      }
+    },
+    {
+      "category": "nli_FP",
+      "id": "5671",
+      "source_id": "13601",
+      "claim_index": 16,
+      "selected_target": 299,
+      "selected_target_text": "Overall",
+      "target_characters": [
+        1443,
+        1450
+      ],
+      "claim_character_span": [
+        1443,
+        1591
+      ],
+      "original_R_quote": "Overall, Finch & Fork appears to be a popular local spot in Santa Barbara, offering a diverse menu, great service, and a pleasant dining experience.",
+      "source_quotes": [
+        "5 stars for food, ambiance, and service.",
+        "taste and quality of the food was great and service was also good.",
+        "ambiance is nice"
+      ],
+      "source_sha256": "f71690e1016bcb5c29096c1b98c232cd253d2ddab7360400791ff76af9ef8b60",
+      "unit_path": "D:\\projects\\research\\token_detector\\outputs\\h017-relation-20261103\\local-nli-datatxt900-score-v2\\units\\57971022aadc308fc59c0ba0eb04016f8b809315cff66502cc9f600b93713aa6\\00016.json",
+      "unit_sha256": "e3a7dc014af8e8c0faeff3cdab7de314afc4ad40c5a6fc40b07ba6675ed3c605",
+      "stored_risk": 0.9816346639088779,
+      "unknown": false,
+      "selected_window_index_zero_based": 0,
+      "selected_source_token_range": [
+        0,
+        479
+      ],
+      "selected_saved_class_vector_E_C_N": [
+        0.01836533609112217,
+        0.005143900778922264,
+        0.9764907631299556
+      ],
+      "all_windows": [
+        {
+          "source_token_range": [
+            0,
+            479
+          ],
+          "saved_class_vector_E_C_N": [
+            0.01836533609112217,
+            0.005143900778922264,
+            0.9764907631299556
+          ]
+        },
+        {
+          "source_token_range": [
+            415,
+            870
+          ],
+          "saved_class_vector_E_C_N": [
+            0.0165026286977506,
+            0.6907271181468556,
+            0.2927702531553938
+          ]
+        }
+      ],
+      "fixed5pct_alert": {
+        "r4": false,
+        "witness": true,
+        "nli": true
+      },
+      "selected_target_benchmark_positive": false,
+      "known": "The source contains positive food, service and ambiance reviews. The selected sentence is mainly neutral for the winning source window.",
+      "cannot_infer": "Benchmark-negative is not independent proof that popularity and every broad summary phrase are strictly entailed.",
+      "sentence_benchmark_token_counts": {
+        "no_released_positive_overlap": 30
+      }
+    },
+    {
+      "category": "nli_FP",
+      "id": "5682",
+      "source_id": "13603",
+      "claim_index": 3,
+      "selected_target": 61,
+      "selected_target_text": " However",
+      "target_characters": [
+        242,
+        250
+      ],
+      "claim_character_span": [
+        242,
+        274
+      ],
+      "original_R_quote": " However, they do not have WiFi.",
+      "source_quotes": [
+        "'WiFi': 'no'"
+      ],
+      "source_sha256": "9567bf5a5690e766050d88db2202b41ffe39a7a42f95d460d65ea5283d4cd7e6",
+      "unit_path": "D:\\projects\\research\\token_detector\\outputs\\h017-relation-20261103\\local-nli-datatxt900-score-v2\\units\\1019bdc854ba04edea745ea43c73ad23a751f8ab938bf242d9eb52db822a9ab3\\00003.json",
+      "unit_sha256": "fd4c1c86cfbf4aa4370b364c0235254ea1890572de8b854a9955fa8da9f9cab5",
+      "stored_risk": 0.9816479521764595,
+      "unknown": false,
+      "selected_window_index_zero_based": 0,
+      "selected_source_token_range": [
+        0,
+        501
+      ],
+      "selected_saved_class_vector_E_C_N": [
+        0.01835204782354054,
+        0.8537608141422053,
+        0.1278871380342542
+      ],
+      "all_windows": [
+        {
+          "source_token_range": [
+            0,
+            501
+          ],
+          "saved_class_vector_E_C_N": [
+            0.01835204782354054,
+            0.8537608141422053,
+            0.1278871380342542
+          ]
+        },
+        {
+          "source_token_range": [
+            437,
+            776
+          ],
+          "saved_class_vector_E_C_N": [
+            0.0032767209951750746,
+            0.021208416949494095,
+            0.9755148620553309
+          ]
+        }
+      ],
+      "fixed5pct_alert": {
+        "r4": false,
+        "witness": false,
+        "nli": true
+      },
+      "selected_target_benchmark_positive": false,
+      "known": "The source explicitly says WiFi:no in the selected first window, yet the saved classifier assigns contradiction.",
+      "cannot_infer": "Cannot distinguish schema/domain polarity, discourse coreference or negative-word effects without a controlled test.",
+      "sentence_benchmark_token_counts": {
+        "no_released_positive_overlap": 8
+      }
+    },
+    {
+      "category": "nli_FP",
+      "id": "5691",
+      "source_id": "13604",
+      "claim_index": 5,
+      "selected_target": 120,
+      "selected_target_text": " The",
+      "target_characters": [
+        663,
+        667
+      ],
+      "claim_character_span": [
+        663,
+        714
+      ],
+      "original_R_quote": " The patio area is also praised for its ambiance.\n\n",
+      "source_quotes": [
+        "The patio is nice, but not worth coming back for."
+      ],
+      "source_sha256": "e388d14fd681715c4cc0478267ef58bf977b48376e0fb679b719fa64ac6e246b",
+      "unit_path": "D:\\projects\\research\\token_detector\\outputs\\h017-relation-20261103\\local-nli-datatxt900-score-v2\\units\\264fd4d30b6f069df5be7cd14c3a167a0fc59fe221b02453bb697911aa973957\\00005.json",
+      "unit_sha256": "100cb6d0d5cba042ee8f9dfb48accd7d27affdc98073c4e649d44c357372a4e7",
+      "stored_risk": 0.9959070848566327,
+      "unknown": false,
+      "selected_window_index_zero_based": 1,
+      "selected_source_token_range": [
+        435,
+        934
+      ],
+      "selected_saved_class_vector_E_C_N": [
+        0.004092915143367293,
+        0.22230637167511436,
+        0.7736007131815185
+      ],
+      "all_windows": [
+        {
+          "source_token_range": [
+            0,
+            499
+          ],
+          "saved_class_vector_E_C_N": [
+            0.0024628029136317875,
+            0.0026861335513295834,
+            0.9948510635350386
+          ]
+        },
+        {
+          "source_token_range": [
+            435,
+            934
+          ],
+          "saved_class_vector_E_C_N": [
+            0.004092915143367293,
+            0.22230637167511436,
+            0.7736007131815185
+          ]
+        },
+        {
+          "source_token_range": [
+            870,
+            960
+          ],
+          "saved_class_vector_E_C_N": [
+            0.00022257748042798438,
+            0.0002904914194088033,
+            0.9994869311001632
+          ]
+        }
+      ],
+      "fixed5pct_alert": {
+        "r4": false,
+        "witness": false,
+        "nli": true
+      },
+      "selected_target_benchmark_positive": false,
+      "known": "The actual selected window contains the positive patio statement inside an otherwise negative review. Neutral dominates.",
+      "cannot_infer": "Nice-patio to praised-ambiance is an interpretive paraphrase; labels do not prove all meanings equivalent or identify negative-sentiment interference.",
+      "sentence_benchmark_token_counts": {
+        "no_released_positive_overlap": 10
+      }
+    }
+  ],
+  "fixed_hours_original_targets53_to59": [
+    {
+      "target": 53,
+      "text": "17",
+      "characters": [
+        247,
+        249
+      ],
+      "benchmark_positive": true,
+      "stored_scores": {
+        "r4": 0.14763937274545447,
+        "witness": -1.984987785657288,
+        "nli": 0.9682756839388451
+      },
+      "fixed5pct_alert": {
+        "r4": false,
+        "witness": false,
+        "nli": false
+      }
+    },
+    {
+      "target": 54,
+      "text": ":",
+      "characters": [
+        249,
+        250
+      ],
+      "benchmark_positive": true,
+      "stored_scores": {
+        "r4": 0.14058745049609286,
+        "witness": -1.6610422328085432,
+        "nli": 0.9682756839388451
+      },
+      "fixed5pct_alert": {
+        "r4": false,
+        "witness": false,
+        "nli": false
+      }
+    },
+    {
+      "target": 55,
+      "text": "00",
+      "characters": [
+        250,
+        252
+      ],
+      "benchmark_positive": true,
+      "stored_scores": {
+        "r4": 0.1710755297838627,
+        "witness": -1.6643087906381968,
+        "nli": 0.9682756839388451
+      },
+      "fixed5pct_alert": {
+        "r4": false,
+        "witness": false,
+        "nli": false
+      }
+    },
+    {
+      "target": 56,
+      "text": "-",
+      "characters": [
+        252,
+        253
+      ],
+      "benchmark_positive": true,
+      "stored_scores": {
+        "r4": 0.19745597984271124,
+        "witness": -1.7713694684896484,
+        "nli": 0.9682756839388451
+      },
+      "fixed5pct_alert": {
+        "r4": false,
+        "witness": false,
+        "nli": false
+      }
+    },
+    {
+      "target": 57,
+      "text": "21",
+      "characters": [
+        253,
+        255
+      ],
+      "benchmark_positive": true,
+      "stored_scores": {
+        "r4": 0.19282326448597947,
+        "witness": -1.7999688937389067,
+        "nli": 0.9682756839388451
+      },
+      "fixed5pct_alert": {
+        "r4": false,
+        "witness": false,
+        "nli": false
+      }
+    },
+    {
+      "target": 58,
+      "text": ":",
+      "characters": [
+        255,
+        256
+      ],
+      "benchmark_positive": true,
+      "stored_scores": {
+        "r4": 0.2798855089158798,
+        "witness": -1.5931044530621716,
+        "nli": 0.9682756839388451
+      },
+      "fixed5pct_alert": {
+        "r4": false,
+        "witness": false,
+        "nli": false
+      }
+    },
+    {
+      "target": 59,
+      "text": "00",
+      "characters": [
+        256,
+        258
+      ],
+      "benchmark_positive": true,
+      "stored_scores": {
+        "r4": 0.2953650907704418,
+        "witness": -1.6155060388238622,
+        "nli": 0.9682756839388451
+      },
+      "fixed5pct_alert": {
+        "r4": false,
+        "witness": false,
+        "nli": false
+      }
+    }
+  ],
+  "next_gate_status": "NOT_ADMITTED; zero-model admission proof only; no additional observation or scoring run authorized by this report"
+}

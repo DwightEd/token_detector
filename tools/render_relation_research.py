@@ -20,6 +20,9 @@ ARTICLES = {
     'H017_PROTOCOL': (ROOT/'docs/research/h017_address_payload_protocol.md', '四来源与Q/K/V干预：冻结协议'),
     'H017_NATURAL': (ROOT/'docs/results/h017_natural_temporal_observation.md', '自然时间错例：原词概率与全部层头'),
     'H017_READOUT': (ROOT/'docs/results/h017_existing_readout_chain.md', '旧R4/V3：单位告警在哪一步下降'),
+    'H017_SCOPE': (ROOT/'docs/results/h017_scope_results.md', '范围内例外：五组实际实验'),
+    'H017_DETECTION': (ROOT/'docs/results/h017_nli_detection.md', '完整900回答：检测效果与成本'),
+    'H017_ERRORS': (ROOT/'docs/results/h017_nli_error_cases.md', '固定错例：关系、否定与排序'),
 }
 
 

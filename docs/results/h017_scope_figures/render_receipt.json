@@ -1,0 +1,62 @@
+{
+  "schema": "h017-M5-figure-render-receipt-v1",
+  "created_utc": "2026-11-03T19:55:06.526836+00:00",
+  "python": "D:\\Apps\\Research\\Tools\\anaconda3\\python.exe",
+  "python_version": "3.13.9",
+  "matplotlib": "3.10.6",
+  "renderer_sha256": "fe8b546e6a0a4c5ad75ca293e67810d3ce959506635724a4393c7efb1f7ca618",
+  "source": {
+    "audit_path": "D:\\projects\\research\\token_detector\\outputs\\h017-relation-20261103\\m5-postrun-audit-v1\\audit.json",
+    "audit_sha256": "42cd1c32ffca2885697e568691f950b0a9e3b582832de10234147e998487a679",
+    "audit_seal_sha256": "16884f709cdc348cdb4eb2508a6fcbf0b3004cf7fea979e10438ac2afce38f56",
+    "original_source_sha256": "f71690e1016bcb5c29096c1b98c232cd253d2ddab7360400791ff76af9ef8b60",
+    "original_response_sha256": "9f547386286ee2e59e130d4fb227b8e54120c6212cb3396a00292fc05fba61d8",
+    "fixed_world_order": [
+      "native",
+      "S_minus",
+      "S_plus",
+      "Tuesday_exception",
+      "Saturday_exception"
+    ],
+    "all_worlds_and_all_three_contrasts_retained": true,
+    "probabilities": "Full128256-vocabulary original target55; conditional on forced original prefix, not accuracy or two-candidate share"
+  },
+  "figure_artifacts": {
+    "m5_scope_diagnostic.png": "69622f4cf15f2443963305410f1463877b7293b055195b00dc57aee885b0e800",
+    "m5_scope_diagnostic.pdf": "ddda5d92c13f5f736476eee85f4a12a3bdc28aba1d09dfa14db9e732ebea189d",
+    "m5_scope_diagnostic.svg": "638ff8c969936b0f563ef507a4ff0ce39716c6308e4c5531648241fa1c56f33a",
+    "five_endpoints.csv": "809ed23d8906aab185b27abce657ba17c9bd8ed6fb60d2a4c8c9f22f8e850d2b",
+    "source_sha256.json": "2c21546a366e6b85e836ea0d5dfb234e305841f980a703ba4e1e2757d9b0dd5f"
+  },
+  "rendered_PNG_visual_inspection": {
+    "completed_utc": "2026-11-03T19:56:43.448586+00:00",
+    "tool": "view_image",
+    "image_sha256": "69622f4cf15f2443963305410f1463877b7293b055195b00dc57aee885b0e800",
+    "image_dimensions": [
+      2690,
+      1622
+    ],
+    "five_worlds_and_three_contrasts_visible": true,
+    "labels_table_and_full_caveats_not_clipped": true,
+    "conditional_probabilities_presented_as_numbers_not_accuracy_bars": true,
+    "no_layout_revision_required": true
+  },
+  "publication_copies": {
+    "directory": "D:\\projects\\research\\token_detector\\docs\\results\\h017_scope_figures",
+    "files": [
+      "m5_scope_diagnostic.png",
+      "m5_scope_diagnostic.pdf",
+      "m5_scope_diagnostic.svg",
+      "five_endpoints.csv",
+      "source_sha256.json",
+      "render_receipt.json"
+    ],
+    "copies_are_exact_bytes": true
+  },
+  "new_model_calls": 0,
+  "labels_read": false,
+  "environment_packages_changed": false,
+  "no_AUROC_or_accuracy_or_mechanism_claim": true,
+  "exact_CSV_audit_roundtrip_checked": true,
+  "observer_arithmetic_scope": "Current matched five-world FP32 execution with original BF16 weight storage; not the older BF16 scalar-probability archive."
+}

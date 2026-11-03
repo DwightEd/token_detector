@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "run_id": "c6b4520fb08d4fcf70988292c2e88a05b5f10b83f3b5fb0433e5d0522e863dcb",
+  "completed_utc": "2026-11-03T21:24:59.800535+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Full900/8240sentence/178343originaltoken scoring completed and independently audited before target labels. Replayed16160 success raws including partial802; exactly2003 new forwards. Combined18163 successful model calls,18164 physical interfaces including1 old preforward resource guard. Unknown0. Historical canaries reused, no fresh resident canary claim. Not a new unsupervised detector result.",
+  "artifacts": [
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-score-v2/observation.json",
+      "sha256": "516138240493a0eaf6b7551f440cfe0cdffe20753e60fc5f2558c0deb333a756"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-score-v2/seal.json",
+      "sha256": "a12c6a29a005d559dd61bac49f1dad7c280c3e112f87ee3040321c1d08ce194e"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-score-v2.recovery.json",
+      "sha256": "93c3d9f600962d4e356650a5abc98233e4e2268714f1f91bec9c0ca7e97fd033"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-nonlabel-audit-v2/audit.json",
+      "sha256": "0673c5621ad0256d38616c0be40fc22d5ea09b372f42ace20cf7d68d2df75f37"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-nonlabel-audit-v2/seal.json",
+      "sha256": "7f92e69a2a44a073ebc1d776dddaa99f2b57ef84cf38c3b1c52784e2a76b89f3"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/NLI_NONLABEL_RELEASE.json",
+      "sha256": "cc09b36bd3e6583a7fdaf4378eb3fe00c05f34342d6f97deda70c60fcbe6c7cd"
+    }
+  ]
+}

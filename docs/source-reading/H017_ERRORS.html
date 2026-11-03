@@ -1,0 +1,66 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>固定错例：关系、否定与排序</title><meta name="source-sha256" content="cd66e39f272cb2425d3b41750faf05be6001a8f7f638db742d6d9303b370794d">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
+<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
+<style>body{max-width:1040px;margin:40px auto;padding:0 24px;color:#17253a;font:17px/1.8 system-ui,sans-serif;background:#fbfcff}nav{font-size:14px}a{color:#245bc7}h1,h2{line-height:1.35}img{max-width:100%;height:auto}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #d5ddeb;padding:10px;text-align:left}th{background:#edf2fb}pre{overflow:auto;padding:16px;background:#edf2f8}code{font-size:.88em}.equation{overflow-x:auto}.flow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:20px;background:#edf2fb;border-radius:12px}.flow span{background:white;padding:8px 12px;border:1px solid #cbd7eb}footer{font-size:13px;border-top:1px solid #d5ddeb;margin-top:40px;padding-top:16px}@media print{body{font-size:12px;margin:0}nav{display:none}}</style>
+</head><body><nav><a href="H017_PROGRESS.html">关系错绑：实验进展与证据</a> · <a href="H017_MATH.html">高注意力为何不等于正确关系</a> · <a href="H017_PROTOCOL.html">四来源与Q/K/V干预：冻结协议</a> · <a href="H017_NATURAL.html">自然时间错例：原词概率与全部层头</a> · <a href="H017_READOUT.html">旧R4/V3：单位告警在哪一步下降</a> · <a href="H017_SCOPE.html">范围内例外：五组实际实验</a> · <a href="H017_DETECTION.html">完整900回答：检测效果与成本</a> · <a href="H017_ERRORS.html">固定错例：关系、否定与排序</a></nav><main><h1>固定NLI错例：原始来源与已封存窗口的事后核对</h1>
+<p>完整Data2txt900评价为AUROC <strong>0.744306</strong>、AP <strong>0.097168</strong>；固定5%预算下TP1038、FP7880、FN6369，unknown=0。同轴R4为0.798318/0.190392，V3为0.755716/0.145209。本报告仅解释预先固定的前三个不同来源FN、FP及5670时间片段；六个回答实际共用三个来源，是已暴露人口上的描述性证据，不能据此估计某机制的普遍性。</p>
+<p>下表的E/C/N为<strong>缓存原值</strong>的蕴含/矛盾/中立概率；窗口为原来源NLI token半开区间，选中窗口仅描述既有max-E规则，不代表已证实的证据归因。风险、告警均直接读取已封存结果，未改分数或重算变体指标。
+风险是冻结分类器的1-E读出，未校准为“真实幻觉概率”。</p>
+<table>
+<thead>
+<tr>
+<th>类别、回答/来源、原句索引</th>
+<th>原始S/R的关键内容</th>
+<th>选中窗口E/C/N；风险</th>
+<th>可确认的现象与限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FN 5670/13601，句2</td>
+<td>S：Monday=<code>17:30-23:0</code>，Tue–Sat=<code>17:0-21:0</code>，Sunday=<code>9:0-14:0</code>；R：Monday–Saturday=<code>17:00-21:00</code></td>
+<td>[0,482)：.031724/.305222/.663054；<strong>.968276</strong></td>
+<td>首窗确含完整hours，已给很高非蕴含风险，只是未进全局前5%；不能说没看到时间、觉得它正确或需要提高敏感度。</td>
+</tr>
+<tr>
+<td>FN 5684/13603，句3</td>
+<td>S：street=True、lot=False、valet=False；R：<code>on the street or lot, but valet parking is not available</code></td>
+<td>[0,491)：.191164/.631432/.177404；<strong>.808836</strong></td>
+<td>混合了正确street/否定valet与不获许可的lot；日常列举可选停车地点与形式逻辑弱析取的解释有差异，不能仅凭概率证明内部“混合稀释”。</td>
+</tr>
+<tr>
+<td>FN 5690/13604，句2</td>
+<td>S明确outdoor=True、WiFi=free、takeout=True，类别有<code>Event Planning &amp; Services</code>；R再加入<code>catering services</code></td>
+<td>[0,491)：.293723/.066403/.639875；<strong>.706277</strong></td>
+<td>原S没有明确catering许可，相关类别不能直接推出它；这是来源支持不足，不等于证明现实商家绝不提供。已支持子句稀释、语义联想等仍是竞争解释。</td>
+</tr>
+<tr>
+<td>FP 5671/13601，句16</td>
+<td>R：<code>popular local spot… diverse menu, great service… pleasant dining experience</code>；S有<code>5 stars for food, ambiance, and service</code>及<code>ambiance is nice</code>等</td>
+<td>[0,479)：.018365/.005144/.976491；<strong>.981635</strong></td>
+<td>选中窗主要判中立，风险反而高于错误营业范围；但“popular”等宽泛概括未必是严格逻辑蕴含，benchmark负标签不能独立证明所有修饰语正确。</td>
+</tr>
+<tr>
+<td>FP 5682/13603，句3</td>
+<td>S明确<code>'WiFi': 'no'</code>；R：<code>However, they do not have WiFi.</code></td>
+<td>[0,501)：.018352/<strong>.853761</strong>/.127887；<strong>.981648</strong></td>
+<td>对明确支持的否定句，含真字段的首窗反而强判矛盾。这不是只有“neutral当风险”的问题；尚不能区分结构字段/极性、代词和话语词等成因。</td>
+</tr>
+<tr>
+<td>FP 5691/13604，句5</td>
+<td>S：<code>The patio is nice, but not worth coming back for.</code>；R：<code>The patio area is also praised for its ambiance.</code></td>
+<td>[435,934)：.004093/.222306/.773601；<strong>.995907</strong></td>
+<td>优胜窗口包含正面的patio原句，不能说没检索到patio；“nice”到“praised for ambiance”仍有释义边界，整体负评干扰只是待检假设。</td>
+</tr>
+</tbody>
+</table>
+<h2>营业时间原轴与句子广播</h2>
+<p>5670原target53..59分别为<code>17 : 00 - 21 : 00</code>，字符[247,258)，七个token均为发布正例，NLI/R4/V3在各自固定5%预算下均未告警。NLI七处都是同一个<strong>.9682756839388451</strong>；其整句target[44,73)共有29个token，其中12个发布正例、17个无发布正span，全部共享该分数。错误关系在“Monday–Saturday”范围包含周一例外，改一个<code>00</code>不是唯一或整个范围的正确修复。</p>
+<p>5684停车句19个token仅2个发布正例，5690设施句18个token仅2个发布正例，同样整句等分。相反，三个固定FP的整句30/8/10个token都没有发布正span，不能把它们仅解释成“同句真错误波及邻词”；概括、释义或否定句本身的高风险，再经整句广播形成多个token误报。无正span仍不等于独立验证的事实真值，不能据此训练、调阈值或挑新规则。</p>
+<h2>可以排除什么，尚未识别什么</h2>
+<p>这六例没有显示max-E选中了一个无关高蕴含窗口来掩盖错误：三个FN均选含对应结构字段的首窗；WiFi两窗E只有.018352/.003277，没有可由换max“找回”的高蕴含证据。patio优胜中窗也包含原文正面描述。可识别的是<strong>输出排序及投影失败</strong>：营业范围的高非蕴含风险被更高的概括/否定句风险挤出预算，且同句没有token内区分；不能仅靠现有窗口头概率判定max聚合、关系绑定或读回过程的因果责任。</p>
+<p>原规则把中立和矛盾都计入非蕴含风险，但改为只看矛盾也没有证据保证有效：正确WiFi否定句的C已达.854。没有计算contra-only、其他窗口聚合、重分句、融合或不同阈值的指标；这些结果不解释原Llama/GPT生成机制，也不构成新无监督方法。</p>
+<p>机器可复核事实见<a href="../results/h017_nli_error_cases.json">h017_nli_error_cases.json</a>：含六个固定ID、句索引、短S/R引文、所有已有窗口E/C/N、单元文件SHA、原告警、固定时间token及上述语义边界。JSON SHA256为<code>c43721b30ace6db7dbf06ca723b65ff88c064850de7617621a5fa9c298b11ca8</code>；诊断seal为<code>7cf47cf1734d64d600240e875035938a0c8bcb0feb682ab1beff59af059cde25</code>，原input SHA为<code>050c79f2711aa292845f27ed4f3ae8b68f0d263bc9d29678486f7e8fb6477521</code>。</p>
+<p>下一门见<a href="../../research-state/RESUME.md">持久恢复记录</a>：目前NOT_ADMITTED，不增加模型或重跑已知现象。</p></main><footer>H017本地离线阅读 · 原Markdown与GitHub公式是同一来源。打开本文件即可阅读，无需启动服务器。<br>源码SHA256：cd66e39f272cb2425d3b41750faf05be6001a8f7f638db742d6d9303b370794d</footer></body></html>

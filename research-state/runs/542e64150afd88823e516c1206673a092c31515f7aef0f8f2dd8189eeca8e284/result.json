@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "run_id": "542e64150afd88823e516c1206673a092c31515f7aef0f8f2dd8189eeca8e284",
+  "completed_utc": "2026-11-03T21:31:26.944229+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Central final evaluator completed all900/150source/178343originaltoken native annotations after full score sealing and independent audit. ExistingCPU sklearn1.9.0/NumPy2.4.6, bootstrap2000/seed17 unchanged; zero new scoring or model calls. External supervised comparator on exposed population, not new unsupervised detector.",
+  "artifacts": [
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-eval-v1/evaluation.json",
+      "sha256": "d9ccce1d9005460a86e70bc0c1a6c985b096b106ea7366d0d637978fd43b27d5"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/local-nli-datatxt900-eval-v1/seal.json",
+      "sha256": "82bd740dfd61f2b726888888bcd230e58b5e95f7e46ac893d0dd59001bb30ac9"
+    },
+    {
+      "path": "outputs/h017-relation-20261103/NLI_CPU_EVALUATION_ORCHESTRATION_REVIEW.md",
+      "sha256": "7e2119eb73018b03d940dc25b26246badc2282f6d24216fb037426324cedd81a"
+    }
+  ]
+}

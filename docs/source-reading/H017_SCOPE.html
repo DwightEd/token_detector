@@ -1,0 +1,71 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>范围内例外：五组实际实验</title><meta name="source-sha256" content="7633f62f32b67fe1e7b8d8f4f79ada982cc1912d6ae5f8b915023f05f55df17a">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
+<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
+<style>body{max-width:1040px;margin:40px auto;padding:0 24px;color:#17253a;font:17px/1.8 system-ui,sans-serif;background:#fbfcff}nav{font-size:14px}a{color:#245bc7}h1,h2{line-height:1.35}img{max-width:100%;height:auto}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #d5ddeb;padding:10px;text-align:left}th{background:#edf2fb}pre{overflow:auto;padding:16px;background:#edf2f8}code{font-size:.88em}.equation{overflow-x:auto}.flow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:20px;background:#edf2fb;border-radius:12px}.flow span{background:white;padding:8px 12px;border:1px solid #cbd7eb}footer{font-size:13px;border-top:1px solid #d5ddeb;margin-top:40px;padding-top:16px}@media print{body{font-size:12px;margin:0}nav{display:none}}</style>
+</head><body><nav><a href="H017_PROGRESS.html">关系错绑：实验进展与证据</a> · <a href="H017_MATH.html">高注意力为何不等于正确关系</a> · <a href="H017_PROTOCOL.html">四来源与Q/K/V干预：冻结协议</a> · <a href="H017_NATURAL.html">自然时间错例：原词概率与全部层头</a> · <a href="H017_READOUT.html">旧R4/V3：单位告警在哪一步下降</a> · <a href="H017_SCOPE.html">范围内例外：五组实际实验</a> · <a href="H017_DETECTION.html">完整900回答：检测效果与成本</a> · <a href="H017_ERRORS.html">固定错例：关系、否定与排序</a></nav><main><h1>M5：范围内例外会影响预测，但高概率仍不等于关系正确</h1>
+<p><strong>五组已实际完成，三项预先固定的比较全部通过，独立数值审计通过。</strong> 这是一条既有回答的受控机制诊断，还不是新检测器或自然任务AUROC。</p>
+<p>原来源：周一17:30–23:00，周二至周六17:00–21:00，周日09:00–14:00。原回答却把17:00–21:00概括为周一至周六。回答的所有185个token保持不变，每组输入均1079token；四个受控来源各含一个A=17:30–23:00、六个B=17:00–21:00，只移动例外的位置。</p>
+<h2>实际结果</h2>
+<p>主量是原回答预测分钟00前的 <code>m=z00−z30</code>。30借自来源17:30，并不是整个Mon–Sat的正确替代答案；这个差不是事实支持概率。</p>
+<table>
+<thead>
+<tr>
+<th>来源</th>
+<th>A例外所在日</th>
+<th>hours对象是否支持Mon–Sat全部B</th>
+<th style="text-align: right;">m</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原来源（非匹配锚点）</td>
+<td>周一；周日另为C</td>
+<td>否</td>
+<td style="text-align: right;">5.988808</td>
+</tr>
+<tr>
+<td>S_minus</td>
+<td>周一</td>
+<td>否</td>
+<td style="text-align: right;">6.096447</td>
+</tr>
+<tr>
+<td>S_plus</td>
+<td>周日，在声明范围之外</td>
+<td>是</td>
+<td style="text-align: right;">9.410328</td>
+</tr>
+<tr>
+<td>Tuesday_exception</td>
+<td>周二</td>
+<td>否</td>
+<td style="text-align: right;">6.110023</td>
+</tr>
+<tr>
+<td>Saturday_exception</td>
+<td>周六</td>
+<td>否</td>
+<td style="text-align: right;">7.027855</td>
+</tr>
+</tbody>
+</table>
+<p>S_plus减周一、周二、周六例外的主差分别为 <strong>3.313881、3.300304、2.382473</strong>，均超过调用前冻结的工程数值界约0.0185。原来源不参与匹配门；次要的七个原时段token似然不能补救主门失败。所有预定组均保留，没有按结果换层、挑头、换范围或挑某个数字。</p>
+<p><img alt="全部五组、三项固定比较及原词概率" src="../results/h017_scope_figures/m5_scope_diagnostic.png" /></p>
+<p><a href="../results/h017_scope_figures/m5_scope_diagnostic.pdf">PDF</a> · <a href="../results/h017_scope_figures/m5_scope_diagnostic.svg">SVG</a> · <a href="../results/h017_scope_figures/five_endpoints.csv">全部端点CSV</a></p>
+<p>因此，严格“只看全局完整时段计数”的模型不能解释这组差异。但它仍可能利用日期、位置或序列末端启发。三个同样不支持该声明的组之间也有0.931408的margin跨度，不能把它写成已经发现了通用全称范围核验算法。原来源对00仍给0.997430概率；关系敏感性本身没有变成可用的事实风险。</p>
+<h2>内部量与独立复核</h2>
+<p>每组保留32层、每层全部32个物理头，以及六个原回答接收点和七个来源字段完整闭合接收点，共13个位置的Q、原生cos/sin、pre-O AV、全输入原生post-RoPE KV和完整185行词表logits。闭合位置只说明完整字段已可被读取，不证明某个状态编码、使用了正确关系，也不证明存在回看验证节点。</p>
+<p>独立审计重放了全部925个原目标的FP32生产概率元数据，逐位相同；NumPy FP64独立重放全部层头的RoPE/GQA/因果attention与AV，在原固定界内0违反，最大AV绝对差7.47868e−6。未来位置attention为0，全部保存的profile精确复现。头与层相关，不能当作数千个独立样本。</p>
+<p>首轮两组各完成完整模型/head后，进度文件的禁止覆盖保护触发工程错误。两组结果和失败记录原样封存；修复仅涉及I/O，独立检查数值函数AST、137项其余依赖与旧封存后，只续跑剩余三组。真实调用总数仍是 <strong>5model/5head，0重复</strong>。首轮103.90秒、续跑149.79秒；含两次启动等开销，不是纯GPU计算时间。</p>
+<p>实测显存峰值约3GiB，运行后空闲物理内存约1.2GiB。该次停止是编排错误，<strong>并非资源拒绝或OOM</strong>。所有模型与独立审计进程现已退出。</p>
+<h2>必须保留的语义限制</h2>
+<ul>
+<li>所有受控来源都会破坏原回答后面的Sunday时段声明，不能称全回答真值翻转。</li>
+<li>来源评论提到Sunday morning/brunch，而受控hours变成晚间；评论有历史日期、hours没有生效日期，其完整上下文张力未消解。结论只针对许可的hours对象，不声称整个来源无矛盾。</li>
+<li>此例来自已暴露的首行自然样本，人工许可不是自动前端，也不是新增benchmark gold。</li>
+<li>没有对原GPT-4生成器作白盒观察，没有证明因果电路、自然覆盖、定位优势、低成本优势或新AUROC。</li>
+</ul>
+<p>完整数值、实际输入和失败/复用收据见<a href="../results/h017_scope_summary.json">结构化汇总</a>；本机完整证据在<code>outputs/h017-relation-20261103/m5-postrun-audit-v1</code>及<code>m5-postrun-input-supplement-v1</code>，大缓存不进入Git。</p>
+<p>下一步是完整Data2txt900的本地文本核验对照。它将产生原回答全部178343token上的风险、unknown与最终AUROC/AP；监督来源、窗口合同和费用单列。不能继续用本单例的控制实验代替检测评价。</p></main><footer>H017本地离线阅读 · 原Markdown与GitHub公式是同一来源。打开本文件即可阅读，无需启动服务器。<br>源码SHA256：7633f62f32b67fe1e7b8d8f4f79ada982cc1912d6ae5f8b915023f05f55df17a</footer></body></html>

@@ -1,4 +1,8 @@
-# Research status through 2026-11-03
+# Research status through 2026-11-04
+
+2026-11-04 最新：完整Data2txt900评价已完成：NLI外部监督对照AUROC/AP **0.744306/0.097168**，R4为**0.798318/0.190392**，V3为**0.755716/0.145209**。[完整检测结果与资源记录](results/h017_nli_detection.md)、[M5有限机制实测](results/h017_scope_results.md)。原轴/恢复前缀和独立无标签审计通过，最终真值只在全量seal后打开；NLI没有带来提升，内部机制检测模块和六任务0.8目标仍未建立。当前源码CI按实际提交单独记录，历史1101pass不替代新源码。
+
+以下按日期保留旧记录，当前执行边界以F054/RESUME为准。
 
 2026-11-03 最新：[关系绑定文献与下一轮判别设计](research/20261103_entity_binding_review.md)、[H012自然库存](results/h012_natural_inventory.md)、[H014缓存toy读出恢复及全部失败](results/h014_cached_role_assignment.md)。H014不是全任务提升；H013概率工具失败保留，H015真实工程资格待完成。六任务各0.8仍未达成。
 

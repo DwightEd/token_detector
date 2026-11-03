@@ -133,6 +133,17 @@ def parser() -> argparse.ArgumentParser:
     natural_relation.add_argument('--asset-verification', type=Path)
     natural_relation.add_argument('--asset-state', type=Path)
     natural_relation.add_argument('--device', default='cuda:0')
+    scope_relation = transfers.add_parser('observe-relation-scope',
+        help='run the fixed five-world original-response scope diagnostic and finite contrasts')
+    for option in ('prepared', 'primitive-root', 'capture-root', 'model', 'asset-manifest',
+                   'head-qualification', 'source-license', 'probability-audit', 'admission',
+                   'amendment', 'resource-review', 'output'):
+        scope_relation.add_argument('--' + option, type=Path, required=True)
+    scope_relation.add_argument('--asset-verification', type=Path)
+    scope_relation.add_argument('--asset-state', type=Path)
+    scope_relation.add_argument('--device', default='cuda:0')
+    scope_relation.add_argument('--reuse', type=Path)
+    scope_relation.add_argument('--reuse-stage-source', type=Path)
     semantic = transfers.add_parser('semantic-qualify', help='seal label-free source observations without scalar scores')
     semantic.add_argument('--inputs', type=Path, required=True)
     semantic.add_argument('--protocol', type=Path, required=True)
@@ -193,6 +204,15 @@ def parser() -> argparse.ArgumentParser:
     nli.add_argument('--model-identity', type=Path, required=True)
     nli.add_argument('--admit-resources', action='store_true')
     nli.add_argument('--output', type=Path, required=True)
+    local_nli = transfers.add_parser('predict-local-nli-dataset',
+        help='prepare or score the frozen full Data2txt900 external text comparator')
+    for option in ('inputs','inventory','protocol','model','model-identity','output'):
+        local_nli.add_argument('--'+option,type=Path,required=True)
+    local_nli.add_argument('--plan',type=Path)
+    local_nli.add_argument('--prepare-only',action='store_true')
+    local_nli.add_argument('--device',default='cuda:0')
+    local_nli.add_argument('--reuse-failed',type=Path)
+    local_nli.add_argument('--reuse-stage-source',type=Path)
     nli_eval = transfers.add_parser('evaluate-nli', help='validate frozen NLI pairs on CPU before exploratory native-unit evaluation')
     for option in ['inputs', 'observations', 'natural-panel', 'controls-panel', 'model', 'protocol', 'output']:
         nli_eval.add_argument('--' + option, type=Path, required=True)
@@ -465,6 +485,10 @@ def main() -> None:
 
             evaluate(args.inputs, args.observations, args.natural_panel,
                      args.controls_panel, args.output, args.protocol)
+        elif args.transfer_stage == 'predict-local-nli-dataset':
+            from .nli_dataset import run
+
+            run(args)
         elif args.transfer_stage == 'qualify-nli':
             if not args.admit_resources:
                 command.error('qualify-nli requires explicit --admit-resources before HF loading')
@@ -614,6 +638,11 @@ def main() -> None:
 
             stage = probe_native if args.transfer_stage == 'probe-native' else local_uncertainty
             stage(args.native, args.scores, args.protocol, args.output)
+        elif args.transfer_stage == 'observe-relation-scope':
+            from .relation_scope_observation import run
+
+            report = run(args)
+            print(f"Finite scope contrast gate={report['primary_all_three_pass']}; counts={report['actual_counts']}; no natural AUROC")
         elif args.transfer_stage == 'observe-natural-relation':
             from .natural_relation_observation import run
 

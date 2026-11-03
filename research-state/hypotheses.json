@@ -236,7 +236,7 @@
     },
     {
       "id": "H017_RELATION_OWNERSHIP_COMPUTATION",
-      "status": "M3Knegative_M4unitobserved_M5rangehighconditional_no_detector",
+      "status": "full900_external_comparator_evaluated_no_new_internal_detector",
       "question": "Which relation-conditioned internal computations expose source ownership incorrectly expressed in an existing response, beyond direct text verification?",
       "design": "refine-logs/EXPERIMENT_PLAN_20261103_161504.md",
       "admission": "research-state/relation_misbinding_admission.json",
@@ -256,11 +256,11 @@
         "value/readout failure despite apparently consistent retrieval",
         "post-token echo or lexical/position artifact"
       ],
-      "new_model_calls": 55,
+      "new_model_calls": 60,
       "new_detector_scores": false,
       "causal_result": false,
       "scope": "Frozen Llama observer handling existing responses, not original multi-generator causes.",
-      "next": "Root must inspect and independently review existing M4 run31185253 result/seal, then explicitly finish the existing claim. Output markers exist and no matching process remains; this checkpoint did not open the scientific result or finish it. Never relaunch, retry, modify source/R, or infer a detector/AUROC result from this status.",
+      "next": "当前没有准入新的方法、NLI救援变体或模型实验：新结果表明明确支持的否定关系也可被判矛盾，而营业时间错误已获高非蕴含风险，尚未证明可利用的新增内部信息。 下一动作限定为零模型的准入证明：从来源显式许可的字段建立主体—谓词—极性/条件闭合单位，先以5682/13603（原R的`not`=target65、`WiFi`=67）与同源5684（`or`=65、`lot`=66）为入口，补齐对应来源字段及闭合位置，复用已完成库存合同标明哪些物理观测已可匹配、哪些维度缺失，不再清点或复验已知缺失；不得拿QA层15或回答历史局部attention代替缺失的来源观测。 只有能事先提出可区分条件绑定与词法/位置/回答回声的预测、必要负对照，以及相对直接文本核验在原R定位/检测/成本上的具体价值，才重新申请有限实验；若只能换contra/max/格式/分句、复现H004/H005或M5手工世界、M3头层与H015/H016角色QA，则保持NOT_ADMITTED并停止追加调用。",
       "completed_engineering_runs": [
         "80913833f6fd73a6a5ed210f5d8607c377257755857798afd79d3bebffb5ca7f",
         "5f7cf0ad2b984ce024a1be8060b9ca60294f51bd6fd7fbe545b32c36156a8e88",
@@ -272,9 +272,9 @@
       ],
       "active_run": "31185253c6389623bea031a07db70d77043ee67315e9fe85ca426725dc826d32",
       "engineering_aggregate": "outputs/h017-relation-20261103/M1_900_AGGREGATE.json",
-      "new_full_model_or_head_calls": 101,
-      "new_full_model_calls": 53,
-      "new_head_calls": 48,
+      "new_full_model_or_head_calls": 111,
+      "new_full_model_calls": 58,
+      "new_head_calls": 53,
       "new_full_model_or_head_calls_scope": "53full model+48head;2earlystop included separately in55models",
       "M2_character_aligned_cases": 900,
       "M2_semantic_unknown_cases": 900,
@@ -290,7 +290,7 @@
         "M2": "outputs/h017-relation-20261103/M2_900_AGGREGATE.json"
       },
       "active_scientific_run": null,
-      "next_question": "Use F050/F051/F052 rather than rerunning known confidence or rank counts. Distinguish an existing unit warning suppressed by readout from high conditional likelihood at a licensed wrong range component. For5670,00 at55 is the first A/B divergence;21 at57 already follows forced00-. Whole time string is not high probability. Any new M5 scope observation needs independent scientific admission: unchanged full originalR/axes; valid B6/A1 Sminus/Splus pair only for Mon-Sat subclaim (both conflict with laterSunC); support-preserving within-range exception migration/noop; actual token/position and old1079-token resource audit; frozen endpoints and all-head policy, no selection. Same-frequency likelihood alone is prior art, not a new detector; direct rule/text baseline has same semantic frontend. No new method or model job is admitted; never clip/max/weight context to rescue a case.",
+      "next_question": "当前没有准入新的方法、NLI救援变体或模型实验：新结果表明明确支持的否定关系也可被判矛盾，而营业时间错误已获高非蕴含风险，尚未证明可利用的新增内部信息。 下一动作限定为零模型的准入证明：从来源显式许可的字段建立主体—谓词—极性/条件闭合单位，先以5682/13603（原R的`not`=target65、`WiFi`=67）与同源5684（`or`=65、`lot`=66）为入口，补齐对应来源字段及闭合位置，复用已完成库存合同标明哪些物理观测已可匹配、哪些维度缺失，不再清点或复验已知缺失；不得拿QA层15或回答历史局部attention代替缺失的来源观测。 只有能事先提出可区分条件绑定与词法/位置/回答回声的预测、必要负对照，以及相对直接文本核验在原R定位/检测/成本上的具体价值，才重新申请有限实验；若只能换contra/max/格式/分句、复现H004/H005或M5手工世界、M3头层与H015/H016角色QA，则保持NOT_ADMITTED并停止追加调用。",
       "M3_scientific_result": {
         "schema": "h017-completed-scientific-checkpoint-v1",
         "run_id": "24dd6e0bd68475e1561dc4379c2e4e2655ad3999cd935c348af8441aea3bb8ce",
@@ -417,6 +417,163 @@
           }
         ],
         "next_question": "Use F050/F051/F052 rather than rerunning known confidence or rank counts. Distinguish an existing unit warning suppressed by readout from high conditional likelihood at a licensed wrong range component. For5670,00 at55 is the first A/B divergence;21 at57 already follows forced00-. Whole time string is not high probability. Any new M5 scope observation needs independent scientific admission: unchanged full originalR/axes; valid B6/A1 Sminus/Splus pair only for Mon-Sat subclaim (both conflict with laterSunC); support-preserving within-range exception migration/noop; actual token/position and old1079-token resource audit; frozen endpoints and all-head policy, no selection. Same-frequency likelihood alone is prior art, not a new detector; direct rule/text baseline has same semantic frontend. No new method or model job is admitted; never clip/max/weight context to rescue a case."
+      },
+      "M5_completed": {
+        "id": "F053",
+        "certainty": "finite_source_slot_contrast_independently_replayed_not_detector",
+        "claim": "M5 original5670 full1079tokens fiveworlds completed5fullmodel/5head via2sealed+3new, zero duplicated models. ControlledA1/B6sameglobalintervalcounts andtotalaxes; all185 original targets/world retained. At originaltarget55 m=z00-z30, Splusminus Mon/Tue/Sat is3.313880920/3.300304413/2.382472992, allgreaterthan fixedabout.0185. All925 FP32 producer endpoints exact; all32layersx32headsx13receivers NumPyF64AV within unchangedbudget, max7.47868e-6, futuremasszero; allprofilesexact.",
+        "does_not_imply": "Rejects onlystrictglobal-interval-count equality for thisassay. Position/order heuristics andSundaybrunch context tension remain. 30notuniformrange-correct alternative; nofullRtruthflip, generalrangealgorithm, causalrecallcircuit, originalGPT4cause, newautomaticfrontend or naturalrisk/AUROC. Nativep00.99742955 remains high. First2/2 interruptedonlybyimmutableprogressI/O; failure preserved. No moreworld/head/layer rescue.",
+        "actual_model_calls": 5,
+        "actual_head_calls": 5,
+        "recomputed_worlds": 0,
+        "target_annotations_read": false,
+        "run_ids": [
+          "f47b032f349bf2fc75baaeed2a84c0253ddf375f0033041cbbc48e5f05c89cc6",
+          "7cf99af794c5b21a02c6654694827c9b178b8e356cae6eb0afa6305fbeb9e3a3"
+        ],
+        "all_controlled_full_BPE_bags_equal": true,
+        "evidence": [
+          {
+            "path": "outputs/h017-relation-20261103/m5-scope-observation-v1/failure.json",
+            "sha256": "066108a1e769c384f3efd1dfedc2d43d3acf3d70011ff0ce19e728491b2c3e3e"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/m5-scope-observation-v1/seal.json",
+            "sha256": "2f5d0810028341b48a5df4e0023c9e1bc3b891a1f84eadf555906559c699ddc5"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/m5-scope-observation-v2/result.json",
+            "sha256": "66bb132305cfb9120bea0eea73f333c3d81542917d4d93855fcd61c45adbba58"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/m5-scope-observation-v2/seal.json",
+            "sha256": "6dd7be2d24fda21cffe2a3e2f07508e95dead765d6d192fb1e5250285ce27d61"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/m5-postrun-audit-v1/audit.json",
+            "sha256": "42cd1c32ffca2885697e568691f950b0a9e3b582832de10234147e998487a679"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/m5-postrun-audit-v1/seal.json",
+            "sha256": "16884f709cdc348cdb4eb2508a6fcbf0b3004cf7fea979e10438ac2afce38f56"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/m5-postrun-input-supplement-v1/supplement.json",
+            "sha256": "f621e5243cebd289d57f4023e51d58197bb46a08c40a39211135d126cb6c8d14"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/m5-postrun-input-supplement-v1/seal.json",
+            "sha256": "b23c22e8a9ec489f3afa11ca4c524f9a87befbf930263912812ef4b40fae000d"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/M5_NONHOURS_CONTEXT_AUDIT.md",
+            "sha256": "a6b7d3e01a28a380c15d8f5f64f6beb485bf8c5ce1c28634cfd4a2c2b5b02d36"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/M5_CONTINUATION_INDEPENDENT_CODE_REVIEW.md",
+            "sha256": "08dd2a8eb1e06a14b79ba22c5b8abdf2f302ce14f21ea4e7823290ff81a1954f"
+          }
+        ]
+      },
+      "next_discriminating_question": "当前没有准入新的方法、NLI救援变体或模型实验：新结果表明明确支持的否定关系也可被判矛盾，而营业时间错误已获高非蕴含风险，尚未证明可利用的新增内部信息。 下一动作限定为零模型的准入证明：从来源显式许可的字段建立主体—谓词—极性/条件闭合单位，先以5682/13603（原R的`not`=target65、`WiFi`=67）与同源5684（`or`=65、`lot`=66）为入口，补齐对应来源字段及闭合位置，复用已完成库存合同标明哪些物理观测已可匹配、哪些维度缺失，不再清点或复验已知缺失；不得拿QA层15或回答历史局部attention代替缺失的来源观测。 只有能事先提出可区分条件绑定与词法/位置/回答回声的预测、必要负对照，以及相对直接文本核验在原R定位/检测/成本上的具体价值，才重新申请有限实验；若只能换contra/max/格式/分句、复现H004/H005或M5手工世界、M3头层与H015/H016角色QA，则保持NOT_ADMITTED并停止追加调用。",
+      "F054_external_comparator": {
+        "id": "F054",
+        "certainty": "verified_full900_external_supervised_comparator_on_exposed_population",
+        "claim": "FullRAGTruthData2txt900/150source/6generator/178343originaltargets scored before finalGT; r4AUROC=0.798317534,AP=0.190392333; witnessAUROC=0.755715886,AP=0.145209394; nliAUROC=0.744306164,AP=0.097168289",
+        "do_not_retest_phenomenon": true,
+        "evidence": [
+          {
+            "path": "outputs/h017-relation-20261103/local-nli-datatxt900-score-v1/failure.json",
+            "sha256": "c87151a1de76e9e08ca6a8b028520979883eb63e7cf70d9269d58bec47225bf8"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/local-nli-datatxt900-score-v1/seal.json",
+            "sha256": "55d00ac080e61c465139d63570bd35e6fc5c070ea43645a5c40be4b939cbbe3a"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/NLI_PARTIAL_RESOURCE_RECEIPT.json",
+            "sha256": "8bfb60eeed539cb45ab58398fe644664171c3e5b0c5f47cdc3f285b1ad030db6"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/local-nli-datatxt900-plan-v2/plan.json",
+            "sha256": "7780bc65450fdb7a37a6db0dc619765cbcc36a5522949acaae8d0193cc6a0a27"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/local-nli-datatxt900-plan-v2/seal.json",
+            "sha256": "6c9441f27a013f98b1f65a59d09284f4c503f45426912971d1cdb8cdded34167"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/local-nli-datatxt900-score-v2/observation.json",
+            "sha256": "516138240493a0eaf6b7551f440cfe0cdffe20753e60fc5f2558c0deb333a756"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/local-nli-datatxt900-score-v2/seal.json",
+            "sha256": "a12c6a29a005d559dd61bac49f1dad7c280c3e112f87ee3040321c1d08ce194e"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/local-nli-datatxt900-score-v2.recovery.json",
+            "sha256": "93c3d9f600962d4e356650a5abc98233e4e2268714f1f91bec9c0ca7e97fd033"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/local-nli-datatxt900-nonlabel-audit-v2/audit.json",
+            "sha256": "0673c5621ad0256d38616c0be40fc22d5ea09b372f42ace20cf7d68d2df75f37"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/local-nli-datatxt900-nonlabel-audit-v2/seal.json",
+            "sha256": "7f92e69a2a44a073ebc1d776dddaa99f2b57ef84cf38c3b1c52784e2a76b89f3"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/local-nli-datatxt900-eval-v1/evaluation.json",
+            "sha256": "d9ccce1d9005460a86e70bc0c1a6c985b096b106ea7366d0d637978fd43b27d5"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/local-nli-datatxt900-eval-v1/seal.json",
+            "sha256": "82bd740dfd61f2b726888888bcd230e58b5e95f7e46ac893d0dd59001bb30ac9"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/local-nli-datatxt900-diagnostics-v1/comparison.json",
+            "sha256": "a40403c416b33e42999d6b7ca78ed9e019972799868632eb4513531f0a14c42e"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/local-nli-datatxt900-diagnostics-v1/examples.json",
+            "sha256": "5e67566255ff6d0c90e7ac8abf5250c425090bb8748909257ae3f89bf2fe6d35"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/local-nli-datatxt900-diagnostics-v1/seal.json",
+            "sha256": "7cf47cf1734d64d600240e875035938a0c8bcb0feb682ab1beff59af059cde25"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/NLI_CONTINUATION_FINAL_CODE_REVIEW.md",
+            "sha256": "c537a61a65dd87b0bec2cbdf704e780aa5247773ec75e458346556cfdd47dc3e"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/NLI_EVALUATION_ORCHESTRATION_REVIEW.md",
+            "sha256": "62238e89c16fd0ce40ecb61b9ec71ef4164e010f0876ebb693a4625c78c7c248"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/NLI_EVALUATION_stderr.log",
+            "sha256": "7ce956c50764f287386996a0c15470d24219e98959dd88c488bb7349455c6cd4"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/NLI_EVALUATION_LAUNCH.json",
+            "sha256": "0e1d3e6ad3ca01a574fdb79a7226f8f4394c9edb098b5e8afc28078583da35bd"
+          },
+          {
+            "path": "outputs/h017-relation-20261103/NLI_CPU_EVALUATION_LAUNCH.json",
+            "sha256": "6597093a07dbeeffe524dd1867844be589aac40427eac1b94f4c86f828e4d80f"
+          }
+        ],
+        "final_label_use_only": true,
+        "external_supervised_comparator_not_new_unsupervised_method": true,
+        "recovery": {
+          "retained_model_results": 16160,
+          "new_successful_forwards": 2003,
+          "combined_forwards": 18163,
+          "physical_interfaces": 18164,
+          "old_preforward_guard_refusals": 1
+        },
+        "no_new_internal_detector": true,
+        "next_question": "当前没有准入新的方法、NLI救援变体或模型实验：新结果表明明确支持的否定关系也可被判矛盾，而营业时间错误已获高非蕴含风险，尚未证明可利用的新增内部信息。 下一动作限定为零模型的准入证明：从来源显式许可的字段建立主体—谓词—极性/条件闭合单位，先以5682/13603（原R的`not`=target65、`WiFi`=67）与同源5684（`or`=65、`lot`=66）为入口，补齐对应来源字段及闭合位置，复用已完成库存合同标明哪些物理观测已可匹配、哪些维度缺失，不再清点或复验已知缺失；不得拿QA层15或回答历史局部attention代替缺失的来源观测。 只有能事先提出可区分条件绑定与词法/位置/回答回声的预测、必要负对照，以及相对直接文本核验在原R定位/检测/成本上的具体价值，才重新申请有限实验；若只能换contra/max/格式/分句、复现H004/H005或M5手工世界、M3头层与H015/H016角色QA，则保持NOT_ADMITTED并停止追加调用。"
       }
     }
   ]

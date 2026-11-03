@@ -1,0 +1,16 @@
+{
+  "audit_path": "D:\\projects\\research\\token_detector\\outputs\\h017-relation-20261103\\m5-postrun-audit-v1\\audit.json",
+  "audit_sha256": "42cd1c32ffca2885697e568691f950b0a9e3b582832de10234147e998487a679",
+  "audit_seal_sha256": "16884f709cdc348cdb4eb2508a6fcbf0b3004cf7fea979e10438ac2afce38f56",
+  "original_source_sha256": "f71690e1016bcb5c29096c1b98c232cd253d2ddab7360400791ff76af9ef8b60",
+  "original_response_sha256": "9f547386286ee2e59e130d4fb227b8e54120c6212cb3396a00292fc05fba61d8",
+  "fixed_world_order": [
+    "native",
+    "S_minus",
+    "S_plus",
+    "Tuesday_exception",
+    "Saturday_exception"
+  ],
+  "all_worlds_and_all_three_contrasts_retained": true,
+  "probabilities": "Full128256-vocabulary original target55; conditional on forced original prefix, not accuracy or two-candidate share"
+}

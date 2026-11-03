@@ -1,0 +1,77 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>完整900回答：检测效果与成本</title><meta name="source-sha256" content="5fd9f5e68020c63c1780e66bed08e6546c3e29cb995dfee98e70e566e6f5d7f3">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
+<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
+<style>body{max-width:1040px;margin:40px auto;padding:0 24px;color:#17253a;font:17px/1.8 system-ui,sans-serif;background:#fbfcff}nav{font-size:14px}a{color:#245bc7}h1,h2{line-height:1.35}img{max-width:100%;height:auto}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #d5ddeb;padding:10px;text-align:left}th{background:#edf2fb}pre{overflow:auto;padding:16px;background:#edf2f8}code{font-size:.88em}.equation{overflow-x:auto}.flow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:20px;background:#edf2fb;border-radius:12px}.flow span{background:white;padding:8px 12px;border:1px solid #cbd7eb}footer{font-size:13px;border-top:1px solid #d5ddeb;margin-top:40px;padding-top:16px}@media print{body{font-size:12px;margin:0}nav{display:none}}</style>
+</head><body><nav><a href="H017_PROGRESS.html">关系错绑：实验进展与证据</a> · <a href="H017_MATH.html">高注意力为何不等于正确关系</a> · <a href="H017_PROTOCOL.html">四来源与Q/K/V干预：冻结协议</a> · <a href="H017_NATURAL.html">自然时间错例：原词概率与全部层头</a> · <a href="H017_READOUT.html">旧R4/V3：单位告警在哪一步下降</a> · <a href="H017_SCOPE.html">范围内例外：五组实际实验</a> · <a href="H017_DETECTION.html">完整900回答：检测效果与成本</a> · <a href="H017_ERRORS.html">固定错例：关系、否定与排序</a></nav><main><h1>H017：完整900回答的文本核验检测评价</h1>
+<p>本轮已完成实际幻觉检测评价，不是角色问答准确率。全部900条原回答、150个来源、6个生成器、178343个原始有效token均保留；真值只在完整评分封存并通过独立无标签审计后打开。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align: right;">AUROC</th>
+<th style="text-align: right;">AP</th>
+<th style="text-align: right;">TP</th>
+<th style="text-align: right;">FP</th>
+<th style="text-align: right;">FN</th>
+<th style="text-align: right;">Recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R4（历史冻结分数）</td>
+<td style="text-align: right;">0.798318</td>
+<td style="text-align: right;">0.190392</td>
+<td style="text-align: right;">2088</td>
+<td style="text-align: right;">6830</td>
+<td style="text-align: right;">5319</td>
+<td style="text-align: right;">28.1896%</td>
+</tr>
+<tr>
+<td>V3（历史冻结分数）</td>
+<td style="text-align: right;">0.755716</td>
+<td style="text-align: right;">0.145209</td>
+<td style="text-align: right;">1720</td>
+<td style="text-align: right;">7198</td>
+<td style="text-align: right;">5687</td>
+<td style="text-align: right;">23.2213%</td>
+</tr>
+<tr>
+<td>DeBERTa NLI（外部监督对照）</td>
+<td style="text-align: right;">0.744306</td>
+<td style="text-align: right;">0.097168</td>
+<td style="text-align: right;">1038</td>
+<td style="text-align: right;">7880</td>
+<td style="text-align: right;">6369</td>
+<td style="text-align: right;">14.0138%</td>
+</tr>
+</tbody>
+</table>
+<p>所有方法统一使用全局最高5%的8918个token报警；TP/FP/FN来自同一原轴与官方字符标注。AUROC不是二元判断正确率，FP表示未与发布正跨度重叠，不能据此证明整句事实正确。NLI按完整句广播分数，不能宣称唯一错误token定位。</p>
+<h2>不确定性与任务范围</h2>
+<p>以下为NLI减基线的150来源成组配对bootstrap，2000次，seed17；没有重新生成R4/V3分数，也没有融合。历史测试人群已暴露，结果仍属探索性证据。</p>
+<ul>
+<li>相对R4：ΔAUROC=-0.054011，95%CI=[-0.07907388299266993, -0.0291244363775072]；ΔAP=-0.093224，95%CI=[-0.11936316200037513, -0.06783771923853059]。</li>
+<li>相对V3：ΔAUROC=-0.011410，95%CI=[-0.0369327598931804, 0.016237054215237093]；ΔAP=-0.048041，95%CI=[-0.06431088430941354, -0.030842269639716608]。</li>
+</ul>
+<p>只新跑Data2txt。QA、Summary、FinQA、TATQA、HalluRAG没有本轮NLI结果；六任务各0.8的无监督目标尚未完成。这个模型在MNLI/FEVER/ANLI等外部任务上受过监督训练，只作比较器，不能包装成本项目的新无监督机制。不同观察器、监督目标与上下文预算也不能解释成单一模块的因果效应。</p>
+<h2>固定方法与实现</h2>
+<ol>
+<li>保留全部已有完整句scope，把原8247个测量分块按既有句边界归并为8240句，不重新调用生成模型抽取事实。</li>
+<li>每句作为hypothesis，完整来源分窗覆盖；每对至多512 token，假设不截断，重叠为min(64,来源预算//4)。不做样本或窗口去重。</li>
+<li>调用主线HFEntailment.prepare_pairs/classify与三分类归一化。句风险为1−max(window entailment probability)，neutral并入不支持风险；原token由唯一所属句接收分数。</li>
+<li>复用myproject.measure.token_scores、原预测校验/封存与experiments.evaluate.evaluate_dataset，不引入新评价内核。阈值、投影与人群均在开真值前冻结。</li>
+</ol>
+<p>源码：<a href="../../experiments/nli_dataset.py">collector</a>、<a href="../../experiments/nli_qualification.py">共享NLI后端</a>、<a href="../../experiments/evaluate.py">主线评价</a>。安装可用<code>pip install ".[experiments,nli]"</code>；CLI见<code>r4-experiment transfer predict-local-nli-dataset --help</code>。</p>
+<h2>资源中断、恢复与成本</h2>
+<p>原进程完成801条和第802条部分结果后，主存余量536465408B低于512MiB保护线；显存仍空闲6354370560B。这是forward前拒绝，不是GPU OOM。原失败完整保留；显式恢复全部16160成功raw，仅新增2003次，旧两次canary不重跑，也不冒称fresh resident资格。
+合计18163次成功forward、7473887 framed输入token、逐调用计时合计492.396秒。此时间不包含分词、恢复验证、文件封存、审计和评价，不能当完整端到端时延。另有1次旧资源拒绝，物理接口共18164次；本轮无新拒绝。unknown token/句/回答均为0。</p>
+<p>Windows主要等待来自数万小文件的校验与封存；模型与数据已在本地，不依赖重新下载。精度、内存门限、窗口和评分规则未降低或调整。</p>
+<h2>固定错例诊断</h2>
+<p><a href="H017_ERRORS.html">逐例原文、三类概率与限制</a>：营业时间错误风险已达0.968276，但被更高的概括/否定句风险挤出预算。来源明确WiFi=no，正确否定句仍被判矛盾0.853761；三个固定FP整句均无发布正span，不能都归因于真错误向邻词的句级广播。这里只识别比较器的排序与语义判断问题，不解释原Llama/GPT的生成成因，也没有证实max窗口是因果原因。</p>
+<p>NLI相对R4的AUROC下降置信区间不跨0；相对V3的AUROC差区间跨0，不能称显著下降；AP相对二者均下降。不能因这份较弱的DeBERTa对照而宣称所有直接文本核验无效或内部方法已有新优势。</p>
+<p>选例预先固定为每类按原始顺序的前三个不同来源；完整机器诊断保存在本地<code>local-nli-datatxt900-diagnostics-v1/examples.json</code>，包含NLI FN/FP、互相挽回的错例和5670小时条件案例。事后解释不能用于本批参数搜索、重选阈值或丢弃困难token。</p>
+<h2>证据与复核</h2>
+<p><a href="../results/h017_nli_detection_summary.json">结构化结果及完整SHA索引</a>。生产者为外置安装的140文件wheel；完整旧前缀、801份预测字节、partial802、全部原轴/窗口、三类logit归一化与风险投影均由独立无标签脚本核对。原Llama机制观测的60次forward单独记账；本轮18163次为不同的DeBERTa观察器。</p>
+<p>评价第一次误用了无scikit-learn的推理环境，import阶段即退出、未读标注；失败560445f保留。随后使用既有CPU sklearn1.9.0/NumPy2.4.6环境另claim542e6415完成同一冻结规则，未安装依赖或重跑模型。当前源码本机完整CPU测试达到明确300s上限，记未完成；源码验证以确切提交Linux CI为准。</p></main><footer>H017本地离线阅读 · 原Markdown与GitHub公式是同一来源。打开本文件即可阅读，无需启动服务器。<br>源码SHA256：5fd9f5e68020c63c1780e66bed08e6546c3e29cb995dfee98e70e566e6f5d7f3</footer></body></html>
