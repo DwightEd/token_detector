@@ -209,13 +209,28 @@
     },
     {
       "id": "H015_SHARED_PREFIX_PROBABILITY_KERNEL",
-      "status": "pure_and_fake_checks_backend_engineering_pending",
+      "status": "completed_two_input_engineering_passed_not_method",
       "design": "outputs/h015-prefix-trie-20261103/DESIGN.md",
       "evidence": [
         "F029",
-        "F033"
+        "F033",
+        "F037"
       ],
-      "scientific_effect_unknown": true
+      "scientific_effect_unknown": true,
+      "result": "docs/results/h015_prefix_engineering.json"
+    },
+    {
+      "id": "H016_PAIRED_SCOPE_SHARED_PREFIX",
+      "status": "complete_toy_conditional_scope_readout_not_promoted",
+      "design": "outputs/h016-paired-scope-20261103/DESIGN_DRAFT.md",
+      "question": "How do fixed scope and readout changes interact under one common-prefix instrument?",
+      "gold": "after_four_arm_score_freeze",
+      "natural_efficacy_claim": false,
+      "evidence": [
+        "F038"
+      ],
+      "result": "docs/results/h016_paired_scope.json",
+      "run_id": "a52676148c96453c234c569ec0abc403a09ef9c3180113d7d05e6427a6683f70"
     }
   ]
 }

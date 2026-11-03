@@ -1,0 +1,208 @@
+{
+  "schema": 1,
+  "created_utc": "2026-11-03T04:24:55.908502+00:00",
+  "spec": {
+    "hypothesis_id": "H016_PAIRED_SCOPE_SHARED_PREFIX",
+    "intervention": "same_instrument_scope_by_readout_complete_grid",
+    "stage": "observation",
+    "method": {
+      "entrypoint": "r4-experiment transfer qualify-paired-scope",
+      "config": {
+        "protocol": {
+          "schema": "paired-scope-prefix-qualification-v1",
+          "original_inputs_sha256": "0d298932778c5ad60a43b059cc860b31679e7649350a825f5b1de72d2585cf66",
+          "engineering_seal_sha256": "471e953407fcb2fda086d449f88d25b1d086533237f9b4dd9eb868f6fe0724b9",
+          "expected_input_cases": 48,
+          "expected_primary_cases": 16,
+          "expected_sources": 8,
+          "expected_queries_per_scope": 16,
+          "scopes": [
+            "compound",
+            "atomic"
+          ],
+          "arms": [
+            "compound_independent_rows_max_slot",
+            "compound_bijection_joint_assignment_mass",
+            "atomic_independent_rows_max_slot",
+            "atomic_bijection_joint_assignment_mass"
+          ],
+          "population": "all_exact_burden_zero_originals_from_frozen_h007_inputs",
+          "question_template": "Using only the source, give the full person name for [TARGET] in the masked statement. [OTHER] denotes a different source person.\nMasked statement:\n{masked_response}",
+          "candidate_pool_depends_only_on_source": true,
+          "completion_contract": "full-candidate-plus-eos-v1",
+          "context_contract": "shared-context-completion-trie-v1",
+          "max_context_tokens": 512,
+          "max_nodes_per_query": 32,
+          "temperature": 1.0,
+          "length_normalization": false,
+          "attention_implementation": "sdpa",
+          "output_tokens": 0,
+          "use_cache": false,
+          "full_vector_dtype": "float16",
+          "full_vocab_normalizer_dtype": "float64",
+          "cache_identity_ignores_execution_provenance_only": true,
+          "partial_cached_tree_policy": "stop_before_any_model_call",
+          "population_previously_exposed": true,
+          "model_selection_performed": false,
+          "natural_task_performance_claim": false,
+          "evaluation_material_accessed": false
+        },
+        "budget": {
+          "unique_queries": 32,
+          "complete_candidate_paths": 64,
+          "unique_context_nodes": 312,
+          "new_forward_passes": 312,
+          "reused_nodes": 0,
+          "planned_input_tokens": 86930,
+          "maximum_context_tokens": 308,
+          "retained_full_fp16_vector_bytes": 94808064,
+          "maximum_temporary_python_vector_bytes": 48619520,
+          "generated_tokens": 0,
+          "extra_language_warmups": 0,
+          "by_scope": {
+            "compound": {
+              "unique_queries": 16,
+              "unique_nodes": 156,
+              "new_forward_passes": 156,
+              "input_tokens": 44492
+            },
+            "atomic": {
+              "unique_queries": 16,
+              "unique_nodes": 156,
+              "new_forward_passes": 156,
+              "input_tokens": 42438
+            }
+          }
+        },
+        "readouts": [
+          "independent_rows_max_slot",
+          "bijection_joint_assignment_mass"
+        ],
+        "runner_sha256": "d7bb93724bfd1c6fb5d2bbe327c792fa487e2f90977ce6e36ab0dfe2290154f5",
+        "wheel_sha256": "c2ede5e18ab8f6f93e1433dfdb020bf9368c86a9e3766cc905d08f0a3b4f2414",
+        "core_commit": "0cc3c40e3ed61f85002927391a8146e7c6913195"
+      }
+    },
+    "code_sha256": {
+      "experiments/research/paired_scope.py": "beb619f48c6735adbb617db5a96e4f35ca14062a6c886ba43f0bc33acf8b4939",
+      "experiments/paired_scope_qualification.py": "899f77b7fa13b7e42616bb365f43d9230017725bee0c012a2ca5225b85acea22",
+      "experiments/paired_scope_evaluation.py": "ee2fa28c3eb780d7763da23c6cf0ffa8273ba7b37962906dc79cfa67df67a29d",
+      "experiments/run.py": "c981eb91687f44dc433ad2f818141e1fd836c0cd70afbbcd24d1e3d2b05a5668",
+      "tests/test_paired_scope.py": "bdc07641cd97865553a063024fb4ffde79a9ef226cf75c20855e4346cae30824",
+      "tests/test_paired_scope_pipeline.py": "faaa31b95c17dc3e0e8ea278b113cf4b1e05b51fd5af119e9316c44f20a74ba3",
+      "outputs/h016-paired-scope-20261103/run_once.py": "d7bb93724bfd1c6fb5d2bbe327c792fa487e2f90977ce6e36ab0dfe2290154f5",
+      "outputs/h016-paired-scope-20261103/launch_once.py": "ba0408cfd433454d721bff2097e2888f8fd20c5acd467ac09300b802ad02667f",
+      "outputs/h016-paired-scope-20261103/freeze_run.py": "ccf8486eae1852bad61d843cbc32141f0c55c246ecd6e2fb3fc010d938c145df"
+    },
+    "data_sha256": {
+      "original_inputs": "0d298932778c5ad60a43b059cc860b31679e7649350a825f5b1de72d2585cf66",
+      "preparation_seal": "423f223eb163e50ec6b50a5cc54afae3be92de3659113e91b56fe1d8cd2e8300",
+      "engineering_seal": "471e953407fcb2fda086d449f88d25b1d086533237f9b4dd9eb868f6fe0724b9",
+      "run_spec": "6f720611aff60295b967caf7d7f2a874e399e4468cba168639410f98f6668ea1",
+      "evaluation_protocol": "cf80e8f06ed0da275120e0836f735bc4d67dfd0ff00ef230ea2bbd794a94d9b1"
+    },
+    "observer": {
+      "attention_implementation": "sdpa",
+      "cuda_allocator_limit_bytes": 3221225472,
+      "device": "cuda:0",
+      "execution": {
+        "core_commit": "0cc3c40e3ed61f85002927391a8146e7c6913195",
+        "four_arm_paired_scope": true,
+        "installed_observer_wheel_sha256": "c2ede5e18ab8f6f93e1433dfdb020bf9368c86a9e3766cc905d08f0a3b4f2414",
+        "installed_target": "C:\\Users\\Lu Yuanshan\\AppData\\Local\\Temp\\h016-paired-installed-20261103-2ugeyh9e\\installed",
+        "numpy": "2.4.6",
+        "prefix_only_engineering": false,
+        "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+        "threads": {
+          "MKL_NUM_THREADS": "2",
+          "OMP_NUM_THREADS": "2",
+          "OPENBLAS_NUM_THREADS": "2"
+        }
+      },
+      "hardware": {
+        "capability": [
+          12,
+          0
+        ],
+        "cuda_runtime": "12.8",
+        "device_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+        "driver_version": "573.24"
+      },
+      "loading_dtype": "float16",
+      "model_files_sha256": {
+        "config.json": "eed00b17e22553979d090fa492e587e92885e328914c8e0b0b78f0a0d3576b3b",
+        "generation_config.json": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9",
+        "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+        "model-00001-of-00002.safetensors": "67347b23fb4165b652eb6611f5e1f2a06dfcddba8e909df1b2b0b1857bee06c2",
+        "model-00002-of-00002.safetensors": "a40d941d0e7e0b966ad8b62bb6d6b7c88cce1299197b599d9d0a4ce59aabfc1d",
+        "model.safetensors.index.json": "bc8aaa0c87d4335177e01c765f1de0db81661c67c1a72fbfb0d521b09f5ddc56",
+        "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+        "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      },
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "official_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "readout": {
+        "context_contract": "shared-context-completion-trie-v1",
+        "kind": "unique_prefix_only_full_fp16_vocabulary_vector",
+        "logits_to_keep": 1,
+        "output_tokens": 0,
+        "use_cache": false
+      },
+      "runtime": {
+        "accelerate": "1.10.1",
+        "bitsandbytes": "0.48.0",
+        "torch": "2.8.0+cu128",
+        "transformers": "4.57.1"
+      },
+      "weight_quantization": {
+        "compute_dtype": "float16",
+        "double_quant": true,
+        "load_in_4bit": true,
+        "quant_type": "nf4"
+      }
+    },
+    "population": {
+      "all48_input_rows_retained_as_provenance": true,
+      "primary_originals": 16,
+      "unique_sources": 8,
+      "unique_queries_per_scope": 16,
+      "all_four_arms": true,
+      "previously_exposed": true
+    },
+    "evaluation": {
+      "protocol": {
+        "schema": "paired-scope-evaluation-v1",
+        "arms": [
+          "compound_independent_rows_max_slot",
+          "compound_bijection_joint_assignment_mass",
+          "atomic_independent_rows_max_slot",
+          "atomic_bijection_joint_assignment_mass"
+        ],
+        "source_assignment_categories": [
+          "correct",
+          "wrong",
+          "ties",
+          "unknown"
+        ],
+        "secondary_metrics": [
+          "auroc",
+          "ap"
+        ],
+        "primary_independent_sources": 8,
+        "threshold_selection": false,
+        "winning_arm_selection": false,
+        "model_calls_allowed": false,
+        "previously_exposed_toy": true,
+        "question_bundle_effect_only": true,
+        "natural_task_performance_claim": false,
+        "calibrated_truth_probability": false
+      },
+      "references_after_four_arm_score_freeze": true,
+      "natural_task_performance_claim": false
+    },
+    "seed": null
+  },
+  "run_id": "a52676148c96453c234c569ec0abc403a09ef9c3180113d7d05e6427a6683f70",
+  "phase": "reserved_not_launched"
+}

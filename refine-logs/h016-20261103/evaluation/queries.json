@@ -1,0 +1,1442 @@
+[
+  {
+    "query_key": "6b8538734c15f5aff2580bd2318a344e7338c3c67d55a034c651fdc312584644",
+    "scope": "compound",
+    "source_key": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+    "event": "Meliston Accord",
+    "candidates": [
+      "Lena Cresswell",
+      "Tomas Brindle"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Lena Cresswell": -0.5232613871428953,
+      "Tomas Brindle": -0.898256381174984
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "6b8538734c15f5aff2580bd2318a344e7338c3c67d55a034c651fdc312584644",
+      "probabilities": {
+        "Lena Cresswell": 0.5926653914482721,
+        "Tomas Brindle": 0.4073346085517279
+      },
+      "sequence_logprobs": {
+        "Lena Cresswell": -0.5232613871428953,
+        "Tomas Brindle": -0.898256381174984
+      },
+      "log_candidate_normalizer": -0.00013608390210051446,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 0,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 1,
+    "reference_candidate": "Tomas Brindle",
+    "independent_category": "wrong",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.014503329763152597,
+      0.9854966702368475
+    ],
+    "joint_candidate_argmax_index": 1
+  },
+  {
+    "query_key": "9f5cea982f299d4b898e6617773893fff4f3c34ed5d23a9e21251845eb9e2473",
+    "scope": "compound",
+    "source_key": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+    "event": "Quorren Accord",
+    "candidates": [
+      "Lena Cresswell",
+      "Tomas Brindle"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Lena Cresswell": -0.010210249837770816,
+      "Tomas Brindle": -4.603972729800148
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "9f5cea982f299d4b898e6617773893fff4f3c34ed5d23a9e21251845eb9e2473",
+      "probabilities": {
+        "Lena Cresswell": 0.9899865530936691,
+        "Tomas Brindle": 0.01001344690633078
+      },
+      "sequence_logprobs": {
+        "Lena Cresswell": -0.010210249837770816,
+        "Tomas Brindle": -4.603972729800148
+      },
+      "log_candidate_normalizer": -0.00014633115835566146,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 0,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 0,
+    "reference_candidate": "Lena Cresswell",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.9854966702368475,
+      0.014503329763152597
+    ],
+    "joint_candidate_argmax_index": 0
+  },
+  {
+    "query_key": "5ac477db59497e57e73373b945758461564127ef911f7e2aa1ec43d7ffeb664d",
+    "scope": "compound",
+    "source_key": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+    "event": "Meliston Accord",
+    "candidates": [
+      "Lena Cresswell",
+      "Tomas Brindle"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Lena Cresswell": -12.781404983299987,
+      "Tomas Brindle": -0.00016300772193292894
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "5ac477db59497e57e73373b945758461564127ef911f7e2aa1ec43d7ffeb664d",
+      "probabilities": {
+        "Lena Cresswell": 2.813040056939609e-06,
+        "Tomas Brindle": 0.9999971869599431
+      },
+      "sequence_logprobs": {
+        "Lena Cresswell": -12.781404983299987,
+        "Tomas Brindle": -0.00016300772193292894
+      },
+      "log_candidate_normalizer": -0.0001601946779194227,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 1,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 0,
+    "reference_candidate": "Lena Cresswell",
+    "independent_category": "wrong",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.9948603751219208,
+      0.00513962487807918
+    ],
+    "joint_candidate_argmax_index": 0
+  },
+  {
+    "query_key": "a8a629ac639013c6b1b8cbc39180e28aff11775f62b08174cfa3ad35072424e2",
+    "scope": "compound",
+    "source_key": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+    "event": "Quorren Accord",
+    "candidates": [
+      "Lena Cresswell",
+      "Tomas Brindle"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Lena Cresswell": -18.047015300668097,
+      "Tomas Brindle": -0.00015102017415812404
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "a8a629ac639013c6b1b8cbc39180e28aff11775f62b08174cfa3ad35072424e2",
+      "probabilities": {
+        "Lena Cresswell": 1.4532703766354445e-08,
+        "Tomas Brindle": 0.9999999854672963
+      },
+      "sequence_logprobs": {
+        "Lena Cresswell": -18.047015300668097,
+        "Tomas Brindle": -0.00015102017415812404
+      },
+      "log_candidate_normalizer": -0.0001510056414543005,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 1,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 1,
+    "reference_candidate": "Tomas Brindle",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.00513962487807918,
+      0.9948603751219208
+    ],
+    "joint_candidate_argmax_index": 1
+  },
+  {
+    "query_key": "352cc43679140ce4499c25a125b4f897de9580f03d20be7682a927514fee83fd",
+    "scope": "compound",
+    "source_key": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+    "event": "Corvellan Accord",
+    "candidates": [
+      "Hugo Valecrest",
+      "Nadia Fennbrook"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Hugo Valecrest": -12.156385147841627,
+      "Nadia Fennbrook": -0.00013523063636285325
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "352cc43679140ce4499c25a125b4f897de9580f03d20be7682a927514fee83fd",
+      "probabilities": {
+        "Hugo Valecrest": 5.255396142191471e-06,
+        "Nadia Fennbrook": 0.9999947446038578
+      },
+      "sequence_logprobs": {
+        "Hugo Valecrest": -12.156385147841627,
+        "Nadia Fennbrook": -0.00013523063636285325
+      },
+      "log_candidate_normalizer": -0.00012997522641103665,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 1,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 1,
+    "reference_candidate": "Nadia Fennbrook",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.028436118200010366,
+      0.9715638817999895
+    ],
+    "joint_candidate_argmax_index": 1
+  },
+  {
+    "query_key": "892d5d2465ada6f992bbba4f005fddb907a5432b752427ff084ecb000004d283",
+    "scope": "compound",
+    "source_key": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+    "event": "Tremorin Accord",
+    "candidates": [
+      "Hugo Valecrest",
+      "Nadia Fennbrook"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Hugo Valecrest": -8.625310711491124,
+      "Nadia Fennbrook": -0.00030771202127271555
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "892d5d2465ada6f992bbba4f005fddb907a5432b752427ff084ecb000004d283",
+      "probabilities": {
+        "Hugo Valecrest": 0.00017952743095552682,
+        "Nadia Fennbrook": 0.9998204725690445
+      },
+      "sequence_logprobs": {
+        "Hugo Valecrest": -8.625310711491124,
+        "Nadia Fennbrook": -0.00030771202127271555
+      },
+      "log_candidate_normalizer": -0.0001281684733389407,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 1,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 0,
+    "reference_candidate": "Hugo Valecrest",
+    "independent_category": "wrong",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.9715638817999895,
+      0.028436118200010366
+    ],
+    "joint_candidate_argmax_index": 0
+  },
+  {
+    "query_key": "cf2a7e2a2198e3153a7014d4a72b8ff1939ab898c666a79d3434a4560c27e654",
+    "scope": "compound",
+    "source_key": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+    "event": "Dalespar Cup",
+    "candidates": [
+      "Evan Calderby",
+      "Sana Whitmere"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Evan Calderby": -0.01268050470563904,
+      "Sana Whitmere": -4.388080972324081
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "cf2a7e2a2198e3153a7014d4a72b8ff1939ab898c666a79d3434a4560c27e654",
+      "probabilities": {
+        "Evan Calderby": 0.9875732647699116,
+        "Sana Whitmere": 0.012426735230088373
+      },
+      "sequence_logprobs": {
+        "Evan Calderby": -0.01268050470563904,
+        "Sana Whitmere": -4.388080972324081
+      },
+      "log_candidate_normalizer": -0.0001759119187381905,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 0,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 0,
+    "reference_candidate": "Evan Calderby",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.6992668177814805,
+      0.3007331822185196
+    ],
+    "joint_candidate_argmax_index": 0
+  },
+  {
+    "query_key": "618b43f92ddab960bcaf3d69f8ebcc6b3c0b44906d7a60e183ba4be0109a2c2f",
+    "scope": "compound",
+    "source_key": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+    "event": "Raventon Cup",
+    "candidates": [
+      "Evan Calderby",
+      "Sana Whitmere"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Evan Calderby": -0.028969161945632493,
+      "Sana Whitmere": -3.560560680418321
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "618b43f92ddab960bcaf3d69f8ebcc6b3c0b44906d7a60e183ba4be0109a2c2f",
+      "probabilities": {
+        "Evan Calderby": 0.9715734007117839,
+        "Sana Whitmere": 0.0284265992882161
+      },
+      "sequence_logprobs": {
+        "Evan Calderby": -0.028969161945632493,
+        "Sana Whitmere": -3.560560680418321
+      },
+      "log_candidate_normalizer": -0.00013070292773735212,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 0,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 1,
+    "reference_candidate": "Sana Whitmere",
+    "independent_category": "wrong",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.3007331822185196,
+      0.6992668177814805
+    ],
+    "joint_candidate_argmax_index": 1
+  },
+  {
+    "query_key": "17f7766ce28dcaf0498786797c790981f166228bf56e6b1fce6a51bf956dfc12",
+    "scope": "compound",
+    "source_key": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+    "event": "Dalespar Cup",
+    "candidates": [
+      "Evan Calderby",
+      "Sana Whitmere"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Evan Calderby": -0.008261780588539743,
+      "Sana Whitmere": -4.820988626722529
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "17f7766ce28dcaf0498786797c790981f166228bf56e6b1fce6a51bf956dfc12",
+      "probabilities": {
+        "Evan Calderby": 0.9919398223568869,
+        "Sana Whitmere": 0.008060177643113054
+      },
+      "sequence_logprobs": {
+        "Evan Calderby": -0.008261780588539743,
+        "Sana Whitmere": -4.820988626722529
+      },
+      "log_candidate_normalizer": -0.00016894410451792803,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 0,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 1,
+    "reference_candidate": "Sana Whitmere",
+    "independent_category": "wrong",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.37754440871054157,
+      0.6224555912894584
+    ],
+    "joint_candidate_argmax_index": 1
+  },
+  {
+    "query_key": "2d654cced3729202bd4d4d0a528dd4b2e269893f7d3a39b53e36e0ae7e66eb33",
+    "scope": "compound",
+    "source_key": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+    "event": "Raventon Cup",
+    "candidates": [
+      "Evan Calderby",
+      "Sana Whitmere"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Evan Calderby": -0.005029768838139728,
+      "Sana Whitmere": -5.317740700733699
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "2d654cced3729202bd4d4d0a528dd4b2e269893f7d3a39b53e36e0ae7e66eb33",
+      "probabilities": {
+        "Evan Calderby": 0.9950956238176284,
+        "Sana Whitmere": 0.004904376182371542
+      },
+      "sequence_logprobs": {
+        "Evan Calderby": -0.005029768838139728,
+        "Sana Whitmere": -5.317740700733699
+      },
+      "log_candidate_normalizer": -0.00011332673619426394,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 0,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 0,
+    "reference_candidate": "Evan Calderby",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.6224555912894584,
+      0.37754440871054157
+    ],
+    "joint_candidate_argmax_index": 0
+  },
+  {
+    "query_key": "3d1f10fa4b037510c87417ea464d0cea54d5e337c16f828531567e9fbf6d9fef",
+    "scope": "compound",
+    "source_key": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+    "event": "Nerowan Cup",
+    "candidates": [
+      "Mira Tanswick",
+      "Oren Pellford"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Mira Tanswick": -0.6038770517464503,
+      "Oren Pellford": -0.7914547222882353
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "3d1f10fa4b037510c87417ea464d0cea54d5e337c16f828531567e9fbf6d9fef",
+      "probabilities": {
+        "Mira Tanswick": 0.5467573998823854,
+        "Oren Pellford": 0.4532426001176146
+      },
+      "sequence_logprobs": {
+        "Mira Tanswick": -0.6038770517464503,
+        "Oren Pellford": -0.7914547222882353
+      },
+      "log_candidate_normalizer": -0.00012696653666310898,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 0,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 0,
+    "reference_candidate": "Mira Tanswick",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.7248752002225307,
+      0.27512479977746923
+    ],
+    "joint_candidate_argmax_index": 0
+  },
+  {
+    "query_key": "086e756dae1adc3a409927bbc283e13a4c93deead3f073711b9512d0ab3341ef",
+    "scope": "compound",
+    "source_key": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+    "event": "Virelan Cup",
+    "candidates": [
+      "Mira Tanswick",
+      "Oren Pellford"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Mira Tanswick": -1.1582812198231354,
+      "Oren Pellford": -0.3770842000469493
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "086e756dae1adc3a409927bbc283e13a4c93deead3f073711b9512d0ab3341ef",
+      "probabilities": {
+        "Mira Tanswick": 0.31406195825241245,
+        "Oren Pellford": 0.6859380417475875
+      },
+      "sequence_logprobs": {
+        "Mira Tanswick": -1.1582812198231354,
+        "Oren Pellford": -0.3770842000469493
+      },
+      "log_candidate_normalizer": -0.00011622655956289307,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 1,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 1,
+    "reference_candidate": "Oren Pellford",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.27512479977746923,
+      0.7248752002225307
+    ],
+    "joint_candidate_argmax_index": 1
+  },
+  {
+    "query_key": "5b1fd83e8bd108eb825f5dd013df4c2201edef18b6794e14ba73fd339716df90",
+    "scope": "compound",
+    "source_key": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+    "event": "Corvellan Accord",
+    "candidates": [
+      "Hugo Valecrest",
+      "Nadia Fennbrook"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Hugo Valecrest": -0.0001530066207620642,
+      "Nadia Fennbrook": -20.516661311565827
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "5b1fd83e8bd108eb825f5dd013df4c2201edef18b6794e14ba73fd339716df90",
+      "probabilities": {
+        "Hugo Valecrest": 0.9999999987703156,
+        "Nadia Fennbrook": 1.2296843750089377e-09
+      },
+      "sequence_logprobs": {
+        "Hugo Valecrest": -0.0001530066207620642,
+        "Nadia Fennbrook": -20.516661311565827
+      },
+      "log_candidate_normalizer": -0.0001530053910777106,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 0,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 0,
+    "reference_candidate": "Hugo Valecrest",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.9960568081372527,
+      0.00394319186274722
+    ],
+    "joint_candidate_argmax_index": 0
+  },
+  {
+    "query_key": "56755fd857258e73308d995121b2e5fd0fddfec11ef82d61c621afed557dc1b9",
+    "scope": "compound",
+    "source_key": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+    "event": "Tremorin Accord",
+    "candidates": [
+      "Hugo Valecrest",
+      "Nadia Fennbrook"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Hugo Valecrest": -0.0011547332357507544,
+      "Nadia Fennbrook": -14.985849258730694
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "56755fd857258e73308d995121b2e5fd0fddfec11ef82d61c621afed557dc1b9",
+      "probabilities": {
+        "Hugo Valecrest": 0.9999996893797823,
+        "Nadia Fennbrook": 3.1062021764819827e-07
+      },
+      "sequence_logprobs": {
+        "Hugo Valecrest": -0.0011547332357507544,
+        "Nadia Fennbrook": -14.985849258730694
+      },
+      "log_candidate_normalizer": -0.0011544226154848601,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 0,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 1,
+    "reference_candidate": "Nadia Fennbrook",
+    "independent_category": "wrong",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.00394319186274722,
+      0.9960568081372527
+    ],
+    "joint_candidate_argmax_index": 1
+  },
+  {
+    "query_key": "cdac9fcd7f94a8d7cdf18845589fe06d255507f7e1609f2e6d46fedbfe7858a7",
+    "scope": "compound",
+    "source_key": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+    "event": "Nerowan Cup",
+    "candidates": [
+      "Mira Tanswick",
+      "Oren Pellford"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Mira Tanswick": -2.607899985510474,
+      "Oren Pellford": -0.07672760683750049
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "cdac9fcd7f94a8d7cdf18845589fe06d255507f7e1609f2e6d46fedbfe7858a7",
+      "probabilities": {
+        "Mira Tanswick": 0.07370156871133562,
+        "Oren Pellford": 0.9262984312886643
+      },
+      "sequence_logprobs": {
+        "Mira Tanswick": -2.607899985510474,
+        "Oren Pellford": -0.07672760683750049
+      },
+      "log_candidate_normalizer": -0.00016879058985243278,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 1,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 1,
+    "reference_candidate": "Oren Pellford",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.33459821850079696,
+      0.665401781499203
+    ],
+    "joint_candidate_argmax_index": 1
+  },
+  {
+    "query_key": "658f5e596f65723b824a4e116529bdf80fd127483af2f8a42a2390899b095a92",
+    "scope": "compound",
+    "source_key": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+    "event": "Virelan Cup",
+    "candidates": [
+      "Mira Tanswick",
+      "Oren Pellford"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Mira Tanswick": -1.9907156182167969,
+      "Oren Pellford": -0.14700381618720912
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "658f5e596f65723b824a4e116529bdf80fd127483af2f8a42a2390899b095a92",
+      "probabilities": {
+        "Mira Tanswick": 0.13661289540711835,
+        "Oren Pellford": 0.8633871045928816
+      },
+      "sequence_logprobs": {
+        "Mira Tanswick": -1.9907156182167969,
+        "Oren Pellford": -0.14700381618720912
+      },
+      "log_candidate_normalizer": -0.00011168460323895957,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 1,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 0,
+    "reference_candidate": "Mira Tanswick",
+    "independent_category": "wrong",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.665401781499203,
+      0.33459821850079696
+    ],
+    "joint_candidate_argmax_index": 0
+  },
+  {
+    "query_key": "bf21b85a8bf13c95973b7b5af322e79fbf3bc20261c3a6d7c771858f9ef409ea",
+    "scope": "atomic",
+    "source_key": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+    "event": "Meliston Accord",
+    "candidates": [
+      "Lena Cresswell",
+      "Tomas Brindle"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Lena Cresswell": -6.288324770469183,
+      "Tomas Brindle": -0.007078249975258976
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "bf21b85a8bf13c95973b7b5af322e79fbf3bc20261c3a6d7c771858f9ef409ea",
+      "probabilities": {
+        "Lena Cresswell": 0.0018675724639758595,
+        "Tomas Brindle": 0.998132427536024
+      },
+      "sequence_logprobs": {
+        "Lena Cresswell": -6.288324770469183,
+        "Tomas Brindle": -0.007078249975258976
+      },
+      "log_candidate_normalizer": -0.005208931423526636,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 1,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 1,
+    "reference_candidate": "Tomas Brindle",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      2.8769237589629734e-10,
+      0.9999999997123077
+    ],
+    "joint_candidate_argmax_index": 1
+  },
+  {
+    "query_key": "f4e28e29766c207b2778f27a3940ff7aa481a72c8416a84e296841b8626055aa",
+    "scope": "atomic",
+    "source_key": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+    "event": "Quorren Accord",
+    "candidates": [
+      "Lena Cresswell",
+      "Tomas Brindle"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Lena Cresswell": -0.00012647101895351504,
+      "Tomas Brindle": -15.68800929614618
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "f4e28e29766c207b2778f27a3940ff7aa481a72c8416a84e296841b8626055aa",
+      "probabilities": {
+        "Lena Cresswell": 0.999999846241551,
+        "Tomas Brindle": 1.5375844900590737e-07
+      },
+      "sequence_logprobs": {
+        "Lena Cresswell": -0.00012647101895351504,
+        "Tomas Brindle": -15.68800929614618
+      },
+      "log_candidate_normalizer": -0.0001263172604927151,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 0,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 0,
+    "reference_candidate": "Lena Cresswell",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.9999999997123077,
+      2.8769237589629734e-10
+    ],
+    "joint_candidate_argmax_index": 0
+  },
+  {
+    "query_key": "fe09e4fd61e31871119820771aab7452284f5e3706103097478a7b8092823087",
+    "scope": "atomic",
+    "source_key": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+    "event": "Meliston Accord",
+    "candidates": [
+      "Lena Cresswell",
+      "Tomas Brindle"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Lena Cresswell": -0.014709086076226304,
+      "Tomas Brindle": -4.233500266146652
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "fe09e4fd61e31871119820771aab7452284f5e3706103097478a7b8092823087",
+      "probabilities": {
+        "Lena Cresswell": 0.9854970088928984,
+        "Tomas Brindle": 0.014502991107101662
+      },
+      "sequence_logprobs": {
+        "Lena Cresswell": -0.014709086076226304,
+        "Tomas Brindle": -4.233500266146652
+      },
+      "log_candidate_normalizer": -9.989856597035322e-05,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 0,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 0,
+    "reference_candidate": "Lena Cresswell",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.9999999999998253,
+      1.7480516060253497e-13
+    ],
+    "joint_candidate_argmax_index": 0
+  },
+  {
+    "query_key": "06d07c77bd17d6e51d2097783c5c3bf42cfdaadf18d50f37f3519d685d3908e8",
+    "scope": "atomic",
+    "source_key": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+    "event": "Quorren Accord",
+    "candidates": [
+      "Lena Cresswell",
+      "Tomas Brindle"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Lena Cresswell": -25.156418693653126,
+      "Tomas Brindle": -0.00010546449648187287
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "06d07c77bd17d6e51d2097783c5c3bf42cfdaadf18d50f37f3519d685d3908e8",
+      "probabilities": {
+        "Lena Cresswell": 1.1878236816022699e-11,
+        "Tomas Brindle": 0.9999999999881217
+      },
+      "sequence_logprobs": {
+        "Lena Cresswell": -25.156418693653126,
+        "Tomas Brindle": -0.00010546449648187287
+      },
+      "log_candidate_normalizer": -0.00010546448460359673,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 1,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 1,
+    "reference_candidate": "Tomas Brindle",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      1.7480516060253497e-13,
+      0.9999999999998253
+    ],
+    "joint_candidate_argmax_index": 1
+  },
+  {
+    "query_key": "fd3cfd6e17b6d5c1726b2e118343184291c88c1ac46d78f29ff0792221606be5",
+    "scope": "atomic",
+    "source_key": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+    "event": "Corvellan Accord",
+    "candidates": [
+      "Hugo Valecrest",
+      "Nadia Fennbrook"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Hugo Valecrest": -21.015738424559938,
+      "Nadia Fennbrook": -0.00013740845836291226
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "fd3cfd6e17b6d5c1726b2e118343184291c88c1ac46d78f29ff0792221606be5",
+      "probabilities": {
+        "Hugo Valecrest": 7.465182761122721e-10,
+        "Nadia Fennbrook": 0.9999999992534818
+      },
+      "sequence_logprobs": {
+        "Hugo Valecrest": -21.015738424559938,
+        "Nadia Fennbrook": -0.00013740845836291226
+      },
+      "log_candidate_normalizer": -0.00013740771184473193,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 1,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 1,
+    "reference_candidate": "Nadia Fennbrook",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      1.3403943730024114e-13,
+      0.9999999999998659
+    ],
+    "joint_candidate_argmax_index": 1
+  },
+  {
+    "query_key": "21b336fb3e5702da5edd8218d9459d9a92c3f74047bbaf54574b11e4e0f0ba2b",
+    "scope": "atomic",
+    "source_key": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+    "event": "Tremorin Accord",
+    "candidates": [
+      "Hugo Valecrest",
+      "Nadia Fennbrook"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Hugo Valecrest": -0.00030839519752796994,
+      "Nadia Fennbrook": -8.625349709145004
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "21b336fb3e5702da5edd8218d9459d9a92c3f74047bbaf54574b11e4e0f0ba2b",
+      "probabilities": {
+        "Hugo Valecrest": 0.9998204794461777,
+        "Nadia Fennbrook": 0.00017952055382237033
+      },
+      "sequence_logprobs": {
+        "Hugo Valecrest": -0.00030839519752796994,
+        "Nadia Fennbrook": -8.625349709145004
+      },
+      "log_candidate_normalizer": -0.00012885852796225067,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 0,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 0,
+    "reference_candidate": "Hugo Valecrest",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.9999999999998659,
+      1.3403943730024114e-13
+    ],
+    "joint_candidate_argmax_index": 0
+  },
+  {
+    "query_key": "64fb2c4fa9b88546cdbb28baecd8bf889b6e4c47a38d7aebfc1fde315f7fc623",
+    "scope": "atomic",
+    "source_key": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+    "event": "Dalespar Cup",
+    "candidates": [
+      "Evan Calderby",
+      "Sana Whitmere"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Evan Calderby": -0.00011923340232393764,
+      "Sana Whitmere": -11.625971683656237
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "64fb2c4fa9b88546cdbb28baecd8bf889b6e4c47a38d7aebfc1fde315f7fc623",
+      "probabilities": {
+        "Evan Calderby": 0.9999910679210263,
+        "Sana Whitmere": 8.932078973641671e-06
+      },
+      "sequence_logprobs": {
+        "Evan Calderby": -0.00011923340232393764,
+        "Sana Whitmere": -11.625971683656237
+      },
+      "log_candidate_normalizer": -0.00011030128345901616,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 0,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 0,
+    "reference_candidate": "Evan Calderby",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.9999999999969496,
+      3.050398945627516e-12
+    ],
+    "joint_candidate_argmax_index": 0
+  },
+  {
+    "query_key": "23d151b278cb2dc3045fb17ace6a6a963b77414c8c0886f94631e9cca095f79f",
+    "scope": "atomic",
+    "source_key": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+    "event": "Raventon Cup",
+    "candidates": [
+      "Evan Calderby",
+      "Sana Whitmere"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Evan Calderby": -14.890729186624936,
+      "Sana Whitmere": -0.0008329048639441764
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "23d151b278cb2dc3045fb17ace6a6a963b77414c8c0886f94631e9cca095f79f",
+      "probabilities": {
+        "Evan Calderby": 3.4150735416802045e-07,
+        "Sana Whitmere": 0.9999996584926458
+      },
+      "sequence_logprobs": {
+        "Evan Calderby": -14.890729186624936,
+        "Sana Whitmere": -0.0008329048639441764
+      },
+      "log_candidate_normalizer": -0.0008325633565317432,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 1,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 1,
+    "reference_candidate": "Sana Whitmere",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      3.050398945627516e-12,
+      0.9999999999969496
+    ],
+    "joint_candidate_argmax_index": 1
+  },
+  {
+    "query_key": "983dcfcacd182e6eca9c1853df5105a0360cedfd493ad7b27325cad5d07de264",
+    "scope": "atomic",
+    "source_key": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+    "event": "Dalespar Cup",
+    "candidates": [
+      "Evan Calderby",
+      "Sana Whitmere"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Evan Calderby": -0.016646035416185916,
+      "Sana Whitmere": -4.110804494440348
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "983dcfcacd182e6eca9c1853df5105a0360cedfd493ad7b27325cad5d07de264",
+      "probabilities": {
+        "Evan Calderby": 0.9836035562491535,
+        "Sana Whitmere": 0.01639644375084653
+      },
+      "sequence_logprobs": {
+        "Evan Calderby": -0.016646035416185916,
+        "Sana Whitmere": -4.110804494440348
+      },
+      "log_candidate_normalizer": -0.00011368231362669443,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 0,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 1,
+    "reference_candidate": "Sana Whitmere",
+    "independent_category": "wrong",
+    "joint_category": "correct",
+    "joint_marginals": [
+      7.252540640961188e-05,
+      0.9999274745935903
+    ],
+    "joint_candidate_argmax_index": 1
+  },
+  {
+    "query_key": "6800c110339ba5aa3dc017334960c75d02c52225162c5f14190013f9e96271e9",
+    "scope": "atomic",
+    "source_key": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+    "event": "Raventon Cup",
+    "candidates": [
+      "Evan Calderby",
+      "Sana Whitmere"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Evan Calderby": -0.0001017502059872441,
+      "Sana Whitmere": -13.62576130544865
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "6800c110339ba5aa3dc017334960c75d02c52225162c5f14190013f9e96271e9",
+      "probabilities": {
+        "Evan Calderby": 0.9999987909320257,
+        "Sana Whitmere": 1.2090679743332917e-06
+      },
+      "sequence_logprobs": {
+        "Evan Calderby": -0.0001017502059872441,
+        "Sana Whitmere": -13.62576130544865
+      },
+      "log_candidate_normalizer": -0.00010054113728204244,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 0,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 0,
+    "reference_candidate": "Evan Calderby",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.9999274745935903,
+      7.252540640961188e-05
+    ],
+    "joint_candidate_argmax_index": 0
+  },
+  {
+    "query_key": "f5f5d7b5ab731dd5597cc75e9fb69de401a2050202d5207a3c0bf0acf8584de5",
+    "scope": "atomic",
+    "source_key": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+    "event": "Nerowan Cup",
+    "candidates": [
+      "Mira Tanswick",
+      "Oren Pellford"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Mira Tanswick": -0.01014846887604139,
+      "Oren Pellford": -4.603949603154067
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "f5f5d7b5ab731dd5597cc75e9fb69de401a2050202d5207a3c0bf0acf8584de5",
+      "probabilities": {
+        "Mira Tanswick": 0.9899869362735149,
+        "Oren Pellford": 0.010013063726485017
+      },
+      "sequence_logprobs": {
+        "Mira Tanswick": -0.01014846887604139,
+        "Oren Pellford": -4.603949603154067
+      },
+      "log_candidate_normalizer": -8.493725215787812e-05,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 0,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 0,
+    "reference_candidate": "Mira Tanswick",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.9999957770349153,
+      4.222965084777977e-06
+    ],
+    "joint_candidate_argmax_index": 0
+  },
+  {
+    "query_key": "5eb755086e42d53855cbb55ac4883431af7fa20215bf8d71ecc709cd1667a12d",
+    "scope": "atomic",
+    "source_key": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+    "event": "Virelan Cup",
+    "candidates": [
+      "Mira Tanswick",
+      "Oren Pellford"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Mira Tanswick": -7.781810998262838,
+      "Oren Pellford": -0.0006433055965571392
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "5eb755086e42d53855cbb55ac4883431af7fa20215bf8d71ecc709cd1667a12d",
+      "probabilities": {
+        "Mira Tanswick": 0.00041735009590309886,
+        "Oren Pellford": 0.999582649904097
+      },
+      "sequence_logprobs": {
+        "Mira Tanswick": -7.781810998262838,
+        "Oren Pellford": -0.0006433055965571392
+      },
+      "log_candidate_normalizer": -0.00022586838586376493,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 1,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 1,
+    "reference_candidate": "Oren Pellford",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      4.222965084777977e-06,
+      0.9999957770349153
+    ],
+    "joint_candidate_argmax_index": 1
+  },
+  {
+    "query_key": "ee8171638455903a41ab2ea798867f4816c29b6f7f725e999ef132fd546bdf65",
+    "scope": "atomic",
+    "source_key": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+    "event": "Corvellan Accord",
+    "candidates": [
+      "Hugo Valecrest",
+      "Nadia Fennbrook"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Hugo Valecrest": -0.00014361347668616806,
+      "Nadia Fennbrook": -25.719038140890337
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "ee8171638455903a41ab2ea798867f4816c29b6f7f725e999ef132fd546bdf65",
+      "probabilities": {
+        "Hugo Valecrest": 0.9999999999932325,
+        "Nadia Fennbrook": 6.767465120407149e-12
+      },
+      "sequence_logprobs": {
+        "Hugo Valecrest": -0.00014361347668616806,
+        "Nadia Fennbrook": -25.719038140890337
+      },
+      "log_candidate_normalizer": -0.0001436134699186926,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 0,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 0,
+    "reference_candidate": "Hugo Valecrest",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.9999999999999991,
+      9.777786463710893e-16
+    ],
+    "joint_candidate_argmax_index": 0
+  },
+  {
+    "query_key": "592fe7dde09cd5c6c1bb2d171df482d91f0a5221efef722c390306bbaba80986",
+    "scope": "atomic",
+    "source_key": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+    "event": "Tremorin Accord",
+    "candidates": [
+      "Hugo Valecrest",
+      "Nadia Fennbrook"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Hugo Valecrest": -8.85350820465952,
+      "Nadia Fennbrook": -0.011154369644097882
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "592fe7dde09cd5c6c1bb2d171df482d91f0a5221efef722c390306bbaba80986",
+      "probabilities": {
+        "Hugo Valecrest": 0.00014446138660654167,
+        "Nadia Fennbrook": 0.9998555386133935
+      },
+      "sequence_logprobs": {
+        "Hugo Valecrest": -8.85350820465952,
+        "Nadia Fennbrook": -0.011154369644097882
+      },
+      "log_candidate_normalizer": -0.011009897821940175,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 1,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 1,
+    "reference_candidate": "Nadia Fennbrook",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      9.777786463710893e-16,
+      0.9999999999999991
+    ],
+    "joint_candidate_argmax_index": 1
+  },
+  {
+    "query_key": "eaf5b5bfb1f199b811e5e45dc5f3fb97654e9501f0d35a3b2d805511c69eb78d",
+    "scope": "atomic",
+    "source_key": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+    "event": "Nerowan Cup",
+    "candidates": [
+      "Mira Tanswick",
+      "Oren Pellford"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Mira Tanswick": -10.50011719455838,
+      "Oren Pellford": -0.00016435045659471086
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "eaf5b5bfb1f199b811e5e45dc5f3fb97654e9501f0d35a3b2d805511c69eb78d",
+      "probabilities": {
+        "Mira Tanswick": 2.7536989579689905e-05,
+        "Oren Pellford": 0.9999724630104202
+      },
+      "sequence_logprobs": {
+        "Mira Tanswick": -10.50011719455838,
+        "Oren Pellford": -0.00016435045659471086
+      },
+      "log_candidate_normalizer": -0.0001368130878650881,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 1,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 1,
+    "reference_candidate": "Oren Pellford",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      4.6982505445929275e-11,
+      0.9999999999530176
+    ],
+    "joint_candidate_argmax_index": 1
+  },
+  {
+    "query_key": "880bf0305c7c7a526ca9bf1e92012e91d39e56e79865d2ead8981300394369a5",
+    "scope": "atomic",
+    "source_key": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+    "event": "Virelan Cup",
+    "candidates": [
+      "Mira Tanswick",
+      "Oren Pellford"
+    ],
+    "status": "ok",
+    "reason": null,
+    "sequence_logprobs": {
+      "Mira Tanswick": -8.572543237609563e-05,
+      "Oren Pellford": -13.28137868934955
+    },
+    "distribution": {
+      "status": "ok",
+      "reason": null,
+      "query_key": "880bf0305c7c7a526ca9bf1e92012e91d39e56e79865d2ead8981300394369a5",
+      "probabilities": {
+        "Mira Tanswick": 0.9999982938900638,
+        "Oren Pellford": 1.7061099362478184e-06
+      },
+      "sequence_logprobs": {
+        "Mira Tanswick": -8.572543237609563e-05,
+        "Oren Pellford": -13.28137868934955
+      },
+      "log_candidate_normalizer": -8.401932098450477e-05,
+      "conditional_on_candidate_set": true,
+      "calibrated_truth_probability": false
+    },
+    "candidate_argmax_index": 0,
+    "tie": false,
+    "tree_readout_status": "ok",
+    "tree_readout_reason": null,
+    "reference_candidate_index": 0,
+    "reference_candidate": "Mira Tanswick",
+    "independent_category": "correct",
+    "joint_category": "correct",
+    "joint_marginals": [
+      0.9999999999530176,
+      4.6982505445929275e-11
+    ],
+    "joint_candidate_argmax_index": 0
+  }
+]

@@ -1,0 +1,143 @@
+{
+  "schema": "paired-scope-evaluation-v1",
+  "arms": {
+    "compound_independent_rows_max_slot": {
+      "source_assignment": {
+        "total": 8,
+        "correct": 1,
+        "wrong": 7,
+        "ties": 0,
+        "unknown": 0
+      },
+      "query_argmax": {
+        "total": 16,
+        "correct": 9,
+        "wrong": 7,
+        "ties": 0,
+        "unknown": 0
+      },
+      "secondary_case_metrics": {
+        "evaluation_units": 16,
+        "known_units": 16,
+        "known_positive": 8,
+        "known_negative": 8,
+        "missing_label_units": 0,
+        "unknown_score_units": 0,
+        "unknown_score_known_label_units": 0,
+        "auroc": 0.625,
+        "ap": 0.685218253968254
+      }
+    },
+    "compound_bijection_joint_assignment_mass": {
+      "source_assignment": {
+        "total": 8,
+        "correct": 8,
+        "wrong": 0,
+        "ties": 0,
+        "unknown": 0
+      },
+      "query_argmax": {
+        "total": 16,
+        "correct": 16,
+        "wrong": 0,
+        "ties": 0,
+        "unknown": 0
+      },
+      "secondary_case_metrics": {
+        "evaluation_units": 16,
+        "known_units": 16,
+        "known_positive": 8,
+        "known_negative": 8,
+        "missing_label_units": 0,
+        "unknown_score_units": 0,
+        "unknown_score_known_label_units": 0,
+        "auroc": 1.0,
+        "ap": 1.0
+      }
+    },
+    "atomic_independent_rows_max_slot": {
+      "source_assignment": {
+        "total": 8,
+        "correct": 7,
+        "wrong": 1,
+        "ties": 0,
+        "unknown": 0
+      },
+      "query_argmax": {
+        "total": 16,
+        "correct": 15,
+        "wrong": 1,
+        "ties": 0,
+        "unknown": 0
+      },
+      "secondary_case_metrics": {
+        "evaluation_units": 16,
+        "known_units": 16,
+        "known_positive": 8,
+        "known_negative": 8,
+        "missing_label_units": 0,
+        "unknown_score_units": 0,
+        "unknown_score_known_label_units": 0,
+        "auroc": 1.0,
+        "ap": 1.0
+      }
+    },
+    "atomic_bijection_joint_assignment_mass": {
+      "source_assignment": {
+        "total": 8,
+        "correct": 8,
+        "wrong": 0,
+        "ties": 0,
+        "unknown": 0
+      },
+      "query_argmax": {
+        "total": 16,
+        "correct": 16,
+        "wrong": 0,
+        "ties": 0,
+        "unknown": 0
+      },
+      "secondary_case_metrics": {
+        "evaluation_units": 16,
+        "known_units": 16,
+        "known_positive": 8,
+        "known_negative": 8,
+        "missing_label_units": 0,
+        "unknown_score_units": 0,
+        "unknown_score_known_label_units": 0,
+        "auroc": 1.0,
+        "ap": 1.0
+      }
+    }
+  },
+  "source_assignment_categories": [
+    "correct",
+    "wrong",
+    "ties",
+    "unknown"
+  ],
+  "secondary_metrics": [
+    "auroc",
+    "ap"
+  ],
+  "primary_independent_sources": 8,
+  "threshold_selection": false,
+  "winning_arm_selection": false,
+  "model_calls_allowed": false,
+  "previously_exposed_toy": true,
+  "question_bundle_effect_only": true,
+  "natural_task_performance_claim": false,
+  "calibrated_truth_probability": false,
+  "primary_cases": 16,
+  "unique_queries": 32,
+  "all_fixed_readouts_retained": true,
+  "reference_access_only_after_score_freeze": true,
+  "new_model_calls": 0,
+  "method_promoted": false,
+  "limitations": [
+    "Eight source clusters; directions and roles are not independent samples.",
+    "Exact source parser can answer this toy; LLM necessity and natural coverage remain untested.",
+    "Atomic scope changes an entire question bundle; no unique internal causal mechanism follows.",
+    "Conditional candidate/assignment mass is not a calibrated truth posterior."
+  ]
+}

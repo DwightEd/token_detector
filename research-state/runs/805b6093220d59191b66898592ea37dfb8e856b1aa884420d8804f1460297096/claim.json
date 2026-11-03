@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "created_utc": "2026-11-03T02:30:05.758874+00:00",
+  "spec": {
+    "hypothesis_id": "H015_SHARED_PREFIX_PROBABILITY_KERNEL",
+    "intervention": "new_synthetic_shared_prefix_engineering",
+    "stage": "engineering",
+    "method": {
+      "entrypoint": "outputs/h015-prefix-trie-20261103/run_engineering_probe.py",
+      "config": {
+        "contract": "prefix-only-full-vector-observation-v1",
+        "manifest_sha256": "163346c87b2e344343a5ae0b028f8578e4a268ae0658f4dad60018488640b2a4",
+        "frozen_run_spec_sha256": "fb013accdd42325803e5b97079df8cab7d4ab52379ea4637688b4021dad21aa0",
+        "maximum_forwards": 16,
+        "maximum_input_tokens": 4320,
+        "maximum_context_tokens": 512,
+        "minimum_wrapper_ram_bytes": 3221225472,
+        "minimum_wrapper_gpu_bytes": 3758096384
+      }
+    },
+    "code_sha256": {
+      "outputs/h015-prefix-trie-20261103/run_engineering_probe.py": "fd241fa9e9d9a9f3d36e01f041e0dd3ee9c8ccc0d051d8692dca7732e6c4a14e",
+      "outputs/h015-prefix-trie-20261103/idle_engineering_worker.py": "7bc1f40beb5d32fe2ecf1ebf0ab84585f765f763aa1cef7919d4e1f03b7b030f",
+      "experiments/prefix_completion.py": "f2dcd6aad9cb3ce9122d3db6c2f0ceb4a2ab993ac3f357eec749585facab5b85",
+      "experiments/research/completion_trie.py": "8b07e3da8476883dc062e49fd2df87485076976792f9443ba42f6bef76fd213b"
+    },
+    "data_sha256": {
+      "synthetic_engineering_manifest": "163346c87b2e344343a5ae0b028f8578e4a268ae0658f4dad60018488640b2a4"
+    },
+    "observer": {
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "official_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "model_files_sha256": {
+        "config.json": "eed00b17e22553979d090fa492e587e92885e328914c8e0b0b78f0a0d3576b3b",
+        "generation_config.json": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9",
+        "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+        "model.safetensors.index.json": "bc8aaa0c87d4335177e01c765f1de0db81661c67c1a72fbfb0d521b09f5ddc56",
+        "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+        "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "model-00001-of-00002.safetensors": "67347b23fb4165b652eb6611f5e1f2a06dfcddba8e909df1b2b0b1857bee06c2",
+        "model-00002-of-00002.safetensors": "a40d941d0e7e0b966ad8b62bb6d6b7c88cce1299197b599d9d0a4ce59aabfc1d"
+      },
+      "runtime": {
+        "torch": "2.8.0+cu128",
+        "transformers": "4.57.1",
+        "accelerate": "1.10.1",
+        "bitsandbytes": "0.48.0"
+      },
+      "attention_implementation": "sdpa",
+      "weight_quantization": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "float16"
+      },
+      "loading_dtype": "float16",
+      "device": "cuda:0",
+      "cuda_allocator_limit_bytes": 3221225472,
+      "hardware": {
+        "device_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+        "capability": [
+          12,
+          0
+        ],
+        "cuda_runtime": "12.8",
+        "driver_version": "573.24"
+      },
+      "readout": {
+        "kind": "unique_prefix_only_full_fp16_vocabulary_vector",
+        "context_contract": "shared-context-completion-trie-v1",
+        "logits_to_keep": 1,
+        "use_cache": false,
+        "output_tokens": 0
+      }
+    },
+    "population": {
+      "probes": 2,
+      "unique_prefix_contexts": 16,
+      "source": "synthetic_only"
+    },
+    "evaluation": {
+      "kind": "shared_probability_tree_and_full_vector_persistence_engineering",
+      "gold_usage": "none"
+    },
+    "seed": null
+  },
+  "run_id": "805b6093220d59191b66898592ea37dfb8e856b1aa884420d8804f1460297096",
+  "phase": "reserved_not_launched"
+}

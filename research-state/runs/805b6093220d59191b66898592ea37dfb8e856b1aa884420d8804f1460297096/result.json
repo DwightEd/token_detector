@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "run_id": "805b6093220d59191b66898592ea37dfb8e856b1aa884420d8804f1460297096",
+  "completed_utc": "2026-11-03T02:34:06.172028+00:00",
+  "outcome": "engineering_failure",
+  "conclusion": "Worker control corrected before any worker or model launch",
+  "artifacts": [
+    {
+      "path": "outputs/h015-prefix-trie-20261103/prelaunch-worker-review-failure-v1.json",
+      "sha256": "9cc8856fb6e38161714ee2d2c9bfffeb22d6ca16400c6721d179998cb304c4bb"
+    }
+  ]
+}

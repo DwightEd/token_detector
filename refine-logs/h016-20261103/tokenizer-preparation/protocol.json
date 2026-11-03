@@ -1,0 +1,39 @@
+{
+  "schema": "paired-scope-prefix-qualification-v1",
+  "original_inputs_sha256": "0d298932778c5ad60a43b059cc860b31679e7649350a825f5b1de72d2585cf66",
+  "engineering_seal_sha256": "471e953407fcb2fda086d449f88d25b1d086533237f9b4dd9eb868f6fe0724b9",
+  "expected_input_cases": 48,
+  "expected_primary_cases": 16,
+  "expected_sources": 8,
+  "expected_queries_per_scope": 16,
+  "scopes": [
+    "compound",
+    "atomic"
+  ],
+  "arms": [
+    "compound_independent_rows_max_slot",
+    "compound_bijection_joint_assignment_mass",
+    "atomic_independent_rows_max_slot",
+    "atomic_bijection_joint_assignment_mass"
+  ],
+  "population": "all_exact_burden_zero_originals_from_frozen_h007_inputs",
+  "question_template": "Using only the source, give the full person name for [TARGET] in the masked statement. [OTHER] denotes a different source person.\nMasked statement:\n{masked_response}",
+  "candidate_pool_depends_only_on_source": true,
+  "completion_contract": "full-candidate-plus-eos-v1",
+  "context_contract": "shared-context-completion-trie-v1",
+  "max_context_tokens": 512,
+  "max_nodes_per_query": 32,
+  "temperature": 1.0,
+  "length_normalization": false,
+  "attention_implementation": "sdpa",
+  "output_tokens": 0,
+  "use_cache": false,
+  "full_vector_dtype": "float16",
+  "full_vocab_normalizer_dtype": "float64",
+  "cache_identity_ignores_execution_provenance_only": true,
+  "partial_cached_tree_policy": "stop_before_any_model_call",
+  "population_previously_exposed": true,
+  "model_selection_performed": false,
+  "natural_task_performance_claim": false,
+  "evaluation_material_accessed": false
+}

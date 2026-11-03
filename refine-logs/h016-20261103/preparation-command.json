@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "D:/projects/research/envs/token-detector-cu128/Scripts/python.exe",
+    "-m",
+    "experiments.run",
+    "transfer",
+    "prepare-paired-scope",
+    "--inputs",
+    "D:\\projects\\research\\token_detector\\outputs\\h007-burden-20261103\\inference\\inputs.jsonl",
+    "--protocol",
+    "D:\\projects\\research\\token_detector\\outputs\\h016-paired-scope-20261103\\protocol-v1.json",
+    "--model",
+    "D:/projects/research/models/Qwen2.5-3B-Instruct",
+    "--model-identity",
+    "D:\\projects\\research\\token_detector\\outputs\\h016-paired-scope-20261103\\model-identity-v1.json",
+    "--engineering",
+    "D:\\projects\\research\\token_detector\\outputs\\h015-prefix-trie-20261103\\engineering_v1",
+    "--output",
+    "D:\\projects\\research\\token_detector\\outputs\\h016-paired-scope-20261103\\preparation_v1"
+  ],
+  "cwd": "C:\\Users\\Lu Yuanshan\\AppData\\Local\\Temp\\h016-paired-installed-20261103-2ugeyh9e\\working",
+  "exit_code": 0,
+  "installed_target": "C:\\Users\\Lu Yuanshan\\AppData\\Local\\Temp\\h016-paired-installed-20261103-2ugeyh9e\\installed",
+  "wheel_sha256": "c2ede5e18ab8f6f93e1433dfdb020bf9368c86a9e3766cc905d08f0a3b4f2414",
+  "model_calls": 0,
+  "cuda_calls": 0
+}

@@ -1,0 +1,140 @@
+# 换电脑继续实验：远端数据位置与执行交接
+
+更新：2026-11-03，Asia/Shanghai。代码仓库：<https://github.com/DwightEd/token_detector>。
+
+**先下载下表的 prepared、native 和历史分数整目录。已有观测可复用；本轮 H016 已完成，不需要另一台电脑重跑。** 六任务各 AUROC ≥ 0.8 的目标尚未完成，当前没有可直接宣称达到该目标的新方法。
+
+## 1. 存储入口和路径的含义
+
+存储页面：<https://console.aicloud.szu.edu.cn/console/filestorage/detail/tm902089733300000?role=0>。
+
+历史运行记录确认的 Linux 路径：
+
+```text
+BASE=/share/home/tm902089733300000/a903202310/lys
+PROJECT=/share/home/tm902089733300000/a903202310/lys/research/token_detector
+```
+
+下表中的 `$BASE`、`$PROJECT` 都指上述实际路径。早期对话叫过 `myProject`，但恢复的运行记录使用 `research/token_detector`。
+
+存储下载记录还使用这种相对路径：
+
+```text
+tm902089733300000/a903202310/lys/research/token_detector/...
+```
+
+这是存储对象的路径表示；`/share/home/` 是实例中的挂载前缀。控制台当前从哪一级显示目录，本次没有重新在线核实。若页面不能展开文件，按上述后缀定位并下载整个目录。这里的路径来自已恢复的 plan、manifest 和下载收据，不能据此保证文件今天仍存在。
+
+## 2. 优先下载：继续六任务实验的最小材料
+
+| 材料 | 远端位置 | 用途与范围 |
+|---|---|---|
+| RAGTruth QA 输入 | `$PROJECT/outputs/ragtruth_full_shared_20261029/test_QA/` | 全部 900 答 |
+| RAGTruth Summary 输入 | `$PROJECT/outputs/ragtruth_full_shared_20261029/test_Summary/` | 全部 900 答 |
+| RAGTruth Data2txt 输入 | `$PROJECT/outputs/ragtruth_full_shared_20261029/test_Data2txt/` | 全部 900 答 |
+| 金融输入 | `$PROJECT/outputs/finance_transfer_20261028/fit_finqa/`、`fit_tatqa/`、`test_finqa/`、`test_tatqa/` | 原 FIT 与 TEST；TEST FinQA 162 答、TATQA 130 答 |
+| HalluRAG 输入 | `$PROJECT/artifacts/final_package/hallurag/prepared/` | 全 1782 答；用发布的 answerable/target-available 元数据单列主组 891 答，保留另外 891 答 |
+| RAGTruth 原生观测 | `$PROJECT/outputs/ragtruth_full_shared_20261029/native_QA/`、`native_Summary/`、`native_Data2txt/` | 原 token、unit 与观测缓存；优先复用 |
+| 金融原生观测 | `$PROJECT/outputs/finance_transfer_20261028/native_v2/` | 64 FIT + 292 TEST 的原观测 |
+| HalluRAG V3 原生观测 | `$PROJECT/outputs/matched_local_20261031/hallurag_native/` | matched-SDPA 观测 |
+| 五组 V3 历史分数 | `$PROJECT/outputs/persistent_witness_v3_20261029/` | 整目录；包含 `scores_QA/`、`scores_Summary/`、`scores_Data2txt/`、`scores_finance/` |
+| HalluRAG V3 历史分数 | `$PROJECT/outputs/fixed_persistence_20261031/hallurag_scores_all7/` | 下载外层封存记录及 `witness/` 全部载荷；其中 `full_gap/` 不等于 R4 |
+
+prepared 目录至少保留 `inputs.jsonl`、`manifest.json`、`annotations.jsonl` 及原有 seal；native/score 目录保留全部 `plan.json`、`collection.json`、`complete.json`、原 NPZ/预测载荷和 `seal.json`（以各目录实际清单为准）。不要只下载分数 CSV 或汇总表，也不要打散目录。
+
+**推断只读取 inputs 和所需的非标签配置；annotations 保留到方法、参数、人口和全部分数冻结后的评价阶段。** 不按已知错例筛选数据，不更换原 token 轴，不把未覆盖项当成低风险。
+
+## 3. 原始数据与模型
+
+| 材料 | 远端位置 | 说明 |
+|---|---|---|
+| RAGTruth raw | `$BASE/data/RAGTruth/dataset/source_info.jsonl`、`response.jsonl` | 恢复原问题、source、response 与发布标注；优先使用现有 prepared 保持人口一致 |
+| FRED raw | `$PROJECT/outputs/finance_transfer_20261028/raw/test_finqa.csv`、`test_tatqa.csv`、`ACQUISITION_RECEIPT.json` | 发布的合成编辑数据；不能补造缓存里缺失的原生成问题 |
+| HalluRAG raw | `$PROJECT/artifacts/final_package/hallurag/raw/test.jsonl`、`test.receipt.json` | 同时保留 answerable 元数据 |
+| 历史观察模型 | `$BASE/models/Meta-Llama-3.1-8B-Instruct/` | 需要新 GPU 观测时下载整个模型目录，包括全部 shard、index、config、tokenizer |
+
+两份 RAGTruth 原文件的历史 SHA256：
+
+若需从 raw 重建金融 FIT，再备份同一 `raw/` 下的 `train_finqa_3k.csv`、`train_tatqa_5k.csv`；已有 prepared FIT 可直接使用。
+
+```text
+source_info.jsonl  0dffc26ea9f3c1c3d7c7e8336b56ef1646e3cec876edffcca3c9c624d12d578b
+response.jsonl     e4c2e4ac24fff676d8984cc61c35d791612fadc58015335d97dd632375e18073
+```
+
+原 RAGTruth 观察记录缺失完整权重与 GPU backend 身份，不能承诺换机后精确重现历史数值。finance/Hallu 的部分权重身份已核对，具体边界见 [数据合同](research-state/DATASET_CONTRACTS.md)。8B 历史观察和本轮 3B NF4 观察属于不同仪器，不直接替换后当成同一对照。
+
+## 4. 近期本地实验：需另行转移，不能假定已在云端
+
+以下文件在本机生成，**远端位置未确认**：
+
+```text
+D:/projects/research/token_detector/outputs/h006-20261103/
+D:/projects/research/token_detector/outputs/h007-burden-20261103/
+D:/projects/research/token_detector/outputs/h015-prefix-trie-20261103/
+D:/projects/research/token_detector/outputs/h016-paired-scope-20261103/
+```
+
+H016 的完整封存观察、评价、32 个原始 NPZ 和报告已经复制到：
+
+```text
+D:/Desktop/myproject_研究资料_20261102/15_H016_Paired_Scope_20261103/
+```
+
+把这个桌面目录整体复制到另一台电脑即可查看原始材料；入口为 `START.html`，正文也有 Markdown。封存观察与评价合计约 105 MB。Git 只发布代码、报告和小型证据，不包含这些完整缓存或模型。
+
+H006 的本地模型为 `D:/projects/research/models/DeBERTa-v3-base-mnli-fever-anli`；其远端目录未确认。冻结身份见 [H006 model identity](research-state/protocols/H006_nli_model_identity_v1.json)。H015/H016 使用本地 `D:/projects/research/models/Qwen2.5-3B-Instruct`，也不能推断云端同名目录存在。
+
+**已完成而不要重复的工作：** H015 两输入工程资格共 16 前向；H016 compound/atomic × independent/joint 共 312 前向、86,930 输入 token，完整四臂分数先冻结再评价。角色正确数分别为 9/16、16/16、15/16、16/16；仅是 8 来源的已暴露构造诊断，不是六个自然任务达到目标。详见 [H016 报告](docs/results/h016_paired_scope.md) 和 [恢复状态](research-state/RESUME.md)。旧 H013 严格概率门失败保留，不能重封成成功。
+
+HalluRAG 历史 R4 逐 token 数组已知缺失，目前恢复的是汇总报告，不能承诺从上表下载。不要拿 `full_gap` 冒充它。
+
+## 5. 另一台电脑的执行顺序
+
+1. 拉取本仓库，先阅读 [AGENTS.md](AGENTS.md)、[RESEARCH_BRIEF.md](RESEARCH_BRIEF.md)、[RESUME.md](research-state/RESUME.md)，运行 `python tools/research_memory.py context`。本轮 H016 已结束，勿根据旧状态再次启动。
+2. 下载第 2 节的完整目录并保留相对结构；如有新的 GPU 观察需求，再准备第 3 节模型。记录本机根目录到历史路径的映射；**不要修改 sealed plan 中的历史绝对路径或改写原 seal 来迁移**。需要迁移的执行入口应显式接收新路径。
+3. 新建独立 Python 3.11+ 环境，安装项目及实验依赖。依据新机器实际硬件验证 CUDA/torch；旧机器的 GPU、量化和数值身份不能直接照抄为新机器的事实。
+4. 优先验证/复用已有缓存；新观察先冻结协议、全部样本、资源预算、源代码与模型身份，登记 run，核对已有请求，避免重复推理。
+5. 所有评分封存后再评价。返回完整输出目录、命令、环境/模型身份、错误日志和原 seal；不要只返回一个 AUROC。
+
+安装及命令入口检查：
+
+```bash
+git clone https://github.com/DwightEd/token_detector.git
+cd token_detector
+python -m venv .venv-research
+# Linux: source .venv-research/bin/activate
+# Windows PowerShell: .venv-research/Scripts/Activate.ps1
+python -m pip install '.[experiments,probe,dev]'
+r4-experiment --help
+r4-experiment transfer --help
+python tools/research_memory.py context
+```
+
+下面是**现有 R4 的新运行示例**，不是 H016 自然数据推广，也不承诺历史数值复现。`STORE_PROJECT` 和 `LLAMA_MODEL` 改为新机器的下载位置；使用一个全新的输出目录：
+
+```bash
+STORE_PROJECT=/path/to/downloaded/token_detector
+LLAMA_MODEL=/path/to/Meta-Llama-3.1-8B-Instruct
+r4-experiment predict-dataset \
+  --input "$STORE_PROJECT/outputs/ragtruth_full_shared_20261029/test_QA" \
+  --model "$LLAMA_MODEL" --task QA --method r4 \
+  --output outputs/otherpc_qa_r4_v1
+
+# 评分完成、封存后才执行：
+r4-experiment evaluate-dataset --scores outputs/otherpc_qa_r4_v1 \
+  --label-granularity token --output outputs/otherpc_qa_r4_eval_v1
+```
+
+已有观测的集成入口是 `r4-experiment transfer score` / `transfer evaluate`；V3 显式方法名为 `witness`。先看各子命令 `--help` 并使用相应冻结协议，不能把以上 QA 命令的 task 名简单改成 FinQA/HalluRAG 来假装完成六任务实验。现阶段还没有通过自然数据资格的 H016 全任务方法或一条“一键六任务 0.8”命令。
+
+## 6. 路径依据与已知缺口
+
+本清单经读取历史 metadata 核对，没有重新登录控制台验证在线存活，也没有读取目标 gold 内容：
+
+- `cache-recovery-20261102/remote/native-metadata/native_{QA,Summary,Data2txt}/plan.json`：prepared 路径与 Llama 模型路径；`native_v2/plan.json`：金融四组 prepared。
+- `fusion-cache-20261102/witness/scores_{QA,Summary,Data2txt,finance}/plan.json`：各原生观察目录；`hallu_native_metadata/plan.json`、`hallu_v3_scores/plan.json`：Hallu 输入与观察。
+- `cache-recovery-20261102/bita-download-persistent-status.json` 及下载记录中的纯路径：V3 历史分数存储位置。私人下载日志不发布。
+- 本地 `outputs/full-input-inventory-20261103/inventory.json`：原始数据路径、SHA256 与 3,883 个完整输入人口；[DATASET_CONTRACTS.md](research-state/DATASET_CONTRACTS.md) 保存可公开的数据/观测差异。
+
+上述本地恢复目录的根为 `D:/projects/research/outputs/`，不随 Git 发布。下一台电脑只需按上表下载数据；查不到某项时记录缺项，不猜路径、不改人口、不重建历史标签。

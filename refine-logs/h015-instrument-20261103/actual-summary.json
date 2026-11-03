@@ -1,0 +1,34 @@
+{
+  "schema": "h015-bounded-engineering-summary-v1",
+  "status": "engineering_passed",
+  "costs": {
+    "attempted_model_calls": 16,
+    "model_calls": 16,
+    "actual_forward_passes": 16,
+    "input_tokens": 4320,
+    "output_tokens": 0,
+    "seconds_forward_and_capture": 4.929457899881527,
+    "seconds_total_wall": 110.84598209999967,
+    "peak_cuda_allocated_bytes": 2141098496,
+    "peak_cuda_reserved_bytes": 3068133376
+  },
+  "probes": [
+    {
+      "probe_id": "short_shared_branch",
+      "nodes": 8,
+      "maximum_context_tokens": 32
+    },
+    {
+      "probe_id": "bounded_512_shared_branch",
+      "nodes": 8,
+      "maximum_context_tokens": 512
+    }
+  ],
+  "same_kernel_persistence_replay": true,
+  "independent_mathematical_implementation": false,
+  "strict_probability_gates_passed": true,
+  "semantic_accuracy_assessed": false,
+  "natural_task_performance_claim": false,
+  "h013_repaired_or_rerun": false,
+  "method_promoted": false
+}

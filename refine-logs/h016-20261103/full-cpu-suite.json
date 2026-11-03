@@ -1,0 +1,24 @@
+{
+  "started_utc": "2026-11-03T04:28:39.535602+00:00",
+  "argv": [
+    "D:\\projects\\research\\token_detector\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "--import-mode=importlib",
+    "D:\\projects\\research\\token_detector\\tests",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--color=no"
+  ],
+  "cwd": "C:\\Users\\Lu Yuanshan\\AppData\\Local\\Temp\\h016-paired-installed-20261103-2ugeyh9e\\working",
+  "wheel_sha256": "c2ede5e18ab8f6f93e1433dfdb020bf9368c86a9e3766cc905d08f0a3b4f2414",
+  "installed_target": "C:\\Users\\Lu Yuanshan\\AppData\\Local\\Temp\\h016-paired-installed-20261103-2ugeyh9e\\installed",
+  "wall_limit_seconds": 180,
+  "pid": 35132,
+  "reason": "explicit_180_second_handoff_wall_limit_full_suite_incomplete",
+  "owned_child_tree_terminated": true,
+  "status": "incomplete",
+  "elapsed_seconds": 180.38191880006343,
+  "log_sha256": "07f1b95681dda20bd588187a64186015a7b28e8ee2e055abc15874335e7379b8"
+}

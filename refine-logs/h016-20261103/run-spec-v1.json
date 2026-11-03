@@ -1,0 +1,48 @@
+{
+  "schema": "paired-scope-one-attempt-v1",
+  "preparation": "D:\\projects\\research\\token_detector\\outputs\\h016-paired-scope-20261103\\preparation_v1",
+  "preparation_seal_sha256": "423f223eb163e50ec6b50a5cc54afae3be92de3659113e91b56fe1d8cd2e8300",
+  "package_receipt": "D:\\projects\\research\\token_detector\\outputs\\h016-wheel-20261103\\receipt.json",
+  "package_receipt_sha256": "4f452f9e25b288ebac303f416a8a838979b102c1d4429d37544b2401297736bc",
+  "core_commit": "0cc3c40e3ed61f85002927391a8146e7c6913195",
+  "python": "D:/projects/research/envs/token-detector-cu128/Scripts/python.exe",
+  "output": "D:\\projects\\research\\token_detector\\outputs\\h016-paired-scope-20261103\\observation_v1",
+  "runner_sha256": "d7bb93724bfd1c6fb5d2bbe327c792fa487e2f90977ce6e36ab0dfe2290154f5",
+  "evaluation_protocol_sha256": "cf80e8f06ed0da275120e0836f735bc4d67dfd0ff00ef230ea2bbd794a94d9b1",
+  "budget": {
+    "unique_queries": 32,
+    "complete_candidate_paths": 64,
+    "unique_context_nodes": 312,
+    "new_forward_passes": 312,
+    "reused_nodes": 0,
+    "planned_input_tokens": 86930,
+    "maximum_context_tokens": 308,
+    "retained_full_fp16_vector_bytes": 94808064,
+    "maximum_temporary_python_vector_bytes": 48619520,
+    "generated_tokens": 0,
+    "extra_language_warmups": 0,
+    "by_scope": {
+      "compound": {
+        "unique_queries": 16,
+        "unique_nodes": 156,
+        "new_forward_passes": 156,
+        "input_tokens": 44492
+      },
+      "atomic": {
+        "unique_queries": 16,
+        "unique_nodes": 156,
+        "new_forward_passes": 156,
+        "input_tokens": 42438
+      }
+    }
+  },
+  "core_review_sha256": "d03320bc97928c1812929dbee4f3df8f04196bf2b0fcc447861c399f1af209b7",
+  "delta_review_sha256": "391e26ba58f4101ce55b8f9aa746d6be61e700f24b559ae3bea04151f417be61",
+  "one_attempt": true,
+  "automatic_retry": false,
+  "max_observation_wall_seconds": 1800,
+  "resource_admission": {
+    "minimum_ram_bytes": 3221225472,
+    "minimum_free_gpu_bytes": 3758096384
+  }
+}

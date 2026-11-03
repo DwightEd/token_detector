@@ -1,0 +1,3874 @@
+[
+  {
+    "id": "h007-winner-lex1-s0-r0-b00",
+    "source_key": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+    "scopes": {
+      "compound": {
+        "matrix_id": "feb1de1f3edfc0ee7c50bbc4ae12c84278516dfdf6beddf09705ef56516a95e0",
+        "alignment": {
+          "id": "h007-winner-lex1-s0-r0-b00",
+          "source_sha256": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+          "response_sha256": "8f953250a004879252e8e60d91f3a43e6a75d216d3760c8a93e899ce4b339527",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            86
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Mira Tanswick",
+              "event": "Virelan Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "658f5e596f65723b824a4e116529bdf80fd127483af2f8a42a2390899b095a92",
+              "observation_keys": [
+                "a137c6912d4da2fa6c360297a79fe85f94c6a0ce2809e2f864edba611e4fe3a5",
+                "f04fbcf1eb3cd6483b788f6a7ad0f055ff5f175f736704f7ae1a7c71d4ed7b69"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Mira Tanswick",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Oren Pellford",
+                  "replacement": "[OTHER]"
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "start": 45,
+              "end": 58,
+              "text": "Oren Pellford",
+              "event": "Nerowan Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "cdac9fcd7f94a8d7cdf18845589fe06d255507f7e1609f2e6d46fedbfe7858a7",
+              "observation_keys": [
+                "13c90b04d70d66d8867530207b39386065f9c49e1dec76a8b8ed4ee98032f17e",
+                "543816ec4b7163bfa011e597ee41ec18abaadcc53400c2f278289a1b0c72516e"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Mira Tanswick",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Oren Pellford",
+                  "replacement": "[TARGET]"
+                }
+              ]
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          1,
+          0
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 1
+      },
+      "atomic": {
+        "matrix_id": "8cfd97792fcf98e825606bbe46226319fca4bc3eaf8d5c6661df99b45c212f1b",
+        "alignment": {
+          "id": "h007-winner-lex1-s0-r0-b00",
+          "source_sha256": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+          "response_sha256": "8f953250a004879252e8e60d91f3a43e6a75d216d3760c8a93e899ce4b339527",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            86
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Mira Tanswick",
+              "event": "Virelan Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "880bf0305c7c7a526ca9bf1e92012e91d39e56e79865d2ead8981300394369a5",
+              "observation_keys": [
+                "e0dbc8ab29ff35888548ea05b2d2ebae028c60477344d787710266be4b792dc5",
+                "434d75e2825aea14fc7d5248d1679615cd8a40d061be08aca9008a8479ae2dd3"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Mira Tanswick",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Oren Pellford",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "donor_H011_query_key": "658f5e596f65723b824a4e116529bdf80fd127483af2f8a42a2390899b095a92",
+              "atomic_original_span": [
+                0,
+                39
+              ],
+              "atomic_terminal_added": ". ",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Mira Tanswick",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Oren Pellford",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            },
+            {
+              "index": 1,
+              "start": 45,
+              "end": 58,
+              "text": "Oren Pellford",
+              "event": "Nerowan Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "eaf5b5bfb1f199b811e5e45dc5f3fb97654e9501f0d35a3b2d805511c69eb78d",
+              "observation_keys": [
+                "3261d1c12e6562c8da1ea2af548d1f726d6e2e463d67029c38b496ec3df5d205",
+                "e7a0769ac5673925ea34e4256d12bb4ccc295719b77fac7e4c530f06c4cdcce7"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Mira Tanswick",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Oren Pellford",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "donor_H011_query_key": "cdac9fcd7f94a8d7cdf18845589fe06d255507f7e1609f2e6d46fedbfe7858a7",
+              "atomic_original_span": [
+                45,
+                86
+              ],
+              "atomic_terminal_added": "",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Mira Tanswick",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Oren Pellford",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          1,
+          0
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 1
+      }
+    },
+    "readouts": {
+      "compound_independent_rows_max_slot": {
+        "risk": 0.8633871045928816,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "compound_bijection_joint_assignment_mass": {
+        "risk": 0.33459821850079696,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_independent_rows_max_slot": {
+        "risk": 2.7536989579801663e-05,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_bijection_joint_assignment_mass": {
+        "risk": 4.6982417956087374e-11,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      }
+    },
+    "factor_cell": {
+      "relation_family": "winner",
+      "vocabulary": "lex1",
+      "source_direction": 0,
+      "response_direction": 0,
+      "distractor_count": 0
+    },
+    "construction_binary_truth": 0
+  },
+  {
+    "id": "h007-winner-lex1-s0-r1-b00",
+    "source_key": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+    "scopes": {
+      "compound": {
+        "matrix_id": "feb1de1f3edfc0ee7c50bbc4ae12c84278516dfdf6beddf09705ef56516a95e0",
+        "alignment": {
+          "id": "h007-winner-lex1-s0-r1-b00",
+          "source_sha256": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+          "response_sha256": "b2e0b1dc0c9c92ed771e6e71b186cc7027196a89112997ed3042553357e4e1b4",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            86
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Oren Pellford",
+              "event": "Virelan Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "658f5e596f65723b824a4e116529bdf80fd127483af2f8a42a2390899b095a92",
+              "observation_keys": [
+                "a137c6912d4da2fa6c360297a79fe85f94c6a0ce2809e2f864edba611e4fe3a5",
+                "f04fbcf1eb3cd6483b788f6a7ad0f055ff5f175f736704f7ae1a7c71d4ed7b69"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Oren Pellford",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Mira Tanswick",
+                  "replacement": "[OTHER]"
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "start": 45,
+              "end": 58,
+              "text": "Mira Tanswick",
+              "event": "Nerowan Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "cdac9fcd7f94a8d7cdf18845589fe06d255507f7e1609f2e6d46fedbfe7858a7",
+              "observation_keys": [
+                "13c90b04d70d66d8867530207b39386065f9c49e1dec76a8b8ed4ee98032f17e",
+                "543816ec4b7163bfa011e597ee41ec18abaadcc53400c2f278289a1b0c72516e"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Oren Pellford",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Mira Tanswick",
+                  "replacement": "[TARGET]"
+                }
+              ]
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          0,
+          1
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 0
+      },
+      "atomic": {
+        "matrix_id": "8cfd97792fcf98e825606bbe46226319fca4bc3eaf8d5c6661df99b45c212f1b",
+        "alignment": {
+          "id": "h007-winner-lex1-s0-r1-b00",
+          "source_sha256": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+          "response_sha256": "b2e0b1dc0c9c92ed771e6e71b186cc7027196a89112997ed3042553357e4e1b4",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            86
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Oren Pellford",
+              "event": "Virelan Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "880bf0305c7c7a526ca9bf1e92012e91d39e56e79865d2ead8981300394369a5",
+              "observation_keys": [
+                "e0dbc8ab29ff35888548ea05b2d2ebae028c60477344d787710266be4b792dc5",
+                "434d75e2825aea14fc7d5248d1679615cd8a40d061be08aca9008a8479ae2dd3"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Oren Pellford",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Mira Tanswick",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "donor_H011_query_key": "658f5e596f65723b824a4e116529bdf80fd127483af2f8a42a2390899b095a92",
+              "atomic_original_span": [
+                0,
+                39
+              ],
+              "atomic_terminal_added": ". ",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Oren Pellford",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Mira Tanswick",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            },
+            {
+              "index": 1,
+              "start": 45,
+              "end": 58,
+              "text": "Mira Tanswick",
+              "event": "Nerowan Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "eaf5b5bfb1f199b811e5e45dc5f3fb97654e9501f0d35a3b2d805511c69eb78d",
+              "observation_keys": [
+                "3261d1c12e6562c8da1ea2af548d1f726d6e2e463d67029c38b496ec3df5d205",
+                "e7a0769ac5673925ea34e4256d12bb4ccc295719b77fac7e4c530f06c4cdcce7"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Oren Pellford",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Mira Tanswick",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "donor_H011_query_key": "cdac9fcd7f94a8d7cdf18845589fe06d255507f7e1609f2e6d46fedbfe7858a7",
+              "atomic_original_span": [
+                45,
+                86
+              ],
+              "atomic_terminal_added": "",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Oren Pellford",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Mira Tanswick",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          0,
+          1
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 0
+      }
+    },
+    "readouts": {
+      "compound_independent_rows_max_slot": {
+        "risk": 0.9262984312886644,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "compound_bijection_joint_assignment_mass": {
+        "risk": 0.665401781499203,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_independent_rows_max_slot": {
+        "risk": 0.9999982938900638,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_bijection_joint_assignment_mass": {
+        "risk": 0.9999999999530175,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      }
+    },
+    "factor_cell": {
+      "relation_family": "winner",
+      "vocabulary": "lex1",
+      "source_direction": 0,
+      "response_direction": 1,
+      "distractor_count": 0
+    },
+    "construction_binary_truth": 1
+  },
+  {
+    "id": "h007-winner-lex1-s1-r0-b00",
+    "source_key": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+    "scopes": {
+      "compound": {
+        "matrix_id": "c3b9646065a02a47675c0b0381e2c85a4145366558c772b033cb811a2a4e03ee",
+        "alignment": {
+          "id": "h007-winner-lex1-s1-r0-b00",
+          "source_sha256": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+          "response_sha256": "8f953250a004879252e8e60d91f3a43e6a75d216d3760c8a93e899ce4b339527",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            86
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Mira Tanswick",
+              "event": "Virelan Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "086e756dae1adc3a409927bbc283e13a4c93deead3f073711b9512d0ab3341ef",
+              "observation_keys": [
+                "1c13898c9061dabe3f813546ff5bd59efe8682a4258d374027f2f24a44dd7d14",
+                "7b92cf4947b9e10033f52d2ece75d926280ab72788361ce1ed8293389262c41b"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Mira Tanswick",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Oren Pellford",
+                  "replacement": "[OTHER]"
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "start": 45,
+              "end": 58,
+              "text": "Oren Pellford",
+              "event": "Nerowan Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "3d1f10fa4b037510c87417ea464d0cea54d5e337c16f828531567e9fbf6d9fef",
+              "observation_keys": [
+                "1901449c0826930683394f8a11b28789ac166eae5d4f9c58c77794e401b3ec1c",
+                "7838f9ff176f47c4228df49b74b842c835b81c966c3274c8dca7d8e73966a0ee"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Mira Tanswick",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Oren Pellford",
+                  "replacement": "[TARGET]"
+                }
+              ]
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          1,
+          0
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 1
+      },
+      "atomic": {
+        "matrix_id": "f7c690864d2fd67a0a7367eec602e2200f1e2fc3394ed7325224d93b953421d3",
+        "alignment": {
+          "id": "h007-winner-lex1-s1-r0-b00",
+          "source_sha256": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+          "response_sha256": "8f953250a004879252e8e60d91f3a43e6a75d216d3760c8a93e899ce4b339527",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            86
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Mira Tanswick",
+              "event": "Virelan Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "5eb755086e42d53855cbb55ac4883431af7fa20215bf8d71ecc709cd1667a12d",
+              "observation_keys": [
+                "31ea574b29472842f884e1c079a9bb1f31434c9d780e9a174ae41cbf684b144e",
+                "c9dbc66362e3049b86612b141dfca32153ff6e781aa9dbc2312255ad94b7f0d7"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Mira Tanswick",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Oren Pellford",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "donor_H011_query_key": "086e756dae1adc3a409927bbc283e13a4c93deead3f073711b9512d0ab3341ef",
+              "atomic_original_span": [
+                0,
+                39
+              ],
+              "atomic_terminal_added": ". ",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Mira Tanswick",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Oren Pellford",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            },
+            {
+              "index": 1,
+              "start": 45,
+              "end": 58,
+              "text": "Oren Pellford",
+              "event": "Nerowan Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "f5f5d7b5ab731dd5597cc75e9fb69de401a2050202d5207a3c0bf0acf8584de5",
+              "observation_keys": [
+                "e8d0e2288ee6c78d404c99d803113cccf2050a922e8a77531a7a28ad83dde5d8",
+                "89b94dd3a26b8550c21ea0b5bcfa56fa79e9ce29a52feb7d383ced9258d16f15"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Mira Tanswick",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Oren Pellford",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "donor_H011_query_key": "3d1f10fa4b037510c87417ea464d0cea54d5e337c16f828531567e9fbf6d9fef",
+              "atomic_original_span": [
+                45,
+                86
+              ],
+              "atomic_terminal_added": "",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Mira Tanswick",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Oren Pellford",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          1,
+          0
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 1
+      }
+    },
+    "readouts": {
+      "compound_independent_rows_max_slot": {
+        "risk": 0.6859380417475875,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "compound_bijection_joint_assignment_mass": {
+        "risk": 0.7248752002225307,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_independent_rows_max_slot": {
+        "risk": 0.999582649904097,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_bijection_joint_assignment_mass": {
+        "risk": 0.9999957770349153,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      }
+    },
+    "factor_cell": {
+      "relation_family": "winner",
+      "vocabulary": "lex1",
+      "source_direction": 1,
+      "response_direction": 0,
+      "distractor_count": 0
+    },
+    "construction_binary_truth": 1
+  },
+  {
+    "id": "h007-winner-lex1-s1-r1-b00",
+    "source_key": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+    "scopes": {
+      "compound": {
+        "matrix_id": "c3b9646065a02a47675c0b0381e2c85a4145366558c772b033cb811a2a4e03ee",
+        "alignment": {
+          "id": "h007-winner-lex1-s1-r1-b00",
+          "source_sha256": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+          "response_sha256": "b2e0b1dc0c9c92ed771e6e71b186cc7027196a89112997ed3042553357e4e1b4",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            86
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Oren Pellford",
+              "event": "Virelan Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "086e756dae1adc3a409927bbc283e13a4c93deead3f073711b9512d0ab3341ef",
+              "observation_keys": [
+                "1c13898c9061dabe3f813546ff5bd59efe8682a4258d374027f2f24a44dd7d14",
+                "7b92cf4947b9e10033f52d2ece75d926280ab72788361ce1ed8293389262c41b"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Oren Pellford",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Mira Tanswick",
+                  "replacement": "[OTHER]"
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "start": 45,
+              "end": 58,
+              "text": "Mira Tanswick",
+              "event": "Nerowan Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "3d1f10fa4b037510c87417ea464d0cea54d5e337c16f828531567e9fbf6d9fef",
+              "observation_keys": [
+                "1901449c0826930683394f8a11b28789ac166eae5d4f9c58c77794e401b3ec1c",
+                "7838f9ff176f47c4228df49b74b842c835b81c966c3274c8dca7d8e73966a0ee"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Oren Pellford",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Mira Tanswick",
+                  "replacement": "[TARGET]"
+                }
+              ]
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          0,
+          1
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 0
+      },
+      "atomic": {
+        "matrix_id": "f7c690864d2fd67a0a7367eec602e2200f1e2fc3394ed7325224d93b953421d3",
+        "alignment": {
+          "id": "h007-winner-lex1-s1-r1-b00",
+          "source_sha256": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+          "response_sha256": "b2e0b1dc0c9c92ed771e6e71b186cc7027196a89112997ed3042553357e4e1b4",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            86
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Oren Pellford",
+              "event": "Virelan Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "5eb755086e42d53855cbb55ac4883431af7fa20215bf8d71ecc709cd1667a12d",
+              "observation_keys": [
+                "31ea574b29472842f884e1c079a9bb1f31434c9d780e9a174ae41cbf684b144e",
+                "c9dbc66362e3049b86612b141dfca32153ff6e781aa9dbc2312255ad94b7f0d7"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Oren Pellford",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Mira Tanswick",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "donor_H011_query_key": "086e756dae1adc3a409927bbc283e13a4c93deead3f073711b9512d0ab3341ef",
+              "atomic_original_span": [
+                0,
+                39
+              ],
+              "atomic_terminal_added": ". ",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Oren Pellford",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Mira Tanswick",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            },
+            {
+              "index": 1,
+              "start": 45,
+              "end": 58,
+              "text": "Mira Tanswick",
+              "event": "Nerowan Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "f5f5d7b5ab731dd5597cc75e9fb69de401a2050202d5207a3c0bf0acf8584de5",
+              "observation_keys": [
+                "e8d0e2288ee6c78d404c99d803113cccf2050a922e8a77531a7a28ad83dde5d8",
+                "89b94dd3a26b8550c21ea0b5bcfa56fa79e9ce29a52feb7d383ced9258d16f15"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Oren Pellford",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Mira Tanswick",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "donor_H011_query_key": "3d1f10fa4b037510c87417ea464d0cea54d5e337c16f828531567e9fbf6d9fef",
+              "atomic_original_span": [
+                45,
+                86
+              ],
+              "atomic_terminal_added": "",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Oren Pellford",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 45,
+                  "end": 58,
+                  "text": "Mira Tanswick",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          0,
+          1
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 0
+      }
+    },
+    "readouts": {
+      "compound_independent_rows_max_slot": {
+        "risk": 0.45324260011761464,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "compound_bijection_joint_assignment_mass": {
+        "risk": 0.2751247997774693,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_independent_rows_max_slot": {
+        "risk": 0.010013063726485139,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_bijection_joint_assignment_mass": {
+        "risk": 4.222965084732522e-06,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      }
+    },
+    "factor_cell": {
+      "relation_family": "winner",
+      "vocabulary": "lex1",
+      "source_direction": 1,
+      "response_direction": 1,
+      "distractor_count": 0
+    },
+    "construction_binary_truth": 0
+  },
+  {
+    "id": "h007-winner-lex2-s0-r0-b00",
+    "source_key": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+    "scopes": {
+      "compound": {
+        "matrix_id": "8179f7338530611a50a5b7bf49154c8c1732fb1d523862b353025698eddf8518",
+        "alignment": {
+          "id": "h007-winner-lex2-s0-r0-b00",
+          "source_sha256": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+          "response_sha256": "6da330d01c7cd625fca3e7eb78df59d45db2762fe7f26bdc6839452f69b95178",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            88
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Sana Whitmere",
+              "event": "Raventon Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "618b43f92ddab960bcaf3d69f8ebcc6b3c0b44906d7a60e183ba4be0109a2c2f",
+              "observation_keys": [
+                "10322e3f9582e28a1e268e374c377bc127d6a64ef53c6bb023b570ece96b8431",
+                "63c2d2f0fafc04b17bffe86b930b311d25af6861cf377c8cb498d6688a73ed09"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Sana Whitmere",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Evan Calderby",
+                  "replacement": "[OTHER]"
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "start": 46,
+              "end": 59,
+              "text": "Evan Calderby",
+              "event": "Dalespar Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "cf2a7e2a2198e3153a7014d4a72b8ff1939ab898c666a79d3434a4560c27e654",
+              "observation_keys": [
+                "447a077ec5e100511e6798f61c5476197cbb7e6db7c1afc89e79078ceb63197e",
+                "c6cdd2559b03c90fbf180cc8b8d52837ebf44759029f3ec059a8b9c618b05df4"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Sana Whitmere",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Evan Calderby",
+                  "replacement": "[TARGET]"
+                }
+              ]
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          0,
+          1
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 0
+      },
+      "atomic": {
+        "matrix_id": "9a9b279da9fe53b8cd929b9bec08e9d6d26f4a9fa6d3a745027778693800f93a",
+        "alignment": {
+          "id": "h007-winner-lex2-s0-r0-b00",
+          "source_sha256": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+          "response_sha256": "6da330d01c7cd625fca3e7eb78df59d45db2762fe7f26bdc6839452f69b95178",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            88
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Sana Whitmere",
+              "event": "Raventon Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "23d151b278cb2dc3045fb17ace6a6a963b77414c8c0886f94631e9cca095f79f",
+              "observation_keys": [
+                "2b2b723dea4bd2cac5e140deabde70d563b81288f2238528950f994b2b10938c",
+                "f7e89203ad9fa68a0397388e0917c6f2c7c99d027f028fd9dcd7ab451883c2e3"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Sana Whitmere",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Evan Calderby",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "donor_H011_query_key": "618b43f92ddab960bcaf3d69f8ebcc6b3c0b44906d7a60e183ba4be0109a2c2f",
+              "atomic_original_span": [
+                0,
+                40
+              ],
+              "atomic_terminal_added": ". ",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Sana Whitmere",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Evan Calderby",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            },
+            {
+              "index": 1,
+              "start": 46,
+              "end": 59,
+              "text": "Evan Calderby",
+              "event": "Dalespar Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "64fb2c4fa9b88546cdbb28baecd8bf889b6e4c47a38d7aebfc1fde315f7fc623",
+              "observation_keys": [
+                "c1890ace218c6e3a8a30933670f2d57f6fa486bb9aa717d4813a37535f4b1a77",
+                "dfec59a265d8862aa8cfca210475d25bb63114781218a0867ce5b7867a73bf11"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Sana Whitmere",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Evan Calderby",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "donor_H011_query_key": "cf2a7e2a2198e3153a7014d4a72b8ff1939ab898c666a79d3434a4560c27e654",
+              "atomic_original_span": [
+                46,
+                88
+              ],
+              "atomic_terminal_added": "",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Sana Whitmere",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Evan Calderby",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          0,
+          1
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 0
+      }
+    },
+    "readouts": {
+      "compound_independent_rows_max_slot": {
+        "risk": 0.9715734007117839,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "compound_bijection_joint_assignment_mass": {
+        "risk": 0.3007331822185195,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_independent_rows_max_slot": {
+        "risk": 8.932078973677982e-06,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_bijection_joint_assignment_mass": {
+        "risk": 3.05044878246008e-12,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      }
+    },
+    "factor_cell": {
+      "relation_family": "winner",
+      "vocabulary": "lex2",
+      "source_direction": 0,
+      "response_direction": 0,
+      "distractor_count": 0
+    },
+    "construction_binary_truth": 0
+  },
+  {
+    "id": "h007-winner-lex2-s0-r1-b00",
+    "source_key": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+    "scopes": {
+      "compound": {
+        "matrix_id": "8179f7338530611a50a5b7bf49154c8c1732fb1d523862b353025698eddf8518",
+        "alignment": {
+          "id": "h007-winner-lex2-s0-r1-b00",
+          "source_sha256": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+          "response_sha256": "c978130a156bdf1ae510a6540629a943a5e6d40b3f7757e9410a703811d305bb",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            88
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Evan Calderby",
+              "event": "Raventon Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "618b43f92ddab960bcaf3d69f8ebcc6b3c0b44906d7a60e183ba4be0109a2c2f",
+              "observation_keys": [
+                "10322e3f9582e28a1e268e374c377bc127d6a64ef53c6bb023b570ece96b8431",
+                "63c2d2f0fafc04b17bffe86b930b311d25af6861cf377c8cb498d6688a73ed09"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Evan Calderby",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Sana Whitmere",
+                  "replacement": "[OTHER]"
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "start": 46,
+              "end": 59,
+              "text": "Sana Whitmere",
+              "event": "Dalespar Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "cf2a7e2a2198e3153a7014d4a72b8ff1939ab898c666a79d3434a4560c27e654",
+              "observation_keys": [
+                "447a077ec5e100511e6798f61c5476197cbb7e6db7c1afc89e79078ceb63197e",
+                "c6cdd2559b03c90fbf180cc8b8d52837ebf44759029f3ec059a8b9c618b05df4"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Evan Calderby",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Sana Whitmere",
+                  "replacement": "[TARGET]"
+                }
+              ]
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          1,
+          0
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 1
+      },
+      "atomic": {
+        "matrix_id": "9a9b279da9fe53b8cd929b9bec08e9d6d26f4a9fa6d3a745027778693800f93a",
+        "alignment": {
+          "id": "h007-winner-lex2-s0-r1-b00",
+          "source_sha256": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+          "response_sha256": "c978130a156bdf1ae510a6540629a943a5e6d40b3f7757e9410a703811d305bb",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            88
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Evan Calderby",
+              "event": "Raventon Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "23d151b278cb2dc3045fb17ace6a6a963b77414c8c0886f94631e9cca095f79f",
+              "observation_keys": [
+                "2b2b723dea4bd2cac5e140deabde70d563b81288f2238528950f994b2b10938c",
+                "f7e89203ad9fa68a0397388e0917c6f2c7c99d027f028fd9dcd7ab451883c2e3"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Evan Calderby",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Sana Whitmere",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "donor_H011_query_key": "618b43f92ddab960bcaf3d69f8ebcc6b3c0b44906d7a60e183ba4be0109a2c2f",
+              "atomic_original_span": [
+                0,
+                40
+              ],
+              "atomic_terminal_added": ". ",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Evan Calderby",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Sana Whitmere",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            },
+            {
+              "index": 1,
+              "start": 46,
+              "end": 59,
+              "text": "Sana Whitmere",
+              "event": "Dalespar Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "64fb2c4fa9b88546cdbb28baecd8bf889b6e4c47a38d7aebfc1fde315f7fc623",
+              "observation_keys": [
+                "c1890ace218c6e3a8a30933670f2d57f6fa486bb9aa717d4813a37535f4b1a77",
+                "dfec59a265d8862aa8cfca210475d25bb63114781218a0867ce5b7867a73bf11"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Evan Calderby",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Sana Whitmere",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "donor_H011_query_key": "cf2a7e2a2198e3153a7014d4a72b8ff1939ab898c666a79d3434a4560c27e654",
+              "atomic_original_span": [
+                46,
+                88
+              ],
+              "atomic_terminal_added": "",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Evan Calderby",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Sana Whitmere",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          1,
+          0
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 1
+      }
+    },
+    "readouts": {
+      "compound_independent_rows_max_slot": {
+        "risk": 0.9875732647699116,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "compound_bijection_joint_assignment_mass": {
+        "risk": 0.6992668177814805,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_independent_rows_max_slot": {
+        "risk": 0.9999996584926458,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_bijection_joint_assignment_mass": {
+        "risk": 0.9999999999969496,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      }
+    },
+    "factor_cell": {
+      "relation_family": "winner",
+      "vocabulary": "lex2",
+      "source_direction": 0,
+      "response_direction": 1,
+      "distractor_count": 0
+    },
+    "construction_binary_truth": 1
+  },
+  {
+    "id": "h007-winner-lex2-s1-r0-b00",
+    "source_key": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+    "scopes": {
+      "compound": {
+        "matrix_id": "0ed51d46eeabc331a921764c33e9bb65c6ec01882142b9d7aef9ca1ee064bc4c",
+        "alignment": {
+          "id": "h007-winner-lex2-s1-r0-b00",
+          "source_sha256": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+          "response_sha256": "6da330d01c7cd625fca3e7eb78df59d45db2762fe7f26bdc6839452f69b95178",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            88
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Sana Whitmere",
+              "event": "Raventon Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "2d654cced3729202bd4d4d0a528dd4b2e269893f7d3a39b53e36e0ae7e66eb33",
+              "observation_keys": [
+                "c3bb54f8dc354e8f71bd652fcc180c162ac6db01cda9894d5c59816dee863e4d",
+                "98b048a4cb52c7b38e24158320eb5944c9460d1e30d50cb3c25e5f50ba1e7b20"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Sana Whitmere",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Evan Calderby",
+                  "replacement": "[OTHER]"
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "start": 46,
+              "end": 59,
+              "text": "Evan Calderby",
+              "event": "Dalespar Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "17f7766ce28dcaf0498786797c790981f166228bf56e6b1fce6a51bf956dfc12",
+              "observation_keys": [
+                "3ed646db408a30398c904c0005e00c866d29273b7882524387ae7bb186d000d0",
+                "93581de84a7623301ad2a15085f6366bd3f2b948f573af9715bc3ca4d2aa2e57"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Sana Whitmere",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Evan Calderby",
+                  "replacement": "[TARGET]"
+                }
+              ]
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          0,
+          1
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 0
+      },
+      "atomic": {
+        "matrix_id": "dc4018a560ccb2c0efbffaeece9eb5876fd71e526b91d1cfe9d5935c5b41cec2",
+        "alignment": {
+          "id": "h007-winner-lex2-s1-r0-b00",
+          "source_sha256": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+          "response_sha256": "6da330d01c7cd625fca3e7eb78df59d45db2762fe7f26bdc6839452f69b95178",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            88
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Sana Whitmere",
+              "event": "Raventon Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "6800c110339ba5aa3dc017334960c75d02c52225162c5f14190013f9e96271e9",
+              "observation_keys": [
+                "136237782518d61cf1b4b0db55078fd2bb31f3576fa0ab94848024566da70429",
+                "84efad4021fd7557ca1bfde24c15ceb8093cc2bc53e02492ed7028e379900531"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Sana Whitmere",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Evan Calderby",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "donor_H011_query_key": "2d654cced3729202bd4d4d0a528dd4b2e269893f7d3a39b53e36e0ae7e66eb33",
+              "atomic_original_span": [
+                0,
+                40
+              ],
+              "atomic_terminal_added": ". ",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Sana Whitmere",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Evan Calderby",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            },
+            {
+              "index": 1,
+              "start": 46,
+              "end": 59,
+              "text": "Evan Calderby",
+              "event": "Dalespar Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "983dcfcacd182e6eca9c1853df5105a0360cedfd493ad7b27325cad5d07de264",
+              "observation_keys": [
+                "871d5c3c1d69ea92a8b8d230ff8e93c79ce68a6db94c9e0151323af9f84f9afd",
+                "95f413418c50834f85cc31989b66b403fce2d1cccd95cb37292d98c4b214d213"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Sana Whitmere",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Evan Calderby",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "donor_H011_query_key": "17f7766ce28dcaf0498786797c790981f166228bf56e6b1fce6a51bf956dfc12",
+              "atomic_original_span": [
+                46,
+                88
+              ],
+              "atomic_terminal_added": "",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Sana Whitmere",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Evan Calderby",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          0,
+          1
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 0
+      }
+    },
+    "readouts": {
+      "compound_independent_rows_max_slot": {
+        "risk": 0.9950956238176285,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "compound_bijection_joint_assignment_mass": {
+        "risk": 0.6224555912894585,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_independent_rows_max_slot": {
+        "risk": 0.9999987909320257,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_bijection_joint_assignment_mass": {
+        "risk": 0.9999274745935904,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      }
+    },
+    "factor_cell": {
+      "relation_family": "winner",
+      "vocabulary": "lex2",
+      "source_direction": 1,
+      "response_direction": 0,
+      "distractor_count": 0
+    },
+    "construction_binary_truth": 1
+  },
+  {
+    "id": "h007-winner-lex2-s1-r1-b00",
+    "source_key": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+    "scopes": {
+      "compound": {
+        "matrix_id": "0ed51d46eeabc331a921764c33e9bb65c6ec01882142b9d7aef9ca1ee064bc4c",
+        "alignment": {
+          "id": "h007-winner-lex2-s1-r1-b00",
+          "source_sha256": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+          "response_sha256": "c978130a156bdf1ae510a6540629a943a5e6d40b3f7757e9410a703811d305bb",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            88
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Evan Calderby",
+              "event": "Raventon Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "2d654cced3729202bd4d4d0a528dd4b2e269893f7d3a39b53e36e0ae7e66eb33",
+              "observation_keys": [
+                "c3bb54f8dc354e8f71bd652fcc180c162ac6db01cda9894d5c59816dee863e4d",
+                "98b048a4cb52c7b38e24158320eb5944c9460d1e30d50cb3c25e5f50ba1e7b20"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Evan Calderby",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Sana Whitmere",
+                  "replacement": "[OTHER]"
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "start": 46,
+              "end": 59,
+              "text": "Sana Whitmere",
+              "event": "Dalespar Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "17f7766ce28dcaf0498786797c790981f166228bf56e6b1fce6a51bf956dfc12",
+              "observation_keys": [
+                "3ed646db408a30398c904c0005e00c866d29273b7882524387ae7bb186d000d0",
+                "93581de84a7623301ad2a15085f6366bd3f2b948f573af9715bc3ca4d2aa2e57"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Evan Calderby",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Sana Whitmere",
+                  "replacement": "[TARGET]"
+                }
+              ]
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          1,
+          0
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 1
+      },
+      "atomic": {
+        "matrix_id": "dc4018a560ccb2c0efbffaeece9eb5876fd71e526b91d1cfe9d5935c5b41cec2",
+        "alignment": {
+          "id": "h007-winner-lex2-s1-r1-b00",
+          "source_sha256": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+          "response_sha256": "c978130a156bdf1ae510a6540629a943a5e6d40b3f7757e9410a703811d305bb",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            88
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Evan Calderby",
+              "event": "Raventon Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "6800c110339ba5aa3dc017334960c75d02c52225162c5f14190013f9e96271e9",
+              "observation_keys": [
+                "136237782518d61cf1b4b0db55078fd2bb31f3576fa0ab94848024566da70429",
+                "84efad4021fd7557ca1bfde24c15ceb8093cc2bc53e02492ed7028e379900531"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Evan Calderby",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Sana Whitmere",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "donor_H011_query_key": "2d654cced3729202bd4d4d0a528dd4b2e269893f7d3a39b53e36e0ae7e66eb33",
+              "atomic_original_span": [
+                0,
+                40
+              ],
+              "atomic_terminal_added": ". ",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Evan Calderby",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Sana Whitmere",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            },
+            {
+              "index": 1,
+              "start": 46,
+              "end": 59,
+              "text": "Sana Whitmere",
+              "event": "Dalespar Cup",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "983dcfcacd182e6eca9c1853df5105a0360cedfd493ad7b27325cad5d07de264",
+              "observation_keys": [
+                "871d5c3c1d69ea92a8b8d230ff8e93c79ce68a6db94c9e0151323af9f84f9afd",
+                "95f413418c50834f85cc31989b66b403fce2d1cccd95cb37292d98c4b214d213"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Evan Calderby",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Sana Whitmere",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "donor_H011_query_key": "17f7766ce28dcaf0498786797c790981f166228bf56e6b1fce6a51bf956dfc12",
+              "atomic_original_span": [
+                46,
+                88
+              ],
+              "atomic_terminal_added": "",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Evan Calderby",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 46,
+                  "end": 59,
+                  "text": "Sana Whitmere",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          1,
+          0
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 1
+      }
+    },
+    "readouts": {
+      "compound_independent_rows_max_slot": {
+        "risk": 0.9919398223568869,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "compound_bijection_joint_assignment_mass": {
+        "risk": 0.3775444087105416,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_independent_rows_max_slot": {
+        "risk": 0.9836035562491535,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_bijection_joint_assignment_mass": {
+        "risk": 7.252540640967364e-05,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      }
+    },
+    "factor_cell": {
+      "relation_family": "winner",
+      "vocabulary": "lex2",
+      "source_direction": 1,
+      "response_direction": 1,
+      "distractor_count": 0
+    },
+    "construction_binary_truth": 0
+  },
+  {
+    "id": "h007-sole_signer-lex1-s0-r0-b00",
+    "source_key": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+    "scopes": {
+      "compound": {
+        "matrix_id": "5c7523c90ec3d86f6b42038c618edab8469f8c7069e8bc15d5a85e4709d602f4",
+        "alignment": {
+          "id": "h007-sole_signer-lex1-s0-r0-b00",
+          "source_sha256": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+          "response_sha256": "8aa9d578d45a6af90788ccf0081a70c97022dbfc11b0b03a96334cd45faec674",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            120
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 14,
+              "text": "Lena Cresswell",
+              "event": "Quorren Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "9f5cea982f299d4b898e6617773893fff4f3c34ed5d23a9e21251845eb9e2473",
+              "observation_keys": [
+                "9230811ed95c520a819af8e1b1cc3a3e6cb85a76f0a95df1c0fc3eebeddb6d27",
+                "71359ce479d3e7da3d3ef2d5a537258130218a8a3ae2957b13aa40f81301ec08"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Lena Cresswell",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 62,
+                  "end": 75,
+                  "text": "Tomas Brindle",
+                  "replacement": "[OTHER]"
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "start": 62,
+              "end": 75,
+              "text": "Tomas Brindle",
+              "event": "Meliston Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "6b8538734c15f5aff2580bd2318a344e7338c3c67d55a034c651fdc312584644",
+              "observation_keys": [
+                "a01e553514b1ead0aa58e83960d3580b3bf79dd5448601b1b244f0d9df4960d5",
+                "f2b449690941f5639ec6dc4bd740641d7d9fd712b18b845bcedfac2a3b6bc08b"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Lena Cresswell",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 62,
+                  "end": 75,
+                  "text": "Tomas Brindle",
+                  "replacement": "[TARGET]"
+                }
+              ]
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          1,
+          0
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 1
+      },
+      "atomic": {
+        "matrix_id": "6baa82cd5056d8070e9ac61134add8ec656f6c3bedce1279b3d533bf4ce2fc86",
+        "alignment": {
+          "id": "h007-sole_signer-lex1-s0-r0-b00",
+          "source_sha256": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+          "response_sha256": "8aa9d578d45a6af90788ccf0081a70c97022dbfc11b0b03a96334cd45faec674",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            120
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 14,
+              "text": "Lena Cresswell",
+              "event": "Quorren Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "f4e28e29766c207b2778f27a3940ff7aa481a72c8416a84e296841b8626055aa",
+              "observation_keys": [
+                "b75861aa552365553b08a17f5be8a1131260904f7a9da44d43d4cccbd8626e0f",
+                "4dba5e7c0d2dc93b96962d6970386e768c63b899297b89675b2595fed7cffa4b"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Lena Cresswell",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 62,
+                  "end": 75,
+                  "text": "Tomas Brindle",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "donor_H011_query_key": "9f5cea982f299d4b898e6617773893fff4f3c34ed5d23a9e21251845eb9e2473",
+              "atomic_original_span": [
+                0,
+                56
+              ],
+              "atomic_terminal_added": ". ",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Lena Cresswell",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 62,
+                  "end": 75,
+                  "text": "Tomas Brindle",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            },
+            {
+              "index": 1,
+              "start": 62,
+              "end": 75,
+              "text": "Tomas Brindle",
+              "event": "Meliston Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "bf21b85a8bf13c95973b7b5af322e79fbf3bc20261c3a6d7c771858f9ef409ea",
+              "observation_keys": [
+                "930a14305194505bc0b9dd701ee1eee5882694ce71be9392bcc25618f3fbaf3f",
+                "79bea1cba1d17639deec3d4e36d0e38d04a8af23cdf162cf31390cc7823279ef"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Lena Cresswell",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 62,
+                  "end": 75,
+                  "text": "Tomas Brindle",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "donor_H011_query_key": "6b8538734c15f5aff2580bd2318a344e7338c3c67d55a034c651fdc312584644",
+              "atomic_original_span": [
+                62,
+                120
+              ],
+              "atomic_terminal_added": "",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Lena Cresswell",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 62,
+                  "end": 75,
+                  "text": "Tomas Brindle",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          1,
+          0
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 1
+      }
+    },
+    "readouts": {
+      "compound_independent_rows_max_slot": {
+        "risk": 0.5926653914482721,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "compound_bijection_joint_assignment_mass": {
+        "risk": 0.014503329763152495,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_independent_rows_max_slot": {
+        "risk": 0.0018675724639759528,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_bijection_joint_assignment_mass": {
+        "risk": 2.8769231441572174e-10,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      }
+    },
+    "factor_cell": {
+      "relation_family": "sole_signer",
+      "vocabulary": "lex1",
+      "source_direction": 0,
+      "response_direction": 0,
+      "distractor_count": 0
+    },
+    "construction_binary_truth": 0
+  },
+  {
+    "id": "h007-sole_signer-lex1-s0-r1-b00",
+    "source_key": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+    "scopes": {
+      "compound": {
+        "matrix_id": "5c7523c90ec3d86f6b42038c618edab8469f8c7069e8bc15d5a85e4709d602f4",
+        "alignment": {
+          "id": "h007-sole_signer-lex1-s0-r1-b00",
+          "source_sha256": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+          "response_sha256": "74edee101ee2ede70c71943beb266b1770d34328f121aa14772bc6d6c3ca82ad",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            120
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Tomas Brindle",
+              "event": "Quorren Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "9f5cea982f299d4b898e6617773893fff4f3c34ed5d23a9e21251845eb9e2473",
+              "observation_keys": [
+                "9230811ed95c520a819af8e1b1cc3a3e6cb85a76f0a95df1c0fc3eebeddb6d27",
+                "71359ce479d3e7da3d3ef2d5a537258130218a8a3ae2957b13aa40f81301ec08"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Tomas Brindle",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 61,
+                  "end": 75,
+                  "text": "Lena Cresswell",
+                  "replacement": "[OTHER]"
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "start": 61,
+              "end": 75,
+              "text": "Lena Cresswell",
+              "event": "Meliston Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "6b8538734c15f5aff2580bd2318a344e7338c3c67d55a034c651fdc312584644",
+              "observation_keys": [
+                "a01e553514b1ead0aa58e83960d3580b3bf79dd5448601b1b244f0d9df4960d5",
+                "f2b449690941f5639ec6dc4bd740641d7d9fd712b18b845bcedfac2a3b6bc08b"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Tomas Brindle",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 61,
+                  "end": 75,
+                  "text": "Lena Cresswell",
+                  "replacement": "[TARGET]"
+                }
+              ]
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          0,
+          1
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 0
+      },
+      "atomic": {
+        "matrix_id": "6baa82cd5056d8070e9ac61134add8ec656f6c3bedce1279b3d533bf4ce2fc86",
+        "alignment": {
+          "id": "h007-sole_signer-lex1-s0-r1-b00",
+          "source_sha256": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+          "response_sha256": "74edee101ee2ede70c71943beb266b1770d34328f121aa14772bc6d6c3ca82ad",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            120
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Tomas Brindle",
+              "event": "Quorren Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "f4e28e29766c207b2778f27a3940ff7aa481a72c8416a84e296841b8626055aa",
+              "observation_keys": [
+                "b75861aa552365553b08a17f5be8a1131260904f7a9da44d43d4cccbd8626e0f",
+                "4dba5e7c0d2dc93b96962d6970386e768c63b899297b89675b2595fed7cffa4b"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Tomas Brindle",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 61,
+                  "end": 75,
+                  "text": "Lena Cresswell",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "donor_H011_query_key": "9f5cea982f299d4b898e6617773893fff4f3c34ed5d23a9e21251845eb9e2473",
+              "atomic_original_span": [
+                0,
+                55
+              ],
+              "atomic_terminal_added": ". ",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Tomas Brindle",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 61,
+                  "end": 75,
+                  "text": "Lena Cresswell",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            },
+            {
+              "index": 1,
+              "start": 61,
+              "end": 75,
+              "text": "Lena Cresswell",
+              "event": "Meliston Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "bf21b85a8bf13c95973b7b5af322e79fbf3bc20261c3a6d7c771858f9ef409ea",
+              "observation_keys": [
+                "930a14305194505bc0b9dd701ee1eee5882694ce71be9392bcc25618f3fbaf3f",
+                "79bea1cba1d17639deec3d4e36d0e38d04a8af23cdf162cf31390cc7823279ef"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Tomas Brindle",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 61,
+                  "end": 75,
+                  "text": "Lena Cresswell",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "donor_H011_query_key": "6b8538734c15f5aff2580bd2318a344e7338c3c67d55a034c651fdc312584644",
+              "atomic_original_span": [
+                61,
+                120
+              ],
+              "atomic_terminal_added": "",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Tomas Brindle",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 61,
+                  "end": 75,
+                  "text": "Lena Cresswell",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          0,
+          1
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 0
+      }
+    },
+    "readouts": {
+      "compound_independent_rows_max_slot": {
+        "risk": 0.9899865530936692,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "compound_bijection_joint_assignment_mass": {
+        "risk": 0.9854966702368474,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_independent_rows_max_slot": {
+        "risk": 0.999999846241551,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_bijection_joint_assignment_mass": {
+        "risk": 0.9999999997123076,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      }
+    },
+    "factor_cell": {
+      "relation_family": "sole_signer",
+      "vocabulary": "lex1",
+      "source_direction": 0,
+      "response_direction": 1,
+      "distractor_count": 0
+    },
+    "construction_binary_truth": 1
+  },
+  {
+    "id": "h007-sole_signer-lex1-s1-r0-b00",
+    "source_key": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+    "scopes": {
+      "compound": {
+        "matrix_id": "35c2229014c0381beb058fc0a3e20719284dce3d158b4d7144abfcd071fb9f88",
+        "alignment": {
+          "id": "h007-sole_signer-lex1-s1-r0-b00",
+          "source_sha256": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+          "response_sha256": "8aa9d578d45a6af90788ccf0081a70c97022dbfc11b0b03a96334cd45faec674",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            120
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 14,
+              "text": "Lena Cresswell",
+              "event": "Quorren Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "a8a629ac639013c6b1b8cbc39180e28aff11775f62b08174cfa3ad35072424e2",
+              "observation_keys": [
+                "42d7adda6161ae53fcc4f2b965be5fe99e4886a7eabb392028219dabfc9037bf",
+                "87589f2eda61c61897f15dc60c80864bf01be5617d7c3a789f3aa3904d9c61f0"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Lena Cresswell",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 62,
+                  "end": 75,
+                  "text": "Tomas Brindle",
+                  "replacement": "[OTHER]"
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "start": 62,
+              "end": 75,
+              "text": "Tomas Brindle",
+              "event": "Meliston Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "5ac477db59497e57e73373b945758461564127ef911f7e2aa1ec43d7ffeb664d",
+              "observation_keys": [
+                "ae0989392e9f40355a9979a2aea977ee61a75644acf3577f06263010b100f991",
+                "8e6b790f7488150a6a1fd4ff57b3b7f29abdf55ddd08181e72ad8c3797c5979b"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Lena Cresswell",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 62,
+                  "end": 75,
+                  "text": "Tomas Brindle",
+                  "replacement": "[TARGET]"
+                }
+              ]
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          1,
+          0
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 1
+      },
+      "atomic": {
+        "matrix_id": "51c9a89ac283013273fa760c95dc0fe7bf5caa3236a399e0025e5c7bfe16cebb",
+        "alignment": {
+          "id": "h007-sole_signer-lex1-s1-r0-b00",
+          "source_sha256": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+          "response_sha256": "8aa9d578d45a6af90788ccf0081a70c97022dbfc11b0b03a96334cd45faec674",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            120
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 14,
+              "text": "Lena Cresswell",
+              "event": "Quorren Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "06d07c77bd17d6e51d2097783c5c3bf42cfdaadf18d50f37f3519d685d3908e8",
+              "observation_keys": [
+                "6708dfcf6cb825ae580366a687b5f52798024e648f3b157379b3bafecafd0fe6",
+                "0a0be3b1edb166b77f8f9c413988e8074ed66c0eeacb5356012de6030b708ac4"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Lena Cresswell",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 62,
+                  "end": 75,
+                  "text": "Tomas Brindle",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "donor_H011_query_key": "a8a629ac639013c6b1b8cbc39180e28aff11775f62b08174cfa3ad35072424e2",
+              "atomic_original_span": [
+                0,
+                56
+              ],
+              "atomic_terminal_added": ". ",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Lena Cresswell",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 62,
+                  "end": 75,
+                  "text": "Tomas Brindle",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            },
+            {
+              "index": 1,
+              "start": 62,
+              "end": 75,
+              "text": "Tomas Brindle",
+              "event": "Meliston Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "fe09e4fd61e31871119820771aab7452284f5e3706103097478a7b8092823087",
+              "observation_keys": [
+                "b7c506f16300c285f9476de1546aa77e755abdd571b7a316c53b621245aae995",
+                "31115db07848243714283eab6ea054838e1aba7f787752eac23f0655b1e70672"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Lena Cresswell",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 62,
+                  "end": 75,
+                  "text": "Tomas Brindle",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "donor_H011_query_key": "5ac477db59497e57e73373b945758461564127ef911f7e2aa1ec43d7ffeb664d",
+              "atomic_original_span": [
+                62,
+                120
+              ],
+              "atomic_terminal_added": "",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Lena Cresswell",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 62,
+                  "end": 75,
+                  "text": "Tomas Brindle",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          1,
+          0
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 1
+      }
+    },
+    "readouts": {
+      "compound_independent_rows_max_slot": {
+        "risk": 0.9999999854672962,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "compound_bijection_joint_assignment_mass": {
+        "risk": 0.9948603751219208,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_independent_rows_max_slot": {
+        "risk": 0.9999999999881217,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_bijection_joint_assignment_mass": {
+        "risk": 0.9999999999998251,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      }
+    },
+    "factor_cell": {
+      "relation_family": "sole_signer",
+      "vocabulary": "lex1",
+      "source_direction": 1,
+      "response_direction": 0,
+      "distractor_count": 0
+    },
+    "construction_binary_truth": 1
+  },
+  {
+    "id": "h007-sole_signer-lex1-s1-r1-b00",
+    "source_key": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+    "scopes": {
+      "compound": {
+        "matrix_id": "35c2229014c0381beb058fc0a3e20719284dce3d158b4d7144abfcd071fb9f88",
+        "alignment": {
+          "id": "h007-sole_signer-lex1-s1-r1-b00",
+          "source_sha256": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+          "response_sha256": "74edee101ee2ede70c71943beb266b1770d34328f121aa14772bc6d6c3ca82ad",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            120
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Tomas Brindle",
+              "event": "Quorren Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "a8a629ac639013c6b1b8cbc39180e28aff11775f62b08174cfa3ad35072424e2",
+              "observation_keys": [
+                "42d7adda6161ae53fcc4f2b965be5fe99e4886a7eabb392028219dabfc9037bf",
+                "87589f2eda61c61897f15dc60c80864bf01be5617d7c3a789f3aa3904d9c61f0"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Tomas Brindle",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 61,
+                  "end": 75,
+                  "text": "Lena Cresswell",
+                  "replacement": "[OTHER]"
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "start": 61,
+              "end": 75,
+              "text": "Lena Cresswell",
+              "event": "Meliston Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "5ac477db59497e57e73373b945758461564127ef911f7e2aa1ec43d7ffeb664d",
+              "observation_keys": [
+                "ae0989392e9f40355a9979a2aea977ee61a75644acf3577f06263010b100f991",
+                "8e6b790f7488150a6a1fd4ff57b3b7f29abdf55ddd08181e72ad8c3797c5979b"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Tomas Brindle",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 61,
+                  "end": 75,
+                  "text": "Lena Cresswell",
+                  "replacement": "[TARGET]"
+                }
+              ]
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          0,
+          1
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 0
+      },
+      "atomic": {
+        "matrix_id": "51c9a89ac283013273fa760c95dc0fe7bf5caa3236a399e0025e5c7bfe16cebb",
+        "alignment": {
+          "id": "h007-sole_signer-lex1-s1-r1-b00",
+          "source_sha256": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+          "response_sha256": "74edee101ee2ede70c71943beb266b1770d34328f121aa14772bc6d6c3ca82ad",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            120
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 13,
+              "text": "Tomas Brindle",
+              "event": "Quorren Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "06d07c77bd17d6e51d2097783c5c3bf42cfdaadf18d50f37f3519d685d3908e8",
+              "observation_keys": [
+                "6708dfcf6cb825ae580366a687b5f52798024e648f3b157379b3bafecafd0fe6",
+                "0a0be3b1edb166b77f8f9c413988e8074ed66c0eeacb5356012de6030b708ac4"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Tomas Brindle",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 61,
+                  "end": 75,
+                  "text": "Lena Cresswell",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "donor_H011_query_key": "a8a629ac639013c6b1b8cbc39180e28aff11775f62b08174cfa3ad35072424e2",
+              "atomic_original_span": [
+                0,
+                55
+              ],
+              "atomic_terminal_added": ". ",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Tomas Brindle",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 61,
+                  "end": 75,
+                  "text": "Lena Cresswell",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            },
+            {
+              "index": 1,
+              "start": 61,
+              "end": 75,
+              "text": "Lena Cresswell",
+              "event": "Meliston Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "fe09e4fd61e31871119820771aab7452284f5e3706103097478a7b8092823087",
+              "observation_keys": [
+                "b7c506f16300c285f9476de1546aa77e755abdd571b7a316c53b621245aae995",
+                "31115db07848243714283eab6ea054838e1aba7f787752eac23f0655b1e70672"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Tomas Brindle",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 61,
+                  "end": 75,
+                  "text": "Lena Cresswell",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "donor_H011_query_key": "5ac477db59497e57e73373b945758461564127ef911f7e2aa1ec43d7ffeb664d",
+              "atomic_original_span": [
+                61,
+                120
+              ],
+              "atomic_terminal_added": "",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 13,
+                  "text": "Tomas Brindle",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 61,
+                  "end": 75,
+                  "text": "Lena Cresswell",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          0,
+          1
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 0
+      }
+    },
+    "readouts": {
+      "compound_independent_rows_max_slot": {
+        "risk": 0.9999971869599431,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "compound_bijection_joint_assignment_mass": {
+        "risk": 0.005139624878079174,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_independent_rows_max_slot": {
+        "risk": 0.014502991107101626,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_bijection_joint_assignment_mass": {
+        "risk": 1.7474910407599964e-13,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      }
+    },
+    "factor_cell": {
+      "relation_family": "sole_signer",
+      "vocabulary": "lex1",
+      "source_direction": 1,
+      "response_direction": 1,
+      "distractor_count": 0
+    },
+    "construction_binary_truth": 0
+  },
+  {
+    "id": "h007-sole_signer-lex2-s0-r0-b00",
+    "source_key": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+    "scopes": {
+      "compound": {
+        "matrix_id": "a5ca6079aac8cb86dc83e7554560041e456735231c5877784dcdf760d9b3319a",
+        "alignment": {
+          "id": "h007-sole_signer-lex2-s0-r0-b00",
+          "source_sha256": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+          "response_sha256": "b926f65b6181b07f97cda0023a9c17944695c41c16c963cbfe138bb4502d5124",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            124
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 15,
+              "text": "Nadia Fennbrook",
+              "event": "Corvellan Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "352cc43679140ce4499c25a125b4f897de9580f03d20be7682a927514fee83fd",
+              "observation_keys": [
+                "cd514f75d7d5745c2d54087241c3ea779ec52624c09c3813b3a0b7c36f093a1d",
+                "61a7e12f5fdf70b82f38d047f18e55cb6c92cb558f803ad74cbbcc741b9e21d9"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 15,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 65,
+                  "end": 79,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[OTHER]"
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "start": 65,
+              "end": 79,
+              "text": "Hugo Valecrest",
+              "event": "Tremorin Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "892d5d2465ada6f992bbba4f005fddb907a5432b752427ff084ecb000004d283",
+              "observation_keys": [
+                "a6adfd8529a6f5fb8907d02f7fda295a5ebc24b0f78f6afdf53d25ed7db778ce",
+                "7b636f0b34ec51435385fb2bf3c94eeb663634e046295f131aaede99c71746fb"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 15,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 65,
+                  "end": 79,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[TARGET]"
+                }
+              ]
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          1,
+          0
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 1
+      },
+      "atomic": {
+        "matrix_id": "c15d9c13528aa4054013bcf3aa698031e99844ee15240b16f8c9cf61525ee438",
+        "alignment": {
+          "id": "h007-sole_signer-lex2-s0-r0-b00",
+          "source_sha256": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+          "response_sha256": "b926f65b6181b07f97cda0023a9c17944695c41c16c963cbfe138bb4502d5124",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            124
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 15,
+              "text": "Nadia Fennbrook",
+              "event": "Corvellan Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "fd3cfd6e17b6d5c1726b2e118343184291c88c1ac46d78f29ff0792221606be5",
+              "observation_keys": [
+                "45d14d53ce3b29136bb1204e6affff34a08048ed06b1f5894f82f8e9e681e98d",
+                "9be024875a9ceff009caa12b148c0fc88e1fadb9cc37f241bb572ee3351ad99e"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 15,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 65,
+                  "end": 79,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "donor_H011_query_key": "352cc43679140ce4499c25a125b4f897de9580f03d20be7682a927514fee83fd",
+              "atomic_original_span": [
+                0,
+                59
+              ],
+              "atomic_terminal_added": ". ",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 15,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 65,
+                  "end": 79,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            },
+            {
+              "index": 1,
+              "start": 65,
+              "end": 79,
+              "text": "Hugo Valecrest",
+              "event": "Tremorin Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "21b336fb3e5702da5edd8218d9459d9a92c3f74047bbaf54574b11e4e0f0ba2b",
+              "observation_keys": [
+                "c067012fe6b464b08946b17be859594fcb0d0ca4840bb9479c07450a9299d8c3",
+                "fe6a7bb00177b08e02c294c30f9d78624b8ccef2b2bed0757c4bc8f6c36b9dc3"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 15,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 65,
+                  "end": 79,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "donor_H011_query_key": "892d5d2465ada6f992bbba4f005fddb907a5432b752427ff084ecb000004d283",
+              "atomic_original_span": [
+                65,
+                124
+              ],
+              "atomic_terminal_added": "",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 15,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 65,
+                  "end": 79,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          1,
+          0
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 1
+      }
+    },
+    "readouts": {
+      "compound_independent_rows_max_slot": {
+        "risk": 0.9998204725690445,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "compound_bijection_joint_assignment_mass": {
+        "risk": 0.028436118200010463,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_independent_rows_max_slot": {
+        "risk": 0.00017952055382230991,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_bijection_joint_assignment_mass": {
+        "risk": 1.341149413747189e-13,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      }
+    },
+    "factor_cell": {
+      "relation_family": "sole_signer",
+      "vocabulary": "lex2",
+      "source_direction": 0,
+      "response_direction": 0,
+      "distractor_count": 0
+    },
+    "construction_binary_truth": 0
+  },
+  {
+    "id": "h007-sole_signer-lex2-s0-r1-b00",
+    "source_key": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+    "scopes": {
+      "compound": {
+        "matrix_id": "a5ca6079aac8cb86dc83e7554560041e456735231c5877784dcdf760d9b3319a",
+        "alignment": {
+          "id": "h007-sole_signer-lex2-s0-r1-b00",
+          "source_sha256": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+          "response_sha256": "69b2e242196417e3cb7b9671a5b38715070e9fd9e4fbf5a1b4a07dd635a18ff0",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            124
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 14,
+              "text": "Hugo Valecrest",
+              "event": "Corvellan Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "352cc43679140ce4499c25a125b4f897de9580f03d20be7682a927514fee83fd",
+              "observation_keys": [
+                "cd514f75d7d5745c2d54087241c3ea779ec52624c09c3813b3a0b7c36f093a1d",
+                "61a7e12f5fdf70b82f38d047f18e55cb6c92cb558f803ad74cbbcc741b9e21d9"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 64,
+                  "end": 79,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[OTHER]"
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "start": 64,
+              "end": 79,
+              "text": "Nadia Fennbrook",
+              "event": "Tremorin Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "892d5d2465ada6f992bbba4f005fddb907a5432b752427ff084ecb000004d283",
+              "observation_keys": [
+                "a6adfd8529a6f5fb8907d02f7fda295a5ebc24b0f78f6afdf53d25ed7db778ce",
+                "7b636f0b34ec51435385fb2bf3c94eeb663634e046295f131aaede99c71746fb"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 64,
+                  "end": 79,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[TARGET]"
+                }
+              ]
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          0,
+          1
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 0
+      },
+      "atomic": {
+        "matrix_id": "c15d9c13528aa4054013bcf3aa698031e99844ee15240b16f8c9cf61525ee438",
+        "alignment": {
+          "id": "h007-sole_signer-lex2-s0-r1-b00",
+          "source_sha256": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+          "response_sha256": "69b2e242196417e3cb7b9671a5b38715070e9fd9e4fbf5a1b4a07dd635a18ff0",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            124
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 14,
+              "text": "Hugo Valecrest",
+              "event": "Corvellan Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "fd3cfd6e17b6d5c1726b2e118343184291c88c1ac46d78f29ff0792221606be5",
+              "observation_keys": [
+                "45d14d53ce3b29136bb1204e6affff34a08048ed06b1f5894f82f8e9e681e98d",
+                "9be024875a9ceff009caa12b148c0fc88e1fadb9cc37f241bb572ee3351ad99e"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 64,
+                  "end": 79,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "donor_H011_query_key": "352cc43679140ce4499c25a125b4f897de9580f03d20be7682a927514fee83fd",
+              "atomic_original_span": [
+                0,
+                58
+              ],
+              "atomic_terminal_added": ". ",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 64,
+                  "end": 79,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            },
+            {
+              "index": 1,
+              "start": 64,
+              "end": 79,
+              "text": "Nadia Fennbrook",
+              "event": "Tremorin Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "21b336fb3e5702da5edd8218d9459d9a92c3f74047bbaf54574b11e4e0f0ba2b",
+              "observation_keys": [
+                "c067012fe6b464b08946b17be859594fcb0d0ca4840bb9479c07450a9299d8c3",
+                "fe6a7bb00177b08e02c294c30f9d78624b8ccef2b2bed0757c4bc8f6c36b9dc3"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 64,
+                  "end": 79,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "donor_H011_query_key": "892d5d2465ada6f992bbba4f005fddb907a5432b752427ff084ecb000004d283",
+              "atomic_original_span": [
+                64,
+                124
+              ],
+              "atomic_terminal_added": "",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 64,
+                  "end": 79,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          0,
+          1
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 0
+      }
+    },
+    "readouts": {
+      "compound_independent_rows_max_slot": {
+        "risk": 0.9999947446038578,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "compound_bijection_joint_assignment_mass": {
+        "risk": 0.9715638817999896,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_independent_rows_max_slot": {
+        "risk": 0.9999999992534817,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_bijection_joint_assignment_mass": {
+        "risk": 0.999999999999866,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      }
+    },
+    "factor_cell": {
+      "relation_family": "sole_signer",
+      "vocabulary": "lex2",
+      "source_direction": 0,
+      "response_direction": 1,
+      "distractor_count": 0
+    },
+    "construction_binary_truth": 1
+  },
+  {
+    "id": "h007-sole_signer-lex2-s1-r0-b00",
+    "source_key": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+    "scopes": {
+      "compound": {
+        "matrix_id": "db9d1da423d22439490e683100e0e6e430a6a497a765c80602f5024a5d9e5b77",
+        "alignment": {
+          "id": "h007-sole_signer-lex2-s1-r0-b00",
+          "source_sha256": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+          "response_sha256": "b926f65b6181b07f97cda0023a9c17944695c41c16c963cbfe138bb4502d5124",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            124
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 15,
+              "text": "Nadia Fennbrook",
+              "event": "Corvellan Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "5b1fd83e8bd108eb825f5dd013df4c2201edef18b6794e14ba73fd339716df90",
+              "observation_keys": [
+                "c387837b8f223ca95f934480b2eff5d53254245789558ac099acffb6f070714f",
+                "452cdddc3b3d501c398eda8ea783c58e8978da444b903df554ff6977cea0e549"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 15,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 65,
+                  "end": 79,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[OTHER]"
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "start": 65,
+              "end": 79,
+              "text": "Hugo Valecrest",
+              "event": "Tremorin Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "56755fd857258e73308d995121b2e5fd0fddfec11ef82d61c621afed557dc1b9",
+              "observation_keys": [
+                "8cc58b624ae38d2d880444207448c56d80550af08c4a7cc66ba3048631f7297f",
+                "4d64fd3e1e07a56120dad17b4f47a12b5b8c888069cd88d444822edbaf54c96f"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 15,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 65,
+                  "end": 79,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[TARGET]"
+                }
+              ]
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          1,
+          0
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 1
+      },
+      "atomic": {
+        "matrix_id": "8e4c745dd74283079f0b33afae4121201435eb14c5fdab042c3c995ab7db9576",
+        "alignment": {
+          "id": "h007-sole_signer-lex2-s1-r0-b00",
+          "source_sha256": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+          "response_sha256": "b926f65b6181b07f97cda0023a9c17944695c41c16c963cbfe138bb4502d5124",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            124
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 15,
+              "text": "Nadia Fennbrook",
+              "event": "Corvellan Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "ee8171638455903a41ab2ea798867f4816c29b6f7f725e999ef132fd546bdf65",
+              "observation_keys": [
+                "1622988936f3309ad42e8a282dd15b63afe4424d0363c684cb30354069b3e62b",
+                "427896020d9d1198b9e1312b559a3879a6714094445078b63845193c2045ff53"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 15,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 65,
+                  "end": 79,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "donor_H011_query_key": "5b1fd83e8bd108eb825f5dd013df4c2201edef18b6794e14ba73fd339716df90",
+              "atomic_original_span": [
+                0,
+                59
+              ],
+              "atomic_terminal_added": ". ",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 15,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 65,
+                  "end": 79,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            },
+            {
+              "index": 1,
+              "start": 65,
+              "end": 79,
+              "text": "Hugo Valecrest",
+              "event": "Tremorin Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "592fe7dde09cd5c6c1bb2d171df482d91f0a5221efef722c390306bbaba80986",
+              "observation_keys": [
+                "ec3f2e3475381f3adfa0d890adaa742cabbbb45428a38652ed4a60e65258d349",
+                "53f1cb68fdf6a09736a2d35bdd02db7f62ad8882162554bd6860e59071dc03e1"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 15,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 65,
+                  "end": 79,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "donor_H011_query_key": "56755fd857258e73308d995121b2e5fd0fddfec11ef82d61c621afed557dc1b9",
+              "atomic_original_span": [
+                65,
+                124
+              ],
+              "atomic_terminal_added": "",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 15,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 65,
+                  "end": 79,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          1,
+          0
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 1
+      }
+    },
+    "readouts": {
+      "compound_independent_rows_max_slot": {
+        "risk": 0.9999999987703156,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "compound_bijection_joint_assignment_mass": {
+        "risk": 0.9960568081372527,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_independent_rows_max_slot": {
+        "risk": 0.9999999999932325,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_bijection_joint_assignment_mass": {
+        "risk": 0.999999999999999,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      }
+    },
+    "factor_cell": {
+      "relation_family": "sole_signer",
+      "vocabulary": "lex2",
+      "source_direction": 1,
+      "response_direction": 0,
+      "distractor_count": 0
+    },
+    "construction_binary_truth": 1
+  },
+  {
+    "id": "h007-sole_signer-lex2-s1-r1-b00",
+    "source_key": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+    "scopes": {
+      "compound": {
+        "matrix_id": "db9d1da423d22439490e683100e0e6e430a6a497a765c80602f5024a5d9e5b77",
+        "alignment": {
+          "id": "h007-sole_signer-lex2-s1-r1-b00",
+          "source_sha256": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+          "response_sha256": "69b2e242196417e3cb7b9671a5b38715070e9fd9e4fbf5a1b4a07dd635a18ff0",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            124
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 14,
+              "text": "Hugo Valecrest",
+              "event": "Corvellan Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "5b1fd83e8bd108eb825f5dd013df4c2201edef18b6794e14ba73fd339716df90",
+              "observation_keys": [
+                "c387837b8f223ca95f934480b2eff5d53254245789558ac099acffb6f070714f",
+                "452cdddc3b3d501c398eda8ea783c58e8978da444b903df554ff6977cea0e549"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 64,
+                  "end": 79,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[OTHER]"
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "start": 64,
+              "end": 79,
+              "text": "Nadia Fennbrook",
+              "event": "Tremorin Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "56755fd857258e73308d995121b2e5fd0fddfec11ef82d61c621afed557dc1b9",
+              "observation_keys": [
+                "8cc58b624ae38d2d880444207448c56d80550af08c4a7cc66ba3048631f7297f",
+                "4d64fd3e1e07a56120dad17b4f47a12b5b8c888069cd88d444822edbaf54c96f"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 64,
+                  "end": 79,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[TARGET]"
+                }
+              ]
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          0,
+          1
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 0
+      },
+      "atomic": {
+        "matrix_id": "8e4c745dd74283079f0b33afae4121201435eb14c5fdab042c3c995ab7db9576",
+        "alignment": {
+          "id": "h007-sole_signer-lex2-s1-r1-b00",
+          "source_sha256": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+          "response_sha256": "69b2e242196417e3cb7b9671a5b38715070e9fd9e4fbf5a1b4a07dd635a18ff0",
+          "status": "ok",
+          "reason": null,
+          "target_span": [
+            0,
+            124
+          ],
+          "occurrences": [
+            {
+              "index": 0,
+              "start": 0,
+              "end": 14,
+              "text": "Hugo Valecrest",
+              "event": "Corvellan Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 0,
+              "query_key": "ee8171638455903a41ab2ea798867f4816c29b6f7f725e999ef132fd546bdf65",
+              "observation_keys": [
+                "1622988936f3309ad42e8a282dd15b63afe4424d0363c684cb30354069b3e62b",
+                "427896020d9d1198b9e1312b559a3879a6714094445078b63845193c2045ff53"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 64,
+                  "end": 79,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "donor_H011_query_key": "5b1fd83e8bd108eb825f5dd013df4c2201edef18b6794e14ba73fd339716df90",
+              "atomic_original_span": [
+                0,
+                58
+              ],
+              "atomic_terminal_added": ". ",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[TARGET]"
+                },
+                {
+                  "start": 64,
+                  "end": 79,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[OTHER]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            },
+            {
+              "index": 1,
+              "start": 64,
+              "end": 79,
+              "text": "Nadia Fennbrook",
+              "event": "Tremorin Accord",
+              "status": "ok",
+              "reason": null,
+              "candidate_index": 1,
+              "query_key": "592fe7dde09cd5c6c1bb2d171df482d91f0a5221efef722c390306bbaba80986",
+              "observation_keys": [
+                "ec3f2e3475381f3adfa0d890adaa742cabbbb45428a38652ed4a60e65258d349",
+                "53f1cb68fdf6a09736a2d35bdd02db7f62ad8882162554bd6860e59071dc03e1"
+              ],
+              "mask_spans": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 64,
+                  "end": 79,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "donor_H011_query_key": "56755fd857258e73308d995121b2e5fd0fddfec11ef82d61c621afed557dc1b9",
+              "atomic_original_span": [
+                64,
+                124
+              ],
+              "atomic_terminal_added": "",
+              "compound_erasure_map": [
+                {
+                  "start": 0,
+                  "end": 14,
+                  "text": "Hugo Valecrest",
+                  "replacement": "[OTHER]"
+                },
+                {
+                  "start": 64,
+                  "end": 79,
+                  "text": "Nadia Fennbrook",
+                  "replacement": "[TARGET]"
+                }
+              ],
+              "transformation": "select_actual_R_conjunct_and_canonical_period_space"
+            }
+          ]
+        },
+        "observed_candidate_indices_by_canonical_event": [
+          0,
+          1
+        ],
+        "observed_mapping_is_bijection": true,
+        "observed_assignment_index": 0
+      }
+    },
+    "readouts": {
+      "compound_independent_rows_max_slot": {
+        "risk": 0.9999996893797823,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "compound_bijection_joint_assignment_mass": {
+        "risk": 0.003943191862747275,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_independent_rows_max_slot": {
+        "risk": 0.0001444613866065092,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      },
+      "atomic_bijection_joint_assignment_mass": {
+        "risk": 8.881784197001252e-16,
+        "unknown_fallback": false,
+        "unknown_reason": null,
+        "calibrated_truth_probability": false
+      }
+    },
+    "factor_cell": {
+      "relation_family": "sole_signer",
+      "vocabulary": "lex2",
+      "source_direction": 1,
+      "response_direction": 1,
+      "distractor_count": 0
+    },
+    "construction_binary_truth": 0
+  }
+]

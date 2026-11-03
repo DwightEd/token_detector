@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "run_id": "a52676148c96453c234c569ec0abc403a09ef9c3180113d7d05e6427a6683f70",
+  "completed_utc": "2026-11-03T04:33:04.090752+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Completed312-node exposed-toy four-arm paired diagnosis; atomicbundle improves independentQA9to15, jointboth16. No natural method promotion. Preserveall4arms and reusecache.",
+  "artifacts": [
+    {
+      "path": "outputs/h016-paired-scope-20261103/observation_v1/seal.json",
+      "sha256": "caab060faed092b9bfc0378bb9364c02eb415e8ff9b6b032f64778f9a8277982"
+    },
+    {
+      "path": "outputs/h016-paired-scope-20261103/evaluation_v1/seal.json",
+      "sha256": "ce5999b2cbc499473f77d309df6db62e93099dd089cd938e80f82e6554e743ea"
+    },
+    {
+      "path": "docs/results/h016_paired_scope.json",
+      "sha256": "4dc281e06f478086041dbab85863fe53df19ccd6b9a8d619d3acaa217458ae58"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "state": "four_arm_exposed_toy_diagnosis_complete",
+  "all_four_arms_retained": true,
+  "observation_initial_seal_sha256": "caab060faed092b9bfc0378bb9364c02eb415e8ff9b6b032f64778f9a8277982",
+  "new_model_calls": 0,
+  "natural_task_performance_claim": false
+}

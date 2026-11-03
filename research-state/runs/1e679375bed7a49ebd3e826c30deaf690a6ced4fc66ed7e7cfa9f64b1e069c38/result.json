@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "run_id": "1e679375bed7a49ebd3e826c30deaf690a6ced4fc66ed7e7cfa9f64b1e069c38",
+  "completed_utc": "2026-11-03T03:47:57.066460+00:00",
+  "outcome": "inconclusive",
+  "conclusion": "Resource wait expired before any observer launch; zero model calls",
+  "artifacts": [
+    {
+      "path": "outputs/h015-prefix-trie-20261103/resource-wait-expired-v1.json",
+      "sha256": "5f18d8fce0bc2f87032b01f3d993981d271ab4f61278a311c0938eb63dd8c6be"
+    }
+  ]
+}

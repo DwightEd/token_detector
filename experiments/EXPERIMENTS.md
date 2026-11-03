@@ -955,3 +955,5 @@ CPU reader/evaluation pending. See research-state/RESUME.md for actual liveness,
 immutable installed117 release and no-repeat rules.
 
 H011 independent CPU review completed5c162fe8ade0a235a221a9c0ad309bb1f98a3a8cb79ba9a06e3887192f7ba3fb. Fixedbridge failed: b0/4/12=9/8/10 of16, whole48AUC.63715; no promotion or prompt rescue. H012 now only prepares natural span/candidate artifacts; no new QA or semantic coverage claim. See docs/results/h011_masked_reconstruction.md.
+
+H015 two-input shared-prefix engineering passed16actualforwards. H016 common-prefix scope×readout paired diagnosis completed312forwards/86930input/0generated;compoundind/joint andatomicind/joint rolecorrect9/16,16/16,15/16,16/16. Eight exposed toy sources only, no natural promotion. See docs/results/h016_paired_scope.md and REMOTE_EXPERIMENT_HANDOFF.md. Local complete CPU suite hit180s handoff bound (incomplete);70 installed targeted checks passed; exact pushed HEAD LinuxCI remains required.

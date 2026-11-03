@@ -1,5 +1,7 @@
 # Token detector
 
+换电脑继续实验先看 [远端数据位置与执行交接](REMOTE_EXPERIMENT_HANDOFF.md)：列出存储中的输入、原生观测、历史分数和模型目录，以及近期本地实验需单独转移的材料。
+
 最新优先级是[逐项查明 FN/FP 的错误机制](docs/source-reading/FNFP_MECHANISM.md)，并[核对原始来源、回答及模块分数](docs/source-reading/FNFP_CASES.md)。完整缓存已恢复。固定等权对照未达标，保留为失败实验记录；当前算法默认值未更改。
 
 

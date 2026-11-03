@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "D:\\projects\\research\\token_detector\\.venv\\Scripts\\python.exe",
+    "-m",
+    "experiments.run",
+    "transfer",
+    "evaluate-paired-scope",
+    "--observations",
+    "D:\\projects\\research\\token_detector\\outputs\\h016-paired-scope-20261103\\observation_v1",
+    "--design",
+    "D:\\projects\\research\\token_detector\\outputs\\h007-burden-20261103\\inference\\plan.json",
+    "--construction",
+    "D:\\projects\\research\\token_detector\\outputs\\h007-burden-20261103\\construction\\construction_truth.jsonl",
+    "--output",
+    "D:\\projects\\research\\token_detector\\outputs\\h016-paired-scope-20261103\\evaluation_v1"
+  ],
+  "cwd": "C:\\Users\\Lu Yuanshan\\AppData\\Local\\Temp\\h016-paired-installed-20261103-2ugeyh9e\\working",
+  "exit_code": 0,
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "model_calls": 0
+}

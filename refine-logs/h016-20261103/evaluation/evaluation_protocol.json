@@ -1,0 +1,27 @@
+{
+  "schema": "paired-scope-evaluation-v1",
+  "arms": [
+    "compound_independent_rows_max_slot",
+    "compound_bijection_joint_assignment_mass",
+    "atomic_independent_rows_max_slot",
+    "atomic_bijection_joint_assignment_mass"
+  ],
+  "source_assignment_categories": [
+    "correct",
+    "wrong",
+    "ties",
+    "unknown"
+  ],
+  "secondary_metrics": [
+    "auroc",
+    "ap"
+  ],
+  "primary_independent_sources": 8,
+  "threshold_selection": false,
+  "winning_arm_selection": false,
+  "model_calls_allowed": false,
+  "previously_exposed_toy": true,
+  "question_bundle_effect_only": true,
+  "natural_task_performance_claim": false,
+  "calibrated_truth_probability": false
+}

@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "run_id": "09ff6aa35663cb66243e7be642d708921e90b669c4c7761275111e974825727e",
+  "completed_utc": "2026-11-03T03:57:58.334189+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Two-input shared-prefix engineering qualification passed; no semantic efficacy claim",
+  "artifacts": [
+    {
+      "path": "outputs/h015-prefix-trie-20261103/engineering_v1/summary.json",
+      "sha256": "3ae0b0eb786c8c7c9646a94e22c1b88ea627abf54d57fca9dba8ee55ed3cc047"
+    },
+    {
+      "path": "outputs/h015-prefix-trie-20261103/engineering_v1/complete.json",
+      "sha256": "7ddeb8d4afd06fa02c470f5456d412ed5fe7148415710b7f7c26f5a05e2aa5bd"
+    },
+    {
+      "path": "outputs/h015-prefix-trie-20261103/engineering_v1/seal.json",
+      "sha256": "471e953407fcb2fda086d449f88d25b1d086533237f9b4dd9eb868f6fe0724b9"
+    }
+  ]
+}

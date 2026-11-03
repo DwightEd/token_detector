@@ -3,9 +3,9 @@
   "objective": "Mechanism-driven unsupervised hallucination detection improvement toward AUROC >= 0.8 on each of six primary tasks",
   "canonical_project": "D:/projects/research/token_detector",
   "goal_status": "not_achieved",
-  "phase": "CI_fix_targeted_checks_passed_full_Linux_confirmation_pending",
-  "active_hypothesis": "H015_SHARED_PREFIX_PROBABILITY_KERNEL",
-  "next_question": "Verify the exact fix commit full GitHub Tests workflow. Local Windowsfullsuite600s incomplete,40memorychecks pass. After CIgreen, resume already-frozen H01516node/4320token syntheticengineering qualification; no old H013 retry.",
+  "phase": "H016_complete_remote_data_handoff_push_pending_CI",
+  "active_hypothesis": "H016_PAIRED_SCOPE_SHARED_PREFIX",
+  "next_question": "Hand off confirmed cloud prepared/native/score/model paths and completed local sealed caches; freeze a discriminating natural relation-frontend protocol before any new fulltask call.",
   "known_fact_ids": [
     "F001",
     "F002",
@@ -41,7 +41,10 @@
     "F032",
     "F033",
     "F034",
-    "F035"
+    "F035",
+    "F036",
+    "F037",
+    "F038"
   ],
   "do_not_repeat": [
     "Describing known FN/FP counts again without a new discriminating intervention",
@@ -72,20 +75,22 @@
   "checkpoint_policy": "Update at every conclusion, completed run or structural pivot; record the next discriminating question before continuation",
   "pipeline_helpers": "External ARIS run_state/watchdog helpers were not found; no background watchdog is claimed. Repository state and exact-run reservation are implemented locally.",
   "case_panel": "research-state/case_panel_v1.json",
-  "resource_status": "No GPU worker armed; CI repair takes priority. H015 synthetic manifest and runner ready, not launched.",
+  "resource_status": "H015 observer and resource controller exited successfully; no GPU job active. H016 implementation in progress.",
   "user_resource_choice": "local_idle_automatic_run",
   "experiment_plan": "refine-logs/EXPERIMENT_PLAN.md",
   "run_reservation_status": "H013_terminal_engineering_failure32raw_retained_no_retry",
   "frozen_observation_run_spec": "research-state/protocols/H013_atomic_observation_run_spec_v1.json",
-  "live_execution_state": "outputs/h013-atomic-20261103/autostart-state.json",
+  "live_execution_state": "outputs/h015-prefix-trie-20261103/idle-engineering-state-cleanup-v2.json",
   "local_idle_job": {
-    "pid": 52632,
-    "parent_pid": 29072,
-    "started_utc": "2026-11-02T20:59:24.600895+00:00",
-    "state": "outputs/h013-atomic-20261103/autostart-state.json",
+    "pid": 4864,
+    "parent_pid": 41308,
+    "started_utc": "2026-11-03T02:36:29.760555+00:00",
     "armed": false,
     "automatic_retries": false,
-    "status": "terminal_engineering_failure32raw_retained"
+    "state": "outputs/h015-prefix-trie-20261103/idle-engineering-state-cleanup-v2.json",
+    "status": "engineering_completed",
+    "registry_run_id": "09ff6aa35663cb66243e7be642d708921e90b669c4c7761275111e974825727e",
+    "actual_forward_passes": 16
   },
   "active_variant": "shared_prefix_probability_instrument_before_new_semantic_observations",
   "live_progress_command": "Read RESUME, F029-F034 and current H015 design/review; no GPU experiment armed yet.",
@@ -412,5 +417,37 @@
   "completed_h012": "docs/results/h012_natural_inventory.json",
   "completed_h014": "docs/results/h014_cached_role_assignment.json",
   "source_licences": "docs/results/source_constraint_licences.json",
-  "binding_literature": "docs/research/20261103_entity_binding_review.md"
+  "binding_literature": "docs/research/20261103_entity_binding_review.md",
+  "successful_ci": {
+    "commit": "1b7bf83ee6c094505c8dd8f488a112c174bb27e1",
+    "run_id": 41565792344,
+    "job_id": 125686875120,
+    "conclusion": "success",
+    "url": "https://github.com/DwightEd/token_detector/actions/runs/41565792344",
+    "summaries": [
+      "972 passed, 1 skipped, 9 subtests passed in 172.91s (0:02:52)"
+    ]
+  },
+  "active_run_id": null,
+  "active_job": {
+    "controller_pid": 38472,
+    "child_pid": 38792,
+    "armed": false,
+    "state": "outputs/h016-paired-scope-20261103/launch-state-v1.json",
+    "stop": "outputs/h016-paired-scope-20261103/STOP_H016",
+    "wall_limit_seconds": 1800,
+    "registry_run_id": "a52676148c96453c234c569ec0abc403a09ef9c3180113d7d05e6427a6683f70",
+    "budget": {
+      "new_forward_passes": 312,
+      "input_tokens": 86930,
+      "maximum_context_tokens": 308
+    },
+    "automatic_retry": false,
+    "source_commit": "0cc3c40e3ed61f85002927391a8146e7c6913195",
+    "status": "completed",
+    "actual_forward_passes": 312
+  },
+  "completed_h016": "docs/results/h016_paired_scope.json",
+  "remote_handoff": "REMOTE_EXPERIMENT_HANDOFF.md",
+  "local_full_cpu_suite": "incomplete_180_second_handoff_limit"
 }

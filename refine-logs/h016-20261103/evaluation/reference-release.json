@@ -1,0 +1,2606 @@
+{
+  "reference_accessed_after_score_freeze": true,
+  "initial_snapshots": [
+    {
+      "seal_sha256": "b6813797c939faef3c57e35231121eb8a1a20bcb594c181cfc01073555eec229",
+      "file_sha256": {
+        "inputs.jsonl": "0d298932778c5ad60a43b059cc860b31679e7649350a825f5b1de72d2585cf66",
+        "plan.json": "7d8e37c4f319b6a851ee7d11f4ae0eb845e1d98d7ae37f4c19355010bf12418d"
+      }
+    },
+    {
+      "seal_sha256": "66acd0c7bff6282b9643a9e951aaedd2d8e652cd5f27fe682a7141dc7c5a87b8",
+      "file_sha256": {
+        "construction_truth.jsonl": "b778cdc030f8e8d54b8557eb5a5071ee80ac41fff9bdf54fccb4d04a521423d6"
+      }
+    }
+  ],
+  "design": {
+    "schema": "h007-burden-controls-plan-v1",
+    "state": "frozen_before_model_observation",
+    "factors": {
+      "relation_family": [
+        "winner",
+        "sole_signer"
+      ],
+      "vocabulary": [
+        "lex1",
+        "lex2"
+      ],
+      "source_direction": [
+        0,
+        1
+      ],
+      "response_direction": [
+        0,
+        1
+      ],
+      "distractor_count": [
+        0,
+        4,
+        12
+      ]
+    },
+    "expected_original_cases": 48,
+    "logical_observation_cases": 96,
+    "logical_label_requests": 576,
+    "expected_distinct_requests_before_tokenization": 480,
+    "modes": [
+      "whole",
+      "target"
+    ],
+    "permutations": 6,
+    "construction_truth_not_for_observer": true,
+    "metadata_ids_or_factors_sent_to_model": false,
+    "source_policy": "all_twelve_fillers_fixed_within_scenario_and_source_direction",
+    "target_boundary_policy": "first_sentence_plus_one_fixed_trailing_space",
+    "records": [
+      {
+        "id": "h007-winner-lex1-s0-r0-b00",
+        "source_id": "h007-winner-lex1-s0",
+        "scenario": "winner-lex1",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex1",
+          "source_direction": 0,
+          "response_direction": 0,
+          "distractor_count": 0
+        },
+        "target_span": [
+          0,
+          86
+        ],
+        "target_text": "Mira Tanswick won the Virelan Cup final, and Oren Pellford won the Nerowan Cup final. ",
+        "whole_span": [
+          0,
+          86
+        ],
+        "input_text_sha256": {
+          "prompt": "ea9bfd1642211b8113e62147b63dad810ca7f76d432b53da071545ddb4f7d795",
+          "source": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+          "response": "8f953250a004879252e8e60d91f3a43e6a75d216d3760c8a93e899ce4b339527"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 0,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex1-s0-r0-b04",
+        "source_id": "h007-winner-lex1-s0",
+        "scenario": "winner-lex1",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex1",
+          "source_direction": 0,
+          "response_direction": 0,
+          "distractor_count": 4
+        },
+        "target_span": [
+          0,
+          86
+        ],
+        "target_text": "Mira Tanswick won the Virelan Cup final, and Oren Pellford won the Nerowan Cup final. ",
+        "whole_span": [
+          0,
+          266
+        ],
+        "input_text_sha256": {
+          "prompt": "ea9bfd1642211b8113e62147b63dad810ca7f76d432b53da071545ddb4f7d795",
+          "source": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+          "response": "37c6101927a624bf002b862f75dbe09aabe69e2616cb1e74dc2c83b5782a5635"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 4,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex1-s0-r0-b12",
+        "source_id": "h007-winner-lex1-s0",
+        "scenario": "winner-lex1",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex1",
+          "source_direction": 0,
+          "response_direction": 0,
+          "distractor_count": 12
+        },
+        "target_span": [
+          0,
+          86
+        ],
+        "target_text": "Mira Tanswick won the Virelan Cup final, and Oren Pellford won the Nerowan Cup final. ",
+        "whole_span": [
+          0,
+          635
+        ],
+        "input_text_sha256": {
+          "prompt": "ea9bfd1642211b8113e62147b63dad810ca7f76d432b53da071545ddb4f7d795",
+          "source": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+          "response": "0606889bcb470b2408cbd269b936d00d893b34aa7dfb1ba990e6d0719ab23659"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 12,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex1-s0-r1-b00",
+        "source_id": "h007-winner-lex1-s0",
+        "scenario": "winner-lex1",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex1",
+          "source_direction": 0,
+          "response_direction": 1,
+          "distractor_count": 0
+        },
+        "target_span": [
+          0,
+          86
+        ],
+        "target_text": "Oren Pellford won the Virelan Cup final, and Mira Tanswick won the Nerowan Cup final. ",
+        "whole_span": [
+          0,
+          86
+        ],
+        "input_text_sha256": {
+          "prompt": "ea9bfd1642211b8113e62147b63dad810ca7f76d432b53da071545ddb4f7d795",
+          "source": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+          "response": "b2e0b1dc0c9c92ed771e6e71b186cc7027196a89112997ed3042553357e4e1b4"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 0,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex1-s0-r1-b04",
+        "source_id": "h007-winner-lex1-s0",
+        "scenario": "winner-lex1",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex1",
+          "source_direction": 0,
+          "response_direction": 1,
+          "distractor_count": 4
+        },
+        "target_span": [
+          0,
+          86
+        ],
+        "target_text": "Oren Pellford won the Virelan Cup final, and Mira Tanswick won the Nerowan Cup final. ",
+        "whole_span": [
+          0,
+          266
+        ],
+        "input_text_sha256": {
+          "prompt": "ea9bfd1642211b8113e62147b63dad810ca7f76d432b53da071545ddb4f7d795",
+          "source": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+          "response": "5ca12b5680cdfbad560f9ee643546f36cff05235ff51d1f4340b4c6dd93c397a"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 4,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex1-s0-r1-b12",
+        "source_id": "h007-winner-lex1-s0",
+        "scenario": "winner-lex1",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex1",
+          "source_direction": 0,
+          "response_direction": 1,
+          "distractor_count": 12
+        },
+        "target_span": [
+          0,
+          86
+        ],
+        "target_text": "Oren Pellford won the Virelan Cup final, and Mira Tanswick won the Nerowan Cup final. ",
+        "whole_span": [
+          0,
+          635
+        ],
+        "input_text_sha256": {
+          "prompt": "ea9bfd1642211b8113e62147b63dad810ca7f76d432b53da071545ddb4f7d795",
+          "source": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+          "response": "4fad73467cec1aa9e3c9d61a9fdb3126b735df54639c39a3abeaa8b750e74778"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 12,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex1-s1-r0-b00",
+        "source_id": "h007-winner-lex1-s1",
+        "scenario": "winner-lex1",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex1",
+          "source_direction": 1,
+          "response_direction": 0,
+          "distractor_count": 0
+        },
+        "target_span": [
+          0,
+          86
+        ],
+        "target_text": "Mira Tanswick won the Virelan Cup final, and Oren Pellford won the Nerowan Cup final. ",
+        "whole_span": [
+          0,
+          86
+        ],
+        "input_text_sha256": {
+          "prompt": "6724a25693dcfd9cb6c023d60455645dde1bfd1c36668c7d0193cb5e2678bd44",
+          "source": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+          "response": "8f953250a004879252e8e60d91f3a43e6a75d216d3760c8a93e899ce4b339527"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 0,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex1-s1-r0-b04",
+        "source_id": "h007-winner-lex1-s1",
+        "scenario": "winner-lex1",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex1",
+          "source_direction": 1,
+          "response_direction": 0,
+          "distractor_count": 4
+        },
+        "target_span": [
+          0,
+          86
+        ],
+        "target_text": "Mira Tanswick won the Virelan Cup final, and Oren Pellford won the Nerowan Cup final. ",
+        "whole_span": [
+          0,
+          266
+        ],
+        "input_text_sha256": {
+          "prompt": "6724a25693dcfd9cb6c023d60455645dde1bfd1c36668c7d0193cb5e2678bd44",
+          "source": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+          "response": "37c6101927a624bf002b862f75dbe09aabe69e2616cb1e74dc2c83b5782a5635"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 4,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex1-s1-r0-b12",
+        "source_id": "h007-winner-lex1-s1",
+        "scenario": "winner-lex1",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex1",
+          "source_direction": 1,
+          "response_direction": 0,
+          "distractor_count": 12
+        },
+        "target_span": [
+          0,
+          86
+        ],
+        "target_text": "Mira Tanswick won the Virelan Cup final, and Oren Pellford won the Nerowan Cup final. ",
+        "whole_span": [
+          0,
+          635
+        ],
+        "input_text_sha256": {
+          "prompt": "6724a25693dcfd9cb6c023d60455645dde1bfd1c36668c7d0193cb5e2678bd44",
+          "source": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+          "response": "0606889bcb470b2408cbd269b936d00d893b34aa7dfb1ba990e6d0719ab23659"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 12,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex1-s1-r1-b00",
+        "source_id": "h007-winner-lex1-s1",
+        "scenario": "winner-lex1",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex1",
+          "source_direction": 1,
+          "response_direction": 1,
+          "distractor_count": 0
+        },
+        "target_span": [
+          0,
+          86
+        ],
+        "target_text": "Oren Pellford won the Virelan Cup final, and Mira Tanswick won the Nerowan Cup final. ",
+        "whole_span": [
+          0,
+          86
+        ],
+        "input_text_sha256": {
+          "prompt": "6724a25693dcfd9cb6c023d60455645dde1bfd1c36668c7d0193cb5e2678bd44",
+          "source": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+          "response": "b2e0b1dc0c9c92ed771e6e71b186cc7027196a89112997ed3042553357e4e1b4"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 0,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex1-s1-r1-b04",
+        "source_id": "h007-winner-lex1-s1",
+        "scenario": "winner-lex1",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex1",
+          "source_direction": 1,
+          "response_direction": 1,
+          "distractor_count": 4
+        },
+        "target_span": [
+          0,
+          86
+        ],
+        "target_text": "Oren Pellford won the Virelan Cup final, and Mira Tanswick won the Nerowan Cup final. ",
+        "whole_span": [
+          0,
+          266
+        ],
+        "input_text_sha256": {
+          "prompt": "6724a25693dcfd9cb6c023d60455645dde1bfd1c36668c7d0193cb5e2678bd44",
+          "source": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+          "response": "5ca12b5680cdfbad560f9ee643546f36cff05235ff51d1f4340b4c6dd93c397a"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 4,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex1-s1-r1-b12",
+        "source_id": "h007-winner-lex1-s1",
+        "scenario": "winner-lex1",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex1",
+          "source_direction": 1,
+          "response_direction": 1,
+          "distractor_count": 12
+        },
+        "target_span": [
+          0,
+          86
+        ],
+        "target_text": "Oren Pellford won the Virelan Cup final, and Mira Tanswick won the Nerowan Cup final. ",
+        "whole_span": [
+          0,
+          635
+        ],
+        "input_text_sha256": {
+          "prompt": "6724a25693dcfd9cb6c023d60455645dde1bfd1c36668c7d0193cb5e2678bd44",
+          "source": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+          "response": "4fad73467cec1aa9e3c9d61a9fdb3126b735df54639c39a3abeaa8b750e74778"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 12,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex2-s0-r0-b00",
+        "source_id": "h007-winner-lex2-s0",
+        "scenario": "winner-lex2",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex2",
+          "source_direction": 0,
+          "response_direction": 0,
+          "distractor_count": 0
+        },
+        "target_span": [
+          0,
+          88
+        ],
+        "target_text": "Sana Whitmere won the Raventon Cup final, and Evan Calderby won the Dalespar Cup final. ",
+        "whole_span": [
+          0,
+          88
+        ],
+        "input_text_sha256": {
+          "prompt": "9dadfcb3af12211798d18af9a35ed9f576a6ffa89fe29488d2dbebb747b0b899",
+          "source": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+          "response": "6da330d01c7cd625fca3e7eb78df59d45db2762fe7f26bdc6839452f69b95178"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 0,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex2-s0-r0-b04",
+        "source_id": "h007-winner-lex2-s0",
+        "scenario": "winner-lex2",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex2",
+          "source_direction": 0,
+          "response_direction": 0,
+          "distractor_count": 4
+        },
+        "target_span": [
+          0,
+          88
+        ],
+        "target_text": "Sana Whitmere won the Raventon Cup final, and Evan Calderby won the Dalespar Cup final. ",
+        "whole_span": [
+          0,
+          268
+        ],
+        "input_text_sha256": {
+          "prompt": "9dadfcb3af12211798d18af9a35ed9f576a6ffa89fe29488d2dbebb747b0b899",
+          "source": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+          "response": "c24bf1880fb4a14ec13bb8ff5f7d7426808faf3fa7e245f882fe1bb7a3f15653"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 4,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex2-s0-r0-b12",
+        "source_id": "h007-winner-lex2-s0",
+        "scenario": "winner-lex2",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex2",
+          "source_direction": 0,
+          "response_direction": 0,
+          "distractor_count": 12
+        },
+        "target_span": [
+          0,
+          88
+        ],
+        "target_text": "Sana Whitmere won the Raventon Cup final, and Evan Calderby won the Dalespar Cup final. ",
+        "whole_span": [
+          0,
+          637
+        ],
+        "input_text_sha256": {
+          "prompt": "9dadfcb3af12211798d18af9a35ed9f576a6ffa89fe29488d2dbebb747b0b899",
+          "source": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+          "response": "0f65b26158898e2ac96d56b26ef408f9049beeeed065a5e94dd3474781fb6cec"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 12,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex2-s0-r1-b00",
+        "source_id": "h007-winner-lex2-s0",
+        "scenario": "winner-lex2",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex2",
+          "source_direction": 0,
+          "response_direction": 1,
+          "distractor_count": 0
+        },
+        "target_span": [
+          0,
+          88
+        ],
+        "target_text": "Evan Calderby won the Raventon Cup final, and Sana Whitmere won the Dalespar Cup final. ",
+        "whole_span": [
+          0,
+          88
+        ],
+        "input_text_sha256": {
+          "prompt": "9dadfcb3af12211798d18af9a35ed9f576a6ffa89fe29488d2dbebb747b0b899",
+          "source": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+          "response": "c978130a156bdf1ae510a6540629a943a5e6d40b3f7757e9410a703811d305bb"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 0,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex2-s0-r1-b04",
+        "source_id": "h007-winner-lex2-s0",
+        "scenario": "winner-lex2",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex2",
+          "source_direction": 0,
+          "response_direction": 1,
+          "distractor_count": 4
+        },
+        "target_span": [
+          0,
+          88
+        ],
+        "target_text": "Evan Calderby won the Raventon Cup final, and Sana Whitmere won the Dalespar Cup final. ",
+        "whole_span": [
+          0,
+          268
+        ],
+        "input_text_sha256": {
+          "prompt": "9dadfcb3af12211798d18af9a35ed9f576a6ffa89fe29488d2dbebb747b0b899",
+          "source": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+          "response": "056f08dcb8977be38536dab965ef154a4597ca923212e6b5f58edc950f5ec99a"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 4,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex2-s0-r1-b12",
+        "source_id": "h007-winner-lex2-s0",
+        "scenario": "winner-lex2",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex2",
+          "source_direction": 0,
+          "response_direction": 1,
+          "distractor_count": 12
+        },
+        "target_span": [
+          0,
+          88
+        ],
+        "target_text": "Evan Calderby won the Raventon Cup final, and Sana Whitmere won the Dalespar Cup final. ",
+        "whole_span": [
+          0,
+          637
+        ],
+        "input_text_sha256": {
+          "prompt": "9dadfcb3af12211798d18af9a35ed9f576a6ffa89fe29488d2dbebb747b0b899",
+          "source": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+          "response": "d081c0f14b56e4b5ef5d799b8f2caefc5d9882b54da5912e051aa5922c96346d"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 12,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex2-s1-r0-b00",
+        "source_id": "h007-winner-lex2-s1",
+        "scenario": "winner-lex2",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex2",
+          "source_direction": 1,
+          "response_direction": 0,
+          "distractor_count": 0
+        },
+        "target_span": [
+          0,
+          88
+        ],
+        "target_text": "Sana Whitmere won the Raventon Cup final, and Evan Calderby won the Dalespar Cup final. ",
+        "whole_span": [
+          0,
+          88
+        ],
+        "input_text_sha256": {
+          "prompt": "05ec4836049864f3e80780f5c42d0770f9ef3f9ea7cdea5cf8e9b9a1954f8b82",
+          "source": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+          "response": "6da330d01c7cd625fca3e7eb78df59d45db2762fe7f26bdc6839452f69b95178"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 0,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex2-s1-r0-b04",
+        "source_id": "h007-winner-lex2-s1",
+        "scenario": "winner-lex2",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex2",
+          "source_direction": 1,
+          "response_direction": 0,
+          "distractor_count": 4
+        },
+        "target_span": [
+          0,
+          88
+        ],
+        "target_text": "Sana Whitmere won the Raventon Cup final, and Evan Calderby won the Dalespar Cup final. ",
+        "whole_span": [
+          0,
+          268
+        ],
+        "input_text_sha256": {
+          "prompt": "05ec4836049864f3e80780f5c42d0770f9ef3f9ea7cdea5cf8e9b9a1954f8b82",
+          "source": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+          "response": "c24bf1880fb4a14ec13bb8ff5f7d7426808faf3fa7e245f882fe1bb7a3f15653"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 4,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex2-s1-r0-b12",
+        "source_id": "h007-winner-lex2-s1",
+        "scenario": "winner-lex2",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex2",
+          "source_direction": 1,
+          "response_direction": 0,
+          "distractor_count": 12
+        },
+        "target_span": [
+          0,
+          88
+        ],
+        "target_text": "Sana Whitmere won the Raventon Cup final, and Evan Calderby won the Dalespar Cup final. ",
+        "whole_span": [
+          0,
+          637
+        ],
+        "input_text_sha256": {
+          "prompt": "05ec4836049864f3e80780f5c42d0770f9ef3f9ea7cdea5cf8e9b9a1954f8b82",
+          "source": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+          "response": "0f65b26158898e2ac96d56b26ef408f9049beeeed065a5e94dd3474781fb6cec"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 12,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex2-s1-r1-b00",
+        "source_id": "h007-winner-lex2-s1",
+        "scenario": "winner-lex2",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex2",
+          "source_direction": 1,
+          "response_direction": 1,
+          "distractor_count": 0
+        },
+        "target_span": [
+          0,
+          88
+        ],
+        "target_text": "Evan Calderby won the Raventon Cup final, and Sana Whitmere won the Dalespar Cup final. ",
+        "whole_span": [
+          0,
+          88
+        ],
+        "input_text_sha256": {
+          "prompt": "05ec4836049864f3e80780f5c42d0770f9ef3f9ea7cdea5cf8e9b9a1954f8b82",
+          "source": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+          "response": "c978130a156bdf1ae510a6540629a943a5e6d40b3f7757e9410a703811d305bb"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 0,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex2-s1-r1-b04",
+        "source_id": "h007-winner-lex2-s1",
+        "scenario": "winner-lex2",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex2",
+          "source_direction": 1,
+          "response_direction": 1,
+          "distractor_count": 4
+        },
+        "target_span": [
+          0,
+          88
+        ],
+        "target_text": "Evan Calderby won the Raventon Cup final, and Sana Whitmere won the Dalespar Cup final. ",
+        "whole_span": [
+          0,
+          268
+        ],
+        "input_text_sha256": {
+          "prompt": "05ec4836049864f3e80780f5c42d0770f9ef3f9ea7cdea5cf8e9b9a1954f8b82",
+          "source": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+          "response": "056f08dcb8977be38536dab965ef154a4597ca923212e6b5f58edc950f5ec99a"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 4,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-winner-lex2-s1-r1-b12",
+        "source_id": "h007-winner-lex2-s1",
+        "scenario": "winner-lex2",
+        "factor_cell": {
+          "relation_family": "winner",
+          "vocabulary": "lex2",
+          "source_direction": 1,
+          "response_direction": 1,
+          "distractor_count": 12
+        },
+        "target_span": [
+          0,
+          88
+        ],
+        "target_text": "Evan Calderby won the Raventon Cup final, and Sana Whitmere won the Dalespar Cup final. ",
+        "whole_span": [
+          0,
+          637
+        ],
+        "input_text_sha256": {
+          "prompt": "05ec4836049864f3e80780f5c42d0770f9ef3f9ea7cdea5cf8e9b9a1954f8b82",
+          "source": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+          "response": "d081c0f14b56e4b5ef5d799b8f2caefc5d9882b54da5912e051aa5922c96346d"
+        },
+        "source_target_fact_count": 4,
+        "source_filler_count": 12,
+        "response_filler_count": 12,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex1-s0-r0-b00",
+        "source_id": "h007-sole_signer-lex1-s0",
+        "scenario": "sole_signer-lex1",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex1",
+          "source_direction": 0,
+          "response_direction": 0,
+          "distractor_count": 0
+        },
+        "target_span": [
+          0,
+          120
+        ],
+        "target_text": "Lena Cresswell was the sole signer of the Quorren Accord, and Tomas Brindle was the sole signer of the Meliston Accord. ",
+        "whole_span": [
+          0,
+          120
+        ],
+        "input_text_sha256": {
+          "prompt": "011d632bca51558a578510a76ff149a19bb1df45951c494113d396cfc55ec7d4",
+          "source": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+          "response": "8aa9d578d45a6af90788ccf0081a70c97022dbfc11b0b03a96334cd45faec674"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 0,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex1-s0-r0-b04",
+        "source_id": "h007-sole_signer-lex1-s0",
+        "scenario": "sole_signer-lex1",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex1",
+          "source_direction": 0,
+          "response_direction": 0,
+          "distractor_count": 4
+        },
+        "target_span": [
+          0,
+          120
+        ],
+        "target_text": "Lena Cresswell was the sole signer of the Quorren Accord, and Tomas Brindle was the sole signer of the Meliston Accord. ",
+        "whole_span": [
+          0,
+          300
+        ],
+        "input_text_sha256": {
+          "prompt": "011d632bca51558a578510a76ff149a19bb1df45951c494113d396cfc55ec7d4",
+          "source": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+          "response": "4b2a632b29f85fcac583b0affcc0f8d9c3b108316379a03eeae846d64a1eaf64"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 4,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex1-s0-r0-b12",
+        "source_id": "h007-sole_signer-lex1-s0",
+        "scenario": "sole_signer-lex1",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex1",
+          "source_direction": 0,
+          "response_direction": 0,
+          "distractor_count": 12
+        },
+        "target_span": [
+          0,
+          120
+        ],
+        "target_text": "Lena Cresswell was the sole signer of the Quorren Accord, and Tomas Brindle was the sole signer of the Meliston Accord. ",
+        "whole_span": [
+          0,
+          669
+        ],
+        "input_text_sha256": {
+          "prompt": "011d632bca51558a578510a76ff149a19bb1df45951c494113d396cfc55ec7d4",
+          "source": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+          "response": "2808b6bea428322b8388579ec1dead2fd1e59a331b4a744a4e5bdf401e7c806d"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 12,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex1-s0-r1-b00",
+        "source_id": "h007-sole_signer-lex1-s0",
+        "scenario": "sole_signer-lex1",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex1",
+          "source_direction": 0,
+          "response_direction": 1,
+          "distractor_count": 0
+        },
+        "target_span": [
+          0,
+          120
+        ],
+        "target_text": "Tomas Brindle was the sole signer of the Quorren Accord, and Lena Cresswell was the sole signer of the Meliston Accord. ",
+        "whole_span": [
+          0,
+          120
+        ],
+        "input_text_sha256": {
+          "prompt": "011d632bca51558a578510a76ff149a19bb1df45951c494113d396cfc55ec7d4",
+          "source": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+          "response": "74edee101ee2ede70c71943beb266b1770d34328f121aa14772bc6d6c3ca82ad"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 0,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex1-s0-r1-b04",
+        "source_id": "h007-sole_signer-lex1-s0",
+        "scenario": "sole_signer-lex1",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex1",
+          "source_direction": 0,
+          "response_direction": 1,
+          "distractor_count": 4
+        },
+        "target_span": [
+          0,
+          120
+        ],
+        "target_text": "Tomas Brindle was the sole signer of the Quorren Accord, and Lena Cresswell was the sole signer of the Meliston Accord. ",
+        "whole_span": [
+          0,
+          300
+        ],
+        "input_text_sha256": {
+          "prompt": "011d632bca51558a578510a76ff149a19bb1df45951c494113d396cfc55ec7d4",
+          "source": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+          "response": "a53c86b171048e6d895afb55a9f928cc07a281410b5c6272da7e27e71d536932"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 4,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex1-s0-r1-b12",
+        "source_id": "h007-sole_signer-lex1-s0",
+        "scenario": "sole_signer-lex1",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex1",
+          "source_direction": 0,
+          "response_direction": 1,
+          "distractor_count": 12
+        },
+        "target_span": [
+          0,
+          120
+        ],
+        "target_text": "Tomas Brindle was the sole signer of the Quorren Accord, and Lena Cresswell was the sole signer of the Meliston Accord. ",
+        "whole_span": [
+          0,
+          669
+        ],
+        "input_text_sha256": {
+          "prompt": "011d632bca51558a578510a76ff149a19bb1df45951c494113d396cfc55ec7d4",
+          "source": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+          "response": "dd47a1c9e5b883232a1e4e7e1eca7b213b67f7a21f678ad86c60695acdf787cb"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 12,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex1-s1-r0-b00",
+        "source_id": "h007-sole_signer-lex1-s1",
+        "scenario": "sole_signer-lex1",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex1",
+          "source_direction": 1,
+          "response_direction": 0,
+          "distractor_count": 0
+        },
+        "target_span": [
+          0,
+          120
+        ],
+        "target_text": "Lena Cresswell was the sole signer of the Quorren Accord, and Tomas Brindle was the sole signer of the Meliston Accord. ",
+        "whole_span": [
+          0,
+          120
+        ],
+        "input_text_sha256": {
+          "prompt": "f63665680bf49873fba7ca3c104ed1d0f4fc3a7216ce45c35cf2a34b2a1674a7",
+          "source": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+          "response": "8aa9d578d45a6af90788ccf0081a70c97022dbfc11b0b03a96334cd45faec674"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 0,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex1-s1-r0-b04",
+        "source_id": "h007-sole_signer-lex1-s1",
+        "scenario": "sole_signer-lex1",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex1",
+          "source_direction": 1,
+          "response_direction": 0,
+          "distractor_count": 4
+        },
+        "target_span": [
+          0,
+          120
+        ],
+        "target_text": "Lena Cresswell was the sole signer of the Quorren Accord, and Tomas Brindle was the sole signer of the Meliston Accord. ",
+        "whole_span": [
+          0,
+          300
+        ],
+        "input_text_sha256": {
+          "prompt": "f63665680bf49873fba7ca3c104ed1d0f4fc3a7216ce45c35cf2a34b2a1674a7",
+          "source": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+          "response": "4b2a632b29f85fcac583b0affcc0f8d9c3b108316379a03eeae846d64a1eaf64"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 4,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex1-s1-r0-b12",
+        "source_id": "h007-sole_signer-lex1-s1",
+        "scenario": "sole_signer-lex1",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex1",
+          "source_direction": 1,
+          "response_direction": 0,
+          "distractor_count": 12
+        },
+        "target_span": [
+          0,
+          120
+        ],
+        "target_text": "Lena Cresswell was the sole signer of the Quorren Accord, and Tomas Brindle was the sole signer of the Meliston Accord. ",
+        "whole_span": [
+          0,
+          669
+        ],
+        "input_text_sha256": {
+          "prompt": "f63665680bf49873fba7ca3c104ed1d0f4fc3a7216ce45c35cf2a34b2a1674a7",
+          "source": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+          "response": "2808b6bea428322b8388579ec1dead2fd1e59a331b4a744a4e5bdf401e7c806d"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 12,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex1-s1-r1-b00",
+        "source_id": "h007-sole_signer-lex1-s1",
+        "scenario": "sole_signer-lex1",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex1",
+          "source_direction": 1,
+          "response_direction": 1,
+          "distractor_count": 0
+        },
+        "target_span": [
+          0,
+          120
+        ],
+        "target_text": "Tomas Brindle was the sole signer of the Quorren Accord, and Lena Cresswell was the sole signer of the Meliston Accord. ",
+        "whole_span": [
+          0,
+          120
+        ],
+        "input_text_sha256": {
+          "prompt": "f63665680bf49873fba7ca3c104ed1d0f4fc3a7216ce45c35cf2a34b2a1674a7",
+          "source": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+          "response": "74edee101ee2ede70c71943beb266b1770d34328f121aa14772bc6d6c3ca82ad"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 0,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex1-s1-r1-b04",
+        "source_id": "h007-sole_signer-lex1-s1",
+        "scenario": "sole_signer-lex1",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex1",
+          "source_direction": 1,
+          "response_direction": 1,
+          "distractor_count": 4
+        },
+        "target_span": [
+          0,
+          120
+        ],
+        "target_text": "Tomas Brindle was the sole signer of the Quorren Accord, and Lena Cresswell was the sole signer of the Meliston Accord. ",
+        "whole_span": [
+          0,
+          300
+        ],
+        "input_text_sha256": {
+          "prompt": "f63665680bf49873fba7ca3c104ed1d0f4fc3a7216ce45c35cf2a34b2a1674a7",
+          "source": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+          "response": "a53c86b171048e6d895afb55a9f928cc07a281410b5c6272da7e27e71d536932"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 4,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex1-s1-r1-b12",
+        "source_id": "h007-sole_signer-lex1-s1",
+        "scenario": "sole_signer-lex1",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex1",
+          "source_direction": 1,
+          "response_direction": 1,
+          "distractor_count": 12
+        },
+        "target_span": [
+          0,
+          120
+        ],
+        "target_text": "Tomas Brindle was the sole signer of the Quorren Accord, and Lena Cresswell was the sole signer of the Meliston Accord. ",
+        "whole_span": [
+          0,
+          669
+        ],
+        "input_text_sha256": {
+          "prompt": "f63665680bf49873fba7ca3c104ed1d0f4fc3a7216ce45c35cf2a34b2a1674a7",
+          "source": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+          "response": "dd47a1c9e5b883232a1e4e7e1eca7b213b67f7a21f678ad86c60695acdf787cb"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 12,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex2-s0-r0-b00",
+        "source_id": "h007-sole_signer-lex2-s0",
+        "scenario": "sole_signer-lex2",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex2",
+          "source_direction": 0,
+          "response_direction": 0,
+          "distractor_count": 0
+        },
+        "target_span": [
+          0,
+          124
+        ],
+        "target_text": "Nadia Fennbrook was the sole signer of the Corvellan Accord, and Hugo Valecrest was the sole signer of the Tremorin Accord. ",
+        "whole_span": [
+          0,
+          124
+        ],
+        "input_text_sha256": {
+          "prompt": "46e135a9dd0414e0d658ea4cd5ef42e68edf8834652b7f98097339534ab4d73d",
+          "source": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+          "response": "b926f65b6181b07f97cda0023a9c17944695c41c16c963cbfe138bb4502d5124"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 0,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex2-s0-r0-b04",
+        "source_id": "h007-sole_signer-lex2-s0",
+        "scenario": "sole_signer-lex2",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex2",
+          "source_direction": 0,
+          "response_direction": 0,
+          "distractor_count": 4
+        },
+        "target_span": [
+          0,
+          124
+        ],
+        "target_text": "Nadia Fennbrook was the sole signer of the Corvellan Accord, and Hugo Valecrest was the sole signer of the Tremorin Accord. ",
+        "whole_span": [
+          0,
+          304
+        ],
+        "input_text_sha256": {
+          "prompt": "46e135a9dd0414e0d658ea4cd5ef42e68edf8834652b7f98097339534ab4d73d",
+          "source": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+          "response": "66860cadc2c82661ec55381cba6b082f1f6591d9b51afbf9ff64411cd79d73fa"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 4,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex2-s0-r0-b12",
+        "source_id": "h007-sole_signer-lex2-s0",
+        "scenario": "sole_signer-lex2",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex2",
+          "source_direction": 0,
+          "response_direction": 0,
+          "distractor_count": 12
+        },
+        "target_span": [
+          0,
+          124
+        ],
+        "target_text": "Nadia Fennbrook was the sole signer of the Corvellan Accord, and Hugo Valecrest was the sole signer of the Tremorin Accord. ",
+        "whole_span": [
+          0,
+          673
+        ],
+        "input_text_sha256": {
+          "prompt": "46e135a9dd0414e0d658ea4cd5ef42e68edf8834652b7f98097339534ab4d73d",
+          "source": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+          "response": "e531a0c11634b1954d630adf9137e3fde97ec87c78792529cf325da89a691ddc"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 12,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex2-s0-r1-b00",
+        "source_id": "h007-sole_signer-lex2-s0",
+        "scenario": "sole_signer-lex2",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex2",
+          "source_direction": 0,
+          "response_direction": 1,
+          "distractor_count": 0
+        },
+        "target_span": [
+          0,
+          124
+        ],
+        "target_text": "Hugo Valecrest was the sole signer of the Corvellan Accord, and Nadia Fennbrook was the sole signer of the Tremorin Accord. ",
+        "whole_span": [
+          0,
+          124
+        ],
+        "input_text_sha256": {
+          "prompt": "46e135a9dd0414e0d658ea4cd5ef42e68edf8834652b7f98097339534ab4d73d",
+          "source": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+          "response": "69b2e242196417e3cb7b9671a5b38715070e9fd9e4fbf5a1b4a07dd635a18ff0"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 0,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex2-s0-r1-b04",
+        "source_id": "h007-sole_signer-lex2-s0",
+        "scenario": "sole_signer-lex2",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex2",
+          "source_direction": 0,
+          "response_direction": 1,
+          "distractor_count": 4
+        },
+        "target_span": [
+          0,
+          124
+        ],
+        "target_text": "Hugo Valecrest was the sole signer of the Corvellan Accord, and Nadia Fennbrook was the sole signer of the Tremorin Accord. ",
+        "whole_span": [
+          0,
+          304
+        ],
+        "input_text_sha256": {
+          "prompt": "46e135a9dd0414e0d658ea4cd5ef42e68edf8834652b7f98097339534ab4d73d",
+          "source": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+          "response": "fffe5ffd61bc714da7937803f006f5c07ca366c3633137a644edf9133e7eccbd"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 4,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex2-s0-r1-b12",
+        "source_id": "h007-sole_signer-lex2-s0",
+        "scenario": "sole_signer-lex2",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex2",
+          "source_direction": 0,
+          "response_direction": 1,
+          "distractor_count": 12
+        },
+        "target_span": [
+          0,
+          124
+        ],
+        "target_text": "Hugo Valecrest was the sole signer of the Corvellan Accord, and Nadia Fennbrook was the sole signer of the Tremorin Accord. ",
+        "whole_span": [
+          0,
+          673
+        ],
+        "input_text_sha256": {
+          "prompt": "46e135a9dd0414e0d658ea4cd5ef42e68edf8834652b7f98097339534ab4d73d",
+          "source": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+          "response": "ee1325f10f0ee2d81c46f727737666b9ad125dbf528ddab076b920279429acc7"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 12,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex2-s1-r0-b00",
+        "source_id": "h007-sole_signer-lex2-s1",
+        "scenario": "sole_signer-lex2",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex2",
+          "source_direction": 1,
+          "response_direction": 0,
+          "distractor_count": 0
+        },
+        "target_span": [
+          0,
+          124
+        ],
+        "target_text": "Nadia Fennbrook was the sole signer of the Corvellan Accord, and Hugo Valecrest was the sole signer of the Tremorin Accord. ",
+        "whole_span": [
+          0,
+          124
+        ],
+        "input_text_sha256": {
+          "prompt": "5478d27ef1af6ad0bc5de949cbce7ca7699f648728e968bf0ff56efe71c08510",
+          "source": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+          "response": "b926f65b6181b07f97cda0023a9c17944695c41c16c963cbfe138bb4502d5124"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 0,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex2-s1-r0-b04",
+        "source_id": "h007-sole_signer-lex2-s1",
+        "scenario": "sole_signer-lex2",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex2",
+          "source_direction": 1,
+          "response_direction": 0,
+          "distractor_count": 4
+        },
+        "target_span": [
+          0,
+          124
+        ],
+        "target_text": "Nadia Fennbrook was the sole signer of the Corvellan Accord, and Hugo Valecrest was the sole signer of the Tremorin Accord. ",
+        "whole_span": [
+          0,
+          304
+        ],
+        "input_text_sha256": {
+          "prompt": "5478d27ef1af6ad0bc5de949cbce7ca7699f648728e968bf0ff56efe71c08510",
+          "source": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+          "response": "66860cadc2c82661ec55381cba6b082f1f6591d9b51afbf9ff64411cd79d73fa"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 4,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex2-s1-r0-b12",
+        "source_id": "h007-sole_signer-lex2-s1",
+        "scenario": "sole_signer-lex2",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex2",
+          "source_direction": 1,
+          "response_direction": 0,
+          "distractor_count": 12
+        },
+        "target_span": [
+          0,
+          124
+        ],
+        "target_text": "Nadia Fennbrook was the sole signer of the Corvellan Accord, and Hugo Valecrest was the sole signer of the Tremorin Accord. ",
+        "whole_span": [
+          0,
+          673
+        ],
+        "input_text_sha256": {
+          "prompt": "5478d27ef1af6ad0bc5de949cbce7ca7699f648728e968bf0ff56efe71c08510",
+          "source": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+          "response": "e531a0c11634b1954d630adf9137e3fde97ec87c78792529cf325da89a691ddc"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 12,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex2-s1-r1-b00",
+        "source_id": "h007-sole_signer-lex2-s1",
+        "scenario": "sole_signer-lex2",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex2",
+          "source_direction": 1,
+          "response_direction": 1,
+          "distractor_count": 0
+        },
+        "target_span": [
+          0,
+          124
+        ],
+        "target_text": "Hugo Valecrest was the sole signer of the Corvellan Accord, and Nadia Fennbrook was the sole signer of the Tremorin Accord. ",
+        "whole_span": [
+          0,
+          124
+        ],
+        "input_text_sha256": {
+          "prompt": "5478d27ef1af6ad0bc5de949cbce7ca7699f648728e968bf0ff56efe71c08510",
+          "source": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+          "response": "69b2e242196417e3cb7b9671a5b38715070e9fd9e4fbf5a1b4a07dd635a18ff0"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 0,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex2-s1-r1-b04",
+        "source_id": "h007-sole_signer-lex2-s1",
+        "scenario": "sole_signer-lex2",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex2",
+          "source_direction": 1,
+          "response_direction": 1,
+          "distractor_count": 4
+        },
+        "target_span": [
+          0,
+          124
+        ],
+        "target_text": "Hugo Valecrest was the sole signer of the Corvellan Accord, and Nadia Fennbrook was the sole signer of the Tremorin Accord. ",
+        "whole_span": [
+          0,
+          304
+        ],
+        "input_text_sha256": {
+          "prompt": "5478d27ef1af6ad0bc5de949cbce7ca7699f648728e968bf0ff56efe71c08510",
+          "source": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+          "response": "fffe5ffd61bc714da7937803f006f5c07ca366c3633137a644edf9133e7eccbd"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 4,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      },
+      {
+        "id": "h007-sole_signer-lex2-s1-r1-b12",
+        "source_id": "h007-sole_signer-lex2-s1",
+        "scenario": "sole_signer-lex2",
+        "factor_cell": {
+          "relation_family": "sole_signer",
+          "vocabulary": "lex2",
+          "source_direction": 1,
+          "response_direction": 1,
+          "distractor_count": 12
+        },
+        "target_span": [
+          0,
+          124
+        ],
+        "target_text": "Hugo Valecrest was the sole signer of the Corvellan Accord, and Nadia Fennbrook was the sole signer of the Tremorin Accord. ",
+        "whole_span": [
+          0,
+          673
+        ],
+        "input_text_sha256": {
+          "prompt": "5478d27ef1af6ad0bc5de949cbce7ca7699f648728e968bf0ff56efe71c08510",
+          "source": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+          "response": "ee1325f10f0ee2d81c46f727737666b9ad125dbf528ddab076b920279429acc7"
+        },
+        "source_target_fact_count": 2,
+        "source_filler_count": 12,
+        "response_filler_count": 12,
+        "target_position": "first",
+        "metadata_sent_to_model": false
+      }
+    ]
+  },
+  "construction": [
+    {
+      "id": "h007-winner-lex1-s0-r0-b00",
+      "source_id": "h007-winner-lex1-s0",
+      "source_sha256": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+      "response_sha256": "8f953250a004879252e8e60d91f3a43e6a75d216d3760c8a93e899ce4b339527",
+      "target_span": [
+        0,
+        86
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex1-s0-r0-b04",
+      "source_id": "h007-winner-lex1-s0",
+      "source_sha256": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+      "response_sha256": "37c6101927a624bf002b862f75dbe09aabe69e2616cb1e74dc2c83b5782a5635",
+      "target_span": [
+        0,
+        86
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex1-s0-r0-b12",
+      "source_id": "h007-winner-lex1-s0",
+      "source_sha256": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+      "response_sha256": "0606889bcb470b2408cbd269b936d00d893b34aa7dfb1ba990e6d0719ab23659",
+      "target_span": [
+        0,
+        86
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex1-s0-r1-b00",
+      "source_id": "h007-winner-lex1-s0",
+      "source_sha256": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+      "response_sha256": "b2e0b1dc0c9c92ed771e6e71b186cc7027196a89112997ed3042553357e4e1b4",
+      "target_span": [
+        0,
+        86
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex1-s0-r1-b04",
+      "source_id": "h007-winner-lex1-s0",
+      "source_sha256": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+      "response_sha256": "5ca12b5680cdfbad560f9ee643546f36cff05235ff51d1f4340b4c6dd93c397a",
+      "target_span": [
+        0,
+        86
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex1-s0-r1-b12",
+      "source_id": "h007-winner-lex1-s0",
+      "source_sha256": "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022",
+      "response_sha256": "4fad73467cec1aa9e3c9d61a9fdb3126b735df54639c39a3abeaa8b750e74778",
+      "target_span": [
+        0,
+        86
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex1-s1-r0-b00",
+      "source_id": "h007-winner-lex1-s1",
+      "source_sha256": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+      "response_sha256": "8f953250a004879252e8e60d91f3a43e6a75d216d3760c8a93e899ce4b339527",
+      "target_span": [
+        0,
+        86
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex1-s1-r0-b04",
+      "source_id": "h007-winner-lex1-s1",
+      "source_sha256": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+      "response_sha256": "37c6101927a624bf002b862f75dbe09aabe69e2616cb1e74dc2c83b5782a5635",
+      "target_span": [
+        0,
+        86
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex1-s1-r0-b12",
+      "source_id": "h007-winner-lex1-s1",
+      "source_sha256": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+      "response_sha256": "0606889bcb470b2408cbd269b936d00d893b34aa7dfb1ba990e6d0719ab23659",
+      "target_span": [
+        0,
+        86
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex1-s1-r1-b00",
+      "source_id": "h007-winner-lex1-s1",
+      "source_sha256": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+      "response_sha256": "b2e0b1dc0c9c92ed771e6e71b186cc7027196a89112997ed3042553357e4e1b4",
+      "target_span": [
+        0,
+        86
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex1-s1-r1-b04",
+      "source_id": "h007-winner-lex1-s1",
+      "source_sha256": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+      "response_sha256": "5ca12b5680cdfbad560f9ee643546f36cff05235ff51d1f4340b4c6dd93c397a",
+      "target_span": [
+        0,
+        86
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex1-s1-r1-b12",
+      "source_id": "h007-winner-lex1-s1",
+      "source_sha256": "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b",
+      "response_sha256": "4fad73467cec1aa9e3c9d61a9fdb3126b735df54639c39a3abeaa8b750e74778",
+      "target_span": [
+        0,
+        86
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex2-s0-r0-b00",
+      "source_id": "h007-winner-lex2-s0",
+      "source_sha256": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+      "response_sha256": "6da330d01c7cd625fca3e7eb78df59d45db2762fe7f26bdc6839452f69b95178",
+      "target_span": [
+        0,
+        88
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex2-s0-r0-b04",
+      "source_id": "h007-winner-lex2-s0",
+      "source_sha256": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+      "response_sha256": "c24bf1880fb4a14ec13bb8ff5f7d7426808faf3fa7e245f882fe1bb7a3f15653",
+      "target_span": [
+        0,
+        88
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex2-s0-r0-b12",
+      "source_id": "h007-winner-lex2-s0",
+      "source_sha256": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+      "response_sha256": "0f65b26158898e2ac96d56b26ef408f9049beeeed065a5e94dd3474781fb6cec",
+      "target_span": [
+        0,
+        88
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex2-s0-r1-b00",
+      "source_id": "h007-winner-lex2-s0",
+      "source_sha256": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+      "response_sha256": "c978130a156bdf1ae510a6540629a943a5e6d40b3f7757e9410a703811d305bb",
+      "target_span": [
+        0,
+        88
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex2-s0-r1-b04",
+      "source_id": "h007-winner-lex2-s0",
+      "source_sha256": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+      "response_sha256": "056f08dcb8977be38536dab965ef154a4597ca923212e6b5f58edc950f5ec99a",
+      "target_span": [
+        0,
+        88
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex2-s0-r1-b12",
+      "source_id": "h007-winner-lex2-s0",
+      "source_sha256": "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba",
+      "response_sha256": "d081c0f14b56e4b5ef5d799b8f2caefc5d9882b54da5912e051aa5922c96346d",
+      "target_span": [
+        0,
+        88
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex2-s1-r0-b00",
+      "source_id": "h007-winner-lex2-s1",
+      "source_sha256": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+      "response_sha256": "6da330d01c7cd625fca3e7eb78df59d45db2762fe7f26bdc6839452f69b95178",
+      "target_span": [
+        0,
+        88
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex2-s1-r0-b04",
+      "source_id": "h007-winner-lex2-s1",
+      "source_sha256": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+      "response_sha256": "c24bf1880fb4a14ec13bb8ff5f7d7426808faf3fa7e245f882fe1bb7a3f15653",
+      "target_span": [
+        0,
+        88
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex2-s1-r0-b12",
+      "source_id": "h007-winner-lex2-s1",
+      "source_sha256": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+      "response_sha256": "0f65b26158898e2ac96d56b26ef408f9049beeeed065a5e94dd3474781fb6cec",
+      "target_span": [
+        0,
+        88
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex2-s1-r1-b00",
+      "source_id": "h007-winner-lex2-s1",
+      "source_sha256": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+      "response_sha256": "c978130a156bdf1ae510a6540629a943a5e6d40b3f7757e9410a703811d305bb",
+      "target_span": [
+        0,
+        88
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex2-s1-r1-b04",
+      "source_id": "h007-winner-lex2-s1",
+      "source_sha256": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+      "response_sha256": "056f08dcb8977be38536dab965ef154a4597ca923212e6b5f58edc950f5ec99a",
+      "target_span": [
+        0,
+        88
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-winner-lex2-s1-r1-b12",
+      "source_id": "h007-winner-lex2-s1",
+      "source_sha256": "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d",
+      "response_sha256": "d081c0f14b56e4b5ef5d799b8f2caefc5d9882b54da5912e051aa5922c96346d",
+      "target_span": [
+        0,
+        88
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex1-s0-r0-b00",
+      "source_id": "h007-sole_signer-lex1-s0",
+      "source_sha256": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+      "response_sha256": "8aa9d578d45a6af90788ccf0081a70c97022dbfc11b0b03a96334cd45faec674",
+      "target_span": [
+        0,
+        120
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex1-s0-r0-b04",
+      "source_id": "h007-sole_signer-lex1-s0",
+      "source_sha256": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+      "response_sha256": "4b2a632b29f85fcac583b0affcc0f8d9c3b108316379a03eeae846d64a1eaf64",
+      "target_span": [
+        0,
+        120
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex1-s0-r0-b12",
+      "source_id": "h007-sole_signer-lex1-s0",
+      "source_sha256": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+      "response_sha256": "2808b6bea428322b8388579ec1dead2fd1e59a331b4a744a4e5bdf401e7c806d",
+      "target_span": [
+        0,
+        120
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex1-s0-r1-b00",
+      "source_id": "h007-sole_signer-lex1-s0",
+      "source_sha256": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+      "response_sha256": "74edee101ee2ede70c71943beb266b1770d34328f121aa14772bc6d6c3ca82ad",
+      "target_span": [
+        0,
+        120
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex1-s0-r1-b04",
+      "source_id": "h007-sole_signer-lex1-s0",
+      "source_sha256": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+      "response_sha256": "a53c86b171048e6d895afb55a9f928cc07a281410b5c6272da7e27e71d536932",
+      "target_span": [
+        0,
+        120
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex1-s0-r1-b12",
+      "source_id": "h007-sole_signer-lex1-s0",
+      "source_sha256": "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760",
+      "response_sha256": "dd47a1c9e5b883232a1e4e7e1eca7b213b67f7a21f678ad86c60695acdf787cb",
+      "target_span": [
+        0,
+        120
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex1-s1-r0-b00",
+      "source_id": "h007-sole_signer-lex1-s1",
+      "source_sha256": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+      "response_sha256": "8aa9d578d45a6af90788ccf0081a70c97022dbfc11b0b03a96334cd45faec674",
+      "target_span": [
+        0,
+        120
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex1-s1-r0-b04",
+      "source_id": "h007-sole_signer-lex1-s1",
+      "source_sha256": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+      "response_sha256": "4b2a632b29f85fcac583b0affcc0f8d9c3b108316379a03eeae846d64a1eaf64",
+      "target_span": [
+        0,
+        120
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex1-s1-r0-b12",
+      "source_id": "h007-sole_signer-lex1-s1",
+      "source_sha256": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+      "response_sha256": "2808b6bea428322b8388579ec1dead2fd1e59a331b4a744a4e5bdf401e7c806d",
+      "target_span": [
+        0,
+        120
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex1-s1-r1-b00",
+      "source_id": "h007-sole_signer-lex1-s1",
+      "source_sha256": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+      "response_sha256": "74edee101ee2ede70c71943beb266b1770d34328f121aa14772bc6d6c3ca82ad",
+      "target_span": [
+        0,
+        120
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex1-s1-r1-b04",
+      "source_id": "h007-sole_signer-lex1-s1",
+      "source_sha256": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+      "response_sha256": "a53c86b171048e6d895afb55a9f928cc07a281410b5c6272da7e27e71d536932",
+      "target_span": [
+        0,
+        120
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex1-s1-r1-b12",
+      "source_id": "h007-sole_signer-lex1-s1",
+      "source_sha256": "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051",
+      "response_sha256": "dd47a1c9e5b883232a1e4e7e1eca7b213b67f7a21f678ad86c60695acdf787cb",
+      "target_span": [
+        0,
+        120
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex2-s0-r0-b00",
+      "source_id": "h007-sole_signer-lex2-s0",
+      "source_sha256": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+      "response_sha256": "b926f65b6181b07f97cda0023a9c17944695c41c16c963cbfe138bb4502d5124",
+      "target_span": [
+        0,
+        124
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex2-s0-r0-b04",
+      "source_id": "h007-sole_signer-lex2-s0",
+      "source_sha256": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+      "response_sha256": "66860cadc2c82661ec55381cba6b082f1f6591d9b51afbf9ff64411cd79d73fa",
+      "target_span": [
+        0,
+        124
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex2-s0-r0-b12",
+      "source_id": "h007-sole_signer-lex2-s0",
+      "source_sha256": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+      "response_sha256": "e531a0c11634b1954d630adf9137e3fde97ec87c78792529cf325da89a691ddc",
+      "target_span": [
+        0,
+        124
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex2-s0-r1-b00",
+      "source_id": "h007-sole_signer-lex2-s0",
+      "source_sha256": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+      "response_sha256": "69b2e242196417e3cb7b9671a5b38715070e9fd9e4fbf5a1b4a07dd635a18ff0",
+      "target_span": [
+        0,
+        124
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex2-s0-r1-b04",
+      "source_id": "h007-sole_signer-lex2-s0",
+      "source_sha256": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+      "response_sha256": "fffe5ffd61bc714da7937803f006f5c07ca366c3633137a644edf9133e7eccbd",
+      "target_span": [
+        0,
+        124
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex2-s0-r1-b12",
+      "source_id": "h007-sole_signer-lex2-s0",
+      "source_sha256": "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188",
+      "response_sha256": "ee1325f10f0ee2d81c46f727737666b9ad125dbf528ddab076b920279429acc7",
+      "target_span": [
+        0,
+        124
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex2-s1-r0-b00",
+      "source_id": "h007-sole_signer-lex2-s1",
+      "source_sha256": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+      "response_sha256": "b926f65b6181b07f97cda0023a9c17944695c41c16c963cbfe138bb4502d5124",
+      "target_span": [
+        0,
+        124
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex2-s1-r0-b04",
+      "source_id": "h007-sole_signer-lex2-s1",
+      "source_sha256": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+      "response_sha256": "66860cadc2c82661ec55381cba6b082f1f6591d9b51afbf9ff64411cd79d73fa",
+      "target_span": [
+        0,
+        124
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex2-s1-r0-b12",
+      "source_id": "h007-sole_signer-lex2-s1",
+      "source_sha256": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+      "response_sha256": "e531a0c11634b1954d630adf9137e3fde97ec87c78792529cf325da89a691ddc",
+      "target_span": [
+        0,
+        124
+      ],
+      "target_outcome": "contradicted",
+      "whole_outcome": "contradicted",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex2-s1-r1-b00",
+      "source_id": "h007-sole_signer-lex2-s1",
+      "source_sha256": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+      "response_sha256": "69b2e242196417e3cb7b9671a5b38715070e9fd9e4fbf5a1b4a07dd635a18ff0",
+      "target_span": [
+        0,
+        124
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex2-s1-r1-b04",
+      "source_id": "h007-sole_signer-lex2-s1",
+      "source_sha256": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+      "response_sha256": "fffe5ffd61bc714da7937803f006f5c07ca366c3633137a644edf9133e7eccbd",
+      "target_span": [
+        0,
+        124
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    },
+    {
+      "id": "h007-sole_signer-lex2-s1-r1-b12",
+      "source_id": "h007-sole_signer-lex2-s1",
+      "source_sha256": "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e",
+      "response_sha256": "ee1325f10f0ee2d81c46f727737666b9ad125dbf528ddab076b920279429acc7",
+      "target_span": [
+        0,
+        124
+      ],
+      "target_outcome": "supported",
+      "whole_outcome": "supported",
+      "filler_outcomes": [
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported",
+        "supported"
+      ],
+      "construction_rule": "entity_event_bijections_equal_iff_source_direction_equals_response_direction",
+      "target_benchmark_labels_used": false,
+      "intended_use": "post_observation_qualification_only"
+    }
+  ]
+}

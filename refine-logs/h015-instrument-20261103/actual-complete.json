@@ -1,0 +1,12 @@
+{
+  "schema": "h015-engineering-complete-v1",
+  "state": "qualified_for_exact_synthetic_contexts_only",
+  "probes": 2,
+  "unique_nodes": 16,
+  "maximum_context_tokens": 512,
+  "full_vectors_retained": true,
+  "same_kernel_replay": true,
+  "independent_math_oracle": false,
+  "semantic_accuracy_assessed": false,
+  "automatic_retry": false
+}

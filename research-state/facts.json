@@ -921,6 +921,42 @@
           "sha256": "7aefbf16036156a69671feb9ae71941b1d0777d97ab9a0c459e040463a1e8de8"
         }
       ]
+    },
+    {
+      "id": "F036",
+      "certainty": "actual_full_remote_CPU_CI_success",
+      "claim": "GitHub Tests run41565792344 for commit1b7bf83ee6c094505c8dd8f488a112c174bb27e1 completed success:972passed,1skipped,9subtests passed,172.91s,Ubuntu/Python3.11. Local40memoryregressions also passed; originalWindowsfull600stimeout remains incomplete.",
+      "does_not_imply": "Engineering CI is not natural detection efficacy or H015 GPU qualification.",
+      "evidence": [
+        {
+          "path": "outputs/ci-repair-20261103/github-success.json",
+          "sha256": "98221e1c9a0ac23cd85f39406a6c3dd804bfdeb61471d7a44ae833adef4a0891"
+        }
+      ]
+    },
+    {
+      "id": "F037",
+      "certainty": "two_synthetic_input_prefix_tree_engineering_qualified",
+      "claim": "H015 actual16prefixforwards/4320input/0generated passed; shortmax32,long512; full151936FP16vectors retained+same-kernelCPUreplay;forward/capture4.9294579s,total110.8459821s,peakalloc2141098496/reserved3068133376B.17sealedmembers verified.",
+      "does_not_imply": "Not independentmathoracle, ideal-LMexactreplay,4096readiness, naturalfactuality, H013repair or methodpromotion.",
+      "evidence": [
+        {
+          "path": "docs/results/h015_prefix_engineering.json",
+          "sha256": "018b30f6d7db0f79305f513626c30d819acd8c762c9e8eceb3abab47f78100bf"
+        }
+      ]
+    },
+    {
+      "id": "F038",
+      "certainty": "paired_exposed_toy_common_prefix_diagnosis",
+      "claim": "H016312actualforwards/86930input/0generated sealed+CPUreplayed;maxcontext308. Fixedcompoundind/joint andatomicind/joint rolecorrect9/16,16/16,15/16,16/16;sourcecorrect1/8,8/8,7/8,8/8;16-caseAUC.625/1/1/1. All4scores froze before constructionreferences;8sourceclusters only.",
+      "does_not_imply": "Atomicind still1wrongQA despiteAUC1;no calibratedtruthprobability,naturalcoverage,LLMnecessity,uniquelyidentifiedinternalcause,novelty,methodpromotion or six-task0.8.",
+      "evidence": [
+        {
+          "path": "docs/results/h016_paired_scope.json",
+          "sha256": "4dc281e06f478086041dbab85863fe53df19ccd6b9a8d619d3acaa217458ae58"
+        }
+      ]
     }
   ],
   "rule": "New interventions need different predictions under competing explanations; known counts/cases are reused."

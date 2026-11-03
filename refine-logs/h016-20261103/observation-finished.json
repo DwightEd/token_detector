@@ -1,0 +1,16 @@
+{
+  "status": "complete_not_evaluated",
+  "seconds_wall": 196.36881480005104,
+  "initial_seal_sha256": "caab060faed092b9bfc0378bb9364c02eb415e8ff9b6b032f64778f9a8277982",
+  "costs": {
+    "actual_forward_passes": 312,
+    "attempted_model_calls": 312,
+    "input_tokens": 86930,
+    "output_tokens": 0,
+    "seconds_forward_and_capture": 32.983210500795394,
+    "peak_cuda_allocated_bytes": 2128861184,
+    "peak_cuda_reserved_bytes": 3072327680
+  },
+  "all_four_arms_frozen": true,
+  "evaluation_material_accessed": false
+}

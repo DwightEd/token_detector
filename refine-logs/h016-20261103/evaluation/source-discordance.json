@@ -1,0 +1,306 @@
+{
+  "208b7d57756f887407eea5f1d691ef2e561d444e1d944bbe5bc1637f1cadb760": {
+    "compound": {
+      "independent_category": "wrong",
+      "joint_category": "correct",
+      "independent_assignment": [
+        0,
+        0
+      ],
+      "joint_assignment": [
+        1,
+        0
+      ],
+      "same_name_collapse": true,
+      "reference": [
+        1,
+        0
+      ],
+      "delta": -4.218767485930289
+    },
+    "atomic": {
+      "independent_category": "correct",
+      "joint_category": "correct",
+      "independent_assignment": [
+        1,
+        0
+      ],
+      "joint_assignment": [
+        1,
+        0
+      ],
+      "same_name_collapse": false,
+      "reference": [
+        1,
+        0
+      ],
+      "delta": -21.969129345621152
+    }
+  },
+  "2441f9f684b3fc2c97a57ffd5ab99a36ea3ece2a724464e949dd78c9ef872051": {
+    "compound": {
+      "independent_category": "wrong",
+      "joint_category": "correct",
+      "independent_assignment": [
+        1,
+        1
+      ],
+      "joint_assignment": [
+        0,
+        1
+      ],
+      "same_name_collapse": true,
+      "reference": [
+        0,
+        1
+      ],
+      "delta": 5.265622304915885
+    },
+    "atomic": {
+      "independent_category": "correct",
+      "joint_category": "correct",
+      "independent_assignment": [
+        0,
+        1
+      ],
+      "joint_assignment": [
+        0,
+        1
+      ],
+      "same_name_collapse": false,
+      "reference": [
+        0,
+        1
+      ],
+      "delta": 29.37510440922707
+    }
+  },
+  "351ec4ca19acae6463ef5464f510829af472e16b87bd71a41bba3d6d35657188": {
+    "compound": {
+      "independent_category": "wrong",
+      "joint_category": "correct",
+      "independent_assignment": [
+        1,
+        1
+      ],
+      "joint_assignment": [
+        1,
+        0
+      ],
+      "same_name_collapse": true,
+      "reference": [
+        1,
+        0
+      ],
+      "delta": -3.5312469177354124
+    },
+    "atomic": {
+      "independent_category": "correct",
+      "joint_category": "correct",
+      "independent_assignment": [
+        1,
+        0
+      ],
+      "joint_assignment": [
+        1,
+        0
+      ],
+      "same_name_collapse": false,
+      "reference": [
+        1,
+        0
+      ],
+      "delta": -29.64064233004905
+    }
+  },
+  "39e57c5633a2d10e0d03d6855d28dcb5a06d464d68c4a8532c9e677bb3e32eba": {
+    "compound": {
+      "independent_category": "wrong",
+      "joint_category": "correct",
+      "independent_assignment": [
+        0,
+        0
+      ],
+      "joint_assignment": [
+        0,
+        1
+      ],
+      "same_name_collapse": true,
+      "reference": [
+        0,
+        1
+      ],
+      "delta": 0.8438089491457541
+    },
+    "atomic": {
+      "independent_category": "correct",
+      "joint_category": "correct",
+      "independent_assignment": [
+        0,
+        1
+      ],
+      "joint_assignment": [
+        0,
+        1
+      ],
+      "same_name_collapse": false,
+      "reference": [
+        0,
+        1
+      ],
+      "delta": 26.515748732014906
+    }
+  },
+  "461006ab0f795be14ebb09e80a355e33dfa6ccbb85e476e721394e5ef9e8bb6d": {
+    "compound": {
+      "independent_category": "wrong",
+      "joint_category": "correct",
+      "independent_assignment": [
+        0,
+        0
+      ],
+      "joint_assignment": [
+        1,
+        0
+      ],
+      "same_name_collapse": true,
+      "reference": [
+        1,
+        0
+      ],
+      "delta": -0.4999840857615707
+    },
+    "atomic": {
+      "independent_category": "wrong",
+      "joint_category": "correct",
+      "independent_assignment": [
+        0,
+        0
+      ],
+      "joint_assignment": [
+        1,
+        0
+      ],
+      "same_name_collapse": true,
+      "reference": [
+        1,
+        0
+      ],
+      "delta": -9.5315010962185
+    }
+  },
+  "944f86a8de251fa46b705e9436a462bc61df6876839e98dd4f6c578629216a2b": {
+    "compound": {
+      "independent_category": "correct",
+      "joint_category": "correct",
+      "independent_assignment": [
+        0,
+        1
+      ],
+      "joint_assignment": [
+        0,
+        1
+      ],
+      "same_name_collapse": false,
+      "reference": [
+        0,
+        1
+      ],
+      "delta": 0.968774690317971
+    },
+    "atomic": {
+      "independent_category": "correct",
+      "joint_category": "correct",
+      "independent_assignment": [
+        0,
+        1
+      ],
+      "joint_assignment": [
+        0,
+        1
+      ],
+      "same_name_collapse": false,
+      "reference": [
+        0,
+        1
+      ],
+      "delta": 12.374968826944306
+    }
+  },
+  "961486d2a1b1283c968ac0cc447fbef8dfa0b772de2bbda3fbc5d92f11b7828e": {
+    "compound": {
+      "independent_category": "wrong",
+      "joint_category": "correct",
+      "independent_assignment": [
+        0,
+        0
+      ],
+      "joint_assignment": [
+        0,
+        1
+      ],
+      "same_name_collapse": true,
+      "reference": [
+        0,
+        1
+      ],
+      "delta": 5.531813779450122
+    },
+    "atomic": {
+      "independent_category": "correct",
+      "joint_category": "correct",
+      "independent_assignment": [
+        0,
+        1
+      ],
+      "joint_assignment": [
+        0,
+        1
+      ],
+      "same_name_collapse": false,
+      "reference": [
+        0,
+        1
+      ],
+      "delta": 34.56124836242907
+    }
+  },
+  "d5825caa9d00d8b34812c0bc04d46a3aa5c222abb859750594873d8210153022": {
+    "compound": {
+      "independent_category": "wrong",
+      "joint_category": "correct",
+      "independent_assignment": [
+        1,
+        1
+      ],
+      "joint_assignment": [
+        1,
+        0
+      ],
+      "same_name_collapse": true,
+      "reference": [
+        1,
+        0
+      ],
+      "delta": -0.6874605766433857
+    },
+    "atomic": {
+      "independent_category": "correct",
+      "joint_category": "correct",
+      "independent_assignment": [
+        1,
+        0
+      ],
+      "joint_assignment": [
+        1,
+        0
+      ],
+      "same_name_collapse": false,
+      "reference": [
+        1,
+        0
+      ],
+      "delta": -23.78124580801896
+    }
+  }
+}

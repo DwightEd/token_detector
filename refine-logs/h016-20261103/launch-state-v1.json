@@ -1,0 +1,21 @@
+{
+  "run_id": "a52676148c96453c234c569ec0abc403a09ef9c3180113d7d05e6427a6683f70",
+  "pid": 38472,
+  "armed": false,
+  "actual_forward_passes": 312,
+  "status": "completed",
+  "utc": "2026-11-03T04:25:00.376337+00:00",
+  "child_pid": 38792,
+  "automatic_retry": false,
+  "resources": {
+    "available_ram_bytes": 4398133248,
+    "free_gpu_bytes": 8189378560
+  },
+  "argv": [
+    "D:/projects/research/envs/token-detector-cu128/Scripts/python.exe",
+    "D:\\projects\\research\\token_detector\\outputs\\h016-paired-scope-20261103\\run_once.py",
+    "D:\\projects\\research\\token_detector\\outputs\\h016-paired-scope-20261103\\run-spec-v1.json"
+  ],
+  "exit_code": 0,
+  "finished_utc": "2026-11-03T04:28:28.020899+00:00"
+}
