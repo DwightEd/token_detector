@@ -170,6 +170,14 @@ def parser() -> argparse.ArgumentParser:
         help='reconstruct sealed one-conjunct observations on CPU before reference release')
     for option in ['inputs', 'design', 'construction', 'observations', 'model', 'output', 'protocol']:
         atomic_reconstruction_eval.add_argument('--' + option, type=Path, required=True)
+    natural_masked_inventory = transfers.add_parser('prepare-natural-masked-inventory',
+        help='freeze label-free natural span erasure artifacts without QA or scores')
+    for option in ['inputs', 'h010-root', 'output', 'protocol']:
+        natural_masked_inventory.add_argument('--' + option, type=Path, required=True)
+    masked_assignment = transfers.add_parser('analyze-masked-assignments',
+        help='freeze fixed H009 bijection readout of all sealed H011 matrices before CPU references')
+    for option in ['inputs', 'observations', 'model', 'reconstruction-review', 'output', 'protocol']:
+        masked_assignment.add_argument('--' + option, type=Path, required=True)
     reconstruction_eval = transfers.add_parser('evaluate-reconstruction', help='rebuild sealed source completions on CPU before construction reference release')
     for option in ['inputs', 'design', 'construction', 'observations', 'model', 'output', 'protocol']:
         reconstruction_eval.add_argument('--' + option, type=Path, required=True)
@@ -437,6 +445,15 @@ def main() -> None:
             identity = data.read_json(args.model_identity)
             qualify(args.inputs, args.protocol, args.output,
                     HFAnswerCompletion(args.model, identity, admit_resources=True), identity)
+        elif args.transfer_stage == 'prepare-natural-masked-inventory':
+            from .natural_masked_inventory import prepare
+
+            prepare(args.inputs, args.h010_root, args.output, args.protocol)
+        elif args.transfer_stage == 'analyze-masked-assignments':
+            from .masked_assignment import analyze
+
+            analyze(args.inputs, args.observations, args.model,
+                    args.reconstruction_review, args.output, args.protocol)
         elif args.transfer_stage == 'qualify-atomic-reconstruction':
             if not args.admit_resources:
                 command.error('qualify-atomic-reconstruction requires explicit --admit-resources before HF loading')
