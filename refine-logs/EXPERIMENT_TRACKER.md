@@ -1,10 +1,10 @@
 # 幻觉检测执行 Tracker：完整900评分与最终评价完成
 
-**快照：2026-11-04 05:42:47，Asia/Shanghai。** 全900评分、恢复、独立无标签审计、最终CPU评价及同轴诊断均已完成。评分和审计阶段未读目标真值；全部分数封存且审计通过后，最终评价已按冻结合同打开官方标注。本版有真实自然检测指标，外部NLI仍只是比较器，新的主线无监督方法未准入。
+**快照：2026-11-04 05:53:55，Asia/Shanghai。** 全900评分、恢复、独立无标签审计、最终CPU评价及同轴诊断均已完成。评分和审计阶段未读目标真值；全部分数封存且审计通过后，最终评价已按冻结合同打开官方标注。本版有真实自然检测指标，外部NLI仍只是比较器，新的主线无监督方法未准入。
 
 本轮结果已写入研究记忆F054、决策D050及[恢复点](../research-state/RESUME.md)，所有active_jobs为None。正式结果见[完整900检测报告](../docs/results/h017_nli_detection.md)及[结构化汇总](../docs/results/h017_nli_detection_summary.json)；固定错例见[公开分析](../docs/results/h017_nli_error_cases.md)及[对应JSON](../docs/results/h017_nli_error_cases.json)。下一问题以本机`outputs/h017-relation-20261103/NLI_NEXT_QUESTION.md`为准，新内部方法/模型实验仍NOT_ADMITTED。
 
-对应[同版计划](EXPERIMENT_PLAN_20261104_054247.md)；[04:52续跑快照](EXPERIMENT_TRACKER_20261104_045230.md)与更早历史保留。
+对应[同版计划](EXPERIMENT_PLAN_20261104_055355.md)；[04:52续跑快照](EXPERIMENT_TRACKER_20261104_045230.md)与更早历史保留。
 
 | 实际阶段 | 身份 | 状态 | 实际结果/边界 |
 | --- | --- | --- | --- |
@@ -19,7 +19,7 @@
 | 已有CPU环境最终评价 |542e64150afd88823e516c1206673a092c31515f7aef0f8f2dd8189eeca8e284 | **DONE** | 既有evaluate_dataset，2000次source bootstrap/seed17/native；完整178343轴AUROC0.744306164、AP0.097168289 |
 | 同轴R4/V3对照与固定错例 |7d56ec25d9d615ea952d09692418ab917f2fdfa1c78d560bb07f2ae332fcde25 | **DONE / posthoc** | 复用原封存R4/V3、统一8918报警预算；配对CI和固定FN/FP/5670时间例保留，不重新评分/拟合 |
 | 新代码完整本地安装CPU suite |installed045716尝试 | **INCOMPLETE** | 明确300秒timeout，约17%；无assertion failure不代表全套通过。29相关测试仅是局部范围 |
-| 精确新代码CI | root待完成 | **PENDING** | 不能挪用旧9dc6600 CI1101pass给新代码；root负责最终检查/发布 |
+| 精确源码完整安装CI | b362efff7ddb8e3806f04fd9ddb9bf0fd1969bd7 / run41724862885 / job126226867706 | **PASSED** | step6安装包在checkout外完整suite success，官方HTML与REST收据复核；旧本地300秒INCOMPLETE保留，不填造新测试总数 |
 | 新主线无监督内部方法 | 无新准入 | **NOT_ADMITTED** | 不救NLI、不追加M5世界/换头层，不把外部监督模型或本批错例补丁当新机制；六任务各0.8未完成 |
 
 ## 真实检测表
@@ -46,6 +46,6 @@ framed输入token7473887，逐forward时间合计492.396秒；不含tokenization
 
 1. 固定FN/FP与原S/raw的事后分析完成后，只记录证据、未知与不确定性；不调报警阈值、类别映射、max、窗口、source格式或融合权重，不重跑本批NLI救分。
 2. 下一候选仍未准入。零模型证明只以5682/13603（not=65、WiFi=67）与同源5684（or=65、lot=66）补齐source许可字段、条件/极性闭合及已有物理观测匹配，复用库存与已知缺失，不重清点、不拿QA层15或回答历史局部attention替代来源观测。必须给出区别词法/位置/回声的预测与直接文本核验之外的原轴价值；否则停止，不追加模型。
-3. root完成精确新代码完整安装CPU/CI检查及已授权发布。现有结果已经封存，不因测试、文档、bootstrap或环境切换重评分。
+3. 精确源码完整安装CI已通过，见[run41724862885](https://github.com/DwightEd/token_detector/actions/runs/41724862885)及本机`NLI_CI_FINAL.json`。root完成本轮文档checkpoint、已授权发布与桌面bundle；checkpoint为`[skip ci]`，自b362eff起numerical code/tests/tools不变。现有结果不因文档、bootstrap或环境切换重评分，本地300秒INCOMPLETE历史仍保留。
 
 六任务各AUROC≥0.8、新无监督机制、顶会水准或内部量增益均未达成。MiniCheck新下载/网络重试仍停止，当前不自动启动任何新GPU实验。

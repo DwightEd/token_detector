@@ -8,6 +8,6 @@
 
 原Llama机制观测仍60model（2earlystop+58full）/53head，与DeBERTa分开。M5五世界F053已经完成，三项有限比较通过，但位置/周日评论混杂仍未排除；禁止追加世界/头/层、重复高概率或角色QA。它不是新自然检测分数；旧H015/H016、M3反例、scope-only/等权负结果不重开。
 
-本机完整CPU测试在045716外置安装wheel（代码与043603相同，新增nli依赖extra）请求完整套件后达到明确300s上限，记录incomplete_timeout而非通过；日志及proof在outputs/h017-relation-20261103/RELEASE_045716_*。确切新源码LinuxCI状态见NLI_PUBLICATION_FINAL.json和GitHub实际提交，旧9dc6600的1101pass不能替代。研究输出不随Git发布，证据文件的路径及SHA已在公共summary里固定。
+本机完整CPU测试在045716外置安装wheel（代码与043603相同，新增nli依赖extra）请求完整套件后达到明确300s上限，记录incomplete_timeout而非通过；日志及proof在outputs/h017-relation-20261103/RELEASE_045716_*。源码提交[`b362eff`](https://github.com/DwightEd/token_detector/commit/b362efff7ddb8e3806f04fd9ddb9bf0fd1969bd7)的[完整Linux Tests CI](https://github.com/DwightEd/token_detector/actions/runs/41724862885)已通过；NLI_PUBLICATION_FINAL.json保留实际API收据。旧9dc6600的1101pass不替代本轮。研究输出不随Git发布，证据文件的路径及SHA已在公共summary里固定。
 
 下一问题：当前没有准入新的方法、NLI救援变体或模型实验：新结果表明明确支持的否定关系也可被判矛盾，而营业时间错误已获高非蕴含风险，尚未证明可利用的新增内部信息。 下一动作限定为零模型的准入证明：从来源显式许可的字段建立主体—谓词—极性/条件闭合单位，先以5682/13603（原R的`not`=target65、`WiFi`=67）与同源5684（`or`=65、`lot`=66）为入口，补齐对应来源字段及闭合位置，复用已完成库存合同标明哪些物理观测已可匹配、哪些维度缺失，不再清点或复验已知缺失；不得拿QA层15或回答历史局部attention代替缺失的来源观测。 只有能事先提出可区分条件绑定与词法/位置/回答回声的预测、必要负对照，以及相对直接文本核验在原R定位/检测/成本上的具体价值，才重新申请有限实验；若只能换contra/max/格式/分句、复现H004/H005或M5手工世界、M3头层与H015/H016角色QA，则保持NOT_ADMITTED并停止追加调用。

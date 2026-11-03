@@ -1,0 +1,93 @@
+{
+  "validated_source_commit": "b362efff7ddb8e3806f04fd9ddb9bf0fd1969bd7",
+  "ci": {
+    "id": 41724862885,
+    "name": "Tests",
+    "head_sha": "b362efff7ddb8e3806f04fd9ddb9bf0fd1969bd7",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/DwightEd/token_detector/actions/runs/41724862885",
+    "run_attempt": 1,
+    "event": "push",
+    "checked_utc": "2026-11-03T21:53:22.518451+00:00",
+    "jobs": [
+      {
+        "id": 126226867706,
+        "name": "cpu",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/DwightEd/token_detector/actions/runs/41724862885/job/126226867706",
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run python -m pip install '.[experiments,dev]'",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Test installed packages outside the checkout",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 12
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 13
+          }
+        ]
+      }
+    ]
+  },
+  "local_complete_CPU_attempt": {
+    "status": "incomplete_timeout",
+    "exit_code": null,
+    "elapsed_seconds": 300.0093974999618,
+    "timeout_seconds": 300,
+    "complete_suite_requested": true,
+    "complete_suite_passed": false,
+    "snapshot": "D:\\projects\\research\\outputs\\h017-qualified-20261104-045716\\snapshot-proof.json",
+    "log": "D:\\projects\\research\\outputs\\h017-qualified-20261104-045716\\cpu-suite.log"
+  },
+  "exact_test_count_not_claimed_without_log": true,
+  "numerical_source_unchanged_after_validated_commit": true,
+  "checkpoint_scope": "Documentation and research memory only; original900 scores/metrics unchanged",
+  "source_wheel_sha256": "b3cb7cad06123e6b06044e0b30c35ab9eccc8e6d6bf557fc61d41566d43025c2"
+}

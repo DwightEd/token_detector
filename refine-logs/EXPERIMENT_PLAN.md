@@ -1,6 +1,6 @@
 # 幻觉检测实验计划：完整900对照结论与下一准入门
 
-**快照：2026-11-04 05:42:47，Asia/Shanghai。** 完整Data2txt900评分、独立无标签审计、最终CPU评价及同轴诊断均已完成。真值在全部分数封存和审计通过后才打开；本版包含已释放的最终评价与事后分析。此前计划/执行快照保留，见[MANIFEST](MANIFEST.md)。
+**快照：2026-11-04 05:53:55，Asia/Shanghai。** 完整Data2txt900评分、独立无标签审计、最终CPU评价及同轴诊断均已完成。真值在全部分数封存和审计通过后才打开；本版包含已释放的最终评价与事后分析。此前计划/执行快照保留，见[MANIFEST](MANIFEST.md)。
 
 **问题锚点：** 检测已有回答R中的来源关系、条件或范围错误，保留原token/字符评价轴、完整分母、unknown和真实成本。主线仍要求无监督；目标标签不得用于训练、参数/方法选择或风险校准。
 
@@ -62,8 +62,8 @@
 ### B5：最终代码发布验证
 
 - **已通过的范围：** collector/旧NLI相关29项轻量测试、恢复与独立源审查、真实完整评分/审计/评价。它们不替代完整安装CPU suite/CI。
-- **当前状态：** installed045716完整本地CPU尝试为**INCOMPLETE**：明确300秒timeout，结束前约17%，未出现assertion failure不能写成全suite通过。当前新代码精确commit CI仍PENDING；旧9dc6600的1101pass是历史，不能借给新代码。
-- **root下一动作：** 不重跑模型；完成精确新代码的安装全套/CI检查、处理真实失败，再按已授权流程提交/push与结果文档。CPU检查不是检测消融或参数调整。
+- **当前状态：** installed045716完整本地CPU尝试仍为**INCOMPLETE**：明确300秒timeout，结束前约17%，未出现assertion failure不能写成本地全suite通过。精确源码提交`b362efff7ddb8e3806f04fd9ddb9bf0fd1969bd7`的完整安装suite CI已**PASSED**：[run41724862885](https://github.com/DwightEd/token_detector/actions/runs/41724862885)，job126226867706、step6“Test installed packages outside the checkout”success。root已用官方HTML与本地REST收据`NLI_CI_FINAL.json`复核。结论绑定该精确源码，不借用旧9dc6600的历史计数；本版不填造未取得的新测试总数。
+- **root下一动作：** 精确源码CI已通过，完成本轮文档checkpoint与已授权归档/桌面bundle；文档checkpoint使用`[skip ci]`。自b362eff起numerical code、tests与tools不变，不再触发评分或新模型实验。
 
 ## 当前执行顺序与预算
 
@@ -74,7 +74,7 @@
 | 固定错例解释 | POSTHOC | 保留多种成因，不从标签挑补丁 |0 |
 | 两例许可/闭合物理观测匹配证明 | PROPOSED_READ_ONLY | 复用既有库存/缺失，仅补两例匹配与新预测；未有方法准入 |0 |
 | 新内部风险模块 | NOT_ADMITTED | 等真实新增观测与原轴增值证据，不安排GPU任务 | 未准入 |
-| 精确新代码发布验证 | INCOMPLETE / CI_PENDING | root完成全套检查及发布，不重评分 |0 |
+| 精确新代码发布验证 | SOURCE_CI_PASSED / LOCAL_INCOMPLETE | b362eff完整安装suite CI通过；本地300秒timeout保留，root完成文档归档 |0 |
 
 ## 检查项
 
@@ -83,6 +83,6 @@
 - [x] 强外部监督比较器单列，负结果不救分、不冒称无监督方法。
 - [ ] 一个主线无监督内部方法通过科学准入并证明额外价值。
 - [ ] 六任务各AUROC≥0.8。
-- [ ] 精确新代码完整安装suite与CI通过。
+- [x] 精确源码b362eff完整安装suite与CI通过；本地300秒INCOMPLETE记录保留。
 
 没有新MiniCheck下载或网络重试。本计划不授予新的模型运行或方法参数搜索；最新实际状态见[tracker](EXPERIMENT_TRACKER.md)。

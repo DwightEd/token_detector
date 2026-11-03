@@ -1,6 +1,6 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>关系错绑：实验进展与证据</title><meta name="source-sha256" content="d60d2ff986a385d511eddd07e6d104975064e428c543cd28c17a4c28b47c52fd">
+<title>关系错绑：实验进展与证据</title><meta name="source-sha256" content="91555e4b4639113808192e047c5eeee17f64ff8aa3bf8fd8196105cad8765076">
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
 <script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
 <style>body{max-width:1040px;margin:40px auto;padding:0 24px;color:#17253a;font:17px/1.8 system-ui,sans-serif;background:#fbfcff}nav{font-size:14px}a{color:#245bc7}h1,h2{line-height:1.35}img{max-width:100%;height:auto}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #d5ddeb;padding:10px;text-align:left}th{background:#edf2fb}pre{overflow:auto;padding:16px;background:#edf2f8}code{font-size:.88em}.equation{overflow-x:auto}.flow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:20px;background:#edf2fb;border-radius:12px}.flow span{background:white;padding:8px 12px;border:1px solid #cbd7eb}footer{font-size:13px;border-top:1px solid #d5ddeb;margin-top:40px;padding-top:16px}@media print{body{font-size:12px;margin:0}nav{display:none}}</style>
@@ -57,7 +57,7 @@
 <p>研究对象是<strong>已有回答中的幻觉</strong>。例如来源“甲收入100、乙收入200”，回答“甲收入200”：找到“200”、对它有高注意力，并不说明找对了主体。当前研究检验检索地址、值传递与最终输出之间的关系，不再把改进限制在 V3 的概率差和平滑上。</p>
 <p><strong>本轮已分出两种不同失败。</strong> 时间单位例中，观察器反对错误的ago，旧读出削弱了已有告警；营业时间例中，来源内的多数时段被概括到例外星期，观察器对错误分钟仍给高概率。两类问题需要不同判别证据，不能把所有错误归结为没读条件或上下文平滑。新检测模块和AUROC提升仍未建立，下面保留实际实验、旧缓存新审查、严格失败检查和下一步边界。</p>
 <p>软件验证：代码提交<code>9dc6600268be10e802418047a3b885ea2994b845</code>的<a href="https://github.com/DwightEd/token_detector/actions/runs/41632218378">完整Linux CI</a>通过，1101 passed、1 skipped、9 subtests passed，191.65秒。测试的是已安装包并在checkout外执行；本机全套超时记录仍保留。这不代表新检测器有效。</p>
-<p><strong>M5阶段记录：</strong> <a href="H017_SCOPE.html">五世界实验</a>已完成5model/5head且0重复；三项冻结比较及独立全层头审计通过，仅排除严格全局区间频次解释。随后完整NLI对照也已评价，见本页开头。当前源码的完整Linux CI另按确切提交核验。</p>
+<p><strong>M5阶段记录：</strong> <a href="H017_SCOPE.html">五世界实验</a>已完成5model/5head且0重复；三项冻结比较及独立全层头审计通过，仅排除严格全局区间频次解释。随后完整NLI对照也已评价，见本页开头。源码提交<a href="https://github.com/DwightEd/token_detector/commit/b362efff7ddb8e3806f04fd9ddb9bf0fd1969bd7"><code>b362eff</code></a>的<a href="https://github.com/DwightEd/token_detector/actions/runs/41724862885">完整Linux Tests CI</a>已通过。</p>
 <h2>营业时间例：错误数值在原前缀下仍为高概率</h2>
 <p>继续审查原Data2txt首行<code>5670/source13601</code>，先独立冻结来源事实，再核对既有回答和旧概率缓存；没有新增模型、评分或评价标签。来源的周一为<code>17:30–23:00</code>，周二至周六为<code>17:00–21:00</code>，周日为<code>09:00–14:00</code>。回答却写成“Monday to Saturday from 17:00-21:00”。这是受限人工来源核验，不能当作新增benchmark gold或自动前端。</p>
 <table>
@@ -331,4 +331,4 @@
 <h2>文献定位</h2>
 <p><a href="https://arxiv.org/html/2310.17191v2">Binding IDs</a>提供表示交换的先例；<a href="https://aclanthology.org/2026.emnlp-main.1238/">EMNLP 2026重绑定研究</a>发现Llama与Gemma的绑定信号并不完全相同，不能预设通用Q/K机制。<a href="https://arxiv.org/html/2608.15804v1">输入侧证据对齐研究</a>也报告相矛盾片段可能高度相关。它们支持进行上述区分实验，没有证明当前自然错例已由该机制解释。</p>
 <p>完整文献审查、监督方式与近邻差异见<a href="../research/20261103_relation_misbinding_followup.md">本轮调研</a>。当前进度与下一问题以<a href="../../research-state/RESUME.md">恢复记录</a>为准；计划、已运行实验和检测效果分别记录，避免上下文压缩后重复实验或扩大结论。</p>
-<p>Q/K/V与最终读出之间的<a href="H017_MATH.html">逐步推导</a>区分了局部恒等式、最终输出因果和检测效果。精确冻结的<a href="H017_PROTOCOL.html">四来源协议</a>及其<a href="../research/h017_address_payload_review.md">独立科学审查</a>可直接在GitHub查看公式与实验门槛。</p></main><footer>H017本地离线阅读 · 原Markdown与GitHub公式是同一来源。打开本文件即可阅读，无需启动服务器。<br>源码SHA256：d60d2ff986a385d511eddd07e6d104975064e428c543cd28c17a4c28b47c52fd</footer></body></html>
+<p>Q/K/V与最终读出之间的<a href="H017_MATH.html">逐步推导</a>区分了局部恒等式、最终输出因果和检测效果。精确冻结的<a href="H017_PROTOCOL.html">四来源协议</a>及其<a href="../research/h017_address_payload_review.md">独立科学审查</a>可直接在GitHub查看公式与实验门槛。</p></main><footer>H017本地离线阅读 · 原Markdown与GitHub公式是同一来源。打开本文件即可阅读，无需启动服务器。<br>源码SHA256：91555e4b4639113808192e047c5eeee17f64ff8aa3bf8fd8196105cad8765076</footer></body></html>

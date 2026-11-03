@@ -1040,5 +1040,13 @@
     }
   ],
   "original_Llama_forwards_separate": 60,
-  "new_unsupervised_detector": false
+  "new_unsupervised_detector": false,
+  "code_validation": {
+    "source_commit": "b362efff7ddb8e3806f04fd9ddb9bf0fd1969bd7",
+    "CI_url": "https://github.com/DwightEd/token_detector/actions/runs/41724862885",
+    "conclusion": "success",
+    "public_receipt": "h017_nli_ci.json",
+    "receipt_sha256": "eca90cbecec5f0b130ed0527cd6c1d04428735befb902fa2539b96aca0851c67",
+    "local_complete_CPU_attempt": "incomplete_timeout_300seconds"
+  }
 }

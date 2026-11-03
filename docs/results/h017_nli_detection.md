@@ -48,4 +48,4 @@ NLI相对R4的AUROC下降置信区间不跨0；相对V3的AUROC差区间跨0，�
 
 [结构化结果及完整SHA索引](h017_nli_detection_summary.json)。生产者为外置安装的140文件wheel；完整旧前缀、801份预测字节、partial802、全部原轴/窗口、三类logit归一化与风险投影均由独立无标签脚本核对。原Llama机制观测的60次forward单独记账；本轮18163次为不同的DeBERTa观察器。
 
-评价第一次误用了无scikit-learn的推理环境，import阶段即退出、未读标注；失败560445f保留。随后使用既有CPU sklearn1.9.0/NumPy2.4.6环境另claim542e6415完成同一冻结规则，未安装依赖或重跑模型。当前源码本机完整CPU测试达到明确300s上限，记未完成；源码验证以确切提交Linux CI为准。
+评价第一次误用了无scikit-learn的推理环境，import阶段即退出、未读标注；失败560445f保留。随后使用既有CPU sklearn1.9.0/NumPy2.4.6环境另claim542e6415完成同一冻结规则，未安装依赖或重跑模型。本机完整CPU测试达到明确300s上限，仍记未完成；源码提交[`b362eff`](https://github.com/DwightEd/token_detector/commit/b362efff7ddb8e3806f04fd9ddb9bf0fd1969bd7)的[完整Linux Tests CI](https://github.com/DwightEd/token_detector/actions/runs/41724862885)已通过，不使用历史CI或局部测试替代。[验证收据](h017_nli_ci.json)。

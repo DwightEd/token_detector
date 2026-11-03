@@ -189,7 +189,7 @@
   "work_status": "F054full900externalcomparison_actualmetrics_complete_no_new_unsup_detector",
   "next_design": "M5rangecounterfactual/within-range exception and unchanged-response controls; not admitted",
   "frozen_observation_run_id": null,
-  "last_updated_utc": "2026-11-03T21:41:09.763536+00:00",
+  "last_updated_utc": "2026-11-03T21:54:34.532132+00:00",
   "completed_H003": {
     "natural_observer_run": "fa101d666cce73beefcb12cd5979b04fb51e2771a61f48e78f9232caecff968c",
     "natural_cpu_run": "29e82c69db9558ec05c7b868f10cfa58f06cc497864a0ecfebcefa6217a72b47",
@@ -1008,5 +1008,13 @@
   "full_population_scores_sealed": true,
   "target_labels_released": true,
   "publication_receipt": "outputs/h017-relation-20261103/NLI_PUBLICATION_FINAL.json",
-  "validation_status": "Local installed complete CPU suite incomplete at explicit300s; require exact new source Linux CI before validation claim"
+  "validation_status": "Exactsource b362eff fullinstalled LinuxCI41724862885 passed; local completeCPU300s remains incomplete",
+  "code_validation": {
+    "source_commit": "b362efff7ddb8e3806f04fd9ddb9bf0fd1969bd7",
+    "CI_url": "https://github.com/DwightEd/token_detector/actions/runs/41724862885",
+    "conclusion": "success",
+    "public_receipt": "h017_nli_ci.json",
+    "receipt_sha256": "eca90cbecec5f0b130ed0527cd6c1d04428735befb902fa2539b96aca0851c67",
+    "local_complete_CPU_attempt": "incomplete_timeout_300seconds"
+  }
 }

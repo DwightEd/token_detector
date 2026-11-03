@@ -26,7 +26,7 @@
 
 软件验证：代码提交`9dc6600268be10e802418047a3b885ea2994b845`的[完整Linux CI](https://github.com/DwightEd/token_detector/actions/runs/41632218378)通过，1101 passed、1 skipped、9 subtests passed，191.65秒。测试的是已安装包并在checkout外执行；本机全套超时记录仍保留。这不代表新检测器有效。
 
-**M5阶段记录：** [五世界实验](h017_scope_results.md)已完成5model/5head且0重复；三项冻结比较及独立全层头审计通过，仅排除严格全局区间频次解释。随后完整NLI对照也已评价，见本页开头。当前源码的完整Linux CI另按确切提交核验。
+**M5阶段记录：** [五世界实验](h017_scope_results.md)已完成5model/5head且0重复；三项冻结比较及独立全层头审计通过，仅排除严格全局区间频次解释。随后完整NLI对照也已评价，见本页开头。源码提交[`b362eff`](https://github.com/DwightEd/token_detector/commit/b362efff7ddb8e3806f04fd9ddb9bf0fd1969bd7)的[完整Linux Tests CI](https://github.com/DwightEd/token_detector/actions/runs/41724862885)已通过。
 
 ## 营业时间例：错误数值在原前缀下仍为高概率
 

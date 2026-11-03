@@ -31,3 +31,5 @@
 | 2026-11-04 05:35:01 | EXPERIMENT_TRACKER_20261104_053501.md → EXPERIMENT_TRACKER.md | c6b4520f评分完整900、audit0673c562通过后CPU542e6415评价/7d56ec25诊断DONE；18163成功model=16160复用+2003新，旧guard1，真值最终才开；统一8918报警预算NLI TP1038/FP7880/FN6369，不晋升外部模型或错例补丁，不重评分 |
 | 2026-11-04 05:42:47 | EXPERIMENT_PLAN_20261104_054247.md → EXPERIMENT_PLAN.md | 最终完整900效果保留，补F054/D050/RESUME/allactive_jobs=None与公开检测/错例报告链接；下一问题严格限两例source许可-闭合已有物理观测匹配，不重清点已知缺失、不启动新模型/方法 |
 | 2026-11-04 05:42:47 | EXPERIMENT_TRACKER_20261104_054247.md → EXPERIMENT_TRACKER.md | 全评分/审计/CPU评价/诊断DONE和外部NLI负结果不变；公开h017_nli_error_cases md/json已接入，fixed两例零模型证明与NOT_ADMITTED、全CPU INCOMPLETE/新CI PENDING明确 |
+| 2026-11-04 05:53:55 | EXPERIMENT_PLAN_20261104_055355.md → EXPERIMENT_PLAN.md | 精确源码b362eff完整安装suite CI已PASSED：run41724862885/job126226867706/step6 success，官方HTML+REST收据复核；本地300秒INCOMPLETE不改写，不报未知测试总数；当前迭代完整评价完成但目标/新方法仍未达成 |
+| 2026-11-04 05:53:55 | EXPERIMENT_TRACKER_20261104_055355.md → EXPERIMENT_TRACKER.md | CI PENDING更新为exact-source PASSED，绑定b362eff与实际run/job/step；自该提交numerical code/tests/tools未变，后续仅文档[skip ci]归档，保留所有历史版本/原失败与本地timeout，不重评分/新增模型 |

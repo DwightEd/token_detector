@@ -1,6 +1,6 @@
 # Research status through 2026-11-04
 
-2026-11-04 最新：完整Data2txt900评价已完成：NLI外部监督对照AUROC/AP **0.744306/0.097168**，R4为**0.798318/0.190392**，V3为**0.755716/0.145209**。[完整检测结果与资源记录](results/h017_nli_detection.md)、[M5有限机制实测](results/h017_scope_results.md)。原轴/恢复前缀和独立无标签审计通过，最终真值只在全量seal后打开；NLI没有带来提升，内部机制检测模块和六任务0.8目标仍未建立。当前源码CI按实际提交单独记录，历史1101pass不替代新源码。
+2026-11-04 最新：完整Data2txt900评价已完成：NLI外部监督对照AUROC/AP **0.744306/0.097168**，R4为**0.798318/0.190392**，V3为**0.755716/0.145209**。[完整检测结果与资源记录](results/h017_nli_detection.md)、[M5有限机制实测](results/h017_scope_results.md)。原轴/恢复前缀和独立无标签审计通过，最终真值只在全量seal后打开；NLI没有带来提升，内部机制检测模块和六任务0.8目标仍未建立。源码提交[`b362eff`](https://github.com/DwightEd/token_detector/commit/b362efff7ddb8e3806f04fd9ddb9bf0fd1969bd7)的[完整Linux Tests CI](https://github.com/DwightEd/token_detector/actions/runs/41724862885)已通过；本机300s完整套件超时记录保留。
 
 以下按日期保留旧记录，当前执行边界以F054/RESUME为准。
 
