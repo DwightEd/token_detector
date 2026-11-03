@@ -174,6 +174,16 @@ def parser() -> argparse.ArgumentParser:
         help='freeze label-free natural span erasure artifacts without QA or scores')
     for option in ['inputs', 'h010-root', 'output', 'protocol']:
         natural_masked_inventory.add_argument('--' + option, type=Path, required=True)
+    paired_prepare = transfers.add_parser('prepare-paired-scope', help='freeze matched compound/atomic complete prefix trees without weights')
+    for option in ['inputs', 'protocol', 'model', 'model-identity', 'engineering', 'output']:
+        paired_prepare.add_argument('--' + option, type=Path, required=True)
+    paired_collect = transfers.add_parser('qualify-paired-scope', help='observe every frozen prefix once, retaining all four readouts')
+    for option in ['preparation', 'model', 'model-identity', 'output']:
+        paired_collect.add_argument('--' + option, type=Path, required=True)
+    paired_collect.add_argument('--admit-resources', action='store_true')
+    paired_evaluate = transfers.add_parser('evaluate-paired-scope', help='verify all prefix vectors and freeze four-arm scores before construction references')
+    for option in ['observations', 'design', 'construction', 'output']:
+        paired_evaluate.add_argument('--' + option, type=Path, required=True)
     masked_assignment = transfers.add_parser('analyze-masked-assignments',
         help='freeze fixed H009 bijection readout of all sealed H011 matrices before CPU references')
     for option in ['inputs', 'observations', 'model', 'reconstruction-review', 'output', 'protocol']:
@@ -449,6 +459,22 @@ def main() -> None:
             from .natural_masked_inventory import prepare
 
             prepare(args.inputs, args.h010_root, args.output, args.protocol)
+        elif args.transfer_stage == 'prepare-paired-scope':
+            from .paired_scope_qualification import prepare
+
+            prepare(args.inputs, args.protocol, args.model, data.read_json(args.model_identity), args.engineering, args.output)
+        elif args.transfer_stage == 'qualify-paired-scope':
+            if not args.admit_resources:
+                command.error('qualify-paired-scope requires explicit --admit-resources before HF loading')
+            from .paired_scope_qualification import qualify
+            from .prefix_completion import HFPrefixCompletion
+
+            identity = data.read_json(args.model_identity)
+            qualify(args.preparation, args.output, HFPrefixCompletion(args.model, identity, admit_resources=True), identity)
+        elif args.transfer_stage == 'evaluate-paired-scope':
+            from .paired_scope_evaluation import evaluate
+
+            evaluate(args.observations, args.design, args.construction, args.output)
         elif args.transfer_stage == 'analyze-masked-assignments':
             from .masked_assignment import analyze
 
