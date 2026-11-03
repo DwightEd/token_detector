@@ -981,8 +981,8 @@
       "does_not_imply": "No sourceQ/sourcehidden, no rawQKattention equivalence, no isolatedlayer15causalproof, no fullmodelprobability or numericreplayqualification, no detectorgain. Currentcached-readscope isdistinctfromallmodelinternals orrecomputeclosure.",
       "evidence": [
         {
-          "path": "research-state/RELATION_BINDING_DIRECTION.md",
-          "sha256": "bbdb37608189c7f701cd4aeae6cfd1139369c446b2ab861743588d25642b6e5e"
+          "path": "refine-logs/relation-binding-20261103/INDEPENDENT_REVIEW_20261103_161504.md",
+          "sha256": "e9616f15abb4049b27de96deb5be899e228c3bbe0032c8ed04abfa287d3fb18d"
         },
         {
           "path": "outputs/remote-complete-download-20261103/first-downloaded-QA-capture-header.json",

@@ -41,7 +41,9 @@
     "Distinguish pre-choice from post-token and observer from original generator",
     "Pin RoPE/GQA/masking/precision and cache identities; qualify numerical replay",
     "Specify a discriminating comparison and negative outcomes, not just a new score name",
-    "Record an independent design review and module-level scope"
+    "Record an independent design review and module-level scope",
+    "Preserve complete fact identity (subject,predicate,time/scope/polarity); subject-only aggregation is a marginal diagnostic",
+    "Relation error need not identify one uniquely wrong token; freeze projection to original token/span before evaluation truth"
   ],
   "before_any_run": [
     "Complete and verify required payloads",

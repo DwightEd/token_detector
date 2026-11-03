@@ -1,5 +1,7 @@
 # 代码讲解导航与真实进度
 
+当前研究切入口：[关系错绑的内部计算](../../research-state/RELATION_BINDING_DIRECTION.md) → [已审查实验计划](../../refine-logs/EXPERIMENT_PLAN.md)。当前为设计，尚无新检测成绩；数据恢复完成与代码清理验证另列，不替代机制实验。
+
 2026-11-03清理说明：三个已完成、无当前CLI/导入调用的日期化独立数值核验脚本已移出当前 `experiments` 包。完整源码仍在 Git 提交 `5b43e0e2327d6d3370d60f32aed6035f2920173b` 与本机冻结目录 `outputs/h002-context-20261102/installed/experiments/`，三份SHA256逐一相同；H002冻结目标和历史核验记录均保留。下方行数与版本化覆盖仍按原阅读快照记载，不代表清理后的当前源码数量。
 
 新增版本化阅读：[H008 source-QA 与完整姓名+EOS 核心逐行讲解](batches/20261103-h008-core-v1/README.md)（[离线HTML](batches/20261103-h008-core-v1/README.html)、[机读覆盖](batches/20261103-h008-core-v1/coverage.json)、[全范围AST快照](batches/20261103-h008-core-v1/inventory.json)）。本批新增2文件/296行/12定义；当前四目录全范围为168文件/1734定义，其余145文件/1594定义仍待讲。下方21文件/2421行/128定义及98文件原范围统计属于保留的历史基线，旧行覆盖未被重写；新批次不把两个文件重新定义为整个阅读scope。

@@ -8,6 +8,6 @@
 
 **合同纠错必须保留：** Q/K是RoPE前，不能raw点积当attention。source阻断作用于实际执行0–15层，只保存15层；nodes/query仅回答T+1行，缺完整来源Q/hidden和early-stop最终logp。Llama观察器teacher-force已有R，不是GPT/Mistral/Llama2原生成器内部原因。Summary/Data的lag8量是局部回答历史attention，非同范围来源QKV。原公开交接中的“仅15层阻断”以此纠正，不能沿用。
 
-实验代码在experiments，候选diagnostic在experiments/research，复用主线原轴/基线/封存/评价。memory负责身份去重和证据，不自动判科学创新；每个新模块编码前补科学准入/审查，真实入口与SHA齐后才check/claim，标签最终评价。三旧日期integrity脚本的当前副本已删，H002完整副本不动；干净wheel126文件/导入/CLI通过；本机完整CPU900秒上限为incomplete，源码清理的完整验证需查当前提交LinuxCI及outputs/relation-mechanism-design-20261103/github-ci-success.json，不能沿用旧69aead3的成功。
+实验代码在experiments，候选diagnostic在experiments/research，复用主线原轴/基线/封存/评价。memory负责身份去重和证据，不自动判科学创新；每个新模块编码前补科学准入/审查，真实入口与SHA齐后才check/claim，标签最终评价。三旧日期integrity脚本的当前副本已删，H002完整副本不动；干净wheel126文件/导入/CLI通过；本机完整CPU900秒上限保留为incomplete。源码提交525fd28的Linux CI run41603456333实际通过：992passed/1skip/9subtests，190.96s；收据outputs/relation-mechanism-design-20261103/github-ci-success.json。本次后续只有文档/状态补记，126文件源码未变。
 
 历史下载范围和旧执行快照另存 [归档](history/RESUME_20261103_161917_with_acquisition_history.md)。历史F001–F039与负实验见facts/prior_experiments；F040为合同纠错，F041为当前文件恢复完成，六任务0.8目标仍未完成。主项目D:/projects/research/token_detector；模型实验本轮未claim，旧goal工具blocked不表示任务完成。

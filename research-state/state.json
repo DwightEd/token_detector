@@ -476,8 +476,8 @@
     "note": "All selected cached-read payloads independently rehashed against completed download receipts and known original references;15prefix reports plus finallegacyunion and11700QAheaderchecks. Broadremote/fullmodelrecompute scope isoutside. No new statistical detector observations or scores.",
     "manifest_v1": "outputs/remote-complete-download-20261103/manifest-RAG-required-v1.json",
     "manifest_v1_sha256": "0f697e8b8def3918e1ed6101524622512b76d0e616b1a00a48066f81939fd501",
-    "mirror_status_at_checkpoint": "downloading",
-    "mirror_pid": 60740,
+    "mirror_status_at_checkpoint": "complete",
+    "mirror_pid": null,
     "snapshot_updated_utc": "2026-11-03T07:46:43.707613+00:00",
     "normalized_sdk_files": 3003,
     "normalized_sdk_bytes": 3840200081,
@@ -527,7 +527,15 @@
     "clean_wheel_and_cli": "passed",
     "local_full_cpu": "incomplete_900_second_limit",
     "local_receipt": "outputs/relation-mechanism-design-20261103/cleanup-verification/receipt.json",
-    "linux_exact_commit_required_before_validated_push": true,
-    "github_ci_receipt": "outputs/relation-mechanism-design-20261103/github-ci-success.json"
+    "linux_exact_commit_required_before_validated_push": false,
+    "github_ci_receipt": "outputs/relation-mechanism-design-20261103/github-ci-success.json",
+    "linux_ci": "passed",
+    "validated_source_commit": "525fd28dd4140bac286293f558aaf3b5fd13bc6c",
+    "github_workflow_run": 41603456333,
+    "github_workflow_url": "https://github.com/DwightEd/token_detector/actions/runs/41603456333",
+    "passed": 992,
+    "skipped": 1,
+    "subtests_passed": 9,
+    "test_seconds": 190.96
   }
 }
