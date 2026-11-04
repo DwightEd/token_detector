@@ -1,0 +1,24 @@
+{
+  "schema": "h018-exact-push-cpu-ci-v1",
+  "source_commit": "181937a530039cbcb63cbf658db9c7e0f508aebc",
+  "commit_url": "https://github.com/DwightEd/token_detector/commit/181937a530039cbcb63cbf658db9c7e0f508aebc",
+  "workflow_run_id": 41858691205,
+  "workflow_url": "https://github.com/DwightEd/token_detector/actions/runs/41858691205",
+  "conclusion": "success",
+  "job_id": 126674199125,
+  "job_conclusion": "success",
+  "full_installed_cpu_step": {
+    "number": 6,
+    "name": "Test installed packages outside the checkout",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "local_full_suite": "incomplete_timeout_300seconds_retained",
+  "targeted_installed_tests": "37passed21.86s",
+  "scope": "full installed CPU suite for this exact pushed commit; no detection efficacy or all future worktree source claim",
+  "metadata_sources": [
+    "https://api.github.com/repos/DwightEd/token_detector/actions/runs/41858691205",
+    "https://api.github.com/repos/DwightEd/token_detector/actions/runs/41858691205/jobs"
+  ]
+}
+

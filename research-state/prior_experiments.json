@@ -3221,6 +3221,70 @@
       "do_not_repeat": "Reuse original5682/5684 raw; never rename/re-score/re-observe them as new evidence. Fixed signed risk/all32/allsource unchanged. New owner controls require independent admission.",
       "population": "two previously exposed natural responses,407 originaltargets; not six-task evaluation",
       "target_labels_opened": false
+    },
+    {
+      "id": "P033_H018_OWNER_SWAP_RESOURCE_PARTIAL",
+      "hypothesis": "H018_SOURCE_NORM_MLP_LOCAL_USE",
+      "status": "closed_necessary_target_direction_refuted",
+      "known_result": "F058/F059",
+      "evidence": [
+        {
+          "path": "outputs/h018-operator-binding-20261104/owner-observation-v2/failure.json",
+          "sha256": "61245a911f18ba34fa81e6b809caa2492361b1eead01a55205eb35721dbc0d82"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/owner-observation-v2/seal.json",
+          "sha256": "51cc8986223e5b52eab8d0ff9b21e0dd010bbd3051988f83812fee2d1314a261"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/owner-observation-v2/case-target/result.json",
+          "sha256": "83459a5ffe75996bf2ab39731c81d16c4a07e4713f0b1583f6e423d91409b95c"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/owner-observation-v2/case-target/seal.json",
+          "sha256": "d4ce17bebb5afe482c0f5c812d2247d15c8289735b7c38b85b514033228e82d1"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/OWNER_RECOVERY_COMPLETION.json",
+          "sha256": "9ce5b98f1980102dd3ae70938a706512cce026e47010ba23d7d597405eca1a93"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/owner-observation-v1/failure.json",
+          "sha256": "09e043722733adc7a8543a0122ee27c31c8f4f4a049580e5287fdb8f99af45a5"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/owner-plan-v1/plan.json",
+          "sha256": "879e385a21e8abaa89b7356d760d7ace66d88a81353562d7abd01a8c5eb20102"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/RESOURCE_RECOVERY_ADMISSION.md",
+          "sha256": "0292697f0dca2924d3443dc3db17f6c44de00ebabf5c7251ab61e7ba7c7c34e9"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/INSTALLED_OWNER_TARGETED_VALIDATION.json",
+          "sha256": "9c9e45a98fcee3182ec03c9bd523c0a944700fbadccf19685821444a0df39f93"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/INSTALLED_OWNER_FULL_VALIDATION.json",
+          "sha256": "409cf4ac607c1bf60d510c34e9c2ae6afae6a13724b79bc9a814acfcdd02ce70"
+        }
+      ],
+      "do_not_repeat": "Necessary target primary direction refuted. No remaining control inference, sign/layer/point rescue or renaming local all-source MLP as compatibility. Reuse all completed/failure evidence.",
+      "annotation_reads": 0,
+      "final_audit_evidence": [
+        {
+          "path": "outputs/h018-operator-binding-20261104/completed-target-independent-audit-v1/audit.json",
+          "sha256": "10f165ec37342dd18f8b611b962e3d6b2dfcfc9cfdbd50b94466ba3275eb6913"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/completed-target-independent-audit-v1/seal.json",
+          "sha256": "585e77c0015edb9f0dcf680e071678dbce58cc2e98e732d3fa8c0aa78c4568eb"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/P2_TARGET_ONLY_INTERPRETATION_REVIEW.md",
+          "sha256": "0dab9bb86a6185b163e445c1bfbbfc26f7709c089509310232ec136b811b8d85"
+        }
+      ]
     }
   ],
   "discriminating_interventions": [

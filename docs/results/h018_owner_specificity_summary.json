@@ -1,0 +1,29 @@
+{
+  "schema": "h018-owner-target-necessary-condition-refuted-v1",
+  "audit_run_id": "7626e002815a842e924e2b83e8a5a6d47700cebf650b7accc7a9d7a831e57e7d",
+  "audit_sha256": "10f165ec37342dd18f8b611b962e3d6b2dfcfc9cfdbd50b94466ba3275eb6913",
+  "numerical_audit_passed": true,
+  "necessary_gate_refuted": true,
+  "primary": {
+    "e": -0.002498626708984375,
+    "risk": 0.4993753433227539,
+    "native_nll": 2.658559799194336,
+    "oracle_budget_sum": 0.00042623517219908535,
+    "resolved_positive": false,
+    "resolved_negative": true
+  },
+  "S0_native_probability": 0.9911284536574698,
+  "target_native_probability": 0.07004903380734856,
+  "joint_source_swap": [
+    "BusinessParking.valet",
+    "OutdoorSeating"
+  ],
+  "no_unique_single_field_causal_claim": true,
+  "missing_control_not_run_again": true,
+  "complete_pair_success": false,
+  "new_model_calls": 0,
+  "annotation_reads": 0,
+  "auroc": null,
+  "prior_failures_preserved": true,
+  "source_commit": "3368f56"
+}

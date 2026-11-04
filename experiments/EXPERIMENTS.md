@@ -1,5 +1,15 @@
 # 实验账本与实际结论
 
+当前补充：三批70文件10,080,059,000B已完整恢复，原16+replay16资格完成，2完整graph数值资格进行中。H018 target-only audit7626e002 PASS后预定not73主e=-.0024986267（预算.00042623517）反证必要正方向；固定分支关闭，不再补control。[具体数值](../docs/results/h018_owner_specificity.md)。F059/F060与RESUME是当前状态，下段下载中/待审计属于较早检查点。
+
+## 2026-11-05：补齐遗漏的同题多采样与内部缓存
+
+此前库存遗漏 `research/reanchor`。真实4source×4seed同Llama原生成16NPZ已下载C盘，共1,168,475,270B（含3份metadata）；全层头attention/raw logits与逐prefix replay hidden属于不同合同。16份hidden及00012/00013两份attributed graph正在分批恢复，不能以旧库存缺失结论代替实物检查。位置、来源、观察轴和限制见[缓存地图](../docs/REMOTE_INTERNAL_CACHE_MAP_20261105.md)，当前顺序见[计划](../refine-logs/EXPERIMENT_PLAN.md)。无新模型或目标标签，不把新采样R套用官方旧R标签。
+
+H018 owner前端34a449f0通过。第一次6fe770d9在主存门失败（1partial/0head/4extraMLP）；明确恢复7c6d857e完成target并child-sealed，control因D磁盘满中止（恢复总2native/4head/204extraMLP）。完整pair、独立raw审计和新AUROC均未完成；已完成target/S0必须复用，禁止再启动旧双world入口。资源失败不等于方法反证。D盘已通过转存原数据压缩包及OEM安装源释放约16.4GiB，科学数据与失败收据保留。
+
+151 exact installed新source、65targeted通过16.93s；完整CPU300s请求为incomplete_timeout。181937a完整Linux CI41858691205通过；新3368f56 push后必须核其exact CI，不能以targeted替代。以下历史段落保留当时记录，当前状态以RESUME为准。
+
 2026-11-03当前研究：[H017结果与图表](../docs/results/h017_relation_binding.md)。M3选择性K路径负结果、M4自然ago低概率、M5营业时间错误分钟高条件概率分别保留；M5只复用旧缓存，没有新增forward、评分或AUROC。完整代码9dc6600的Linux CI1101pass/1skip/9subtests。主目标六任务0.8仍未达成；当前无活动模型job，新范围条件对照尚未准入，当前恢复见research-state/RESUME.md。
 
 当前状态更新：2026-10-29。默认主线是 `myproject/shared.py` 中的SharedDetector，冻结R4保留作历史对照。

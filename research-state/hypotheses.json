@@ -578,7 +578,7 @@
     },
     {
       "id": "H018_SOURCE_NORM_MLP_LOCAL_USE",
-      "status": "first_gate_audited_no_specificity_or_detection_claim_owner_swap_frontend_only",
+      "status": "fixed_compatibility_warning_direction_refuted_do_not_rerun",
       "question": "Does all-source native attention write have a local Norm+MLP increment that gives original-token information beyond P006 direct-write, native NLL and norm-matched sham?",
       "prior_overlap": "P006 H-sourcewrite endpoint is old; only held-native-input F(x)-F(x-sourcewrite) adds a new observation. Negation MLP/CoCo/CAD literature prevents novelty or truth assumptions.",
       "competing_predictions": [
@@ -642,7 +642,10 @@
           "sha256": "6edefe977d4b62c990104d5173d10781d39a365a960671b67848826e4aa6cef8"
         }
       ],
-      "phase2_model_admitted": false
+      "phase2_model_admitted": false,
+      "final_fact": "F059",
+      "remaining_control_required": false,
+      "new_model_calls_admitted": 0
     }
   ]
 }

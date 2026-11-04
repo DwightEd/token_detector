@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "run_id": "7c6d857e9d098a2e34b7e42932248ecdfe641b79b36fcb396047ed6156774009",
+  "completed_utc": "2026-11-04T16:31:45.902314+00:00",
+  "outcome": "engineering_failure",
+  "conclusion": "Explicit recovery resource/engineering refusal retained; no automatic further attempt",
+  "artifacts": [
+    {
+      "path": "outputs/h018-operator-binding-20261104/OWNER_RECOVERY_stdout.log",
+      "sha256": "60d0b7e656b8e74c11454371b8148022a6937446de76a66637f0143b2119337f"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/OWNER_RECOVERY_stderr.log",
+      "sha256": "1b62655b957608d1281c42c5e953b9d335ff766c272293ccd784b1025c109bf8"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/OWNER_RECOVERY_PREFLIGHT.json",
+      "sha256": "c9533a3d512bd83850009184ba9a315964fd7493841e89dcbca0e21e1f58fc74"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/owner-observation-v2/plan.json",
+      "sha256": "879e385a21e8abaa89b7356d760d7ace66d88a81353562d7abd01a8c5eb20102"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/owner-observation-v2/failure.json",
+      "sha256": "61245a911f18ba34fa81e6b809caa2492361b1eead01a55205eb35721dbc0d82"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/owner-observation-v2/seal.json",
+      "sha256": "51cc8986223e5b52eab8d0ff9b21e0dd010bbd3051988f83812fee2d1314a261"
+    }
+  ]
+}

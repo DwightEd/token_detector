@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "run_id": "7626e002815a842e924e2b83e8a5a6d47700cebf650b7accc7a9d7a831e57e7d",
+  "completed_utc": "2026-11-04T16:59:19.954258+00:00",
+  "outcome": "refuted",
+  "conclusion": "Completed target passes all numerical audits but frozen necessary target-positive primary gate is resolved negative; reject this strong-sign owner-specificity branch without running missing control. No full-pair success, new model or GT.",
+  "artifacts": [
+    {
+      "path": "outputs/h018-operator-binding-20261104/completed-target-independent-audit-v1/audit.json",
+      "sha256": "10f165ec37342dd18f8b611b962e3d6b2dfcfc9cfdbd50b94466ba3275eb6913"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/completed-target-independent-audit-v1/seal.json",
+      "sha256": "585e77c0015edb9f0dcf680e071678dbce58cc2e98e732d3fa8c0aa78c4568eb"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/TARGET_ONLY_INDEPENDENT_STATIC_REVIEW.md",
+      "sha256": "653ea7a2764f3463239e938fda7f47ccf09d1e2dba157675932e45e3cbe8eb21"
+    }
+  ]
+}

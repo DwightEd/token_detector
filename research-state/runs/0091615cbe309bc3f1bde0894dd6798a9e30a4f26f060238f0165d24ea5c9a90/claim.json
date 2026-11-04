@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "created_utc": "2026-11-04T15:44:11.892629+00:00",
+  "spec": {
+    "hypothesis_id": "H018_SOURCE_NORM_MLP_LOCAL_USE",
+    "stage": "h018_phase2_baseline_necessary_margin",
+    "intervention": "none_reuse_S0_fullV_q875_no_new_model_no_primary_score_change",
+    "method": {
+      "entrypoint": "D:\\projects\\research\\token_detector\\outputs\\h018-operator-binding-20261104\\check_phase2_baseline_v2.py",
+      "config": {
+        "case": "5684",
+        "target": 73,
+        "q": 875,
+        "positive_operator_id": 539,
+        "alternative_available_id": 2561,
+        "arithmetic": "FP32same_row_margin_then_native_minus_counter",
+        "resolved_bound": "32eps*(abs(all4logits)+1)",
+        "geometry": "descriptive_FP64_storedrms_ratio_no_new_risk"
+      }
+    },
+    "code_sha256": {
+      "D:\\projects\\research\\token_detector\\outputs\\h018-operator-binding-20261104\\check_phase2_baseline_v2.py": "4f66de3db796c4b2368d8dd8c886c918a83a8e17dbe0be0f1f2d1fe2e2079175",
+      "D:\\projects\\research\\token_detector\\outputs\\h018-operator-binding-20261104\\audit_phase1.py": "0a095caf16a705ff22243581c0710515451e8e01cec0600d702d43f508c2eb92"
+    },
+    "data_sha256": {
+      "D:\\projects\\research\\token_detector\\outputs\\h018-operator-binding-20261104\\model-observation-v3\\case-5684\\raw\\logits-native.npz": "a184faaef8717dce23e872ced1fed2bd9e1921d2a993ffc4e10033f4c89be88b",
+      "D:\\projects\\research\\token_detector\\outputs\\h018-operator-binding-20261104\\model-observation-v3\\case-5684\\raw\\logits-source.npz": "ae2676f37d35401e5e99df881a1c93f82b8459c526f0e6145d6fe58d8d071590",
+      "D:\\projects\\research\\token_detector\\outputs\\h018-operator-binding-20261104\\model-observation-v3\\case-5684\\raw\\logits-sham.npz": "0a0605889b720a7b1ac588900387c82429396c7ac06a3927839a4e7a0e645c72",
+      "D:\\projects\\research\\token_detector\\outputs\\h018-operator-binding-20261104\\model-observation-v3\\case-5684\\raw\\logits-direct_source_write.npz": "0010ba4a1cd69442a748b874619b671c077203dd031a5b6a7aeca1ce716ddc26",
+      "D:\\projects\\research\\token_detector\\outputs\\h018-operator-binding-20261104\\model-observation-v3\\case-5684\\raw\\finalnorm-m0.npz": "1d8ea62006939fe7efe164ff8d4af7713b6e504b265c5051a8d052f71644ce9c",
+      "D:\\projects\\research\\token_detector\\outputs\\h018-operator-binding-20261104\\model-observation-v3\\case-5684\\raw\\finalnorm-source.npz": "0c34987199123513c058ec2f97f5be789f6e7e03bf6f98ed0b933e207cfcf758",
+      "D:\\projects\\research\\token_detector\\outputs\\h018-operator-binding-20261104\\model-observation-v3\\case-5684\\raw\\finalnorm-sham.npz": "0159a895df616204042d63b147465edd0acad01a63154c1f11795aafd9defd81",
+      "D:\\projects\\research\\token_detector\\outputs\\h018-operator-binding-20261104\\model-observation-v3\\case-5684\\raw\\finalnorm-direct_source_write.npz": "b0699ce516c61dce7fa62e7a4339b8b5fcb27fa16401f78ebc3078c5c2fd4534",
+      "D:\\projects\\research\\token_detector\\outputs\\h018-operator-binding-20261104\\model-observation-v3\\seal.json": "c47dd136cb9e2eeb3c1efadcdf6342efb2e19db88debf196e0318534408fe13d",
+      "D:\\projects\\research\\token_detector\\outputs\\h018-operator-binding-20261104\\tokenizer-axes-v2\\axes-5684.npz": "6a3d9d4212a21b1a596252dcbec12a73e102ddc7070810fd0ac3a4f3714668ae",
+      "D:\\projects\\research\\token_detector\\refine-logs\\operator-binding-20261104\\PHASE2_PROPOSAL_20261104_232000.md": "f2d83f6b8c49856aefb2f2d140300fef7dc7eb9e1805a3c1040d487595f9a7af",
+      "D:\\projects\\research\\token_detector\\outputs\\h018-operator-binding-20261104\\PHASE2_OWNER_SWAP_ADMISSION_REVIEW.md": "6f2552c95690083072531616e7c9a818d38f8db67f7acb03c8ab8f5dc73d426f",
+      "D:\\projects\\research\\token_detector\\outputs\\h018-operator-binding-20261104\\PHASE2_MARGIN_RMS_DECOMPOSITION_REVIEW.md": "4181ccdeb6c967e23b53fdaf2e0e42c13ac58aee8b76c7bb60270bc6a2a9895c"
+    },
+    "observer": {
+      "kind": "retained_fullV_FP32_native_eager",
+      "new_model_calls": 0
+    },
+    "population": {
+      "id": "5684",
+      "all_prior_R": 233,
+      "anchor_only": 73,
+      "original_raw_reused": true
+    },
+    "evaluation": {
+      "target_labels": "none",
+      "primary_score_changes": 0,
+      "auroc": false,
+      "necessary_condition": "source_C_U>frozen_operation_bound_before_new_worlds"
+    },
+    "seed": null
+  },
+  "run_id": "0091615cbe309bc3f1bde0894dd6798a9e30a4f26f060238f0165d24ea5c9a90",
+  "phase": "reserved_not_launched"
+}

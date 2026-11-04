@@ -3,9 +3,9 @@
   "objective": "Mechanism-driven unsupervised hallucination detection improvement toward AUROC >= 0.8 on each of six primary tasks",
   "canonical_project": "D:/projects/research/token_detector",
   "goal_status": "not_achieved",
-  "phase": "h018_audited_phase1_done_owner_swap_frontend_implementation",
+  "phase": "binding_specific_mechanism_design_on_recovered_full_graph",
   "active_hypothesis": "H018_SOURCE_NORM_MLP_LOCAL_USE",
-  "next_question": "F056/F057 first gate complete: do not rerun original2. Implement/review only the two predeclared bool-owner swaps with unchanged R5684 and fixed H018 risk. Zero-model tokenizer must prove same source token Counter/exact2bool swaps/P803/T233/N1036 and shared-donor prefix contract. Reuse sealed S0. Model execution awaits new frontend/code/resource/claim; 2 proposed new native budget is not armed. No sign/layer/scope rescue, no targetGT/full900/AUROC yet.",
+  "next_question": "Use recovered complete graph and old reanchor research conclusions to identify a genuinely new binding-specific intervention. H018 necessary direction refuted: no missing control inference or score rescue. Original/replay qualification complete; graph numerical qualification in progress. Check existing ownership X/E/XE/endpoint/suffix priors before any candidate. No arbitrary source-null rerun, labels or new risk yet.",
   "known_fact_ids": [
     "F001",
     "F002",
@@ -63,7 +63,10 @@
     "F054",
     "F055",
     "F056",
-    "F057"
+    "F057",
+    "F058",
+    "F059",
+    "F060"
   ],
   "do_not_repeat": [
     "Describing known FN/FP counts again without a new discriminating intervention",
@@ -1013,14 +1016,24 @@
   "publication_receipt": "outputs/h017-relation-20261103/NLI_PUBLICATION_FINAL.json",
   "validation_status": "Exactsource b362eff fullinstalled LinuxCI41724862885 passed; local completeCPU300s remains incomplete",
   "code_validation": {
-    "source_commit": "3a53a19",
-    "installed_target": "h018-qualified-20261104-225438",
-    "targeted": "37passed21.86s",
+    "source_commit": "3368f56",
+    "installed_modules": 151,
+    "targeted": "65passed16.93s",
     "local_full": "incomplete_timeout_300seconds",
-    "exact_push_CI": "pending"
+    "exact_push_CI": "pending_unpushed_source",
+    "previous_exact_CI": {
+      "commit": "181937a",
+      "run": 41858691205,
+      "status": "success"
+    }
   },
   "updated_utc": "2026-11-04T14:29:25.323379+00:00",
-  "active_jobs": null,
+  "active_jobs": {
+    "type": "CPU_full_graph_qualification_and_source_prior_review",
+    "gpu_jobs": 0,
+    "download_workers": "all_completed_exit0",
+    "automatic_retry": false
+  },
   "current_protocol": "outputs/h018-operator-binding-20261104/PHASE1_V3_PROTOCOL.json",
   "h018": {
     "phase1": "complete_sealed_audit_passed_no_detection_efficacy",
@@ -1070,17 +1083,37 @@
     "audit_run_id": "0fcd8affd06146c171105f84840d30752a3facd43e64cc0fecd5906f6edf8fd9",
     "audit_output": "outputs/h018-operator-binding-20261104/phase1-independent-audit-v1",
     "phase2": {
-      "status": "zero_model_frontend_and_orchestration_only",
-      "new_model_calls": 0,
-      "proposal": "refine-logs/operator-binding-20261104/PHASE2_PROPOSAL_20261104_232000.md",
-      "independent_review": "outputs/h018-operator-binding-20261104/PHASE2_OWNER_SWAP_ADMISSION_REVIEW.md",
-      "proposed_new_budget": {
-        "model_calls": 2,
-        "head_calls": 8,
-        "extra_mlp_calls": 256
+      "status": "closed_fixed_necessary_target_direction_refuted",
+      "frontend_run": "34a449f05654d405d1d29525dfc68fea63e6428a32eeb72919e3968880199680",
+      "first_attempt": {
+        "run": "6fe770d9d1af3f68fd21c6082863a5454c33419749f9703c251419b67c755b73",
+        "model_calls": 1,
+        "head_calls": 0,
+        "extra_mlp_calls": 4,
+        "completed_worlds": []
       },
-      "baseline": "reuse immutable original case5684;0reruns",
-      "target_labels": "none"
+      "recovery": {
+        "run": "7c6d857e9d098a2e34b7e42932248ecdfe641b79b36fcb396047ed6156774009",
+        "model_calls": 2,
+        "head_calls": 4,
+        "extra_mlp_calls": 204,
+        "completed_worlds": [
+          "target"
+        ],
+        "failure": "disk_full_during_control_layer_18_raw_write"
+      },
+      "target_result": "outputs/h018-operator-binding-20261104/owner-observation-v2/case-target/result.json",
+      "target_seal_sha256": "d4ce17bebb5afe482c0f5c812d2247d15c8289735b7c38b85b514033228e82d1",
+      "baseline_new_model_calls": 0,
+      "target_rerun_allowed": false,
+      "raw_audit": "completed_target_passed_all233_32layers_4fullV",
+      "complete_pair_claim": false,
+      "annotation_reads": 0,
+      "auroc": null,
+      "audit_run_id": "7626e002815a842e924e2b83e8a5a6d47700cebf650b7accc7a9d7a831e57e7d",
+      "remaining_control_model_calls_admitted": 0,
+      "missing_control_not_needed_for_necessary_gate_rejection": true,
+      "no_full_pair_success": true
     }
   },
   "prior_code_validation": {
@@ -1090,5 +1123,32 @@
     "public_receipt": "h017_nli_ci.json",
     "receipt_sha256": "eca90cbecec5f0b130ed0527cd6c1d04428735befb902fa2539b96aca0851c67",
     "local_complete_CPU_attempt": "incomplete_timeout_300seconds"
+  },
+  "goal_tool_status": "blocked_stale_user_has_explicitly_continued_research",
+  "remote_scope_correction": {
+    "prior_inventory": "F039-F042 do not cover research/reanchor; absence conclusions are scoped",
+    "source": "research/reanchor/outputs/samples_20260911_145421_235",
+    "source_ids": [
+      14304,
+      14315,
+      14325,
+      14375
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "model": "Meta-Llama-3.1-8B-Instruct",
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "generation_cache": "complete_qualified",
+    "replay_hidden_cache": "complete_qualified",
+    "not_equivalent_to": "150sources_x6different_generators",
+    "full_graphs": "complete_download_manifest_SHA_qualified_numeric_pending",
+    "downloaded_files": 70,
+    "downloaded_bytes": 10080059000,
+    "unique_response_trajectories": 13
   }
 }

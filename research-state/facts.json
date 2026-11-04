@@ -1593,6 +1593,127 @@
       "model_run_id": "841f447909662ec142e56058162e243ce7e9810baa9a96012815aaf0b2ee4426",
       "mathematical_boundary": "Real probabilities imply e<=nativeNLL andsigmoid(e)=pc/(pc+pn); not an AUC ceiling or calibrated hallucination posterior",
       "next_gate": "Only conditional zero-model owner-swap frontend/orchestration GO, not model or full900 admission"
+    },
+    {
+      "id": "F058",
+      "certainty": "owner_frontend_passed_target_completed_unaudited_control_disk_failure",
+      "claim": "Two owner-swap frontend worlds qualified. First model attempt stopped on host RAM (1 partial model,4 extra MLP,0 head). Explicit recovery completed and child-sealed target (1 native,4 head,128 extra MLP) but control stopped on disk-full after 19 layers; recovery total2 native,4 head,204 extra MLP. No complete-control result, no independent target raw audit or semantic sign conclusion, no AUROC or labels. Preserve all failures; never rerun S0 or completed target.",
+      "evidence": [
+        {
+          "path": "outputs/h018-operator-binding-20261104/owner-observation-v2/failure.json",
+          "sha256": "61245a911f18ba34fa81e6b809caa2492361b1eead01a55205eb35721dbc0d82"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/owner-observation-v2/seal.json",
+          "sha256": "51cc8986223e5b52eab8d0ff9b21e0dd010bbd3051988f83812fee2d1314a261"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/owner-observation-v2/case-target/result.json",
+          "sha256": "83459a5ffe75996bf2ab39731c81d16c4a07e4713f0b1583f6e423d91409b95c"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/owner-observation-v2/case-target/seal.json",
+          "sha256": "d4ce17bebb5afe482c0f5c812d2247d15c8289735b7c38b85b514033228e82d1"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/OWNER_RECOVERY_COMPLETION.json",
+          "sha256": "9ce5b98f1980102dd3ae70938a706512cce026e47010ba23d7d597405eca1a93"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/owner-observation-v1/failure.json",
+          "sha256": "09e043722733adc7a8543a0122ee27c31c8f4f4a049580e5287fdb8f99af45a5"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/owner-plan-v1/plan.json",
+          "sha256": "879e385a21e8abaa89b7356d760d7ace66d88a81353562d7abd01a8c5eb20102"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/RESOURCE_RECOVERY_ADMISSION.md",
+          "sha256": "0292697f0dca2924d3443dc3db17f6c44de00ebabf5c7251ab61e7ba7c7c34e9"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/INSTALLED_OWNER_TARGETED_VALIDATION.json",
+          "sha256": "9c9e45a98fcee3182ec03c9bd523c0a944700fbadccf19685821444a0df39f93"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/INSTALLED_OWNER_FULL_VALIDATION.json",
+          "sha256": "409cf4ac607c1bf60d510c34e9c2ae6afae6a13724b79bc9a814acfcdd02ce70"
+        }
+      ],
+      "do_not_retest_phenomenon": true,
+      "baseline_new_model_calls": 0,
+      "annotation_reads": 0,
+      "run_ids": [
+        "34a449f05654d405d1d29525dfc68fea63e6428a32eeb72919e3968880199680",
+        "6fe770d9d1af3f68fd21c6082863a5454c33419749f9703c251419b67c755b73",
+        "7c6d857e9d098a2e34b7e42932248ecdfe641b79b36fcb396047ed6156774009"
+      ]
+    },
+    {
+      "id": "F059",
+      "certainty": "completed_target_numerically_audited_fixed_necessary_direction_refuted",
+      "claim": "Same original R5684 and source token bag, joint valet/Outdoor bool swap: native not73 p falls from .99112845 to .07004903, but frozen H018 e=-.0024986267 is resolved negative against .00042623517 oracle budget. Necessary target-positive and auxiliary source-C negative predictions fail. Close this fixed strong-sign compatibility branch without remaining control; do not rescue by sign/layer/point/P006 selection. Native overall source response does not uniquely identify valet or an MLP circuit.",
+      "evidence": [
+        {
+          "path": "outputs/h018-operator-binding-20261104/completed-target-independent-audit-v1/audit.json",
+          "sha256": "10f165ec37342dd18f8b611b962e3d6b2dfcfc9cfdbd50b94466ba3275eb6913"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/completed-target-independent-audit-v1/seal.json",
+          "sha256": "585e77c0015edb9f0dcf680e071678dbce58cc2e98e732d3fa8c0aa78c4568eb"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/P2_TARGET_ONLY_INTERPRETATION_REVIEW.md",
+          "sha256": "0dab9bb86a6185b163e445c1bfbbfc26f7709c089509310232ec136b811b8d85"
+        }
+      ],
+      "do_not_retest_phenomenon": true,
+      "new_model_calls": 0,
+      "annotation_reads": 0,
+      "audit_run_id": "7626e002815a842e924e2b83e8a5a6d47700cebf650b7accc7a9d7a831e57e7d",
+      "no_full_pair_success_claim": true,
+      "missing_control_no_longer_required_to_reject_necessary_gate": true
+    },
+    {
+      "id": "F060",
+      "certainty": "new_remote_scope_recovered_generation_replay_qualified_graph_downloaded",
+      "claim": "Previously omitted research/reanchor recovered: 16 same-model4seed QA generation NPZ,16 prefix-replay hidden NPZ,2 complete attributed graphs;70 files10,080,059,000B. Original/replay axes and all24 common-prefix controls pass;13 distinct R trajectories,1532 sampled token decisions. Graph original-manifest SHA pass; full numerical graph qualification still pending. No new labels/risk/model. Official population5684 is pooled P769 not current803; old canonical train archive is posttoken sparse floor.01, not a substitute.",
+      "evidence": [
+        {
+          "path": "outputs/h018-operator-binding-20261104/MULTISAMPLE_DOWNLOAD_INDEX_V2.json",
+          "sha256": "98432ed6a510c5cc99970c1ca520d64e5b2b85b88353a1045a58bcb9eac1a490"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/MULTISAMPLE_DOWNLOAD_BATCH01_COMPLETION.json",
+          "sha256": "b780a5442475676339204b61a6c3735b1f667bb5593735ccb90c3065e26537c9"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/MULTISAMPLE_DOWNLOAD_BATCH02_COMPLETION.json",
+          "sha256": "e3c5ea1579a5e34439738839af88761210a35cd19d3a5f2bafc9d3563b2e7812"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/MULTISAMPLE_DOWNLOAD_BATCH03_COMPLETION.json",
+          "sha256": "0176bfa84ae24b054dc45087afc6424994e2dc54a28e0b021a30c91f66f4520a"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/RECOVERED_original16-qualification-v1.json",
+          "sha256": "aca77ed5668f7766343422a6e3e2706c0516783352093fa1a85a5f9b2e2cd61c"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/RECOVERED_replay16-qualification-v1.json",
+          "sha256": "9f369df31dabf9ac79d5bd2d0e60d837f5e736afc01699376041cb8ba3cfdca8"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/RECOVERED_qualification-index-v1.json",
+          "sha256": "ed1f1956fb93cd960bffaad0ad03e0819da497a925289d1897856e6eb5daa210"
+        }
+      ],
+      "do_not_retest_phenomenon": true,
+      "data_root": "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample",
+      "new_model_calls": 0,
+      "annotation_reads": 0,
+      "original_execution_weight_SHA_attested": false,
+      "replay_slot32": "post_finalnorm; graph residual slot32 is separately pre_finalnorm"
     }
   ],
   "rule": "New interventions need different predictions under competing explanations; known counts/cases are reused."

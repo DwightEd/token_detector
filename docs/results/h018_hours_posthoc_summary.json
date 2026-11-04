@@ -1,0 +1,276 @@
+{
+  "schema": "h018-hours-source-conflict-posthoc-public-summary-v1",
+  "status": "postfreeze_exploratory_text_diagnostic_no_detector_promotion",
+  "id": "5684",
+  "source_id": "13603",
+  "dataset": "RAGTruth Data2txt",
+  "original_generator": "Mistral",
+  "observer": "fixed Meta-Llama-3.1-8B-Instruct",
+  "source_sha256": "9567bf5a5690e766050d88db2202b41ffe39a7a42f95d460d65ea5283d4cd7e6",
+  "response_sha256": "85d27ca4473c4cf88875fe89f6d6f7d033c15547a822672991138e335362fd4e",
+  "source_hours": [
+    {
+      "day": "Monday",
+      "value": "11:0-17:0",
+      "key_span": [
+        155,
+        163
+      ],
+      "value_span": [
+        165,
+        176
+      ],
+      "field_span": [
+        155,
+        176
+      ],
+      "raw_key": "'Monday'",
+      "raw_value": "'11:0-17:0'",
+      "start_minutes": 660,
+      "end_minutes": 1020,
+      "normalized_24h": "11:00-17:00"
+    },
+    {
+      "day": "Tuesday",
+      "value": "11:0-17:0",
+      "key_span": [
+        178,
+        187
+      ],
+      "value_span": [
+        189,
+        200
+      ],
+      "field_span": [
+        178,
+        200
+      ],
+      "raw_key": "'Tuesday'",
+      "raw_value": "'11:0-17:0'",
+      "start_minutes": 660,
+      "end_minutes": 1020,
+      "normalized_24h": "11:00-17:00"
+    },
+    {
+      "day": "Wednesday",
+      "value": "11:0-17:0",
+      "key_span": [
+        202,
+        213
+      ],
+      "value_span": [
+        215,
+        226
+      ],
+      "field_span": [
+        202,
+        226
+      ],
+      "raw_key": "'Wednesday'",
+      "raw_value": "'11:0-17:0'",
+      "start_minutes": 660,
+      "end_minutes": 1020,
+      "normalized_24h": "11:00-17:00"
+    },
+    {
+      "day": "Thursday",
+      "value": "11:0-17:0",
+      "key_span": [
+        228,
+        238
+      ],
+      "value_span": [
+        240,
+        251
+      ],
+      "field_span": [
+        228,
+        251
+      ],
+      "raw_key": "'Thursday'",
+      "raw_value": "'11:0-17:0'",
+      "start_minutes": 660,
+      "end_minutes": 1020,
+      "normalized_24h": "11:00-17:00"
+    },
+    {
+      "day": "Friday",
+      "value": "11:0-17:0",
+      "key_span": [
+        253,
+        261
+      ],
+      "value_span": [
+        263,
+        274
+      ],
+      "field_span": [
+        253,
+        274
+      ],
+      "raw_key": "'Friday'",
+      "raw_value": "'11:0-17:0'",
+      "start_minutes": 660,
+      "end_minutes": 1020,
+      "normalized_24h": "11:00-17:00"
+    },
+    {
+      "day": "Saturday",
+      "value": "11:0-17:0",
+      "key_span": [
+        276,
+        286
+      ],
+      "value_span": [
+        288,
+        299
+      ],
+      "field_span": [
+        276,
+        299
+      ],
+      "raw_key": "'Saturday'",
+      "raw_value": "'11:0-17:0'",
+      "start_minutes": 660,
+      "end_minutes": 1020,
+      "normalized_24h": "11:00-17:00"
+    },
+    {
+      "day": "Sunday",
+      "value": "11:0-17:0",
+      "key_span": [
+        301,
+        309
+      ],
+      "value_span": [
+        311,
+        322
+      ],
+      "field_span": [
+        301,
+        322
+      ],
+      "raw_key": "'Sunday'",
+      "raw_value": "'11:0-17:0'",
+      "start_minutes": 660,
+      "end_minutes": 1020,
+      "normalized_24h": "11:00-17:00"
+    }
+  ],
+  "source_hours_time_scope": "Undated provided business-attributes record, local clock convention; no timezone or date-specific exception stated; not an eternal real-world closing claim",
+  "response_sentence": "The business is open from Monday to Sunday from 11:00 am to 7:00 pm.",
+  "response_sentence_span": [
+    144,
+    212
+  ],
+  "source_schedule_disagreement": "Closing19:00 in originalR versus17:00 in every provided weekday source field; opening11:00 and weekday range agree",
+  "review_exception_scope": "All3 provided review_text values manually read; none licenses19:00 closing or hours exceptions. Their2021/2022 dates do not create an explicit applicability date for undated hours.",
+  "original_axes": {
+    "P": 803,
+    "T": 233,
+    "N": 1036,
+    "original_collection_answer_index": 8
+  },
+  "selected_original_targets": [
+    {
+      "target": 52,
+      "token_id": 22,
+      "start": 204,
+      "end": 205,
+      "text": "7",
+      "receiver_absolute": 854,
+      "receiver_token_id": 220,
+      "native_nll": 11.092212677001953,
+      "source_e": 0.7073841094970703,
+      "source_risk": 0.6698228716850281,
+      "sham_e": 0.40186500549316406,
+      "sham_risk": 0.5991356372833252,
+      "direct_source_write_e": -2.4106826782226562,
+      "direct_source_write_risk": 0.08236171305179596,
+      "source_oracle_error_budget_sum": 0.00035372524871490896,
+      "source_sign_numerically_unresolved": false,
+      "native_conditional_probability_derived_from_saved_nll": 1.5230467782245173e-05,
+      "probability_derivation": "exp(-saved native_nll); reporting algebra only, no new model score"
+    },
+    {
+      "target": 55,
+      "token_id": 9012,
+      "start": 208,
+      "end": 211,
+      "text": " pm",
+      "receiver_absolute": 857,
+      "receiver_token_id": 410,
+      "native_nll": 0.001308441162109375,
+      "source_e": -0.0001277923583984375,
+      "source_risk": 0.4999680519104004,
+      "sham_e": 0.0002574920654296875,
+      "sham_risk": 0.5000643730163574,
+      "direct_source_write_e": -0.0002689361572265625,
+      "direct_source_write_risk": 0.49993276596069336,
+      "source_oracle_error_budget_sum": 0.0004309441283112392,
+      "source_sign_numerically_unresolved": true,
+      "native_conditional_probability_derived_from_saved_nll": 0.9986924144738042,
+      "probability_derivation": "exp(-saved native_nll); reporting algebra only, no new model score"
+    }
+  ],
+  "selection_scope": "Only target52 and55 read from existing sealed CSV after source-text discrepancy was identified; not a predeclared P1 positive control",
+  "producer_run_id": "841f447909662ec142e56058162e243ce7e9810baa9a96012815aaf0b2ee4426",
+  "audit_run_id": "0fcd8affd06146c171105f84840d30752a3facd43e64cc0fecd5906f6edf8fd9",
+  "interpretation_limits": [
+    "Target52 source_e is positive: removal raises actual-token logp in the held-native-input local surrogate, consistent with suppression of this source-incompatible digit.",
+    "P006 direct-source-write e has the opposite sign; this is a descriptive contrast, not evidence of detection improvement.",
+    "Target52 native conditional probability is already about1.52e-5 and norm-sham has same-sign e; this is not an observer-high-confidence error case.",
+    "Target55 source_e is numerically unresolved under the frozen endpoint-oracle budget. Its conditional probability given forced7:00 is not confidence in the complete time claim.",
+    "At target52 prechoice q854 neither7 nor futurepm has been consumed; complete-time conflict is a posthoc text-level inference.",
+    "No claim of MLP time conversion, attention only to17, semantic specificity, unique causal correction, or original-generator confidence.",
+    "Manual source-text constraints are not released benchmark labels, official FN, or whole-response truth judgments.",
+    "No new AUROC/AP/FN/FP, no improvement beyond native NLL established, and no P1 fixed-point or P2 method/risk/foil change."
+  ],
+  "new_model_calls": 0,
+  "new_tokenizer_calls": 0,
+  "annotation_reads": 0,
+  "new_scoring_calls": 0,
+  "method_changes": 0,
+  "benchmark_error_label_assigned": false,
+  "predeclared_error_control": false,
+  "official_false_negative": false,
+  "new_auroc": null,
+  "phase2_primary_risk_unchanged": true,
+  "phase2_fixed_foil_token_ids": [
+    539,
+    2561
+  ],
+  "public_evidence_is_downloadable": false,
+  "local_evidence": [
+    {
+      "path": "outputs/h018-operator-binding-20261104/HOURS_PREFIX_SOURCE_LICENSE_REVIEW.json",
+      "sha256": "36893b42c7715944f48fff504b04993c2d533164429525f27fc26bed61a6ee52",
+      "public_download": false
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/HOURS_PREFIX_SOURCE_LICENSE_REVIEW.md",
+      "sha256": "ff2abb73b3462c597a9c156f4d43fc9fcada500660678536f65d679ed1cabeef",
+      "public_download": false
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/phase1-independent-audit-v1/case-5684-all-original.csv",
+      "sha256": "1a7deec65710a7abc554e7484e97b1711b23c72b9bf6cc825bf56a74d4ffef0b",
+      "public_download": false
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/phase1-independent-audit-v1/audit.json",
+      "sha256": "6d02c3b2bc53ca5bced28d9469752e4909bb3cf74a585b264bb1c0cc4ebaecf5",
+      "public_download": false
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/phase1-independent-audit-v1/seal.json",
+      "sha256": "3575d0682014e11a461684931c894425a9a5bd3168d05f5c2ec48294c64f4dfa",
+      "public_download": false
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/model-observation-v3/seal.json",
+      "sha256": "c47dd136cb9e2eeb3c1efadcdf6342efb2e19db88debf196e0318534408fe13d",
+      "public_download": false
+    }
+  ]
+}

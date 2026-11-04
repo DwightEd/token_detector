@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "run_id": "0091615cbe309bc3f1bde0894dd6798a9e30a4f26f060238f0165d24ea5c9a90",
+  "completed_utc": "2026-11-04T15:44:12.424872+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Reused S0 necessary auxiliary sign checked before new worlds; no primary score/model/GT changes",
+  "artifacts": [
+    {
+      "path": "outputs/h018-operator-binding-20261104/phase2-baseline-anchor-v2/result.json",
+      "sha256": "84d52cd85d6ea6fdbda186c4b3ddb383c85de37c27bfa11bf4149ea4d0271ae7"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/phase2-baseline-anchor-v2/seal.json",
+      "sha256": "fac185beccf7d19a0596da79703c5af7e9717f4b994cccf7320f955f54a13d0d"
+    }
+  ]
+}

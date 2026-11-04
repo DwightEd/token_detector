@@ -37,3 +37,5 @@
 | 2026-11-04 22:20:00 | EXPERIMENT_TRACKER_20261104_222000.md → EXPERIMENT_TRACKER.md | 同步69835f2工程重构；原tokenizer工程失败保留，M0续修完成结果随后写F055；package进入有限实现，模型未启动、phase2/full900未准入；旧900/M5/NLI不重跑 |
 | 2026-11-04 23:30:00 | EXPERIMENT_PLAN_20261104_233000.md → EXPERIMENT_PLAN.md | 原两回答407token/2native8head256MLP完成且无标签审计通过，语义特异性未建立；只条件准入两字段owner交换前端/实现，新模型未准入，原风险/层/scope不改 |
 | 2026-11-04 23:30:00 | EXPERIMENT_TRACKER_20261104_233000.md → EXPERIMENT_TRACKER.md | 841f4479+0fcd8aff DONE，37新installed通过/full300s incomplete；两0model入口故障保留；P1公开/离线桌面页完成，精确push CI待核；新阶段不自动执行模型 |
+| 2026-11-05 00:50:00 | EXPERIMENT_PLAN_20261105_005000.md / EXPERIMENT_TRACKER_20261105_005000.md → fixed aliases | 更正reanchor库存遗漏；真实4source×4seed原生成缓存下载，hidden/graph分批恢复；P2target完整control磁盘失败、无新AUROC；保留raw/失败，D迁移释放16.4GiB |
+| 2026-11-05 01:18:00 | EXPERIMENT_PLAN_20261105_011800.md / EXPERIMENT_TRACKER_20261105_011800.md → fixed aliases | 70files10.08GB全恢复、原16+replay16资格通过、graph数值资格中；target必要方向反证关闭H018，不补control；恢复旧reanchor终局避免重复，仅审新绑定干预与I02 |

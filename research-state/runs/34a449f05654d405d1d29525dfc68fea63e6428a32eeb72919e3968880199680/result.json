@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "run_id": "34a449f05654d405d1d29525dfc68fea63e6428a32eeb72919e3968880199680",
+  "completed_utc": "2026-11-04T15:54:21.197697+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Fixed two-owner frontend qualified with0model",
+  "artifacts": [
+    {
+      "path": "outputs/h018-operator-binding-20261104/OWNER_PREPARE_stdout.log",
+      "sha256": "1a3d0e6083e061d603c773a5964fac425b181df430ffd63e991920107692da95"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/OWNER_PREPARE_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/owner-plan-v1/plan.json",
+      "sha256": "879e385a21e8abaa89b7356d760d7ace66d88a81353562d7abd01a8c5eb20102"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/owner-plan-v1/seal.json",
+      "sha256": "ec3c23c808799f46f7fac772016b29bc8628ac8df3fbbb68edeaf31cd78f411f"
+    }
+  ]
+}

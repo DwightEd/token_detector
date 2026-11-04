@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "run_id": "20f2f5ab61abd154610e9a826637136dcadba9971a2d6c52bc3e60ff45a97bcb",
+  "completed_utc": "2026-11-04T15:43:31.657485+00:00",
+  "outcome": "engineering_failure",
+  "conclusion": "Retained S0 analysis failed; no new world/model/score",
+  "artifacts": [
+    {
+      "path": "outputs/h018-operator-binding-20261104/phase2-baseline-anchor-v1/failure.json",
+      "sha256": "f4624af2a93b9a8670e6303996460449196fa532b43d1e5f5a5d5860d85a2856"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/phase2-baseline-anchor-v1/seal.json",
+      "sha256": "93a898b983b1c98da3a2926977b6443f185d7df152aff34f84425cfd79264097"
+    }
+  ]
+}

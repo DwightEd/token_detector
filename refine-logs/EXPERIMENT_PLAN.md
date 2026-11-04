@@ -1,18 +1,17 @@
-# H018：已完成原两回答，下一门是字段归属交换
+# 细粒度绑定研究：先补既有知识，再验证新干预
 
-2026-11-04 23:30，Asia/Shanghai。当前事实F056/F057、[公开P1结果](../docs/results/h018_local_source_use.md)及[恢复状态](../research-state/RESUME.md)。六任务各0.8未达成，未建立新的有效检测器。
+2026-11-05 01:18，Asia/Shanghai。无监督原回答检测、六任务接近或超过.8和完整可验证方法仍是目标，尚未达成。当前F059/F060、[缓存地图](../docs/REMOTE_INTERNAL_CACHE_MAP_20261105.md)及[H018反例](../docs/results/h018_owner_specificity.md)为准。
 
-P1实际完成2native/8head/256extraNorm+MLP，407原token分数封存；独立审计全部通过、0目标GT。合法not73主e≈−0.00520而sham≈−0.00599，没有关系特异性；not65数值unresolved、lot66弱OR unknown。完整原R/raw直接复用，不重跑。
+## 待支持的主张
 
-唯一下一问题：保持R5684、原风险、全部32层/allsource，交换字段归属后读出是否跟随回答已指名字段，而不随无关字段变化。详细预言/约束见[第二门提案](operator-binding-20261104/PHASE2_PROPOSAL_20261104_232000.md)；独立审查6f2552c9…仅允许**零模型前端及编排实现**，没有模型执行许可或armed预算。
+1. 细粒度source关系计算包含超出词面、位置和整体source显著性的可区分信息。最低证据是有竞争预言的绑定专属干预、语义/同义与数值负控；generic patch能改数值不够。
+2. 该信息能改善原回答的定位、检测或成本。必须有冻结无标签方法、全轴分数、最终标签评价与模块消融；未有新risk，不能报新AUROC。
 
-| 顺序 | 对象/成本 | 冻结门与结论 |
+| 顺序 | 已有数据/成本 | 进入下一阶段的门 |
 |---|---|---|
-| 1 输入构造 | 新S_target=valetFalse↔OutdoorTrue；S_control=garageFalse↔OutdoorTrue；0模型 | 唯一typed spans、完整R不变、street保持；来源token Counter相同/恰2bool位置/P803/source707/T233/N1036，否则stop |
-| 2 复用与代码 | 原S0 case5684旧seal；0重跑；新编排复用原observe_case/kernel/capture | 数值依赖SHA/AST保持，独立fresh review及installed checks；不得恢复旧API别名或复制方法代码 |
-| 3 有限新模型 | **尚未准入/未启动**；拟2新native/8head/256extraMLP | 必须另资源审核、原数据冻结及exact claim；原FP32/512MiB/6GiB门保持；完整233×2风险一次封存 |
-| 4 无标签判别 | 仅成功后审计，0额外模型 | 原not73 sign与same-q875 not539/available2561辅助margin、P006/NLL/sham全报；不代替主risk或自然AUROC；失败无调sign/layer/scope |
+| 恢复知识 | 新reanchor三批70文件10.08GB已下；0模型 | 原16+replay16已资格；2完整graph核数值合同。恢复旧ownership/Relation终局、N/A/G失败及I02未运行入口，不能重演旧Vswap/source-null |
+| 新物理观测 | 同q/GQA head×完整source carrier的双边marginal保持关联擦除；仅proposal | 必须和旧X/E/XE/endpoint/suffix明确区分。保持原轴、原token条件化、source词面/总mass；先独立审查与memory claim，不直接解释为truth |
+| 语义许可入口 | 先核I02 source-first协议是否确实未跑，以及位置/同义/unknown与合法多对多关系 | 无可靠语义许可不能包装检测器；若文本前端已完成判断，必须证明内部量额外收益，否则仅机制诊断 |
+| 完整检测/消融 | 仅机制及原轴接口准入后 | 全样本和unknown保留，评分冻结后开标签；新16QA采样不能套官方旧R标签，六任务仍各自报告 |
 
-原R有共同的hours错误前缀，三世界都保留，不修R或做prefix reset；outdoor donor不在not73前词面出现。物理位置/原历史错误/Norm generic damage仍需保留，不能将输入变化包装成唯一电路因果或新颖性。即使通过也不自动准入900。
-
-本机完整CPU请求达到300秒上限，记录incomplete_timeout；37新installed tests已通过。发布必须检查精确push提交的完整Linux CI，不能拿本机targeted或旧CI替代。所有旧失败与历史计划保留。
+H018 target的必要方向已resolved反证，剩余control无需推理；原S0/target/全部失败均复用，不翻号选点。旧源码151 exact installed、65targeted通过；完整CPU300s incomplete，当前批次push另核完整Linux CI。新方法未armed模型预算。

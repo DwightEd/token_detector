@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "created_utc": "2026-11-04T16:58:25.493021+00:00",
+  "spec": {
+    "hypothesis_id": "H018_SOURCE_NORM_MLP_LOCAL_USE",
+    "stage": "completed_target_only_independent_audit",
+    "intervention": "reuse_completed_target_raw_from_failed_pair_no_control_score_or_model",
+    "method": {
+      "entrypoint": "outputs/h018-operator-binding-20261104/audit_completed_owner_target.py",
+      "config": {
+        "target": 73,
+        "query": 875,
+        "primary": "frozen_source_e",
+        "necessary_condition": "e > native_oracle_budget + source_oracle_budget",
+        "branches": [
+          "native",
+          "source",
+          "sham",
+          "direct_source_write"
+        ],
+        "all_original_targets": 233,
+        "all_layers": 32,
+        "control_numerics": false,
+        "no_auxiliary_rescue": true,
+        "automatic_retry": false
+      }
+    },
+    "code_sha256": {
+      "outputs/h018-operator-binding-20261104/audit_completed_owner_target.py": "23213d4507cefc7f07f037add2936d8bf81659062cfa84c23c2d1aecf679f9b8",
+      "outputs/h018-operator-binding-20261104/audit_owner_phase2.py": "9479d5a37a1bd7ceb670c295cd48ca7065ab483459532c45c39043d72b28112d",
+      "outputs/h018-operator-binding-20261104/audit_phase1.py": "0a095caf16a705ff22243581c0710515451e8e01cec0600d702d43f508c2eb92",
+      "tools/research_memory.py": "e001eced69f33b365ca59f487e6c39195a5062bd6d6f786245118b9a901dc475"
+    },
+    "data_sha256": {
+      "outputs/h018-operator-binding-20261104/owner-observation-v2/seal.json": "51cc8986223e5b52eab8d0ff9b21e0dd010bbd3051988f83812fee2d1314a261",
+      "outputs/h018-operator-binding-20261104/owner-observation-v2/failure.json": "61245a911f18ba34fa81e6b809caa2492361b1eead01a55205eb35721dbc0d82",
+      "outputs/h018-operator-binding-20261104/owner-observation-v2/case-target/seal.json": "d4ce17bebb5afe482c0f5c812d2247d15c8289735b7c38b85b514033228e82d1",
+      "outputs/h018-operator-binding-20261104/OWNER_RECOVERY_COMPLETION.json": "9ce5b98f1980102dd3ae70938a706512cce026e47010ba23d7d597405eca1a93",
+      "outputs/h018-operator-binding-20261104/owner-plan-v1/frontend/seal.json": "7a3f200647168da65de914a0d3d20f5d492d0c73b6db7a4c309c9b45b08eb87c",
+      "outputs/h018-operator-binding-20261104/phase1-independent-audit-v1/seal.json": "3575d0682014e11a461684931c894425a9a5bd3168d05f5c2ec48294c64f4dfa",
+      "outputs/h018-operator-binding-20261104/phase2-baseline-anchor-v2/seal.json": "fac185beccf7d19a0596da79703c5af7e9717f4b994cccf7320f955f54a13d0d"
+    },
+    "observer": {
+      "kind": "saved_actual_intermediates_CPU_FP64_oracle",
+      "new_model_calls": 0
+    },
+    "population": {
+      "source_id": "13603",
+      "original_response_id": "5684",
+      "world": "target",
+      "original_targets": 233,
+      "unmodified_partial_control_excluded": true
+    },
+    "evaluation": {
+      "target_labels": false,
+      "auroc": null,
+      "method_promotion": false,
+      "endpoint": "target-only necessary sign; not a full-pair success claim"
+    },
+    "seed": null
+  },
+  "run_id": "7626e002815a842e924e2b83e8a5a6d47700cebf650b7accc7a9d7a831e57e7d",
+  "phase": "reserved_not_launched"
+}
