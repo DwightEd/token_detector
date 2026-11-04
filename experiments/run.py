@@ -144,6 +144,15 @@ def parser() -> argparse.ArgumentParser:
     scope_relation.add_argument('--device', default='cuda:0')
     scope_relation.add_argument('--reuse', type=Path)
     scope_relation.add_argument('--reuse-stage-source', type=Path)
+    operator_binding = transfers.add_parser('observe-operator-binding',
+        help='finite original-response source Norm+MLP readout; no annotations or AUROC')
+    for option in ('protocol', 'axes', 'prepared', 'frontend-contract', 'model',
+                   'asset-manifest', 'asset-verification', 'asset-state',
+                   'head-qualification', 'capture-root', 'output'):
+        operator_binding.add_argument('--' + option, type=Path, required=True)
+    operator_binding.add_argument('--device', default='cuda:0')
+    operator_binding.add_argument('--prepare-only', action='store_true')
+    operator_binding.add_argument('--plan', type=Path)
     semantic = transfers.add_parser('semantic-qualify', help='seal label-free source observations without scalar scores')
     semantic.add_argument('--inputs', type=Path, required=True)
     semantic.add_argument('--protocol', type=Path, required=True)
@@ -638,6 +647,13 @@ def main() -> None:
 
             stage = probe_native if args.transfer_stage == 'probe-native' else local_uncertainty
             stage(args.native, args.scores, args.protocol, args.output)
+        elif args.transfer_stage == 'observe-operator-binding':
+            from .operator_binding_observation import run
+
+            report = run(args)
+            print('Operator binding finite stage: ' +
+                  ('prepared; 0 model calls' if args.prepare_only else
+                   str(report['actual_counts']) + '; no AUROC or efficacy claim'))
         elif args.transfer_stage == 'observe-relation-scope':
             from .relation_scope_observation import run
 
