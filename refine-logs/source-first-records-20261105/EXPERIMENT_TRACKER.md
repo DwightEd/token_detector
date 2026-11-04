@@ -1,5 +1,7 @@
 # 实验追踪：全部当前worker终结
 
+CI后更新：已发布78d6040，完整LinuxCI41902263060/job126827530146/step6 SUCCESS；本地full300s INCOMPLETE保留，下文旧pending为历史。不重跑实验/测试。
+
 | 阶段 | run | 状态 |
 |---|---|---|
 | H019 M0/M1/audit/precision | 02e68af9/709af130/9678946a/d1de688b | DONE，单独幅度不晋升，不重跑 |

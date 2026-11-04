@@ -3,9 +3,9 @@
   "objective": "Mechanism-driven unsupervised hallucination detection improvement toward AUROC >= 0.8 on each of six primary tasks",
   "canonical_project": "D:/projects/research/token_detector",
   "goal_status": "not_achieved",
-  "phase": "fixed_source_interface_closed_next_cut_prior_review",
+  "phase": "next_cut_refinement_full_installed_CI_passed",
   "active_hypothesis": "H020_SOURCE_FIRST_QUANTITATIVE_RECORDS",
-  "next_question": "No repeat H018/H019/H020 fixed interface, no remainingfour or generic Bayesmixture scorer. F067 primary/prior review requires a new source-identity-before-y discriminator, legitimate switching/arithmetic controls and complete source semantic licence. QK-from-residual readiness may be reviewed only with original-weight/BF16/RoPE qualifications, no projection experiment admitted. Finish exact new push LinuxCI; objective remains unmet.",
+  "next_question": "Do not rerun completed observations, installed tests or successfulCI. H018/H019/H020 fixed branches closed. GenericBayesmixture is not a new algorithm; next source-identity-before-y discrimination and QK-from-residual readiness require separate prior/numerical/semantic admission. No new model/projection/score currently admitted.",
   "known_fact_ids": [
     "F001",
     "F002",
@@ -1027,13 +1027,20 @@
   "full_population_scores_sealed": false,
   "target_labels_released": false,
   "publication_receipt": "outputs/h017-relation-20261103/NLI_PUBLICATION_FINAL.json",
-  "validation_status": "Current H020 source85bede6 installed156/52targeted pass; fullCPU300s incomplete, noorphanpytest; exact new LinuxCI required after push. H0195fb CI success is historical only.",
+  "validation_status": "Exactpublished78d6040 fullinstalled LinuxCI41902263060/job126827530146/step6 success. Frozen method85bede6 installed156/52targeted pass; localfull300s remains incomplete. Scientific efficacy not established.",
   "code_validation": {
-    "source_commit": "85bede6",
+    "source_commit": "78d6040fbe5d890ebb926ea093c63a1a519b5f41",
     "installed_modules": 156,
     "targeted": "52passed13.86s_outside_exact_installed",
     "local_full": "incomplete_timeout_300seconds",
-    "exact_push_CI": "pending_new_source_push",
+    "exact_push_CI": {
+      "commit": "78d6040fbe5d890ebb926ea093c63a1a519b5f41",
+      "run": 41902263060,
+      "job": 126827530146,
+      "status": "success",
+      "full_installed_step6": "success",
+      "receipt": "docs/results/h020_ci.json"
+    },
     "previous_exact_CI": {
       "commit": "fe17c9e660c4559c0364655d376b83427b206db5",
       "run": 41876960854,
@@ -1042,7 +1049,7 @@
       "full_installed_step6": "success"
     },
     "current_H019": "published_exact_full_installed_Linux_CI_success",
-    "frozen_method_source_commit": "ee69ad0163410e22338c4f1673f093f7f97097b5",
+    "frozen_method_source_commit": "85bede6520c3ae34194fd8b250efa010706b8b75",
     "local_full_log_sha256": "9404e1cb04314bc6f490005012dff799e52eb025ca8cda44cb66e0efb65e7c32",
     "current_H020": "frozen_installed_verified_model_partial_receipts_independently_audited",
     "previous_H019_exact_CI": {
@@ -1053,7 +1060,7 @@
       "full_installed_step6": "success"
     }
   },
-  "updated_utc": "2026-11-04T19:58:23.574095+00:00",
+  "updated_utc": "2026-11-04T20:10:12.456263+00:00",
   "active_jobs": {
     "type": "none",
     "gpu_jobs": 0,
@@ -1794,6 +1801,44 @@
     "result_fact": "F066",
     "automatic_C1_gate": "not_passed",
     "fixed_branch": "closed_no_further_generation_requests",
-    "published_result": "docs/results/h020_source_first_inventory.md"
+    "published_result": "docs/results/h020_source_first_inventory.md",
+    "publication_validation": {
+      "schema": "exact-commit-full-installed-ci-v1",
+      "repository": "DwightEd/token_detector",
+      "commit": "78d6040fbe5d890ebb926ea093c63a1a519b5f41",
+      "frozen_method_source_commit": "85bede6520c3ae34194fd8b250efa010706b8b75",
+      "source_changed_between_frozen_method_and_published_commit": false,
+      "run_id": 41902263060,
+      "run_url": "https://github.com/DwightEd/token_detector/actions/runs/41902263060",
+      "status": "completed",
+      "conclusion": "success",
+      "job": {
+        "id": 126827530146,
+        "status": "completed",
+        "conclusion": "success",
+        "completed_at": "2026-11-04T20:04:03Z"
+      },
+      "full_installed_suite_step": {
+        "name": "Test installed packages outside the checkout",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 6,
+        "started_at": "2026-11-04T20:00:26Z",
+        "completed_at": "2026-11-04T20:04:01Z"
+      },
+      "local_full_cpu": "incomplete_timeout_300seconds_preserved",
+      "local_targeted": "52_passed_13.86s_outside_exact_installed156",
+      "test_count_from_logs": null,
+      "engineering_validation_only": true,
+      "detector_efficacy_established": false,
+      "new_model_observations": 0
+    }
+  },
+  "qk_readiness": {
+    "status": "readiness_only_not_admitted_not_executed",
+    "report": "docs/research/20261105_qk_reconstruction_readiness.md",
+    "report_sha256": "f828dec31707ad219b855cda2b2caf3074febbacf9d8830559a4894140bac012",
+    "old_original_graph_weight_body_sha_attested": false,
+    "new_projection_calls": 0
   }
 }

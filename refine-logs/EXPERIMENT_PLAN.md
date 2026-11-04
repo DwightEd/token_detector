@@ -1,5 +1,7 @@
 # 当前实验路线：H020固定接口关闭，下一切口待审
 
+CI后更新：已发布78d6040，完整LinuxCI41902263060/job126827530146/step6 SUCCESS；本地full300s INCOMPLETE保留，下文旧pending为历史。不重跑实验/测试。
+
 F059–F067与RESUME为准；六任务.8和完整顶会方法未完成。真值仍仅冻结分数后评价，当前没有新risk/AUROC。
 
 H018必要方向反证关闭；H019全92160计算/审计和跨graphΔV精度已完成，单独幅度不晋升；不重演旧source-null/Vswap/NAG。H020 sourceM0/账本一次完成，真实模型2EOS输出均无合格envelope/complete，第三prefill在3GiBcapOOM，固定C1必要门失败。全部失败/partial/unknown封存，不补余四或改cap/schema/prompt救。

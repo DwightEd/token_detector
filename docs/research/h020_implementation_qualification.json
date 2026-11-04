@@ -208,7 +208,37 @@
     "elapsed_seconds": 300.02298280003015,
     "log_sha256": "9404e1cb04314bc6f490005012dff799e52eb025ca8cda44cb66e0efb65e7c32"
   },
-  "exact_CI": "pending_new_source_push",
+  "exact_CI": {
+    "schema": "exact-commit-full-installed-ci-v1",
+    "repository": "DwightEd/token_detector",
+    "commit": "78d6040fbe5d890ebb926ea093c63a1a519b5f41",
+    "frozen_method_source_commit": "85bede6520c3ae34194fd8b250efa010706b8b75",
+    "source_changed_between_frozen_method_and_published_commit": false,
+    "run_id": 41902263060,
+    "run_url": "https://github.com/DwightEd/token_detector/actions/runs/41902263060",
+    "status": "completed",
+    "conclusion": "success",
+    "job": {
+      "id": 126827530146,
+      "status": "completed",
+      "conclusion": "success",
+      "completed_at": "2026-11-04T20:04:03Z"
+    },
+    "full_installed_suite_step": {
+      "name": "Test installed packages outside the checkout",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 6,
+      "started_at": "2026-11-04T20:00:26Z",
+      "completed_at": "2026-11-04T20:04:01Z"
+    },
+    "local_full_cpu": "incomplete_timeout_300seconds_preserved",
+    "local_targeted": "52_passed_13.86s_outside_exact_installed156",
+    "test_count_from_logs": null,
+    "engineering_validation_only": true,
+    "detector_efficacy_established": false,
+    "new_model_observations": 0
+  },
   "model_requests": 0,
   "detector_validated": false,
   "auroc": null,

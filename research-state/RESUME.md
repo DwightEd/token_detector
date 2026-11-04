@@ -8,7 +8,7 @@ H020实际模型run74dd771b已exit1/101.3856s，worker1812已退出，rootfailur
 
 M0一次29317893/封c2d72…保持复用；boundledgerf7c72a5e…/sealfe06…61义务70cites244物理join已审非语义覆盖。初次preflightcee9c3c6以pre_import2.352GiB拒绝0tokenizer/model；once薄caller恢复44128ce8实际PASS，6input[1613,1648,2924,2396,2396,2396]、12tokenizer，postRAM2751553536/CUDA7283408896。profile仅48MiB差小于旧151MiB缺口，ambient变化另留，资源门未改。
 
-源码85bede6本地未push，installed156 exact，52targeted13.86s，wheel830b54c3…/proof1f7a16ad…/031838target。完整CPUexec88474已以300.023s超时终结(INCOMPLETE/log9404e1cb…)，CIM已确认无orphanpytest；不重复。下一步批量push并核exact完整LinuxCI。最近已push5fb457e完整CI41890599361成功只覆盖H019。模型/GPU/下载/armedwatchdog均0；不得再启动旧worker。
+冻结源码85bede6已作为78d6040发布，installed156 exact，52targeted13.86s，wheel830b54c3…/proof1f7a16ad…/031838target。完整CPUexec88474已以300.023s超时终结(INCOMPLETE/log9404e1cb…)，CIM已确认无orphanpytest；不重复。该代码78d6040完整exact LinuxCI41902263060/job126827530146/step6已success，收据docs/results/h020_ci.json，不重跑。最新代码78d6040 Nov5 03:59:26 CST已push，完整LinuxCI41902263060成功（20:04:04Z结束）；后续仅CI文档归档，方法代码未变。模型/GPU/下载/armedwatchdog均0；不得再启动旧worker。
 
 70文件10.08GB内部缓存和三类资格已完成，不重下/重资格；当前Qwen本轮有已执行9资产哈希检查，旧graph的8B原权重bodySHA仍未知。全部新raw在C06/h020…；D清理约16.4GiB、模型/科学失败保留、桌面位置说明已更新。goal历史blocked不代表用户停止，继续有新判别的工作，不复现已知失败。
 

@@ -43,3 +43,4 @@
 | 2026-11-05 02:41:37 | source-first-records-20261105/PROPOSAL, MINIMAL_CONTRACT, PROTOCOL, SOURCE_RECORD_PROMPT, SOURCE_RECORD_SCHEMA, EXPERIMENT_PLAN, EXPERIMENT_TRACKER（timestamp024137先写再task-local alias） | H020/I02固定4原S＋2source-only controls、≤6现成Qwen3B NF4请求的source信息条件资格；完整数量/时长/单位/频次及scope/unknown，exactanchor分母与引用≠语义；科学review待审、模型/分词/新分数/GT0，不覆盖root全局plan/state、不准入prefix-L/repair或风险 |
 | 20261105_024632 | EXPERIMENT_PLAN_20261105_024632.md / EXPERIMENT_TRACKER_20261105_024632.md → fixed aliases | 实跑H019全92160审计完成，SEM/EQUIV幅度不晋升，sourceΔV精度1488/1536不同；I02/H020仅新合同设计、未准入模型，无新risk/AUROC；D清理完成 |
 | 20261105_035823 | EXPERIMENT_PLAN/TRACKER timestamp → fixed aliases | H020两EOS格式门失败/第三capOOM，工程与语义审封存，不补余四；generic mixture新颖性NO-GO；fullCPU incomplete/newexactCI待核 |
+| 20261105_041012 | EXPERIMENT_PLAN/TRACKER timestamp → fixed aliases | 78d6040完整exact LinuxCI41902263060 SUCCESS；方法/原观测未变，保留本地full300s incomplete；仅CI证据归档 |

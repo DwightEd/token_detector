@@ -14,3 +14,4 @@
 
 最终独立科学收据已落：`outputs/h020-source-first-20261105/INDEPENDENT_SCIENTIFIC_ADMISSION_REVIEW.md` SHA `7494d7ff414b913c0623d80705c6d5a85e5c335f69c0db4bc1cb25c2a33380fa`，JSON SHA `bfc18e0c036701aba6c86e89a2fa4b42928f4cf49aa6b9428732b5f1b3b29d78`。结论为有限coding＋0LM M0 GO；实际LM仍须独立code/installed/actual资源及root新claim，不自动进入prefix-L/repair/risk/GT。上表/Tracker为review前版本快照，保留其历史状态；5项科学合同当前精确hash由收据绑定并hold。
 | 20261105_035823 | EXPERIMENT_PLAN/TRACKER timestamp → fixed aliases | H020两EOS格式门失败/第三capOOM，工程与语义审封存，不补余四；generic mixture新颖性NO-GO；fullCPU incomplete/newexactCI待核 |
+| 20261105_041012 | EXPERIMENT_PLAN/TRACKER timestamp → fixed aliases | 78d6040完整exact LinuxCI41902263060 SUCCESS；方法/原观测未变，保留本地full300s incomplete；仅CI证据归档 |
