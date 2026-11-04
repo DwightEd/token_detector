@@ -408,6 +408,7 @@ def run(args):
         torch.set_num_threads(2)
         torch.backends.cuda.matmul.allow_tf32 = False
         torch.backends.cudnn.allow_tf32 = False
+        torch.cuda.init()
         torch.cuda.reset_peak_memory_stats(args.device)
         resources = _resources(torch.device(args.device))
         resources['torch'] = torch.__version__
