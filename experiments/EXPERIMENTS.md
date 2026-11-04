@@ -1,5 +1,12 @@
 # 实验账本与实际结论
 
+## 2026-11-05 当前检查点：H019完成，单独幅度不晋升
+
+H019所有M0/M1/独立80位审计/ΔV精度阶段均已一次完成，0新模型/0标签/0风险。10原R数字q、6手工局部sourcepair、32层和48独立headpair共92160 tuple；算术/覆盖通过不代表语义或检测。EQUIV幅度在第二R大于部分SEM，关闭单独幅度/MI/chi风险；1488/1536 sourceΔV向量跨graph不同，拒绝routing-only归因。详见[结果](../docs/results/h019_head_carrier_association.md)、F063/F064、RESUME。I02新source-first语义前端尚在合同设计，无新AUROC。H018和旧reanchor分支不重跑。
+
+代码ee69ad0 exact installed154；60targeted通过20.89s，完整CPU300s incomplete，须新push后完整exact Linux CI成功。D迁移清理约16.4GiB完成，raw/模型/失败证据保留；新增大raw落C。以下状态段落为当时历史，不代表当前活动任务。
+
+
 当前补充：三批70文件10,080,059,000B已完整恢复，原16+replay16资格完成，2完整graph数值资格进行中。H018 target-only audit7626e002 PASS后预定not73主e=-.0024986267（预算.00042623517）反证必要正方向；固定分支关闭，不再补control。[具体数值](../docs/results/h018_owner_specificity.md)。F059/F060与RESUME是当前状态，下段下载中/待审计属于较早检查点。
 
 ## 2026-11-05：补齐遗漏的同题多采样与内部缓存

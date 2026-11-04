@@ -1,6 +1,6 @@
 {
-  "schema": "same-question-multisample-qualification-index-v1",
-  "created_utc": "2026-11-04T17:05:09.926710+00:00",
+  "schema": "same-question-multisample-qualification-index-v2",
+  "created_utc": "2026-11-04T17:27:56.315652+00:00",
   "root": "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample",
   "source_ids": [
     "14304",
@@ -49,7 +49,7 @@
     "original_tokenizer_body_SHA_attested": false,
     "sampling_schema_drift": "All16 original files lack entropy although recovered sampling code returns it"
   },
-  "completed_graph_qualification": false,
+  "completed_graph_qualification": true,
   "scope": "Read-only engineering qualification and temporal negative controls; not mechanism discovery or detection validation",
   "new_model_calls": 0,
   "new_head_calls": 0,
@@ -85,6 +85,68 @@
     {
       "path": "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\00_manifests\\four-source-task-projection-v1.json",
       "sha256": "635db407db253a326a27f9202fda452389bce5529fe4d5ec99c0945322e62045"
+    },
+    {
+      "path": "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\00_manifests\\graph2-qualification-predeclared-policy-v1.json",
+      "sha256": "eecd63bd0aaee3dd5101533065095f3424bfef8d5ed1fa90c0fde0f5eca7f152"
+    },
+    {
+      "path": "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\00_manifests\\qualify_graph2_v1.py",
+      "sha256": "aa9a2ea58ac6c918e7664fddaaf2a637f3decf106db753b80454c03d382b9487"
+    },
+    {
+      "path": "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\00_manifests\\graph2-qualification-v1.json",
+      "sha256": "0a59651693fb4b8998aac34fe83db90899cdd82809c1a748ed430db446cb1931"
+    },
+    {
+      "path": "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\00_manifests\\graph2-qualification-v1.log",
+      "sha256": "3890e14cec1a4d934a895af819491c2a6d67ee476656f63db98b7c8591f6813f"
+    },
+    {
+      "path": "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\00_manifests\\GRAPH2_QUALIFICATION_V1.md",
+      "sha256": "e330c6f2567592bd2df3a4a996229fd39d60bc5ed99a66881d1a70be1e6c89dd"
+    },
+    {
+      "path": "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\00_manifests\\graph2-qualification-selected-seal-v1.json",
+      "sha256": "a6dda41ef457c2abb2604d2b43119ed465334fec6586422a74a9d5016d4f4a12"
     }
-  ]
+  ],
+  "previous_index_sha256": "ed1f1956fb93cd960bffaad0ad03e0819da497a925289d1897856e6eb5daa210",
+  "attributed_graphs": {
+    "traces": [
+      "00012",
+      "00013"
+    ],
+    "source_id": "14375",
+    "seeds": [
+      0,
+      1
+    ],
+    "P": 535,
+    "response_tokens": [
+      196,
+      147
+    ],
+    "input_nodes": [
+      730,
+      681
+    ],
+    "all_BF16_native_tensors_finite_and_lattice": true,
+    "all_future_attention_exact_zero": true,
+    "rowsum_bound_preregistered": true,
+    "actual_max_rowsum_errors": [
+      0.003022800199687481,
+      0.002946905791759491
+    ],
+    "BF16_RNE_native_residual_addition_exact": true,
+    "unrounded_FP32_residual_addition_max_difference": [
+      0.75,
+      0.75
+    ],
+    "all_repeated_ID_embedding0_V0_negative_controls_exact": true,
+    "last_residual_slot": "before final RMSNorm; distinct from replay hidden32",
+    "new_models_heads_tokenizers_GT_risk": 0,
+    "weights_original_SHA_attested": false,
+    "large_files_rehashed_again": false
+  }
 }

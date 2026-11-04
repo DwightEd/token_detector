@@ -1,0 +1,292 @@
+{
+  "schema": "h019-head-carrier-public-summary-v1",
+  "date": "2026-11-05",
+  "conclusion": "Finite saved-graph pre-O arithmetic/coverage qualified; pooled magnitude does not stably separate the predeclared SEM/EQUIV pairs. No hallucination detector or risk produced.",
+  "data": {
+    "dataset": "RAGTruth QA",
+    "source_id": "14375",
+    "observer_and_generated_samples": "Meta-Llama-3.1-8B-Instruct",
+    "graph_capture": "fresh BF16 full forward; stored F32 preserves BF16 values; distinct from incremental generation and fixed-prefix replay",
+    "case_ids": [
+      "00012",
+      "00013"
+    ],
+    "prompt_tokens": 535,
+    "original_response_tokens": [
+      196,
+      147
+    ],
+    "input_nodes": [
+      730,
+      681
+    ],
+    "original_targets_preserved": 343,
+    "selected_numeric_queries": [
+      6,
+      4
+    ],
+    "source_pair_classes": {
+      "SEM": 5,
+      "EQUIV": 1
+    },
+    "source_licence": "manual source-only local relation licence, not automatic frontend or source/R truth labels",
+    "official_RAGTruth_labels_transferable_to_these_new_R": false,
+    "original_weight_body_SHA_attested": false
+  },
+  "intervention": {
+    "name": "one independent two-head/two-carrier marginal erasure",
+    "all_layers": 32,
+    "all_same_GQA_head_pairs": 48,
+    "equation": "B = row(A) * column(A)^T / sum(A); each pair is a separate intervention",
+    "preO_delta": "[-kappa*(Va-Vb), +kappa*(Va-Vb)]; concat_norm=sqrt(2)*abs(kappa)*norm(Va-Vb)",
+    "original_t_to_q": "q=P+t-1",
+    "q_selection": "retrospective chosen-target ASCII digit, with ASCII letter in consumed same-sentence prefix; full target selection/exclusion/unknown table frozen",
+    "W_O_loaded": false,
+    "M2": "not_admitted_unknown"
+  },
+  "qualification": {
+    "M0_completed": true,
+    "M0_gate_passed": true,
+    "F": 6,
+    "Q": 10,
+    "tuples": 92160,
+    "M1_completed": true,
+    "attempted_tuples": 92160,
+    "completed_tuples": 92160,
+    "layer0_same_ID_preO_zero_all_cases": true,
+    "independent_audit_passed": true,
+    "audit_decimal_precision": 80,
+    "audit_violations": {},
+    "audit_scope": "qualified_saved_preO_arithmetic"
+  },
+  "all_predeclared_pair_descriptions": [
+    {
+      "case_id": "00012",
+      "pair_id": "minutes-126-277",
+      "kind": "SEM",
+      "tuples": 9216,
+      "mean_concat_norm": 0.0004571765947654064,
+      "max_concat_norm": 0.06309132186437676
+    },
+    {
+      "case_id": "00012",
+      "pair_id": "minutes-126-303",
+      "kind": "SEM",
+      "tuples": 9216,
+      "mean_concat_norm": 0.00041469828405347645,
+      "max_concat_norm": 0.06170847440764761
+    },
+    {
+      "case_id": "00012",
+      "pair_id": "minutes-126-369",
+      "kind": "SEM",
+      "tuples": 9216,
+      "mean_concat_norm": 0.000561647640695048,
+      "max_concat_norm": 0.10278771028011038
+    },
+    {
+      "case_id": "00012",
+      "pair_id": "minutes-277-303",
+      "kind": "EQUIV",
+      "tuples": 9216,
+      "mean_concat_norm": 0.0002379531232725689,
+      "max_concat_norm": 0.06885318131966663
+    },
+    {
+      "case_id": "00012",
+      "pair_id": "minutes-277-369",
+      "kind": "SEM",
+      "tuples": 9216,
+      "mean_concat_norm": 0.000499219170364718,
+      "max_concat_norm": 0.08346329615514535
+    },
+    {
+      "case_id": "00012",
+      "pair_id": "minutes-303-369",
+      "kind": "SEM",
+      "tuples": 9216,
+      "mean_concat_norm": 0.0003772952524541097,
+      "max_concat_norm": 0.06826195635446795
+    },
+    {
+      "case_id": "00013",
+      "pair_id": "minutes-126-277",
+      "kind": "SEM",
+      "tuples": 6144,
+      "mean_concat_norm": 0.0006316994698101672,
+      "max_concat_norm": 0.170769968727461
+    },
+    {
+      "case_id": "00013",
+      "pair_id": "minutes-126-303",
+      "kind": "SEM",
+      "tuples": 6144,
+      "mean_concat_norm": 0.0005306687328893579,
+      "max_concat_norm": 0.09914215935499832
+    },
+    {
+      "case_id": "00013",
+      "pair_id": "minutes-126-369",
+      "kind": "SEM",
+      "tuples": 6144,
+      "mean_concat_norm": 0.0003088316666520531,
+      "max_concat_norm": 0.019112351097089395
+    },
+    {
+      "case_id": "00013",
+      "pair_id": "minutes-277-303",
+      "kind": "EQUIV",
+      "tuples": 6144,
+      "mean_concat_norm": 0.0003843441374939793,
+      "max_concat_norm": 0.10027658247528806
+    },
+    {
+      "case_id": "00013",
+      "pair_id": "minutes-277-369",
+      "kind": "SEM",
+      "tuples": 6144,
+      "mean_concat_norm": 0.0003869893989081967,
+      "max_concat_norm": 0.05136418298864651
+    },
+    {
+      "case_id": "00013",
+      "pair_id": "minutes-303-369",
+      "kind": "SEM",
+      "tuples": 6144,
+      "mean_concat_norm": 0.00032912963346442826,
+      "max_concat_norm": 0.05932164137669848
+    }
+  ],
+  "negative_checks": {
+    "00012": {
+      "EQUIV_mean_below_all_SEM": true,
+      "SEM_with_mean_below_EQUIV": [],
+      "SEM_with_max_below_EQUIV": [
+        "minutes-126-277",
+        "minutes-126-303",
+        "minutes-303-369"
+      ]
+    },
+    "00013": {
+      "EQUIV_mean_below_all_SEM": false,
+      "SEM_with_mean_below_EQUIV": [
+        "minutes-126-369",
+        "minutes-303-369"
+      ],
+      "SEM_with_max_below_EQUIV": [
+        "minutes-126-303",
+        "minutes-126-369",
+        "minutes-277-369",
+        "minutes-303-369"
+      ]
+    }
+  },
+  "cost": {
+    "M1_internal_seconds": 8.714236599975266,
+    "M1_launcher_seconds_parent_receipt": 13.39,
+    "M1_array_output_bytes": 31427200,
+    "M1_max_private_bytes": 264634368,
+    "M1_max_output_staging_bytes": 79776,
+    "audit_seconds": 165.60730119992513,
+    "audit_max_private_bytes": 64364544,
+    "precision_seconds": 0.2838397000450641,
+    "precision_launcher_seconds_parent_receipt": 0.817,
+    "all_actual_new_model_head_MLP_tokenizer_annotation_risk_counts": {
+      "model_calls": 0,
+      "head_calls": 0,
+      "mlp_calls": 0,
+      "tokenizer_calls": 0,
+      "annotation_reads": 0,
+      "risk_outputs": 0
+    }
+  },
+  "source_deltav_precision": {
+    "completed": true,
+    "all_vectors_bitwise_equal": false,
+    "summary": {
+      "bitwise_equal_vectors": 48,
+      "total_vectors": 1536,
+      "total_coordinates": 196608,
+      "bit_mismatches": 180043,
+      "numerically_equal_vectors": 48,
+      "max_absolute_difference": 0.078125,
+      "max_relative_l2_difference": 0.37815079167550525
+    },
+    "tables_decoded": 64,
+    "meaning": "PASS means diagnostic execution/coverage, not equality. Stored DeltaV differs in1488/1536vectors; do not attribute cross-R message differences solely to query/head routing. Full-N numerical/capture/historical-identity causes remain unisolated; individualV and common translations were not compared.",
+    "no_model_or_new_risk": {
+      "model_calls": 0,
+      "head_calls": 0,
+      "mlp_calls": 0,
+      "tokenizer_calls": 0,
+      "annotation_reads": 0,
+      "risk_outputs": 0
+    }
+  },
+  "provenance": {
+    "run_prefixes_from_registry_receipt": {
+      "M0": "02e68af9",
+      "M1": "709af13",
+      "audit": "9678946",
+      "precision": "d1de688b"
+    },
+    "source_seals": {
+      "M0": "97574e3dada0332470ee89088e92dc2429ff91d9b9c3640a83e6a2934d8e51f1",
+      "M1": "1c54b75b598d136e6d00c43bb4a4bb2302bf1a03895df89c0e4df787e386c282",
+      "audit": "8987d099e09efe5dc9f3e68453b8a046175368b5adf958e03dcd34e13353b6e5",
+      "precision": "3a35cee31deb021e0f07711bb7ff24387cf33c5b808c307b86d37ce10d7f99b8"
+    },
+    "metadata_evidence": {
+      "m0_result": {
+        "path": "outputs/h019-head-carrier-20261105/m0-receipt-v1/result.json",
+        "sha256": "eb655330988c2d12a1b0c5cc7cb764ab4203d25732537981f077131b805cd647"
+      },
+      "m1_result": {
+        "path": "outputs/h019-head-carrier-20261105/m1-receipt-v1/result.json",
+        "sha256": "363c30039143994009812fe85892efe739d5a2b0ff585022dc7e8eb500441574"
+      },
+      "audit": {
+        "path": "outputs/h019-head-carrier-20261105/independent-audit-receipt-v1/audit.json",
+        "sha256": "57549447845fa880f52dbfc0ee78815df70be2884ac1fc51a5921377f7d9fa23"
+      },
+      "interpretation": {
+        "path": "outputs/h019-head-carrier-20261105/INDEPENDENT_RESULT_INTERPRETATION_20261105.json",
+        "sha256": "2a044814672533ef2a690b8ed79cf2b616a73da12f146aa5cd78cfc60b425c5e"
+      },
+      "precision": {
+        "path": "outputs/h019-head-carrier-20261105/source-deltav-precision-receipt-v1/comparison.json",
+        "sha256": "83da20bc4b8b2397e08d4f53bb5ca861fed111fce09c1e10eafe1247c76dcec8"
+      }
+    },
+    "raw_data_logical_root": "C06/06_same_question_multisample/",
+    "original_arrays": "attributed_samples_20260912/{00012,00013}/",
+    "run_outputs": "h019-head-carrier-20261105/{m0-plan-v1,m1-observation-v1,independent-audit-v1}",
+    "large_body_hash_scope": "Original qualified manifest witnesses reused; this stage checks stat+small metadata, not a fresh6.5GB body hash",
+    "minimal_contract_sha256": "d2053ed8b13320c8aba71be13e6677cc9e983b0586e4e1f2bdde847dfeb7ebe1",
+    "core_source_sha256": {
+      "experiments/head_carrier_frontend.py": "d2aa77bea10f75c95948afa8d7cdb247695aadfb1188e973c98086622ba0c171",
+      "experiments/head_carrier_observation.py": "d3542e3e51c5280dd8ea3fde5cc96594a8d81104af005048a64b26321269471b",
+      "experiments.research/head_carrier_association.py": "761de466f46bf2d4434e75e5a4a4ea94f2d30e351efca45f92e2dadb61acac14"
+    }
+  },
+  "prior_scope": "Old source_context_delta X/E/XE, endpoint swap, N/A/G and real suffix execution already existed. GenericE can expressB; limited reviewed configs did not establish this specific simultaneous row-and-column independence null was run.2x2/MI identities are standard, not novelty proof.",
+  "limitations": [
+    "One source/two sampled R/10retrospectively selected decisions; dependent layer/head/pair tuples are not independent natural examples.",
+    "EQUIV licences local repeated instruction, not identical causal context or position. SEM is source-fact difference, not R wrongness.",
+    "Magnitude entangleskappa andcontextualDeltaV norm; position/RoPE/context/normremain confounded.",
+    "Cross-graph DeltaV factors are not equal, so routing-only attribution is not licensed.",
+    "No O/suffix/output probability, semantic correctness, new risk/prediction or AUROC was evaluated."
+  ],
+  "next_question": "Qualify a source-first semantic record/support/unknown interface, frozen before current y and aligned to original consumed R prefix; only then test internal localization/reliability/cost value beyond the same direct-text frontend. This is a research direction, not an admitted detector.",
+  "method_promotion": false,
+  "risk_outputs": 0,
+  "auroc": null,
+  "target_0_8_met": false,
+  "code_publication_status_at_authoring": {
+    "local_commit": "ee69ad0",
+    "pushed": false,
+    "exact_new_CI": "not established by this report",
+    "older_CI_covers_H019": false,
+    "note": "旧fe…CI不覆盖H019源码；源码通过定向检查不替代完整CPU/exact-commit CI。Root handles subsequent publication/status updates."
+  }
+}

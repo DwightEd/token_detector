@@ -3306,6 +3306,79 @@
       ],
       "do_not_repeat": "Do not rerun generic donorV/A,row-source-mass,E/X/XE,endpoint or N/A/G/path diagnostics on same12/13. New head-carrier double-marginal null is distinct finite question, not a truth score.",
       "remote_condition_counts_not_local_native_interface_counts": true
+    },
+    {
+      "id": "P035_HEAD_CARRIER_DOUBLE_MARGINAL",
+      "status": "completed_arithmetic_supported_standalone_semantic_risk_closed",
+      "known_result": [
+        "F063",
+        "F064"
+      ],
+      "evidence": [
+        {
+          "path": "outputs/h019-head-carrier-20261105/M0_COMPLETION.json",
+          "sha256": "9190b5907594641364b4cdc9ca3a7bd6e0be8844b59107947e719f8d07a41812"
+        },
+        {
+          "path": "outputs/h019-head-carrier-20261105/M1_COMPLETION.json",
+          "sha256": "d89ff4c46973390c07e0424f067b80defbaec76cea86dd08e743da32cdcacb7c"
+        },
+        {
+          "path": "outputs/h019-head-carrier-20261105/m0-receipt-v1/plan.json",
+          "sha256": "6f9f6ba5c76816e0258d75821ad5b38ae3a88f64913af7bb3ec0e5acc7732b3f"
+        },
+        {
+          "path": "outputs/h019-head-carrier-20261105/m1-receipt-v1/result.json",
+          "sha256": "363c30039143994009812fe85892efe739d5a2b0ff585022dc7e8eb500441574"
+        },
+        {
+          "path": "outputs/h019-head-carrier-20261105/independent-audit-receipt-v1/audit.json",
+          "sha256": "57549447845fa880f52dbfc0ee78815df70be2884ac1fc51a5921377f7d9fa23"
+        },
+        {
+          "path": "outputs/h019-head-carrier-20261105/independent-audit-receipt-v1/seal.json",
+          "sha256": "8987d099e09efe5dc9f3e68453b8a046175368b5adf958e03dcd34e13353b6e5"
+        },
+        {
+          "path": "outputs/h019-head-carrier-20261105/INDEPENDENT_RESULT_INTERPRETATION_20261105.md",
+          "sha256": "bccbdb2fb4fcf0471fb378a7855db1c6c8bef36703bef433caf76c2b7ee54f23"
+        },
+        {
+          "path": "outputs/h019-head-carrier-20261105/INSTALLED_TARGETED_VALIDATION.json",
+          "sha256": "1c53061dd19e8f174ebd4013b0e501f4f91491f560b25e7068a94949ece171a7"
+        },
+        {
+          "path": "outputs/h019-head-carrier-20261105/INSTALLED_FULL_VALIDATION.json",
+          "sha256": "fedd0c9840ca8ef53e32020425b8cf25fba4df97548d9cf6db9b0fc4cfe678c1"
+        },
+        {
+          "path": "outputs/h019-head-carrier-20261105/SOURCE_DELTAV_PRECISION_COMPLETION.json",
+          "sha256": "1257f95b732c26d77a686bc0fa96af2eec7c686cfa432d776ff97b707402cee6"
+        },
+        {
+          "path": "outputs/h019-head-carrier-20261105/SOURCE_DELTAV_PRECISION_POLICY.md",
+          "sha256": "26d0801272b59ba906eb6e0ef00904df543cd8c44e468a7427e124f8918ef007"
+        },
+        {
+          "path": "outputs/h019-head-carrier-20261105/SOURCE_DELTAV_PRECISION_STATIC_REVIEW.md",
+          "sha256": "034643a56e1b3b4721166eb76215fd9f623c27740f88b0483e33c2098d5f49dc"
+        },
+        {
+          "path": "outputs/h019-head-carrier-20261105/source-deltav-precision-receipt-v1/comparison.json",
+          "sha256": "83da20bc4b8b2397e08d4f53bb5ca861fed111fce09c1e10eafe1247c76dcec8"
+        },
+        {
+          "path": "outputs/h019-head-carrier-20261105/source-deltav-precision-receipt-v1/seal.json",
+          "sha256": "3a35cee31deb021e0f07711bb7ff24387cf33c5b808c307b86d37ce10d7f99b8"
+        }
+      ],
+      "do_not_repeat": "No repeat M0/M1/oracle/DeltaV comparison, head/layer/q selection, sign flip or magnitude rescue. Retain finite erasure operator only for a genuinely new semantic-oriented independently admitted test.",
+      "independent_tuples_are_not_independent_sources": true,
+      "source_count": 1,
+      "response_count": 2,
+      "new_model_calls": 0,
+      "risk_outputs": 0,
+      "auroc": null
     }
   ],
   "discriminating_interventions": [

@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "run_id": "02e68af9e52dd7f66fba73e85b25218647d1e7be050187c533db975abbd7a8a8",
+  "completed_utc": "2026-11-04T18:05:07.986470+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Completed M0; saved metadata imported from C, no detector/model/GT claim",
+  "artifacts": [
+    {
+      "path": "outputs/h019-head-carrier-20261105/m0-receipt-v1/location.json",
+      "sha256": "646efee0c334437f384653207489464ef27945d94ca3eb58371f884243960fd6"
+    },
+    {
+      "path": "outputs/h019-head-carrier-20261105/m0-receipt-v1/plan.json",
+      "sha256": "6f9f6ba5c76816e0258d75821ad5b38ae3a88f64913af7bb3ec0e5acc7732b3f"
+    },
+    {
+      "path": "outputs/h019-head-carrier-20261105/m0-receipt-v1/result.json",
+      "sha256": "eb655330988c2d12a1b0c5cc7cb764ab4203d25732537981f077131b805cd647"
+    },
+    {
+      "path": "outputs/h019-head-carrier-20261105/m0-receipt-v1/seal.json",
+      "sha256": "97574e3dada0332470ee89088e92dc2429ff91d9b9c3640a83e6a2934d8e51f1"
+    }
+  ]
+}

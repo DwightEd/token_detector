@@ -649,7 +649,7 @@
     },
     {
       "id": "H019_HEAD_CARRIER_ASSOCIATION",
-      "status": "finite_M0_M1_coding_admitted_awaits_installed_checks_and_claim",
+      "status": "completed_finite_arithmetic_supported_semantic_readout_not_promoted",
       "question": "Does same-query GQA head-carrier association carry pre-O message information beyond both marginals, and is source-condition specificity distinguishable from equivalent-carrier/position/norm alternatives?",
       "scientific_admission": [
         {
@@ -687,7 +687,19 @@
       "original_response_interface": "original digit-token t,prechoice q=P+t-1; diagnostic only, no risk",
       "remaining_new_native_budget": 0,
       "detector_admitted": false,
-      "stop": "M0 requires both SEM/EQUIV,all eligibleF<=8 andtuple<=1M. Numeric failure retained/no retry. No O/semantic/detector claim from pre-O effect; no positionspecificity without separate controls."
+      "stop": "M0 requires both SEM/EQUIV,all eligibleF<=8 andtuple<=1M. Numeric failure retained/no retry. No O/semantic/detector claim from pre-O effect; no positionspecificity without separate controls.",
+      "actual_runs": {
+        "M0": "02e68af9e52dd7f66fba73e85b25218647d1e7be050187c533db975abbd7a8a8",
+        "M1": "709af1306faa846a0689b344cfbd11dbe7f8c3bfede2dba0b60971d58ec144a0",
+        "INDEPENDENT_AUDIT": "9678946a670b9eaa1c4828d355d1966302a3451131788ad1384670c98c1031ea",
+        "SOURCE_DELTAV_PRECISION": "d1de688b1923fc1476d74a37a69c8f666f0e6cf1be353599a3ed564a23abab4e"
+      },
+      "result_facts": [
+        "F063",
+        "F064"
+      ],
+      "standalone_risk_path": "closed",
+      "further_model_observations_admitted": false
     }
   ]
 }

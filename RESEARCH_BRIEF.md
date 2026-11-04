@@ -1,5 +1,8 @@
 # 当前持续研究目标
 
+**2026-11-05最新：H019有限CPU机制试验完成并全92160 tuple独立审计通过，但幅度不能稳定区分SEM/EQUIV；source ΔV在两graph有1488/1536差异。** 关闭独立幅度/MI/chi风险和routing-only归因，不挑头/层/符号。转向I02真正source-first语义records+义务/unknown合同，H020未准入模型。70文件10.08GB及三类数组资格已完整；D清理释放约16.4GiB，当前16.43GiB可用。代码ee69ad0 exact installed154/60targeted通过，full CPU300s incomplete，新push完整LinuxCI待核。无新检测AUROC，六任务与顶会目标未完成。F059–F064及RESUME为准，下面为历史检查点。
+
+
 **2026-11-05：真实内部缓存三批70文件10.08GB已恢复，H018固定方向已由必要反例关闭。** 0model独立target审计通过但风险方向反证，不补跑control；原16+replay16资格通过，2完整graph数值资格进行中。优先核旧reanchor机制研究避免重复，再设计绑定特异性干预；无新检测AUROC，六任务/顶会目标未完成。F059/F060/RESUME为准。
 
 

@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "created_utc": "2026-11-04T18:41:29.248862+00:00",
+  "spec": {
+    "hypothesis_id": "H019_HEAD_CARRIER_ASSOCIATION",
+    "stage": "postseal_source_deltav_precision",
+    "intervention": "compare_all64_sealed_source_factor_tables_across_two_graphs_no_original_arrays",
+    "method": {
+      "entrypoint": "D:\\projects\\research\\token_detector\\outputs\\h019-head-carrier-20261105\\compare_source_deltav.py",
+      "config": {
+        "spec": {
+          "schema": "h019-source-deltav-precision-spec-v1",
+          "m0_root": "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\h019-head-carrier-20261105\\m0-plan-v1",
+          "m1_root": "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\h019-head-carrier-20261105\\m1-observation-v1",
+          "audit_root": "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\h019-head-carrier-20261105\\independent-audit-v1",
+          "policy": "D:\\projects\\research\\token_detector\\outputs\\h019-head-carrier-20261105\\SOURCE_DELTAV_PRECISION_POLICY.md",
+          "output": "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\h019-head-carrier-20261105\\source-deltav-precision-v1",
+          "expected": {
+            "script_sha256": "aed3e745388fda82aedfde7a6dc0b87b064a2fecbea144cc66f6632b1e41c47c",
+            "policy_sha256": "26d0801272b59ba906eb6e0ef00904df543cd8c44e468a7427e124f8918ef007",
+            "data_module_sha256": "cc8bd3c878c267a5c372a3871824c3402e364c106b0c29c42b5cac2bfe976796",
+            "m0_seal_sha256": "97574e3dada0332470ee89088e92dc2429ff91d9b9c3640a83e6a2934d8e51f1",
+            "m1_seal_sha256": "1c54b75b598d136e6d00c43bb4a4bb2302bf1a03895df89c0e4df787e386c282",
+            "audit_seal_sha256": "8987d099e09efe5dc9f3e68453b8a046175368b5adf958e03dcd34e13353b6e5",
+            "audit_json_sha256": "57549447845fa880f52dbfc0ee78815df70be2884ac1fc51a5921377f7d9fa23"
+          }
+        },
+        "tolerances": null,
+        "semantic_truth_claim": false,
+        "automatic_retry": false
+      }
+    },
+    "code_sha256": {
+      "D:\\projects\\research\\token_detector\\outputs\\h019-head-carrier-20261105\\compare_source_deltav.py": "aed3e745388fda82aedfde7a6dc0b87b064a2fecbea144cc66f6632b1e41c47c",
+      "experiments/data.py": "cc8bd3c878c267a5c372a3871824c3402e364c106b0c29c42b5cac2bfe976796"
+    },
+    "data_sha256": {
+      "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\h019-head-carrier-20261105\\m0-plan-v1\\seal.json": "97574e3dada0332470ee89088e92dc2429ff91d9b9c3640a83e6a2934d8e51f1",
+      "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\h019-head-carrier-20261105\\m1-observation-v1\\seal.json": "1c54b75b598d136e6d00c43bb4a4bb2302bf1a03895df89c0e4df787e386c282",
+      "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\h019-head-carrier-20261105\\independent-audit-v1\\seal.json": "8987d099e09efe5dc9f3e68453b8a046175368b5adf958e03dcd34e13353b6e5",
+      "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\h019-head-carrier-20261105\\independent-audit-v1\\audit.json": "57549447845fa880f52dbfc0ee78815df70be2884ac1fc51a5921377f7d9fa23",
+      "D:\\projects\\research\\token_detector\\outputs\\h019-head-carrier-20261105\\SOURCE_DELTAV_PRECISION_POLICY.md": "26d0801272b59ba906eb6e0ef00904df543cd8c44e468a7427e124f8918ef007",
+      "D:\\projects\\research\\token_detector\\outputs\\h019-head-carrier-20261105\\SOURCE_DELTAV_PRECISION_STATIC_REVIEW.md": "034643a56e1b3b4721166eb76215fd9f623c27740f88b0483e33c2098d5f49dc",
+      "D:\\projects\\research\\token_detector\\outputs\\h019-head-carrier-20261105\\SOURCE_DELTAV_PRECISION_SPEC.json": "8f563d103d17ed6667a3c3a9102c8142b3bee13d6ee73ba990d0749419670088"
+    },
+    "observer": {
+      "kind": "sealed_small_tables_CPU",
+      "new_model_calls": 0
+    },
+    "population": {
+      "source_id": "14375",
+      "cases": [
+        "00012",
+        "00013"
+      ],
+      "vectors": 1536,
+      "layers": 32,
+      "source_pairs": 6,
+      "kv_groups": 8
+    },
+    "evaluation": {
+      "annotation_reads": 0,
+      "risk_outputs": 0,
+      "auroc": null
+    },
+    "seed": null
+  },
+  "run_id": "d1de688b1923fc1476d74a37a69c8f666f0e6cf1be353599a3ed564a23abab4e",
+  "phase": "reserved_not_launched"
+}

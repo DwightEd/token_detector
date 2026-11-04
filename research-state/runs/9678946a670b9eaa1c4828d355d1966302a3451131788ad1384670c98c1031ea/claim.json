@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "created_utc": "2026-11-04T18:08:05.652366+00:00",
+  "spec": {
+    "hypothesis_id": "H019_HEAD_CARRIER_ASSOCIATION",
+    "stage": "h019_postseal_independent_alltuple_oracle",
+    "intervention": "all_original_preO_tuples_checked_against_nativeA_V_and_decimal80_no_candidate_calls",
+    "method": {
+      "entrypoint": "D:\\projects\\research\\token_detector\\outputs\\h019-head-carrier-20261105\\audit_head_carrier.py",
+      "config": {
+        "spec": {
+          "schema": "h019-independent-audit-spec-v1",
+          "m0_root": "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\h019-head-carrier-20261105\\m0-plan-v1",
+          "m1_root": "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\h019-head-carrier-20261105\\m1-observation-v1",
+          "policy": "D:\\projects\\research\\token_detector\\outputs\\h019-head-carrier-20261105\\INDEPENDENT_AUDIT_PRE_RUN_POLICY.md",
+          "output": "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\h019-head-carrier-20261105\\independent-audit-v1",
+          "expected": {
+            "script_sha256": "17df8dde1392aedac5f0f8ec6acaca4d2d57b9dfe0fe70fd4bb607886710833f",
+            "policy_sha256": "dae240c24a2ae3490528c4a26b5ef1858e9f38b05c531407449063a2cecef40a",
+            "data_module_sha256": "cc8bd3c878c267a5c372a3871824c3402e364c106b0c29c42b5cac2bfe976796",
+            "m0_seal_sha256": "97574e3dada0332470ee89088e92dc2429ff91d9b9c3640a83e6a2934d8e51f1",
+            "m1_seal_sha256": "1c54b75b598d136e6d00c43bb4a4bb2302bf1a03895df89c0e4df787e386c282"
+          }
+        },
+        "decimal_precision": 80,
+        "no_candidate_kernel": true,
+        "semantic_truth_claim": false,
+        "automatic_retry": false
+      }
+    },
+    "code_sha256": {
+      "D:\\projects\\research\\token_detector\\outputs\\h019-head-carrier-20261105\\audit_head_carrier.py": "17df8dde1392aedac5f0f8ec6acaca4d2d57b9dfe0fe70fd4bb607886710833f",
+      "experiments/data.py": "cc8bd3c878c267a5c372a3871824c3402e364c106b0c29c42b5cac2bfe976796"
+    },
+    "data_sha256": {
+      "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\h019-head-carrier-20261105\\m0-plan-v1\\seal.json": "97574e3dada0332470ee89088e92dc2429ff91d9b9c3640a83e6a2934d8e51f1",
+      "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\h019-head-carrier-20261105\\m1-observation-v1\\seal.json": "1c54b75b598d136e6d00c43bb4a4bb2302bf1a03895df89c0e4df787e386c282",
+      "D:\\projects\\research\\token_detector\\outputs\\h019-head-carrier-20261105\\INDEPENDENT_AUDIT_PRE_RUN_POLICY.md": "dae240c24a2ae3490528c4a26b5ef1858e9f38b05c531407449063a2cecef40a",
+      "D:\\projects\\research\\token_detector\\outputs\\h019-head-carrier-20261105\\INDEPENDENT_AUDIT_SPEC.json": "24d519347adc8ce9af1045a0750e9c692ccd8e8de4ac831ca98ecbe80d67cf73",
+      "D:\\projects\\research\\token_detector\\outputs\\h019-head-carrier-20261105\\INDEPENDENT_AUDIT_STATIC_CODE_REVIEW.md": "288bba3d5a97c00dac62881276af4f8ed8c6971046c953398caf77c0283d14f4"
+    },
+    "observer": {
+      "kind": "saved_arrays_only_decimal80_CPU",
+      "new_model_calls": 0
+    },
+    "population": {
+      "source_id": "14375",
+      "cases": [
+        "00012",
+        "00013"
+      ],
+      "original_queries": 10,
+      "source_pairs": 6,
+      "independent_tuples": 92160
+    },
+    "evaluation": {
+      "annotation_reads": 0,
+      "risk_outputs": 0,
+      "auroc": null
+    },
+    "seed": null
+  },
+  "run_id": "9678946a670b9eaa1c4828d355d1966302a3451131788ad1384670c98c1031ea",
+  "phase": "reserved_not_launched"
+}

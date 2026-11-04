@@ -3,9 +3,9 @@
   "objective": "Mechanism-driven unsupervised hallucination detection improvement toward AUROC >= 0.8 on each of six primary tasks",
   "canonical_project": "D:/projects/research/token_detector",
   "goal_status": "not_achieved",
-  "phase": "head_carrier_pilot_installed_qualification",
+  "phase": "head_carrier_completed_source_semantics_design",
   "active_hypothesis": "H019_HEAD_CARRIER_ASSOCIATION",
-  "next_question": "Finish frozen installed-source validation, then claimM0 source-only/axis eligibility and only if passed claim oneM1 CPU pre-O association assay. All48x32 independent, original digitq,6manual sourcepairs noGT; no O/model/risk. Preserve source-only manual licence limits and SEM/EQUIV/position/norm unknown. I02 is not implemented. H018 fixed direction closed, no missing control.",
+  "next_question": "Do not repeat H019 or H018. Design and independently review H020/I02 truly source-first records with complete semantic obligations, unknowns, literal provenance and no R input, using existing Qwen2.5-3B only after actual resource admission. At most4 source+2source-only controls; no model currently admitted, no prefix-L/risk/AUROC yet. Strong same-record direct text baseline is mandatory before internal-cost claims.",
   "known_fact_ids": [
     "F001",
     "F002",
@@ -68,7 +68,9 @@
     "F059",
     "F060",
     "F061",
-    "F062"
+    "F062",
+    "F063",
+    "F064"
   ],
   "do_not_repeat": [
     "Describing known FN/FP counts again without a new discriminating intervention",
@@ -101,14 +103,14 @@
   "checkpoint_policy": "Update at every conclusion, completed run or structural pivot; record the next discriminating question before continuation",
   "pipeline_helpers": "External ARIS run_state/watchdog helpers were not found; no background watchdog is claimed. Repository state and exact-run reservation are implemented locally.",
   "case_panel": "research-state/case_panel_v1.json",
-  "resource_status": "NoM5model/auditprocess. MeasuredM5 GPU~3GiB,postrunhostfree~1.2GiB; resourcegatespassed. NetworkblocksMiniCheckonly; completeLOCALDeBERTa7assets verified.",
+  "resource_status": "D16.43GiB/C145.68GiB free at2026-11-04T18:40Z; no live model/test/download or armed watchdog. Large new raw outputs use unified C research data root.",
   "user_resource_choice": "local_idle_automatic_run",
   "experiment_plan": "refine-logs/EXPERIMENT_PLAN.md",
-  "run_reservation_status": "all_full900_model_scoring_and_evaluation_stages_finished_no_live_model",
+  "run_reservation_status": "H019_all_four_stages_terminal_no_live_worker",
   "frozen_observation_run_spec": null,
   "live_execution_state": null,
   "local_idle_job": null,
-  "active_variant": "none_M5_scope_proposal_only",
+  "active_variant": "I02_source_first_contract_design_not_admitted",
   "live_progress_command": null,
   "superseded_local_job": {
     "pid": 31576,
@@ -187,17 +189,23 @@
       "wheel_sha256": "fe8d9103429addc19fa25291b781bbb1b0d73ab7569e6833a7efb9c32af6c2ef",
       "snapshot_proof": "D:/projects/research/outputs/h017-qualified-20261103-191208/snapshot-proof.json",
       "scope": "Actual M4 source identity; later checkout edits do not alter it."
+    },
+    "h019_frozen_cpu": {
+      "commit": "ee69ad0163410e22338c4f1673f093f7f97097b5",
+      "installed_members": 154,
+      "wheel_sha256": "997b5bcdc73e50ca8c734726a3d9c5464937ac375d856d82aa12acfd93d32cee",
+      "snapshot": "outputs/h019-head-carrier-20261105/LATEST_INSTALLED_SNAPSHOT.json"
     }
   },
-  "last_completed_run": "542e64150afd88823e516c1206673a092c31515f7aef0f8f2dd8189eeca8e284",
-  "last_result": "r4AUROC=0.798317534,AP=0.190392333; witnessAUROC=0.755715886,AP=0.145209394; nliAUROC=0.744306164,AP=0.097168289",
+  "last_completed_run": "d1de688b1923fc1476d74a37a69c8f666f0e6cf1be353599a3ed564a23abab4e",
+  "last_result": "H01992160 tuples arithmetic qualified; SEM/EQUIV magnitude not stable; sourceDeltaV differs1488/1536. No new risk/AUROC.",
   "previous_observation_run_id": "a5d336433cd1a04ce71962fb8500d4f9f0c8b0473a74f146e66302cbacb3e9a5",
   "goal_control_status": "blocked",
   "goal_control_note": "Legacy tool status remains blocked; user explicitly resumed research. Continue authorized work without asking for confirmation or treating legacy control status as a scientific/resource blocker.",
-  "work_status": "F054full900externalcomparison_actualmetrics_complete_no_new_unsup_detector",
-  "next_design": "M5rangecounterfactual/within-range exception and unchanged-response controls; not admitted",
+  "work_status": "F063_F064_mechanism_assay_complete_standalone_amplitude_not_promoted_no_new_detector",
+  "next_design": "Source-first semantic records and obligation ledger, independently reviewed before model; no blind magnitude scoring.",
   "frozen_observation_run_id": null,
-  "last_updated_utc": "2026-11-03T21:54:34.532132+00:00",
+  "last_updated_utc": "2026-11-04T18:43:03.928791+00:00",
   "completed_H003": {
     "natural_observer_run": "fa101d666cce73beefcb12cd5979b04fb51e2771a61f48e78f9232caecff968c",
     "natural_cpu_run": "29e82c69db9558ec05c7b868f10cfa58f06cc497864a0ecfebcefa6217a72b47",
@@ -1016,11 +1024,11 @@
   "full_population_scores_sealed": false,
   "target_labels_released": false,
   "publication_receipt": "outputs/h017-relation-20261103/NLI_PUBLICATION_FINAL.json",
-  "validation_status": "Exactsource b362eff fullinstalled LinuxCI41724862885 passed; local completeCPU300s remains incomplete",
+  "validation_status": "H019 exact installed154 targeted60 pass; local full300s incomplete. Full exact Linux CI after new push is required; oldfeCI success only covers old code.",
   "code_validation": {
-    "source_commit": "3368f56",
-    "installed_modules": 151,
-    "targeted": "65passed16.93s",
+    "source_commit": "ee69ad0163410e22338c4f1673f093f7f97097b5",
+    "installed_modules": 154,
+    "targeted": "60passed20.89s_outside_installed",
     "local_full": "incomplete_timeout_300seconds",
     "exact_push_CI": "pending_unpushed_source",
     "previous_exact_CI": {
@@ -1030,17 +1038,19 @@
       "status": "success",
       "full_installed_step6": "success"
     },
-    "current_H019": "worktree_frozen_reviewed_awaits_installed_checks"
+    "current_H019": "installed_exact154_frozen_M0_M1_audit_precision_complete"
   },
-  "updated_utc": "2026-11-04T14:29:25.323379+00:00",
+  "updated_utc": "2026-11-04T18:43:03.928791+00:00",
   "active_jobs": {
-    "type": "code_validation",
+    "type": "none",
     "gpu_jobs": 0,
     "download_workers": 0,
-    "M0": "not_started",
-    "M1": "not_started"
+    "M0": "complete",
+    "M1": "complete",
+    "independent_audit": "complete",
+    "source_deltav_precision": "complete"
   },
-  "current_protocol": "outputs/h018-operator-binding-20261104/PHASE1_V3_PROTOCOL.json",
+  "current_protocol": "outputs/h019-head-carrier-20261105/FINITE_PROTOCOL.json",
   "h018": {
     "phase1": "complete_sealed_audit_passed_no_detection_efficacy",
     "tokenizer_run": "1df7963a25b8bfa8929237305ba939dbbb67aba28624fcd3d253ce03d8511a93",
@@ -1158,7 +1168,7 @@
     "unique_response_trajectories": 13
   },
   "h019": {
-    "status": "finite_implementation_reviewed_no_claim_yet",
+    "status": "completed_alltuple_audit_standalone_risk_closed",
     "scientific_admission": [
       {
         "path": "refine-logs/head-carrier-association-20261105/MINIMAL_CONTRACT_20261105_013351.md",
@@ -1202,7 +1212,45 @@
       "SEM": 5
     },
     "planned_native_calls": 0,
-    "M0": "not_started",
-    "M1": "not_started"
+    "M0": "complete_sealed",
+    "M1": "complete_sealed",
+    "actual_runs": {
+      "M0": "02e68af9e52dd7f66fba73e85b25218647d1e7be050187c533db975abbd7a8a8",
+      "M1": "709af1306faa846a0689b344cfbd11dbe7f8c3bfede2dba0b60971d58ec144a0",
+      "INDEPENDENT_AUDIT": "9678946a670b9eaa1c4828d355d1966302a3451131788ad1384670c98c1031ea",
+      "SOURCE_DELTAV_PRECISION": "d1de688b1923fc1476d74a37a69c8f666f0e6cf1be353599a3ed564a23abab4e"
+    },
+    "selected_queries": 10,
+    "completed_tuples": 92160,
+    "original_targets_with_status": 343,
+    "independent_audit": "passed_all92160_decimal80",
+    "source_deltav_precision": {
+      "bitwise_equal_vectors": 48,
+      "total_vectors": 1536,
+      "total_coordinates": 196608,
+      "bit_mismatches": 180043,
+      "numerically_equal_vectors": 48,
+      "max_absolute_difference": 0.078125,
+      "max_relative_l2_difference": 0.37815079167550525
+    },
+    "standalone_risk_path": "closed",
+    "new_model_calls": 0,
+    "risk_outputs": 0,
+    "annotation_reads": 0,
+    "auroc": null,
+    "source_commit": "ee69ad0163410e22338c4f1673f093f7f97097b5",
+    "result_facts": [
+      "F063",
+      "F064"
+    ]
+  },
+  "last_detection_result": "r4AUROC=0.798317534,AP=0.190392333; witnessAUROC=0.755715886,AP=0.145209394; nliAUROC=0.744306164,AP=0.097168289",
+  "disk_cleanup": {
+    "status": "complete_verified_migration",
+    "freed_bytes": 17651561514,
+    "archive": "C:/ResearchData/token-detector-remote-20261103/07_local_archives/ragtruth_llama31_8b_canonical.tar.zst",
+    "drivers_installers": "C:/DiskCleanupArchive/20261105/Drivers",
+    "desktop_note": "D:/Desktop/myProject数据与清理位置说明.txt",
+    "research_raw_and_failures_preserved": true
   }
 }

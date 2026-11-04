@@ -1,15 +1,13 @@
-# 实际检查点：新数据可用，旧风险方向关闭
+# 实验追踪：H019已完成，H020未准入
 
-2026-11-05 01:18，Asia/Shanghai。[同版计划](EXPERIMENT_PLAN_20261105_011800.md)。
+| 阶段 | Run ID | 状态/成本 | 结论 |
+|---|---|---|---|
+| H018 target-only独立审计 | 7626e002 | DONE，0模型，233token/32层/4V | 算术通过，必要主方向反证，关闭不补control |
+| H019 M0 | 02e68af9 | DONE/sealed，10q/6pair/343target状态 | 有限CPU资格通过，手工局部license |
+| H019 M1 | 709af130 | DONE/sealed，92160tuple，8.714s/31.4MB，0模型 | pre-O算术通过，不稳定SEM/EQUIV语义幅度，不晋升risk |
+| H019独立全tuple审计 | 9678946a | DONE/sealed，80位Decimal/165.607s | 全部原A/V连接、覆盖及数值通过，不等于语义 |
+| H019 sourceΔV精度 | d1de688b | DONE/sealed，64小表/1536vectors/.284s | 1488不同，不能routing-only归因；不重跑 |
+| H019安装验证 | sourceee69ad0 | exact154，60targeted20.89s；full300s INCOMPLETE | 新push完整exact LinuxCI待核，旧feCI不覆盖 |
+| H020/I02 | UNCLAIMED | 正式合同/独立审查中，0LM/0risk | 最多4原S+2Scontrol计划，不是已运行或已有效 |
 
-| 事件 | 实际状态与范围 |
-|---|---|
-| P1原两R | 407原targets数值审计PASS，无检测效能；不重跑 |
-| P2 target-only audit7626e002 | PASS25.77s/finish refuted；233targets、32层、4fullV。必要not73 e−.00249863低于负预算−.00042624，aux方向也失败；固定分支关闭，不补control |
-| 多采样原16 | 19文件1,168,475,270B下载；全部32层头/24共同prefix负控通过，1532原生成决策、13种轨迹；0GT/risk/model |
-| replay16 hidden | 17文件2,401,783,169B下载；ID/签名/finite/33slot共同prefix通过；slot32是postnorm，不冒称原native hidden |
-| 两份完整graph | 34文件6,509,800,561B下载/原manifest SHA通过；全A/V/resid/postA/MLP；数值资格进行中 |
-| 旧reanchor研究恢复 | 已定位实际ownership_factorial/multilayer/source_layer和终局；新候选不得重新命名旧X/E/XE/endpoint/suffix结果 |
-| 工程与资源 | 原source3368f56已65targeted通过，fullCPU300s incomplete；新push exactCI待核。D迁移释放约16.4GiB，所有科学raw/失败保留 |
-
-当前无GPUjob/自动重试/下载worker，只有CPU图资格和方案/先例审查。六任务AUROC及完整顶会方法尚未达成。
+详见docs/results/h019_head_carrier_association.md、F063/F064与RESUME。六任务AUROC目标及顶会方法均未完成。保持原R/原token轴、unknown和所有科学失败；旧现象直接引用。

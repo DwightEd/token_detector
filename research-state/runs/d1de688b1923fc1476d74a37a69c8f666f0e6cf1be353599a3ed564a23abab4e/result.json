@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "run_id": "d1de688b1923fc1476d74a37a69c8f666f0e6cf1be353599a3ed564a23abab4e",
+  "completed_utc": "2026-11-04T18:41:30.289935+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "All source DeltaV factors compared; no semantic routing, risk or generator-causality claim",
+  "artifacts": [
+    {
+      "path": "outputs/h019-head-carrier-20261105/source-deltav-precision-receipt-v1/all-source-deltav-comparisons.csv",
+      "sha256": "6ab83027b3cff650364a5b8b00acb43c25af848500ece8d2df66342190dea0e3"
+    },
+    {
+      "path": "outputs/h019-head-carrier-20261105/source-deltav-precision-receipt-v1/comparison.json",
+      "sha256": "83da20bc4b8b2397e08d4f53bb5ca861fed111fce09c1e10eafe1247c76dcec8"
+    },
+    {
+      "path": "outputs/h019-head-carrier-20261105/source-deltav-precision-receipt-v1/location.json",
+      "sha256": "ac85536bbb845ad4cec06a92566266b3363f60e69ce586e4ef210a5516ec02f8"
+    },
+    {
+      "path": "outputs/h019-head-carrier-20261105/source-deltav-precision-receipt-v1/REPORT.md",
+      "sha256": "0f1949d12d21dfc9a464d1b655e57e60da6bf67558755cfe4f94d190d3feef8d"
+    },
+    {
+      "path": "outputs/h019-head-carrier-20261105/source-deltav-precision-receipt-v1/runtime.json",
+      "sha256": "086c73057d57d12b1dabe900862b1ad2ed82b50144e32a4b33170df166eae1e2"
+    },
+    {
+      "path": "outputs/h019-head-carrier-20261105/source-deltav-precision-receipt-v1/seal.json",
+      "sha256": "3a35cee31deb021e0f07711bb7ff24387cf33c5b808c307b86d37ce10d7f99b8"
+    },
+    {
+      "path": "outputs/h019-head-carrier-20261105/source-deltav-precision-receipt-v1/spec.json",
+      "sha256": "8f563d103d17ed6667a3c3a9102c8142b3bee13d6ee73ba990d0749419670088"
+    }
+  ]
+}

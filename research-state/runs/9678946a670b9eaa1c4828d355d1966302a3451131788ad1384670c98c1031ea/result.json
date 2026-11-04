@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "run_id": "9678946a670b9eaa1c4828d355d1966302a3451131788ad1384670c98c1031ea",
+  "completed_utc": "2026-11-04T18:10:51.896104+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Saved pre-O arithmetic/coverage oracle; no semantic, detector or model claim",
+  "artifacts": [
+    {
+      "path": "outputs/h019-head-carrier-20261105/independent-audit-receipt-v1/audit.json",
+      "sha256": "57549447845fa880f52dbfc0ee78815df70be2884ac1fc51a5921377f7d9fa23"
+    },
+    {
+      "path": "outputs/h019-head-carrier-20261105/independent-audit-receipt-v1/location.json",
+      "sha256": "04b11581e3cc160b54f31f19d664359a1ac705531294b2e8756481d84858dccf"
+    },
+    {
+      "path": "outputs/h019-head-carrier-20261105/independent-audit-receipt-v1/REPORT.md",
+      "sha256": "cfd209a72210f281b6402ef226eaa152a307e98516ddf66787901699a1697c63"
+    },
+    {
+      "path": "outputs/h019-head-carrier-20261105/independent-audit-receipt-v1/runtime.json",
+      "sha256": "45c4e8a52393a437767d00befb69df90b3e8ee9f007508d7377803f58f9a38a8"
+    },
+    {
+      "path": "outputs/h019-head-carrier-20261105/independent-audit-receipt-v1/seal.json",
+      "sha256": "8987d099e09efe5dc9f3e68453b8a046175368b5adf958e03dcd34e13353b6e5"
+    },
+    {
+      "path": "outputs/h019-head-carrier-20261105/independent-audit-receipt-v1/spec.json",
+      "sha256": "24d519347adc8ce9af1045a0750e9c692ccd8e8de4ac831ca98ecbe80d67cf73"
+    }
+  ]
+}

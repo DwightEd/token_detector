@@ -1,0 +1,1062 @@
+{
+  "schema": "source14375-duration-carrier-license-v1",
+  "source_id": "14375",
+  "source_only": true,
+  "script_sha256": "f216ed00b19d1b9705ce1a32d029c7c45894530dae2c5d40f4261d962d7d2fc6",
+  "raw_prompt_sha256": "1a070e44949d8eb67fda309a520112ba94f60adb3d1a1a5076af2acec559f171",
+  "prompt_file_sha256": "4a68e75f743741d089b9cc1389ed617ac57a41c5f78c3bab18c7234457d53646",
+  "graph_manifest_sha256": "bc92bef40a71c93fda30242996bba6ee74edcd15eb0557e0245e51fe91be560a",
+  "graph_source_prompt_prefixes": {
+    "00012": {
+      "metadata_sha256": "23fda537409f16a02a4662d51415a7418c110d2d7abb95b6a7db7593ac74368d",
+      "input_ids_file_sha256": "cdfe9a00afe2fc3267868256e0420f05f6e363220028bb9d4d415f9bd97d1aaa",
+      "roles_file_sha256": "4849cc65ffaf4d6687acee673710dd40d1e9da9eaa888e8c0efae27c5b26f845",
+      "prompt_token_strings_decoded": 535,
+      "response_field_decoded": false,
+      "R_token_strings_decoded": 0
+    },
+    "00013": {
+      "metadata_sha256": "0798793bb1f1116dd6b68f586042561060336966be504ea548e4b760ad802ca9",
+      "input_ids_file_sha256": "ab2f3dc4057a2cdd8e2f12c250c88218d7e023d90bcd0896c44ddf7c4969a739",
+      "roles_file_sha256": "fdb2794dc48bb948114aae9395b6f8ae3c92d32a7d418293158c16228d2e3311",
+      "prompt_token_strings_decoded": 535,
+      "response_field_decoded": false,
+      "R_token_strings_decoded": 0
+    }
+  },
+  "P": 535,
+  "chat_prompt_shift": 176,
+  "joined_prompt_piece_characters": 2199,
+  "graph_prompt_prefix_token_text_identical": true,
+  "unit_word_lexicon": "\\b(?:seconds?|secs?|minutes?|mins?|hours?|hrs?|days?|weeks?|months?|years?)\\b",
+  "all_source_time_unit_occurrences": 8,
+  "records": [
+    {
+      "key": "additional_cook_10_12",
+      "number": "10 to 12",
+      "action": "Reduce heat to medium and cook another",
+      "owner": "not explicitly named in the available local source prefix",
+      "kind": "additional_range",
+      "core_closed": false,
+      "condition_status": "owner_unknown_at_carrier",
+      "caveats": [
+        "The excerpt begins mid-procedure. Later beer/bratwurst/onion context cannot be backfilled into carrier77.",
+        "another denotes additional time, not total recipe time."
+      ],
+      "word": "minutes",
+      "unit_token_id": 4520,
+      "absolute_source_token": 77,
+      "token_piece": " minutes",
+      "complete_single_token_unit": true,
+      "role": 0,
+      "passage": 1,
+      "raw_prompt_unit_span": [
+        207,
+        214
+      ],
+      "chat_unit_span": [
+        383,
+        390
+      ],
+      "passage_relative_unit_span": [
+        50,
+        57
+      ],
+      "exact_context": "Reduce heat to medium and cook another 10 to 12 minutes.",
+      "raw_prompt_context_span": [
+        159,
+        215
+      ],
+      "context_token_positions": [
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78
+      ],
+      "raw_prompt_action_span": [
+        159,
+        197
+      ],
+      "action_token_positions": [
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71
+      ],
+      "raw_prompt_numeric_span": [
+        198,
+        206
+      ],
+      "numeric_token_positions": [
+        73,
+        74,
+        75,
+        76
+      ],
+      "full_source_sentence_last_token": 78,
+      "carrier_timing": "Input source token c is fully read; it is not prechoice c-1 predicting the unit.",
+      "unit_relation_availability_not_proof_of_encoding": true,
+      "local_relation_closed_at_or_before_carrier": false,
+      "not_a_R_truth_label": true,
+      "eligible_for_minute_association_probe": false,
+      "eligibility_scope": "Local action-duration and in-sentence method qualifiers only; not all global recipe conditions or a source truth label.",
+      "strict_eligibility_reason": "Owner/object not explicit in available local source prefix."
+    },
+    {
+      "key": "grill_turn_once_5_10",
+      "number": "5 to 10",
+      "action": "Cook the bratwurst on the preheated grill, turning once",
+      "owner": "bratwurst / grill stage",
+      "kind": "range",
+      "core_closed": true,
+      "condition_status": "local_action_and_turn_once_read; exact preheat_temperature_not_yet_read",
+      "caveats": [
+        "The explicit medium-high preheating instruction is later in this passage; carrier126 cannot already read that later value.",
+        "Not an exclusive global bratwurst cooking duration; simmering and another recipe are distinct."
+      ],
+      "word": "minutes",
+      "unit_token_id": 4520,
+      "absolute_source_token": 126,
+      "token_piece": " minutes",
+      "complete_single_token_unit": true,
+      "role": 0,
+      "passage": 1,
+      "raw_prompt_unit_span": [
+        384,
+        391
+      ],
+      "chat_unit_span": [
+        560,
+        567
+      ],
+      "passage_relative_unit_span": [
+        227,
+        234
+      ],
+      "exact_context": "Cook the bratwurst on the preheated grill, turning once, 5 to 10 minutes.",
+      "raw_prompt_context_span": [
+        319,
+        392
+      ],
+      "context_token_positions": [
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "raw_prompt_action_span": [
+        319,
+        374
+      ],
+      "action_token_positions": [
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ],
+      "raw_prompt_numeric_span": [
+        376,
+        383
+      ],
+      "numeric_token_positions": [
+        122,
+        123,
+        124,
+        125
+      ],
+      "full_source_sentence_last_token": 127,
+      "carrier_timing": "Input source token c is fully read; it is not prechoice c-1 predicting the unit.",
+      "unit_relation_availability_not_proof_of_encoding": true,
+      "local_relation_closed_at_or_before_carrier": true,
+      "not_a_R_truth_label": true,
+      "eligible_for_minute_association_probe": true,
+      "eligibility_scope": "Local action-duration and in-sentence method qualifiers only; not all global recipe conditions or a source truth label.",
+      "strict_eligibility_reason": "Explicit local owner/action/range and all in-sentence method qualifiers are available by this whole-unit node."
+    },
+    {
+      "key": "simmer_15_20_a",
+      "number": "15 to 20",
+      "action": "Place pot over medium heat, and simmer",
+      "owner": "the locally established stockpot contents (bratwurst/onions/butter/beer)",
+      "kind": "range",
+      "core_closed": true,
+      "condition_status": "local_pot_medium_heat_action_duration_closed",
+      "duplicate": "simmer_medium_15_20",
+      "caveats": [
+        "Pot contents use a manual local source antecedent; this is not an automatic coreference certificate.",
+        "The second identical instruction is duplicate evidence, not a second independent/additional simmer stage."
+      ],
+      "word": "minutes",
+      "unit_token_id": 4520,
+      "absolute_source_token": 277,
+      "token_piece": " minutes",
+      "complete_single_token_unit": true,
+      "role": 0,
+      "passage": 2,
+      "raw_prompt_unit_span": [
+        927,
+        934
+      ],
+      "chat_unit_span": [
+        1103,
+        1110
+      ],
+      "passage_relative_unit_span": [
+        193,
+        200
+      ],
+      "exact_context": "Place pot over medium heat, and simmer for 15 to 20 minutes.",
+      "raw_prompt_context_span": [
+        875,
+        935
+      ],
+      "context_token_positions": [
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        277,
+        278
+      ],
+      "raw_prompt_action_span": [
+        875,
+        913
+      ],
+      "action_token_positions": [
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270
+      ],
+      "raw_prompt_numeric_span": [
+        918,
+        926
+      ],
+      "numeric_token_positions": [
+        273,
+        274,
+        275,
+        276
+      ],
+      "full_source_sentence_last_token": 278,
+      "carrier_timing": "Input source token c is fully read; it is not prechoice c-1 predicting the unit.",
+      "unit_relation_availability_not_proof_of_encoding": true,
+      "local_relation_closed_at_or_before_carrier": true,
+      "not_a_R_truth_label": true,
+      "eligible_for_minute_association_probe": true,
+      "eligibility_scope": "Local action-duration and in-sentence method qualifiers only; not all global recipe conditions or a source truth label.",
+      "strict_eligibility_reason": "Explicit local owner/action/range and all in-sentence method qualifiers are available by this whole-unit node."
+    },
+    {
+      "key": "simmer_15_20_b",
+      "number": "15 to 20",
+      "action": "Place pot over medium heat, and simmer",
+      "owner": "the same previously established stockpot contents",
+      "kind": "range",
+      "core_closed": true,
+      "condition_status": "local_pot_medium_heat_action_duration_closed",
+      "duplicate": "simmer_medium_15_20",
+      "caveats": [
+        "Exact repeated full instruction; no new pot/object is introduced between repetitions.",
+        "Do not sum the two copies into 30-40 minutes or treat their addresses as mutually exclusive facts."
+      ],
+      "word": "minutes",
+      "unit_token_id": 4520,
+      "absolute_source_token": 303,
+      "token_piece": " minutes",
+      "complete_single_token_unit": true,
+      "role": 0,
+      "passage": 2,
+      "raw_prompt_unit_span": [
+        1026,
+        1033
+      ],
+      "chat_unit_span": [
+        1202,
+        1209
+      ],
+      "passage_relative_unit_span": [
+        292,
+        299
+      ],
+      "exact_context": "Place pot over medium heat, and simmer for 15 to 20 minutes.",
+      "raw_prompt_context_span": [
+        974,
+        1034
+      ],
+      "context_token_positions": [
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303,
+        304
+      ],
+      "raw_prompt_action_span": [
+        974,
+        1012
+      ],
+      "action_token_positions": [
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296
+      ],
+      "raw_prompt_numeric_span": [
+        1017,
+        1025
+      ],
+      "numeric_token_positions": [
+        299,
+        300,
+        301,
+        302
+      ],
+      "full_source_sentence_last_token": 304,
+      "carrier_timing": "Input source token c is fully read; it is not prechoice c-1 predicting the unit.",
+      "unit_relation_availability_not_proof_of_encoding": true,
+      "local_relation_closed_at_or_before_carrier": true,
+      "not_a_R_truth_label": true,
+      "eligible_for_minute_association_probe": true,
+      "eligibility_scope": "Local action-duration and in-sentence method qualifiers only; not all global recipe conditions or a source truth label.",
+      "strict_eligibility_reason": "Explicit local owner/action/range and all in-sentence method qualifiers are available by this whole-unit node."
+    },
+    {
+      "key": "grill_turn_occasionally_10_14",
+      "number": "10 to 14",
+      "action": "Cook bratwurst on preheated grill",
+      "owner": "bratwurst / alternative grill procedure",
+      "kind": "range",
+      "core_closed": true,
+      "condition_status": "nominal_action_duration_closed_but_in_clause_method_follows",
+      "future_phrase": "turning occasionally to brown evenly",
+      "caveats": [
+        "Atcarrier342 the later turning/browning qualifier has not been read.",
+        "Compared with5-10/turning once, this is another recipe/procedure; source does not license a unique universal grill time or a contradiction label."
+      ],
+      "word": "minutes",
+      "unit_token_id": 4520,
+      "absolute_source_token": 342,
+      "token_piece": " minutes",
+      "complete_single_token_unit": true,
+      "role": 0,
+      "passage": 2,
+      "raw_prompt_unit_span": [
+        1146,
+        1153
+      ],
+      "chat_unit_span": [
+        1322,
+        1329
+      ],
+      "passage_relative_unit_span": [
+        412,
+        419
+      ],
+      "exact_context": "Cook bratwurst on preheated grill for 10 to 14 minutes, turning occasionally to brown evenly.",
+      "raw_prompt_context_span": [
+        1099,
+        1192
+      ],
+      "context_token_positions": [
+        327,
+        328,
+        329,
+        330,
+        331,
+        332,
+        333,
+        334,
+        335,
+        336,
+        337,
+        338,
+        339,
+        340,
+        341,
+        342,
+        343,
+        344,
+        345,
+        346,
+        347,
+        348,
+        349
+      ],
+      "raw_prompt_action_span": [
+        1099,
+        1132
+      ],
+      "action_token_positions": [
+        327,
+        328,
+        329,
+        330,
+        331,
+        332,
+        333,
+        334,
+        335
+      ],
+      "raw_prompt_numeric_span": [
+        1137,
+        1145
+      ],
+      "numeric_token_positions": [
+        338,
+        339,
+        340,
+        341
+      ],
+      "full_source_sentence_last_token": 349,
+      "carrier_timing": "Input source token c is fully read; it is not prechoice c-1 predicting the unit.",
+      "unit_relation_availability_not_proof_of_encoding": true,
+      "local_relation_closed_at_or_before_carrier": true,
+      "not_a_R_truth_label": true,
+      "eligible_for_minute_association_probe": false,
+      "eligibility_scope": "Local action-duration and in-sentence method qualifiers only; not all global recipe conditions or a source truth label.",
+      "strict_eligibility_reason": "Following in-sentence turning/browning qualifier is unavailable at the unit node.",
+      "raw_prompt_following_phrase_span": [
+        1155,
+        1191
+      ],
+      "following_phrase_token_positions": [
+        344,
+        345,
+        346,
+        347,
+        348
+      ],
+      "following_phrase_is_after_carrier": true
+    },
+    {
+      "key": "brown_onions_1_2",
+      "number": "1-2",
+      "action": "Brown the onions in the butter",
+      "owner": "onions / browning in butter stage",
+      "kind": "range",
+      "core_closed": true,
+      "condition_status": "local_onions_butter_browning_duration_closed",
+      "caveats": [
+        "Later sentences add frequent stirring and discuss alternative ordering relative to bratwurst; full global procedure/order is not certified atcarrier369.",
+        "This core action is different from simmering pot contents or grilling bratwurst."
+      ],
+      "word": "minutes",
+      "unit_token_id": 4520,
+      "absolute_source_token": 369,
+      "token_piece": " minutes",
+      "complete_single_token_unit": true,
+      "role": 0,
+      "passage": 3,
+      "raw_prompt_unit_span": [
+        1259,
+        1266
+      ],
+      "chat_unit_span": [
+        1435,
+        1442
+      ],
+      "passage_relative_unit_span": [
+        55,
+        62
+      ],
+      "exact_context": "Brown the onions in the butter for 1-2 minutes.",
+      "raw_prompt_context_span": [
+        1220,
+        1267
+      ],
+      "context_token_positions": [
+        358,
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        370
+      ],
+      "raw_prompt_action_span": [
+        1220,
+        1250
+      ],
+      "action_token_positions": [
+        358,
+        359,
+        360,
+        361,
+        362,
+        363
+      ],
+      "raw_prompt_numeric_span": [
+        1255,
+        1258
+      ],
+      "numeric_token_positions": [
+        366,
+        367,
+        368
+      ],
+      "full_source_sentence_last_token": 370,
+      "carrier_timing": "Input source token c is fully read; it is not prechoice c-1 predicting the unit.",
+      "unit_relation_availability_not_proof_of_encoding": true,
+      "local_relation_closed_at_or_before_carrier": true,
+      "not_a_R_truth_label": true,
+      "eligible_for_minute_association_probe": true,
+      "eligibility_scope": "Local action-duration and in-sentence method qualifiers only; not all global recipe conditions or a source truth label.",
+      "strict_eligibility_reason": "Explicit local owner/action/range and all in-sentence method qualifiers are available by this whole-unit node."
+    },
+    {
+      "key": "storage_about5_days",
+      "number": "5",
+      "action": "ooked bratwurst can last for about",
+      "owner": "literal source subject is truncated: ooked bratwurst",
+      "kind": "approximate",
+      "core_closed": false,
+      "condition_status": "storage_condition_fridge_is_future; truncated_state_modifier_unknown",
+      "future_phrase": "in the fridge",
+      "caveats": [
+        "Do not silently repair ooked to cooked or infer a universally unconditioned5-day lifetime.",
+        "The fridge condition appears after unit days; not a minutes carrier."
+      ],
+      "word": "days",
+      "unit_token_id": 2919,
+      "absolute_source_token": 437,
+      "token_piece": " days",
+      "complete_single_token_unit": true,
+      "role": 0,
+      "passage": 3,
+      "raw_prompt_unit_span": [
+        1548,
+        1552
+      ],
+      "chat_unit_span": [
+        1724,
+        1728
+      ],
+      "passage_relative_unit_span": [
+        344,
+        348
+      ],
+      "exact_context": "ooked bratwurst can last for about 5 days in the fridge.",
+      "raw_prompt_context_span": [
+        1511,
+        1567
+      ],
+      "context_token_positions": [
+        426,
+        427,
+        428,
+        429,
+        430,
+        431,
+        432,
+        433,
+        434,
+        435,
+        436,
+        437,
+        438,
+        439,
+        440,
+        441
+      ],
+      "raw_prompt_action_span": [
+        1511,
+        1545
+      ],
+      "action_token_positions": [
+        426,
+        427,
+        428,
+        429,
+        430,
+        431,
+        432,
+        433,
+        434
+      ],
+      "raw_prompt_numeric_span": [
+        1546,
+        1547
+      ],
+      "numeric_token_positions": [
+        436
+      ],
+      "full_source_sentence_last_token": 441,
+      "carrier_timing": "Input source token c is fully read; it is not prechoice c-1 predicting the unit.",
+      "unit_relation_availability_not_proof_of_encoding": true,
+      "local_relation_closed_at_or_before_carrier": false,
+      "not_a_R_truth_label": true,
+      "eligible_for_minute_association_probe": false,
+      "eligibility_scope": "Local action-duration and in-sentence method qualifiers only; not all global recipe conditions or a source truth label.",
+      "strict_eligibility_reason": "Not a repeated minute ID; fridge condition follows unit and raw subject is truncated.",
+      "raw_prompt_following_phrase_span": [
+        1553,
+        1566
+      ],
+      "following_phrase_token_positions": [
+        438,
+        439,
+        440
+      ],
+      "following_phrase_is_after_carrier": true
+    },
+    {
+      "key": "storage_up_to3_months",
+      "number": "3",
+      "action": "store cooked bratwurst in the freezer",
+      "owner": "cooked bratwurst / freezer storage",
+      "kind": "upper_bound",
+      "core_closed": true,
+      "condition_status": "freezer_and_up_to_read_before_carrier; trailing_freezer_is_redundant",
+      "future_phrase": "in the freezer",
+      "future_is_new_condition": false,
+      "caveats": [
+        "Full local storage-condition/upper-bound relation is already available; the repeated trailing condition adds no new storage setting.",
+        "Storage is not cooking duration; months has only one source occurrence."
+      ],
+      "word": "months",
+      "unit_token_id": 4038,
+      "absolute_source_token": 458,
+      "token_piece": " months",
+      "complete_single_token_unit": true,
+      "role": 0,
+      "passage": 3,
+      "raw_prompt_unit_span": [
+        1631,
+        1637
+      ],
+      "chat_unit_span": [
+        1807,
+        1813
+      ],
+      "passage_relative_unit_span": [
+        427,
+        433
+      ],
+      "exact_context": "You can also store cooked bratwurst in the freezer for up to 3 months in the freezer.",
+      "raw_prompt_context_span": [
+        1568,
+        1653
+      ],
+      "context_token_positions": [
+        442,
+        443,
+        444,
+        445,
+        446,
+        447,
+        448,
+        449,
+        450,
+        451,
+        452,
+        453,
+        454,
+        455,
+        456,
+        457,
+        458,
+        459,
+        460,
+        461,
+        462
+      ],
+      "raw_prompt_action_span": [
+        1581,
+        1618
+      ],
+      "action_token_positions": [
+        445,
+        446,
+        447,
+        448,
+        449,
+        450,
+        451,
+        452
+      ],
+      "raw_prompt_numeric_span": [
+        1629,
+        1630
+      ],
+      "numeric_token_positions": [
+        457
+      ],
+      "full_source_sentence_last_token": 462,
+      "carrier_timing": "Input source token c is fully read; it is not prechoice c-1 predicting the unit.",
+      "unit_relation_availability_not_proof_of_encoding": true,
+      "local_relation_closed_at_or_before_carrier": true,
+      "not_a_R_truth_label": true,
+      "eligible_for_minute_association_probe": false,
+      "eligibility_scope": "Local action-duration and in-sentence method qualifiers only; not all global recipe conditions or a source truth label.",
+      "strict_eligibility_reason": "Locally conditioned storage relation available, but months is a singleton different unit ID.",
+      "raw_prompt_following_phrase_span": [
+        1638,
+        1652
+      ],
+      "following_phrase_token_positions": [
+        459,
+        460,
+        461
+      ],
+      "following_phrase_is_after_carrier": true
+    }
+  ],
+  "strict_minute_eligibility": {
+    "positions": [
+      126,
+      277,
+      303,
+      369
+    ],
+    "all_same_ID_pairs": 15,
+    "eligible_pairs": 6,
+    "EQUIV_pairs": 1,
+    "SEM_pairs": 5,
+    "definition": "Complete local owner/action/time-range relation with in-sentence method qualifiers already consumed; future cross-sentence/global procedure remains unknown."
+  },
+  "pairs": [
+    {
+      "id": "minutes-77-126",
+      "carrier_positions": [
+        77,
+        126
+      ],
+      "carrier_keys": [
+        "additional_cook_10_12",
+        "grill_turn_once_5_10"
+      ],
+      "unit_token_id": 4520,
+      "eligible": false,
+      "kind": "UNKNOWN",
+      "reason": "At least one carrier lacks the fixed local owner/in-sentence-condition eligibility; retain without backfilling from future text."
+    },
+    {
+      "id": "minutes-77-277",
+      "carrier_positions": [
+        77,
+        277
+      ],
+      "carrier_keys": [
+        "additional_cook_10_12",
+        "simmer_15_20_a"
+      ],
+      "unit_token_id": 4520,
+      "eligible": false,
+      "kind": "UNKNOWN",
+      "reason": "At least one carrier lacks the fixed local owner/in-sentence-condition eligibility; retain without backfilling from future text."
+    },
+    {
+      "id": "minutes-77-303",
+      "carrier_positions": [
+        77,
+        303
+      ],
+      "carrier_keys": [
+        "additional_cook_10_12",
+        "simmer_15_20_b"
+      ],
+      "unit_token_id": 4520,
+      "eligible": false,
+      "kind": "UNKNOWN",
+      "reason": "At least one carrier lacks the fixed local owner/in-sentence-condition eligibility; retain without backfilling from future text."
+    },
+    {
+      "id": "minutes-77-342",
+      "carrier_positions": [
+        77,
+        342
+      ],
+      "carrier_keys": [
+        "additional_cook_10_12",
+        "grill_turn_occasionally_10_14"
+      ],
+      "unit_token_id": 4520,
+      "eligible": false,
+      "kind": "UNKNOWN",
+      "reason": "At least one carrier lacks the fixed local owner/in-sentence-condition eligibility; retain without backfilling from future text."
+    },
+    {
+      "id": "minutes-77-369",
+      "carrier_positions": [
+        77,
+        369
+      ],
+      "carrier_keys": [
+        "additional_cook_10_12",
+        "brown_onions_1_2"
+      ],
+      "unit_token_id": 4520,
+      "eligible": false,
+      "kind": "UNKNOWN",
+      "reason": "At least one carrier lacks the fixed local owner/in-sentence-condition eligibility; retain without backfilling from future text."
+    },
+    {
+      "id": "minutes-126-277",
+      "carrier_positions": [
+        126,
+        277
+      ],
+      "carrier_keys": [
+        "grill_turn_once_5_10",
+        "simmer_15_20_a"
+      ],
+      "unit_token_id": 4520,
+      "eligible": true,
+      "kind": "SEM",
+      "reason": "Distinct locally closed source action-duration facts; not a correct/wrong or universal-duration label."
+    },
+    {
+      "id": "minutes-126-303",
+      "carrier_positions": [
+        126,
+        303
+      ],
+      "carrier_keys": [
+        "grill_turn_once_5_10",
+        "simmer_15_20_b"
+      ],
+      "unit_token_id": 4520,
+      "eligible": true,
+      "kind": "SEM",
+      "reason": "Distinct locally closed source action-duration facts; not a correct/wrong or universal-duration label."
+    },
+    {
+      "id": "minutes-126-342",
+      "carrier_positions": [
+        126,
+        342
+      ],
+      "carrier_keys": [
+        "grill_turn_once_5_10",
+        "grill_turn_occasionally_10_14"
+      ],
+      "unit_token_id": 4520,
+      "eligible": false,
+      "kind": "UNKNOWN",
+      "reason": "At least one carrier lacks the fixed local owner/in-sentence-condition eligibility; retain without backfilling from future text."
+    },
+    {
+      "id": "minutes-126-369",
+      "carrier_positions": [
+        126,
+        369
+      ],
+      "carrier_keys": [
+        "grill_turn_once_5_10",
+        "brown_onions_1_2"
+      ],
+      "unit_token_id": 4520,
+      "eligible": true,
+      "kind": "SEM",
+      "reason": "Distinct locally closed source action-duration facts; not a correct/wrong or universal-duration label."
+    },
+    {
+      "id": "minutes-277-303",
+      "carrier_positions": [
+        277,
+        303
+      ],
+      "carrier_keys": [
+        "simmer_15_20_a",
+        "simmer_15_20_b"
+      ],
+      "unit_token_id": 4520,
+      "eligible": true,
+      "kind": "EQUIV",
+      "reason": "Exact duplicate same local simmer instruction; both addresses license the same fact."
+    },
+    {
+      "id": "minutes-277-342",
+      "carrier_positions": [
+        277,
+        342
+      ],
+      "carrier_keys": [
+        "simmer_15_20_a",
+        "grill_turn_occasionally_10_14"
+      ],
+      "unit_token_id": 4520,
+      "eligible": false,
+      "kind": "UNKNOWN",
+      "reason": "At least one carrier lacks the fixed local owner/in-sentence-condition eligibility; retain without backfilling from future text."
+    },
+    {
+      "id": "minutes-277-369",
+      "carrier_positions": [
+        277,
+        369
+      ],
+      "carrier_keys": [
+        "simmer_15_20_a",
+        "brown_onions_1_2"
+      ],
+      "unit_token_id": 4520,
+      "eligible": true,
+      "kind": "SEM",
+      "reason": "Distinct locally closed source action-duration facts; not a correct/wrong or universal-duration label."
+    },
+    {
+      "id": "minutes-303-342",
+      "carrier_positions": [
+        303,
+        342
+      ],
+      "carrier_keys": [
+        "simmer_15_20_b",
+        "grill_turn_occasionally_10_14"
+      ],
+      "unit_token_id": 4520,
+      "eligible": false,
+      "kind": "UNKNOWN",
+      "reason": "At least one carrier lacks the fixed local owner/in-sentence-condition eligibility; retain without backfilling from future text."
+    },
+    {
+      "id": "minutes-303-369",
+      "carrier_positions": [
+        303,
+        369
+      ],
+      "carrier_keys": [
+        "simmer_15_20_b",
+        "brown_onions_1_2"
+      ],
+      "unit_token_id": 4520,
+      "eligible": true,
+      "kind": "SEM",
+      "reason": "Distinct locally closed source action-duration facts; not a correct/wrong or universal-duration label."
+    },
+    {
+      "id": "minutes-342-369",
+      "carrier_positions": [
+        342,
+        369
+      ],
+      "carrier_keys": [
+        "grill_turn_occasionally_10_14",
+        "brown_onions_1_2"
+      ],
+      "unit_token_id": 4520,
+      "eligible": false,
+      "kind": "UNKNOWN",
+      "reason": "At least one carrier lacks the fixed local owner/in-sentence-condition eligibility; retain without backfilling from future text."
+    }
+  ],
+  "same_unit_token_ID_groups": {
+    "4520": [
+      77,
+      126,
+      277,
+      303,
+      342,
+      369
+    ],
+    "2919": [
+      437
+    ],
+    "4038": [
+      458
+    ]
+  },
+  "only_repeated_unit_ID": 4520,
+  "genuine_duplicate_instruction_groups": {
+    "simmer_medium_15_20": [
+      277,
+      303
+    ]
+  },
+  "no_forced_global_owner_value_bijection": true,
+  "exclusions": [
+    "once/frequently/occasionally are process-count/frequency qualifiers, not duration-unit carriers.",
+    "date/expiration date and Prep/Cook/Ready In are temporal labels/header fragments, not numeric duration-unit occurrences.",
+    "No core action closure is inferred from a future source phrase; no R text, effect, GT or model output assessment."
+  ],
+  "limitations": [
+    "Manual source-only licence, not an automatic parser or a real-world truth certificate.",
+    "Same complete unit ID guarantees lexical matching, not identical action/object/condition or interchangeable durations.",
+    "Two grill durations are source alternatives with different procedural qualifiers, not a licensed contradiction.",
+    "Carrier prefix availability does not prove any layer encodes/uses the relation; layer0 V is lexical by prior qualification.",
+    "No query choice, candidate erasure kernel, risk, effect, layer/head selection, scoring or detection result is produced."
+  ],
+  "new_model_calls": 0,
+  "new_tokenizer_calls": 0,
+  "new_risk_scores": 0,
+  "GT_reads": 0,
+  "R_token_text_values_decoded": 0,
+  "response_JSON_values_decoded": 0
+}

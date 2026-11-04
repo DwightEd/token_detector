@@ -1,0 +1,280 @@
+{
+  "schema": "attributed-graph2-qualification-v1",
+  "script_sha256": "aa9a2ea58ac6c918e7664fddaaf2a637f3decf106db753b80454c03d382b9487",
+  "policy_sha256": "eecd63bd0aaee3dd5101533065095f3424bfef8d5ed1fa90c0fde0f5eca7f152",
+  "download_completion_sha256": "0176bfa84ae24b054dc45087afc6424994e2dc54a28e0b021a30c91f66f4520a",
+  "original_manifest_sha256": "bc92bef40a71c93fda30242996bba6ee74edcd15eb0557e0245e51fe91be560a",
+  "settings_sha256": "e70c24cce53448e3d4b54ed202ec48ba3d09b64bd046167834262baec81a8a96",
+  "executed_source_sha256": {
+    "executed_sample_graph_capture.py": "d9373e3020ac31e44449b709e49799689f7a2836451e57ef1b35d1520eb9c11c",
+    "executed_sample_graph.py": "ba7408a1b9b51484997f0fc7324eb3fdb62a004368e2c74634976739b94aee0d",
+    "executed_adoption_probe.py": "9c43574ee77ba9db1b92fe916a769007a7b3cb248672900c51cde0b227a6700f"
+  },
+  "original_qualification_sha256": "aca77ed5668f7766343422a6e3e2706c0516783352093fa1a85a5f9b2e2cd61c",
+  "replay_qualification_sha256": "9f369df31dabf9ac79d5bd2d0e60d837f5e736afc01699376041cb8ba3cfdca8",
+  "cases": {
+    "00012": {
+      "source_id": "14375",
+      "seed": 0,
+      "P": 535,
+      "T": 196,
+      "input_nodes": 730,
+      "identity_axes_roles_passed": true,
+      "role_counts": {
+        "0": 427,
+        "1": 105,
+        "2": 195,
+        "3": 3
+      },
+      "source_mask_sha256": "fa4256f3d5246ddc0602dd665d52bfedc345302f131e52633b53fe65c8342619",
+      "endpoint_schema_finite": {
+        "top_ids": {
+          "shape": [
+            196,
+            8
+          ],
+          "dtype": "int64",
+          "finite": true
+        },
+        "top_logits": {
+          "shape": [
+            196,
+            8
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "log_normalizer": {
+          "shape": [
+            196
+          ],
+          "dtype": "float32",
+          "finite": true
+        }
+      },
+      "native_tensors": {
+        "attention": {
+          "coordinates": 545689600,
+          "nonfinite": 0,
+          "off_BF16_lattice": 0
+        },
+        "values": {
+          "coordinates": 23920640,
+          "nonfinite": 0,
+          "off_BF16_lattice": 0
+        },
+        "residual": {
+          "coordinates": 98672640,
+          "nonfinite": 0,
+          "off_BF16_lattice": 0
+        },
+        "post_attention": {
+          "coordinates": 95682560,
+          "nonfinite": 0,
+          "off_BF16_lattice": 0
+        },
+        "mlp_update": {
+          "coordinates": 95682560,
+          "nonfinite": 0,
+          "off_BF16_lattice": 0
+        }
+      },
+      "BF16_native_residual_addition": {
+        "exact": true,
+        "coordinates": 95682560,
+        "different_stored_coordinates": 0,
+        "max_RNE_absolute_difference": 0.0,
+        "max_unrounded_FP32_difference_descriptive": 0.75
+      },
+      "attention": {
+        "future_nonzero": 0,
+        "outside_probability_range": 0,
+        "rows": 747520,
+        "row_sum_violations": 0,
+        "max_absolute_row_sum_error": 0.003022800199687481,
+        "row_sum_min": 0.9969771998003125,
+        "row_sum_max": 1.0029805510293954,
+        "frozen_bound": 0.003949994991022727
+      },
+      "lexical_negative_controls": {
+        "all_repeated_input_IDs": {
+          "repeated_id_groups": 105,
+          "compared_occurrences": 504,
+          "embedding0": {
+            "exact": true,
+            "coordinates": 2064384,
+            "different_stored_coordinates": 0,
+            "max_absolute_difference": 0.0
+          },
+          "V0": {
+            "exact": true,
+            "coordinates": 516096,
+            "different_stored_coordinates": 0,
+            "max_absolute_difference": 0.0
+          }
+        },
+        "source_only_repeated_IDs": {
+          "repeated_id_groups": 65,
+          "compared_occurrences": 277,
+          "embedding0": {
+            "exact": true,
+            "coordinates": 1134592,
+            "different_stored_coordinates": 0,
+            "max_absolute_difference": 0.0
+          },
+          "V0": {
+            "exact": true,
+            "coordinates": 283648,
+            "different_stored_coordinates": 0,
+            "max_absolute_difference": 0.0
+          }
+        }
+      },
+      "passed": true
+    },
+    "00013": {
+      "source_id": "14375",
+      "seed": 1,
+      "P": 535,
+      "T": 147,
+      "input_nodes": 681,
+      "identity_axes_roles_passed": true,
+      "role_counts": {
+        "0": 427,
+        "1": 105,
+        "2": 146,
+        "3": 3
+      },
+      "source_mask_sha256": "fa4256f3d5246ddc0602dd665d52bfedc345302f131e52633b53fe65c8342619",
+      "endpoint_schema_finite": {
+        "top_ids": {
+          "shape": [
+            147,
+            8
+          ],
+          "dtype": "int64",
+          "finite": true
+        },
+        "top_logits": {
+          "shape": [
+            147,
+            8
+          ],
+          "dtype": "float32",
+          "finite": true
+        },
+        "log_normalizer": {
+          "shape": [
+            147
+          ],
+          "dtype": "float32",
+          "finite": true
+        }
+      },
+      "native_tensors": {
+        "attention": {
+          "coordinates": 474891264,
+          "nonfinite": 0,
+          "off_BF16_lattice": 0
+        },
+        "values": {
+          "coordinates": 22315008,
+          "nonfinite": 0,
+          "off_BF16_lattice": 0
+        },
+        "residual": {
+          "coordinates": 92049408,
+          "nonfinite": 0,
+          "off_BF16_lattice": 0
+        },
+        "post_attention": {
+          "coordinates": 89260032,
+          "nonfinite": 0,
+          "off_BF16_lattice": 0
+        },
+        "mlp_update": {
+          "coordinates": 89260032,
+          "nonfinite": 0,
+          "off_BF16_lattice": 0
+        }
+      },
+      "BF16_native_residual_addition": {
+        "exact": true,
+        "coordinates": 89260032,
+        "different_stored_coordinates": 0,
+        "max_RNE_absolute_difference": 0.0,
+        "max_unrounded_FP32_difference_descriptive": 0.75
+      },
+      "attention": {
+        "future_nonzero": 0,
+        "outside_probability_range": 0,
+        "rows": 697344,
+        "row_sum_violations": 0,
+        "max_absolute_row_sum_error": 0.002946905791759491,
+        "row_sum_min": 0.9970530942082405,
+        "row_sum_max": 1.0029296875,
+        "frozen_bound": 0.003947062461827992
+      },
+      "lexical_negative_controls": {
+        "all_repeated_input_IDs": {
+          "repeated_id_groups": 100,
+          "compared_occurrences": 464,
+          "embedding0": {
+            "exact": true,
+            "coordinates": 1900544,
+            "different_stored_coordinates": 0,
+            "max_absolute_difference": 0.0
+          },
+          "V0": {
+            "exact": true,
+            "coordinates": 475136,
+            "different_stored_coordinates": 0,
+            "max_absolute_difference": 0.0
+          }
+        },
+        "source_only_repeated_IDs": {
+          "repeated_id_groups": 65,
+          "compared_occurrences": 277,
+          "embedding0": {
+            "exact": true,
+            "coordinates": 1134592,
+            "different_stored_coordinates": 0,
+            "max_absolute_difference": 0.0
+          },
+          "V0": {
+            "exact": true,
+            "coordinates": 283648,
+            "different_stored_coordinates": 0,
+            "max_absolute_difference": 0.0
+          }
+        }
+      },
+      "passed": true
+    }
+  },
+  "same_prompt_embedding0_cross_graph": {
+    "exact": true,
+    "coordinates": 2191360,
+    "different_stored_coordinates": 0,
+    "max_absolute_difference": 0.0
+  },
+  "passed": true,
+  "numerical_status": "qualified",
+  "residual_slot32": "Final decoder output BEFORE final RMSNorm; distinct from replay hidden[32]",
+  "precision_scope": "Actual BF16 tensors losslessly stored F32; no H018 FP32 empirical tolerance",
+  "large_original_files_rehashed": false,
+  "entropy_effects_GT_decoded": false,
+  "new_model_calls": 0,
+  "new_head_calls": 0,
+  "tokenizer_calls": 0,
+  "new_risk_scores": 0,
+  "limitations": [
+    "BF16/FP32 row-mass theorem is conditional on the stated positive-normalization arithmetic; not a CUDA full-kernel/network proof.",
+    "No independent A*V/W_O projection check: native projected attention O and original weight SHA are not saved here.",
+    "No full-graph versus cached native/replay float identity presumed; common prefix after BF16 GEMM can depend numerically on total shape.",
+    "Lexical layer0 equality is an expected structural negative control, not semantic binding discovery.",
+    "Model metadata has sizes/mtimes, not original cryptographic weight identity; no truth/detector/generalization claim."
+  ],
+  "elapsed_seconds": 14.714159300085157,
+  "numpy": "2.4.6"
+}
