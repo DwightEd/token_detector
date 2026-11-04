@@ -153,6 +153,15 @@ def parser() -> argparse.ArgumentParser:
     operator_binding.add_argument('--device', default='cuda:0')
     operator_binding.add_argument('--prepare-only', action='store_true')
     operator_binding.add_argument('--plan', type=Path)
+    operator_owner = transfers.add_parser('observe-operator-owner',
+        help='two constructed owner controls using frozen local readout; no annotations or AUROC')
+    for option in ('protocol', 'axes', 'prepared', 'frontend-contract', 'baseline', 'model',
+                   'asset-manifest', 'asset-verification', 'asset-state',
+                   'head-qualification', 'capture-root', 'output'):
+        operator_owner.add_argument('--' + option, type=Path, required=True)
+    operator_owner.add_argument('--device', default='cuda:0')
+    operator_owner.add_argument('--prepare-only', action='store_true')
+    operator_owner.add_argument('--plan', type=Path)
     semantic = transfers.add_parser('semantic-qualify', help='seal label-free source observations without scalar scores')
     semantic.add_argument('--inputs', type=Path, required=True)
     semantic.add_argument('--protocol', type=Path, required=True)
@@ -654,6 +663,13 @@ def main() -> None:
             print('Operator binding finite stage: ' +
                   ('prepared; 0 model calls' if args.prepare_only else
                    str(report['actual_counts']) + '; no AUROC or efficacy claim'))
+        elif args.transfer_stage == 'observe-operator-owner':
+            from .operator_owner_observation import run
+
+            report = run(args)
+            print('Operator owner finite control: ' +
+                  ('prepared; 0 model calls' if args.prepare_only else
+                   str(report['actual_counts']) + '; constructed controls, no natural AUROC'))
         elif args.transfer_stage == 'observe-relation-scope':
             from .relation_scope_observation import run
 
