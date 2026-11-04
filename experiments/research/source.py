@@ -2,29 +2,26 @@
 
 import numpy as np
 
-from .model import (
+from myproject.model import (
     QUERY_CHUNK,
     attention_backend,
+    continuation_logits,
     input_ids,
     prefill,
     score_continuation,
 )
-from .routing import observe_route
+from experiments.research.routing import observe_route
 
 
 def source_full(model, cache, prompt, answer, source_mask, grams, on_logits=None):
-    queries = [prompt[-1], *answer[:-1]]
+    chunks = continuation_logits(model, cache, prompt[-1], answer)
     likelihoods = []
     routes = []
     energies = {}
     with attention_backend(model, "eager"):
         for start in range(0, len(answer), QUERY_CHUNK):
             with observe_route(model, cache, grams, energies, len(prompt), source_mask, start) as layers:
-                hidden = model.model(
-                    input_ids=input_ids(model, queries[start:start + QUERY_CHUNK]),
-                    past_key_values=cache, use_cache=True, return_dict=True,
-                ).last_hidden_state[0]
-            native = model.lm_head(hidden)
+                _, native = next(chunks)
             if on_logits is not None:
                 on_logits(start, native)
             logits = native.float().log_softmax(-1)

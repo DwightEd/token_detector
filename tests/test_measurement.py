@@ -8,8 +8,8 @@ import torch
 from transformers import LlamaConfig, LlamaForCausalLM
 
 from myproject.model import attention_backend, prefill
-from myproject.observer import Observer
-from myproject.source import source_full
+from experiments.research.observation import Observer
+from experiments.research.source import source_full
 
 
 def dense_logp(model, prompt, answer):

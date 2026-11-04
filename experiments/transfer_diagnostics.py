@@ -11,7 +11,7 @@ from experiments.fit_ablation import verify_seal
 from experiments.native_dataset import read_native
 from experiments.provenance import completed_identity, research_identity
 from experiments.research.table_bindings import scores as binding_scores
-from myproject.shared import SharedDetector
+from experiments.research.readouts import SharedDetector
 
 
 def alarm(values):
@@ -44,7 +44,7 @@ def check_derived(output, records):
 
 def fit_shared_prior(native, plan, samples, records):
     """Fit one source-balanced prior from the declared unlabeled FIT observations."""
-    from myproject.pooling import fit_prior, population_spans
+    from experiments.research.prior import fit_prior, population_spans
 
     blocks = {key: [] for key in ['contrast', 'answer', 'unit', 'source']}
     population = []
@@ -136,7 +136,7 @@ def diagnose(native, scores, output, protocol, constraint_chain=False, method='b
                                   raw_empty_gap=contrast[:, 0], matched_native_nll=-world['logp'][:, 0])
                 witnesses = []
             elif method == 'prior_fit':
-                from myproject.pooling import grouped_scores
+                from experiments.research.pooling import grouped_scores
 
                 pack = {key: original[key] for key in ['delta', 'target', 'answer_index', 'unit_index']}
                 fitted = grouped_scores(pack['delta'][:, 1], pack['answer_index'],
@@ -151,13 +151,13 @@ def diagnose(native, scores, output, protocol, constraint_chain=False, method='b
                 values = shared_exploration(pack, sample.response, original['offsets'], sample.task)
                 witnesses = []
             elif method == 'pooling':
-                from myproject.pooling import grouped_scores
-                from myproject.detector import unit_ranges
+                from experiments.research.pooling import grouped_scores
+                from myproject.measure import unit_ranges
 
                 starts, stops = unit_ranges(original['answer_index'], original['unit_index'])
                 limits = np.repeat(np.log(stops-starts), stops-starts)
                 values, witnesses = {}, []
-                from myproject.detector import RECIPES, source_values
+                from experiments.research.r4 import RECIPES, source_values
 
                 pack = {key: original[key] for key in ['delta', 'target', 'answer_index', 'unit_index']}
                 point = (raw['point'] if 'point' in raw else

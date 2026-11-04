@@ -63,7 +63,7 @@ def localization_diagnostics(labels, scores, answer_index, unit_index):
     valid-token axis, resetting at answer boundaries. Each positive stratum is
     ranked against all original clean tokens; other positives are excluded.
     """
-    from myproject.detector import unit_ranges
+    from myproject.measure import unit_ranges
 
     labels, scores = np.asarray(labels, bool), np.asarray(scores)
     answer_index, unit_index = np.asarray(answer_index), np.asarray(unit_index)

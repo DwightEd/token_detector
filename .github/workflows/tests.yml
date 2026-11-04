@@ -23,6 +23,7 @@ jobs:
       - name: Test installed packages outside the checkout
         run: |
           cd "$RUNNER_TEMP"
+          token-detect --help
           r4-detect --help
           r4-experiment --help
           python -m pytest --import-mode=importlib "$GITHUB_WORKSPACE/tests" -q

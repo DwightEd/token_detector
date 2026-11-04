@@ -2,8 +2,8 @@
 
 import numpy as np
 
-from myproject.pooling import population_spans
-from myproject.detector import unit_ranges
+from experiments.research.prior import population_spans
+from myproject.measure import unit_ranges
 
 EPSILON = 1e-12
 

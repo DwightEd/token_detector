@@ -12,10 +12,10 @@ from experiments.fit_ablation import evaluate, verify_seal
 from experiments.pooling_run import _unit_index
 from experiments.provenance import completed_identity, research_identity
 from experiments.research.delta_local import EPSILON, direction_scores, fit_whitening, whiten
-from myproject.pooling import grouped_scores
+from experiments.research.pooling import grouped_scores
 from experiments.span_pilot import load_batches, validated_inputs
-from myproject.detector import Detector
-from myproject.measure import answer_rows
+from experiments.research.r4 import Detector
+from experiments.research.measurement import answer_rows
 
 METHODS = {'punct': 'punct', 'dependency': 'direct_mdl'}
 SYSTEMS = ['direction_dependency', 'direction_punct', 'whitened_direction_dependency',
@@ -102,9 +102,9 @@ def validate(root):
 def collect(root):
     import torch
     from experiments.delta_observe import hidden_trace
-    from myproject.attention import attention_profiles
+    from experiments.research.attention import attention_profiles
     from myproject.model import load_model
-    from myproject.segmentation import legal_atoms, segment
+    from experiments.research.segmentation import legal_atoms, segment
 
     plan, inputs = validate(root)
     identity = research_identity()
@@ -297,7 +297,7 @@ def evaluation_gate(root):
 
 def evaluate_cohort(root, name):
     from experiments.evaluate import official_labels, ranking
-    from myproject.detector import unit_ranges
+    from myproject.measure import unit_ranges
 
     plan = evaluation_gate(root)
     output = root/f'scores_{name}'

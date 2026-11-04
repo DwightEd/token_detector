@@ -5,7 +5,8 @@ from pathlib import Path
 
 import numpy as np
 
-from .graph import smooth_scores
+from experiments.research.chain import smooth_scores
+from myproject.measure import unit_ranges
 
 QUANTILES = np.linspace(0, 1, 10001)
 
@@ -26,14 +27,6 @@ RECIPES = {
     "Summary": Recipe("full", .25, 4, .25, 0.),
     "Data2txt": Recipe("pair", .1, 4, .25, 0.),
 }
-
-
-def unit_ranges(answer_index: np.ndarray, unit_index: np.ndarray) -> tuple:
-    """Return contiguous answer/unit ranges on the original packed row order."""
-    changed = ((answer_index[1:] != answer_index[:-1])
-               | (unit_index[1:] != unit_index[:-1]))
-    starts = np.r_[0, np.flatnonzero(changed) + 1]
-    return starts, np.r_[starts[1:], len(answer_index)]
 
 
 def quantile_rank(values: np.ndarray, reference: np.ndarray) -> np.ndarray:

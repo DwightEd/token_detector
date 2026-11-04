@@ -12,9 +12,9 @@ from experiments.local_evaluation import paired_span_differences
 from experiments.native_dataset import read_native
 from experiments.prevalence_probe import influence, select_span_candidates, span_candidates
 from experiments.provenance import completed_identity, research_identity
-from myproject.detector import unit_ranges
-from myproject.sequence import witness_emissions
-from myproject.shared import SharedDetector
+from myproject.measure import unit_ranges
+from experiments.research.sequence import witness_emissions
+from experiments.research.readouts import SharedDetector
 
 
 METHODS = ('witness', 'matched_local', 'symmetric_local', 'fixed_local', 'fixed_persistence')

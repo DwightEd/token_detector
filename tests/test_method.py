@@ -4,8 +4,8 @@ import itertools
 
 import numpy as np
 
-from myproject.detector import Detector, target_window_mean
-from myproject.graph import chain_log_odds, smooth_scores
+from experiments.research.r4 import Detector, target_window_mean
+from experiments.research.chain import chain_log_odds, smooth_scores
 from experiments.data import select_rows
 
 

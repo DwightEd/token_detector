@@ -2,8 +2,8 @@
 
 import numpy as np
 
-from myproject.detector import unit_ranges
-from myproject.sequence import persistent_scores
+from myproject.measure import unit_ranges
+from experiments.research.sequence import persistent_scores
 
 
 def span_score_components(scores, answer_index, unit_index):

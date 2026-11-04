@@ -3,7 +3,7 @@
 import numpy as np
 from sklearn.metrics import roc_auc_score
 
-from myproject.detector import unit_ranges
+from myproject.measure import unit_ranges
 
 
 def _pair_counts(labels, scores):

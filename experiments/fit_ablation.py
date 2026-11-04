@@ -8,7 +8,7 @@ import numpy as np
 from experiments import data
 from experiments.provenance import completed_identity, research_identity
 from experiments.span_pilot import load_batches, validated_inputs
-from myproject.detector import Detector
+from experiments.research.r4 import Detector
 
 # Context, individual observation, calibration, reference population. No label search.
 SYSTEMS = {

@@ -9,9 +9,9 @@ from experiments import data
 from experiments.datasets import read_jsonl
 from experiments.evaluate import token_labels
 from experiments.provenance import completed_identity, research_identity
-from myproject.pooling import grouped_scores
-from myproject.detector import Detector
-from myproject.measure import answer_rows
+from experiments.research.pooling import grouped_scores
+from experiments.research.r4 import Detector
+from experiments.research.measurement import answer_rows
 
 
 def audit(cache, output, ids):

@@ -10,9 +10,9 @@ from experiments import data
 from experiments.datasets import _check_spans, read_jsonl, read_samples
 from experiments.fit_ablation import verify_seal
 from experiments.provenance import completed_identity, research_identity
-from myproject.detector import Detector
-from myproject.distribution import DISTRIBUTION_FIELDS
-from myproject.shared import METHODS, SEQUENCE_METHODS, SHARED_METHODS, WITNESS_METHODS, SharedDetector
+from experiments.research.r4 import Detector
+from experiments.research.distribution import DISTRIBUTION_FIELDS
+from experiments.research.readouts import METHODS, SEQUENCE_METHODS, SHARED_METHODS, WITNESS_METHODS, SharedDetector
 
 FIELDS = tuple(k for k in data.FIELDS if k != 'development')
 STAGES = ['prior', 'source', 'base', 'unary', 'score']
@@ -56,7 +56,7 @@ def prepared_inputs(groups):
 
 def collect(output, fit, test, model_path, task, protocol, method='shared'):
     import torch
-    from myproject.api import HallucinationDetector
+    from experiments.inference import HallucinationDetector
 
     groups = []
     for role, roots in [('fit', fit), ('test', test)]:
@@ -154,7 +154,7 @@ def collect_cached(output, prepared, cache, task, protocol):
 
     from experiments.measure import cached_measurement
     from myproject.inputs import encode_response, encode_source
-    from myproject.measure import answer_rows
+    from experiments.research.measurement import answer_rows
 
     prepared, cache = prepared.resolve(), cache.resolve()
     groups = [{'path': str(prepared), 'role': 'test',
@@ -253,7 +253,7 @@ def validate(native):
 
 def qualify_proofs(native, output, protocol):
     """Source-only compiler coverage gate, before reading response annotations."""
-    from myproject.proofs import compile_proofs
+    from experiments.research.proofs import compile_proofs
 
     plan, samples, observed = read_native(native)
     identity = research_identity()
@@ -413,7 +413,7 @@ def score(native, output, method='shared', compare_r4=False, protocol=None, abla
             pack = {key: raw[key] for key in (*FIELDS, *DISTRIBUTION_FIELDS) if key in raw}
             proof_diagnostics = None
             if method == 'proof_revision':
-                from myproject.revision import proof_pack
+                from experiments.research.revision import proof_pack
 
                 pack = proof_pack(pack, sample.source, sample.response, raw['offsets'])
             values = {'full_gap': pack['delta'][:, 1]}

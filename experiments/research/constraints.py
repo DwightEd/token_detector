@@ -2,7 +2,7 @@
 
 import numpy as np
 
-from myproject.graph import chain_log_odds
+from experiments.research.chain import chain_log_odds
 
 
 def constraint_log_odds(emission, penalties, clauses):

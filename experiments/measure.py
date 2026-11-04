@@ -5,7 +5,7 @@ from pathlib import Path
 import numpy as np
 
 from . import data
-from myproject.measure import answer_rows
+from experiments.research.measurement import answer_rows
 
 
 def cached_measurement(root: Path, record: dict) -> dict:
@@ -27,7 +27,7 @@ def measure(input_root: Path, output: Path, task: str, split: str,
     observer = None
     if native:
         from myproject.model import load_model
-        from myproject.observer import Observer
+        from experiments.research.observation import Observer
 
         observer = Observer(load_model(manifest["model"], device))
     batches, packed_records, cursor = [], [], 0

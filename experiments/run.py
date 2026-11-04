@@ -4,7 +4,7 @@ import argparse
 from pathlib import Path
 
 from . import data, measure, pipeline
-from myproject.shared import METHODS
+from experiments.research.readouts import METHODS
 
 
 def parser() -> argparse.ArgumentParser:

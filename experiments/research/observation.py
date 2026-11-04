@@ -3,9 +3,9 @@
 import numpy as np
 import torch
 
-from .routing import projection_grams
-from .source import source_condition
-from .distribution import SourceDistributions
+from experiments.research.routing import projection_grams
+from experiments.research.source import source_condition
+from experiments.research.distribution import SourceDistributions
 
 
 class Observer:

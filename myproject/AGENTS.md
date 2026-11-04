@@ -1,17 +1,21 @@
-# Mainline code
+# V3 mainline
 
-Read README.md first. Keep the callable shared detector, explicit frozen R4,
-and their numerical kernels here. Research orchestration belongs in experiments;
-raw artifacts and historical execution outputs stay at their recorded locations.
+Read README.md before editing; follow the repository-root AGENTS.md.
+Keep the visible flow: encode text, observe both source conditions, align the
+original tokens, return Observations. score runs on those observations without
+loading a model; predict composes extraction and scoring.
 
-Follow the repository-root AGENTS.md engineering and code-review rules.
-Prefer small functions with explicit imports. Do not add registries, managers,
-compatibility exports, fallbacks or generalized schemas without an actual caller.
+Keep model execution in model.py, alignment in measure.py, explicit NPZ persistence
+in observations.py and canonical V3 state inference in witness.py. Library calls
+are silent and in memory; callers opt into save/load. run.py only parses external
+parameters, constructs the detector, invokes a stage and presents its result.
 
-Library inference must remain silent and operate in memory. Return final token
-scores without writing intermediate measurements, metadata or diagnostics.
-Keep dataset preparation, experiment exports, evaluation and verification in
-the sibling experiments package. The main package never imports it.
-Refactors must preserve the original token axis, calibrated reference arrays
-and R4 numerics. Method selection must remain explicit; adding a candidate
-does not establish that it improves factual detection.
+Preserve original token/character positions and historical V3 floating-point
+contracts. Validate external text/files at their boundary, then keep the numerical
+path direct. Experiments import these kernels instead of duplicating V3.
+
+Put method selection, R4 references, research candidates, dataset orchestration,
+diagnostics, evaluation and reports in experiments/. This package never imports
+experiments. Keep the three public exports HallucinationDetector, Observations and
+WitnessDetector; deliberate module migration uses direct caller updates rather
+than old-path aliases. Engineering cleanup alone establishes no new detection result.

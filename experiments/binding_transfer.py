@@ -15,8 +15,8 @@ from experiments.native_dataset import FIELDS, read_native
 from experiments.provenance import completed_identity, research_identity
 from experiments.research.binding_dependency import dependency_readout, source_cells
 from experiments.research.relational_shared import grouped_relational_scores, relation_factors
-from myproject.detector import unit_ranges
-from myproject.shared import SharedDetector
+from myproject.measure import unit_ranges
+from experiments.research.readouts import SharedDetector
 
 
 SYSTEMS = ('full_gap', 'r4_frozen', 'r4_adapted', 'shared', 'relational_shared')
@@ -26,7 +26,7 @@ def run(native, scores, output, protocol):
     import torch
     from transformers import AutoTokenizer
 
-    from myproject.attention import attention_profiles
+    from experiments.research.attention import attention_profiles
     from myproject.inputs import encode_response, encode_source
     from myproject.model import load_model
 

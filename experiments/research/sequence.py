@@ -10,11 +10,14 @@ import numpy as np
 from numpy.polynomial.legendre import leggauss
 from scipy.special import logsumexp
 
-from .detector import unit_ranges
+from myproject.measure import unit_ranges
+from myproject.witness import state_marginals, transition_grid, uniform_grid, witness_emissions
 
 
 @lru_cache(maxsize=128)
 def _grid(n, copying, prevalence='integrated'):
+    if copying and prevalence == 'integrated':
+        return uniform_grid(n)
     # Polynomial degrees are <=n in pi and <=n-1 in c. Positive quadrature
     # therefore integrates all evidence and marginal numerators exactly.
     # The matched prior contributes 2*c, and the reported posterior c mean
@@ -35,12 +38,7 @@ def _grid(n, copying, prevalence='integrated'):
         c, c_weights = np.array([.5]), np.array([1.])
     else:
         raise ValueError('Unknown prevalence prior or fixed prevalence without copying')
-    pi, c = np.meshgrid(pi, c, indexing='ij')
-    pi, c = pi.ravel(), c.ravel()
-    log_weights = np.log(np.multiply.outer(weights, c_weights).ravel())
-    transition = np.array([(1-pi)+c*pi, (1-c)*pi,
-                           (1-c)*(1-pi), c+(1-c)*pi])
-    return pi, c, log_weights, np.log(transition)
+    return transition_grid(pi, c, weights, c_weights)
 
 
 def _check_prevalence(prevalence, *, witness, copying=True, onset=False):
@@ -48,15 +46,6 @@ def _check_prevalence(prevalence, *, witness, copying=True, onset=False):
         raise ValueError('Unknown prevalence prior')
     if prevalence != 'integrated' and (not witness or not copying or onset):
         raise ValueError('Nondefault prior requires witness emissions and copying, without onset')
-
-
-def witness_emissions(values):
-    """Likelihood ratio of (p_source+p_absent)/2 relative to p_source.
-
-    A risky region can still contain source-predictable tokens. This nested
-    alternative adds no information and does not identify factual errors.
-    """
-    return np.logaddexp(0., np.asarray(values, float))-np.log(2.)
 
 
 def responsibility_logits(values, state_scores):
@@ -95,47 +84,51 @@ def persistent_scores(values, *, copying=True, witness=False, onset=False,
         raise ValueError('Nonempty finite token contrasts required')
     if onset and witness:
         raise ValueError('Choose witness or onset emissions, not both')
-    continuation = witness_emissions(values) if onset else values
+    continuation = witness_emissions(values) if onset else None
     if witness:
         values = witness_emissions(values)
     n = len(values)
     pi, c, weights, transition = _grid(n, copying, prevalence)
+    if not onset:
+        score, node_evidence = state_marginals(values, pi, weights, transition)
+        evidence = float(logsumexp(weights+node_evidence))
+        persistence = (.5 if prevalence == 'fixed_persistence' else
+                       float(np.exp(weights+node_evidence-evidence) @ c))
+        return {'score': score, 'log_evidence': evidence,
+                'persistence_mean': persistence, 'cavity_log_odds': score-values}
     t00, t01, t10, t11 = transition
     forward = np.empty((n, len(pi), 2))
     forward[0, :, 0], forward[0, :, 1] = np.log1p(-pi), np.log(pi)+values[0]
     for t in range(1, n):
         previous = forward[t-1]
         forward[t, :, 0] = np.logaddexp(previous[:, 0]+t00, previous[:, 1]+t10)
-        forward[t, :, 1] = (np.logaddexp(previous[:, 0]+t01+values[t],
-                                        previous[:, 1]+t11+continuation[t]) if onset else
-                            values[t]+np.logaddexp(previous[:, 0]+t01, previous[:, 1]+t11))
+        forward[t, :, 1] = np.logaddexp(previous[:, 0]+t01+values[t],
+                                       previous[:, 1]+t11+continuation[t])
     node_evidence = np.logaddexp(forward[-1, :, 0], forward[-1, :, 1])
     evidence = float(logsumexp(weights+node_evidence))
-    persistence = .5 if prevalence == 'fixed_persistence' else float(np.exp(weights+node_evidence-evidence) @ c)
+    persistence = float(np.exp(weights+node_evidence-evidence) @ c)
     backward, score = np.zeros((len(pi), 2)), np.empty(n)
-    entry_score = np.empty(n) if onset else None
+    entry_score = np.empty(n)
     for t in range(n-1, -1, -1):
         joints = forward[t]+backward+weights[:, None]
         score[t] = logsumexp(joints[:, 1])-logsumexp(joints[:, 0])
-        if onset:
-            if t == 0:
-                entry_score[t] = score[t]
-            else:
-                previous = forward[t-1]
-                entry = previous[:, 0]+t01+values[t]+backward[:, 1]
-                other = np.stack((previous[:, 0]+t00+backward[:, 0],
-                                  previous[:, 1]+t10+backward[:, 0],
-                                  previous[:, 1]+t11+continuation[t]+backward[:, 1]))
-                entry_score[t] = logsumexp(weights+entry)-logsumexp(weights+other)
+        if t == 0:
+            entry_score[t] = score[t]
+        else:
+            previous = forward[t-1]
+            entry = previous[:, 0]+t01+values[t]+backward[:, 1]
+            other = np.stack((previous[:, 0]+t00+backward[:, 0],
+                              previous[:, 1]+t10+backward[:, 0],
+                              previous[:, 1]+t11+continuation[t]+backward[:, 1]))
+            entry_score[t] = logsumexp(weights+entry)-logsumexp(weights+other)
         next_zero = np.logaddexp(t00+backward[:, 0], t01+values[t]+backward[:, 1])
         next_one = np.logaddexp(t10+backward[:, 0],
-                               t11+(continuation[t] if onset else values[t])+backward[:, 1])
+                               t11+continuation[t]+backward[:, 1])
         backward = np.column_stack([next_zero, next_one])
     if not np.isfinite(score).all():
         raise ValueError('Nonfinite persistent-state responsibility')
-    result = {'score': score, 'log_evidence': evidence, 'persistence_mean': persistence}
-    result.update({'entry_score': entry_score} if onset else {'cavity_log_odds': score-values})
-    return result
+    return {'score': score, 'log_evidence': evidence,
+            'persistence_mean': persistence, 'entry_score': entry_score}
 
 
 def token_state_scores(values):

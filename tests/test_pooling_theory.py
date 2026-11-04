@@ -10,8 +10,8 @@ import numpy as np
 import pytest
 from scipy.special import betaln, expit, logsumexp
 
-from myproject.pooling import cavity_scores
-from myproject.sequence import persistent_scores
+from experiments.research.pooling import cavity_scores
+from experiments.research.sequence import persistent_scores
 
 
 @pytest.mark.parametrize("alpha,beta", [(1., 1.), (.2, 3.), (7., .4)])

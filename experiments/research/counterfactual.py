@@ -4,7 +4,7 @@ import numpy as np
 from scipy.special import logsumexp
 import torch
 
-from .model import prefill, score_continuation
+from myproject.model import prefill, score_continuation
 
 
 @torch.no_grad()

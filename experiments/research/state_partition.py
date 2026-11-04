@@ -2,7 +2,7 @@
 
 import numpy as np
 
-from myproject.segmentation import _inputs, background, partition_scores
+from experiments.research.segmentation import _inputs, background, partition_scores
 
 
 def residual_gains(fit, hold, available):

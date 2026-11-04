@@ -9,8 +9,8 @@ from huggingface_hub.utils.tqdm import progress_bar_states
 from transformers import LlamaConfig, LlamaForCausalLM
 from transformers.utils import logging
 
-from myproject import HallucinationDetector
-from myproject.detector import Detector
+from experiments.inference import HallucinationDetector
+from experiments.research.r4 import Detector
 
 
 class CharacterTokenizer:

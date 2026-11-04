@@ -11,8 +11,8 @@ import re
 import numpy as np
 from scipy.special import betaln, logsumexp
 
-from myproject.detector import unit_ranges
-from myproject.pooling import cavity_scores
+from myproject.measure import unit_ranges
+from experiments.research.pooling import cavity_scores
 
 
 def relation_factors(text, edges, target, unit_index):

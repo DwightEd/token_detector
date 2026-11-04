@@ -10,9 +10,9 @@ import numpy as np
 from experiments import data
 from experiments.provenance import completed_identity, research_identity
 from experiments.research.spans import constrained_partition, contexts
-from myproject.segmentation import legal_atoms, partition_scores, predictive_gain, segment
-from myproject.detector import Detector
-from myproject.measure import answer_rows
+from experiments.research.segmentation import legal_atoms, partition_scores, predictive_gain, segment
+from experiments.research.r4 import Detector
+from experiments.research.measurement import answer_rows
 
 METHODS = ['punct', 'walk1', 'direct_mdl', 'direct_zero_cut_cost']
 
@@ -73,10 +73,10 @@ def validated_inputs(root):
 
 def collect(root):
     import torch
-    from myproject.attention import attention_profiles
+    from experiments.research.attention import attention_profiles
     from myproject.model import load_model, prefill, score_continuation
-    from myproject.routing import projection_grams
-    from myproject.source import source_condition
+    from experiments.research.routing import projection_grams
+    from experiments.research.source import source_condition
 
     plan, inputs = validated_inputs(root)
     cache = Path(inputs['cache'])

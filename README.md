@@ -1,84 +1,68 @@
 # Token detector
 
-换电脑继续实验先看 [远端数据位置与执行交接](REMOTE_EXPERIMENT_HANDOFF.md)：列出存储中的输入、原生观测、历史分数和模型目录，以及近期本地实验需单独转移的材料。
-
-最新优先级是[逐项查明 FN/FP 的错误机制](docs/source-reading/FNFP_MECHANISM.md)，并[核对原始来源、回答及模块分数](docs/source-reading/FNFP_CASES.md)。完整缓存已恢复。固定等权对照未达标，保留为失败实验记录；当前算法默认值未更改。
-
-
-逐 token 的 RAG 来源风险检测与研究工具。输入为完整提示、其中实际出现的来源文本和已有回答，返回原 token 的位置与分数。
-
-研究主线固定为**无监督检测，真值仅用于冻结后的最终评价**，不用于训练、调参、选方法或风险校准。完整约束见[用户确认记录](refine-logs/theory-grounding-20261102/USER_CONSTRAINTS.md)。
-
-最新任务是[逐任务AUROC≥0.8：R4/V3统计、真实FN/FP与模块优化](docs/source-reading/PERFORMANCE_REVIEW.md)。允许多模块组合，不要求一个统一概率模型。按用户要求，HalluRAG含答案891答为主要对照；已恢复R4在该组AUROC/AP **0.8071/0.5188**，V3 **0.7669/0.4561**。完整分层与采集差异随表说明，旧VAL132结果不再与完整TEST混比。现成标注数据可以直接用于评价。
-
-**当前保留的金融研究候选是 V3 / witness。** 先看[无标注识别边界与当前决策](docs/source-reading/UNLABELLED_LIMITS.md)、[V3优化](docs/source-reading/METHOD_V3.md)、[六组完整对照](docs/RESULTS_CURRENT.md)与[当前诊断计划](refine-logs/EXPERIMENT_PLAN.md)。[此前关系组合](docs/source-reading/INTEGRATED_DESIGN.md)因自然语义确认前提未解而退出默认主线，保留为受限可选分支。离线阅读从[识别边界页面](docs/source-reading/UNLABELLED_LIMITS.html)进入；V3并非所有任务/观察模型最优，没有新检测结果。
-
-浏览器阅读从[公式与机制交互指南](docs/source-reading/VISUAL_GUIDE.html)进入；[完整公式](docs/source-reading/THEORY.html)与[论文主张](docs/source-reading/PAPER_STORY.html)均可离线排版。下载仓库后打开HTML；GitHub在线查看可读[文字版](docs/source-reading/PAPER_STORY.md)。
-
-本版本接回 2026-10-31 已核验的远端 v7 源码：`myproject/` 为主库，`experiments/` 为统一实验入口，`experiments/research/` 保存研究候选。[恢复与验证记录](docs/SOURCE_RECOVERY_20261102.md)区分历史运行和本次检查。
-
-代码学习从[完整方法与调用路径](docs/source-reading/METHOD.md)开始，再打开[源码逐行阅读器](docs/source-reading/READING.html)或[Markdown文件目录](docs/source-reading/README.md)。[数学推导与边界](docs/source-reading/THEORY.md)解释默认共享读出的保序性质；[当前研究方案](refine-logs/theory-grounding-20261102/FINAL_PROPOSAL.md)记录独立审查后的修订、用户确认的无监督约束和待验证事项。
-
-**默认方法已从旧 R4 改为 `shared`。** 复现原行为时必须显式传入 `method="r4"` 或 `--method r4`。默认改变沿用远端接口状态，不代表共享方法已全面优于 R4；三任务 R4 参考数组保留原始字节。
-
-## 安装与检测
-
-Python 3.11+，建议使用独立虚拟环境。依赖集中在 `pyproject.toml`。
+对已有回答提取逐 token 的来源对比，并用 **V3 witness** 评分。主线在 `myproject/`，流程是编码文本、执行来源存在/删除两种条件的前向、对齐原 token、保存观测；评分可以单独读取保存的数据。
 
 ```bash
 python -m pip install -e '.[experiments,dev]'
-token-detect --model /path/to/Meta-Llama-3.1-8B-Instruct \
-  --task QA --input examples/request.json --output result.json
+token-detect extract --model /path/to/model --input examples/request.json --output observations.npz
+token-detect score --input observations.npz --output scores.json
 ```
+
+输入 JSON 包含 `prompt`、`source`、`response`；非空 `source` 必须在完整 `prompt` 中出现且仅出现一次。模型和数据另行提供，Python 3.11+。
 
 ```python
-from myproject import HallucinationDetector
+from myproject import HallucinationDetector, Observations
 
-detector = HallucinationDetector.from_pretrained(
-    "/path/to/Meta-Llama-3.1-8B-Instruct", task="QA", method="shared",
+detector = HallucinationDetector.from_pretrained("/path/to/model")
+observed = detector.extract(
+    prompt="Passage: The museum opened in 1998. When did it open?",
+    source="The museum opened in 1998.",
+    response="It opened in 1997.",
 )
-source = "The museum opened in 1998."
-tokens = detector.predict(
-    prompt=f"Passage: {source}\nWhen did the museum open?",
-    source=source,
-    response="The museum opened in 1997.",
-)
+observed.save("observations.npz")
+tokens = HallucinationDetector.score(Observations.load("observations.npz"))
 ```
 
-`source` 必须在完整提示中出现且仅出现一次。结果包含 `token_id/text/start/end/score`；字符位置对应原回答。高分表示来源风险，不是校准的事实错误概率。库调用静默、在内存运行，不写中间文件。支持 QA、Summary、Data2txt；观察模型和数据另行提供。
+`score()` 不加载模型或重新前向。需要一次返回结果时，使用 `detector.predict(...)` 或 `token-detect predict`。结果包含 `token_id/text/start/end/score`，位置对应原回答，高分表示来源风险，不是校准的事实错误概率。接口、九个 Python 文件及数据格式见 [主线说明](myproject/README.md)。
 
-| method | 用途 |
-| --- | --- |
-| shared | 默认固定 Beta 共享读出，无需 FIT |
-| persistent / witness | 联合延续与混合观测研究候选 |
-| responsibility | 个体专家责任诊断 |
-| r4 | 原任务配方与随包分发的冻结参考 |
+## 实验与接口迁移
 
-其他方法见 `token-detect --help`。[主库说明](myproject/README.md)解释接口和分数边界。
-
-## 数据集与实验
+多方法比较、消融、验证、评价与结果汇报放在 `experiments/`。数据集流程显式选择方法：
 
 ```bash
 token-experiment prepare-dataset --name ragtruth --data /path/to/RAGTruth/dataset \
   --split test --task QA --output outputs/qa/inputs
 token-experiment predict-dataset --input outputs/qa/inputs \
-  --model /path/to/Meta-Llama-3.1-8B-Instruct --task QA \
-  --method shared --output outputs/qa/scores
+  --model /path/to/model --task QA --method witness --output outputs/qa/scores
 token-experiment evaluate-dataset --scores outputs/qa/scores \
   --label-granularity token --output outputs/qa/evaluation
 ```
 
-准备、观测、评分与评价分开；推断不读取标注，封存分数后才评价。断点续跑绑定输入、模型、代码与方法身份，每个输出目录只允许一个写进程。
+这是一次明确的接口迁移：主库只提供 V3 的 `extract/score/predict`，不再接收 `method/task/references`。原多方法 Python 接口位于 `experiments.inference.HallucinationDetector`；原多方法文本 CLI 使用 `r4-detect` 或 `python -m experiments.detect`。实验入口的历史默认仍是 `shared`，选择 V3 时传 `--method witness`。
 
-`r4-detect`、`r4-experiment` 保留为当前入口的命令行别名，命令名不会强制选择 R4。旧 Python 包 `myproject_experiment` 已迁到 `experiments`，导入路径需更新。
+R4 在 `experiments/research/r4.py`，其他读出在 `readouts.py`，三任务冻结参考数组在 `experiments/research/references/`。旧模块路径不提供转发别名；实验中的 V3 和消融复用 `myproject/witness.py` 的状态推断内核。详见 [实验层说明](experiments/README.md)。
 
-- [实验入口](experiments/README.md)
-- [远端实验账本](experiments/EXPERIMENTS.md)
-- [最新研究结论与局限](docs/LATEST_RESEARCH.md)
+本次将 V3 作为工程主线，保留 R4 与其他研究对照的数值和历史记录。重构不产生新的科学效果证据，也不表示 V3 已在所有任务上最优。旧 [逐行阅读材料](docs/source-reading/README.md)绑定重构前源码；当前调用路径以两份包 README 为准。
 
-RAGTruth 人工字符跨度、HalluRAG 句标签投影和金融 silver 标签有不同证据范围。完整研究稿、内部审查和工程检查不构成新检测器突破或录用证明。
+## 当前研究状态
 
-## 验证
+[恢复状态](research-state/RESUME.md)记录当前可执行步骤；[H017 总结](docs/results/h017_relation_binding.md)保留关系错绑、时间单位和范围条件实验的实际正负结果。内部机制研究尚未形成新的已验证检测器，六任务各 AUROC ≥ 0.8 的目标未完成。
+
+2026-11-04 完成的 Data2txt 对照保留全部 900 回答、150 来源、178343 个原 token：
+
+| 方法 | AUROC | AP |
+| --- | ---: | ---: |
+| R4 冻结基线 | 0.798318 | 0.190392 |
+| V3 / witness 冻结基线 | 0.755716 | 0.145209 |
+| DeBERTa NLI 外部监督对照 | 0.744306 | 0.097168 |
+
+NLI 仅新增这一任务的比较，不是新无监督内部方法。它的 AUROC 相对 R4 显著较低，相对 V3 的差值置信区间跨 0；完整方法、成本、错例和限制见 [检测评价](docs/results/h017_nli_detection.md)。研究方向仍允许超出 V3 的概率差框架，见 [关系研究合同](research-state/RELATION_BINDING_DIRECTION.md)。
+
+研究约束是无监督检测，真值只在方法、参数和全部分数冻结后用于最终评价；历史已查看人群保持探索性。完整约束见 [用户确认记录](refine-logs/theory-grounding-20261102/USER_CONSTRAINTS.md)，历史实验见 [账本](experiments/EXPERIMENTS.md)。
+
+## 数据与验证
+
+下载位置、原始观测范围和换机步骤见 [远端数据位置与执行交接](REMOTE_EXPERIMENT_HANDOFF.md)。数据、权重、私人会话与运行输出不随 Git 发布；封存文件中的历史路径和原 seal 保持不变。
 
 ```bash
 python -m pytest -q
@@ -87,4 +71,4 @@ r4-experiment verify --packs /path/to/historical/packs \
   --baseline /path/to/r04_tempered_continuity_v1 --output outputs/verification.json
 ```
 
-`verify` 需要外部历史制品，只核对冻结参考、token 身份与分数；不会产生新 AUROC。CI 从仓库外测试已安装的 wheel。远端完整测试与原始运行产物未全部恢复，本次测试不冒称远端完整测试重跑。原始数据、模型、私人会话和运行输出不随源码发布。代码许可证尚未指定。
+CI 在仓库外测试已安装的 wheel。`verify` 需要外部历史制品，检查数值与 token 身份，不产生新 AUROC。最新 H017 验证收据见 [记录](docs/results/h017_nli_ci.json)；该收据属于重构前指定源码，不替代本次重构的测试。代码许可证尚未指定。

@@ -9,7 +9,7 @@ import numpy as np
 from experiments import data
 from experiments.native_dataset import read_native
 from experiments.provenance import completed_identity, research_identity
-from myproject.counterfactual import repair_support
+from experiments.research.counterfactual import repair_support
 
 YEAR = re.compile(r'\b(?:19|20)\d{2}\b')
 
@@ -45,7 +45,7 @@ def future_region(encoded, block):
 
 def run(native, output, protocol, ids):
     import torch
-    from myproject.api import HallucinationDetector
+    from experiments.inference import HallucinationDetector
 
     plan, samples, originals = read_native(native)
     selected = [(s, r) for (_, s), r in zip(samples, originals, strict=True) if s.id in ids]

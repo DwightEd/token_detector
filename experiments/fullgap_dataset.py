@@ -12,7 +12,7 @@ from experiments.inputs import source_span
 from experiments.provenance import completed_identity, research_identity
 from experiments.span_markup import fred_text
 from myproject.measure import answer_axis, token_scores
-from myproject.shared import SharedDetector
+from experiments.research.readouts import SharedDetector
 
 
 EXPECTED_SAMPLES = 1782
@@ -228,7 +228,7 @@ def collect(prepared: Path, model_path: Path, protocol: Path, output: Path,
     """Measure all original responses with two matched-SDPA worlds."""
     import torch
 
-    from myproject.api import HallucinationDetector
+    from experiments.inference import HallucinationDetector
 
     prepared, manifest, samples, groups, prepared_bindings = _prepared(prepared)
     model_path, protocol, output = (Path(model_path).resolve(), Path(protocol).resolve(),

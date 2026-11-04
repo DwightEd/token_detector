@@ -2,8 +2,6 @@
 
 import numpy as np
 
-from .distribution import DISTRIBUTION_FIELDS
-
 
 def token_scores(pack: dict, response: dict, scores: np.ndarray) -> list[dict]:
     """Render scores on the existing original token/character axis, without I/O."""
@@ -15,24 +13,13 @@ def token_scores(pack: dict, response: dict, scores: np.ndarray) -> list[dict]:
     return result
 
 
-def window_mean(values: np.ndarray, window: int = 16) -> np.ndarray:
-    """Historical offline route window: seven past and eight future positions."""
-    values = np.asarray(values, dtype=np.float64)
-    target = np.arange(len(values))
-    past = (window - 1) // 2
-    left = np.maximum(0, target - past)
-    right = np.minimum(len(values), target + window - past)
-    cumulative = np.r_[0., np.cumsum(values)]
-    return (cumulative[right] - cumulative[left]) / (right - left)
-
-
 def canonical_delta(values: np.ndarray, units: list[dict]) -> np.ndarray:
     """Preserve the archived unit-mean/deviation floating-point arithmetic."""
     result = np.empty(values.shape, dtype=np.float64)
     for unit in units:
         region = slice(unit["start"], unit["stop"])
         weights = np.ones(unit["stop"] - unit["start"])
-        for column in range(2):
+        for column in range(values.shape[1]):
             # The archived vectors were contiguous; BLAS otherwise changes
             # a handful of unit means by one ULP on a strided column.
             part = values[region, column].copy()
@@ -60,12 +47,9 @@ def answer_axis(response: dict, answer_index: int = 0) -> dict:
     }
 
 
-def answer_rows(observed: dict, response: dict, answer_index: int) -> dict:
-    """Align measurements, excluding only empty offsets and special tokens."""
-    if not np.array_equal(observed["token_id"], response['answer_ids']):
-        raise ValueError("Measurement and prepared response token IDs differ")
-    axis = answer_axis(response, answer_index)
-    target = axis['target']
-    return {"delta": canonical_delta(observed["delta"], response["units"])[target],
-            "route": window_mean(observed["route"])[target], **axis,
-            **{key: observed[key][target] for key in DISTRIBUTION_FIELDS if key in observed}}
+def unit_ranges(answer_index: np.ndarray, unit_index: np.ndarray) -> tuple:
+    """Return contiguous answer/unit ranges on the original packed row order."""
+    changed = ((answer_index[1:] != answer_index[:-1])
+               | (unit_index[1:] != unit_index[:-1]))
+    starts = np.r_[0, np.flatnonzero(changed) + 1]
+    return starts, np.r_[starts[1:], len(answer_index)]

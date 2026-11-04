@@ -10,13 +10,13 @@ import numpy as np
 from scipy.optimize import brentq
 from scipy.special import expit, logsumexp, xlogy
 
-from .detector import unit_ranges
-from .sequence import _grid, grouped_persistent_scores, witness_emissions
+from myproject.measure import unit_ranges
+from experiments.research.sequence import _grid, grouped_persistent_scores, witness_emissions
 
 
 def proof_pack(pack, source, response, offsets, question=None):
     """Attach source-only proof metadata without changing native numerical fields."""
-    from .proofs import compile_proofs
+    from experiments.research.proofs import compile_proofs
 
     return {**pack, 'proofs': compile_proofs(source, response, offsets, pack['target'], question)}
 

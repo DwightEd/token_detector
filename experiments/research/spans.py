@@ -1,7 +1,7 @@
 """Unlabeled walk contexts and exact contiguous segmentation; not a correctness score."""
 import numpy as np
 
-from myproject.segmentation import partition_scores
+from experiments.research.segmentation import partition_scores
 
 def contexts(history):
     """Symmetric walk contexts at horizons 1, 2, 4, 8; not causal paths.

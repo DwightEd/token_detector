@@ -8,9 +8,9 @@ import numpy as np
 from experiments import data
 from experiments.native_dataset import read_native
 from experiments.provenance import completed_identity, research_identity
-from myproject.detector import unit_ranges
-from myproject.sequence import witness_emissions
-from myproject.shared import SharedDetector
+from myproject.measure import unit_ranges
+from experiments.research.sequence import witness_emissions
+from experiments.research.readouts import SharedDetector
 
 METHODS = ('witness', 'matched_local', 'symmetric_local')
 MAX_SPANS = 256

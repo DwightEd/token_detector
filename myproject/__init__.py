@@ -1,6 +1,7 @@
-"""Token-level source risk with a shared latent state and individual evidence."""
+"""Token-level source risk with V3 witness inference."""
 
 from .api import HallucinationDetector
-from .shared import SharedDetector
+from .observations import Observations
+from .witness import WitnessDetector
 
-__all__ = ["HallucinationDetector", "SharedDetector"]
+__all__ = ["HallucinationDetector", "Observations", "WitnessDetector"]

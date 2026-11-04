@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 
 import myproject
-from myproject.detector import Detector
+from experiments.research.r4 import Detector
 from experiments import data
 
 

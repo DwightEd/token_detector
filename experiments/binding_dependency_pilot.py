@@ -22,7 +22,7 @@ def run(native, output, protocol, reference=None):
     import torch
     from transformers import AutoTokenizer
 
-    from myproject.attention import attention_profiles
+    from experiments.research.attention import attention_profiles
     from myproject.inputs import encode_response, encode_source
     from myproject.model import load_model
 

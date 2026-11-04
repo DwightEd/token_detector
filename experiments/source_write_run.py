@@ -12,7 +12,7 @@ from experiments.delta_local_run import evaluation_gate, validate
 from experiments.fit_ablation import evaluate, verify_seal
 from experiments.pooling_run import _unit_index
 from experiments.provenance import completed_identity, research_identity
-from myproject.pooling import grouped_scores
+from experiments.research.pooling import grouped_scores
 from experiments.span_pilot import load_batches, validated_inputs
 
 COPIED = ['native_gap','native_pool_dependency','native_pool_punct','r4_punct','frozen_r4']

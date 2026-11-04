@@ -16,7 +16,7 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from myproject.pooling import cavity_scores, grouped_scores
+from experiments.research.pooling import cavity_scores, grouped_scores
 from experiments.local_evaluation import auc_pair_decomposition
 
 DIRECTORY = ROOT / 'docs/source-reading'
@@ -127,7 +127,7 @@ def visual_data():
             'raw_metrics': initial,
             'shared_metrics': auc_pair_decomposition(labels, shared, answers, units),
             'source_sha256': {name: hashlib.sha256((ROOT/name).read_bytes()).hexdigest()
-                             for name in ['myproject/pooling.py', 'experiments/local_evaluation.py']}}
+                             for name in ['experiments/research/pooling.py', 'experiments/local_evaluation.py']}}
 
 
 def main():

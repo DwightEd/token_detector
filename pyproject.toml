@@ -30,7 +30,7 @@ dev = ["pytest==9.1.1"]
 [project.scripts]
 token-detect = "myproject.run:main"
 token-experiment = "experiments.run:main"
-r4-detect = "myproject.run:main"
+r4-detect = "experiments.detect:main"
 r4-experiment = "experiments.run:main"
 r4-research = "experiments.research.run:main"
 
@@ -43,7 +43,7 @@ package-dir = {"" = "."}
 include-package-data = false
 
 [tool.setuptools.package-data]
-myproject = ["references/*.npz"]
+"experiments.research" = ["references/*.npz"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

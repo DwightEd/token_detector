@@ -1,12 +1,12 @@
-"""Primary token-preserving, fixed-prior source-expert readout."""
+"""Research readouts assembled from shared observation and inference kernels."""
 
 from pathlib import Path
 
 import numpy as np
 
-from .detector import RECIPES
-from .pooling import grouped_scores
-from .sequence import grouped_persistent_scores, responsibility_logits
+from experiments.research.r4 import RECIPES
+from experiments.research.pooling import grouped_scores
+from experiments.research.sequence import grouped_persistent_scores, responsibility_logits
 
 SEQUENCE_METHODS = ('persistent', 'witness', 'responsibility', 'conditional', 'onset',
                     'token_state', 'adaptive_token', 'proof_revision',
@@ -44,7 +44,7 @@ class SharedDetector:
     def score_components(self, pack):
         """One implementation behind text prediction, cached runs and ablations."""
         if self.method == 'proof_revision':
-            from .revision import revise_scores
+            from experiments.research.revision import revise_scores
 
             proofs = pack.get('proofs', {'components': [], 'diagnostics': {'reason': 'missing_source_context'}})
             result = revise_scores(pack['delta'][:, 1], pack['answer_index'], pack['unit_index'],

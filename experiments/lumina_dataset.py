@@ -99,7 +99,7 @@ def _write_predictions(output, plan, samples, records, reference_records, identi
 def collect(prepared, model, reference_native, protocol, output, device='cuda:0'):
     """Extract dense S/R/A features and a matched S/A sibling before labels."""
     import torch
-    from myproject.api import HallucinationDetector
+    from experiments.inference import HallucinationDetector
 
     prepared, model, reference_native, protocol, output = map(
         lambda value: Path(value).resolve(), (prepared, model, reference_native, protocol, output))

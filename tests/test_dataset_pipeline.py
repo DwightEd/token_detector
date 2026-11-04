@@ -8,7 +8,7 @@ from unittest.mock import Mock
 import numpy as np
 import pytest
 
-from myproject.api import HallucinationDetector
+from experiments.inference import HallucinationDetector
 from experiments import data, pipeline, run
 from experiments.datasets import Sample, read_jsonl
 from experiments.evaluate import evaluate_dataset

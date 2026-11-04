@@ -11,10 +11,11 @@ from experiments import data
 from experiments.fit_ablation import evaluate, verify_seal
 from experiments.pooling_run import _unit_index
 from experiments.provenance import completed_identity, research_identity
-from myproject.pooling import fit_prior, grouped_scores, population_spans
+from experiments.research.pooling import grouped_scores
+from experiments.research.prior import fit_prior, population_spans
 from experiments.research.state_partition import routing_partition
 from experiments.span_pilot import load_batches, validated_inputs
-from myproject.segmentation import legal_atoms
+from experiments.research.segmentation import legal_atoms
 
 BASELINES = ['raw_full', 'predictive_fixed', 'predictive_fit', 'punct_fixed',
              'punct_fit', 'r4_punct', 'frozen_r4']

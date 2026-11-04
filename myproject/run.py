@@ -1,41 +1,37 @@
-"""Detect an existing response and emit only its final per-token scores."""
+"""Extract reusable observations or score an existing response."""
 
 import argparse
 import json
 from pathlib import Path
 
 from .api import HallucinationDetector
-from .detector import RECIPES
-from .shared import METHODS
+from .observations import Observations
 
 
 def main() -> None:
     command = argparse.ArgumentParser(__doc__)
-    command.add_argument("--model", type=Path, required=True)
-    command.add_argument("--references", type=Path)
-    command.add_argument("--method", choices=METHODS,
-                         help='shared default; persistent V2, witness V3, responsibility diagnostic, or legacy r4')
-    command.add_argument("--task", choices=tuple(RECIPES), default="QA")
-    command.add_argument("--device", default="cuda:0")
-    command.add_argument("--input", type=Path, help="JSON with prompt, source and response")
-    command.add_argument("--prompt")
-    command.add_argument("--source")
-    command.add_argument("--response")
-    command.add_argument("--output", type=Path)
+    stages = command.add_subparsers(dest="stage", required=True)
+    for name in ("extract", "predict"):
+        stage = stages.add_parser(name)
+        stage.add_argument("--model", type=Path, required=True)
+        stage.add_argument("--device", default="cuda:0")
+        stage.add_argument("--input", type=Path, required=True,
+                           help="JSON with prompt, source and response")
+        stage.add_argument("--output", type=Path, required=name == "extract")
+    score = stages.add_parser("score")
+    score.add_argument("--input", type=Path, required=True, help="Extracted observations.npz")
+    score.add_argument("--output", type=Path)
     args = command.parse_args()
-    direct = (args.prompt, args.source, args.response)
-    if args.input is not None:
-        if any(value is not None for value in direct):
-            command.error("use either --input or --prompt/--source/--response")
-        example = json.loads(args.input.read_text(encoding="utf-8"))
+
+    if args.stage == "score":
+        result = HallucinationDetector.score(Observations.load(args.input))
     else:
-        if any(value is None for value in direct):
-            command.error("provide --input or all of --prompt/--source/--response")
-        example = {"prompt": args.prompt, "source": args.source, "response": args.response}
-    detector = HallucinationDetector.from_pretrained(
-        args.model, task=args.task, references=args.references, device=args.device, method=args.method,
-    )
-    result = detector.predict(example["prompt"], example["response"], example["source"])
+        example = json.loads(args.input.read_text(encoding="utf-8"))
+        detector = HallucinationDetector.from_pretrained(args.model, device=args.device)
+        if args.stage == "extract":
+            detector.extract(**example).save(args.output)
+            return
+        result = detector.predict(**example)
     output = json.dumps(result, ensure_ascii=False) + "\n"
     if args.output is None:
         print(output, end="")

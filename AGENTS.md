@@ -80,21 +80,31 @@
 
 - This repository is the canonical token-detector workspace. Develop from its root;
   test installed packages in a clean directory to avoid unrelated same-name packages.
-- Keep the callable detector library in myproject/. Put all experiment code in
-  experiments/, with reusable candidate methods in experiments/research/.
+- Keep the V3 library in myproject/: HallucinationDetector.extract returns
+  Observations, callers explicitly save/load them, and score/predict return original
+  token risks. Read myproject/README.md before changing this execution path.
+- Keep dataset workflows, diagnostics, evaluation and reports in experiments/;
+  historical R4 and candidate kernels/resources belong in experiments/research/.
+  Read experiments/README.md when changing a research method or its imports.
+- token-detect owns extract/score/predict. The multi-method API is
+  experiments.inference.HallucinationDetector; r4-detect uses experiments.detect.
+  This API/module migration is intentional; update callers and documentation
+  directly instead of restoring old-module compatibility aliases.
 - Route dataset workflows through r4-experiment and its shared stage functions;
   extend the integrated entry point instead of creating parallel one-off runners.
 - Experiments may import myproject; the detector must not depend on experiments.
 - Use existing shared functions instead of copying them into scripts or result folders.
-- Mainline readouts and their diagnostic stages have one implementation in myproject/.
-  Experiment runners call SharedDetector, Detector or their library kernels directly;
-  independent numerical oracles belong in tests/audits and never produce method scores.
-  Keep library calls silent, in memory, and separate from CLI/file orchestration.
+- Keep V3 state inference canonical in myproject/witness.py. Experiments call its
+  kernels; their R4 and other readouts have one implementation in experiments/research/.
+  Independent numerical oracles belong in tests/audits and never produce method scores.
+  Library calls remain silent; file persistence is explicit through Observations,
+  while CLI/file orchestration stays outside the numerical kernels.
 - Put generated run files in outputs/<run-id>/ and keep them out of Git. Do not
   recreate deleted directories or add old-package aliases without an actual need.
 - Keep dependencies in pyproject.toml. Use explicit imports and only abstractions
   with real callers; do not hardcode machine paths in algorithm source.
-- Preserve public API and numerical contracts during refactors. Run relevant tests;
+- Preserve original token axes, V3 numerical contracts and frozen R4 reference bytes
+  during refactors. Document deliberate API migrations and run relevant tests;
   verify an installed wheel outside the checkout for packaging/resource changes.
 - Before pushing code, run the complete CPU suite against the installed package
   from outside the checkout, including repository-tool tests. Targeted checks

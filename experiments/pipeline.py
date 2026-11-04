@@ -5,8 +5,8 @@ from pathlib import Path
 import numpy as np
 
 from . import data
-from myproject.detector import Detector
-from myproject.shared import METHODS, SHARED_METHODS
+from experiments.research.r4 import Detector
+from experiments.research.readouts import METHODS, SHARED_METHODS
 
 
 def fit(root: Path, task: str, output: Path) -> None:
@@ -46,7 +46,7 @@ def predict_dataset(prepared: Path, model: Path, task: str, output: Path,
     """
     import json
 
-    from myproject.api import HallucinationDetector
+    from experiments.inference import HallucinationDetector
     from .datasets import read_samples
 
     method = method or ('r4' if references is not None else 'shared')

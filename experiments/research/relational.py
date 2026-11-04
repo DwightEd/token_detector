@@ -7,8 +7,8 @@ import numpy as np
 from scipy.special import logsumexp
 
 from experiments.research.table_bindings import YEAR, number, table_regions
-from myproject.detector import unit_ranges
-from myproject.pooling import cavity_scores, grouped_scores
+from myproject.measure import unit_ranges
+from experiments.research.pooling import cavity_scores, grouped_scores
 
 STRING = re.compile(r'"(?:\\.|[^"\\])*"')
 

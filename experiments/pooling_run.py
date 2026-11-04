@@ -9,10 +9,11 @@ import numpy as np
 from experiments import data
 from experiments.fit_ablation import evaluate, verify_seal
 from experiments.provenance import completed_identity, research_identity
-from myproject.pooling import fit_prior, grouped_scores, population_spans
+from experiments.research.pooling import grouped_scores
+from experiments.research.prior import fit_prior, population_spans
 from experiments.span_pilot import load_batches, select_records, validated_inputs
-from myproject.detector import Detector
-from myproject.segmentation import legal_atoms, partition_scores, predictive_gain, segment
+from experiments.research.r4 import Detector
+from experiments.research.segmentation import legal_atoms, partition_scores, predictive_gain, segment
 
 SYSTEMS = {
     'raw_full': ('raw', False), 'whole_fixed': ('whole', False),
@@ -55,7 +56,7 @@ def prepare(root, cache, exclude):
 
 def collect(root):
     import torch
-    from myproject.attention import attention_profiles
+    from experiments.research.attention import attention_profiles
     from myproject.model import load_model
 
     plan, inputs = validated_inputs(root)

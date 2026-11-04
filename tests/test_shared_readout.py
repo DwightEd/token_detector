@@ -6,8 +6,8 @@ import numpy as np
 import pytest
 from scipy.special import betaln, logsumexp
 
-from myproject.pooling import cavity_scores, grouped_scores
-from myproject.shared import SharedDetector
+from experiments.research.pooling import cavity_scores, grouped_scores
+from experiments.research.readouts import SharedDetector
 
 
 @pytest.mark.parametrize("alpha,beta", [(1., 1.), (.5, 2.), (3., .7)])

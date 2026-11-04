@@ -2,6 +2,19 @@
 
 更新：2026-11-03，Asia/Shanghai。代码仓库：<https://github.com/DwightEd/token_detector>。
 
+**2026-11-04 本机恢复完成：** 新下载的指定材料位于
+`D:/ResearchData/token-detector-remote-20261104/`，共 **34,114 文件、27,086,397,672 字节**。
+包括三任务 TEST2700 原生包及450份来源、QA TEST900 第15层观测及冻结代码/配置、
+Summary/Data2txt TEST各900的扩展观测、P002/P005/P006完整小面板及两份RAGTruth原文件。
+所选文件的原始哈希、大小、封存引用与数组头已核验；QA900共11,700个数组头检查通过。
+下载不解码标签或数组值、不运行模型，也不改写历史 seal。
+原有六任务输入、主观测和历史分数另保留在
+`D:/projects/python_projects/research/token_detector_data/`（20,399文件、159,669,343字节）。
+本次收据为 `outputs/cloud-download-20261104/completion.json`；数据根的
+`00_manifests/local-acquisition-20261104.json` 保存同一索引。下文 C盘30.82GB为另一台电脑的
+历史恢复范围，不能代替本机清单。未下载模型权重或197GB未完成归档；文档中的H017近期原始输出
+在对应云端目录在线列举为零，不能视为已恢复，公开结果仍可从Git阅读。
+
 **续接目标已纠正：** 请先读 [检测目标与实验验收](research-state/DETECTION_OBJECTIVE.md)。H016角色问答属于已关闭的辅助诊断，不能当作新方法的幻觉检测成绩，也不要在另一台电脑继续扩展这条问答支线。
 
 **本轮按用户指令优先 RAGTruth。** 本轮所选文件已全部下载并核验，含15个前缀及legacy联合目录复验、QA900的11,700个数组头检查。最终锁定范围为 30,817,905,041 字节（约30.82 GB）、51,812 文件，统一位于 `C:/ResearchData/token-detector-remote-20261103/`。`00_manifests` 保存分类说明、不可变清单、实际哈希与核验收据；不把传输中或未核文件计为已恢复。最终收据见 `outputs/remote-complete-download-20261103/acquisition-finisher-v2-final.json`；收尾器已退出，不需重启下载。数值RoPE重放和新检测实验仍未执行。

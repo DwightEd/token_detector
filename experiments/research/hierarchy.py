@@ -5,10 +5,10 @@ from functools import lru_cache
 import numpy as np
 from scipy.special import betaln, logsumexp
 
-from myproject.detector import unit_ranges
-from myproject.pooling import cavity_scores, forward
-from myproject.segmentation import legal_atoms
-from myproject.shared import SharedDetector
+from myproject.measure import unit_ranges
+from experiments.research.pooling import cavity_scores, forward
+from experiments.research.segmentation import legal_atoms
+from experiments.research.readouts import SharedDetector
 
 
 @lru_cache(maxsize=128)
