@@ -1485,6 +1485,114 @@
       },
       "no_new_internal_detector": true,
       "next_question": "当前没有准入新的方法、NLI救援变体或模型实验：新结果表明明确支持的否定关系也可被判矛盾，而营业时间错误已获高非蕴含风险，尚未证明可利用的新增内部信息。 下一动作限定为零模型的准入证明：从来源显式许可的字段建立主体—谓词—极性/条件闭合单位，先以5682/13603（原R的`not`=target65、`WiFi`=67）与同源5684（`or`=65、`lot`=66）为入口，补齐对应来源字段及闭合位置，复用已完成库存合同标明哪些物理观测已可匹配、哪些维度缺失，不再清点或复验已知缺失；不得拿QA层15或回答历史局部attention代替缺失的来源观测。 只有能事先提出可区分条件绑定与词法/位置/回答回声的预测、必要负对照，以及相对直接文本核验在原R定位/检测/成本上的具体价值，才重新申请有限实验；若只能换contra/max/格式/分句、复现H004/H005或M5手工世界、M3头层与H015/H016角色QA，则保持NOT_ADMITTED并停止追加调用。"
+    },
+    {
+      "id": "F055",
+      "certainty": "verified_current_tokenizer_original_response_axes_no_model",
+      "claim": "H018 source13603 original5682/5684: current P803, R174/233, fullN977/1036, source707; original R IDs/offsets/packed axes qualified. Closure WiFi277/street245/lot250/valet234/garage240. Historical prompt axes were not physically saved or attested.",
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "outputs/h018-operator-binding-20261104/FRONTEND_OBSERVATION_CONTRACT.json",
+          "sha256": "3d165b58ee4415b007e4edfdc270bce2d7cf5d72f756c01e646d817e08d5c232"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/tokenizer-axes-v2/summary.json",
+          "sha256": "744dba08037f9eac35d76878d5665bd669aa4ff736d4104ccc39d434bc454c3b"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/tokenizer-axes-v2/seal.json",
+          "sha256": "8d3002e70eaeb9265db9a63ee689da8f2a608bdb5848be7faf74e8fbd7963fb1"
+        },
+        {
+          "path": "refine-logs/operator-binding-20261104/ROOT_PHASE1_CONTRACT_20261104_221000.md",
+          "sha256": "d0a068c17769955b51321fbdaaec6c4ea5c20250b9ad6158b70cf9dd5546a4b7"
+        },
+        {
+          "path": "refine-logs/operator-binding-20261104/REVIEW_ROOT_PHASE1_20261104_221642.md",
+          "sha256": "e1372b68d373f00c52852e9ac6162a2c6f0534afe9bc7b955e7296be294e23e8"
+        }
+      ],
+      "new_model_calls": 0,
+      "annotation_reads": 0,
+      "original_generator_causality": false,
+      "prior_failure": "172722a0 default-local0 versus native collection6/8 retained; v2 1df7963a explicit mapping completed; cumulative string encodings6, not a method change",
+      "scientific_boundary": "Finite local Norm+MLP readout coding GO only; no truth sign, new detection efficacy, phase2 or full900 admission"
+    },
+    {
+      "id": "F056",
+      "certainty": "completed_finite_original2_engineering_scores_sealed_independent_audit_pending",
+      "claim": "H018 all407 original targets scored on5682/5684;2native8head256extraNorm/MLP+8fullNnorm64AV192groupWO completed, original axes retained, native32layers and same-T/noop gates passed. No sign/semantic efficacy or AUROC claim.",
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "outputs/h018-operator-binding-20261104/model-observation-v3/result.json",
+          "sha256": "8d40f21ba8a29691af8020598019126d92276ce7177d908ca0111447baeb8c5f"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/model-observation-v3/seal.json",
+          "sha256": "c47dd136cb9e2eeb3c1efadcdf6342efb2e19db88debf196e0318534408fe13d"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/PHASE1_V3_OBSERVE_COMPLETION.json",
+          "sha256": "1f832b9f3be59f8b0b6757325379162243062f6bb25a2bed9fe981c781ae2fba"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/FINAL_CODE_RESOURCE_REVIEW_V3_COMPLETION.md",
+          "sha256": "d1288372a7878c60e8792f5733f38f3077c593aefa141883ccf5c8baf2d64026"
+        }
+      ],
+      "annotation_reads": 0,
+      "model_runtime_seconds": 153.33122719998937,
+      "launcher_elapsed_seconds": 185.22415439994074,
+      "new_model_calls": 2,
+      "new_head_calls": 8,
+      "extra_mlp_calls": 256,
+      "phase2_admitted": false,
+      "preforward_failures": {
+        "metadata_plan_missing_config_argument": 0,
+        "CUDA_lazy_init_order": 0
+      },
+      "source_commit": "3a53a19",
+      "wheel_sha256": "0323dffa8d57bd9df47c0b546dd6ff6fd8340d24e802e8a0eb986d62baf0c4a3"
+    },
+    {
+      "id": "F057",
+      "certainty": "independent_original2_numerical_audit_passed_semantic_specificity_unestablished",
+      "claim": "All407 original axes/64layers/8fullV endpoints audited; no GT. Fixed not65 e is numerically unresolved; licensed valet-not73 e=-.005197525 vs normsham-.005989075, so no semantic specificity established; lot66 remains weakOR unknown. No error contrast or natural AUROC, no new validated detector.",
+      "do_not_retest_phenomenon": true,
+      "evidence": [
+        {
+          "path": "outputs/h018-operator-binding-20261104/phase1-independent-audit-v1/audit.json",
+          "sha256": "6d02c3b2bc53ca5bced28d9469752e4909bb3cf74a585b264bb1c0cc4ebaecf5"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/phase1-independent-audit-v1/seal.json",
+          "sha256": "3575d0682014e11a461684931c894425a9a5bd3168d05f5c2ec48294c64f4dfa"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/PHASE1_INDEPENDENT_INTERPRETATION.json",
+          "sha256": "50425ccf391690d2a652654f64fa29338539abfe51c6f0225a2d9a2c2a7bc7a0"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/THEORY_CEILING_AND_PHASE2_PRIORS.md",
+          "sha256": "798a531bf89a6499dcb721990ee5d84623c8606f08a1ad795425dd164d4a7e5a"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/PHASE2_OWNER_SWAP_ADMISSION_REVIEW.md",
+          "sha256": "6f2552c95690083072531616e7c9a818d38f8db67f7acb03c8ab8f5dc73d426f"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/INSTALLED_V3_FULL_VALIDATION.json",
+          "sha256": "6edefe977d4b62c990104d5173d10781d39a365a960671b67848826e4aa6cef8"
+        }
+      ],
+      "new_model_calls": 0,
+      "annotation_reads": 0,
+      "audit_run_id": "0fcd8affd06146c171105f84840d30752a3facd43e64cc0fecd5906f6edf8fd9",
+      "model_run_id": "841f447909662ec142e56058162e243ce7e9810baa9a96012815aaf0b2ee4426",
+      "mathematical_boundary": "Real probabilities imply e<=nativeNLL andsigmoid(e)=pc/(pc+pn); not an AUC ceiling or calibrated hallucination posterior",
+      "next_gate": "Only conditional zero-model owner-swap frontend/orchestration GO, not model or full900 admission"
     }
   ],
   "rule": "New interventions need different predictions under competing explanations; known counts/cases are reused."

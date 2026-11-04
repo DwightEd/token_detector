@@ -1,5 +1,8 @@
 # 当前持续研究目标
 
+**2026-11-04 23:30：H018两原回答407token评分与独立审计已完成。** 计算门通过，关系特异性/检测有效性未建立；0新目标GT/无新AUROC。F056/F057与[报告](docs/results/h018_local_source_use.md)为准。下一步仅准入两种bool字段归属交换的零model前端/编排，原风险保持、原S0 raw复用；新的模型预算尚未armed。37installed通过，本机fullCPU300s incomplete，push CI待核。
+
+
 **2026-11-04：完整Data2txt900文本检测对照已实际评价。** r4AUROC=0.798317534,AP=0.190392333; witnessAUROC=0.755715886,AP=0.145209394; nliAUROC=0.744306164,AP=0.097168289。详见[结果](docs/results/h017_nli_detection.md)和F054/D050。全部原轴保留、unknown0；16160旧raw复用+2003新forward，全量seal和独立审计后才读标注。它是外部监督比较器，内部机制检测器仍未建立，六任务各0.8目标未完成。M5有限机制分支已关闭，不追加手工世界/头/层。本机完整CPU测试记录300s超时；源码b362eff的完整Linux CI41724862885已通过，收据见RESUME。
 
 本任务的持久状态位于 [research-state/RESUME.md](research-state/RESUME.md)。恢复时先读该短文件与其中指定的事实、先前实验索引，不从聊天摘要重新推测研究方向。

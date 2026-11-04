@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "run_id": "ea58dfbe32f6f250905bd4e710cdb36c79e65e06771dd04d2c886f2e017a2866",
+  "completed_utc": "2026-11-04T14:46:14.240218+00:00",
+  "outcome": "engineering_failure",
+  "conclusion": "Finite stage engineering failure retained; no automatic retry, no efficacy conclusion",
+  "artifacts": [
+    {
+      "path": "outputs/h018-operator-binding-20261104/PHASE1_PLAN_stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/PHASE1_PLAN_stderr.log",
+      "sha256": "f79261c630724efc5c4820c3523a3936607d294fa97865c3db22799a992cffca"
+    }
+  ]
+}

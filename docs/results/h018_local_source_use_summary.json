@@ -1,0 +1,323 @@
+{
+  "schema": "h018-local-source-use-public-summary-v1",
+  "updated_utc": "2026-11-04T15:23:02.735658+00:00",
+  "status": "finite_computation_qualified_detection_not_validated",
+  "scope": "Two fixed unchanged original responses on source13603; no ground-truth annotations or new AUROC.",
+  "producer_run_id": "841f447909662ec142e56058162e243ce7e9810baa9a96012815aaf0b2ee4426",
+  "producer_registry_outcome": "supported_scope",
+  "audit_run_id": "0fcd8affd06146c171105f84840d30752a3facd43e64cc0fecd5906f6edf8fd9",
+  "audit_passed": true,
+  "original_targets": 407,
+  "layer_records": 64,
+  "full_vocabulary_branches": 8,
+  "vocabulary_size": 128256,
+  "cases": {
+    "5682": {
+      "P": 803,
+      "T": 174,
+      "N": 977,
+      "passed": true,
+      "fixed_points": [
+        {
+          "target": 65,
+          "text": " not",
+          "receiver_absolute": 867,
+          "target_logp": -7.82012939453125e-05,
+          "conditional_token_probability": 0.9999218017636962,
+          "native_nll": 7.82012939453125e-05,
+          "source_e": -0.000118255615234375,
+          "source_risk": 0.4999704360961914,
+          "sham_e": 1.33514404296875e-05,
+          "direct_source_write_e": -3.62396240234375e-05,
+          "interpretation": "prechoice_endpoint_not_completed_property_judgment",
+          "sham_risk": 0.5000033378601074,
+          "direct_source_write_risk": 0.49999094009399414,
+          "source_oracle_error_budget_sum": 0.0004500216891756281,
+          "source_sign_numerically_unresolved": true
+        },
+        {
+          "target": 67,
+          "text": " WiFi",
+          "receiver_absolute": 869,
+          "target_logp": -2.8964462280273438,
+          "conditional_token_probability": 0.055219107897889,
+          "native_nll": 2.8964462280273438,
+          "source_e": -0.8519172668457031,
+          "source_risk": 0.2990308403968811,
+          "sham_e": 0.06679725646972656,
+          "direct_source_write_e": -2.1064023971557617,
+          "interpretation": "prechoice_endpoint_not_completed_property_judgment",
+          "sham_risk": 0.516693115234375,
+          "direct_source_write_risk": 0.10847610235214233,
+          "source_oracle_error_budget_sum": 0.0003153823927277699,
+          "source_sign_numerically_unresolved": false
+        },
+        {
+          "target": 102,
+          "text": " lot",
+          "receiver_absolute": 904,
+          "target_logp": -0.32881736755371094,
+          "conditional_token_probability": 0.7197744589141156,
+          "native_nll": 0.32881736755371094,
+          "source_e": -0.07505226135253906,
+          "source_risk": 0.481245756149292,
+          "sham_e": -0.1962890625,
+          "direct_source_write_e": -3.0077037811279297,
+          "interpretation": "prechoice_endpoint_not_completed_property_judgment",
+          "sham_risk": 0.4510846734046936,
+          "direct_source_write_risk": 0.04707905277609825,
+          "source_oracle_error_budget_sum": 0.00037834118120372295,
+          "source_sign_numerically_unresolved": false
+        }
+      ],
+      "av_max_abs_error": 5.092643819981646e-06,
+      "future_attention_nonzero": 0,
+      "oracle_max_abs_logp_error": 2.014732444877154e-06,
+      "oracle_max_abs_error_budget_ratio": 0.0087668575998707
+    },
+    "5684": {
+      "P": 803,
+      "T": 233,
+      "N": 1036,
+      "passed": true,
+      "fixed_points": [
+        {
+          "target": 66,
+          "text": " lot",
+          "receiver_absolute": 868,
+          "target_logp": -5.887209892272949,
+          "conditional_token_probability": 0.0027747076400443066,
+          "native_nll": 5.887209892272949,
+          "source_e": -0.1846923828125,
+          "source_risk": 0.4539577066898346,
+          "sham_e": -0.15909957885742188,
+          "direct_source_write_e": -1.9082956314086914,
+          "interpretation": "weak_OR_unknown",
+          "sham_risk": 0.4603087604045868,
+          "direct_source_write_risk": 0.1291724592447281,
+          "source_oracle_error_budget_sum": 0.00025166226259898394,
+          "source_sign_numerically_unresolved": false
+        },
+        {
+          "target": 73,
+          "text": " not",
+          "receiver_absolute": 875,
+          "target_logp": -0.0089111328125,
+          "conditional_token_probability": 0.9911284536574698,
+          "native_nll": 0.0089111328125,
+          "source_e": -0.0051975250244140625,
+          "source_risk": 0.4987006187438965,
+          "sham_e": -0.00598907470703125,
+          "direct_source_write_e": -0.0075817108154296875,
+          "interpretation": "supported_valet_negation_property_previously_named",
+          "sham_risk": 0.4985027015209198,
+          "direct_source_write_risk": 0.4981045722961426,
+          "source_oracle_error_budget_sum": 0.0004937033227179199,
+          "source_sign_numerically_unresolved": false
+        },
+        {
+          "target": 87,
+          "text": " available",
+          "receiver_absolute": 889,
+          "target_logp": -0.032367706298828125,
+          "conditional_token_probability": 0.9681505215753674,
+          "native_nll": 0.032367706298828125,
+          "source_e": -0.001354217529296875,
+          "source_risk": 0.4996614456176758,
+          "sham_e": -0.006443023681640625,
+          "direct_source_write_e": -0.0070972442626953125,
+          "interpretation": "supported_positive_availability_cofact",
+          "sham_risk": 0.49838921427726746,
+          "direct_source_write_risk": 0.49822568893432617,
+          "source_oracle_error_budget_sum": 0.00044098327634856105,
+          "source_sign_numerically_unresolved": false
+        },
+        {
+          "target": 105,
+          "text": " available",
+          "receiver_absolute": 907,
+          "target_logp": -0.1307220458984375,
+          "conditional_token_probability": 0.877461634558796,
+          "native_nll": 0.1307220458984375,
+          "source_e": -0.022947311401367188,
+          "source_risk": 0.4942634105682373,
+          "sham_e": 0.00482177734375,
+          "direct_source_write_e": 0.00347900390625,
+          "interpretation": "supported_positive_availability_cofact",
+          "sham_risk": 0.5012054443359375,
+          "direct_source_write_risk": 0.5008697509765625,
+          "source_oracle_error_budget_sum": 0.000393447233363986,
+          "source_sign_numerically_unresolved": false
+        }
+      ],
+      "av_max_abs_error": 4.071975032271524e-06,
+      "future_attention_nonzero": 0,
+      "oracle_max_abs_logp_error": 2.0429410412248217e-06,
+      "oracle_max_abs_error_budget_ratio": 0.009419205745299601
+    }
+  },
+  "counts": {
+    "model_calls": 2,
+    "head_calls": 8,
+    "extra_mlp_calls": 256,
+    "extra_norm_calls": 256,
+    "final_norm_replays": 8,
+    "partition_o_calls": 192,
+    "av_replays": 64,
+    "host_transfer_bytes": 9690132176,
+    "max_host_staging_bytes": 8388608,
+    "native_postattention_norm_calls": 64,
+    "native_mlp_calls": 64,
+    "extra_norm_rows": 52096,
+    "extra_mlp_rows": 52096,
+    "final_norm_rows": 8052,
+    "head_rows": 1628,
+    "head_elapsed_seconds": 12.32170720002614
+  },
+  "elapsed_seconds": {
+    "producer": 153.33122719998937,
+    "launcher": 185.22415439994074,
+    "independent_audit": 56.055304900044575
+  },
+  "resources": {
+    "gpu_budget_bytes": 6442450944,
+    "host_and_gpu_reserve_bytes": 536870912,
+    "peak_pytorch_allocated_bytes": 3327624704,
+    "peak_pytorch_reserved_bytes": 4460642304,
+    "maximum_host_staging_bytes": 8388608,
+    "host_payload_bytes": 9690132176,
+    "sealed_observation_tree_bytes": 9237616679
+  },
+  "runtime": {
+    "precision": "original BF16 parameters with native eager FP32 computation",
+    "amp": false,
+    "tf32": false,
+    "grad": false,
+    "torch": "2.8.0+cu128",
+    "transformers": "4.57.1",
+    "not_historical_BF16_bit_equivalence": true,
+    "not_original_generator_causality": true
+  },
+  "source_freeze": {
+    "commit": "3a53a195807f3d016df42b96a6177066f9f3bb76",
+    "wheel_sha256": "0323dffa8d57bd9df47c0b546dd6ff6fd8340d24e802e8a0eb986d62baf0c4a3",
+    "exact_checkout_wheel_target_members": 149,
+    "exact_member_hash_match": true,
+    "targeted_tests": {
+      "passed": 37,
+      "pytest_seconds": 21.86,
+      "wrapper_seconds": 23.740333699970506
+    },
+    "full_cpu_suite": {
+      "status": "incomplete_timeout",
+      "limit_seconds": 300,
+      "exit_code": null
+    },
+    "current_checkpoint_ci": "pending_exact_push_CI"
+  },
+  "prior_engineering_failures": [
+    {
+      "run_id": "ea58dfbe32f6f250905bd4e710cdb36c79e65e06771dd04d2c886f2e017a2866",
+      "stage": "metadata_plan",
+      "reason": "missing capture_identity config_path argument",
+      "model_calls": 0,
+      "head_calls": 0,
+      "annotation_reads": 0,
+      "retained": true
+    },
+    {
+      "run_id": "4a309a0d27e7eea2fce68e0a7fc39e23b4a98da4870908d869fda25a391aa3ea",
+      "stage": "pre_forward_CUDA_counter_reset",
+      "reason": "Invalid device argument before explicit CUDA initialization",
+      "model_calls": 0,
+      "head_calls": 0,
+      "annotation_reads": 0,
+      "retained": true
+    }
+  ],
+  "cumulative_original_llama_cost": {
+    "interfaces": 62,
+    "early_stop": 2,
+    "full_native": 60,
+    "heads": 61,
+    "external_NLI_counted_separately": true
+  },
+  "new_information": "Norm+MLP local delta at held native layer inputs; P006 direct source write is an existing control.",
+  "formula": {
+    "e": "logp_original_target(H-D)-logp_original_target(H)",
+    "risk": "sigmoid(e)",
+    "real_arithmetic_only": [
+      "e=log(p_cf/p_native)<=native_NLL",
+      "sigmoid(e)=p_cf/(p_cf+p_native)<=1/(1+p_native)"
+    ],
+    "constraints_are_not": [
+      "hallucination_posterior",
+      "calibration",
+      "AUROC_bound",
+      "propagated_counterfactual_world",
+      "formal_FP32_error_theorem"
+    ]
+  },
+  "interpretation_limits": [
+    "not65 is numerically_unresolved under the frozen endpoint oracle budgets.",
+    "Legal valet-not73 has similar-direction matched-noise behavior; no relation-specific mechanism is established.",
+    "street-or-lot remains weak-OR unknown, not an admitted hallucination-positive control.",
+    "No wrong-relation control, no label reading, no new AUROC, no improvement over R4/V3/NLI established.",
+    "A new owner/Boolean-swap stage is proposal-only, not admitted and not run.",
+    "Six-task AUROC>=0.8 goal remains unmet."
+  ],
+  "annotation_reads": 0,
+  "new_auroc": null,
+  "detector_validated": false,
+  "phase2_admitted": false,
+  "full900_admitted": false,
+  "public_files": [
+    "docs/results/h018_local_source_use.md",
+    "docs/results/h018_local_source_use_summary.json",
+    "docs/source-reading/H018_PROGRESS.html",
+    "docs/source-reading/H018_PROTOCOL.html"
+  ],
+  "local_evidence_availability": "The following outputs/ paths are ignored local artifacts, NOT GitHub attachments or public download links.",
+  "local_evidence": [
+    {
+      "path": "outputs/h018-operator-binding-20261104/model-observation-v3/result.json",
+      "sha256": "8d40f21ba8a29691af8020598019126d92276ce7177d908ca0111447baeb8c5f"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/model-observation-v3/seal.json",
+      "sha256": "c47dd136cb9e2eeb3c1efadcdf6342efb2e19db88debf196e0318534408fe13d"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/phase1-independent-audit-v1/audit.json",
+      "sha256": "6d02c3b2bc53ca5bced28d9469752e4909bb3cf74a585b264bb1c0cc4ebaecf5"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/phase1-independent-audit-v1/seal.json",
+      "sha256": "3575d0682014e11a461684931c894425a9a5bd3168d05f5c2ec48294c64f4dfa"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/PHASE1_INDEPENDENT_INTERPRETATION.json",
+      "sha256": "50425ccf391690d2a652654f64fa29338539abfe51c6f0225a2d9a2c2a7bc7a0"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/PHASE1_INDEPENDENT_INTERPRETATION.md",
+      "sha256": "19d0aad5d06433dfd7a6678b0529d196d6d143fda79aecc5d02d389022c7eb9e"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/PHASE1_V3_OBSERVE_COMPLETION.json",
+      "sha256": "1f832b9f3be59f8b0b6757325379162243062f6bb25a2bed9fe981c781ae2fba"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/INSTALLED_V3_TARGETED_VALIDATION.json",
+      "sha256": "a9b3643abb469397f9f00aabe3182bacafd488c5591e8f25e6db4ae3f1665f20"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/INSTALLED_V3_FULL_VALIDATION.json",
+      "sha256": "6edefe977d4b62c990104d5173d10781d39a365a960671b67848826e4aa6cef8"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/tokenizer-axes-v2/seal.json",
+      "sha256": "8d3002e70eaeb9265db9a63ee689da8f2a608bdb5848be7faf74e8fbd7963fb1"
+    }
+  ]
+}

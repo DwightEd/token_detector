@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "run_id": "015299b19580d778990fcaeb53091a0d5792778b70eddaa1af1a0534f8d1006a",
+  "completed_utc": "2026-11-04T14:50:48.500940+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Metadata-only finite plan frozen; no model/GT",
+  "artifacts": [
+    {
+      "path": "outputs/h018-operator-binding-20261104/PHASE1_V2_PLAN_stdout.log",
+      "sha256": "0354236691caf9b1eba5151aeb6ff157754206f36dd47a510ed491e14a981030"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/PHASE1_V2_PLAN_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/model-plan-v2/plan.json",
+      "sha256": "f15c759363825fe86f985cc23bdcf95bb8ea99f0792a0d131f9b6ffaec338b99"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/model-plan-v2/seal.json",
+      "sha256": "f4ce49605ac0203eb9a807479972381bd48ed95752a3831b2db497592427d6a5"
+    }
+  ]
+}

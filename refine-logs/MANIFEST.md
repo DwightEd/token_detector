@@ -33,3 +33,7 @@
 | 2026-11-04 05:42:47 | EXPERIMENT_TRACKER_20261104_054247.md → EXPERIMENT_TRACKER.md | 全评分/审计/CPU评价/诊断DONE和外部NLI负结果不变；公开h017_nli_error_cases md/json已接入，fixed两例零模型证明与NOT_ADMITTED、全CPU INCOMPLETE/新CI PENDING明确 |
 | 2026-11-04 05:53:55 | EXPERIMENT_PLAN_20261104_055355.md → EXPERIMENT_PLAN.md | 精确源码b362eff完整安装suite CI已PASSED：run41724862885/job126226867706/step6 success，官方HTML+REST收据复核；本地300秒INCOMPLETE不改写，不报未知测试总数；当前迭代完整评价完成但目标/新方法仍未达成 |
 | 2026-11-04 05:53:55 | EXPERIMENT_TRACKER_20261104_055355.md → EXPERIMENT_TRACKER.md | CI PENDING更新为exact-source PASSED，绑定b362eff与实际run/job/step；自该提交numerical code/tests/tools未变，后续仅文档[skip ci]归档，保留所有历史版本/原失败与本地timeout，不重评分/新增模型 |
+| 2026-11-04 22:20:00 | EXPERIMENT_PLAN_20261104_222000.md → EXPERIMENT_PLAN.md | 单候选Norm+MLP局部source使用读出，固定2native/8head/256extraMLP有限实现；P006/nativeNLL/sham必要对照、原轴、eager及数值门先冻结；运行待代码/资源/claim，无新GT/效果 |
+| 2026-11-04 22:20:00 | EXPERIMENT_TRACKER_20261104_222000.md → EXPERIMENT_TRACKER.md | 同步69835f2工程重构；原tokenizer工程失败保留，M0续修完成结果随后写F055；package进入有限实现，模型未启动、phase2/full900未准入；旧900/M5/NLI不重跑 |
+| 2026-11-04 23:30:00 | EXPERIMENT_PLAN_20261104_233000.md → EXPERIMENT_PLAN.md | 原两回答407token/2native8head256MLP完成且无标签审计通过，语义特异性未建立；只条件准入两字段owner交换前端/实现，新模型未准入，原风险/层/scope不改 |
+| 2026-11-04 23:30:00 | EXPERIMENT_TRACKER_20261104_233000.md → EXPERIMENT_TRACKER.md | 841f4479+0fcd8aff DONE，37新installed通过/full300s incomplete；两0model入口故障保留；P1公开/离线桌面页完成，精确push CI待核；新阶段不自动执行模型 |

@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "run_id": "1df7963a25b8bfa8929237305ba939dbbb67aba28624fcd3d253ce03d8511a93",
+  "completed_utc": "2026-11-04T14:20:54.493563+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Tokenizer-only current-mainline coordinates completed for original5682/5684, exact primitive/native R IDs offsets units and global collection answer indices6/8. SharedP803, T174/233, N977/1036; source707. Current operational prompt identity only, no historical prompt-axis attestation or semantics. Four string tokenizations in v2, six including preserved v1 identity-check engineering failure; zero models, weight payloads, scores or labels.",
+  "artifacts": [
+    {
+      "path": "outputs/h018-operator-binding-20261104/TOKENIZER_AXES_SPEC_v2.json",
+      "sha256": "b672111434e9ee172c8d3e57b58deb4c57d5dcbdfcd99447da8bce841580f8ae"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/prepare_tokenizer_axes_v2.py",
+      "sha256": "f2eb2ca5a522cea7e4c2621cefde8bcc603b9bf87a473216e4c7d3606b16a48d"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/tokenizer-axes-v2/plan.json",
+      "sha256": "4e607242e40aecd7cd2a308e2f70c0791165d32de7d07d1a515dfc58414bbe12"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/tokenizer-axes-v2/summary.json",
+      "sha256": "744dba08037f9eac35d76878d5665bd669aa4ff736d4104ccc39d434bc454c3b"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/tokenizer-axes-v2/case-5682.json",
+      "sha256": "c8f156f246a6f39ed04686f29879f6046acfd4b7b84aef7b958ef0c6279e58ac"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/tokenizer-axes-v2/case-5684.json",
+      "sha256": "8ae52886610cafbef70ae60b741435f61fd670f8b14184a4353f84f226f3e036"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/tokenizer-axes-v2/seal.json",
+      "sha256": "8d3002e70eaeb9265db9a63ee689da8f2a608bdb5848be7faf74e8fbd7963fb1"
+    }
+  ]
+}

@@ -1,0 +1,343 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>H018：原轴、公式与完整复现协议</title><meta name="source-sha256" content="8fb73806a5b6082db16c7b29ac50925f8bbe95d4f73af43b32fc3e0f82fabdeb">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'local'},options:{enableMenu:false}};</script>
+<script defer src="assets/mathjax-3.2.2/tex-svg-full.js"></script>
+<style>body{max-width:1040px;margin:40px auto;padding:0 24px;color:#17253a;font:17px/1.8 system-ui,sans-serif;background:#fbfcff}nav{font-size:14px}a{color:#245bc7}h1,h2{line-height:1.35}img{max-width:100%;height:auto}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #d5ddeb;padding:10px;text-align:left}th{background:#edf2fb}pre{overflow:auto;padding:16px;background:#edf2f8}code{font-size:.88em}.equation{overflow-x:auto}.flow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:20px;background:#edf2fb;border-radius:12px}.flow span{background:white;padding:8px 12px;border:1px solid #cbd7eb}footer{font-size:13px;border-top:1px solid #d5ddeb;margin-top:40px;padding-top:16px}@media print{body{font-size:12px;margin:0}nav{display:none}}</style>
+</head><body><nav><a href="H018_PROGRESS.html">H018：局部来源使用的实际结果与边界</a> · <a href="H018_PROTOCOL.html">H018：原轴、公式与完整复现协议</a> · <a href="H017_DETECTION.html">完整900回答：检测效果与成本</a> · <a href="H017_ERRORS.html">固定错例：关系、否定与排序</a> · <a href="H017_PROGRESS.html">关系错绑：实验进展与证据</a></nav><main><h1>H018：原回答的来源写入如何进入 Norm＋MLP</h1>
+<p>本页保留冻结协议，并补充第一门的实际完成状态。<strong>两条原回答的2次native、8次head已完成，407原token通过独立审计；尚无检测改善结论。</strong> 第一门只覆盖来源13603，检验局部计算代理及支持型反例，不读取目标标注，不计算自然AUROC，不宣称六任务达到0.8。实际数值与限制见<a href="H018_PROGRESS.html">H018结果</a>及<a href="H018_PROGRESS.html">离线进展页</a>。</p>
+<p>完整冻结约束见<a href="../../refine-logs/operator-binding-20261104/ROOT_PHASE1_CONTRACT_20261104_221000.md">第一门合同</a>与<a href="../../refine-logs/operator-binding-20261104/REVIEW_ROOT_PHASE1_20261104_221642.md">独立科学审查</a>。已完成的Data2txt900结果见<a href="H017_DETECTION.html">H017文本对照</a>，该结果不随本次提案改变。</p>
+<h2>1. 为什么需要这个有限门</h2>
+<p>既有概率差、来源写入和NLI头概率，没有区分“来源信息被取到”与“接收端如何使用它”。本次新增量只是在<strong>固定原生层输入</strong>下，来源attention写入进入本层post-attention RMSNorm＋MLP后的局部差分。它不预设attention只复制、MLP专管真值，也不把负作用定义成幻觉。</p>
+<p>P006已经测过来源写入及其终端移除<code>H−source_write</code>；来源删除概率差也是既有对照。本次保留同次forward的P006读出、固定随机幅度对照及native NLL，隔离新增Norm＋MLP差分的作用，不把旧量改名为创新，不做分数加权、选符号或调阈值。</p>
+<p>研究对象是冻结Llama观察器如何处理<strong>已有回答</strong>，不是让另一个模型重新回答问题。它也不是原GPT-4/Mistral生成错误的因果重放。</p>
+<h2>2. 原S/R、合法否定与 weak OR</h2>
+<p>两例共享完全相同的原prompt和S：<code>Tinker's Burgers</code>，source_id=<code>13603</code>。来源明确给出<code>WiFi='no'</code>、<code>street=True</code>、<code>lot=False</code>、<code>valet=False</code>、<code>garage=False</code>；<code>Music=None</code>保持unknown，缺失字段不能当False，属性也不能继承hours的星期条件。</p>
+<table>
+<thead>
+<tr>
+<th>原回答</th>
+<th>生成器</th>
+<th style="text-align: right;">原R token数T</th>
+<th>焦点及许可边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5682</td>
+<td>GPT-4</td>
+<td style="text-align: right;">174</td>
+<td><code>However, they do not have WiFi.</code>为来源许可的否定；局部<code>they</code>人工回指restaurant，不等于已建立通用回指前端</td>
+</tr>
+<tr>
+<td>5684</td>
+<td>Mistral</td>
+<td style="text-align: right;">233</td>
+<td><code>on the street or lot</code>保留歧义；<code>valet parking is not available</code>是来源许可的否定共事实</td>
+</tr>
+</tbody>
+</table>
+<p>弱析取<code>Avail(street) ∨ Avail(lot)</code>在True/False赋值下成立；“两项都可供选择”的菜单读法才有不获许可的lot分支。<strong>不把弱OR称为逻辑矛盾，不把5684整句直接赋为错误。</strong> 两原R还改变了前文、位置和生成器，不能用任意跨R差异证明操作符因果。</p>
+<p>原5682另有<code>there is no valet, garage, or lot parking</code>，它与5684共享字面<code>or lot</code>及同一来源lot=False，却有不同否定范围，可约束单纯词面解释。支持型反例、True共事实和unknown都保留，不能为了漂亮符号而删除。</p>
+<h2>3. 原概率轴与 F055 坐标</h2>
+<p>零模型主线分词门已完成：两例的P均为<strong>803</strong>，source mask均含<strong>707</strong>个token；5682的N=P+T=<strong>977</strong>，5684为<strong>1036</strong>。全部原R ID、offset、分段及历史集合槽6/8一致，没有重生成、联合重分词或删除难词。</p>
+<p>原target采用0基编号，真实预测位置为：</p>
+<p><div class="equation">\[
+q_t=P+t-1,\qquad q_t\text{预测原 }y_t.
+\]</div></p>
+<p>读入R[t]后的receiver是P+t，预测下一token。因此5682在预测not65的q=867只读到<code>However, they do</code>；预测WiFi67的q=869只读到<code>…not have</code>。不能以后见WiFi要求这些位置必然选WiFi；允许提前规划，但不把它当实际读取未来词。完整WiFi否定首次闭合在读完WiFi后的q=870，属于离线读后诊断，不能回写为WiFi67的事前风险。</p>
+<table>
+<thead>
+<tr>
+<th>位置</th>
+<th style="text-align: right;">当前实际绝对坐标</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>来源valet=False / garage=False</td>
+<td style="text-align: right;">234 / 240</td>
+<td>完整字段值闭合</td>
+</tr>
+<tr>
+<td>来源street=True / lot=False</td>
+<td style="text-align: right;">245 / 250</td>
+<td>完整字段值闭合</td>
+</tr>
+<tr>
+<td>来源WiFi='no'</td>
+<td style="text-align: right;">277</td>
+<td>包含字符串闭合边界；不以较早key状态冒充已读value</td>
+</tr>
+<tr>
+<td>5682预测not65 / WiFi67</td>
+<td style="text-align: right;">867 / 869</td>
+<td>真正原概率轴</td>
+</tr>
+<tr>
+<td>5682读完WiFi67</td>
+<td style="text-align: right;">870</td>
+<td>完整否定关系的读后诊断</td>
+</tr>
+<tr>
+<td>5682读完no-list中的lot102 / parking103</td>
+<td style="text-align: right;">905 / 906</td>
+<td>合法否定列表诊断</td>
+</tr>
+<tr>
+<td>5684预测or65 / lot66</td>
+<td style="text-align: right;">867 / 868</td>
+<td>右属性未消费时不贴后见错误</td>
+</tr>
+<tr>
+<td>5684读完lot66 / 完整valet否定74</td>
+<td style="text-align: right;">869 / 877</td>
+<td>OR歧义与合法否定诊断</td>
+</tr>
+</tbody>
+</table>
+<p>这些是<strong>当前主线分词器的操作坐标</strong>，不是历史Data2txt prompt已独立保存的证明。旧native里的<code>full_token_id</code>仍只是R；不能用R-only文件冒认完整prompt轴。来源闭合只保证信息可用，不证明已编码、使用或核验关系。</p>
+<p>第一门的风险仍覆盖全部T个原预测行，统一使用q_t；字段坐标只用于身份核对和受限诊断。方法scope固定完整source_mask，不按人工WiFi/lot字段切来源，也不挑头、层或token。</p>
+<h2>4. 计算定义与有限理论</h2>
+<h3>4.1 原生来源写入</h3>
+<p>令a为同次原生eager softmax attention，v为真实V，S为完整来源key集合。在每层、每个原预测receiver保留真实GQA对应关系，先分区投影再相加：</p>
+<p><div class="equation">\[
+m^S_{\ell,t}
+=W^O_\ell\operatorname{concat}_{h}
+\left(\sum_{j\in S}a_{\ell,h}(q_t,j)v_{\ell,h}(j)\right).
+\]</div></p>
+<p>不对来源attention重新归一化。source/history/other构成完整互斥分区；history包含R receiver的self key，不能全部称作earlier R。当前资格只接受无bias的原Llama，避免把同一个bias分配三遍。</p>
+<p>真实native A、V与pre-O AV同时保留；不在SDPA返回None时静默换算法，也不把raw pre-RoPE QK直接当attention。</p>
+<h3>4.2 新量：固定背景中的局部非线性差分</h3>
+<p>设x为本层真实post-attention/pre-MLP残差，F为原模型的post-attention RMSNorm接MLP：</p>
+<p><div class="equation">\[
+F_\ell(x)=\operatorname{MLP}_\ell(\operatorname{RMSNorm}^{post}_\ell(x)),
+\qquad
+\delta_{\ell,t}=F_\ell(x_{\ell,t})-F_\ell(x_{\ell,t}-m^S_{\ell,t}).
+\]</div></p>
+<p>两个分支均用相同T行形状，且reference须对同次native norm/MLP输出通过固定数值门。它没有改来源、原历史、attention skip或其他层输入，因此是<strong>held-native-input局部代理</strong>。</p>
+<p>在实数算术中，带正epsilon的RMSNorm与SiLU MLP光滑，微积分基本定理给出：</p>
+<p><div class="equation">\[
+\delta_{\ell,t}
+=\int_0^1 J_{F_\ell}(x_{\ell,t}-\alpha m^S_{\ell,t})\,
+m^S_{\ell,t}\,d\alpha.
+\]</div></p>
+<p>这只说明局部差分测量了F沿固定来源写入方向的响应；不证明它是真值、绑定专属量或有效幻觉特征。
+程序实际只执行F的前向相减，不显式计算Jacobian或做数值积分；重放的是被研究模型的原模块，不另请问答模型解释向量。</p>
+<h3>4.3 全层固定累积与原token读出</h3>
+<p>32层按0→31顺序用FP64累加，再一次转换FP32：</p>
+<p><div class="equation">\[
+D_t=\operatorname{FP32}\left(\sum_{\ell=0}^{31}
+\operatorname{FP64}(\delta_{\ell,t})\right),
+\qquad H&#x27;_t=\operatorname{FP32}(H_t-D_t).
+\]</div></p>
+<p>H取真实native finalnorm的<strong>输入</strong>，不是已经归一化的last_hidden_state。完整N行finalnorm重放仅替换原预测行，其余行保持H及原布局；最后用相同T行、完整128256词表head评分，不分块执行head。</p>
+<p>令g为原finalnorm＋完整head，定义：</p>
+<p><div class="equation">\[
+\ell_y(z)=z_y-\operatorname{LSE}(z),\qquad
+e_t=\ell_{y_t}(g(H&#x27;_t))-\ell_{y_t}(g(H_t)),\qquad
+r_t=\sigma(e_t).
+\]</div></p>
+<p>实数域中也有：</p>
+<p><div class="equation">\[
+e_t=-\int_0^1
+\left\langle\nabla_H\ell_{y_t}(g(H_t-\beta D_t)),D_t\right\rangle d\beta.
+\]</div></p>
+<p>它只刻画固定原token的概率方向；r不是校准的幻觉概率。<strong>32个held-input差分相加不是链式传播后的反事实forward</strong>，没有补上后续层Jacobian，不能把它包装成完整来源移除或“MLP真值”。上述两式的δ、e指对应实数函数的恒等式，不是FP32实测值逐位相等；实际计算另按冻结数值资格检查，不能用恒等式冒充浮点误差证明。</p>
+<p>同时保存分子与分母：</p>
+<p><div class="equation">\[
+e_t=(z^{cf}_{y_t}-z^{nat}_{y_t})
+-\bigl(\operatorname{LSE}(z^{cf})-\operatorname{LSE}(z^{nat})\bigr).
+\]</div></p>
+<p>生产代码固定用FP32 <code>target_logit - torch.logsumexp(full_logits)</code>。不同减法次序的舍入单独保存；不把全词表分母变化称作独有的抑制机制。</p>
+<h2>5. 对照、资格与费用上界</h2>
+<table>
+<thead>
+<tr>
+<th>对照/检查</th>
+<th>固定做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>同T reference</td>
+<td>F_T(x)对native RMSNorm输出/MLP输入及native MLP write；不能拿norm输出与未归一化x比较</td>
+</tr>
+<tr>
+<td>独立m=0</td>
+<td>真正执行counter路径；局部norm/MLP逐bit相同、delta为0；完整N finalnorm逐bit复现native</td>
+</tr>
+<tr>
+<td>norm-sham</td>
+<td><code>matched_noise(m_source, seed=17+layer)</code>，逐receiver匹配整个O写入向量的L2范数；目标0则sham0，不用epsilon填补失败</td>
+</tr>
+<tr>
+<td>P006 direct-write</td>
+<td>来源写入按原FP32层序累积W_S，比较H−W_S；这是旧prior的同次对照，不是新量</td>
+</tr>
+<tr>
+<td>native NLL</td>
+<td>保存原token原生置信度，不拟合去相关或与候选融合</td>
+</tr>
+<tr>
+<td>物理身份</td>
+<td>原生A/V/GQA/pre-O AV、分区O、future attention=0、两次native残差相加逐bit；所有层与头完整保留</td>
+</tr>
+</tbody>
+</table>
+<p>冻结上界为<strong>2次native完整forward、8次完整head、256次额外局部MLP、256次对应post-attention RMSNorm、8次额外完整N finalnorm</strong>；另计192次分区W_O请求和64次AV重建。native自身32×2层MLP与2次finalnorm属于完整forward。m=0已逐bit同一输入输出，复用native head，不假报额外head调用。</p>
+<p>native AV/分区O使用<code>abs≤0.002+0.0001·abs(native)</code>；reference RMSNorm为<code>1e−6+1e−5·abs(native)</code>，reference MLP为<code>2e−5+2e−4·abs(native)</code>。D与独立CPU同序FP64累计逐bit相同；sham幅度门与所有finite/shape门均固定。e分解误差界为<code>32·float32_eps·(abs(z_cf)+abs(z_nat)+abs(LSE_cf)+abs(LSE_nat)+1)</code>，这是操作性资格界，不是真假阈值或浮点定理。任何失败均先保存已返回raw再停止，不调宽、不删token、不自动重跑。</p>
+<p>原参数BF16，计算采用官方Llama的<strong>native eager FP32</strong>、FP32 RoPE，TF32/AMP/grad关闭；它不是历史SDPA/BF16逐bit复现。运行环境与权重按已核的Torch2.8.0+cu128、Transformers4.57.1、原SM120资格绑定，换设备须另行资格。GPU预算<strong>6GiB</strong>，host/GPU均保留<strong>512MiB</strong>；逐tensor mmap、单层物化，不量化、不截来源/R、不并发。按层顺序落盘，单次CPU传输最多8MiB、总临时缓冲约束32MiB；最多16行的logits落盘只改变存储，不改变完整head算术。</p>
+<h2>6. 调用链与运行入口</h2>
+<p>当前实现链为：</p>
+<pre><code class="language-text">experiments.run: transfer observe-operator-binding
+  → operator_binding_observation.run → prepare / observe_case
+  → 已核主线tokenizer轴与完整原S/P/R
+  → StreamedObserver.hidden（官方原模型，eager FP32）
+  → operator_capture.capture_local_effects
+      → source_write_observe.partition_writes
+      → operator_binding.local_effect / OrderedAccumulator
+  → 完整N finalnorm / 完整T×词表head
+  → operator_binding.full_vocab_endpoints / score_endpoints
+  → myproject.measure.token_scores（原轴，不读GT）
+</code></pre>
+<p>主库的<code>extract/Observations/score</code>与V3状态内核保持独立；H018 orchestration在<code>experiments/</code>，候选计算在<code>experiments/research/</code>。局部4F在native MLP hook中、父layer卸权重前完成；递归hook有guard，callback完成逐层保存后才进行CPU累计参考工作，所有hook在finally清理。</p>
+<p>以下仅展示参数结构。先核数据/源码/资源、登记独立run，采用全新输出目录；命令不授予自动重试或第二科学门：</p>
+<pre><code class="language-bash"># 两阶段均填写同一组已核路径；protocol及其绑定的科学/资源收据需一起转移。
+token-experiment transfer observe-operator-binding \
+  --prepare-only \
+  --protocol /path/to/h018/protocol.json \
+  --axes /path/to/h018/tokenizer-axes-v2 \
+  --prepared /path/to/test_Data2txt \
+  --frontend-contract /path/to/h018/FRONTEND_OBSERVATION_CONTRACT.json \
+  --model /path/to/Meta-Llama-3.1-8B-Instruct \
+  --asset-manifest /path/to/model-acquisition/manifest-v1.json \
+  --asset-verification /path/to/model-acquisition/independent-verification-v1.json \
+  --asset-state /path/to/model-acquisition/mirror-state-v1.json \
+  --head-qualification /path/to/h017/m3-head \
+  --capture-root /path/to/supervised_local_transport_20261008 \
+  --device cuda:0 --output /path/to/new-h018-plan
+
+# 准备封存、fresh review及实际资源通过，再单独claim观测阶段。
+token-experiment transfer observe-operator-binding \
+  --plan /path/to/new-h018-plan \
+  --protocol /path/to/h018/protocol.json \
+  --axes /path/to/h018/tokenizer-axes-v2 \
+  --prepared /path/to/test_Data2txt \
+  --frontend-contract /path/to/h018/FRONTEND_OBSERVATION_CONTRACT.json \
+  --model /path/to/Meta-Llama-3.1-8B-Instruct \
+  --asset-manifest /path/to/model-acquisition/manifest-v1.json \
+  --asset-verification /path/to/model-acquisition/independent-verification-v1.json \
+  --asset-state /path/to/model-acquisition/mirror-state-v1.json \
+  --head-qualification /path/to/h017/m3-head \
+  --capture-root /path/to/supervised_local_transport_20261008 \
+  --device cuda:0 --output /path/to/new-h018-observations
+</code></pre>
+<h2>7. 换机数据与 M0 复现要求</h2>
+<p>下表远端路径相对<code>/share/home/tm902089733300000/a903202310/lys/</code>。这是已知存储位置，不代表H018本地产物已上传；完整交接见<a href="../../REMOTE_EXPERIMENT_HANDOFF.md">远端数据说明</a>。</p>
+<table>
+<thead>
+<tr>
+<th>材料</th>
+<th>已知远端相对位置/当前用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prepared</td>
+<td><code>research/token_detector/outputs/ragtruth_full_shared_20261029/test_Data2txt/</code>，使用原<code>inputs.jsonl</code>、manifest；第一门不打开annotations</td>
+</tr>
+<tr>
+<td>5682 primitive R</td>
+<td><code>research/graph/outputs/native_support_ragtruth_all/source_first_v1/responses/000177/response.json</code></td>
+</tr>
+<tr>
+<td>5684 primitive R</td>
+<td>同一根下<code>responses/000777/response.json</code></td>
+</tr>
+<tr>
+<td>历史native</td>
+<td><code>research/token_detector/outputs/ragtruth_full_shared_20261029/native_Data2txt/</code>；当前M0实际用的是另行恢复/重封装的<code>native_Data2txt/observations/6.npz</code>与<code>8.npz</code>，须按下列SHA转移，不能猜测远端同名文件等价</td>
+</tr>
+<tr>
+<td>原观察模型</td>
+<td><code>models/Meta-Llama-3.1-8B-Instruct/</code>，完整四BF16 shard、index、config及tokenizer元数据；本地manifest固定原权重身份</td>
+</tr>
+<tr>
+<td>原capture配置</td>
+<td><code>research/graph/outputs/supervised_local_transport_20261008/</code>，仅复用配置/原资格身份，不把QA block15状态冒充这两Data2txt状态</td>
+</tr>
+</tbody>
+</table>
+<p>必须另行转移完整<code>outputs/h018-operator-binding-20261104/tokenizer-axes-v2/</code>及frontend合同、模型收据、原head资格和协议引用的科学/资源收据。<strong><code>outputs/</code>被Git忽略，源码push不包含数据、模型、axes或本地运行证明。</strong> 下列哈希公开身份，不是可下载附件：</p>
+<table>
+<thead>
+<tr>
+<th>必需身份材料</th>
+<th>SHA256</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prepared <code>inputs.jsonl</code></td>
+<td><code>050c79f2711aa292845f27ed4f3ae8b68f0d263bc9d29678486f7e8fb6477521</code></td>
+</tr>
+<tr>
+<td>prepared <code>manifest.json</code></td>
+<td><code>d1f0ba0658222556e2542e145da84538d14a9fa5b230dd9bb8fa34b830944b80</code></td>
+</tr>
+<tr>
+<td>5682 primitive R</td>
+<td><code>bdf8ab1d987061c6063c94658a898e817f8f922381ce363f09e76e6b2f133f56</code></td>
+</tr>
+<tr>
+<td>5684 primitive R</td>
+<td><code>ad2068e4d503983238f6a2eef4725fe98361e46c39f0c0af1f56f3b3cdde260c</code></td>
+</tr>
+<tr>
+<td>native <code>6.npz</code> / <code>8.npz</code></td>
+<td><code>e745bab437e84812570478c870f8fa43a2c3e7b6b8b72c5f382402c7a9c23539</code> / <code>934a0fe4d0ca2221620592148b33ff3785dd7c8f6d2a760da0409427527de2d4</code></td>
+</tr>
+<tr>
+<td>frontend合同JSON</td>
+<td><code>3d165b58ee4415b007e4edfdc270bce2d7cf5d72f756c01e646d817e08d5c232</code></td>
+</tr>
+<tr>
+<td>M0 <code>axes-5682.npz</code></td>
+<td><code>9c0b4e33b682c625a3101a12148de00c46f7540b97217affb30de9614e001f31</code></td>
+</tr>
+<tr>
+<td>M0 <code>axes-5684.npz</code></td>
+<td><code>6a3d9d4212a21b1a596252dcbec12a73e102ddc7070810fd0ac3a4f3714668ae</code></td>
+</tr>
+<tr>
+<td>M0 <code>case-5682.json</code></td>
+<td><code>c8f156f246a6f39ed04686f29879f6046acfd4b7b84aef7b958ef0c6279e58ac</code></td>
+</tr>
+<tr>
+<td>M0 <code>case-5684.json</code></td>
+<td><code>8ae52886610cafbef70ae60b741435f61fd670f8b14184a4353f84f226f3e036</code></td>
+</tr>
+<tr>
+<td>M0 <code>plan.json</code></td>
+<td><code>4e607242e40aecd7cd2a308e2f70c0791165d32de7d07d1a515dfc58414bbe12</code></td>
+</tr>
+<tr>
+<td>M0 <code>summary.json</code></td>
+<td><code>744dba08037f9eac35d76878d5665bd669aa4ff736d4104ccc39d434bc454c3b</code></td>
+</tr>
+<tr>
+<td>M0 <code>seal.json</code></td>
+<td><code>8d3002e70eaeb9265db9a63ee689da8f2a608bdb5848be7faf74e8fbd7963fb1</code></td>
+</tr>
+</tbody>
+</table>
+<p>M0 helper是当前两条原R的有限坐标准备，不是已部署的全900前端。若新机缺axes，需原prepared、这两份primitive/native身份材料、相同tokenizer/config元数据，调用主线<code>encode_source/encode_response/answer_axis</code>及<code>relation_alignment</code>的offset/映射逻辑，独立编码prompt和R，重建source mask、prechoice行与跨边界字段锚，再单独冻结/qualify新的坐标计划。不能直接用旧R-only native推断P，也不能用NLI tokenizer坐标替代Llama坐标。</p>
+<p>现有frontend/M0记录含原机绝对路径；CLI不会自动解析远端历史挂载。换机须显式建立新执行路径映射/本地契约并重新资格，保留原SHA与原seal，不直接修改已封存文件来“适配路径”。</p>
+<h2>8. 目前完成到哪里</h2>
+<p>F055的M0为0模型：修复局部answer_index默认0与历史集合槽6/8的检查错误，原失败保留；成功v2完成4次字符串编码，连同首次失败累计6次，未加载模型权重payload或读取标注。只证明原R及当前坐标身份。</p>
+<p>最终冻结源为<code>3a53a195807f3d016df42b96a6177066f9f3bb76</code>，149个package成员的checkout/wheel/外置target SHA完全相同；wheel SHA为<code>0323dffa8d57bd9df47c0b546dd6ff6fd8340d24e802e8a0eb986d62baf0c4a3</code>。新增kernel/capture/orchestration的外置联合检查为<strong>37项通过，pytest 21.86秒</strong>。完整CPU套件达到300秒上限，明确记录为<code>incomplete_timeout</code>，不能称全套通过；当前checkpoint CI待push后核对，历史CI不代替。本地证明<code>INSTALLED_V3_TARGETED_VALIDATION.json</code>、<code>INSTALLED_V3_FULL_VALIDATION.json</code>及外置<code>snapshot-proof.json</code>未随Git发布。</p>
+<p>首次metadata计划缺config参数，随后观测进程在CUDA尚未初始化时reset计数器失败，两次均发生于0 model/0 head/0 GT；失败保留，参数及初始化修复后另claim。实际run <code>841f447909662ec142e56058162e243ce7e9810baa9a96012815aaf0b2ee4426</code>已exit0，内部153.33秒、launcher185.22秒，严格执行2native/8head/256extraMLP预算。原raw与seal位于本地<code>model-observation-v3/</code>，不随Git发布。</p>
+<p>独立审计run <code>0fcd8affd06146c171105f84840d30752a3facd43e64cc0fecd5906f6edf8fd9</code>已完成：407原token、64层、8完整词表分支、原轴及主risk join通过，AV最大绝对差约5.09e−6，GPU FP32 logp对CPUF64 oracle最大差约2.04e−6。oracle只审数值，不重写分数，不证明语义。七固定点中not65符号数值未定，合法not73的主量与sham同向相近，lot66仍weak-OR unknown；没有错误关系对照，没有新AUROC或检测改善证据。</p>
+<p>第一门只许可报告这个局部代理的计算身份与固定行为。第二stage的owner/布尔交换尚在独立proposal审查，未准入、未运行；完整900效果评价也未准入。保留全部结果，不换号、换层、改scope或用NLI/格式改写救援。六任务各0.8目标仍未完成。</p></main><footer>H018本地离线阅读 · 原Markdown与GitHub公式是同一来源。打开本文件即可阅读，无需启动服务器。<br>源码SHA256：8fb73806a5b6082db16c7b29ac50925f8bbe95d4f73af43b32fc3e0f82fabdeb</footer></body></html>

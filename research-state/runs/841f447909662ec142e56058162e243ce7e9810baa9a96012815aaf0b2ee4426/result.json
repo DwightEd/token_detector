@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "run_id": "841f447909662ec142e56058162e243ce7e9810baa9a96012815aaf0b2ee4426",
+  "completed_utc": "2026-11-04T15:00:51.047791+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Finite original2 local Norm+MLP engineering run completed; no GT/AUROC/sign or detector efficacy claim",
+  "artifacts": [
+    {
+      "path": "outputs/h018-operator-binding-20261104/PHASE1_V3_OBSERVE_stdout.log",
+      "sha256": "fa05cc4607eb7d0755a4b9b5e54fa470fa3a1ef6ebefd1fd1270da11f8585851"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/PHASE1_V3_OBSERVE_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/model-observation-v3/plan.json",
+      "sha256": "9abd61fe6530a86f6726e202e53908dfa184e7eb457a354ac5644147b6275c4b"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/model-observation-v3/result.json",
+      "sha256": "8d40f21ba8a29691af8020598019126d92276ce7177d908ca0111447baeb8c5f"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/model-observation-v3/seal.json",
+      "sha256": "c47dd136cb9e2eeb3c1efadcdf6342efb2e19db88debf196e0318534408fe13d"
+    }
+  ]
+}

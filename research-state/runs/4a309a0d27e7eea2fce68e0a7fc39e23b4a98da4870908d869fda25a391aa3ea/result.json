@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "run_id": "4a309a0d27e7eea2fce68e0a7fc39e23b4a98da4870908d869fda25a391aa3ea",
+  "completed_utc": "2026-11-04T14:51:29.160109+00:00",
+  "outcome": "engineering_failure",
+  "conclusion": "Finite stage engineering failure retained; no automatic retry, no efficacy conclusion",
+  "artifacts": [
+    {
+      "path": "outputs/h018-operator-binding-20261104/PHASE1_V2_OBSERVE_stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/PHASE1_V2_OBSERVE_stderr.log",
+      "sha256": "f38152332b77d48208a71d3fecc5b8801b9c3630e3ae21499a32d53e4505d731"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/model-observation-v2/plan.json",
+      "sha256": "f15c759363825fe86f985cc23bdcf95bb8ea99f0792a0d131f9b6ffaec338b99"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/model-observation-v2/failure.json",
+      "sha256": "86ef796f1ef2a10c14f0451c602b06b395d3e8ceda3b0d7d6727b5f0220715f5"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/model-observation-v2/seal.json",
+      "sha256": "8d70d3c0daf56a8a2d704a2bd80ab9e3587e98a20717250b49bed19cb8b266fd"
+    }
+  ]
+}

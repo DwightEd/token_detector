@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "run_id": "172722a0cda9578def985913bbac9295e379726a91b370cabf1dd79b84822ff8",
+  "completed_utc": "2026-11-04T14:15:39.395757+00:00",
+  "outcome": "engineering_failure",
+  "conclusion": "Tokenizer-only helper incorrectly compared its default local answer_index0 to the sealed global native collection slot6; original5682 primitive token IDs and offsets had matched. Preserve failure; zero models, weights payloads, scores or labels. Correct collection-slot binding requires a new explicit code/spec identity.",
+  "artifacts": [
+    {
+      "path": "outputs/h018-operator-binding-20261104/TOKENIZER_AXES_SPEC.json",
+      "sha256": "6d9527243869014942684b7ae128a9e1923dda516d1bf0ceec32f7993332b4b9"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/prepare_tokenizer_axes.py",
+      "sha256": "b4860de18ec2520c25a828f277de3e36444c16c9241e70729de3ae618bae1338"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/tokenizer-axes-v1/plan.json",
+      "sha256": "5956d53a37293d1c9ca97e889644e2e9a175b7dc178cba8dd008f0815bde2f13"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/tokenizer-axes-v1/failure.json",
+      "sha256": "b70f55ada8ca22a9565462d9caa323c5514190b012dedbd466f017b2045125fc"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/tokenizer-axes-v1/seal.json",
+      "sha256": "6da625767aaeb55791679cfa7e034379d31e9023ce55fa37441698cb083b8044"
+    }
+  ]
+}

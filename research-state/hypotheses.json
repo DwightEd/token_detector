@@ -575,6 +575,74 @@
         "no_new_internal_detector": true,
         "next_question": "当前没有准入新的方法、NLI救援变体或模型实验：新结果表明明确支持的否定关系也可被判矛盾，而营业时间错误已获高非蕴含风险，尚未证明可利用的新增内部信息。 下一动作限定为零模型的准入证明：从来源显式许可的字段建立主体—谓词—极性/条件闭合单位，先以5682/13603（原R的`not`=target65、`WiFi`=67）与同源5684（`or`=65、`lot`=66）为入口，补齐对应来源字段及闭合位置，复用已完成库存合同标明哪些物理观测已可匹配、哪些维度缺失，不再清点或复验已知缺失；不得拿QA层15或回答历史局部attention代替缺失的来源观测。 只有能事先提出可区分条件绑定与词法/位置/回答回声的预测、必要负对照，以及相对直接文本核验在原R定位/检测/成本上的具体价值，才重新申请有限实验；若只能换contra/max/格式/分句、复现H004/H005或M5手工世界、M3头层与H015/H016角色QA，则保持NOT_ADMITTED并停止追加调用。"
       }
+    },
+    {
+      "id": "H018_SOURCE_NORM_MLP_LOCAL_USE",
+      "status": "first_gate_audited_no_specificity_or_detection_claim_owner_swap_frontend_only",
+      "question": "Does all-source native attention write have a local Norm+MLP increment that gives original-token information beyond P006 direct-write, native NLL and norm-matched sham?",
+      "prior_overlap": "P006 H-sourcewrite endpoint is old; only held-native-input F(x)-F(x-sourcewrite) adds a new observation. Negation MLP/CoCo/CAD literature prevents novelty or truth assumptions.",
+      "competing_predictions": [
+        "new local use differs from direct-write and norm damage",
+        "legitimate negation and general nonlinear damage yield same signed risk"
+      ],
+      "fixed_risk": "sigmoid(logp(g(Hraw-sum32delta),originaltarget)-logp(g(Hraw),originaltarget))",
+      "budget": {
+        "model_calls": 2,
+        "head_calls": 8,
+        "extra_mlp_calls": 256
+      },
+      "stop": "numerical/resource failure preserves partials; no automatic rerun/sign/layer/scope rescue; two natural cases cannot establish detector efficacy",
+      "evidence": [
+        {
+          "path": "outputs/h018-operator-binding-20261104/FRONTEND_OBSERVATION_CONTRACT.json",
+          "sha256": "3d165b58ee4415b007e4edfdc270bce2d7cf5d72f756c01e646d817e08d5c232"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/tokenizer-axes-v2/summary.json",
+          "sha256": "744dba08037f9eac35d76878d5665bd669aa4ff736d4104ccc39d434bc454c3b"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/tokenizer-axes-v2/seal.json",
+          "sha256": "8d3002e70eaeb9265db9a63ee689da8f2a608bdb5848be7faf74e8fbd7963fb1"
+        },
+        {
+          "path": "refine-logs/operator-binding-20261104/ROOT_PHASE1_CONTRACT_20261104_221000.md",
+          "sha256": "d0a068c17769955b51321fbdaaec6c4ea5c20250b9ad6158b70cf9dd5546a4b7"
+        },
+        {
+          "path": "refine-logs/operator-binding-20261104/REVIEW_ROOT_PHASE1_20261104_221642.md",
+          "sha256": "e1372b68d373f00c52852e9ac6162a2c6f0534afe9bc7b955e7296be294e23e8"
+        }
+      ],
+      "phase2_admitted": false,
+      "full900_admitted": false,
+      "first_gate_evidence": [
+        {
+          "path": "outputs/h018-operator-binding-20261104/phase1-independent-audit-v1/audit.json",
+          "sha256": "6d02c3b2bc53ca5bced28d9469752e4909bb3cf74a585b264bb1c0cc4ebaecf5"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/phase1-independent-audit-v1/seal.json",
+          "sha256": "3575d0682014e11a461684931c894425a9a5bd3168d05f5c2ec48294c64f4dfa"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/PHASE1_INDEPENDENT_INTERPRETATION.json",
+          "sha256": "50425ccf391690d2a652654f64fa29338539abfe51c6f0225a2d9a2c2a7bc7a0"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/THEORY_CEILING_AND_PHASE2_PRIORS.md",
+          "sha256": "798a531bf89a6499dcb721990ee5d84623c8606f08a1ad795425dd164d4a7e5a"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/PHASE2_OWNER_SWAP_ADMISSION_REVIEW.md",
+          "sha256": "6f2552c95690083072531616e7c9a818d38f8db67f7acb03c8ab8f5dc73d426f"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/INSTALLED_V3_FULL_VALIDATION.json",
+          "sha256": "6edefe977d4b62c990104d5173d10781d39a365a960671b67848826e4aa6cef8"
+        }
+      ],
+      "phase2_model_admitted": false
     }
   ]
 }

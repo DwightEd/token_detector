@@ -3,9 +3,9 @@
   "objective": "Mechanism-driven unsupervised hallucination detection improvement toward AUROC >= 0.8 on each of six primary tasks",
   "canonical_project": "D:/projects/research/token_detector",
   "goal_status": "not_achieved",
-  "phase": "h017_full900_external_comparator_evaluated_new_internal_module_not_admitted",
-  "active_hypothesis": "H017_RELATION_OWNERSHIP_COMPUTATION",
-  "next_question": "当前没有准入新的方法、NLI救援变体或模型实验：新结果表明明确支持的否定关系也可被判矛盾，而营业时间错误已获高非蕴含风险，尚未证明可利用的新增内部信息。 下一动作限定为零模型的准入证明：从来源显式许可的字段建立主体—谓词—极性/条件闭合单位，先以5682/13603（原R的`not`=target65、`WiFi`=67）与同源5684（`or`=65、`lot`=66）为入口，补齐对应来源字段及闭合位置，复用已完成库存合同标明哪些物理观测已可匹配、哪些维度缺失，不再清点或复验已知缺失；不得拿QA层15或回答历史局部attention代替缺失的来源观测。 只有能事先提出可区分条件绑定与词法/位置/回答回声的预测、必要负对照，以及相对直接文本核验在原R定位/检测/成本上的具体价值，才重新申请有限实验；若只能换contra/max/格式/分句、复现H004/H005或M5手工世界、M3头层与H015/H016角色QA，则保持NOT_ADMITTED并停止追加调用。",
+  "phase": "h018_audited_phase1_done_owner_swap_frontend_implementation",
+  "active_hypothesis": "H018_SOURCE_NORM_MLP_LOCAL_USE",
+  "next_question": "F056/F057 first gate complete: do not rerun original2. Implement/review only the two predeclared bool-owner swaps with unchanged R5684 and fixed H018 risk. Zero-model tokenizer must prove same source token Counter/exact2bool swaps/P803/T233/N1036 and shared-donor prefix contract. Reuse sealed S0. Model execution awaits new frontend/code/resource/claim; 2 proposed new native budget is not armed. No sign/layer/scope rescue, no targetGT/full900/AUROC yet.",
   "known_fact_ids": [
     "F001",
     "F002",
@@ -60,7 +60,10 @@
     "F051",
     "F052",
     "F053",
-    "F054"
+    "F054",
+    "F055",
+    "F056",
+    "F057"
   ],
   "do_not_repeat": [
     "Describing known FN/FP counts again without a new discriminating intervention",
@@ -1005,11 +1008,82 @@
     ]
   },
   "new_model_calls_remaining": 0,
-  "full_population_scores_sealed": true,
-  "target_labels_released": true,
+  "full_population_scores_sealed": false,
+  "target_labels_released": false,
   "publication_receipt": "outputs/h017-relation-20261103/NLI_PUBLICATION_FINAL.json",
   "validation_status": "Exactsource b362eff fullinstalled LinuxCI41724862885 passed; local completeCPU300s remains incomplete",
   "code_validation": {
+    "source_commit": "3a53a19",
+    "installed_target": "h018-qualified-20261104-225438",
+    "targeted": "37passed21.86s",
+    "local_full": "incomplete_timeout_300seconds",
+    "exact_push_CI": "pending"
+  },
+  "updated_utc": "2026-11-04T14:29:25.323379+00:00",
+  "active_jobs": null,
+  "current_protocol": "outputs/h018-operator-binding-20261104/PHASE1_V3_PROTOCOL.json",
+  "h018": {
+    "phase1": "complete_sealed_audit_passed_no_detection_efficacy",
+    "tokenizer_run": "1df7963a25b8bfa8929237305ba939dbbb67aba28624fcd3d253ce03d8511a93",
+    "axes": "outputs/h018-operator-binding-20261104/tokenizer-axes-v2",
+    "model_calls": 2,
+    "evidence": [
+      {
+        "path": "outputs/h018-operator-binding-20261104/FRONTEND_OBSERVATION_CONTRACT.json",
+        "sha256": "3d165b58ee4415b007e4edfdc270bce2d7cf5d72f756c01e646d817e08d5c232"
+      },
+      {
+        "path": "outputs/h018-operator-binding-20261104/tokenizer-axes-v2/summary.json",
+        "sha256": "744dba08037f9eac35d76878d5665bd669aa4ff736d4104ccc39d434bc454c3b"
+      },
+      {
+        "path": "outputs/h018-operator-binding-20261104/tokenizer-axes-v2/seal.json",
+        "sha256": "8d3002e70eaeb9265db9a63ee689da8f2a608bdb5848be7faf74e8fbd7963fb1"
+      },
+      {
+        "path": "refine-logs/operator-binding-20261104/ROOT_PHASE1_CONTRACT_20261104_221000.md",
+        "sha256": "d0a068c17769955b51321fbdaaec6c4ea5c20250b9ad6158b70cf9dd5546a4b7"
+      },
+      {
+        "path": "refine-logs/operator-binding-20261104/REVIEW_ROOT_PHASE1_20261104_221642.md",
+        "sha256": "e1372b68d373f00c52852e9ac6162a2c6f0534afe9bc7b955e7296be294e23e8"
+      }
+    ],
+    "phase2_admitted": false,
+    "full900_admitted": false,
+    "model_run_id": "841f447909662ec142e56058162e243ce7e9810baa9a96012815aaf0b2ee4426",
+    "worker_pid": null,
+    "model_plan": "outputs/h018-operator-binding-20261104/model-plan-v3",
+    "source_commit": "3a53a19",
+    "wheel_sha256": "0323dffa8d57bd9df47c0b546dd6ff6fd8340d24e802e8a0eb986d62baf0c4a3",
+    "model_output": "outputs/h018-operator-binding-20261104/model-observation-v3",
+    "preforward_failed_runs": {
+      "ea58dfbe": "metadata_signature_missing_config",
+      "4a309a0d": "CUDA_reset_before_lazy_init"
+    },
+    "prior_failed_model_calls": 0,
+    "head_calls": 8,
+    "extra_mlp_calls": 256,
+    "cumulative_original_llama_interfaces": 62,
+    "cumulative_complete_native_forwards": 60,
+    "cumulative_original_head_calls": 61,
+    "audit_run_id": "0fcd8affd06146c171105f84840d30752a3facd43e64cc0fecd5906f6edf8fd9",
+    "audit_output": "outputs/h018-operator-binding-20261104/phase1-independent-audit-v1",
+    "phase2": {
+      "status": "zero_model_frontend_and_orchestration_only",
+      "new_model_calls": 0,
+      "proposal": "refine-logs/operator-binding-20261104/PHASE2_PROPOSAL_20261104_232000.md",
+      "independent_review": "outputs/h018-operator-binding-20261104/PHASE2_OWNER_SWAP_ADMISSION_REVIEW.md",
+      "proposed_new_budget": {
+        "model_calls": 2,
+        "head_calls": 8,
+        "extra_mlp_calls": 256
+      },
+      "baseline": "reuse immutable original case5684;0reruns",
+      "target_labels": "none"
+    }
+  },
+  "prior_code_validation": {
     "source_commit": "b362efff7ddb8e3806f04fd9ddb9bf0fd1969bd7",
     "CI_url": "https://github.com/DwightEd/token_detector/actions/runs/41724862885",
     "conclusion": "success",

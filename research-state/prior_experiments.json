@@ -3186,6 +3186,41 @@
         "literature"
       ],
       "evidence_scope": "Proposal status only; absence is limited to the inspected ledger/current source."
+    },
+    {
+      "id": "P032_H018_ORIGINAL2_LOCAL_NORM_MLP",
+      "status": "completed_original2_scores_audited_specificity_unestablished",
+      "hypothesis": "H018_SOURCE_NORM_MLP_LOCAL_USE",
+      "known_result": "F056/F057",
+      "evidence": [
+        {
+          "path": "outputs/h018-operator-binding-20261104/phase1-independent-audit-v1/audit.json",
+          "sha256": "6d02c3b2bc53ca5bced28d9469752e4909bb3cf74a585b264bb1c0cc4ebaecf5"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/phase1-independent-audit-v1/seal.json",
+          "sha256": "3575d0682014e11a461684931c894425a9a5bd3168d05f5c2ec48294c64f4dfa"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/PHASE1_INDEPENDENT_INTERPRETATION.json",
+          "sha256": "50425ccf391690d2a652654f64fa29338539abfe51c6f0225a2d9a2c2a7bc7a0"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/THEORY_CEILING_AND_PHASE2_PRIORS.md",
+          "sha256": "798a531bf89a6499dcb721990ee5d84623c8606f08a1ad795425dd164d4a7e5a"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/PHASE2_OWNER_SWAP_ADMISSION_REVIEW.md",
+          "sha256": "6f2552c95690083072531616e7c9a818d38f8db67f7acb03c8ab8f5dc73d426f"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/INSTALLED_V3_FULL_VALIDATION.json",
+          "sha256": "6edefe977d4b62c990104d5173d10781d39a365a960671b67848826e4aa6cef8"
+        }
+      ],
+      "do_not_repeat": "Reuse original5682/5684 raw; never rename/re-score/re-observe them as new evidence. Fixed signed risk/all32/allsource unchanged. New owner controls require independent admission.",
+      "population": "two previously exposed natural responses,407 originaltargets; not six-task evaluation",
+      "target_labels_opened": false
     }
   ],
   "discriminating_interventions": [

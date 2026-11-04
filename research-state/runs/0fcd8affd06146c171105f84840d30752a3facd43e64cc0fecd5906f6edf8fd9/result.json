@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "run_id": "0fcd8affd06146c171105f84840d30752a3facd43e64cc0fecd5906f6edf8fd9",
+  "completed_utc": "2026-11-04T15:09:20.879775+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Independent CPU audit passed all407 original rows, both32-layer captures, ordered FP64/P006 sums, full-N no-op, full-vocabulary endpoint operational gates and exact prediction joins; zero new models/labels; no detector, sign or AUROC efficacy claim",
+  "artifacts": [
+    {
+      "path": "outputs/h018-operator-binding-20261104/PHASE1_INDEPENDENT_AUDIT_SPEC.json",
+      "sha256": "51d58c0dc1b56f9e3cdedfa9544d28fb8f475304dd998bb8846d6ae4d59fe020"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/PHASE1_INDEPENDENT_AUDIT_LAUNCH.json",
+      "sha256": "1fee6c49a299ee6c48f374b77dd4b01516471b7886b9435f5687ef2500498096"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/PHASE1_INDEPENDENT_AUDIT_COMPLETION.json",
+      "sha256": "57f0adcebc360ad47a48f0e995c5616343dc4078bf477034e04cd37510fceabf"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/PHASE1_INDEPENDENT_AUDIT_stdout.log",
+      "sha256": "45c039e6ea35f477694d1a20062bdcb894de0e71d2d172def87d0c341165e566"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/PHASE1_INDEPENDENT_AUDIT_stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/phase1-independent-audit-v1/spec.json",
+      "sha256": "40043103c2790d203ea4335cda8e6b9b33e89f3c349c39e30137c141a8ef63ec"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/phase1-independent-audit-v1/audit.json",
+      "sha256": "6d02c3b2bc53ca5bced28d9469752e4909bb3cf74a585b264bb1c0cc4ebaecf5"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/phase1-independent-audit-v1/seal.json",
+      "sha256": "3575d0682014e11a461684931c894425a9a5bd3168d05f5c2ec48294c64f4dfa"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/phase1-independent-audit-v1/case-5682-all-original.csv",
+      "sha256": "f0fba12a60f3c1991ac2fd4b577caf7ca85ae29b8131b63388931d17cda1dbc2"
+    },
+    {
+      "path": "outputs/h018-operator-binding-20261104/phase1-independent-audit-v1/case-5684-all-original.csv",
+      "sha256": "1a7deec65710a7abc554e7484e97b1711b23c72b9bf6cc825bf56a74d4ffef0b"
+    }
+  ]
+}
