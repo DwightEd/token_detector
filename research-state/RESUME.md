@@ -1,4 +1,11 @@
-# 当前恢复：H019完成，转向来源语义前端设计
+# 当前恢复：H020已实现并安装验证，尚未M0/分词/模型
+
+当前active H020_SOURCE_FIRST_QUANTITATIVE_RECORDS；state.h020为准。最终科学、纯frontend及编排独立GO均已落；installed156 exact，52targeted通过13.86s，wheel830b54c3…、proof1f7a16ad…。第一031326轮因CLI stage覆盖未用于观测；另一次冗余wheel构建也未作科学试验。当前选031838并只对它一次installed验证。不要再重建/重测无变化源码。
+
+下一步单独claim M0，再0LM把已审sourceledgerV2与实际6worlds/anchors/sourceplanseal绑定，随后真实GPU环境tokenizer/资源preflight claim。4原S+2固定控制，无R输入。ledgerV1两频率/模糊量guard被独立审查纠正为V2 required，V1保留、61义务70引用不变；LM输出尚未出现。M2六requests仍未准入，需要postimport资源、完整消息/installed/独立代码审+新modeladmission和claim。所有新raw固定C06/h020…；不运行8B/新下载、QAverifier或风险。
+
+本地完整CPU尚未对H020请求，push前必须请求；H019已发布5fb457e完整LinuxCI41890599361 PASS，不能把它当H020源码CI。H019/F063/F064全tuple与精度已完成、独立幅度风险关闭，H018已反证关闭，旧现象不重跑。六任务/顶会目标仍未达成。下面保留前检查点细节。
+
 
 用户要求持续机制研究、完整方法及六任务接近/超过.8，仍未达成。当前事实F059–F064；H018必要方向反证关闭，不补control；旧reanchor O1–O5/NAG/source-null/Vswap/pathcos直接引用，不重演。I02真正source-first尚未实现，H020正式合同/独立审查进行中，未准入模型。
 
@@ -10,4 +17,4 @@ H019 M0/M1及全tuple80位独立审计均完成、sealed，分别02e68af9/709af1
 
 70文件10.08GB原16/replay16/graph2均完整下载且保存数组资格通过，不重下/重资格。graph末residual32 prenorm，replay末slot32 postnorm；旧原模型权重bodySHA未attested。H019精度差另保留，不与各自产物算术资格矛盾。
 
-代码冻结ee69ad0 Nov5 02:04:33 CST，exact installed154、60targeted通过20.89s；完整CPU300s超时必须记incomplete，新代码尚未push，完整exact LinuxCI待新push。最近已push fe17c9e Nov5 01:22:05 CST，CI41876960854成功只覆盖旧代码。当前GPU/pytest/download/armedwatchdog均0。D清理完成当前16.43GiB空闲，压缩包和OEM安装源经核对迁C；科学raw/模型/失败保留，大raw写C。goal工具历史blocked不等于停止，按用户继续研究。
+代码冻结ee69ad0 Nov5 02:04:33 CST，exact installed154、60targeted通过20.89s；完整CPU300s超时仍记incomplete。已发布5fb457e Nov5 02:47:16 CST，完整exact LinuxCI41890599361/job126786651227/step6全部success（结束18:50:23Z）。公开收据docs/results/h019_ci.json；不得因改文档/审计重跑科学观测。当前GPU/pytest/download/armedwatchdog均0。D清理完成当前16.43GiB空闲，压缩包和OEM安装源经核对迁C；科学raw/模型/失败保留，大raw写C。goal工具历史blocked不等于停止，按用户继续研究。

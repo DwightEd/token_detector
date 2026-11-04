@@ -159,6 +159,16 @@ def parser() -> argparse.ArgumentParser:
         head_carrier.add_argument('--' + option, type=Path, required=True)
     head_carrier.add_argument('--prepare-only', action='store_true')
     head_carrier.add_argument('--plan', type=Path)
+    source_first = transfers.add_parser('observe-source-first-records',
+        help='finite source-only relation proposals; no original response, risk or annotations')
+    for option in ('source', 'protocol', 'system-prompt', 'schema', 'admission', 'review-root',
+                   'model-identity', 'model', 'output'):
+        source_first.add_argument('--' + option, type=Path, required=True)
+    source_first.add_argument('--stage', dest='source_stage',
+                              choices=('prepare', 'preflight', 'collect'), required=True)
+    for option in ('plan', 'preflight', 'ledger', 'model-admission'):
+        source_first.add_argument('--' + option, type=Path)
+    source_first.add_argument('--admit-resources', action='store_true')
     operator_owner = transfers.add_parser('observe-operator-owner',
         help='two constructed owner controls using frozen local readout; no annotations or AUROC')
     for option in ('protocol', 'axes', 'prepared', 'frontend-contract', 'baseline', 'model',
@@ -675,6 +685,12 @@ def main() -> None:
             report = run(args)
             print('Head/carrier finite CPU stage: ' + report.get('stage', 'unknown') +
                   '; no model calls, risk scores or AUROC')
+        elif args.transfer_stage == 'observe-source-first-records':
+            from .source_first_observation import run
+
+            report = run(args)
+            print('Source-only proposal stage: ' + report.get('stage', report.get('schema', 'unknown')) +
+                  '; no existing-response risk, labels or AUROC')
         elif args.transfer_stage == 'observe-operator-owner':
             from .operator_owner_observation import run
 

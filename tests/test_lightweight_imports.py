@@ -22,6 +22,8 @@ from experiments.provenance import research_identity
 from experiments.run import parser
 from experiments.head_carrier_frontend import prepare_frontend
 from experiments.head_carrier_observation import run
+from experiments.source_first_observation import prepare
+from experiments.research.source_first_inventory import prepare_inventory, validate_proposal
 assert 'HallucinationDetector' in dir(myproject)
 assert callable(text_units) and callable(answer_axis)
 assert research_identity()['source_sha256']

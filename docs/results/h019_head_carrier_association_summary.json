@@ -288,5 +288,36 @@
     "exact_new_CI": "not established by this report",
     "older_CI_covers_H019": false,
     "note": "旧fe…CI不覆盖H019源码；源码通过定向检查不替代完整CPU/exact-commit CI。Root handles subsequent publication/status updates."
+  },
+  "publication_validation": {
+    "schema": "exact-commit-full-installed-ci-v1",
+    "repository": "DwightEd/token_detector",
+    "commit": "5fb457e6f9e121e32a856916fc64cdedf7610a3c",
+    "frozen_method_source_commit": "ee69ad0163410e22338c4f1673f093f7f97097b5",
+    "source_changed_between_frozen_method_and_published_commit": false,
+    "run_id": 41890599361,
+    "run_url": "https://github.com/DwightEd/token_detector/actions/runs/41890599361",
+    "status": "completed",
+    "conclusion": "success",
+    "job": {
+      "id": 126786651227,
+      "status": "completed",
+      "conclusion": "success",
+      "completed_at": "2026-11-04T18:50:22Z"
+    },
+    "full_installed_suite_step": {
+      "name": "Test installed packages outside the checkout",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 6,
+      "started_at": "2026-11-04T18:48:09Z",
+      "completed_at": "2026-11-04T18:50:20Z"
+    },
+    "local_full_cpu": "incomplete_timeout_300seconds_preserved",
+    "local_targeted": "60_passed_20.89s_outside_exact_installed154",
+    "test_count_from_logs": null,
+    "engineering_validation_only": true,
+    "detector_efficacy_established": false,
+    "new_model_observations": 0
   }
 }

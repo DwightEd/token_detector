@@ -1,5 +1,8 @@
 # 当前持续研究目标
 
+**2026-11-05最新：H020真正source-first定量records仪器已获有限科学/代码GO，exact installed156和52targeted通过；尚未运行M0/分词/模型。** 独立sourceledgerV2已冻结，下一步只claim M0→机械join→真实资源preflight，6proposals仍待单独准入；无R/GT/风险。H019全92160审计及ΔV精度完成但不晋升单独幅度；旧H018关闭。已发布H019的5fb457e完整LinuxCI成功，不覆盖H020。D清理释放约16.4GiB，raw写C。主目标/六任务0.8/顶会方法均未达成；state.h020、RESUME与F059–F064为准。下面是历史检查点。
+
+
 **2026-11-05最新：H019有限CPU机制试验完成并全92160 tuple独立审计通过，但幅度不能稳定区分SEM/EQUIV；source ΔV在两graph有1488/1536差异。** 关闭独立幅度/MI/chi风险和routing-only归因，不挑头/层/符号。转向I02真正source-first语义records+义务/unknown合同，H020未准入模型。70文件10.08GB及三类数组资格已完整；D清理释放约16.4GiB，当前16.43GiB可用。代码ee69ad0 exact installed154/60targeted通过，full CPU300s incomplete，新push完整LinuxCI待核。无新检测AUROC，六任务与顶会目标未完成。F059–F064及RESUME为准，下面为历史检查点。
 
 
