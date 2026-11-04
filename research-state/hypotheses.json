@@ -646,6 +646,48 @@
       "final_fact": "F059",
       "remaining_control_required": false,
       "new_model_calls_admitted": 0
+    },
+    {
+      "id": "H019_HEAD_CARRIER_ASSOCIATION",
+      "status": "finite_M0_M1_coding_admitted_awaits_installed_checks_and_claim",
+      "question": "Does same-query GQA head-carrier association carry pre-O message information beyond both marginals, and is source-condition specificity distinguishable from equivalent-carrier/position/norm alternatives?",
+      "scientific_admission": [
+        {
+          "path": "refine-logs/head-carrier-association-20261105/MINIMAL_CONTRACT_20261105_013351.md",
+          "sha256": "d2053ed8b13320c8aba71be13e6677cc9e983b0586e4e1f2bdde847dfeb7ebe1"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/HEAD_CARRIER_INDEPENDENT_ADMISSION_REVIEW_20261105.md",
+          "sha256": "c15cbdc5667b606c03932c19280e134e0a4c277b284469d568881bdb01906379"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/HEAD_CARRIER_FRONTEND_INDEPENDENT_CODE_REVIEW.md",
+          "sha256": "4de66d6c6ece611a984c2859f55ed9e79f9d105388f40195560e5e0d740022b6"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/HEAD_CARRIER_KERNEL_INDEPENDENT_CODE_REVIEW.md",
+          "sha256": "620711730e8b5c8d5ea941ca1d77b143449512510b3bd82dbdd7ad908050a7f8"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/HEAD_CARRIER_ORCHESTRATION_INDEPENDENT_CODE_REVIEW.md",
+          "sha256": "7eda1e2639177e18de3817cfb10631880e67886d2bc13e651bda496688966d47"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/SOURCE14375_CARRIER_LICENSE_INDEPENDENT_REVIEW.md",
+          "sha256": "e2541b6a78f29cea439151c57c7762f014d002e2f7660b7eb6358cdf92cf2c8a"
+        }
+      ],
+      "new_information": "2x2 product-marginal erasure; each48headpair independent, not source deletion/V donor",
+      "mainline_calls": [
+        "experiments.data",
+        "myproject.inputs.text_units",
+        "myproject.measure.answer_axis",
+        "experiments.provenance"
+      ],
+      "original_response_interface": "original digit-token t,prechoice q=P+t-1; diagnostic only, no risk",
+      "remaining_new_native_budget": 0,
+      "detector_admitted": false,
+      "stop": "M0 requires both SEM/EQUIV,all eligibleF<=8 andtuple<=1M. Numeric failure retained/no retry. No O/semantic/detector claim from pre-O effect; no positionspecificity without separate controls."
     }
   ]
 }

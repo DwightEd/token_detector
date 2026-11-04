@@ -1714,6 +1714,46 @@
       "annotation_reads": 0,
       "original_execution_weight_SHA_attested": false,
       "replay_slot32": "post_finalnorm; graph residual slot32 is separately pre_finalnorm"
+    },
+    {
+      "id": "F061",
+      "certainty": "complete_graph2_saved_tensor_numerical_contract_qualified",
+      "claim": "Both recovered BF16/F32 complete graphs pass original axes/roles, all finite/BF16 lattice/causal zero, bounded softmax rowmass, all32 residual next=BF16_RNE(postA+MLP), same-ID embedding0/V0 controls.184,942,592 residual-add coordinates exact after native rounding; naive FP32 sum differs up to.75. No original model-weight SHA or independent AVO check, semantic/detection claim. Do not repeat full qualification.",
+      "evidence": [
+        {
+          "path": "outputs/h019-head-carrier-20261105/graph2-qualification-v1.json",
+          "sha256": "0a59651693fb4b8998aac34fe83db90899cdd82809c1a748ed430db446cb1931"
+        },
+        {
+          "path": "outputs/h019-head-carrier-20261105/qualification-index-v2.json",
+          "sha256": "d437a328c36106141b1bd3eba514515a0b4b320143c9a62e4337cb5c13ffa99a"
+        }
+      ],
+      "do_not_retest_phenomenon": true,
+      "new_model_calls": 0,
+      "annotation_reads": 0
+    },
+    {
+      "id": "F062",
+      "certainty": "historical_reanchor_executed_priors_recovered_not_new_experiments",
+      "claim": "Old reanchor O1-O5 actually ran ownership factor/suffix/source-world/BeforeAfter/routing tests (68,98,32world+64patch,4world+160patch,167 conditions). Numeric value/content/routing causal effects were established, automatic legal ownership, N/A/G, recall candidates and detection were not. Same graph12/13 source/V swaps, endpoint/MLP/layer and path/cos/JS/MMD are known priors; do not rename. REVIEW_UNAVAILABLE is lack of review, not peer rejection. I02 truly source-first extraction remains unrun and differs from H002 R-first and closed toy source-QA.",
+      "evidence": [
+        {
+          "path": "outputs/h018-operator-binding-20261104/RECOVERED_OWNERSHIP_RELATION_PRIORS_20261105.md",
+          "sha256": "50ea53bb142734765682ef31a6f04400c7d635bc77fbaa26820624b2ae446b91"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/RECOVERED_OWNERSHIP_RELATION_PRIORS_20261105.json",
+          "sha256": "e88db0c0bc11892480505a021ec071204f7f09c5945ee4b35d69dc6867be36e7"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/I02_SOURCE_FIRST_FRONTEND_STATUS_REVIEW_20261105.md",
+          "sha256": "c3c26528059241c5cd4c79ab8e2dce6712e2b91b73564e5416453afa952c37ba"
+        }
+      ],
+      "do_not_retest_phenomenon": true,
+      "new_model_calls": 0,
+      "annotation_reads": 0
     }
   ],
   "rule": "New interventions need different predictions under competing explanations; known counts/cases are reused."

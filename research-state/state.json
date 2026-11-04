@@ -3,9 +3,9 @@
   "objective": "Mechanism-driven unsupervised hallucination detection improvement toward AUROC >= 0.8 on each of six primary tasks",
   "canonical_project": "D:/projects/research/token_detector",
   "goal_status": "not_achieved",
-  "phase": "binding_specific_mechanism_design_on_recovered_full_graph",
-  "active_hypothesis": "H018_SOURCE_NORM_MLP_LOCAL_USE",
-  "next_question": "Use recovered complete graph and old reanchor research conclusions to identify a genuinely new binding-specific intervention. H018 necessary direction refuted: no missing control inference or score rescue. Original/replay qualification complete; graph numerical qualification in progress. Check existing ownership X/E/XE/endpoint/suffix priors before any candidate. No arbitrary source-null rerun, labels or new risk yet.",
+  "phase": "head_carrier_pilot_installed_qualification",
+  "active_hypothesis": "H019_HEAD_CARRIER_ASSOCIATION",
+  "next_question": "Finish frozen installed-source validation, then claimM0 source-only/axis eligibility and only if passed claim oneM1 CPU pre-O association assay. All48x32 independent, original digitq,6manual sourcepairs noGT; no O/model/risk. Preserve source-only manual licence limits and SEM/EQUIV/position/norm unknown. I02 is not implemented. H018 fixed direction closed, no missing control.",
   "known_fact_ids": [
     "F001",
     "F002",
@@ -66,7 +66,9 @@
     "F057",
     "F058",
     "F059",
-    "F060"
+    "F060",
+    "F061",
+    "F062"
   ],
   "do_not_repeat": [
     "Describing known FN/FP counts again without a new discriminating intervention",
@@ -1022,17 +1024,21 @@
     "local_full": "incomplete_timeout_300seconds",
     "exact_push_CI": "pending_unpushed_source",
     "previous_exact_CI": {
-      "commit": "181937a",
-      "run": 41858691205,
-      "status": "success"
-    }
+      "commit": "fe17c9e660c4559c0364655d376b83427b206db5",
+      "run": 41876960854,
+      "job": 126738839976,
+      "status": "success",
+      "full_installed_step6": "success"
+    },
+    "current_H019": "worktree_frozen_reviewed_awaits_installed_checks"
   },
   "updated_utc": "2026-11-04T14:29:25.323379+00:00",
   "active_jobs": {
-    "type": "CPU_full_graph_qualification_and_source_prior_review",
+    "type": "code_validation",
     "gpu_jobs": 0,
-    "download_workers": "all_completed_exit0",
-    "automatic_retry": false
+    "download_workers": 0,
+    "M0": "not_started",
+    "M1": "not_started"
   },
   "current_protocol": "outputs/h018-operator-binding-20261104/PHASE1_V3_PROTOCOL.json",
   "h018": {
@@ -1146,9 +1152,57 @@
     "generation_cache": "complete_qualified",
     "replay_hidden_cache": "complete_qualified",
     "not_equivalent_to": "150sources_x6different_generators",
-    "full_graphs": "complete_download_manifest_SHA_qualified_numeric_pending",
+    "full_graphs": "complete_numerically_qualified_saved_arrays_not_original_weights",
     "downloaded_files": 70,
     "downloaded_bytes": 10080059000,
     "unique_response_trajectories": 13
+  },
+  "h019": {
+    "status": "finite_implementation_reviewed_no_claim_yet",
+    "scientific_admission": [
+      {
+        "path": "refine-logs/head-carrier-association-20261105/MINIMAL_CONTRACT_20261105_013351.md",
+        "sha256": "d2053ed8b13320c8aba71be13e6677cc9e983b0586e4e1f2bdde847dfeb7ebe1"
+      },
+      {
+        "path": "outputs/h018-operator-binding-20261104/HEAD_CARRIER_INDEPENDENT_ADMISSION_REVIEW_20261105.md",
+        "sha256": "c15cbdc5667b606c03932c19280e134e0a4c277b284469d568881bdb01906379"
+      },
+      {
+        "path": "outputs/h018-operator-binding-20261104/HEAD_CARRIER_FRONTEND_INDEPENDENT_CODE_REVIEW.md",
+        "sha256": "4de66d6c6ece611a984c2859f55ed9e79f9d105388f40195560e5e0d740022b6"
+      },
+      {
+        "path": "outputs/h018-operator-binding-20261104/HEAD_CARRIER_KERNEL_INDEPENDENT_CODE_REVIEW.md",
+        "sha256": "620711730e8b5c8d5ea941ca1d77b143449512510b3bd82dbdd7ad908050a7f8"
+      },
+      {
+        "path": "outputs/h018-operator-binding-20261104/HEAD_CARRIER_ORCHESTRATION_INDEPENDENT_CODE_REVIEW.md",
+        "sha256": "7eda1e2639177e18de3817cfb10631880e67886d2bc13e651bda496688966d47"
+      },
+      {
+        "path": "outputs/h018-operator-binding-20261104/SOURCE14375_CARRIER_LICENSE_INDEPENDENT_REVIEW.md",
+        "sha256": "e2541b6a78f29cea439151c57c7762f014d002e2f7660b7eb6358cdf92cf2c8a"
+      }
+    ],
+    "source_only_manual_licence": {
+      "path": "outputs/h019-head-carrier-20261105/source14375-carrier-license-v1.json",
+      "sha256": "71b37e8afefcab4f3d58d8cb0eb782200c52288988cab25483962dc7c060a8aa"
+    },
+    "mechanism_only": true,
+    "detector_admitted": false,
+    "source_semantic_scope": "local action-duration; whole recipe and position controls unknown",
+    "cases": [
+      "00012",
+      "00013"
+    ],
+    "source_id": "14375",
+    "source_pairs": {
+      "EQUIV": 1,
+      "SEM": 5
+    },
+    "planned_native_calls": 0,
+    "M0": "not_started",
+    "M1": "not_started"
   }
 }

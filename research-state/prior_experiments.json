@@ -3285,6 +3285,27 @@
           "sha256": "0dab9bb86a6185b163e445c1bfbbfc26f7709c089509310232ec136b811b8d85"
         }
       ]
+    },
+    {
+      "id": "P034_RECOVERED_REMOTE_OWNERSHIP_RELATION",
+      "status": "historical_executed_closed_reuse_only",
+      "known_result": "F062",
+      "evidence": [
+        {
+          "path": "outputs/h018-operator-binding-20261104/RECOVERED_OWNERSHIP_RELATION_PRIORS_20261105.md",
+          "sha256": "50ea53bb142734765682ef31a6f04400c7d635bc77fbaa26820624b2ae446b91"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/RECOVERED_OWNERSHIP_RELATION_PRIORS_20261105.json",
+          "sha256": "e88db0c0bc11892480505a021ec071204f7f09c5945ee4b35d69dc6867be36e7"
+        },
+        {
+          "path": "outputs/h018-operator-binding-20261104/I02_SOURCE_FIRST_FRONTEND_STATUS_REVIEW_20261105.md",
+          "sha256": "c3c26528059241c5cd4c79ab8e2dce6712e2b91b73564e5416453afa952c37ba"
+        }
+      ],
+      "do_not_repeat": "Do not rerun generic donorV/A,row-source-mass,E/X/XE,endpoint or N/A/G/path diagnostics on same12/13. New head-carrier double-marginal null is distinct finite question, not a truth score.",
+      "remote_condition_counts_not_local_native_interface_counts": true
     }
   ],
   "discriminating_interventions": [

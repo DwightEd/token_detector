@@ -3,7 +3,7 @@
 import argparse
 from pathlib import Path
 
-from . import data, measure, pipeline
+from . import data, pipeline
 from experiments.research.readouts import METHODS
 
 
@@ -153,6 +153,12 @@ def parser() -> argparse.ArgumentParser:
     operator_binding.add_argument('--device', default='cuda:0')
     operator_binding.add_argument('--prepare-only', action='store_true')
     operator_binding.add_argument('--plan', type=Path)
+    head_carrier = transfers.add_parser('observe-head-carrier-association',
+        help='finite CPU marginal-preserving head/carrier assay; no model or detector risk')
+    for option in ('graphs', 'samples', 'licence', 'qualification', 'protocol', 'output'):
+        head_carrier.add_argument('--' + option, type=Path, required=True)
+    head_carrier.add_argument('--prepare-only', action='store_true')
+    head_carrier.add_argument('--plan', type=Path)
     operator_owner = transfers.add_parser('observe-operator-owner',
         help='two constructed owner controls using frozen local readout; no annotations or AUROC')
     for option in ('protocol', 'axes', 'prepared', 'frontend-contract', 'baseline', 'model',
@@ -663,6 +669,12 @@ def main() -> None:
             print('Operator binding finite stage: ' +
                   ('prepared; 0 model calls' if args.prepare_only else
                    str(report['actual_counts']) + '; no AUROC or efficacy claim'))
+        elif args.transfer_stage == 'observe-head-carrier-association':
+            from .head_carrier_observation import run
+
+            report = run(args)
+            print('Head/carrier finite CPU stage: ' + report.get('stage', 'unknown') +
+                  '; no model calls, risk scores or AUROC')
         elif args.transfer_stage == 'observe-operator-owner':
             from .operator_owner_observation import run
 
@@ -815,6 +827,8 @@ def main() -> None:
 
             prepare_official(args.dataset, args.model, args.output)
     elif args.stage == "measure":
+        from . import measure
+
         measure.measure(args.input, args.output, args.task, args.split, args.native, args.device)
     elif args.stage == "fit":
         pipeline.fit(args.data, args.task, args.output)

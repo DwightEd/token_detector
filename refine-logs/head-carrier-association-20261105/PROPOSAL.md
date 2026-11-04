@@ -1,0 +1,141 @@
+# 同一原决策中 head–carrier 关联擦除：有限机制试验
+
+**日期**：2026-11-05 01:33:51 +08:00修订，012503历史保留。**状态**：机制观测 conditional GO；standalone detector、自然检测AUROC、额外LM前向 NO-GO。本页是理论背景；本次实施以`MINIMAL_CONTRACT_20261105_013351.md`为唯一范围，不是运行许可或已取得结果。
+
+**问题锚点**：R4 source-absent量和P006来源写入大小不能直接辨认来源关系是否被回答错误表达。新的完整图允许问一个更窄的问题：保持每个head的来源读取量、每个carrier被所有相关head读取的总量不变，仅擦除head与上下文化carrier的关联，是否改变这个原决策的真实消息及其输出方向？这不是另一次source deletion、source-world Bayes factor或同义V-swap。
+
+## 1. 主张、反主张和准入范围
+
+| 项目 | 本次要检验什么 | 最小可接受证据 |
+|---|---|---|
+| C1：物理机制主张 | head–carrier关联可提供超出head/source边际读取量的消息信息 | 双边marginals/no-op恒等、真实共享V/GQA与O坐标正确；不同上下文V的关联擦除产生可复核消息差；数值失败全部保留 |
+| C2：条件性语义主张，尚未获准宣称 | 该关联与完整action→duration/condition的上下文相关，而不只是位置、扰动范数或词面 | source-only闭合许可；同ID同义重复carrier与不同动作/条件carrier比较；相同原q；norm控制；后续保义位置控制通过后才能讨论 |
+| 反主张 | patch能改数字，所以它识别了关系错绑 | 数字改变本身不算成功；同义/不同动作/范数/位置的竞争解释必须分列 |
+| 当前禁止 | 将MI/χ/消息范数/任何chosen-logit差当幻觉后验或新risk；重开H018固定strong-sign分支 | 本次不产主线prediction/risk、不打开GT、不报AUROC、不选符号/层/头/最优q |
+
+本次只允许 C1 的有限计算及 C2 的资格/拒绝性观察。完整语义前端 I02 仍是后续接口，不假装已经实现。若语义/位置控制不足，结论止于“有head–carrier计算关联、语义解释unknown”；不把未知变成错误。
+
+## 2. 数据与原轴冻结
+
+主数据固定为 C06 `attributed_samples_20260912/00012` 与 `00013`：同source14375的两个既有QA回答，P535，T196/147，input nodes730/681。新图是完整BF16 fresh-forward/F32无损存储，包含全query A、V、raw residual、post-attention与MLP。它不同于原incremental采样和fixed-prefix replay；不拼接它们的浮点状态，不继承RAGTruth原官方回答的token标签。
+
+复用已完成的下载SHA、original16/replay16/graph2资格，不重新下载或重复全量资格。正式spec必须绑定各自最终qualification和manifest SHA；图尚未通过资格则先停。
+
+H018 S0/已完成target只能作为另行标记的、参数身份较强的工程交叉检查备选，不在本次自然QA预算内，也不凭它们挑本方案符号或重开旧strong-sign。若主QA资格失败，不自动切换数据集、q或世界。
+
+每个原target t严格使用 q=P+t−1；最后target没有对应input node，但其prechoice q存在。原R、target IDs、P、source mask和原决策顺序不改。取原采样保存的token_text/special mask作字符串选择元数据时，必须先核其target IDs与fresh图精确join；不得混用原采样的attention/logits作为fresh图状态。
+
+**q选择规则在看新效果前固定**：当前chosen target token y_t 的原token_text含ASCII `[0-9]`，且其**同句过去prefix**已有ASCII `[A-Za-z]`。不是检查receiver token是否含数字。空行首数字编号因过去无字母而排除。只在已消费R prefix中，以换行或`.!?`作界；小数点保守作界，不借未来字符判decimal，fractional续token可被排除并完整记理由。此规则是原R已知后的retrospective选域，不是事前可部署selector，也不把y_t当q已知信息。文本/原ID/offset不能无歧义复原则该q保留unknown，禁止重新tokenize或人工补q。所有通过此词法规则的q全部计算，不按答案正误、source-e、top1或旧effects选q。
+
+这只是原决策的词法选域，不意味着每个数字都是duration或错误。全部原T的入选/排除/unknown理由必须输出。句法/语义owner未定时不能事后补一个正确owner解释。
+
+## 3. source-only carrier许可与负控
+
+先只看原source，建立带原文span/SHA、action、object、duration、unit、condition、scope、passage provenance的有限事实许可。允许人工研究许可，**不称自动部署前端，不读R错误标签**。可审cook/simmer/grill/onion的action→duration；重复simmer15–20能否同义必须逐完整条件核实，不能凭重复数字认定。
+
+carrier必须是完整许可关系所需条件之后的实际source token；同一pair的两个carrier token ID严格相同，并对当前q都因果可见。仅“原文整体在prompt内”不够。来源中若duration后仍有决定性的if/until/heat/object限定，较早的duration token不算已闭合carrier。句号或minutes之类相同ID可以候选，但能访问整事实不保证确实编码事实。
+
+源pair分两类，全部在看A/V效果前冻结：
+
+- **SEM**：相同ID、不同明确action/condition的完整关系carrier；差异不是仅标点位置。
+- **EQUIV**：相同ID、来源明确重复同一action/object/duration/unit/condition/scope的完整关系carrier。只是同为15–20或同词simmer不够。
+
+源事实缺失/开放世界、合法多对多、不明确互斥、条件未闭合、别名或指代未解均unknown；不强加全局bijection。SEM并不表示原回答错，EQUIV也不是R正确标签。
+
+M0须输出所有候选的完整资格表，不挑有利pair。本轮**SEM/EQUIV每类至少一对才可进入实物机制试验**；否则0机制计算、保留unknown，不采用旧版SEM-only退化C1。总合格pair数F须≤8；超过预算则在数值试验前停止，而不是只取前8。source位置/距离同时记录，不能在看到效果后找“最匹配”的位置控制。
+
+## 4. 唯一新干预：同q、同KV组的2head×2carrier独立化
+
+Llama32个Qheads/8个KVheads，contiguous GQA，每组4个Qheads。同一原q内，每组全部6对head固定h1<h2；8组共48对，每层全32。两head共用同一K/V，q位置、causal mask相同；不能跨KV组把两个不同K空间冒充共同key。
+
+在一层、一个q、一个head-pair、一个source-pair，令
+
+\[
+A=\begin{bmatrix}a&b\\c&d\end{bmatrix},\quad
+r=A\mathbf1,\quad c_v=A^T\mathbf1,\quad M=\mathbf1^TA\mathbf1.
+\]
+
+M=0时原样返回，不除、不加epsilon。M>0时仅替换这四个cell：
+
+\[
+B=rc_v^T/M,\qquad
+\kappa=(ad-bc)/M,\qquad
+A-B=\kappa\begin{bmatrix}1&-1\\-1&1\end{bmatrix}.
+\]
+
+所有其它head/key/receiver保留native。这一**单独**干预同时保留两head的pair rowmass及两carrier跨两head的colmass，因此也不改变其全head总mass。48个重叠head-pair的delta**绝不求和形成一个世界**；每个pair是独立实验。4×K group-wide投影是另一干预，本版不混入。
+
+共享va/vb时，erased−native的pre-O消息分别为`−κ(va−vb)`和`+κ(va−vb)`；residual坐标的局部差为
+
+\[
+\delta m=\kappa(O_{h2}-O_{h1})(v_a-v_b).
+\]
+
+这里O是物理head正确的W_O块，不能把128维value直接当4096维residual消息。它是局部attention运算的实数恒等式；不是完整后续LM counterfactual，旧X/E/suffix不能因接口可表达B就被称为已经实际测试了本双边零假设。
+
+### 标准性质，不主张新理论
+
+P=A/M，Q=B/M=(r/M)(c_v/M)在固定marginals下独立且最大熵；KL(P||Q)=I(head;carrier)。Aij=0项取0，不能加epsilon。此MI只表示关联强度，不含truth方向。
+
+共同V平移不改变δm；va=vb或O_h1=O_h2时δm精确0。layer0相同ID的V、共享O等属于**纯数值负控**，不能冒充语义负控。不同head/pair标签重排会按公式协变；δm本身不携带哪个head“代表甲/乙”的语义。
+
+正且共同可见的原attention可另报告
+
+\[
+\chi=\log a+\log d-\log b-\log c
+=({\widetilde Q}_{h1}-{\widetilde Q}_{h2})^T
+ ({\widetilde K}_{a}-{\widetilde K}_{b})/\sqrt{d_h}
+\]
+
+其中是包含RoPE的Q/K，mask四项为零才有该简式。原K/Q没有保存，不伪称已经观察到这些向量。FP16/BF16存储或softmax舍入使等式不能当位恒等；可见cell为0时χ为censored/undefined，保留coverage，不平滑。新图F32只是保留BF16值，不能套旧FP32观测容差。
+
+## 5. 冻结读出、竞争预测与限制
+
+**M1主读出是物理量**：四cell native/erased、row/col残差、M、κ、MI、χ及其undefined原因、两条pre-O delta、局部delta范数。全部48×32×F×合格q保留，不能选head/layer/sign。F64是本次离线算术定义，保存原F32系数；不伪装成一次BF16 LM重算。
+
+**M2条件性输出诊断**：仅在W_O及参考finalnorm/unembedding身份资格独立冻结后，报告δm和原y_t对齐的线性投影。固定使用原生final raw H的RMS尺度，方向为`gamma*(W_U[y_t]−mean_vocab(W_U))/sqrt(mean(H^2)+eps)`；这是vocabulary-mean-centred frozen-scale投影（标准DLA类读出），不是RMS完整Jacobian、CF logp或下游因果效应。没有参数资格时M2明确unknown，只做M1，不能换成cosine或虚构O。
+
+选定该投影只是让原token成为诊断endpoint；完全相同prefix的state不可能预知后来抽到了哪个y，因此不能把state-only量叫已选token错误分数。
+
+| 解释 | 预先区分的预测/证据 | 仍不能断言什么 |
+|---|---|---|
+| 仅coarse source/head读取量 | B保留双边marginals；只依赖这些量的观测必须不变 | 非零δm只拒绝这种边际解释，不证明语义 |
+| 上下文化head specialization | V0同ID应为零；深层SEM可能出现超过EQUIV的系统性消息/原y投影差，且不能全由范数sham解释 | 大范数或能改数字本身不算支持；所有层头不是独立样本 |
+| 扰动范数 | 每个非零δm另用固定坐标循环位移1位作norm-preserving sham；原投影若与sham同样变化则无方向特异性 | 这个sham只控范数/方向，不能排除语义、词面和位置的全部替代解释 |
+| source位置或context距离 | 若SEM/EQUIV差只随source位置/距离而变，或保义位置控制未做，则C2未知 | 同q排除了不同query时刻/Rprefix差，但没有排除key RoPE、深层位置编码或语言难度 |
+| 词面复制 | 相同carrier ID消去最直接字面差；完整action/condition和EQUIV许可必须保留 | 上下文仍含不同数字/动作词，不能以同ID宣布所有lexical解释被消除 |
+
+EQUIV与SEM比较不拟合一个距离/范数阈值，不用GT筛pair，不检验“某个最好的head通过”。预定图表显示全部层头和所有q，以及相同输出范数下原方向与sham；没有可匹配语义/位置控制时只报告unknown，不把SEM平均大一点称成功。
+
+## 6. 数据/计算预算与停止门
+
+初始预算：**0新native LM forward、0原R改写、0MLP replay、0新full-vocabulary head、0GT、0风险/预测文件**。两图共343原target，词法q数在M0冻结为Q≤343；独立干预数为`32×48×F×Q`，上限另固定1,000,000。超过即停，不减层/头/q/pair救预算。每tuple是纯四cell及128维value运算；按chunk输出标量/索引，禁止常驻全部4096维delta。
+
+CPU2线程，private host上限512MiB、单staging≤16MiB、输出≤2GiB，输出位于C06的独立全新目录；磁盘事前保留≥5GiB，低于即不启动。一次CPU job上限600s，超时保留partial/failure，不自动重试。时间/峰值尚未实测，不称已可运行。M2额外参数读取与投影必须单列：W_O逐层mmap、WU均值单遍、原target行lookup；不得把这些运算隐藏成“零成本”。未独立冻结M2资源/参数资格前不执行它。
+
+| 阶段 | 目的 | 门/停止条件 | 当前状态 |
+|---|---|---|---|
+| M0 | source许可、原轴/q列表、全部pair、计费F/Q/N冻结 | 无闭合carrier即STOP；无EQUIV则C2 unknown；超预算或文本轴不明即停 | 待source-only资格，0数值效果 |
+| M1 | tiny synthetic +现有图的关联擦除 | row/col、nonnegative、no-op、GQA、δ公式和零控均须通过；失败raw保留不调容差 | conditional GO做实现/独立review，尚未claim |
+| M2 | 如参数资格允许，原token对齐投影及norm sham | 参考参数不可信则unknown；能改数字不算C2通过 | 未获独立资源/数值执行准入 |
+| M3 | 判断是否有必要检验语义/位置特异性 | EQUIV/SEM无差别或norm解释同等则停止；没有位置控制不称binding机制 | 未执行，非检测结果 |
+
+纯kernel测试要验证随机合法矩阵的双边marginals、独立表/no-op、同V/共享O零、实际GQA/AV局部delta、head/carrier置换协变、M0/零cell与非共同可见拒绝、48个实验不重叠相加。不是只镜像公式算一次。
+
+### 若需最小后续位置/语义干预，必须另提新claim
+
+在M1/M2不是数值/范数伪象后，最多考虑一个固定原R（固定trace00012，不按效果换样）上的两个**新source**：①交换完整已许可事实的叙述顺序，语义不变、按事实provenance跟踪carrier；②在相同action slots内交换完整duration/unit关系，改变绑定但保留literal多重集。原R和q规则始终不变，零模型前端先核所有编辑/closure/IDs/条件。
+
+这意味着最多2个新完整forward，**本版不授权**。新观察专门检验当前关联干预是否随语义关系而非绝对slot变化；不能只重复旧native似然差。若语义完整编辑或同词carrier资格做不到，不新增模型；改进source许可/I02而不是捏造matched controls。保义重排下允许模型实现通过positional binding更新指针，不能把任何位置机制都称错误；要排的是固定slot捷径。
+
+## 7. prior比较与后续原R检测接口
+
+P006/P007的source write/history差、旧ownership X/E/XE、同carrier donorV和endpoint swap已经存在；它们不构成本次新量。独立限定源码审查暂未发现**同q/GQA跨head双边marginals保持**的B独立化或对应断言；generic E能表达B不等于旧配置已测B。必须继续绑定旧executed配置审查，不声称全球首次。
+
+标准2×2 cycle/双比值/互信息都不是创新。[Counterfactual Pairing Cycles,2026 §2–3](https://arxiv.org/html/2610.23248v1)已证明加性边际消去和bilinear差向量分解，且明确pair-dependent不等于semantic。[Unpack v3 §3/5](https://arxiv.org/html/2605.23393v3)已研究单pass K/Q/V组合及归因≠因果；[Mixing Mechanisms §3](https://arxiv.org/html/2510.06182)已用有不同预测的干预区分位置/词汇/指针机制。此处新问题只能是这个明确内部干预对完整source关系的特异性，不能凭公式或新缓存改名。
+
+typed source permutation的`log p(R|S)−log E_pi p(R|pi S)`仍是P021 latent-world/source-counterfactual家族；改叫Bayes factor不增加观测。它只有在“错绑生成机制=按已知pi采样后条件生成”且pi先验/语义完整性/模型条件分布均正确时，才是那个假设模型的BF，不是无条件truth后验。DICD的[出版社摘要](https://www.sciencedirect.com/science/article/pii/S0950705126015455)已包含trigger sensitivity/entity specificity；全文仍403，不能谎称逐公式完全等价，也不能宣称这些原则新颖。[CoCo](https://aclanthology.org/2021.findings-emnlp.10/)早已用source counterfactual估计事实性。此路当前不重新开跑。
+
+**后续检测接口**必须由独立source-first/I02事实许可给出原R的owner/relation/condition、支持集合/明确冲突集合/unknown，并与同前端strong direct-text比较。合法多对多不制造排他cycle。当前χ、MI、δm、任一chosen-logit投影都没有普适错误符号，不能直接送主线evaluate冒称方法。若找不到超越同前端文本核验的可靠性、定位或成本增量，保留机制结果，切换到I02 source语义瓶颈，停止包装内部proxy。
+
+本版保留现有六任务0.8目标，但没有宣称达到、接近或已准入一款新检测器。先完成这个有新反事实且能失败的机制试验，再决定是否值得成为完整方法的组成部分。

@@ -1,13 +1,11 @@
-# 当前恢复：H018固定方向已反证；真实多采样/内部图已补齐
+# 当前恢复：H019有限CPU机制试验进入安装资格
 
-读F059/F060、[缓存地图](../docs/REMOTE_INTERNAL_CACHE_MAP_20261105.md)和[固定反例](../docs/results/h018_owner_specificity.md)。用户要求持续机制研究/完整方法及六任务接近或超过.8；目标未达成，goal工具历史blocked不等于用户停止。
+用户要求继续机制研究、完整方法与六任务接近/超过.8；未达成。读F059–F062和state.h019。H018固定方向已反证，剩余control不跑；旧reanchor O1–O5及N/A/G等实跑终局已恢复，不再重演Vswap/source-null/pathcos等旧现象。I02真正source-first仍未实现。
 
-H018 target-only audit7626e002已exit0/finish refuted：全部233原targets/32层/4fullV数值通过，原not73 e=-.0024986267超出负方向预算.00042623517，必要正号失败；aux C_source+.04715也未按预言转负。native p从S0 .991128→target .070049，当前失败不能再归因高置信ceiling。source是valet/outdoor联合swap，不能唯一定位valet/MLP电路；P006局部正不能晋升。固定强sign分支关闭，**不再补跑control、不翻sign/换点/换层救**，完整pair未声称通过。所有原失败/partial/control/完成target保留，S0不重跑。
+全部必要新缓存C06已下70文件10.08GB，原16/replay16/graph2全部通过各自保存数组资格。graph rawBF16精确F32、末residual32为prenorm，replay末slot32为postnorm；模型旧权重bodySHA仍未attested。不得再称远端没有这些量，也不重跑下载/全资格。
 
-真实reanchor三批下载全完：70文件10,080,059,000B，C:/ResearchData/token-detector-remote-20261103/06_same_question_multisample。16原生成全32层头A/logits，16prefix replay hidden，2完整A/V/residual/postA/MLP图（14375seed0/1）。原16+replay16资格全通过、24共同prefix负控bitexact；16记录只有13种R轨迹。replay末slot是postfinalnorm，graph末residual是prenorm，不能混。图已原manifest SHA核，数值资格还在进行。Q/K和W_O不在图包；旧权重bodySHA不因路径/mtime相同被追认。0新模型/GT/risk。
+H019新问题：同q、同GQA2head×2同IDcarrier的B=rc/M独立化，保持双方marginals，所有48pair×32层分别报告，绝不相加。source-only人工局部许可4carrier126/277/303/369，EQUIV1/SEM5；不是自动事实前端。M0必须两类都有、F≤8、原R数字q全保留选择理由且预算通过，否则M1=0。新的MINIMAL013351 d2053…和独立科学c15c…、frontend4de66…、kernel620711…、编排7eda1…已GO有限实现。原R/GT/符号不筛；0模型/O/全词表头/风险。M2/检测AUROC/追加world未准入。
 
-此前漏了research/reanchor根，F039-F042缺失结论仅适用于原scope。新16为QA新R，不能套官方旧GT；官R5684另有池化profiles但P769≠803；旧canonical包是posttoken且floor.01的稀疏attention，非本次prechoice替代。下载worker均退出；无GPUjob/watchdog/自动retry。
+代码三新模块在experiments，canonical text_units/answer_axis/data/provenance复用；myproject.__init__三exports改lazy、CLI的measure import移到实际分支，避免CPU路径暗中导入Torch/TF。冷启动拒绝Torch测试通过，须对最终安装wheel复测。下一步仅installed验证→独立M0 claim→合格才独立M1 claim。当前M0/M1尚未启动，GPU/下载job均0。
 
-下一问题：先核旧reanchor ownership/source_context_delta的X/E/XE、endpoint_swap、真实suffix及已有终局结论；source/V交换已做过，禁止换名。新候选必须有绑定特异性、位置/词面与语义负控、原token风险及直接文本增量证据，先独立审查再memory claim。仅层间反转因DoLa/ReDeEP重叠已否决；GQA同q head×carrier关联擦除仍proposal，未准入/未评分。
-
-源码3368f56的151exactinstalled/65targetedPASS16.93s，fullCPU300s incomplete；上一181937a完整Linux CI41858691205 success。新checkpoint push的exact CI待核，不能用targeted/旧CI代替。D通过迁移SHA验证的数据压缩包及OEM安装源到C已恢复约16.4GiB；项目/模型/科学raw未删。
+已push fe17c9e（Nov5 01:22:05 CST）完整Linux CI41876960854/job126738839976/step6全部success；它只覆盖此前代码。H019当前worktree尚未push/installed，不能用旧CI代替。D空闲约16.4GiB，原archive与OEM安装源迁C且数据/科学失败保留。goal工具历史blocked不代表用户停止；持续按当前用户授权推进。
