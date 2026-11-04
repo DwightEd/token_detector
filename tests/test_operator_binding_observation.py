@@ -3,9 +3,11 @@
 import numpy as np
 import pytest
 import torch
+from types import SimpleNamespace
 
 from experiments import operator_binding_observation as stage
 from experiments.data import read_json, verify_seal
+from experiments.data import write_json
 from experiments.datasets import Sample
 from myproject.measure import answer_axis
 from .test_streamed_observer import tiny, _observer
@@ -109,3 +111,39 @@ def test_invalid_finalnorm_return_is_retained_before_rejection(tiny, tmp_path):
         assert np.isnan(saved['output']).all()
         np.testing.assert_array_equal(saved['input'], raw.numpy())
     assert counts['final_norm_replays'] == 1
+
+
+def test_metadata_plan_binds_capture_config_before_any_model_call(tmp_path, monkeypatch):
+    model, axes, prepared = (tmp_path/name for name in ('model', 'axes', 'prepared'))
+    for directory in (model, axes, prepared):
+        directory.mkdir()
+    write_json(model/'config.json', dict(num_hidden_layers=32,hidden_size=4096,vocab_size=128256))
+    write_json(axes/'seal.json', {})
+    (prepared/'inputs.jsonl').write_text('{}\n', encoding='utf-8')
+    frontend=tmp_path/'frontend.json'
+    write_json(frontend, {})
+    protocol=tmp_path/'protocol.json'
+    write_json(protocol, dict(schema='h018-local-norm-mlp-phase1-v1',
+        case_order=list(stage.CASE_ORDER), scientific_bindings={},
+        budget=dict(model_calls=2,head_calls=8,extra_mlp_calls=256,extra_norm_calls=256,
+                    final_norm_replays=8,partition_o_calls=192,av_replays=64)))
+    args=SimpleNamespace(protocol=protocol,axes=axes,prepared=prepared,frontend_contract=frontend,
+        model=model,asset_manifest=tmp_path/'assets.json',asset_verification=tmp_path/'verification.json',
+        asset_state=tmp_path/'state.json',capture_root=tmp_path/'capture',
+        head_qualification=tmp_path/'head',device='cuda:0',output=tmp_path/'plan')
+    monkeypatch.setattr(stage,'load_cases',lambda *args: {key:dict(P=803,T=t,N=803+t)
+        for key,t in zip(stage.CASE_ORDER,(174,233))})
+    monkeypatch.setattr(stage,'verify_assets',lambda *args,**kwargs:{'files':{}})
+    seen=[]
+    # Keep the real required two-argument API contract: a missing config argument
+    # must fail this test rather than being hidden by a permissive *args mock.
+    def capture(capture_root, config_path):
+        assert capture_root==args.capture_root and config_path==model/'config.json'
+        seen.append((capture_root,config_path))
+        return {'config_sha256':'fixed-config'}
+    monkeypatch.setattr(stage,'capture_identity',capture)
+    monkeypatch.setattr(stage,'head_prerequisite',lambda root,assets,identity:{'capture':identity})
+    result=stage.prepare(args)
+    assert len(seen)==1 and result['model_calls']==0 and result['annotation_reads']==0
+    assert result['observer_capture_identity']=={'config_sha256':'fixed-config'}
+    verify_seal(args.output)

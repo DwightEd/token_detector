@@ -147,7 +147,7 @@ def prepare(args):
     cases = load_cases(args.axes, args.prepared, args.frontend_contract)
     assets = verify_assets(args.asset_manifest, args.model,
         verification=args.asset_verification, state=args.asset_state)
-    observer_identity = capture_identity(Path(args.capture_root))
+    observer_identity = capture_identity(Path(args.capture_root), Path(args.model)/'config.json')
     head = head_prerequisite(Path(args.head_qualification), assets, observer_identity)
     config = read_json(Path(args.model)/'config.json')
     if (config['num_hidden_layers'], config['hidden_size'], config['vocab_size']) != (32, 4096, 128256):
@@ -392,7 +392,7 @@ def run(args):
         verification=args.asset_verification, state=args.asset_state)
     if assets != plan['assets']:
         raise ValueError('Original observer assets differ from the execution plan')
-    observer_identity = capture_identity(Path(args.capture_root))
+    observer_identity = capture_identity(Path(args.capture_root), Path(args.model)/'config.json')
     if observer_identity != plan['observer_capture_identity']:
         raise ValueError('Observer capture prerequisite changed after preparation')
     if head_prerequisite(Path(args.head_qualification), assets, observer_identity) != plan['head_prerequisite']:
