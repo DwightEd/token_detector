@@ -1,5 +1,7 @@
 # 全数据集方法对照：截至恢复记录 2026-10-31
 
+2026-11-05：[H020来源记录仪器](results/h020_source_first_inventory.md)两完整提议未通过输出合同，第三prefill触发程序显存cap；固定接口不晋升，未新增检测分数/AUROC。主表指标不变。
+
 2026-11-05补充：[H019完整缓存机制试验](results/h019_head_carrier_association.md)与全tuple独立审计完成；仅支持有限pre-O计算，SEM/EQUIV幅度不稳定、sourceΔV跨graph不同，不晋升新检测器，无新AUROC。当前恢复见research-state/RESUME.md。
 
 2026-11-04新增完整Data2txt900原轴比较，外部监督NLI与历史R4/V3分列；其余任务未新跑NLI。[完整结果](results/h017_nli_detection.md)。

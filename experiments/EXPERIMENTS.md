@@ -1,5 +1,12 @@
 # 实验账本与实际结论
 
+## 2026-11-05 最新：H020固定source-only记录接口不晋升
+
+[完整结果](../docs/results/h020_source_first_inventory.md)：M0一次和source账本绑定完成；资源preflight一次显式恢复通过，随后1load/3生成attempt/2EOS返回400+380。两输出coverage合同无效、0合格complete，固定C1必要门已失败；第三P2924 SDPA在3GiB程序cap下OOM（物理仍3.90GiBfree），后三未启动。781root入口/780Python返回/4039成功位置；工程auditV2与语义aggregate均封存，核身份不把失败改成功。保留原失败/partial，不补余四，不改cap/schema/prompt救；剩余source/controls语义unknown，不宣称所有source-first失败。无原R/GT/风险/AUROC。
+
+新源码85bede6 exact installed156/52targeted13.86s；完整CPU300.023s INCOMPLETE，无orphanpytest，当前批exactLinuxCI待push。F066/F067/RESUME为准；generic latent-fact Bayesian mixture已有primary先例和本地P021近邻，不是可直接包装的新主算法。H018/H019及已知现象不重演，顶会/六任务.8目标未完成。以下历史检查点保留。
+
+
 ## 2026-11-05 当前检查点：H019完成，单独幅度不晋升
 
 H019所有M0/M1/独立80位审计/ΔV精度阶段均已一次完成，0新模型/0标签/0风险。10原R数字q、6手工局部sourcepair、32层和48独立headpair共92160 tuple；算术/覆盖通过不代表语义或检测。EQUIV幅度在第二R大于部分SEM，关闭单独幅度/MI/chi风险；1488/1536 sourceΔV向量跨graph不同，拒绝routing-only归因。详见[结果](../docs/results/h019_head_carrier_association.md)、F063/F064、RESUME。I02新source-first语义前端尚在合同设计，无新AUROC。H018和旧reanchor分支不重跑。

@@ -1,13 +1,14 @@
-# H020实验Tracker
+# 实验追踪：全部当前worker终结
 
-所有模型/分词/新评分阶段仍未执行。source-only controls已有独立许可，不等于模型或方法准入。
+| 阶段 | run | 状态 |
+|---|---|---|
+| H019 M0/M1/audit/precision | 02e68af9/709af130/9678946a/d1de688b | DONE，单独幅度不晋升，不重跑 |
+| H020 M0 | 29317893 | DONE/sealed，一次 |
+| 初preflight | cee9c3c6 | preimport拒绝0分词/模型，保留 |
+| 显式thin preflight | 44128ce8 | PASS，6input全<=4096、12tokenizer/0model |
+| H020提议 | 74dd771b | TERMINAL OOM；1load/3attempt/2returns，780tokens/781entry780returns，未跑余项 |
+| saved工程auditV2/source语义aggregate | c86d19dd/02e9eb4d | 身份/计费PASS；固定C1格式必要门FAIL，非一般语义能力反证 |
+| installed测试 | source85bede6 | 52targeted13.86s；full300.023s INCOMPLETE，无orphan，newexactCI待push |
+| generic Bayesmixture候选 | NO RUN | primary/本地先例已覆盖普通混合代数；无新评分/模型准入 |
 
-| ID | Milestone | 工作 | 固定variant/范围 | 状态 | 结果口径 |
-|---|---|---|---|---|---|
-| H020-P | proposal | C1/6请求/schema/prompt/预算 | 4原S＋2source controls | REVIEW_PENDING | 正式文档，不是实际run |
-| H020-C | M0先例 | source-control独立许可 | 14375块3,1,2；两durationliteral交换 | DOCUMENTED | f996aac8…；0R/GT/分词/模型，未写CF源文本 |
-| H020-M0 | M0 | 6input+anchors+obligation ledger+token上限 | frozen source-only | TODO | 0LM；不预填inputtokens或postimport资源通过 |
-| H020-M1 | M1 | 实现/假backend/installed/资源 | 现存Qwen3B NF4 | TODO | LM启动另claim，禁止改forward signature |
-| H020-M2 | M2 | 固定source提议 | 最多6requests/9216decoderforwards | TODO | 全raw/失败留存，无retry/续问/扩预算 |
-| H020-M3 | M3 | 独立S-only语义/coverage/control审查 | 全6，不挑输出 | TODO | 失败不人工筛选后晋升；通过仍非检测 |
-| H020-NEXT | 后续 | prefix-L/text baseline/repair/risk | 原R未来合同 | NOT_ADMITTED | 本轮不执行、不读GT、不包M1算子为risk |
+下一判别待审，不重跑已知现象；无检测新AUROC、六任务/顶会目标未完成。

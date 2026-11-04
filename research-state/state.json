@@ -3,9 +3,9 @@
   "objective": "Mechanism-driven unsupervised hallucination detection improvement toward AUROC >= 0.8 on each of six primary tasks",
   "canonical_project": "D:/projects/research/token_detector",
   "goal_status": "not_achieved",
-  "phase": "source_first_installed_ready_for_M0",
+  "phase": "fixed_source_interface_closed_next_cut_prior_review",
   "active_hypothesis": "H020_SOURCE_FIRST_QUANTITATIVE_RECORDS",
-  "next_question": "Claim and run H020 M0 once using exact installed156, then bind reviewed ledgerV2 mechanically and claim actual token/resource preflight. Six model proposals still not admitted. NoR/GT/risk; never repeat H019/H018.",
+  "next_question": "No repeat H018/H019/H020 fixed interface, no remainingfour or generic Bayesmixture scorer. F067 primary/prior review requires a new source-identity-before-y discriminator, legitimate switching/arithmetic controls and complete source semantic licence. QK-from-residual readiness may be reviewed only with original-weight/BF16/RoPE qualifications, no projection experiment admitted. Finish exact new push LinuxCI; objective remains unmet.",
   "known_fact_ids": [
     "F001",
     "F002",
@@ -70,7 +70,10 @@
     "F061",
     "F062",
     "F063",
-    "F064"
+    "F064",
+    "F065",
+    "F066",
+    "F067"
   ],
   "do_not_repeat": [
     "Describing known FN/FP counts again without a new discriminating intervention",
@@ -106,7 +109,7 @@
   "resource_status": "D16.43GiB/C145.68GiB free at2026-11-04T18:40Z; no live model/test/download or armed watchdog. Large new raw outputs use unified C research data root.",
   "user_resource_choice": "local_idle_automatic_run",
   "experiment_plan": "refine-logs/EXPERIMENT_PLAN.md",
-  "run_reservation_status": "H019_all_four_stages_terminal_no_live_worker",
+  "run_reservation_status": "all_H020_stages_and_local_full_test_terminal_no_armed_job",
   "frozen_observation_run_spec": null,
   "live_execution_state": null,
   "local_idle_job": null,
@@ -197,8 +200,8 @@
       "snapshot": "outputs/h019-head-carrier-20261105/LATEST_INSTALLED_SNAPSHOT.json"
     }
   },
-  "last_completed_run": "d1de688b1923fc1476d74a37a69c8f666f0e6cf1be353599a3ed564a23abab4e",
-  "last_result": "H01992160 tuples arithmetic qualified; SEM/EQUIV magnitude not stable; sourceDeltaV differs1488/1536. No new risk/AUROC.",
+  "last_completed_run": "74dd771b8c69d745283a899563255fe1b1e198690eda9e26b140189dc825fed1",
+  "last_result": "H0202complete EOS outputs400/380 both invalid envelope,3rdprefill OOM under3GiBcap.781rootentries/780returns, no semantic licence/risk/AUROC.",
   "previous_observation_run_id": "a5d336433cd1a04ce71962fb8500d4f9f0c8b0473a74f146e66302cbacb3e9a5",
   "goal_control_status": "blocked",
   "goal_control_note": "Legacy tool status remains blocked; user explicitly resumed research. Continue authorized work without asking for confirmation or treating legacy control status as a scientific/resource blocker.",
@@ -1024,20 +1027,13 @@
   "full_population_scores_sealed": false,
   "target_labels_released": false,
   "publication_receipt": "outputs/h017-relation-20261103/NLI_PUBLICATION_FINAL.json",
-  "validation_status": "H019 frozen sourceee69 published5fb457e complete LinuxCI41890599361/job126786651227/step6 success. Localfull300s remains incomplete; no detector efficacy inferred.",
+  "validation_status": "Current H020 source85bede6 installed156/52targeted pass; fullCPU300s incomplete, noorphanpytest; exact new LinuxCI required after push. H0195fb CI success is historical only.",
   "code_validation": {
-    "source_commit": "5fb457e6f9e121e32a856916fc64cdedf7610a3c",
-    "installed_modules": 154,
-    "targeted": "60passed20.89s_outside_installed",
+    "source_commit": "85bede6",
+    "installed_modules": 156,
+    "targeted": "52passed13.86s_outside_exact_installed",
     "local_full": "incomplete_timeout_300seconds",
-    "exact_push_CI": {
-      "commit": "5fb457e6f9e121e32a856916fc64cdedf7610a3c",
-      "run": 41890599361,
-      "job": 126786651227,
-      "status": "success",
-      "full_installed_step6": "success",
-      "receipt": "docs/results/h019_ci.json"
-    },
+    "exact_push_CI": "pending_new_source_push",
     "previous_exact_CI": {
       "commit": "fe17c9e660c4559c0364655d376b83427b206db5",
       "run": 41876960854,
@@ -1046,12 +1042,23 @@
       "full_installed_step6": "success"
     },
     "current_H019": "published_exact_full_installed_Linux_CI_success",
-    "frozen_method_source_commit": "ee69ad0163410e22338c4f1673f093f7f97097b5"
+    "frozen_method_source_commit": "ee69ad0163410e22338c4f1673f093f7f97097b5",
+    "local_full_log_sha256": "9404e1cb04314bc6f490005012dff799e52eb025ca8cda44cb66e0efb65e7c32",
+    "current_H020": "frozen_installed_verified_model_partial_receipts_independently_audited",
+    "previous_H019_exact_CI": {
+      "commit": "5fb457e6f9e121e32a856916fc64cdedf7610a3c",
+      "run": 41890599361,
+      "job": 126786651227,
+      "status": "success",
+      "full_installed_step6": "success"
+    }
   },
-  "updated_utc": "2026-11-04T19:21:17.252361+00:00",
+  "updated_utc": "2026-11-04T19:58:23.574095+00:00",
   "active_jobs": {
     "type": "none",
     "gpu_jobs": 0,
+    "model_jobs": 0,
+    "pytest_jobs": 0,
     "download_workers": 0
   },
   "current_protocol": "outputs/h019-head-carrier-20261105/FINITE_PROTOCOL.json",
@@ -1259,7 +1266,7 @@
   },
   "h020": {
     "hypothesis_id": "H020_SOURCE_FIRST_QUANTITATIVE_RECORDS",
-    "status": "implemented_independently_reviewed_installed_ready_M0",
+    "status": "fixed_interface_not_promoted_partial_model_run_terminal",
     "scientific_bindings": [
       {
         "path": "refine-logs/source-first-records-20261105/MINIMAL_CONTRACT_20261105_024137.md",
@@ -1492,9 +1499,301 @@
       "target": "D:\\projects\\research\\outputs\\h020-qualified-20261105-031838\\target",
       "working": "D:\\projects\\research\\outputs\\h020-qualified-20261105-031838\\working"
     },
-    "M0": "not_started",
-    "resource_preflight": "not_started",
+    "M0": {
+      "run": "29317893fb1e274efb0ee727b51cd9d80c34eff4e45773b1349306088edebf5b",
+      "seal_sha256": "c2d72c4481b53a4c5f7516ee5c550737b995436e2b07f700a96ca540884106c0",
+      "anchors": [
+        18,
+        13,
+        72,
+        47,
+        47,
+        47
+      ],
+      "repeated": false
+    },
+    "resource_preflight": {
+      "run": "cee9c3c6cf5c501be1e0fe1deff88ec8e4e976548a82ac062a45206b44ba7e7f",
+      "status": "refused_pre_import",
+      "available_ram_bytes": 2525605888,
+      "required_ram_bytes": 2684354560,
+      "tokenizer_calls": 0,
+      "model_requests": 0,
+      "automatic_retry": false
+    },
     "model_requests": 0,
-    "ledger_v2": "C:/ResearchData/token-detector-remote-20261103/06_same_question_multisample/h020-source-first-20261105/pre-generation-ledger-v2/ledger.json"
+    "ledger_v2": "C:/ResearchData/token-detector-remote-20261103/06_same_question_multisample/h020-source-first-20261105/pre-generation-ledger-v2/ledger.json",
+    "source_commit": "85bede6",
+    "bound_ledger_receipt": "outputs/h020-source-first-20261105/SOURCE_PLAN_BOUND_LEDGER_RECEIPT_V1.json",
+    "bound_ledger_sha256": "f7c72a5e993f0d361e54f1aa8fa5692687008c392a599714991380fe81206169",
+    "resource_preflight_v2": {
+      "status": "passed",
+      "run": "44128ce8e0a745ed9580c55c51af92effa7c1785630d998367cf35a0dd6a0c24",
+      "input_counts": [
+        1613,
+        1648,
+        2924,
+        2396,
+        2396,
+        2396
+      ],
+      "postimport_available_ram_bytes": 2751553536,
+      "postimport_free_cuda_bytes": 7283408896,
+      "new_model_requests": 0,
+      "tokenizer_call_attempts": 12
+    },
+    "model_execution_admission": "outputs/h020-source-first-20261105/MODEL_EXECUTION_ADMISSION.json",
+    "model_stage": "terminated_engineering_failure",
+    "model_worker": null,
+    "output": "C:/ResearchData/token-detector-remote-20261103/06_same_question_multisample/h020-source-first-20261105/m2-source-proposals-v1",
+    "terminal": {
+      "run_id": "74dd771b8c69d745283a899563255fe1b1e198690eda9e26b140189dc825fed1",
+      "command": [
+        "D:\\projects\\research\\envs\\token-detector-cu128\\Scripts\\python.exe",
+        "-c",
+        "import json,sys; from pathlib import Path; from argparse import Namespace; from experiments.source_first_observation import run; run(Namespace(**json.loads(Path(sys.argv[1]).read_text(encoding=\"utf-8\"))))",
+        "D:\\projects\\research\\token_detector\\outputs\\h020-source-first-20261105\\THIN_COLLECT_ARGUMENTS.json"
+      ],
+      "cwd": "D:\\projects\\research\\outputs\\h020-qualified-20261105-031838\\working",
+      "started_utc": "2026-11-04T19:34:52.714926+00:00",
+      "automatic_retry": false,
+      "maximum_generation_requests": 6,
+      "maximum_decoder_forwards": 9216,
+      "original_responses_used": 0,
+      "worker_pid": 1812,
+      "exit_code": 1,
+      "elapsed_seconds": 101.38557110005058
+    },
+    "accounting": {
+      "model_load_attempts": 1,
+      "model_load_returns": 1,
+      "backend_attempts": 3,
+      "backend_returns": 2,
+      "returned_output_tokens": 780,
+      "model_forward_entry_attempts": 781,
+      "model_successful_python_returns": 780,
+      "processed_input_positions": 4039,
+      "resources": [
+        {
+          "stage": "pre_import",
+          "available_ram_bytes": 3083104256
+        },
+        {
+          "stage": "post_import_and_tokenizer",
+          "available_ram_bytes": 2863951872,
+          "free_cuda_bytes": 7283408896,
+          "total_cuda_bytes": 8546484224,
+          "cuda_allocated_bytes": 0,
+          "cuda_reserved_bytes": 0,
+          "cuda_peak_allocated_bytes": 0,
+          "cuda_peak_reserved_bytes": 0
+        },
+        {
+          "stage": "preload",
+          "available_ram_bytes": 2864025600,
+          "free_cuda_bytes": 7283408896,
+          "total_cuda_bytes": 8546484224,
+          "cuda_allocated_bytes": 0,
+          "cuda_reserved_bytes": 0,
+          "cuda_peak_allocated_bytes": 0,
+          "cuda_peak_reserved_bytes": 0
+        },
+        {
+          "stage": "postload",
+          "available_ram_bytes": 3673739264,
+          "free_cuda_bytes": 4200595456,
+          "total_cuda_bytes": 8546484224,
+          "cuda_allocated_bytes": 2055978496,
+          "cuda_reserved_bytes": 3066036224,
+          "cuda_peak_allocated_bytes": 2997459456,
+          "cuda_peak_reserved_bytes": 3066036224
+        },
+        {
+          "stage": "prerequest-0",
+          "available_ram_bytes": 3667779584,
+          "free_cuda_bytes": 4200595456,
+          "total_cuda_bytes": 8546484224,
+          "cuda_allocated_bytes": 2055978496,
+          "cuda_reserved_bytes": 3066036224,
+          "cuda_peak_allocated_bytes": 2997459456,
+          "cuda_peak_reserved_bytes": 3066036224
+        },
+        {
+          "stage": "postrequest-0",
+          "available_ram_bytes": 2742259712,
+          "free_cuda_bytes": 4108320768,
+          "total_cuda_bytes": 8546484224,
+          "cuda_allocated_bytes": 2064498176,
+          "cuda_reserved_bytes": 3145728000,
+          "cuda_peak_allocated_bytes": 2997459456,
+          "cuda_peak_reserved_bytes": 3145728000
+        },
+        {
+          "stage": "prerequest-1",
+          "available_ram_bytes": 2719698944,
+          "free_cuda_bytes": 4108320768,
+          "total_cuda_bytes": 8546484224,
+          "cuda_allocated_bytes": 2064498176,
+          "cuda_reserved_bytes": 3145728000,
+          "cuda_peak_allocated_bytes": 2997459456,
+          "cuda_peak_reserved_bytes": 3145728000
+        },
+        {
+          "stage": "postrequest-1",
+          "available_ram_bytes": 2968096768,
+          "free_cuda_bytes": 4106223616,
+          "total_cuda_bytes": 8546484224,
+          "cuda_allocated_bytes": 2064498176,
+          "cuda_reserved_bytes": 3147825152,
+          "cuda_peak_allocated_bytes": 2997459456,
+          "cuda_peak_reserved_bytes": 3147825152
+        },
+        {
+          "stage": "prerequest-2",
+          "available_ram_bytes": 2958426112,
+          "free_cuda_bytes": 4106223616,
+          "total_cuda_bytes": 8546484224,
+          "cuda_allocated_bytes": 2064498176,
+          "cuda_reserved_bytes": 3147825152,
+          "cuda_peak_allocated_bytes": 2997459456,
+          "cuda_peak_reserved_bytes": 3147825152
+        }
+      ],
+      "tokenizer_calls": 15
+    },
+    "fixed_C1_automatic_usability": "not_passed_necessary_output_contract",
+    "source_semantic_ability": "not_established",
+    "controls": "not_run_unknown",
+    "remaining_model_requests_admitted": 0,
+    "automatic_retry": false,
+    "complete_proposals_reusable": true,
+    "no_resume_remaining_four": true,
+    "independent_engineering_audit": {
+      "schema": "h020-M2-engineering-audit-receipt-v1",
+      "audit_root": "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\h020-source-first-20261105\\m2-engineering-audit-v2",
+      "audit_sha256": "c86d19dda9c10094cc36382e0d9acbb0db40e9e4c228f628e09cf34e89ba9ef5",
+      "audit_seal_sha256": "b68b07f1befe593098e5a1c4b97d5fd115556499d94b921a92e40fcad51de6fa",
+      "passed": true,
+      "status": "sealed_engineering_failure_costs_and_identity_consistent",
+      "run_id": "74dd771b8c69d745283a899563255fe1b1e198690eda9e26b140189dc825fed1",
+      "worker_exit_code": 1,
+      "original_M2_root_seal_sha256": "57623826e2bbdc0d1ea002a6716b1a37e54f7351319dfb9c6254ecf66b06008f",
+      "verified_counts": {
+        "model_load_attempts": 1,
+        "model_load_returns": 1,
+        "backend_attempts": 3,
+        "backend_returns": 2,
+        "returned_output_tokens": 780,
+        "model_forward_entry_attempts": 781,
+        "model_successful_python_returns": 780,
+        "processed_input_positions": 4039,
+        "tokenizer_calls": 15
+      },
+      "requests": [
+        {
+          "index": 0,
+          "input_tokens": 1613,
+          "output_tokens": 400,
+          "finish": "eos",
+          "forwards": 400,
+          "returned": true,
+          "child_sealed": true
+        },
+        {
+          "index": 1,
+          "input_tokens": 1648,
+          "output_tokens": 380,
+          "finish": "eos",
+          "forwards": 380,
+          "returned": true,
+          "child_sealed": true
+        },
+        {
+          "index": 2,
+          "input_tokens": 2924,
+          "returned": false,
+          "forward_entries": 1,
+          "forward_returns": 0,
+          "partial_generated_tokens": "unknown_without_backend_return",
+          "child_sealed": false,
+          "covered_by_failed_root_seal": true
+        }
+      ],
+      "unstarted_request_indices": [
+        3,
+        4,
+        5
+      ],
+      "request_metadata_and_journal_sha256": {
+        "0": {
+          "request.json": "236dd8cb37ac4eecbd0b4b3c2568438a223595438ce3ab0c12869a148ebadc20",
+          "forward-events.jsonl": "26a7b032beb107503a64a0820cf79ad8e76253d02f70d70c09eef1df3256510d",
+          "forward-accounting.json": "a53b47a897133b7d2c0b8f165a7fb4ef133979883cb485039f9570682d091b6f",
+          "backend_raw.json": "4650ed32442cdb252a9fedcd728f83384f792a15880213fd0259356edda87358",
+          "result.json": "2de88ef19df880a37188ae1ecf2e556ac643204d482dfeaa03c9789241b28339",
+          "proposal_validation.json": "e2ba56bfc32efea910b94916b50894e4342b64475596c8d228201223698489cd",
+          "seal.json": "daaeb3702b08ba05b6c6dba98f1e4a10018b2671edb82e1827be2b4aa8cca7a4"
+        },
+        "1": {
+          "request.json": "bf334738da69c2ccd60505ce828ccb2947fb95db9185bb3994497dc3d7c2aabc",
+          "forward-events.jsonl": "04666c6219c1833d885be7d7a7a0b5873bfd1559be50a18d145c6b365192e865",
+          "forward-accounting.json": "c3192a73013b5c684b6526c6d7f170e0ed756123ad3fde8ae9ef0bc8c46d4435",
+          "backend_raw.json": "24efeb52ceba467ddae39dd8017bf0cc093f6bbd6caf20579a7e190be0d21307",
+          "result.json": "2b41990d57eccd80aad845c4f34cac9ee068fca58f83f796761c739089fed260",
+          "proposal_validation.json": "322ea4d0fa1a43716b441a82eed83230b5ee22afde0c7018ef7007d56325ef85",
+          "seal.json": "0fe1ae2ac149c6efacf0cb4059ca679fafefab0417265ab30cf07bae88d378d1"
+        },
+        "2": {
+          "request.json": "93492f07c35d70bdf4f1d6dc146cc0bbc0de5b1c7be3619058d00cf0cd66213c",
+          "forward-events.jsonl": "d4cb53792e209edf2f0be877a7f1e38b5f8a069001d88a7444588a7f81ba34f2",
+          "forward-accounting.json": "97e1056fc050b432135d20eeb98f0f1e0142d932dcd93ce9870f6b4738216cca"
+        }
+      },
+      "base_config_fields_checked": 67,
+      "failure_origin": "Trace ends inside scaled_dot_product_attention;522MiB allocation rejected under3GiB allocator cap despite3.90GiB physical free. Tensor/backend identity of that allocation not inferred.",
+      "M0_runtime_dependencies": {
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "torch": "2.8.0+cpu",
+        "transformers": "4.57.1"
+      },
+      "M1V2_runtime_dependencies": {
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "torch": "2.8.0+cu128",
+        "transformers": "4.57.1"
+      },
+      "audit_reader_correction": "V1 incorrectly required CPU M0 and CUDA M1 complete runtime objects equal; corrected to frozen _load_plan source-hash contract. V1 failed audit retained; no stage rerun.",
+      "new_stage_runs": 0,
+      "new_model_calls": 0,
+      "new_tokenizer_calls": 0,
+      "new_candidate_executions": 0,
+      "R_reads": 0,
+      "GT_reads": 0,
+      "semantic_output_review": "separate",
+      "fixed_branch_stopped": true,
+      "no_completion_or_partial_token_fabrication": true
+    },
+    "independent_semantic_aggregate": {
+      "schema": "h020-terminal-semantic-review-receipt-v1",
+      "canonical_root": "C:\\ResearchData\\token-detector-remote-20261103\\06_same_question_multisample\\h020-source-first-20261105\\semantic-review-v1",
+      "aggregate_sha256": "02e9eb4dbb5d89991119b7cda892331c89f93037914d4da7c4acb73599edc9d5",
+      "markdown_sha256": "12e0f150a68bce6bd96006ad9c41f1a12d0316f5efe52a98e9a72807c6b9c9ee",
+      "seal_sha256": "24ccc83a6b00cb5ea21fb7de8b07e6c5b1ca7d4e29da0763b3f51fcc9e11dde1",
+      "stage_seal_sha256": "57623826e2bbdc0d1ea002a6716b1a37e54f7351319dfb9c6254ecf66b06008f",
+      "bound_ledger_sha256": "f7c72a5e993f0d361e54f1aa8fa5692687008c392a599714991380fe81206169",
+      "C1_automatic_gate_passed": false,
+      "returned_requests_reviewed": 2,
+      "remaining_requests_not_semantically_assessed": 4,
+      "controls_not_run": 2,
+      "original_R_GT_reads": 0,
+      "new_model_calls": 0,
+      "new_risk_scores": 0,
+      "all_six_completed_claimed": false
+    },
+    "result_fact": "F066",
+    "automatic_C1_gate": "not_passed",
+    "fixed_branch": "closed_no_further_generation_requests",
+    "published_result": "docs/results/h020_source_first_inventory.md"
   }
 }

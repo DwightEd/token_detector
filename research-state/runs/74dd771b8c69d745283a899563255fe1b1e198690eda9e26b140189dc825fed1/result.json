@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "run_id": "74dd771b8c69d745283a899563255fe1b1e198690eda9e26b140189dc825fed1",
+  "completed_utc": "2026-11-04T19:36:34.356077+00:00",
+  "outcome": "engineering_failure",
+  "conclusion": "Frozen source-only proposal observations; C1 awaits independent semantic review, no detector/AUROC",
+  "artifacts": [
+    {
+      "path": "outputs/h020-source-first-20261105/collect-receipt-v1/actual_tokenization.json",
+      "sha256": "b2871a9227e6e54697f4322a8dd099ed1a0b39ca5dc20a2c7b4c699e3fe1c304"
+    },
+    {
+      "path": "outputs/h020-source-first-20261105/collect-receipt-v1/failure.json",
+      "sha256": "76e4066b1c77de85d1e8a6c7d3ce8272c67383bddb188071be50c93a9d7e4580"
+    },
+    {
+      "path": "outputs/h020-source-first-20261105/collect-receipt-v1/generation_configuration.json",
+      "sha256": "de709fb67e7d62ccdea03ebd6cffc9837626d3dfd5a793b9578c77bcf378a3f1"
+    },
+    {
+      "path": "outputs/h020-source-first-20261105/collect-receipt-v1/location.json",
+      "sha256": "d9a11b7b62986b491f5d846413b8fc6b2e56b2b4c49ea06ad6d7345701aeea02"
+    },
+    {
+      "path": "outputs/h020-source-first-20261105/collect-receipt-v1/seal.json",
+      "sha256": "57623826e2bbdc0d1ea002a6716b1a37e54f7351319dfb9c6254ecf66b06008f"
+    }
+  ]
+}

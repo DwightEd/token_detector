@@ -181,9 +181,36 @@
       "sha256": "985a631b0ecc2c1eae29951275ec8f4ea1fb335853b8893baa3443c3c35317f6"
     }
   ],
-  "full_local_cpu": "not_requested_yet_required_before_push",
-  "exact_CI": "not_pushed_yet",
+  "full_local_cpu": {
+    "command": [
+      "D:\\projects\\research\\token_detector\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "--import-mode=importlib",
+      "D:\\projects\\research\\token_detector\\tests",
+      "-q"
+    ],
+    "cwd": "D:\\projects\\research\\outputs\\h020-qualified-20261105-031838\\working",
+    "environment": {
+      "PYTHONPATH": "D:\\projects\\research\\outputs\\h020-qualified-20261105-031838\\target",
+      "OMP_NUM_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "2",
+      "MKL_NUM_THREADS": "2",
+      "CUDA_VISIBLE_DEVICES": "-1"
+    },
+    "snapshot_proof_sha256": "1f7a16ada718cc7818c528625465a022b02a2722a0fd67a7a5846deebf9d40f6",
+    "timeout_seconds": 300,
+    "full_suite_requested": true,
+    "original_model_calls": 0,
+    "annotation_reads": 0,
+    "exit_code": null,
+    "status": "incomplete_timeout",
+    "elapsed_seconds": 300.02298280003015,
+    "log_sha256": "9404e1cb04314bc6f490005012dff799e52eb025ca8cda44cb66e0efb65e7c32"
+  },
+  "exact_CI": "pending_new_source_push",
   "model_requests": 0,
   "detector_validated": false,
-  "auroc": null
+  "auroc": null,
+  "frozen_source_commit": "85bede6"
 }

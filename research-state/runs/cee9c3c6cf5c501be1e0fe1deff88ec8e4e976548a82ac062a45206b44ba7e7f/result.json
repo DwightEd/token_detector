@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "run_id": "cee9c3c6cf5c501be1e0fe1deff88ec8e4e976548a82ac062a45206b44ba7e7f",
+  "completed_utc": "2026-11-04T19:22:31.711486+00:00",
+  "outcome": "engineering_failure",
+  "conclusion": "Fixed source-only preflight; no detector score, semantic license or AUROC",
+  "artifacts": [
+    {
+      "path": "outputs/h020-source-first-20261105/preflight-receipt-v1/failure.json",
+      "sha256": "adadd9a715a12d8a1a839323bb90d7783e271a2f63ae51c34043bb6916ea6ce5"
+    },
+    {
+      "path": "outputs/h020-source-first-20261105/preflight-receipt-v1/location.json",
+      "sha256": "4bb6ec3d54fe4d89b51c87bb143c14a662ff9635df9c9302cc24d50206d2ce01"
+    },
+    {
+      "path": "outputs/h020-source-first-20261105/preflight-receipt-v1/seal.json",
+      "sha256": "94be646bb96bdde51ed02ca26bed30f5fe067efe2149f821c7abf4fd9ebbe117"
+    }
+  ]
+}

@@ -3379,6 +3379,49 @@
       "new_model_calls": 0,
       "risk_outputs": 0,
       "auroc": null
+    },
+    {
+      "id": "P036_SOURCE_FIRST_FIXED_RECORD_INTERFACE",
+      "status": "closed_fixed_interface_not_usable_partial_engineering_run",
+      "known_result": "F066",
+      "evidence": [
+        {
+          "path": "docs/results/h020_source_first_inventory.md",
+          "sha256": "02b6fb9567a0807e7704b17c53cdbef0385e01629b155db7b51cede9a21bc257"
+        },
+        {
+          "path": "docs/results/h020_source_first_inventory_summary.json",
+          "sha256": "9e2bdab5e66a7b1376da8ef118aa02de1982ad3e55d33ff381d1cd49b05d123c"
+        },
+        {
+          "path": "outputs/h020-source-first-20261105/M2_ENGINEERING_AUDIT_RECEIPT.json",
+          "sha256": "fe3311894fa2a58a6966e4afa694bafc1de01bbe3874112f9d2914f5ac1ce6e8"
+        },
+        {
+          "path": "outputs/h020-source-first-20261105/SEMANTIC_REVIEW_AGGREGATE_RECEIPT_V1.json",
+          "sha256": "11eaaa3a2590f227b1c8d1808d61404cd13d52cd01f113aaece1c3916aa3bdd4"
+        },
+        {
+          "path": "outputs/h020-source-first-20261105/INSTALLED_FULL_VALIDATION.json",
+          "sha256": "b0638b272744063c33c9ba5a1f20ad1f598645cf02fc67dc80f2a1a4d46e7cbb"
+        }
+      ],
+      "do_not_repeat": "No M0/firsttwo/newprompt/schema/budget/cap or remainingfour rescue. Reuse complete/partialraw; automatic usability failed, source-semantic ability not globally refuted.",
+      "risk_outputs": 0,
+      "auroc": null
+    },
+    {
+      "id": "P037_LATENT_FACT_MIXTURE_PRIOR_REVIEW",
+      "status": "generic_repackaging_rejected_no_new_experiment",
+      "known_result": "F067",
+      "evidence": [
+        {
+          "path": "docs/research/20261105_latent_fact_expert_prior_review.md",
+          "sha256": "e026d6c8b0c3f8014ac9e38c734955f5032ac7bcc847d8f33f9b1f14bf157a9a"
+        }
+      ],
+      "do_not_repeat": "Do not call Bayesian weights or posterior switching a new main algorithm, rerunP021/H005 or start scores without new source-identity discriminating admission.",
+      "new_model_calls": 0
     }
   ],
   "discriminating_interventions": [

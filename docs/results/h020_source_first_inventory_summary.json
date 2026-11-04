@@ -1,0 +1,355 @@
+{
+  "schema": "h020-source-first-public-summary-v1",
+  "date": "2026-11-05",
+  "document_status": "frozen_finite_instrument_branch_closed",
+  "conclusion": "M0 and thin canonical preflight completed; M2 returned two outputs rejected by the frozen coverage envelope and stopped on third-request SDPA allocator-cap OOM. The fixed branch cannot satisfy its four-native-source complete-record necessary gate and will not be rescued. No detector score or AUROC.",
+  "scope": {
+    "purpose": "source_information_condition_instrument_qualification_only",
+    "dataset": "RAGTruth QA",
+    "source_ids": [
+      "14304",
+      "14315",
+      "14325",
+      "14375"
+    ],
+    "existing_response_in_model_inputs": false,
+    "inputs": [
+      "original_source",
+      "original_task_and_question",
+      "source_only_lexical_anchors",
+      "generic_schema"
+    ],
+    "quantitative_relations_and_full_scope_required": true,
+    "all_encyclopedic_facts_required": false,
+    "historically_exposed_material": true,
+    "fresh_confirmation_or_double_blind": false,
+    "manual_ledger_is_automatic_semantic_frontend": false,
+    "manual_ledger_is_response_hallucination_gold": false,
+    "semantic_licensed": false,
+    "detector_validated": false,
+    "c1_semantic_assessment": "fixed_necessary_complete_record_gate_failed; no_universal_source_first_refutation",
+    "prefix_legal_fact_sets_or_attention_repair_admitted": false,
+    "original_token_scoring_or_evaluation_admitted": false
+  },
+  "cases": [
+    {
+      "source_id": "14304",
+      "world": "native",
+      "anchors": 18
+    },
+    {
+      "source_id": "14315",
+      "world": "native",
+      "anchors": 13
+    },
+    {
+      "source_id": "14325",
+      "world": "native",
+      "anchors": 72
+    },
+    {
+      "source_id": "14375",
+      "world": "native",
+      "anchors": 47
+    },
+    {
+      "source_id": "14375",
+      "world": "passage_reorder_312",
+      "anchors": 47
+    },
+    {
+      "source_id": "14375",
+      "world": "duration_literal_swap",
+      "anchors": 47
+    }
+  ],
+  "controls": {
+    "passage_reorder": "local_source_fact_and_provenance_control_not_universal_discourse_equivalence",
+    "duration_swap": "two_local_fact_changes_not_whole_source_truth_flip",
+    "control_texts_or_source_quotes_published_here": false
+  },
+  "source_ledger": {
+    "semantic_version": 2,
+    "frozen_before_model_outputs": true,
+    "semantic_obligations": 61,
+    "exact_citations": 70,
+    "layout_markers": 73,
+    "source_plan_anchor_joins": 244,
+    "v2_change": "two_existing_frequency_quantity_obligations_changed_from_guard_to_inventory_required; v1_retained",
+    "new_model_calls": 0,
+    "tokenizer_calls": 0,
+    "current_response_ground_truth_or_effect_reads": 0,
+    "reviewed_obligations_after_generation": 16,
+    "unassessed_obligations_after_generation": 45,
+    "reviewed_anchors_validator_unknown": 31,
+    "unassessed_planned_anchors": 213,
+    "accepted_records_after_generation": 0,
+    "wrong_complete_semantic_count": null,
+    "zero_wrong_complete_must_not_imply_reliability": true
+  },
+  "actual_stages": {
+    "m0": {
+      "run_id": "29317893fb1e274efb0ee727b51cd9d80c34eff4e45773b1349306088edebf5b",
+      "outcome": "supported_scope",
+      "scope": "fixed_source_only_preparation",
+      "attempts": 1,
+      "completed": true,
+      "cases": 6,
+      "tokenizer_calls": 0,
+      "model_requests": 0,
+      "launcher_elapsed_seconds": 4.189862199942581
+    },
+    "first_preflight": {
+      "run_id": "cee9c3c6cf5c501be1e0fe1deff88ec8e4e976548a82ac062a45206b44ba7e7f",
+      "outcome": "engineering_failure",
+      "failure_stage": "pre_import",
+      "reason": "available_host_RAM_below_frozen_floor",
+      "available_ram_bytes": 2525605888,
+      "required_ram_bytes": 2684354560,
+      "torch_imported_by_instrument": false,
+      "tokenizer_calls": 0,
+      "model_requests": 0,
+      "automatic_retry": false,
+      "launcher_elapsed_seconds": 14.107135300058872,
+      "semantic_refutation": false
+    },
+    "generation": {
+      "run_id": "74dd771b8c69d745283a899563255fe1b1e198690eda9e26b140189dc825fed1",
+      "outcome": "engineering_failure",
+      "completed": false,
+      "model_load_attempts": 1,
+      "model_load_returns": 1,
+      "backend_attempts": 3,
+      "backend_returns": 2,
+      "returned_output_tokens": 780,
+      "returned_tokens_by_request": [
+        400,
+        380
+      ],
+      "model_forward_entry_attempts": 781,
+      "model_successful_python_returns": 780,
+      "successful_processed_input_positions": 4039,
+      "tokenizer_calls": 15,
+      "launcher_elapsed_seconds": 101.38557110005058,
+      "failure_request_index": 2,
+      "failure_input_tokens": 2924,
+      "failure_operation": "SDPA",
+      "requested_allocation_MiB": 522,
+      "error_reported_torch_allocated_GiB_approx": 2.6,
+      "allocator_cap_GiB": 3,
+      "error_reported_physical_gpu_free_GiB_approx": 3.9,
+      "entire_physical_GPU_exhausted_claimed": false,
+      "partial_failed_request_output_tokens": "unknown_without_backend_return",
+      "returned_outputs_sealed": 2,
+      "validated_complete_records": 0,
+      "returned_request_validator_status": [
+        "request_unknown",
+        "request_unknown"
+      ],
+      "returned_request_error": [
+        "coverage_envelope_schema",
+        "coverage_envelope_schema"
+      ],
+      "returned_request_unknown_due_to_truncation": false,
+      "returned_request_unknown_is_model_abstention": false,
+      "automatic_retry": false,
+      "new_detector_scores": 0,
+      "other_four_planned_requests_will_not_be_completed_or_retried": true,
+      "entered_input_positions_including_failed_prefill": 6963,
+      "unstarted_request_indices": [
+        3,
+        4,
+        5
+      ],
+      "failure_prefill_entries": 1,
+      "failure_prefill_successful_returns": 0,
+      "returned_finish_reasons": [
+        "eos",
+        "eos"
+      ]
+    },
+    "import_profile": {
+      "status": "completed",
+      "cli_extra_private_delta_bytes": 50421760,
+      "original_preflight_RAM_shortfall_bytes": 158748672,
+      "smaller_than_original_shortfall": true,
+      "original_failure_uniquely_attributable_to_CLI": false,
+      "new_M0_runs": 0,
+      "model_instances": 0,
+      "tokenizer_calls": 0,
+      "resource_gates_changed": false,
+      "limitations": [
+        "Instantaneous global available RAM is not paired causal process attribution.",
+        "Direct canonical run avoids observed unrelated CLI imports but does not guarantee post-import or generation resources."
+      ]
+    },
+    "thin_preflight": {
+      "run_id": "44128ce8e0a745ed9580c55c51af92effa7c1785630d998367cf35a0dd6a0c24",
+      "outcome": "supported_scope",
+      "completed": true,
+      "existing_M0_reused": true,
+      "resource_gates_unchanged": true,
+      "tokenizer_calls": 12,
+      "model_requests": 0,
+      "actual_model_loads": 0,
+      "input_token_counts": [
+        1613,
+        1648,
+        2924,
+        2396,
+        2396,
+        2396
+      ],
+      "post_import_available_ram_bytes": 2751553536,
+      "post_import_free_cuda_bytes": 7283408896,
+      "launcher_elapsed_seconds": 32.03318769996986,
+      "model_load_or_generation_success_implied": false
+    }
+  },
+  "planned_instrument": {
+    "model": "Qwen2.5-3B-Instruct",
+    "existing_local_assets": true,
+    "quantization": "NF4_double_quant",
+    "compute_dtype": "float16",
+    "attention": "sdpa",
+    "batch_size": 1,
+    "maximum_generation_requests": 6,
+    "maximum_input_tokens_per_request": 4096,
+    "maximum_new_tokens_per_request": 1536,
+    "maximum_normal_decoder_forwards": 9216,
+    "generation_requests_are_not_backbone_forward_count": true,
+    "effective_repetition_penalty": 1.05,
+    "decoding": "do_sample_false_after_frozen_generation_processors_not_raw_logits_argmax",
+    "pre_import_ram_floor_bytes": 2684354560,
+    "post_import_and_preload_ram_floor_bytes": 2147483648,
+    "gpu_free_floor_bytes": 3221225472,
+    "gpu_allocator_cap_bytes": 3221225472,
+    "post_import_resource_gate_passed": true,
+    "no_truncation_salvage_or_automatic_retry": true,
+    "generation_resource_success_guaranteed": false
+  },
+  "validation": {
+    "installed_targeted_tests": 52,
+    "pytest_elapsed_seconds": 13.86,
+    "status": "passed",
+    "package_members": 156,
+    "exact_checkout_wheel_target_file_hash_match": true,
+    "full_suite_or_exact_H020_CI_pass_claimed": false,
+    "original_model_calls": 0,
+    "annotation_reads": 0,
+    "local_full_suite": {
+      "status": "incomplete_timeout",
+      "elapsed_seconds": 300.02298280003015,
+      "timeout_seconds": 300,
+      "exit_code": null,
+      "orphan_pytest_processes": false,
+      "assertion_failure_or_success_inferred": false,
+      "log_sha256": "9404e1cb04314bc6f490005012dff799e52eb025ca8cda44cb66e0efb65e7c32"
+    },
+    "exact_current_source_Linux_CI": "pending_batch_push_and_verification"
+  },
+  "metrics": {
+    "auroc": null,
+    "average_precision": null,
+    "coverage_semantically_licensed": null
+  },
+  "evidence_sha256": {
+    "source_inputs": "4a68e75f743741d089b9cc1389ed617ac57a41c5f78c3bab18c7234457d53646",
+    "protocol": "4b88f7eba6b61ab466d644c7147af36bff854bb3fe5c491c93e78095bf8ec70c",
+    "minimal_contract": "6f2a977b045158dc4432594c9a58904edfd10bd7e609b5c8e3163ce8f26ec71b",
+    "schema": "aaca8f294e2f34ec749d15baee1fea3f44f597db4ebdc364e9244476cbe61da5",
+    "prompt": "7bc0c04bd628e6cdd829b2987d4f0ef2eb7d63410070648c579e127489afec48",
+    "science_review": "7494d7ff414b913c0623d80705c6d5a85e5c335f69c0db4bc1cb25c2a33380fa",
+    "driver_code_review": "ebc48acd54c48ebbf516ec7fe5a53901380db91250e2a36f79f968da066c174a",
+    "installed_snapshot_proof": "1f7a16ada718cc7818c528625465a022b02a2722a0fd67a7a5846deebf9d40f6",
+    "wheel": "830b54c3f82f836212cd47af732c1ec0166def65e52ba6a8d660b5294f57da90",
+    "installed_targeted_log": "ac15a1897a5f5b5dc0cdfcc30819c7e592dc59e626ae7a42c422d1ba4d8f56a8",
+    "source_plan": "660af65e914cf40229b213a581aae399fa8f79c8d5070fdab6e2949e9dbe27da",
+    "source_plan_seal": "c2d72c4481b53a4c5f7516ee5c550737b995436e2b07f700a96ca540884106c0",
+    "bound_ledger": "f7c72a5e993f0d361e54f1aa8fa5692687008c392a599714991380fe81206169",
+    "bound_ledger_seal": "fe06f8cdca427cdd98c77ebac54d002e22d035241f0f64b176b6364c10817c1a",
+    "bound_ledger_review": "3a30e4e5dd2cf93d127a435176b6156c355c7414b95a07b9b6815370f63dd164",
+    "semantic_ledger_v2": "3aafe0ed3737340ee6eca1cb02d2fff0067767dbc990f2bfcd6b8e882dd9b3dc",
+    "first_preflight_failure": "adadd9a715a12d8a1a839323bb90d7783e271a2f63ae51c34043bb6916ea6ce5",
+    "first_preflight_seal": "94be646bb96bdde51ed02ca26bed30f5fe067efe2149f821c7abf4fd9ebbe117",
+    "import_profile_seal": "53fa3877b4ac1de8b3d82176c9d0db8717e8aa667d3b0d82e84b75ec9c7121ea",
+    "thin_preflight_result": "c91238919fc35e656c17b12e878f5fb19ff7e35206e47a6ded58ef0a4e109377",
+    "thin_preflight_seal": "73c233c7a14c6157d7be22660f94942f139498d712ac7f0ba35719049fd3f1c5",
+    "generation_failure": "76e4066b1c77de85d1e8a6c7d3ce8272c67383bddb188071be50c93a9d7e4580",
+    "generation_root_seal": "57623826e2bbdc0d1ea002a6716b1a37e54f7351319dfb9c6254ecf66b06008f",
+    "semantic_aggregate": "02e9eb4dbb5d89991119b7cda892331c89f93037914d4da7c4acb73599edc9d5",
+    "semantic_aggregate_seal": "24ccc83a6b00cb5ea21fb7de8b07e6c5b1ca7d4e29da0763b3f51fcc9e11dde1",
+    "semantic_aggregate_receipt": "11eaaa3a2590f227b1c8d1808d61404cd13d52cd01f113aaece1c3916aa3bdd4",
+    "engineering_audit": "c86d19dda9c10094cc36382e0d9acbb0db40e9e4c228f628e09cf34e89ba9ef5",
+    "engineering_audit_seal": "b68b07f1befe593098e5a1c4b97d5fd115556499d94b921a92e40fcad51de6fa",
+    "engineering_audit_repo_receipt": "fe3311894fa2a58a6966e4afa694bafc1de01bbe3874112f9d2914f5ac1ce6e8",
+    "engineering_audit_repo_summary": "0cb53924a0ed45b2a0f9ccca79afa34cc5e29ff4b36b28d84c7ff12a13c3c1b3",
+    "local_full_test_log": "9404e1cb04314bc6f490005012dff799e52eb025ca8cda44cb66e0efb65e7c32"
+  },
+  "next_gate": "This fixed branch is closed: do not complete the other four requests or rescue cap/schema/prompt/budget. Any next detection module needs separate primary-prior comparison, a falsifiable new information condition, and admission; no current detector or evaluation promotion.",
+  "full_sources_or_source_quotes_in_public_summary": false,
+  "independent_reviews": {
+    "engineering_audit": "passed_identity_and_failed_run_accounting_only",
+    "semantic_aggregate": "completed_and_sealed",
+    "semantic_scope": {
+      "returned_requests_reviewed": 2,
+      "remaining_requests_not_semantically_assessed": 4,
+      "controls_not_run": 2,
+      "third_failed_request_payload_semantically_assessed": false,
+      "source_ledger_obligations_reviewed": 16,
+      "source_ledger_obligations_unassessed": 45,
+      "anchors_validator_unknown": 31,
+      "planned_anchors_unassessed": 213,
+      "C1_automatic_gate_passed": false,
+      "wrong_complete_count": null,
+      "new_original_response_or_ground_truth_reads": 0,
+      "new_model_calls": 0,
+      "new_risk_scores": 0
+    },
+    "engineering_scope": {
+      "status": "sealed_engineering_failure_costs_and_identity_consistent",
+      "checks": [
+        "terminal_root_exact_seal",
+        "M0_M1V2_ledger_admission_source_and_C_output_bound",
+        "all_781_journal_entries_and_780_returns_exactly_joined",
+        "base_config_default_AST_and_explicit_overrides_checked_without_TF_import"
+      ],
+      "base_generation_config_fields_checked": 67,
+      "explicit_generation_kwargs_checked": 8,
+      "new_stage_runs": 0,
+      "new_model_calls": 0,
+      "new_tokenizer_calls": 0,
+      "new_candidate_executions": 0,
+      "R_reads": 0,
+      "GT_reads": 0,
+      "v1_failed_audit_retained": true,
+      "v1_reader_error": "incorrectly_required_CPU_M0_and_CUDA_M1_complete_runtime_objects_equal",
+      "v2_reader_correction": "frozen_production_contract_requires_same_source_hash_identity; CPU_and_GPU_runtime_metadata_preserved_separately",
+      "production_experiment_rerun": false,
+      "experiment_success_implied_by_audit_pass": false
+    }
+  },
+  "fixed_branch_disposition": {
+    "status": "closed_to_new_model_requests",
+    "reason": "first_two_completed_native_requests_have_no_usable_complete_record_so_four_native_necessary_gate_cannot_pass",
+    "no_cap_schema_prompt_or_budget_rescue": true,
+    "general_source_first_or_general_semantic_inability_refuted": false
+  },
+  "frozen_utc": "2026-11-04T19:55:09Z",
+  "total_actual_costs": {
+    "M0_runs": 1,
+    "preflight_attempts": 2,
+    "zero_model_caller_profile_comparison": 1,
+    "instrument_tokenizer_calls": 27,
+    "model_load_attempts": 1,
+    "model_load_returns": 1,
+    "backend_generation_attempts": 3,
+    "backend_generation_returns": 2,
+    "backbone_forward_entries": 781,
+    "backbone_forward_successful_Python_returns": 780,
+    "returned_output_tokens": 780,
+    "successful_processed_input_positions": 4039,
+    "full_six_request_completion": false,
+    "failed_request_generated_tokens": "unknown_without_backend_return"
+  }
+}

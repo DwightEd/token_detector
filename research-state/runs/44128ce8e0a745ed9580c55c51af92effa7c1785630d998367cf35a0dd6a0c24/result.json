@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "run_id": "44128ce8e0a745ed9580c55c51af92effa7c1785630d998367cf35a0dd6a0c24",
+  "completed_utc": "2026-11-04T19:32:43.322540+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Explicit zero-model preflight recovery, same canonical function/M0/floors; no detector or semantic claim",
+  "artifacts": [
+    {
+      "path": "outputs/h020-source-first-20261105/thin-preflight-receipt-v2/location.json",
+      "sha256": "8382ee6df6d08ff8cccfe09b1a855f719723070ccb6d4b63ab7aad73963fcfe6"
+    },
+    {
+      "path": "outputs/h020-source-first-20261105/thin-preflight-receipt-v2/result.json",
+      "sha256": "c91238919fc35e656c17b12e878f5fb19ff7e35206e47a6ded58ef0a4e109377"
+    },
+    {
+      "path": "outputs/h020-source-first-20261105/thin-preflight-receipt-v2/seal.json",
+      "sha256": "73c233c7a14c6157d7be22660f94942f139498d712ac7f0ba35719049fd3f1c5"
+    }
+  ]
+}

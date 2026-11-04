@@ -703,7 +703,7 @@
     },
     {
       "id": "H020_SOURCE_FIRST_QUANTITATIVE_RECORDS",
-      "status": "finite_coding_and_zero_model_M0_admitted",
+      "status": "fixed_instrument_not_promoted_necessary_interface_gate_failed_partial_engineering_run",
       "scientific_bindings": [
         {
           "path": "refine-logs/source-first-records-20261105/MINIMAL_CONTRACT_20261105_024137.md",
@@ -742,7 +742,13 @@
       "stop": "No prompt/model/field/budget rescue; wrong complete or missing obligations fails automatic gate; engineering/resource failure preserved, no auto retry.",
       "new_model_calls_currently_admitted": 0,
       "detector_admitted": false,
-      "source_only_review_is_not_double_blind": true
+      "source_only_review_is_not_double_blind": true,
+      "result_fact": "F065",
+      "semantic_ability_refuted": false,
+      "remaining_new_native_budget": 0,
+      "remaining_new_model_requests": 0,
+      "remaining_four_not_needed_for_necessary_gate": true,
+      "decision": "Do not complete remainingfour merely to rescue this fixed usabilitygate; retain controls/other semantic questions unknown."
     }
   ]
 }

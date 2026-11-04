@@ -1830,6 +1830,86 @@
       "do_not_retest_phenomenon": true,
       "new_model_calls": 0,
       "annotation_reads": 0
+    },
+    {
+      "id": "F065",
+      "certainty": "one_source_only_M0_complete_and_independent_ledger_binding_verified",
+      "claim": "H020 exact installed156/source85bede6 passes52targeted13.86s and executes M0 once:4nativeS+2fixedcontrols,anchors18/13/72/47/47/47,actualmessagessource-only andcontrols match independent projection. Frozen reviewed ledgerV2 retains61obligations/70cites/73markup;boundcopy adds244physical-overlap joins,notsemantic coverage. NoR/GT/tokenizer/model/risk/AUROC. First resourcepreflight cee9c3c6 refusedpre_import at2525605888B<2.5GiB with0tokenizer/model;this is not a source-semantic result. Do not repeatM0 or change semantic obligations after future outputs.",
+      "evidence": [
+        {
+          "path": "outputs/h020-source-first-20261105/prepare-receipt-v1/plan.json",
+          "sha256": "660af65e914cf40229b213a581aae399fa8f79c8d5070fdab6e2949e9dbe27da"
+        },
+        {
+          "path": "outputs/h020-source-first-20261105/prepare-receipt-v1/seal.json",
+          "sha256": "c2d72c4481b53a4c5f7516ee5c550737b995436e2b07f700a96ca540884106c0"
+        },
+        {
+          "path": "outputs/h020-source-first-20261105/SOURCE_PLAN_BOUND_LEDGER_RECEIPT_V1.json",
+          "sha256": "3437bf4f40588956168ab4b9e1bd6a3fbe7d72194ff5943bbf200468eaa72184"
+        },
+        {
+          "path": "outputs/h020-source-first-20261105/SOURCE_LEDGER_INDEPENDENT_REVIEW.md",
+          "sha256": "985a631b0ecc2c1eae29951275ec8f4ea1fb335853b8893baa3443c3c35317f6"
+        },
+        {
+          "path": "outputs/h020-source-first-20261105/preflight-receipt-v1/failure.json",
+          "sha256": "adadd9a715a12d8a1a839323bb90d7783e271a2f63ae51c34043bb6916ea6ce5"
+        },
+        {
+          "path": "outputs/h020-source-first-20261105/preflight-receipt-v1/seal.json",
+          "sha256": "94be646bb96bdde51ed02ca26bed30f5fe067efe2149f821c7abf4fd9ebbe117"
+        }
+      ],
+      "do_not_retest_phenomenon": true,
+      "annotation_reads": 0,
+      "new_model_calls": 0
+    },
+    {
+      "id": "F066",
+      "certainty": "terminal_partial_generation_and_independent_receipt_semantic_reviews_complete",
+      "claim": "H020 M0 reused; explicit zero-model thin preflight passes6inputs1613/1648/2924/2396/2396/2396 and12tokenizer calls with unchanged gates. ActualM2 one load/3backend attempts/2EOS returns400+380tokens;781root entries/780Pythonreturns/4039successfulinputpositions/15M2tokenizer attempts. Third2924-token prefill fails SDPA522MiB allocation under3GiBcap with3.90GiBphysicalfree,0successfulreturn,remaining3notstarted. Independent sealed-receipt auditV2 verifies costs/config/IDs; its V1 wrongly required CPU/GPU runtime equality and is retained. Firsttwo validly returned outputs fail complete envelope coverage;31validatorunknown anchors/16obligations yield0licensedcomplete. Necessary four-native complete gate cannot pass:close fixedinterface without remainingfour/cap/schema/prompt rescue. Semantic ability/controls/remaining45obligations213anchors remain unknown. NoR/GT/risk/AUROC, not general source-first failure.",
+      "evidence": [
+        {
+          "path": "docs/results/h020_source_first_inventory.md",
+          "sha256": "02b6fb9567a0807e7704b17c53cdbef0385e01629b155db7b51cede9a21bc257"
+        },
+        {
+          "path": "docs/results/h020_source_first_inventory_summary.json",
+          "sha256": "9e2bdab5e66a7b1376da8ef118aa02de1982ad3e55d33ff381d1cd49b05d123c"
+        },
+        {
+          "path": "outputs/h020-source-first-20261105/M2_ENGINEERING_AUDIT_RECEIPT.json",
+          "sha256": "fe3311894fa2a58a6966e4afa694bafc1de01bbe3874112f9d2914f5ac1ce6e8"
+        },
+        {
+          "path": "outputs/h020-source-first-20261105/SEMANTIC_REVIEW_AGGREGATE_RECEIPT_V1.json",
+          "sha256": "11eaaa3a2590f227b1c8d1808d61404cd13d52cd01f113aaece1c3916aa3bdd4"
+        },
+        {
+          "path": "outputs/h020-source-first-20261105/INSTALLED_FULL_VALIDATION.json",
+          "sha256": "b0638b272744063c33c9ba5a1f20ad1f598645cf02fc67dc80f2a1a4d46e7cbb"
+        }
+      ],
+      "do_not_retest_phenomenon": true,
+      "model_loads": 1,
+      "generation_request_attempts": 3,
+      "generation_request_returns": 2,
+      "annotation_reads": 0
+    },
+    {
+      "id": "F067",
+      "certainty": "primary_literature_and_local_prior_review_not_a_new_experiment",
+      "claim": "Generic past-prefix Bayesian source/fact-expert predictive mixture and posterior switch are not new mechanisms by themselves: fixed-latent RAG-Sequence implies the posterior predictive, REPLUG combines document-specific frozen-LM distributions, In-ContextRALM uses past-prefix likelihood reranking. LocalP021 already has sequence/world posterior and shared-DP related prior; differences require genuinely licensed fact neighborhoods and source-identity-before-y discrimination. Mixture logloss/regret is not a truth/AUROC theorem; legitimate switching, multi-fact arithmetic, response echo and full-source-expert collapse remain counterexamples. Reject generic mixture-as-new-detector; only a new independently admitted discriminating question may proceed.",
+      "evidence": [
+        {
+          "path": "docs/research/20261105_latent_fact_expert_prior_review.md",
+          "sha256": "e026d6c8b0c3f8014ac9e38c734955f5032ac7bcc847d8f33f9b1f14bf157a9a"
+        }
+      ],
+      "do_not_retest_phenomenon": true,
+      "new_model_calls": 0,
+      "annotation_reads": 0
     }
   ],
   "rule": "New interventions need different predictions under competing explanations; known counts/cases are reused."

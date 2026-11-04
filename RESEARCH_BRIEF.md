@@ -1,5 +1,11 @@
 # 当前持续研究目标
 
+**2026-11-05最新：H020固定source-only记录接口不晋升。** 实际1load/3attempt/2EOS返回400+380；前2格式必要门失败、第三在3GiB程序cap下OOM，剩余不补，所有raw/partial/unknown保留。独立工程和语义汇总完成；无原R/GT/风险/AUROC。F059–F067、RESUME/state为准。新源码85bede6 installed156/52targeted通过，完整CPU300s INCOMPLETE；新push完整LinuxCI待核，旧5fb成功只覆盖H019。generic Bayesmixture非新主算法，下一切口需先例与新判别，不重演闭环失败。D已清理约16.4GiB，raw写C，六任务/顶会目标未完成。以下为历史。
+
+
+**2026-11-05最新：H020 M0实际完成一次，来源账本已绑定；第一次资源预检在导入前以2.352GiB<2.5GiB拒绝，0分词/模型。** 已实现source85bede6、exact installed156/52targeted通过；六source-only proposals尚未准入。只核一次caller import占用，可能显式工程恢复，不重跑M0/改资源门。H019全92160审计及精度已完成但单独幅度风险关闭，H018关闭；F059–F065/RESUME/state.h020为准。H019发布5fb457e完整LinuxCI成功，H020尚未push/完整CPU未请求。D已释放约16.4GiB，raw写C。六任务与顶会方法目标均未完成。以下历史保留。
+
+
 **2026-11-05最新：H020真正source-first定量records仪器已获有限科学/代码GO，exact installed156和52targeted通过；尚未运行M0/分词/模型。** 独立sourceledgerV2已冻结，下一步只claim M0→机械join→真实资源preflight，6proposals仍待单独准入；无R/GT/风险。H019全92160审计及ΔV精度完成但不晋升单独幅度；旧H018关闭。已发布H019的5fb457e完整LinuxCI成功，不覆盖H020。D清理释放约16.4GiB，raw写C。主目标/六任务0.8/顶会方法均未达成；state.h020、RESUME与F059–F064为准。下面是历史检查点。
 
 

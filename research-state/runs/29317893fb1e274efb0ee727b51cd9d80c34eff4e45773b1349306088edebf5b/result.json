@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "run_id": "29317893fb1e274efb0ee727b51cd9d80c34eff4e45773b1349306088edebf5b",
+  "completed_utc": "2026-11-04T19:21:36.074230+00:00",
+  "outcome": "supported_scope",
+  "conclusion": "Fixed source-only prepare; no detector score, semantic license or AUROC",
+  "artifacts": [
+    {
+      "path": "outputs/h020-source-first-20261105/prepare-receipt-v1/location.json",
+      "sha256": "97fcb8290bd28fe8ec82e001a50ef9947ff2164128e9e604554167ee102b3958"
+    },
+    {
+      "path": "outputs/h020-source-first-20261105/prepare-receipt-v1/plan.json",
+      "sha256": "660af65e914cf40229b213a581aae399fa8f79c8d5070fdab6e2949e9dbe27da"
+    },
+    {
+      "path": "outputs/h020-source-first-20261105/prepare-receipt-v1/result.json",
+      "sha256": "dc5825f248331f9be12310536c9b181fab7ecdaa597c1873ff835fd6f6caec72"
+    },
+    {
+      "path": "outputs/h020-source-first-20261105/prepare-receipt-v1/seal.json",
+      "sha256": "c2d72c4481b53a4c5f7516ee5c550737b995436e2b07f700a96ca540884106c0"
+    }
+  ]
+}
